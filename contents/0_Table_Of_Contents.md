@@ -5,7 +5,7 @@
 - [Introduction]()
 - Deploying Your First Application
    - Signing Up
-   - Getting Jitsu ( the command line tool )
+   - Getting Jitsu ( The Nodejitsu Command Line Tool )
    - Pushing to the cloud
 - Choosing a Database For Your Application
     - CouchDB
