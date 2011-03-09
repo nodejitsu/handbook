@@ -1,12 +1,16 @@
 # Deploying Your First Application
 
-- Getting Jitsu ( The Nodejitsu Command Line Tool )
-- Writing a hello world node.js application
-- Pushing to the cloud
+- Deploying from the Samurai web admin
+- Deploying from Jitsu, The Nodejitsu Command Line Tool 
+- Deploying from the API
 
-## Getting Jitsu ( The Nodejitsu Command Line Tool )
+## Deploying from the Samurai web admin
 
-The easiest way to start using Nodejitsu is to download our CLI ( Command Line Interface ) tool, Jitsu. With Jitsu you will be able to easily deploy and manage your Nodejitsu applications from the command line. Jitsu is very friendly to non-techinical users, but it's also fully open-source for the more advanced node.js user. 
+The Samurai web admin is an easy to use web-site where you can manage and deploy your node.js applications. 
+
+## Deploying from Jitsu, The Nodejitsu Command Line Tool 
+
+If you prefer CLI ( Command Line Interface ) tools over web-sites you can download Jitsu, The Nodejitsu CLI tool. Jitsu is very friendly to non-techinical users, but it's also fully open-source for the more advanced node.js user. 
 
 ### Installation 
 
@@ -14,10 +18,11 @@ The easiest way to start using Nodejitsu is to download our CLI ( Command Line I
 
 ### Additional Jitsu resources
 
-## Writing a hello world node.js application
+## Deploying from the API
 
-TODO: instructions and link to hello world github
+If you are an advanced user, you might want to automate your deployment using scripts instead of manually deploying your application using Samurai or Jitsu. Nodejitsu provides a high-level JSON API which will allow you to deploy applications, as well as many other features. 
 
-## Pushing to the cloud
+     // curl code for deploying a new app
+     
+You can see a detailed specification of the API here: LINKTO: api docs
 
-TODO: basic jitsu deployment instructions and link to Jitsu docs
