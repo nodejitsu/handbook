@@ -6,7 +6,6 @@
 
 - [Introduction]()
 - [Deploying Your First Application](2_Deploying_Your_First_Application.md)
-   - Signing Up
    - Getting Jitsu ( The Nodejitsu Command Line Tool )
    - Writing a hello world node.js application
    - Pushing to the cloud

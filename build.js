@@ -1,3 +1,5 @@
+/* 5 minute hack for previewing docs as html */
+
 var finder = require('findit').find('./contents'),
     fs     = require('fs'),
     md     = require('node-markdown').Markdown,
