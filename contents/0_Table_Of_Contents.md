@@ -6,8 +6,8 @@
 
 - [Introduction]()
 - [Deploying Your First Application](2_Deploying_Your_First_Application.md)
-   - Getting Jitsu ( The Nodejitsu Command Line Tool )
-   - Writing a hello world node.js application
+   - Getting Jitsu, The Nodejitsu Command Line Tool 
+   - Writing A Hello World Node.js Application
    - Pushing to the cloud
 - Choosing a Database For Your Application
     - CouchDB
