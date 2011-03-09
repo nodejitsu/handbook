@@ -5,10 +5,11 @@
 ### Table of Contents
 
 - [Introduction]()
+   - What is Nodejitsu?
 - [Deploying Your First Application](2_Deploying_Your_First_Application.md)
-   - Getting Jitsu, The Nodejitsu Command Line Tool 
-   - Writing A Hello World Node.js Application
-   - Pushing to the cloud
+   - Deploying from the Samurai web admin
+   - Deploying from Jitsu, The Nodejitsu Command Line Tool 
+   - Deploying from the API
 - Choosing a Database For Your Application
     - CouchDB
     - Redis
