@@ -5,7 +5,7 @@
 ### Table of Contents
 
 - [Introduction]()
-- Deploying Your First Application
+- [Deploying Your First Application](2_Deploying_Your_First_Application.md)
    - Signing Up
    - Getting Jitsu ( The Nodejitsu Command Line Tool )
    - Pushing to the cloud
