@@ -1,5 +1,7 @@
 # The Nodejitsu Handbook
 
+*A gentle introduction to the art of Nodejitsu*
+
 ### Table of Contents
 
 - [Introduction]()
