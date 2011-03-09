@@ -8,12 +8,12 @@
 - [Deploying Your First Application](2_Deploying_Your_First_Application.md)
    - Signing Up
    - Getting Jitsu ( The Nodejitsu Command Line Tool )
+   - Writing a hello world node.js application
    - Pushing to the cloud
 - Choosing a Database For Your Application
     - CouchDB
     - Redis
-    - Mongo
-- The MarketPlace
+    - MongoDB
 - Using the API
     - Overview
     - Application
@@ -21,10 +21,13 @@
     - User
     - Database
     - Logging
+- The MarketPlace
+   - Deploying a Marketplace Application
+   - Getting your application on the Marketplace
 - Add-ons
     - MailChimp
     - Cloud9
-- Open-source
+- Open-source projects
     - Why open-source
     - Where to find
     - How to contribute
