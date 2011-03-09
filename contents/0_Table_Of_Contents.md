@@ -19,4 +19,8 @@
 - Add-ons
     - MailChimp
     - Cloud9
+- Open-source
+    - Why open-source
+    - Where to find
+    - How to contribute
 
