@@ -5,11 +5,12 @@
 ### Table of Contents
 
 - [Introduction]()
-   - What is Nodejitsu?
+   - [What Is Nodejitsu?]()
+   - [How Can I Get Started?]()
 - [Deploying Your First Application](2_Deploying_Your_First_Application.md)
-   - Deploying from the Samurai web admin
-   - Deploying from Jitsu, The Nodejitsu Command Line Tool 
-   - Deploying from the API
+   - [Deploying from the Samurai web admin]()
+   - [Deploying from Jitsu, The Nodejitsu Command Line Tool]()
+   - [Deploying from the API]()
 - [Setting Up A Database For Your Application](3_Setting_Up_A_Database_For_Your_Application.md)
     - CouchDB
     - Redis
@@ -28,7 +29,7 @@
     - MailChimp
     - Cloud9
 - Open-source projects
-    - Why open-source
+    - Why open-source?
     - Where to find
     - How to contribute
 
