@@ -28,6 +28,7 @@
 - Add-ons
     - MailChimp
     - Cloud9
+    - Adding your service as an add-on
 - Open-source projects
     - Why open-source?
     - Where to find
