@@ -20,8 +20,8 @@ Most of the calls to the API will require that you authenticate using your Nodej
 
 If you do not have an account it is possible to create one using the User API, Jitsu, or just by visiting http://nodejitsu.com
 
-## Applications
 <a name="Applications"/>
+## Applications
 
 #### Get all applications for a User
     
@@ -54,32 +54,33 @@ If you do not have an account it is possible to create one using the User API, J
      DELETE /apps/:user-name/:app-name/remove
 
 
-## Get an app for a user
-## Search for apps by user
-GET /apps/:user-name/:query
-
-## Delete a user's app
-DELETE /users/:user-name/:app-name
-
-## Update a user's app's details
-DELETE /users/:user-name/:app-name
-
-
-
 ### Snapshots
 ---
 
 #### Deploy a snapshot
-     POST /apps/:user-name/:snapshots/:id
+    POST /apps/:user-name/:snapshots/:id
 
 #### Show a catalog of all snapshots
-     GET /apps/:user-name/:app-name/snapshots
+    GET /apps/:user-name/:app-name/snapshots
 
 #### Show the contents of a snapshot
-     GET /apps/:user-name/:app-name/snapshots/:id
+    GET /apps/:user-name/:app-name/snapshots/:id
 
 #### Make an existing snapshot the active app
-     PUT /apps/:user-name/:app-name/snapshots/:id/active
+    PUT /apps/:user-name/:app-name/snapshots/:id/active
+
+
+
+## Users
+
+<a name="Users"/>
+
+
+#### Signup as a new User
+
+#### Confirm a User account
+
+#### Update User
 
 
 ## Users
