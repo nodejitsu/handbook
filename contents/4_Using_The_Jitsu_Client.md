@@ -1,12 +1,9 @@
 # Using The Jitsu Client
 
-- [Overview]()
+TODO: add overview
+
 - [Installation]()
 - [Usage]()
-
-## Overview
-
-TODO: add section
 
 ## Installation
 

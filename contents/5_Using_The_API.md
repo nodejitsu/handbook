@@ -1,16 +1,12 @@
 # Using The API
 
-- Overview
+Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be RESTful and communicates via JSON. Our tools such as Samurai and Jitsu rely on this API.
+
 - [Application](#Applications)
 - Deployment
 - User
 - Database
 - Logging
-
-## Overview
-
-Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be RESTful and communicates via JSON. Our tools such as Samurai and Jitsu rely on this API.
-
 
 ## Authentication 
 
