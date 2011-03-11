@@ -8,6 +8,7 @@
    - [What Is Nodejitsu?]()
    - [How Can I Get Started?]()
 - [Deploying Applications](2_Deploying_Applications.md)
+   - [Overview](2_Deploying_Applications.md)
    - [Deploying from the Samurai web admin]()
    - [Deploying from Jitsu, The Nodejitsu Command Line Tool]()
    - [Deploying from the API]()
