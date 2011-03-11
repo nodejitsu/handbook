@@ -1,9 +1,9 @@
 # Introduction
 
 - What Is Nodejitsu?
-- How Can I Learn Nodejitsu?
+- How Can I Get Started?
 
-## What is Nodejitsu?
+## What Is Nodejitsu?
 
 Nodejitsu is a Platform as A Service for node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud. Nodejitsu's platform provides a robust suite of functionality to assist in the development, management, and deployment of production grade Node.js applications.
 
