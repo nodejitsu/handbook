@@ -11,12 +11,15 @@ Nodejitsu has several Node.js friendly databases ready to be used by your applic
 
 ## Creating new Databases
 
-    TODO: add section
+If you require database hosting, you can create a new database instance of any of our supported databases using Samaruai, Jitsu, or our API.
 
+## Existing Databases
 
-## Connecting existing Databases
+If you already have a data
 
-    TODO: add section
+## Connecting Applications to Databases
+
+If you want to connect a Database to your Node.js application, Nodejitsu provides you with sample code for each Database type as well as the abiltity to specify database connection strings in your application's package.json
 
 ## Supported Databases
 
