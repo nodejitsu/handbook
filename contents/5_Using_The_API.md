@@ -79,15 +79,6 @@ Snapshots are an easy way to capture the current state of your application. Once
 
 #### Update User
 
-
-## Users
-
-### Signing up a new user
-
-### Confirming a User
-
-### Updating a User
-
 ## Deployment
 
 ## Logging
