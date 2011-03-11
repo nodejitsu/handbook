@@ -16,6 +16,10 @@
     - CouchDB
     - Redis
     - MongoDB
+- [Using the Jitsu Client](4_Using_The_Jitsu_Client.md)
+    - [Overview]()
+    - [Installation]()
+    - [Usage]()
 - [Using the API](4_Using_The_API.md)
     - Overview
     - Application

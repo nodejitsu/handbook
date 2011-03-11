@@ -17,10 +17,6 @@ The Samurai web admin is an easy to use web-site where you can manage and deploy
 
 If you prefer CLI ( Command Line Interface ) tools over web-sites you can download Jitsu, The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire [API](API) and it's fully open-source for the more advanced node.js user. 
 
-### Installation 
-
-### Using Jitsu for the first time
-
 ### Additional Jitsu resources
 
 ## Deploying from the API
