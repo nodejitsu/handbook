@@ -13,11 +13,10 @@
    - [Deploying from the API]()
 - [Databases](3_Setting_Up_Databases.md)
     - Creating new Databases
-    - Connecting existing Databases
-    - Supported Databases
         - [CouchDB]()
         - [Redis]()
         - [MongoDB]()
+    - Connecting existing Databases
 - [Using the Jitsu Client](4_Using_The_Jitsu_Client.md)
     - [Installation]()
     - [Usage]()
