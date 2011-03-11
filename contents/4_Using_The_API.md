@@ -18,7 +18,7 @@ Most of the calls to the API will require that you authenticate using your Nodej
 
      Here is an example of using basic auth with curl
 
-If you do not have an account, it is possible to create one using the API. 
+If you do not have an account it is possible to create one using the User API, Jitsu, or just by visiting http://nodejitsu.com
 
 ## Applications
 
