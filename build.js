@@ -22,13 +22,28 @@ finder.on('end', function() {
 function build () {
   
   buildHTMLPage();
+  buildPDF();
+  buildGitHubReadMe();
   
 };
 
 
-function buildPDF () {};
+function buildPDF () {
+  
+  // requires htmldoc command line tool.
+  // try "brew install htmldoc"
+  
+  // htmldoc index.html --outfile Nodejitsu-Handbook.pdf
+  
+};
 
-function buildGitHubReadMe () {};
+function buildGitHubReadMe () {
+
+  var html = md(output);
+  fs.writeFileSync('./ReadMe.md', output);
+  
+  
+};
 
 function buildHTMLPage () {
   

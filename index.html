@@ -1,0 +1,374 @@
+<h1>The Nodejitsu Handbook</h1>
+
+<p><em>A gentle introduction to the art of Nodejitsu</em></p>
+
+<h3>Table of Contents</h3>
+
+<ul>
+<li><a href="1_Introduction.md">Introduction</a>
+<ul><li><a href="">What Is Nodejitsu?</a></li>
+<li><a href="">How Can I Get Started?</a></li></ul></li>
+<li><a href="2_Deploying_Applications.md">Deploying Applications</a>
+<ul><li><a href="">Deploying from the Samurai web admin</a></li>
+<li><a href="">Deploying from Jitsu, The Nodejitsu Command Line Tool</a></li>
+<li><a href="">Deploying from the API</a></li></ul></li>
+<li><a href="4_Using_The_Jitsu_Client.md">Using the Jitsu Client</a>
+<ul><li><a href="">Installation</a></li>
+<li><a href="">Usage</a></li></ul></li>
+<li><a href="5_Using_The_API.md">Using the API</a>
+<ul><li><a href="#Applications">Applications</a></li>
+<li><a href="#Snapshots">Snapshots</a></li>
+<li><a href="#User">Users</a></li>
+<li><a href="#Database">Databases</a></li>
+<li><a href="#Marketplace">Marketplace</a></li>
+<li><a href="#Logging">Logging</a></li></ul></li>
+<li><a href="3_Setting_Up_Databases.md">Databases</a>
+<ul><li>Creating new Databases
+<ul><li><a href="">CouchDB</a></li>
+<li><a href="">Redis</a></li>
+<li><a href="">MongoDB</a></li></ul></li>
+<li>Connecting existing Databases</li></ul></li>
+<li><a href="6_The_Marketplace.md">The MarketPlace</a>
+<ul><li>Deploying a Marketplace Application</li>
+<li>Getting your Application on the Marketplace</li></ul></li>
+<li><a href="7_Add_Ons.md">Add-Ons</a>
+<ul><li>MailChimp</li>
+<li>Cloud9</li>
+<li>Adding your service as an add-on</li></ul></li>
+<li><a href="8_Open_source_Projects.md">Nodejitsu's Open-source Projects</a>
+<ul><li>Why open-source?</li>
+<li>Where to find</li>
+<li>How to contribute</li></ul></li>
+</ul>
+
+<h1>Introduction</h1>
+
+<p>Welcome to the Nodejitsu handbook. This document will help familiarize you with Nodejitsu while also providing detailed information about specific platform features. This is a living document which you are free to submit patches to @ <a href="[http://github.com/nodejitsu/handbook">http://github.com/nodejitsu/handbook</a>.</p>
+
+<ul>
+<li>What Is Nodejitsu?</li>
+<li>How Can I Get Started?</li>
+</ul>
+
+<h2>What Is Nodejitsu?</h2>
+
+<p><a href="http://nodejitsu.com/">Nodejitsu</a> is a Platform as A Service for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud. Nodejitsu's platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications.</p>
+
+<h2>How Can I Get Started?</h2>
+
+<p>So you wish to learn the ways of Nodejitsu? Excellent! The first step is checking out the <a href="0_Table_Of_Contents.md">Table of Contents</a>. Here you will find a overview of the systems which comprise Nodejitsu. We suggest starting at <a href="2_Deploying_Applications.md">Deploying Applications</a>. You can also always visit our website at <a href="http://nodejitsu.com">http://nodejitsu.com</a>.</p>
+
+<h1>Deploying Applications</h1>
+
+<p>TODO: add overview</p>
+
+<ul>
+<li><a href="#Samurai">Deploying from the Samurai web admin</a></li>
+<li><a href="#Jitsu">Deploying from Jitsu, The Nodejitsu Command Line Tool</a> </li>
+<li><a href="#API">Deploying from the API</a></li>
+</ul>
+
+<p><a name="Samurai"/></p>
+
+<h2>Deploying from the Samurai web admin</h2>
+
+<p>The Samurai web admin is an easy to use web-site where you can manage and deploy your node.js applications. Simply visit www.nodejitsu.com and sign-in. You'll be taken directly to the Samurai web admin interface.</p>
+
+<p><a name="Jitsu"/></p>
+
+<h2>Deploying from Jitsu, The Nodejitsu Command Line Tool</h2>
+
+<p>If you prefer CLI ( Command Line Interface ) tools over web-sites you can download Jitsu, The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire <a href="API">API</a> and it's fully open-source for the more advanced node.js user. </p>
+
+<h3>Additional Jitsu resources</h3>
+
+<p><a name="API"/></p>
+
+<h2>Deploying from the API</h2>
+
+<p>If you are an advanced user, you might want to automate your deployment using scripts instead of manually deploying your application using Samurai or Jitsu. Nodejitsu provides a high-level JSON API which will allow you to deploy applications, as well as many other features. </p>
+
+<pre><code> // curl code for deploying a new app
+</code></pre>
+
+<p>You can see a detailed specification of the API here: LINKTO: api docs</p>
+
+<h1>Setting Up A Database For Your Application</h1>
+
+<p>Nodejitsu has several Node.js friendly databases ready to be used by your application. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database, we provide an easy upgrade path with our partners such as Redis2Go, CouchOne, and MongoHQ. </p>
+
+<ul>
+<li>Creating new Databases
+<ul><li><a href="">CouchDB</a></li>
+<li><a href="">Redis</a></li>
+<li><a href="">MongoDB</a></li></ul></li>
+<li>Connecting existing Databases</li>
+</ul>
+
+<h2>Creating new Databases</h2>
+
+<p>If you require database hosting, you can create a new database instance of any of our supported databases using Samaruai, Jitsu, or our API.</p>
+
+<h3>CouchDB</h3>
+
+<pre><code>TODO: add section
+</code></pre>
+
+<h3>Redis</h3>
+
+<pre><code>TODO: add section
+</code></pre>
+
+<h3>MongoDB</h3>
+
+<pre><code>TODO: add section
+</code></pre>
+
+<h2>Existing Databases</h2>
+
+<p>If you already have an externally hosted Database, Nodejitsu is capable of connecting to it. We've got Database hosting if you need it, but we fully support externally hosted Databases.</p>
+
+<h2>Connecting Applications to Databases</h2>
+
+<p>If you want to connect a Database to your Node.js application, Nodejitsu provides you with sample code for each Database type as well as the ability to specify database connection strings in your application's package.json</p>
+
+<h1>Using The Jitsu Client</h1>
+
+<p>Jitsu is a Command Line Tool (CLI) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line, you can still pretty much do everything Jitsu can do through our web interface, Samurai. </p>
+
+<ul>
+<li><a href="">Installation</a></li>
+<li><a href="">Usage</a></li>
+</ul>
+
+<h2>Installation</h2>
+
+<pre><code> TODO: add section
+</code></pre>
+
+<h2>Usage</h2>
+
+<pre><code> TODO: add section
+</code></pre>
+
+<h1>Using The API</h1>
+
+<p>Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be RESTful and communicates via JSON.</p>
+
+<ul>
+<li><a href="#Applications">Applications</a></li>
+<li><a href="#Snapshots">Snapshots</a></li>
+<li><a href="#User">Users</a></li>
+<li><a href="#Database">Databases</a></li>
+<li><a href="#Marketplace">Marketplace</a></li>
+<li><a href="#Logging">Logging</a></li>
+</ul>
+
+<h2>Authentication</h2>
+
+<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. Currently, we support Basic Authentication. </p>
+
+<pre><code> TODO: Here is an example of using basic auth with curl
+</code></pre>
+
+<p>If you do not have an account it is possible to create one using the User API, Jitsu, or just by visiting <a href="http://nodejitsu.com">http://nodejitsu.com</a></p>
+
+<p><a name="Applications"/></p>
+
+<h2>Applications</h2>
+
+<h4>Get all applications for a User</h4>
+
+<pre><code> GET /apps/:user-id
+</code></pre>
+
+<h4>Create a new Application</h4>
+
+<pre><code> POST /apps/:user-id
+ { package.json }
+</code></pre>
+
+<h4>Start an Application</h4>
+
+<pre><code> POST /apps/:user-name/:app-name/restart
+</code></pre>
+
+<h4>Stop an Application</h4>
+
+<pre><code> POST /apps/:user-name/:app-name/start
+</code></pre>
+
+<h4>Restart an Application</h4>
+
+<pre><code> POST /apps/:user-name/:app-name/stop
+</code></pre>
+
+<h4>Update an Application</h4>
+
+<pre><code> PUT /apps/:user-id
+ { package.json }
+</code></pre>
+
+<h4>Delete an Application</h4>
+
+<pre><code> DELETE /apps/:user-name/:app-name/remove
+</code></pre>
+
+<p><a name="Snapshots"/></p>
+
+<h2>Snapshots</h2>
+
+<p>Snapshots are an easy way to capture the current state of your application. Once a Snapshot of your application is created you can roll back and activate that Snapshot at any time. </p>
+
+<h4>Make an existing snapshot the active app</h4>
+
+<pre><code>PUT /apps/:user-name/:app-name/snapshots/:id/active
+</code></pre>
+
+<h4>Activate / Deploy a snapshot</h4>
+
+<pre><code>POST /apps/:user-name/:snapshots/:id
+</code></pre>
+
+<h4>Show a catalog of all Snapshot for an Application</h4>
+
+<pre><code>GET /apps/:user-name/:app-name/snapshots
+</code></pre>
+
+<h4>Show the contents of a Snapshot</h4>
+
+<pre><code>GET /apps/:user-name/:app-name/snapshots/:id
+</code></pre>
+
+<p><a name="Users"/></p>
+
+<h2>Users</h2>
+
+<h4>Signup a new User</h4>
+
+<pre><code> TODO:
+</code></pre>
+
+<h4>Confirm a User account</h4>
+
+<pre><code> TODO:
+</code></pre>
+
+<h4>Update User</h4>
+
+<pre><code> TODO:
+</code></pre>
+
+<p><a name="Databases"/></p>
+
+<h2>Databases</h2>
+
+<h4>Create a new Database</h4>
+
+<pre><code> POST /databases/:user-name/:id
+
+ {
+   type: "Couch || Redis || Mongo"
+ }
+</code></pre>
+
+<h4>Get information about a Database</h4>
+
+<pre><code>GET /databases/:user-name/:id
+</code></pre>
+
+<h4>Delete a Database</h4>
+
+<pre><code>DELETE /databases/:user-name/:id
+</code></pre>
+
+<p><a name="Marketplace"/></p>
+
+<h2>Marketplace</h2>
+
+<h4>Get all Marketplace Applications</h4>
+
+<pre><code>GET /marketplace
+</code></pre>
+
+<h4>Get a specific Marketplace Application</h4>
+
+<pre><code>GET /databases/:user-name/:id
+</code></pre>
+
+<p><a name="Logging"/></p>
+
+<h2>Logging</h2>
+
+<h4>Get all logs for a user</h4>
+
+<pre><code> GET /logs/:user-name/
+</code></pre>
+
+<h4>Get logs for a specific application</h4>
+
+<pre><code> GET /logs/:user-name/:app-name
+</code></pre>
+
+<h1>The Marketplace</h1>
+
+<p>The Marketplace is an online store where you can browse ready to go Node.js Applications and clone and deploy your own copy in seconds. The Marketplace is a great place to start if you are new to Node.js development or want to share your existing Node.js Application with the world.</p>
+
+<ul>
+<li>Deploying a Marketplace Application</li>
+<li>Getting your Application on the Marketplace</li>
+</ul>
+
+<h2>Deploying a Marketplace Application</h2>
+
+<p>You can deploy a ready to go application from the Marketplace is seconds and begin customize it for your needs immediately. Marketplace Applications can be configured through Samurai, Jitsu, or the API.</p>
+
+<h2>Getting your Application on the Marketplace</h2>
+
+<pre><code>TODO: add section
+</code></pre>
+
+<h1>Add-Ons</h1>
+
+<p>TODO: add section</p>
+
+<ul>
+<li>MailChimp</li>
+<li>Add-Ons</li>
+</ul>
+
+<h2>Deploying a Marketplace Application</h2>
+
+<pre><code>TODO: add section
+</code></pre>
+
+<h2>Getting your Application on the Marketplace</h2>
+
+<pre><code>TODO: add section
+</code></pre>
+
+<h1>Open-source Projects</h1>
+
+<p>TODO: add section</p>
+
+<ul>
+<li>Why open-source?</li>
+<li>Where to find</li>
+<li>How to contribute</li>
+</ul>
+
+<h2>Why open-source</h2>
+
+<p>A lot of Nodejitsu's technology stack is released as open-source software. We choose to do this for many reasons. Aside from being able to give back to the very awesome Node.js community, releasing pieces of our stack as open-source allows other developers and users to review and improve our software. We've already received invaluable contributions to our platform from developers who would have never seen our code if we had not open-sourced it.</p>
+
+<p>Releasing as open-source increases the quality of our software.</p>
+
+<h2>Where to find</h2>
+
+<p>Nodejitsu hosts it's open-source projects on <a href="http://github.com">Github.com</a>. Github is website for sharing and collobrating on source code. You can get source code without creating an account, and if you want to create an account it's free. You'll need a <a href="http://gitscm.org/">Git</a> client if you wish to check out any of our code repositories. </p>
+
+<p>You can visit our open-source project directory at: <a href="http://github.com/nodejitsu">http://github.com/nodejitsu</a></p>
+
+<h2>How to contribute</h2>
+
+<p>Anyone can contribute to any Nodejitsu open-source projects at anytime. <a href="http://github.com/nodejitsu">Github</a> has the facilities for managing patches, issues, code comments, version control, etc. If you aren't ready to submit code or have questions you can create a Github issue or even just send an email to the Node.js mailing list. We'll make sure one our Ninja's gets back to you soon.</p>
