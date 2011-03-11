@@ -15,11 +15,12 @@
     - [Installation]()
     - [Usage]()
 - [Using the API](5_Using_The_API.md)
-    - Application
-    - Deployment
-    - User
-    - Database
-    - Logging
+    - [Applications](#Applications)
+    - [Snapshots](#Snapshots)
+    - [Users](#User)
+    - [Databases](#Database)
+    - [Marketplace](#Marketplace)
+    - [Logging](#Logging)
 - [Databases](3_Setting_Up_Databases.md)
     - Creating new Databases
         - [CouchDB]()
