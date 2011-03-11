@@ -2,11 +2,11 @@
 
 Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be RESTful and communicates via JSON.
 
-- [Application](#Applications)
-- [Deployment](#Deployment)
-- [User](#User)
-- [Database](#Database)
-- Logging
+- [Applications](#Applications)
+- [Snapshots](#Deployment)
+- [Users](#User)
+- [Databases](#Database)
+- [Logging](#Logging)
 
 ## Authentication 
 
@@ -49,9 +49,9 @@ If you do not have an account it is possible to create one using the User API, J
 
      DELETE /apps/:user-name/:app-name/remove
 
+<a name="Snapshots"/>
 
-### Snapshots
----
+## Snapshots
 
 Snapshots are an easy way to capture the current state of your application. Once a Snapshot of your application is created you can roll back and activate that Snapshot at any time. 
 
@@ -67,10 +67,9 @@ Snapshots are an easy way to capture the current state of your application. Once
 #### Show the contents of a snapshot
     GET /apps/:user-name/:app-name/snapshots/:id
 
+<a name="Users"/>
 
 ## Users
-
-<a name="Users"/>
 
 #### Signup a new User
 
@@ -84,16 +83,17 @@ Snapshots are an easy way to capture the current state of your application. Once
 
      TODO:
 
-## Databases
-
 <a name="Databases"/>
+
+## Databases
 
 #### Create a new Database
 
      POST /databases/:user-name/:id
-       {
-         type: "Couch || Redis || Mongo"
-       }
+       
+     {
+       type: "Couch || Redis || Mongo"
+     }
 
 #### Get information about a Database
 
@@ -103,11 +103,13 @@ Snapshots are an easy way to capture the current state of your application. Once
 
     DELETE /databases/:user-name/:id
 
+<a name="Logging"/>
+
 ## Logging
 
-## Get all logs for a user
+#### Get all logs for a user
      GET /logs/:user-name/
 
-## Get logs for a specific application
+#### Get logs for a specific application
      GET /logs/:user-name/:app-name
 
