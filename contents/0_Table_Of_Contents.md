@@ -29,7 +29,7 @@
     - Logging
 - The MarketPlace
    - Deploying a Marketplace Application
-   - Getting your application on the Marketplace
+   - Getting your Application on the Marketplace
 - Add-ons
     - MailChimp
     - Cloud9
