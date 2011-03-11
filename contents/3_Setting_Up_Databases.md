@@ -2,19 +2,33 @@
 
 Nodejitsu has several Node.js friendly databases ready to be used by your application. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database, we provide an easy upgrade path with our partners such as Redis2Go, CouchOne, and MongoHQ. 
 
-- [CouchDB]()
-- [Redis]()
-- [MongoDB]()
+- Creating new Databases
+- Connecting existing Databases
+- Supported Databases
+    - [CouchDB]()
+    - [Redis]()
+    - [MongoDB]()
 
-## CouchDB
+## Creating new Databases
 
-TODO: add section
+    TODO: add section
 
-## Redis
 
-TODO: add section
+## Connecting existing Databases
 
-## MongoDB
+    TODO: add section
 
-TODO: add section
+## Supported Databases
+
+### CouchDB
+
+    TODO: add section
+
+### Redis
+
+    TODO: add section
+
+### MongoDB
+
+    TODO: add section
 
