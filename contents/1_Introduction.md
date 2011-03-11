@@ -9,4 +9,4 @@ Nodejitsu is a Platform as A Service for node.js applications. Nodejitsu allows 
 
 ## How Can I Get Started?
 
-So you wish to learn the ways of Nodejitsu? Excellent! The first step is checking out the Table of Contents in the Nodejitsu Handbook. Here you will find a overview of the systems which comprise Nodejitsu. We suggest starting at Deploying Your First Application.
+So you wish to learn the ways of Nodejitsu? Excellent! The first step is checking out the Table of Contents in the Nodejitsu Handbook. Here you will find a overview of the systems which comprise Nodejitsu. We suggest starting at Deploying Applications.

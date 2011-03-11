@@ -7,7 +7,7 @@
 - [Introduction](1_Introduction.md)
    - [What Is Nodejitsu?]()
    - [How Can I Get Started?]()
-- [Deploying Your First Application](2_Deploying_Your_First_Application.md)
+- [Deploying Applications](2_Deploying_Applications.md)
    - [Deploying from the Samurai web admin]()
    - [Deploying from Jitsu, The Nodejitsu Command Line Tool]()
    - [Deploying from the API]()
