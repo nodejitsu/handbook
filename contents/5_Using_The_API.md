@@ -58,13 +58,13 @@ Snapshots are an easy way to capture the current state of your application. Once
 #### Make an existing snapshot the active app
     PUT /apps/:user-name/:app-name/snapshots/:id/active
 
-#### Deploy a snapshot
+#### Activate / Deploy a snapshot
     POST /apps/:user-name/:snapshots/:id
 
-#### Show a catalog of all snapshots
+#### Show a catalog of all Snapshot for an Application
     GET /apps/:user-name/:app-name/snapshots
 
-#### Show the contents of a snapshot
+#### Show the contents of a Snapshot
     GET /apps/:user-name/:app-name/snapshots/:id
 
 <a name="Users"/>
