@@ -16,6 +16,25 @@ finder.on('file', function (file) {
 });
 
 finder.on('end', function() {
-  var html = md(output);
-  fs.writeFileSync('./generated/index.html', html);
+  build();
 });
+
+function build () {
+  
+  buildHTMLPage();
+  
+};
+
+
+function buildPDF () {};
+
+function buildGitHubReadMe () {};
+
+function buildHTMLPage () {
+  
+  var html = md(output);
+  fs.writeFileSync('./index.html', html);
+  
+};
+
+function buildEBook () {};
