@@ -5,16 +5,16 @@ Nodejitsu provides a web API for users who want to interact with the Nodejitsu p
 - [Application](#Applications)
 - [Deployment](#Deployment)
 - [User](#User)
-- Database
+- [Database](#Database)
 - Logging
 
 ## Authentication 
 
-Most of the calls to the API will require that you authenticate using your Nodejitsu account. Currently, we are using Basic Authentication. 
+Most of the calls to the API will require that you authenticate using your Nodejitsu account. Currently, we support Basic Authentication. 
 
-     Here is an example of using basic auth with curl
+     TODO: Here is an example of using basic auth with curl
 
-If you do not have an account it is possible to create one using the User API, Jitsu, or just by visiting http://nodejitsu.com
+If you do not have an account it is possible to create one using the User API, Jitsu, or just by visiting [http://nodejitsu.com](http://nodejitsu.com)
 
 <a name="Applications"/>
 ## Applications
@@ -97,12 +97,4 @@ GET /logs/:user-name/
 
 ## Get logs for a specific application
 GET /logs/:user-name/:app-name
-
-
-
-- Application
-- Deployment
-- User
-- Database
-- Logging
 
