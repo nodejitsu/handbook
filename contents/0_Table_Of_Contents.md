@@ -27,11 +27,11 @@
 - [The MarketPlace](6_The_Marketplace.md)
    - Deploying a Marketplace Application
    - Getting your Application on the Marketplace
-- Add-ons
+- [Add-Ons](7_Add_Ons.md)
     - MailChimp
     - Cloud9
     - Adding your service as an add-on
-- Open-source projects
+- [Nodejitsu's Open-source Projects](8_Open_source_Projects.md)
     - Why open-source?
     - Where to find
     - How to contribute
