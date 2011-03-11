@@ -6,6 +6,7 @@ Nodejitsu provides a web API for users who want to interact with the Nodejitsu p
 - [Snapshots](#Snapshots)
 - [Users](#User)
 - [Databases](#Database)
+- [Marketplace](#Marketplace)
 - [Logging](#Logging)
 
 ## Authentication 
@@ -102,6 +103,18 @@ Snapshots are an easy way to capture the current state of your application. Once
 #### Delete a Database
 
     DELETE /databases/:user-name/:id
+
+<a name="Marketplace"/>
+
+## Marketplace
+
+#### Get all Marketplace Applications
+
+    GET /marketplace
+
+#### Get a specific Marketplace Application
+
+    GET /databases/:user-name/:id
 
 <a name="Logging"/>
 
