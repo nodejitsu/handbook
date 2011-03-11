@@ -22,8 +22,6 @@ If you do not have an account it is possible to create one using the User API, J
 
 ## Applications
 
-### Managing Applications
-
 #### Get All Applications for User
     
      GET /apps/:user-id
