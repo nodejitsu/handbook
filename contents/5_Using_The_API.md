@@ -3,7 +3,7 @@
 Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be RESTful and communicates via JSON.
 
 - [Applications](#Applications)
-- [Snapshots](#Deployment)
+- [Snapshots](#Snapshots)
 - [Users](#User)
 - [Databases](#Database)
 - [Logging](#Logging)
