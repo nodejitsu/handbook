@@ -24,7 +24,7 @@
     - User
     - Database
     - Logging
-- The MarketPlace
+- [The MarketPlace](6_The_Marketplace.md)
    - Deploying a Marketplace Application
    - Getting your Application on the Marketplace
 - Add-ons
