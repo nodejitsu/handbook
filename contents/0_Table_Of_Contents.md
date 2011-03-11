@@ -13,9 +13,9 @@
    - [Deploying from Jitsu, The Nodejitsu Command Line Tool]()
    - [Deploying from the API]()
 - [Setting Up Databases](3_Setting_Up_Databases.md)
-    - CouchDB
-    - Redis
-    - MongoDB
+    - [CouchDB]()
+    - [Redis]()
+    - [MongoDB]()
 - [Using the Jitsu Client](4_Using_The_Jitsu_Client.md)
     - [Overview]()
     - [Installation]()
