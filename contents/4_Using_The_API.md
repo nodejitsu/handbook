@@ -29,7 +29,8 @@ If you do not have an account it is possible to create one using the User API, J
 
 #### Create a new Application
 
-    POST /apps/:user-id
+     POST /apps/:user-id
+     { package.json }
 
 #### Start an Application
 
@@ -42,6 +43,11 @@ If you do not have an account it is possible to create one using the User API, J
 #### Restart an Application
      
      POST /apps/:user-name/:app-name/stop
+
+#### Update an Application
+
+     PUT /apps/:user-id
+     { package.json }
 
 #### Delete an Application
 
