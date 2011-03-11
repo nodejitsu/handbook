@@ -57,6 +57,11 @@ If you do not have an account it is possible to create one using the User API, J
 ### Snapshots
 ---
 
+Snapshots are an easy way to capture the current state of your application. Once a Snapshot of your application is created you can roll back and activate that Snapshot at any time. 
+
+#### Make an existing snapshot the active app
+    PUT /apps/:user-name/:app-name/snapshots/:id/active
+
 #### Deploy a snapshot
     POST /apps/:user-name/:snapshots/:id
 
@@ -65,10 +70,6 @@ If you do not have an account it is possible to create one using the User API, J
 
 #### Show the contents of a snapshot
     GET /apps/:user-name/:app-name/snapshots/:id
-
-#### Make an existing snapshot the active app
-    PUT /apps/:user-name/:app-name/snapshots/:id/active
-
 
 
 ## Users
