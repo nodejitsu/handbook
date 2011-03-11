@@ -6,7 +6,6 @@ TODO: add overview
 - [Deploying from Jitsu, The Nodejitsu Command Line Tool](#Jitsu) 
 - [Deploying from the API](#API)
 
-
 <a name="Samurai"/>
 
 ## Deploying from the Samurai web admin
