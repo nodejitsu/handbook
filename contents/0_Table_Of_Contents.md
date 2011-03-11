@@ -11,12 +11,6 @@
    - [Deploying from the Samurai web admin]()
    - [Deploying from Jitsu, The Nodejitsu Command Line Tool]()
    - [Deploying from the API]()
-- [Databases](3_Setting_Up_Databases.md)
-    - Creating new Databases
-        - [CouchDB]()
-        - [Redis]()
-        - [MongoDB]()
-    - Connecting existing Databases
 - [Using the Jitsu Client](4_Using_The_Jitsu_Client.md)
     - [Installation]()
     - [Usage]()
@@ -26,6 +20,12 @@
     - User
     - Database
     - Logging
+- [Databases](3_Setting_Up_Databases.md)
+    - Creating new Databases
+        - [CouchDB]()
+        - [Redis]()
+        - [MongoDB]()
+    - Connecting existing Databases
 - [The MarketPlace](6_The_Marketplace.md)
    - Deploying a Marketplace Application
    - Getting your Application on the Marketplace
