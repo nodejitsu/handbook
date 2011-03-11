@@ -24,29 +24,30 @@ If you do not have an account it is possible to create one using the User API, J
 
 ### Managing Applications
 
-## Get All Applications for User
+#### Get All Applications for User
     
      GET /apps/:user-id
 
-## Create A New Application
+#### Create A New Application
 
     POST /apps/:user-id/
 
 
-## Start an application
+#### Start an application
 
      POST /apps/:user-name/:app-name/restart
 
-## Stop an application
+#### Stop an application
      
      POST /apps/:user-name/:app-name/start
 
-## Restart an application
+#### Restart an application
      
      POST /apps/:user-name/:app-name/stop
 
+#### Delete an application
 
-DELETE /apps/:user-name/:app-name/remove
+     DELETE /apps/:user-name/:app-name/remove
 
 
 ## Get an app for a user
