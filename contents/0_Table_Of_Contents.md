@@ -12,7 +12,7 @@
    - [Deploying from the Samurai web admin]()
    - [Deploying from Jitsu, The Nodejitsu Command Line Tool]()
    - [Deploying from the API]()
-- [Setting Up Databases](3_Setting_Up_A_Databases.md)
+- [Setting Up Databases](3_Setting_Up_Databases.md)
     - CouchDB
     - Redis
     - MongoDB
