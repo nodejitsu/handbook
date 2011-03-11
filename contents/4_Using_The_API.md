@@ -14,7 +14,11 @@ Nodejitsu provides a web API for users who want to interact with the Nodejitsu p
 
 ## Authentication 
 
-The Nodejitsu API currently relies on Basic Authentication. Most of the calls to the API will require that you autenticate using your Nodejitsu account.
+Most of the calls to the API will require that you authenticate using your Nodejitsu account. Currently, we are using Basic Authentication. 
+
+     Here is an example of using basic auth with curl
+
+If you do not have an account, it is possible to create one using the API. 
 
 ## Applications
 
