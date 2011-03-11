@@ -15,11 +15,11 @@ If you require database hosting, you can create a new database instance of any o
 
 ## Existing Databases
 
-If you already have a data
+If you already have an externally hosted Database, Nodejitsu is capable of connecting to it. We've got Database hosting if you need it, but we fully support externally hosted Databases. 
 
 ## Connecting Applications to Databases
 
-If you want to connect a Database to your Node.js application, Nodejitsu provides you with sample code for each Database type as well as the abiltity to specify database connection strings in your application's package.json
+If you want to connect a Database to your Node.js application, Nodejitsu provides you with sample code for each Database type as well as the ability to specify database connection strings in your application's package.json
 
 ## Supported Databases
 
