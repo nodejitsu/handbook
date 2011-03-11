@@ -72,20 +72,42 @@ Snapshots are an easy way to capture the current state of your application. Once
 
 <a name="Users"/>
 
+#### Signup a new User
 
-#### Signup as a new User
+     TODO:
 
 #### Confirm a User account
 
+     TODO:
+
 #### Update User
 
-## Deployment
+     TODO:
+
+## Databases
+
+<a name="Databases"/>
+
+#### Create a new Database
+
+     POST /databases/:user-name/:id
+       {
+         type: "Couch || Redis || Mongo"
+       }
+
+#### Get information about a Database
+
+    GET /databases/:user-name/:id
+
+#### Delete a Database
+
+    DELETE /databases/:user-name/:id
 
 ## Logging
 
-## Get all logs for a user or for an app
-GET /logs/:user-name/
+## Get all logs for a user
+     GET /logs/:user-name/
 
 ## Get logs for a specific application
-GET /logs/:user-name/:app-name
+     GET /logs/:user-name/:app-name
 
