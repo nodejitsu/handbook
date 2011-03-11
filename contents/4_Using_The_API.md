@@ -1,7 +1,7 @@
 # Using The API
 
 - Overview
-- Application
+- [Application](#Applications)
 - Deployment
 - User
 - Database
@@ -21,6 +21,7 @@ Most of the calls to the API will require that you authenticate using your Nodej
 If you do not have an account it is possible to create one using the User API, Jitsu, or just by visiting http://nodejitsu.com
 
 ## Applications
+<a name="Applications"/>
 
 #### Get all applications for a User
     
@@ -28,8 +29,7 @@ If you do not have an account it is possible to create one using the User API, J
 
 #### Create a new Application
 
-    POST /apps/:user-id/
-
+    POST /apps/:user-id
 
 #### Start an Application
 
