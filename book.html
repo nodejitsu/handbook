@@ -43,13 +43,12 @@
 <div class='mp'>
 <h1>Table of Contents</h1>
 <ul>
-<li><a href="1_Introduction.md">Introduction</a></li>
-<li><a href="Deploying_Applications.md">Deploying Applications</a>
+<li><a href="#Deploying_Applications" data-bare-link="true">Deploying Applications</a>
 
 <ul>
-<li><a href="">Deploying from the Samurai web admin</a></li>
-<li><a href="">Deploying from Jitsu, The Nodejitsu Command Line Tool</a></li>
-<li><a href="">Deploying from the API</a></li>
+<li>Deploying from the Samurai web admin</li>
+<li>Deploying from Jitsu, The Nodejitsu Command Line Tool</li>
+<li>Deploying from the API</li>
 </ul>
 </li>
 <li><a href="Using_The_Jitsu_Client.md">Using the Jitsu Client</a>
@@ -59,7 +58,7 @@
 <li><a href="">Usage</a></li>
 </ul>
 </li>
-<li><a href="Using_The_API.md">Using the API</a>
+<li><a href="#Using_The_API" data-bare-link="true">Using the API</a>
 
 <ul>
 <li><a href="#Applications" data-bare-link="true">Applications</a></li>
@@ -217,7 +216,9 @@ Deploying Applications</h1>
 
 </div>
 <div class='mp'>
-<h1>Using The API</h1>
+<h1><p><a name="Using_The_API"></a></p>
+
+Using The API</h1>
 <p>Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be RESTful and communicates via JSON.</p>
 
 <ul>
@@ -232,16 +233,19 @@ Deploying Applications</h1>
 
 <h2 id="Authentication">Authentication</h2>
 
-<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. Currently, we support Basic Authentication.</p>
+<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the User API, the Jitsu CLI, or just by visiting <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a>. Currently, we support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a>. If you haven't used Basic Auth before don't fret, it's easy!</p>
 
-<pre><code> TODO: Here is an example of using basic auth with curl
+<p><strong>Here is an example using the command line utility, <a href="http://curl.haxx.se/">Curl</a>.</strong></p>
+
+<pre><code> // get all applications for User "Marak"
+ curl --user Marak:password http://nodejitsu.com/apps/marak
 </code></pre>
-
-<p>If you do not have an account it is possible to create one using the User API, Jitsu, or just by visiting <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a></p>
 
 <p><a name="Applications"></a></p>
 
 <h2 id="Applications">Applications</h2>
+
+<p>Applications are the core of the Nodejitsu API. Each application represents a set Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: LINKTO: package.json docs</p>
 
 <h4 id="Get-all-applications-for-a-User">Get all applications for a User</h4>
 
@@ -256,17 +260,17 @@ Deploying Applications</h1>
 
 <h4 id="Start-an-Application">Start an Application</h4>
 
-<pre><code> POST /apps/:user-name/:app-name/restart
+<pre><code> POST /apps/:user-id/:app-id/restart
 </code></pre>
 
 <h4 id="Stop-an-Application">Stop an Application</h4>
 
-<pre><code> POST /apps/:user-name/:app-name/start
+<pre><code> POST /apps/:user-id/:app-id/start
 </code></pre>
 
 <h4 id="Restart-an-Application">Restart an Application</h4>
 
-<pre><code> POST /apps/:user-name/:app-name/stop
+<pre><code> POST /apps/:user-id/:app-id/stop
 </code></pre>
 
 <h4 id="Update-an-Application">Update an Application</h4>
@@ -277,7 +281,7 @@ Deploying Applications</h1>
 
 <h4 id="Delete-an-Application">Delete an Application</h4>
 
-<pre><code> DELETE /apps/:user-name/:app-name/remove
+<pre><code> DELETE /apps/:user-id/:app-id/remove
 </code></pre>
 
 <p><a name="Snapshots"></a></p>
@@ -288,22 +292,22 @@ Deploying Applications</h1>
 
 <h4 id="Make-an-existing-snapshot-the-active-app">Make an existing snapshot the active app</h4>
 
-<pre><code>PUT /apps/:user-name/:app-name/snapshots/:id/active
+<pre><code>PUT /apps/:user-id/:app-id/snapshots/:id/active
 </code></pre>
 
 <h4 id="Activate-Deploy-a-snapshot">Activate / Deploy a snapshot</h4>
 
-<pre><code>POST /apps/:user-name/:snapshots/:id
+<pre><code>POST /apps/:user-id/:snapshots/:id
 </code></pre>
 
 <h4 id="Show-a-catalog-of-all-Snapshot-for-an-Application">Show a catalog of all Snapshot for an Application</h4>
 
-<pre><code>GET /apps/:user-name/:app-name/snapshots
+<pre><code>GET /apps/:user-id/:app-id/snapshots
 </code></pre>
 
 <h4 id="Show-the-contents-of-a-Snapshot">Show the contents of a Snapshot</h4>
 
-<pre><code>GET /apps/:user-name/:app-name/snapshots/:id
+<pre><code>GET /apps/:user-id/:app-id/snapshots/:id
 </code></pre>
 
 <p><a name="Users"></a></p>
@@ -331,7 +335,7 @@ Deploying Applications</h1>
 
 <h4 id="Create-a-new-Database">Create a new Database</h4>
 
-<pre><code> POST /databases/:user-name/:id
+<pre><code> POST /databases/:user-id/:id
 
  {
    type: "Couch || Redis || Mongo"
@@ -340,12 +344,12 @@ Deploying Applications</h1>
 
 <h4 id="Get-information-about-a-Database">Get information about a Database</h4>
 
-<pre><code>GET /databases/:user-name/:id
+<pre><code>GET /databases/:user-id/:id
 </code></pre>
 
 <h4 id="Delete-a-Database">Delete a Database</h4>
 
-<pre><code>DELETE /databases/:user-name/:id
+<pre><code>DELETE /databases/:user-id/:id
 </code></pre>
 
 <p><a name="Marketplace"></a></p>
@@ -359,7 +363,7 @@ Deploying Applications</h1>
 
 <h4 id="Get-a-specific-Marketplace-Application">Get a specific Marketplace Application</h4>
 
-<pre><code>GET /databases/:user-name/:id
+<pre><code>GET /databases/:user-id/:id
 </code></pre>
 
 <p><a name="Logging"></a></p>
@@ -368,12 +372,12 @@ Deploying Applications</h1>
 
 <h4 id="Get-all-logs-for-a-user">Get all logs for a user</h4>
 
-<pre><code> GET /logs/:user-name/
+<pre><code> GET /logs/:user-id/
 </code></pre>
 
 <h4 id="Get-logs-for-a-specific-application">Get logs for a specific application</h4>
 
-<pre><code> GET /logs/:user-name/:app-name
+<pre><code> GET /logs/:user-id/:app-id
 </code></pre>
 
 </div>

@@ -1,15 +1,14 @@
 
 # Table of Contents
 
-- [Introduction](1_Introduction.md)
-- [Deploying Applications](Deploying_Applications.md)
-   - [Deploying from the Samurai web admin]()
-   - [Deploying from Jitsu, The Nodejitsu Command Line Tool]()
-   - [Deploying from the API]()
+- [Deploying Applications](#Deploying_Applications)
+   - Deploying from the Samurai web admin
+   - Deploying from Jitsu, The Nodejitsu Command Line Tool
+   - Deploying from the API
 - [Using the Jitsu Client](Using_The_Jitsu_Client.md)
     - [Installation]()
     - [Usage]()
-- [Using the API](Using_The_API.md)
+- [Using the API](#Using_The_API)
     - [Applications](#Applications)
     - [Snapshots](#Snapshots)
     - [Users](#User)
