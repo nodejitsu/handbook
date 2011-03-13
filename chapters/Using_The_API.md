@@ -17,7 +17,7 @@ Most of the calls to the API will require that you authenticate using your Nodej
 
 If you do not have an account it is possible to create one using the User API, Jitsu, or just by visiting [http://nodejitsu.com](http://nodejitsu.com)
 
-<a name="Applications"/>
+<a name="Applications"></a>
 ## Applications
 
 #### Get all applications for a User
@@ -50,7 +50,7 @@ If you do not have an account it is possible to create one using the User API, J
 
      DELETE /apps/:user-name/:app-name/remove
 
-<a name="Snapshots"/>
+<a name="Snapshots"></a>
 
 ## Snapshots
 
@@ -68,7 +68,7 @@ Snapshots are an easy way to capture the current state of your application. Once
 #### Show the contents of a Snapshot
     GET /apps/:user-name/:app-name/snapshots/:id
 
-<a name="Users"/>
+<a name="Users"></a>
 
 ## Users
 
@@ -84,7 +84,7 @@ Snapshots are an easy way to capture the current state of your application. Once
 
      TODO:
 
-<a name="Databases"/>
+<a name="Databases"></a>
 
 ## Databases
 
@@ -104,7 +104,7 @@ Snapshots are an easy way to capture the current state of your application. Once
 
     DELETE /databases/:user-name/:id
 
-<a name="Marketplace"/>
+<a name="Marketplace"></a>
 
 ## Marketplace
 
@@ -116,7 +116,7 @@ Snapshots are an easy way to capture the current state of your application. Once
 
     GET /databases/:user-name/:id
 
-<a name="Logging"/>
+<a name="Logging"></a>
 
 ## Logging
 

@@ -1,0 +1,161 @@
+<div class='mp'>
+<h1>Using The API</h1>
+<p>Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be RESTful and communicates via JSON.</p>
+
+<ul>
+<li><a href="#Applications" data-bare-link="true">Applications</a></li>
+<li><a href="#Snapshots" data-bare-link="true">Snapshots</a></li>
+<li><a href="#User" data-bare-link="true">Users</a></li>
+<li><a href="#Database" data-bare-link="true">Databases</a></li>
+<li><a href="#Marketplace" data-bare-link="true">Marketplace</a></li>
+<li><a href="#Logging" data-bare-link="true">Logging</a></li>
+</ul>
+
+
+<h2 id="Authentication">Authentication</h2>
+
+<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. Currently, we support Basic Authentication.</p>
+
+<pre><code> TODO: Here is an example of using basic auth with curl
+</code></pre>
+
+<p>If you do not have an account it is possible to create one using the User API, Jitsu, or just by visiting <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a></p>
+
+<p><a name="Applications"></a></p>
+
+<h2 id="Applications">Applications</h2>
+
+<h4 id="Get-all-applications-for-a-User">Get all applications for a User</h4>
+
+<pre><code> GET /apps/:user-id
+</code></pre>
+
+<h4 id="Create-a-new-Application">Create a new Application</h4>
+
+<pre><code> POST /apps/:user-id
+ { package.json }
+</code></pre>
+
+<h4 id="Start-an-Application">Start an Application</h4>
+
+<pre><code> POST /apps/:user-name/:app-name/restart
+</code></pre>
+
+<h4 id="Stop-an-Application">Stop an Application</h4>
+
+<pre><code> POST /apps/:user-name/:app-name/start
+</code></pre>
+
+<h4 id="Restart-an-Application">Restart an Application</h4>
+
+<pre><code> POST /apps/:user-name/:app-name/stop
+</code></pre>
+
+<h4 id="Update-an-Application">Update an Application</h4>
+
+<pre><code> PUT /apps/:user-id
+ { package.json }
+</code></pre>
+
+<h4 id="Delete-an-Application">Delete an Application</h4>
+
+<pre><code> DELETE /apps/:user-name/:app-name/remove
+</code></pre>
+
+<p><a name="Snapshots"></a></p>
+
+<h2 id="Snapshots">Snapshots</h2>
+
+<p>Snapshots are an easy way to capture the current state of your application. Once a Snapshot of your application is created you can roll back and activate that Snapshot at any time.</p>
+
+<h4 id="Make-an-existing-snapshot-the-active-app">Make an existing snapshot the active app</h4>
+
+<pre><code>PUT /apps/:user-name/:app-name/snapshots/:id/active
+</code></pre>
+
+<h4 id="Activate-Deploy-a-snapshot">Activate / Deploy a snapshot</h4>
+
+<pre><code>POST /apps/:user-name/:snapshots/:id
+</code></pre>
+
+<h4 id="Show-a-catalog-of-all-Snapshot-for-an-Application">Show a catalog of all Snapshot for an Application</h4>
+
+<pre><code>GET /apps/:user-name/:app-name/snapshots
+</code></pre>
+
+<h4 id="Show-the-contents-of-a-Snapshot">Show the contents of a Snapshot</h4>
+
+<pre><code>GET /apps/:user-name/:app-name/snapshots/:id
+</code></pre>
+
+<p><a name="Users"></a></p>
+
+<h2 id="Users">Users</h2>
+
+<h4 id="Signup-a-new-User">Signup a new User</h4>
+
+<pre><code> TODO:
+</code></pre>
+
+<h4 id="Confirm-a-User-account">Confirm a User account</h4>
+
+<pre><code> TODO:
+</code></pre>
+
+<h4 id="Update-User">Update User</h4>
+
+<pre><code> TODO:
+</code></pre>
+
+<p><a name="Databases"></a></p>
+
+<h2 id="Databases">Databases</h2>
+
+<h4 id="Create-a-new-Database">Create a new Database</h4>
+
+<pre><code> POST /databases/:user-name/:id
+
+ {
+   type: "Couch || Redis || Mongo"
+ }
+</code></pre>
+
+<h4 id="Get-information-about-a-Database">Get information about a Database</h4>
+
+<pre><code>GET /databases/:user-name/:id
+</code></pre>
+
+<h4 id="Delete-a-Database">Delete a Database</h4>
+
+<pre><code>DELETE /databases/:user-name/:id
+</code></pre>
+
+<p><a name="Marketplace"></a></p>
+
+<h2 id="Marketplace">Marketplace</h2>
+
+<h4 id="Get-all-Marketplace-Applications">Get all Marketplace Applications</h4>
+
+<pre><code>GET /marketplace
+</code></pre>
+
+<h4 id="Get-a-specific-Marketplace-Application">Get a specific Marketplace Application</h4>
+
+<pre><code>GET /databases/:user-name/:id
+</code></pre>
+
+<p><a name="Logging"></a></p>
+
+<h2 id="Logging">Logging</h2>
+
+<h4 id="Get-all-logs-for-a-user">Get all logs for a user</h4>
+
+<pre><code> GET /logs/:user-name/
+</code></pre>
+
+<h4 id="Get-logs-for-a-specific-application">Get logs for a specific application</h4>
+
+<pre><code> GET /logs/:user-name/:app-name
+</code></pre>
+
+</div>

@@ -1,6 +1,10 @@
+# Makefile originally from the 'Mastering Node' book written TJ Holowaychuk
+# https://github.com/visionmedia/masteringnode
+#
+
 PDF_FLAGS = --fontsize 9.0 \
 			--linkstyle plain \
-			--linkcolor green \
+			--linkcolor blue \
 			--embedfonts \
 			--footer "c 1" \
 			--no-toc
@@ -43,9 +47,9 @@ book.mobi:
 book.epub:
 	@echo "\n... generating $@"
 	ebook-convert book.html book.epub \
-		--title "Mastering Node" \
+		--title "Nodejitsu Handbook" \
 		--no-default-epub-cover \
-		--authors "TJ Holowaychuk" \
+		--authors "Marak Squires" \
 		--language en \
 		--cover pages/cover.jpg
 

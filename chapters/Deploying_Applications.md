@@ -1,3 +1,4 @@
+<a name="Deploying_Applications"></a>
 # Deploying Applications
 
 TODO: add overview
@@ -6,13 +7,13 @@ TODO: add overview
 - [Deploying from Jitsu, The Nodejitsu Command Line Tool](#Jitsu) 
 - [Deploying from the API](#API)
 
-<a name="Samurai"/>
+<a name="Samurai"></a>
 
 ## Deploying from the Samurai web admin
 
 The Samurai web admin is an easy to use web-site where you can manage and deploy your node.js applications. Simply visit www.nodejitsu.com and sign-in. You'll be taken directly to the Samurai web admin interface.
 
-<a name="Jitsu"/>
+<a name="Jitsu"></a>
 
 ## Deploying from Jitsu, The Nodejitsu Command Line Tool 
 
@@ -20,7 +21,7 @@ If you prefer CLI ( Command Line Interface ) tools over web-sites you can downlo
 
 ### Additional Jitsu resources
 
-<a name="API"/>
+<a name="API"></a>
 
 ## Deploying from the API
 
