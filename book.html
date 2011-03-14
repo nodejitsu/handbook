@@ -51,7 +51,7 @@
 <li>Deploying from the API</li>
 </ul>
 </li>
-<li><a href="Using_The_Jitsu_Client.md">Using the Jitsu Client</a>
+<li><a href="#Using_The_Jitsu_Client" data-bare-link="true">Using the Jitsu Client</a>
 
 <ul>
 <li><a href="">Installation</a></li>
@@ -83,14 +83,14 @@
 <li>Connecting existing Databases</li>
 </ul>
 </li>
-<li><a href="The_Marketplace.md">The MarketPlace</a>
+<li><a href="#The_Marketplace" data-bare-link="true">The MarketPlace</a>
 
 <ul>
 <li>Deploying a Marketplace Application</li>
 <li>Getting your Application on the Marketplace</li>
 </ul>
 </li>
-<li><a href="Add_Ons.md">Add-Ons</a>
+<li><a href="#Add_Ons" data-bare-link="true">Add-Ons</a>
 
 <ul>
 <li>MailChimp</li>
@@ -98,7 +98,7 @@
 <li>Adding your service as an add-on</li>
 </ul>
 </li>
-<li><a href="Open_source_Projects.md">Nodejitsu's Open-source Projects</a>
+<li><a href="#Open_source_Projects" data-bare-link="true">Nodejitsu's Open-source Projects</a>
 
 <ul>
 <li>Why open-source?</li>
@@ -114,7 +114,7 @@
 <h1><p><a name="Deploying_Applications"></a></p>
 
 Deploying Applications</h1>
-<p>TODO: add overview</p>
+<p>There are a few options for how you can deploy your Application to Nodejitsu.</p>
 
 <ul>
 <li><a href="#Samurai" data-bare-link="true">Deploying from the Samurai web admin</a></li>
@@ -195,8 +195,10 @@ Deploying Applications</h1>
 
 </div>
 <div class='mp'>
-<h1>Using The Jitsu Client</h1>
-<p>Jitsu is a Command Line Tool (CLI) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line, you can still pretty much do everything Jitsu can do through our web interface, Samurai.</p>
+<h1><p><a name="Using_The_Jitsu_Client"></a></p>
+
+Using The Jitsu Client</h1>
+<p><a href="http://github.com/nodejitsu/jitsu">Jitsu</a> is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Tool (CLI)</a> for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access, you can still do everything Jitsu can do through our web admin, <a href="#Samurai" data-bare-link="true">Samurai</a>.</p>
 
 <ul>
 <li><a href="">Installation</a></li>
@@ -219,7 +221,7 @@ Deploying Applications</h1>
 <h1><p><a name="Using_The_API"></a></p>
 
 Using The API</h1>
-<p>Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be RESTful and communicates via JSON.</p>
+<p>Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTful</a> and communicates via <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>.</p>
 
 <ul>
 <li><a href="#Applications" data-bare-link="true">Applications</a></li>
@@ -241,11 +243,13 @@ Using The API</h1>
  curl --user Marak:password http://nodejitsu.com/apps/marak
 </code></pre>
 
+<p>TODO: add example of what raw outgoing http request should look like</p>
+
 <p><a name="Applications"></a></p>
 
 <h2 id="Applications">Applications</h2>
 
-<p>Applications are the core of the Nodejitsu API. Each application represents a set Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: LINKTO: package.json docs</p>
+<p>Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: LINKTO: package.json docs</p>
 
 <h4 id="Get-all-applications-for-a-User">Get all applications for a User</h4>
 

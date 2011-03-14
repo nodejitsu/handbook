@@ -62,5 +62,6 @@ clean:
 
 clear:
 	rm -f chapters/*.html
+	rm -f pages/index.html
 
 .PHONY: view clean regenerate

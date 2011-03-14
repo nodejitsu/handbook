@@ -5,7 +5,7 @@
    - Deploying from the Samurai web admin
    - Deploying from Jitsu, The Nodejitsu Command Line Tool
    - Deploying from the API
-- [Using the Jitsu Client](Using_The_Jitsu_Client.md)
+- [Using the Jitsu Client](#Using_The_Jitsu_Client)
     - [Installation]()
     - [Usage]()
 - [Using the API](#Using_The_API)
@@ -21,14 +21,14 @@
         - [Redis]()
         - [MongoDB]()
     - Connecting existing Databases
-- [The MarketPlace](The_Marketplace.md)
+- [The MarketPlace](#The_Marketplace)
    - Deploying a Marketplace Application
    - Getting your Application on the Marketplace
-- [Add-Ons](Add_Ons.md)
+- [Add-Ons](#Add_Ons)
     - MailChimp
     - Cloud9
     - Adding your service as an add-on
-- [Nodejitsu's Open-source Projects](Open_source_Projects.md)
+- [Nodejitsu's Open-source Projects](#Open_source_Projects)
     - Why open-source?
     - Where to find
     - How to contribute

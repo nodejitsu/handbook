@@ -1,7 +1,7 @@
 <a name="Using_The_API"></a>
 # Using The API
 
-Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be RESTful and communicates via JSON.
+Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON).
 
 - [Applications](#Applications)
 - [Snapshots](#Snapshots)
@@ -19,10 +19,12 @@ Most of the calls to the API will require that you authenticate using your Nodej
      // get all applications for User "Marak"
      curl --user Marak:password http://nodejitsu.com/apps/marak
 
+TODO: add example of what raw outgoing http request should look like
+
 <a name="Applications"></a>
 ## Applications
 
-Applications are the core of the Nodejitsu API. Each application represents a set Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: LINKTO: package.json docs
+Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: LINKTO: package.json docs
 
 #### Get all applications for a User
     
@@ -138,8 +140,10 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 ## Logging
 
 #### Get all logs for a user
+
      GET /logs/:user-id/
 
 #### Get logs for a specific application
+
      GET /logs/:user-id/:app-id
 

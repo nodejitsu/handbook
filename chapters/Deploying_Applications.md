@@ -1,7 +1,7 @@
 <a name="Deploying_Applications"></a>
 # Deploying Applications
 
-TODO: add overview
+There are a few options for how you can deploy your Application to Nodejitsu.
 
 - [Deploying from the Samurai web admin](#Samurai)
 - [Deploying from Jitsu, The Nodejitsu Command Line Tool](#Jitsu) 
