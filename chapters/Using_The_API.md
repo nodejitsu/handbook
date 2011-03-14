@@ -76,18 +76,31 @@ Snapshots are an easy way to capture the current state of your application. Once
 
 ## Users
 
-#### Signup a new User
+#### Create a new User / Sign-up for a free Nodejitsu account
 
-     TODO:
+Email address is the only required field.
+
+     POST /users/:user-id
+     {
+       email: "youremail@theinternet.com"
+     }
 
 #### Confirm a User account
 
-     TODO:
+All User accounts must be confirmed. When a new User is created, a confirmation email will be sent to the email address associated with that user. In this email address, you will receive an invite code. This code must be sent to the API to confirm the account. 
+
+    POST /users/:user-id
+    {
+      inviteCode: "SecretCode"
+    }
 
 #### Update User
 
-     TODO:
-
+    PUT /users/:user-id
+    {
+      password: "new_password"
+    }
+     
 <a name="Databases"></a>
 
 ## Databases

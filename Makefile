@@ -21,7 +21,7 @@ MD = pages/index.md \
 
 HTML = $(MD:.md=.html)
 
-all: book.html book.pdf book.mobi book.epub
+all: book.html book.pdf clear
 
 regenerate: clean all
 	git commit -a -m 'Regenerated book' && echo done
@@ -58,6 +58,9 @@ view: book.pdf
 
 clean:
 	rm -f book.*
+	rm -f chapters/*.html
+
+clear:
 	rm -f chapters/*.html
 
 .PHONY: view clean regenerate

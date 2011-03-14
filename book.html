@@ -314,19 +314,32 @@ Using The API</h1>
 
 <h2 id="Users">Users</h2>
 
-<h4 id="Signup-a-new-User">Signup a new User</h4>
+<h4 id="Create-a-new-User-Sign-up-for-a-free-Nodejitsu-account">Create a new User / Sign-up for a free Nodejitsu account</h4>
 
-<pre><code> TODO:
+<p>Email address is the only required field.</p>
+
+<pre><code> POST /users/:user-id
+ {
+   email: "youremail@theinternet.com"
+ }
 </code></pre>
 
 <h4 id="Confirm-a-User-account">Confirm a User account</h4>
 
-<pre><code> TODO:
+<p>All User accounts must be confirmed. When a new User is created, a confirmation email will be sent to the email address associated with that user. In this email address, you will receive an invite code. This code must be sent to the API to confirm the account.</p>
+
+<pre><code>POST /users/:user-id
+{
+  inviteCode: "SecretCode"
+}
 </code></pre>
 
 <h4 id="Update-User">Update User</h4>
 
-<pre><code> TODO:
+<pre><code>PUT /users/:user-id
+{
+  password: "new_password"
+}
 </code></pre>
 
 <p><a name="Databases"></a></p>
