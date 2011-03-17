@@ -6,7 +6,7 @@ Nodejitsu provides a web API for users who want to interact with the Nodejitsu p
 - [Applications](#Applications)
 - [Snapshots](#Snapshots)
 - [Users](#User)
-- [Databases](#Database)
+- [Databases](#API_Databases)
 - [Marketplace](#Marketplace)
 - [Logging](#Logging)
 
@@ -107,9 +107,11 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 ## Databases
 
+In integral part to most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go, MongoHQ.
+
 #### Create a new Database
 
-     POST /databases/:user-id/:id
+     POST /databases/:user-id/:database-id
        
      {
        type: "Couch || Redis || Mongo"
@@ -117,15 +119,18 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 #### Get information about a Database
 
-    GET /databases/:user-id/:id
+    GET /databases/:user-id/:database-id
 
 #### Delete a Database
 
-    DELETE /databases/:user-id/:id
+    DELETE /databases/:user-id/:database-id
 
 <a name="Marketplace"></a>
 
 ## Marketplace
+
+The Marketplace is an online store where you can browse ready to go Node.js Applications and clone and deploy your own copy in seconds. The Marketplace is a great place to start if you are new to Node.js development or want to share your existing Node.js Application with the world.
+
 
 #### Get all Marketplace Applications
 

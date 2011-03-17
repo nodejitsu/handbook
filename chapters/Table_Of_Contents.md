@@ -12,18 +12,12 @@
     - [Applications](#Applications)
     - [Snapshots](#Snapshots)
     - [Users](#User)
-    - [Databases](#Database)
+    - [Databases](#Databases)
     - [Marketplace](#Marketplace)
     - [Logging](#Logging)
-- [Databases](Setting_Up_Databases.md)
+- [Using Databases](#Using_Databases)
     - Creating new Databases
-        - [CouchDB]()
-        - [Redis]()
-        - [MongoDB]()
     - Connecting existing Databases
-- [The MarketPlace](#The_Marketplace)
-   - Deploying a Marketplace Application
-   - Getting your Application on the Marketplace
 - [Nodejitsu's Open-source Projects](#Open_source_Projects)
     - Why open-source?
     - Where to find

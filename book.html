@@ -64,30 +64,16 @@
 <li><a href="#Applications" data-bare-link="true">Applications</a></li>
 <li><a href="#Snapshots" data-bare-link="true">Snapshots</a></li>
 <li><a href="#User" data-bare-link="true">Users</a></li>
-<li><a href="#Database" data-bare-link="true">Databases</a></li>
+<li><a href="#Databases" data-bare-link="true">Databases</a></li>
 <li><a href="#Marketplace" data-bare-link="true">Marketplace</a></li>
 <li><a href="#Logging" data-bare-link="true">Logging</a></li>
 </ul>
 </li>
-<li><a href="Setting_Up_Databases.md">Databases</a>
+<li><a href="#Using_Databases" data-bare-link="true">Using Databases</a>
 
 <ul>
-<li>Creating new Databases
-
-<ul>
-<li><a href="">CouchDB</a></li>
-<li><a href="">Redis</a></li>
-<li><a href="">MongoDB</a></li>
-</ul>
-</li>
+<li>Creating new Databases</li>
 <li>Connecting existing Databases</li>
-</ul>
-</li>
-<li><a href="#The_Marketplace" data-bare-link="true">The MarketPlace</a>
-
-<ul>
-<li>Deploying a Marketplace Application</li>
-<li>Getting your Application on the Marketplace</li>
 </ul>
 </li>
 <li><a href="#Open_source_Projects" data-bare-link="true">Nodejitsu's Open-source Projects</a>
@@ -108,82 +94,22 @@
 Deploying Applications</h1>
 <p>There are a few options for how you can deploy your Application to Nodejitsu.</p>
 
-<ul>
-<li><a href="#Samurai" data-bare-link="true">Deploying from the Samurai web admin</a></li>
-<li><a href="#Jitsu" data-bare-link="true">Deploying from Jitsu, The Nodejitsu Command Line Tool</a></li>
-<li><a href="#API" data-bare-link="true">Deploying from the API</a></li>
-</ul>
-
-
-<p><a name="Samurai"></a></p>
-
 <h2 id="Deploying-from-the-Samurai-web-admin">Deploying from the Samurai web admin</h2>
 
-<p>The Samurai web admin is an easy to use web-site where you can manage and deploy your node.js applications. Simply visit www.nodejitsu.com and sign-in. You'll be taken directly to the Samurai web admin interface.</p>
+<p>The Samurai web admin is an easy to use web-site where you can manage and deploy your Node.js applications. Simply visit <a href="http://www.nodejitsu.com" data-bare-link="true">http://www.nodejitsu.com</a> and sign-in. You'll be taken directly to the Samurai web admin interface.</p>
 
-<p><a name="Jitsu"></a></p>
+<pre><code> TODO: Add screen shot of Samurai interface
+</code></pre>
 
 <h2 id="Deploying-from-Jitsu-The-Nodejitsu-Command-Line-Tool">Deploying from Jitsu, The Nodejitsu Command Line Tool</h2>
 
-<p>If you prefer CLI ( Command Line Interface ) tools over web-sites you can download Jitsu, The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire <a href="API" data-bare-link="true">API</a> and it's fully open-source for the more advanced node.js user.</p>
-
-<h3 id="Additional-Jitsu-resources">Additional Jitsu resources</h3>
-
-<p><a name="API"></a></p>
+<p>If you prefer a CLI ( Command Line Interface ) instead of a web-site you can download <a href="#Using_The_Jitsu_Client" data-bare-link="true">Jitsu</a>, The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire <a href="#API" data-bare-link="true">API</a> and it's fully open-source for the more advanced Node.js user.</p>
 
 <h2 id="Deploying-from-the-API">Deploying from the API</h2>
 
-<p>If you are an advanced user, you might want to automate your deployment using scripts instead of manually deploying your application using Samurai or Jitsu. Nodejitsu provides a high-level JSON API which will allow you to deploy applications, as well as many other features.</p>
+<p>If you are an advanced user, you might want to automate your deployment using scripts instead of manually deploying your application from Samurai or Jitsu. Nodejitsu provides a <a href="#Using_The_API" data-bare-link="true">high-level JSON API</a> which will allow you to deploy applications as well as many other features.</p>
 
-<pre><code> // curl code for deploying a new app
-</code></pre>
-
-<p>You can see a detailed specification of the API here: LINKTO: api docs</p>
-
-</div>
-<div class='mp'>
-<h1>Setting Up A Database For Your Application</h1>
-<p>Nodejitsu has several Node.js friendly databases ready to be used by your application. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database, we provide an easy upgrade path with our partners such as Redis2Go, CouchOne, and MongoHQ.</p>
-
-<ul>
-<li>Creating new Databases
-
-<ul>
-<li><a href="">CouchDB</a></li>
-<li><a href="">Redis</a></li>
-<li><a href="">MongoDB</a></li>
-</ul>
-</li>
-<li>Connecting existing Databases</li>
-</ul>
-
-
-<h2 id="Creating-new-Databases">Creating new Databases</h2>
-
-<p>If you require database hosting, you can create a new database instance of any of our supported databases using Samaruai, Jitsu, or our API.</p>
-
-<h3 id="CouchDB">CouchDB</h3>
-
-<pre><code>TODO: add section
-</code></pre>
-
-<h3 id="Redis">Redis</h3>
-
-<pre><code>TODO: add section
-</code></pre>
-
-<h3 id="MongoDB">MongoDB</h3>
-
-<pre><code>TODO: add section
-</code></pre>
-
-<h2 id="Existing-Databases">Existing Databases</h2>
-
-<p>If you already have an externally hosted Database, Nodejitsu is capable of connecting to it. We've got Database hosting if you need it, but we fully support externally hosted Databases.</p>
-
-<h2 id="Connecting-Applications-to-Databases">Connecting Applications to Databases</h2>
-
-<p>If you want to connect a Database to your Node.js application, Nodejitsu provides you with sample code for each Database type as well as the ability to specify database connection strings in your application's package.json</p>
+<p>You can see a detailed specification of the <a href="#Using_The_API" data-bare-link="true">high-level JSON API</a> here.</p>
 
 </div>
 <div class='mp'>
@@ -192,21 +118,17 @@ Deploying Applications</h1>
 Using The Jitsu Client</h1>
 <p><a href="http://github.com/nodejitsu/jitsu">Jitsu</a> is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Tool (CLI)</a> for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access, you can still do everything Jitsu can do through our web admin, <a href="#Samurai" data-bare-link="true">Samurai</a>.</p>
 
-<ul>
-<li><a href="">Installation</a></li>
-<li><a href="">Usage</a></li>
-</ul>
-
-
 <h2 id="Installation">Installation</h2>
 
-<pre><code> TODO: add section
+<pre><code> [sudo] npm install jitsu
 </code></pre>
 
 <h2 id="Usage">Usage</h2>
 
-<pre><code> TODO: add section
+<pre><code> jitsu help
 </code></pre>
+
+<p>Jitsu is mostly self-documenting. For additional resources you can visit it's source code repository located @ <a href="http://github.com/nodejitsu/jitsu" data-bare-link="true">http://github.com/nodejitsu/jitsu</a>.</p>
 
 </div>
 <div class='mp'>
@@ -219,7 +141,7 @@ Using The API</h1>
 <li><a href="#Applications" data-bare-link="true">Applications</a></li>
 <li><a href="#Snapshots" data-bare-link="true">Snapshots</a></li>
 <li><a href="#User" data-bare-link="true">Users</a></li>
-<li><a href="#Database" data-bare-link="true">Databases</a></li>
+<li><a href="#API_Databases" data-bare-link="true">Databases</a></li>
 <li><a href="#Marketplace" data-bare-link="true">Marketplace</a></li>
 <li><a href="#Logging" data-bare-link="true">Logging</a></li>
 </ul>
@@ -342,9 +264,11 @@ Using The API</h1>
 
 <h2 id="Databases">Databases</h2>
 
+<p>In integral part to most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go, MongoHQ.</p>
+
 <h4 id="Create-a-new-Database">Create a new Database</h4>
 
-<pre><code> POST /databases/:user-id/:id
+<pre><code> POST /databases/:user-id/:database-id
 
  {
    type: "Couch || Redis || Mongo"
@@ -353,17 +277,19 @@ Using The API</h1>
 
 <h4 id="Get-information-about-a-Database">Get information about a Database</h4>
 
-<pre><code>GET /databases/:user-id/:id
+<pre><code>GET /databases/:user-id/:database-id
 </code></pre>
 
 <h4 id="Delete-a-Database">Delete a Database</h4>
 
-<pre><code>DELETE /databases/:user-id/:id
+<pre><code>DELETE /databases/:user-id/:database-id
 </code></pre>
 
 <p><a name="Marketplace"></a></p>
 
 <h2 id="Marketplace">Marketplace</h2>
+
+<p>The Marketplace is an online store where you can browse ready to go Node.js Applications and clone and deploy your own copy in seconds. The Marketplace is a great place to start if you are new to Node.js development or want to share your existing Node.js Application with the world.</p>
 
 <h4 id="Get-all-Marketplace-Applications">Get all Marketplace Applications</h4>
 
@@ -391,27 +317,28 @@ Using The API</h1>
 
 </div>
 <div class='mp'>
-<h1>The Marketplace</h1>
-<p>The Marketplace is an online store where you can browse ready to go Node.js Applications and clone and deploy your own copy in seconds. The Marketplace is a great place to start if you are new to Node.js development or want to share your existing Node.js Application with the world.</p>
+<h1><p><a name="Using_Databases"></a></p>
 
-<ul>
-<li>Deploying a Marketplace Application</li>
-<li>Getting your Application on the Marketplace</li>
-</ul>
+Using Databases</h1>
+<p>Nodejitsu Node.js applications are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database, we provide an easy upgrade path with our database hosting.</p>
 
+<h2 id="Creating-new-Databases">Creating new Databases</h2>
 
-<h2 id="Deploying-a-Marketplace-Application">Deploying a Marketplace Application</h2>
+<p>If you require database hosting, you can create a new database instance of any of our supported databases using Samaruai, Jitsu, or our API.</p>
 
-<p>You can deploy a ready to go application from the Marketplace is seconds and begin customize it for your needs immediately. Marketplace Applications can be configured through Samurai, Jitsu, or the API.</p>
+<h2 id="Existing-Databases">Existing Databases</h2>
 
-<h2 id="Getting-your-Application-on-the-Marketplace">Getting your Application on the Marketplace</h2>
+<p>If you already have an externally hosted Database, Nodejitsu is capable of connecting to it. We've got Database hosting if you need it, but we fully support externally hosted Databases.</p>
 
-<pre><code>TODO: add section
-</code></pre>
+<h2 id="Connecting-Applications-to-Databases">Connecting Applications to Databases</h2>
+
+<p>If you want to connect a Database to your Node.js application, Nodejitsu provides you with sample code for each Database type as well as the ability to specify database connection strings in your application's package.json</p>
 
 </div>
 <div class='mp'>
-<h1>Open-source Projects</h1>
+<h1><p><a name="#Open_source_Projects"></a></p>
+
+Open-source Projects</h1>
 <p>TODO: add section</p>
 
 <ul>

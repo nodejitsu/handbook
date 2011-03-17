@@ -12,10 +12,9 @@ PDF_FLAGS = --fontsize 9.0 \
 MD = pages/index.md \
       	 chapters/Table_Of_Contents.md \
       	 chapters/Deploying_Applications.md \
-      	 chapters/Setting_Up_Databases.md \
       	 chapters/Using_The_Jitsu_Client.md \
       	 chapters/Using_The_API.md \
-      	 chapters/The_Marketplace.md \
+      	 chapters/Databases.md \
       	 chapters/Open_Source_Projects.md
 
 HTML = $(MD:.md=.html)
