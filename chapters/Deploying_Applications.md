@@ -1,8 +1,6 @@
 <a name="Deploying_Applications"></a>
 # Deploying Applications
 
-There are a few options for how you can deploy your Application to Nodejitsu.
-
 ## Deploying from the Samurai web admin
 
 The Samurai web admin is an easy to use web-site where you can manage and deploy your Node.js applications. Simply visit [http://www.nodejitsu.com](http://www.nodejitsu.com) and sign-in. You'll be taken directly to the Samurai web admin interface.
