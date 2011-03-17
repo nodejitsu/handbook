@@ -19,7 +19,7 @@ MD = pages/index.md \
 
 HTML = $(MD:.md=.html)
 
-all: book.html book.pdf clear
+all: book.html book.pdf book.md clear
 
 regenerate: clean all
 	git commit -a -m 'Regenerated book' && echo done
@@ -27,6 +27,11 @@ regenerate: clean all
 book.pdf: $(HTML)
 	@echo "\n... generating $@"
 	htmldoc $(HTML) $(PDF_FLAGS) --outfile $@
+
+book.md: $(HTML)
+	@echo "\n... generating $@"
+	cat $(MD) > book.md
+  
 
 book.html: pages/head.html pages/tail.html $(HTML)
 	@echo "\n... generating $@"
