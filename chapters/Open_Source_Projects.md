@@ -7,10 +7,10 @@ A lot of Nodejitsu's technology stack is released as open-source software. We ch
 
 ## Where to find
 
-Nodejitsu hosts it's open-source projects on [Github.com](http://github.com). Github is website for sharing and collobrating on source code. You can get source code without creating an account and if you want to create an account it's free. You'll need a [Git](http://gitscm.org/) client if you wish to check out any of our code repositories. 
+Nodejitsu hosts it's open-source projects on [Github.com](http://github.com/nodejitsu). Github is website for sharing and collobrating on source code. You can get source code without creating an account and if you want to create an account it's free. You'll need a [Git](http://gitscm.org/) client if you wish to check out any of our code repositories. 
 
 You can visit our open-source project directory at: [http://github.com/nodejitsu](http://github.com/nodejitsu)
 
 ## How to contribute
 
-Anyone can contribute to any Nodejitsu open-source projects at anytime. [Github](http://github.com/nodejitsu) has the facilities for managing patches, issues, code comments, version control, etc. If you aren't ready to submit code or have questions you can create a Github issue or even just send an email to the Node.js mailing list. We'll make sure one our Ninja's gets back to you soon.
+Anyone can contribute to any Nodejitsu open-source projects at anytime. [Github](http://github.com/nodejitsu) has the facilities for managing patches, issues, code comments, version control, etc. If you have any questions about a project you sign up and create a Github issue. We'll make sure one our Ninja's gets back to you soon.

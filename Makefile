@@ -15,7 +15,8 @@ MD = pages/index.md \
       	 chapters/Using_The_Jitsu_Client.md \
       	 chapters/Using_The_API.md \
       	 chapters/Databases.md \
-      	 chapters/Open_Source_Projects.md
+      	 chapters/Open_Source_Projects.md \
+      	 chapters/Additional_Information.md
 
 HTML = $(MD:.md=.html)
 

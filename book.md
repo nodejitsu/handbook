@@ -26,8 +26,8 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
     - [Snapshots](#Snapshots)
     - [Users](#User)
     - [Databases](#Databases)
-    - [Marketplace](#Marketplace)
     - [Logging](#Logging)
+    - [Marketplace](#Marketplace)
 - [Using Databases](#Using_Databases)
     - Creating new Databases
     - Connecting existing Databases
@@ -35,23 +35,29 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
     - Why open-source
     - Where to find
     - How to contribute
+- [Additional Information](#Additional_Information)
+    - Installing Node.js
+    - Installing NPM
+    - Creating a package.json
 
 <a name="Deploying_Applications"></a>
 # Deploying Applications
 
-## Deploying from the Samurai web admin
+If it is your first time deploying an application, we recommend that you try out [Jitsu](#Using_The_Jitsu_Client), our CLI tool. We also offer a web interface and API for deploying applications. 
 
-The Samurai web admin is an easy to use web-site where you can manage and deploy your Node.js applications. Simply visit [http://www.nodejitsu.com](http://www.nodejitsu.com) and sign-in. You'll be taken directly to the Samurai web admin interface.
+## The Samurai web admin
+
+Samurai is an easy to use web admin where you can manage and deploy your Node.js applications. Just visit [http://www.nodejitsu.com](http://www.nodejitsu.com) and sign-in. You'll be taken directly to the Samurai web admin interface.
 
      TODO: Add screen shot of Samurai interface
 
-## Deploying from Jitsu, The Nodejitsu Command Line Tool 
+## Jitsu, The Nodejitsu Command Line Tool 
 
 If you prefer a CLI ( Command Line Interface ) instead of a web-site you can download [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire [API](#API) and it's fully open-source for the more advanced Node.js user. 
 
-## Deploying from the API
+## The API
 
-If you are an advanced user, you might want to automate your deployment using scripts instead of manually deploying your application from Samurai or Jitsu. Nodejitsu provides a [high-level JSON API](#Using_The_API) which will allow you to deploy applications as well as many other features. 
+If you are an advanced user, you might want to automate your deployment using scripts instead of manually deploying your application from Samurai or Jitsu. Nodejitsu provides a [high-level JSON API](#Using_The_API) which will allow you to deploy applications programmatically. 
 
 You can see a detailed specification of the [high-level JSON API](#Using_The_API) here.
 
@@ -59,7 +65,9 @@ You can see a detailed specification of the [high-level JSON API](#Using_The_API
 
 # Using The Jitsu Client
 
-[Jitsu](http://github.com/nodejitsu/jitsu) is a [Command Line Tool (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access, you can still do everything Jitsu can do through our web admin, [Samurai](#Samurai). 
+[Jitsu](http://github.com/nodejitsu/jitsu) is a [Command Line Tool (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access, you can still do everything Jitsu can do through our web admin, [Samurai](http://nodejitsu.com). 
+
+Jitsu requires the Node Package Manager ( npm ). If you need help installing npm go to: [Installing npm](#Installing_npm)
 
 ## Installation
 
@@ -73,14 +81,14 @@ Jitsu is mostly self-documenting. For additional resources you can visit it's so
 <a name="Using_The_API"></a>
 # Using The API
 
-Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON).
+Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON).
 
 - [Applications](#Applications)
 - [Snapshots](#Snapshots)
 - [Users](#User)
 - [Databases](#API_Databases)
-- [Marketplace](#Marketplace)
 - [Logging](#Logging)
+- [Marketplace](#Marketplace)
 
 ## Authentication 
 
@@ -96,9 +104,9 @@ TODO: add example of what raw outgoing http request should look like
 <a name="Applications"></a>
 ## Applications
 
-Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: LINKTO: package.json docs
+Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: [package.json](#package_json)
 
-#### Get all applications for a User
+#### Get all Applications for a User
     
      GET /apps/:user-id
 
@@ -161,7 +169,7 @@ Email address is the only required field.
 
 #### Confirm a User account
 
-All User accounts must be confirmed. When a new User is created, a confirmation email will be sent to the email address associated with that user. In this email address, you will receive an invite code. This code must be sent to the API to confirm the account. 
+All User accounts must be confirmed. When a new User is created, a confirmation email will be sent to the email address associated with that user. In this email there will be an invite code. This code must be sent to the API to confirm the account. 
 
     POST /users/:user-id
     {
@@ -179,7 +187,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 ## Databases
 
-In integral part to most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go, MongoHQ.
+Databases are an integral part to most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.
 
 #### Create a new Database
 
@@ -197,11 +205,25 @@ In integral part to most applications. The Nodejitsu API allows you to dynamical
 
     DELETE /databases/:user-id/:database-id
 
+<a name="Logging"></a>
+
+## Logging
+
+Logging is a very important feature to any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. TODO: add better description on logging
+
+#### Get all logs for a user
+
+     GET /logs/:user-id/
+
+#### Get logs for a specific application
+
+     GET /logs/:user-id/:app-id
+
 <a name="Marketplace"></a>
 
 ## Marketplace
 
-The Marketplace is an online store where you can browse ready to go Node.js Applications and clone and deploy your own copy in seconds. The Marketplace is a great place to start if you are new to Node.js development or want to share your existing Node.js Application with the world.
+The Marketplace is an online store where you can browse ready to deploy Node.js Applications. The Marketplace is a great place to start if you are new to Node.js development or want to share your existing Node.js Application with the world.
 
 
 #### Get all Marketplace Applications
@@ -212,23 +234,11 @@ The Marketplace is an online store where you can browse ready to go Node.js Appl
 
     GET /databases/:user-id/:id
 
-<a name="Logging"></a>
-
-## Logging
-
-#### Get all logs for a user
-
-     GET /logs/:user-id/
-
-#### Get logs for a specific application
-
-     GET /logs/:user-id/:app-id
-
 <a name="Using_Databases"></a>
 
 # Using Databases
 
-Nodejitsu Node.js applications are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database, we provide an easy upgrade path with our database hosting.
+Aapplications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
 
 ## Creating new Databases
 
@@ -237,11 +247,13 @@ If you require database hosting, you can create a new database instance of any o
 
 ## Existing Databases
 
-If you already have an externally hosted Database, Nodejitsu is capable of connecting to it. We've got Database hosting if you need it, but we fully support externally hosted Databases. 
+If you already have an externally hosted Database, Nodejitsu is capable of connecting to it. We've got Database hosting if you need it, but we fully support externally hosted Databases. Feel free to drop us an email if you have any questions.
 
 ## Connecting Applications to Databases
 
 If you want to connect a Database to your Node.js application, Nodejitsu provides you with sample code for each Database type as well as the ability to specify database connection strings in your application's package.json
+
+     TODO: Add better package.json configuration description
 
 
 <a name="#Open_source_Projects"></a>
@@ -253,10 +265,30 @@ A lot of Nodejitsu's technology stack is released as open-source software. We ch
 
 ## Where to find
 
-Nodejitsu hosts it's open-source projects on [Github.com](http://github.com). Github is website for sharing and collobrating on source code. You can get source code without creating an account and if you want to create an account it's free. You'll need a [Git](http://gitscm.org/) client if you wish to check out any of our code repositories. 
+Nodejitsu hosts it's open-source projects on [Github.com](http://github.com/nodejitsu). Github is website for sharing and collobrating on source code. You can get source code without creating an account and if you want to create an account it's free. You'll need a [Git](http://gitscm.org/) client if you wish to check out any of our code repositories. 
 
 You can visit our open-source project directory at: [http://github.com/nodejitsu](http://github.com/nodejitsu)
 
 ## How to contribute
 
-Anyone can contribute to any Nodejitsu open-source projects at anytime. [Github](http://github.com/nodejitsu) has the facilities for managing patches, issues, code comments, version control, etc. If you aren't ready to submit code or have questions you can create a Github issue or even just send an email to the Node.js mailing list. We'll make sure one our Ninja's gets back to you soon.
+Anyone can contribute to any Nodejitsu open-source projects at anytime. [Github](http://github.com/nodejitsu) has the facilities for managing patches, issues, code comments, version control, etc. If you have any questions about a project you sign up and create a Github issue. We'll make sure one our Ninja's gets back to you soon.<a name="Additional_Information"></a>
+
+# Additional Information
+
+    TODO: add overview
+
+## Installing Node.js
+
+    TODO: add section
+
+<a name="Installing_npm"></a>
+
+## Installing NPM
+
+    TODO: add section
+
+<a name="package_json"></a>
+
+## Creating a package.json
+
+    TODO: add section

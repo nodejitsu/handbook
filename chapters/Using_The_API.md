@@ -1,14 +1,14 @@
 <a name="Using_The_API"></a>
 # Using The API
 
-Nodejitsu provides a web API for users who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON).
+Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON).
 
 - [Applications](#Applications)
 - [Snapshots](#Snapshots)
 - [Users](#User)
 - [Databases](#API_Databases)
-- [Marketplace](#Marketplace)
 - [Logging](#Logging)
+- [Marketplace](#Marketplace)
 
 ## Authentication 
 
@@ -24,9 +24,9 @@ TODO: add example of what raw outgoing http request should look like
 <a name="Applications"></a>
 ## Applications
 
-Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: LINKTO: package.json docs
+Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: [package.json](#package_json)
 
-#### Get all applications for a User
+#### Get all Applications for a User
     
      GET /apps/:user-id
 
@@ -89,7 +89,7 @@ Email address is the only required field.
 
 #### Confirm a User account
 
-All User accounts must be confirmed. When a new User is created, a confirmation email will be sent to the email address associated with that user. In this email address, you will receive an invite code. This code must be sent to the API to confirm the account. 
+All User accounts must be confirmed. When a new User is created, a confirmation email will be sent to the email address associated with that user. In this email there will be an invite code. This code must be sent to the API to confirm the account. 
 
     POST /users/:user-id
     {
@@ -107,7 +107,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 ## Databases
 
-In integral part to most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go, MongoHQ.
+Databases are an integral part to most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.
 
 #### Create a new Database
 
@@ -125,11 +125,25 @@ In integral part to most applications. The Nodejitsu API allows you to dynamical
 
     DELETE /databases/:user-id/:database-id
 
+<a name="Logging"></a>
+
+## Logging
+
+Logging is a very important feature to any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. TODO: add better description on logging
+
+#### Get all logs for a user
+
+     GET /logs/:user-id/
+
+#### Get logs for a specific application
+
+     GET /logs/:user-id/:app-id
+
 <a name="Marketplace"></a>
 
 ## Marketplace
 
-The Marketplace is an online store where you can browse ready to go Node.js Applications and clone and deploy your own copy in seconds. The Marketplace is a great place to start if you are new to Node.js development or want to share your existing Node.js Application with the world.
+The Marketplace is an online store where you can browse ready to deploy Node.js Applications. The Marketplace is a great place to start if you are new to Node.js development or want to share your existing Node.js Application with the world.
 
 
 #### Get all Marketplace Applications
@@ -139,16 +153,4 @@ The Marketplace is an online store where you can browse ready to go Node.js Appl
 #### Get a specific Marketplace Application
 
     GET /databases/:user-id/:id
-
-<a name="Logging"></a>
-
-## Logging
-
-#### Get all logs for a user
-
-     GET /logs/:user-id/
-
-#### Get logs for a specific application
-
-     GET /logs/:user-id/:app-id
 

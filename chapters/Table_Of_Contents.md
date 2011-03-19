@@ -10,8 +10,8 @@
     - [Snapshots](#Snapshots)
     - [Users](#User)
     - [Databases](#Databases)
-    - [Marketplace](#Marketplace)
     - [Logging](#Logging)
+    - [Marketplace](#Marketplace)
 - [Using Databases](#Using_Databases)
     - Creating new Databases
     - Connecting existing Databases
@@ -19,4 +19,8 @@
     - Why open-source
     - Where to find
     - How to contribute
+- [Additional Information](#Additional_Information)
+    - Installing Node.js
+    - Installing NPM
+    - Creating a package.json
 
