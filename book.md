@@ -53,19 +53,19 @@ Samurai is an easy to use web admin where you can manage and deploy your Node.js
 
 ## Jitsu, The Nodejitsu Command Line Tool 
 
-If you prefer a CLI ( Command Line Interface ) instead of a web-site you can download [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire [API](#API) and it's fully open-source for the more advanced Node.js user. 
+If you prefer a CLI ( Command Line Interface ) instead of a web-site you can download [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire [API](#Using_The_API) and it's fully open-source for the more advanced Node.js user. 
 
 ## The API
 
 If you are an advanced user, you might want to automate your deployment using scripts instead of manually deploying your application from Samurai or Jitsu. Nodejitsu provides a [high-level JSON API](#Using_The_API) which will allow you to deploy applications programmatically. 
 
-You can see a detailed specification of the [high-level JSON API](#Using_The_API) here.
+You can see a detailed specification of the API [here](#Using_The_API).
 
 <a name="Using_The_Jitsu_Client"></a>
 
 # Using The Jitsu Client
 
-[Jitsu](http://github.com/nodejitsu/jitsu) is a [Command Line Tool (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access, you can still do everything Jitsu can do through our web admin, [Samurai](http://nodejitsu.com). 
+[Jitsu](http://github.com/nodejitsu/jitsu) is a [Command Line Tool (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access you can still do everything Jitsu can do through our web admin, [Samurai](http://nodejitsu.com). 
 
 Jitsu requires the Node Package Manager ( npm ). If you need help installing npm go to: [Installing npm](#Installing_npm)
 
@@ -238,11 +238,11 @@ The Marketplace is an online store where you can browse ready to deploy Node.js 
 
 # Using Databases
 
-Aapplications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
+Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
 
 ## Creating new Databases
 
-If you require database hosting, you can create a new database instance of any of our supported databases using Samaruai, Jitsu, or our API.
+If you require database hosting you can create a new database instance of any of our supported databases using [Samurai](#Deploying_Applications), [Jitsu](#Using_The_Jitsu_Client), or our [API](#Using_The_API).
 
 
 ## Existing Databases

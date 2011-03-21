@@ -11,11 +11,11 @@ Samurai is an easy to use web admin where you can manage and deploy your Node.js
 
 ## Jitsu, The Nodejitsu Command Line Tool 
 
-If you prefer a CLI ( Command Line Interface ) instead of a web-site you can download [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire [API](#API) and it's fully open-source for the more advanced Node.js user. 
+If you prefer a CLI ( Command Line Interface ) instead of a web-site you can download [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire [API](#Using_The_API) and it's fully open-source for the more advanced Node.js user. 
 
 ## The API
 
 If you are an advanced user, you might want to automate your deployment using scripts instead of manually deploying your application from Samurai or Jitsu. Nodejitsu provides a [high-level JSON API](#Using_The_API) which will allow you to deploy applications programmatically. 
 
-You can see a detailed specification of the [high-level JSON API](#Using_The_API) here.
+You can see a detailed specification of the API [here](#Using_The_API).
 
