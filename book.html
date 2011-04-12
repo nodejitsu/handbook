@@ -366,26 +366,102 @@ Open-source Projects</h1>
 <h1><p><a name="Additional_Information"></a></p>
 
 Additional Information</h1>
-<pre><code>TODO: add overview
-</code></pre>
+<p>If you are new to Node.js and Node.js application deployment, you might find the following section helpful.</p>
 
 <h2 id="Installing-Node-js">Installing Node.js</h2>
 
-<pre><code>TODO: add section
+<h3 id="Building-and-Installing-Node-js">Building and Installing Node.js</h3>
+
+<h3 id="Step-1-Pick-Your-Platform">Step 1 - Pick Your Platform</h3>
+
+<p>Node should install out of the box on Linux, Macintosh, and Solaris.</p>
+
+<p>With some effort you should be able to get it running on other Unix
+platforms and Windows (either via Cygwin or MinGW).</p>
+
+<h3 id="Step-2-Prerequisites">Step 2 - Prerequisites</h3>
+
+<p>Node has several dependencies, but fortunately most of them are
+distributed along with it.  If you are building from source you should
+only need 2 things.</p>
+
+<ul>
+<li><p><strong>python</strong> - version 2.4 or higher. The build tools distributed with
+Node run on python.</p></li>
+<li><p><strong>libssl-dev</strong> - If you plan to use SSL/TLS encryption in your
+networking, you'll need this.  Libssl is the library used in the
+<a href="http://www.openssl.org/">openssl</a> tool. On Linux and Unix systems
+it can usually be installed with your favorite package manager. The
+lib comes pre- installed on OS X.</p></li>
+</ul>
+
+
+<h3 id="Step-3a-Installing-on-Unix-including-BSD-and-Mac-">Step 3a - Installing on Unix (including BSD and Mac)</h3>
+
+<p><strong>Building from source</strong></p>
+
+<p>Use make to build and install Node (execute the following on the command line)</p>
+
+<pre><code>git clone https://github.com/joyent/node.git
+cd node
+export JOBS=2 # optional, sets number of parallel commands.
+mkdir ~/local
+./configure --prefix=$HOME/local/node
+make
+make install
+export PATH=$HOME/local/node/bin:$PATH
 </code></pre>
 
-<p><a name="Installing_npm"></a></p>
+<p>If you have any installation problems, look at <a href="https://github.com/ry/node/wiki/Troubleshooting-Installation">Troubleshooting
+Installation</a>, try an <a href="https://gist.github.com/579814">alternate installation method</a>, or stop into <a href="http://webchat.freenode.net/?channels=node.js&amp;uio=d4">#node.js</a> and ask questions.</p>
 
-<h2 id="Installing-NPM">Installing NPM</h2>
+<p><strong>Pre-built binaries</strong></p>
 
-<pre><code>TODO: add section
+<p>You can also install node from packages: [[Installing Node.js via package manager]]</p>
+
+<h3 id="Step-3b-Building-on-Windows">Step 3b - Building on Windows</h3>
+
+<p><strong>Pre-built binaries</strong></p>
+
+<p>Self-contained binaries are available at <a href="http://node-js.prcn.co.cc/">node-js.prcn.co.cc</a></p>
+
+<p><strong>Building from source</strong></p>
+
+<p>There are two ways of building Node on Windows. One is over the Cygwin
+emulation layer the other is using MinGW (GNU toolchain for
+windows). See the
+<a href="https://github.com/ry/node/wiki/Building-node.js-on-Cygwin-%28Windows%29">Cygwin</a>
+and <a href="https://github.com/ry/node/wiki/Building-node.js-on-mingw">MinGW</a>
+pages.</p>
+
+<p>Neither builds are satisfactorily stable but it is possible to get
+something running.</p>
+
+<h3 id="Step-4-Install-NPM">Step 4 - Install NPM</h3>
+
+<p>NPM is a package manager that has become the de-facto standard for
+installing additional node libraries and programs. Here's the quick
+and easy one-liner for installing on Unix.</p>
+
+<pre><code>$ curl http://npmjs.org/install.sh | sh
 </code></pre>
 
-<p><a name="package_json"></a></p>
+<p>To install a library e.g. Express:</p>
 
-<h2 id="Creating-a-package-json">Creating a package.json</h2>
+<pre><code>$ npm install express
+</code></pre>
 
-<pre><code>TODO: add section
+<p>And visit
+<a href="https://github.com/isaacs/npm" data-bare-link="true">https://github.com/isaacs/npm</a> for
+details.</p>
+
+<h2 id="Understanding-the-package-json-format">Understanding the package.json format</h2>
+
+<p>A package.json file describes your application, its dependencies, and other various application configuration. For a detailed spec on creating a package.json you can check out Isaac's fine documentation <a href="https://github.com/isaacs/npm/blob/master/doc/developers.md#readme">here</a>.</p>
+
+<p>For a quick overview there are a few important fields you should be aware of. Here is a sample package.json from the <a href="http://github.com/marak/hellonode">hellonode</a> app.</p>
+
+<pre><code>TODO: add example here of minimal package.json and full featured one from helloworld app.
 </code></pre>
 
 </div>
