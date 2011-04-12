@@ -7,7 +7,7 @@ Welcome to the Nodejitsu handbook. This document will help familiarize you with 
 
 ## What Is Nodejitsu?
 
-[Nodejitsu](http://nodejitsu.com/) is a Platform as A Service for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Nodejitsu's platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications.
+[Nodejitsu](http://nodejitsu.com/) is the Platform as A Service for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Nodejitsu's platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications.
 
 ## How Can I Get Started?
 
@@ -43,7 +43,14 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
 <a name="Deploying_Applications"></a>
 # Deploying Applications
 
-If it is your first time deploying an application, we recommend that you try out [Jitsu](#Using_The_Jitsu_Client), our CLI tool. We also offer a web interface and API for deploying applications. 
+If it is your first time deploying an application, we recommend that you try out [Jitsu](#Using_The_Jitsu_Client), our CLI tool. You'll be able to deploy your app in seconds.
+
+
+## Jitsu, The Nodejitsu Command Line Tool 
+
+If you prefer a CLI ( Command Line Interface ) instead of a web-site you can download [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire [API](#Using_The_API) and it's fully open-source for the more advanced Node.js user. 
+
+     [sudo] npm install jitsu
 
 ## The Samurai web admin
 
@@ -51,9 +58,6 @@ Samurai is an easy to use web admin where you can manage and deploy your Node.js
 
      TODO: Add screen shot of Samurai interface
 
-## Jitsu, The Nodejitsu Command Line Tool 
-
-If you prefer a CLI ( Command Line Interface ) instead of a web-site you can download [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu CLI tool. Jitsu is friendly to non-technical users, but it does cover our entire [API](#Using_The_API) and it's fully open-source for the more advanced Node.js user. 
 
 ## The API
 
@@ -346,6 +350,7 @@ Neither builds are satisfactorily stable but it is possible to get
 something running.
 
 ### Step 4 - Install NPM
+<a name="Installing_npm"></a>
 
 NPM is a package manager that has become the de-facto standard for
 installing additional node libraries and programs. Here's the quick

@@ -73,6 +73,7 @@ Neither builds are satisfactorily stable but it is possible to get
 something running.
 
 ### Step 4 - Install NPM
+<a name="Installing_npm"></a>
 
 NPM is a package manager that has become the de-facto standard for
 installing additional node libraries and programs. Here's the quick

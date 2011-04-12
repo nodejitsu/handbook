@@ -7,7 +7,7 @@ Welcome to the Nodejitsu handbook. This document will help familiarize you with 
 
 ## What Is Nodejitsu?
 
-[Nodejitsu](http://nodejitsu.com/) is a Platform as A Service for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Nodejitsu's platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications.
+[Nodejitsu](http://nodejitsu.com/) is the Platform as A Service for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Nodejitsu's platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications.
 
 ## How Can I Get Started?
 
