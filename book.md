@@ -126,15 +126,15 @@ Applications are the core of the Nodejitsu API. Each application represents a se
 
 #### Start an Application
 
-     POST /apps/:user-id/:app-id/restart
+     POST /apps/:user-id/:app-id/start
 
 #### Stop an Application
      
-     POST /apps/:user-id/:app-id/start
+     POST /apps/:user-id/:app-id/stop
 
 #### Restart an Application
      
-     POST /apps/:user-id/:app-id/stop
+     POST /apps/:user-id/:app-id/restart
 
 #### Update an Application
 
@@ -363,9 +363,9 @@ and easy one-liner for installing on Unix.
 
     $ curl http://npmjs.org/install.sh | sh
 
-To install a library e.g. Express:
+To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> ( The Nodejitsu deployment CLI tool )
 
-    $ npm install express
+    $ npm install jitsu
 
 And visit
 [https://github.com/isaacs/npm](https://github.com/isaacs/npm) for

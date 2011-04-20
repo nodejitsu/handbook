@@ -188,17 +188,17 @@ Using The API</h1>
 
 <h4 id="Start-an-Application">Start an Application</h4>
 
-<pre><code> POST /apps/:user-id/:app-id/restart
+<pre><code> POST /apps/:user-id/:app-id/start
 </code></pre>
 
 <h4 id="Stop-an-Application">Stop an Application</h4>
 
-<pre><code> POST /apps/:user-id/:app-id/start
+<pre><code> POST /apps/:user-id/:app-id/stop
 </code></pre>
 
 <h4 id="Restart-an-Application">Restart an Application</h4>
 
-<pre><code> POST /apps/:user-id/:app-id/stop
+<pre><code> POST /apps/:user-id/:app-id/restart
 </code></pre>
 
 <h4 id="Update-an-Application">Update an Application</h4>
@@ -455,9 +455,9 @@ and easy one-liner for installing on Unix.</p>
 <pre><code>$ curl http://npmjs.org/install.sh | sh
 </code></pre>
 
-<p>To install a library e.g. Express:</p>
+<p>To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> ( The Nodejitsu deployment CLI tool )</p>
 
-<pre><code>$ npm install express
+<pre><code>$ npm install jitsu
 </code></pre>
 
 <p>And visit

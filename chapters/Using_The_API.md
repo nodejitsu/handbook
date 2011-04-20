@@ -37,15 +37,15 @@ Applications are the core of the Nodejitsu API. Each application represents a se
 
 #### Start an Application
 
-     POST /apps/:user-id/:app-id/restart
+     POST /apps/:user-id/:app-id/start
 
 #### Stop an Application
      
-     POST /apps/:user-id/:app-id/start
+     POST /apps/:user-id/:app-id/stop
 
 #### Restart an Application
      
-     POST /apps/:user-id/:app-id/stop
+     POST /apps/:user-id/:app-id/restart
 
 #### Update an Application
 
