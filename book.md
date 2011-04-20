@@ -3,16 +3,16 @@
 
 *A gentle introduction to the art of Nodejitsu*
 
-Welcome to the Nodejitsu handbook. This document will help familiarize you with Nodejitsu while also providing detailed information about specific platform features. This is a living document which you can submit patches to @ [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
+Welcome to the Nodejitsu handbook. This document will help familiarize you with deploying your Node.js applications to the cloud while also providing detailed information about Nodejitsu's platform specific features. This is a living document which you can submit patches to @ [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
 
 
 ## Who is Nodejitsu?
 
-We are a collective of seasoned developers who have been devoted to the Node.js project since 2009. We are community leaders have who created and contributed to hundreds of open-source Node.js projects. If you have used Node.js, you've probably used code we've help create. Check out our [Github](http://github.com/nodejitsu)!
+We are a collective of seasoned developers who have been devoted to the Node.js project since 2009. We are community leaders have who created and contributed to hundreds of open-source Node.js projects. If you have used Node.js, you've probably used code we've help create. Check out our [Github](http://github.com/nodejitsu).
 
 ## What Is Nodejitsu?
 
-[Nodejitsu](http://nodejitsu.com/) is the Platform as A Service for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Nodejitsu's platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications.
+[Nodejitsu](http://nodejitsu.com/) is the Platform as A Service and Marketplace for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Our platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications. Our deployment tools are the most user-friendly in the industry and our customer support is unparalleled. 
 
 ## How Can I Get Started?
 
@@ -48,8 +48,11 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
 <a name="Deploying_Applications"></a>
 # Deploying Applications
 
-If it is your first time deploying an application, we recommend that you try out [Jitsu](#Using_The_Jitsu_Client), our CLI tool. You'll be able to deploy your app in seconds.
+If it is your first time deploying an application and are eager to get started, we recommend that you try out [Jitsu](#Using_The_Jitsu_Client), our CLI tool. Jitsu has a one line installer, it's self-documenting, and you'll be able to deploy your app in seconds.
 
+## Getting Started
+
+Getting an application deployed to Nodejitsu is easy. We've been helping contribute to npm ( the Node Package Manager ) since it's beginnings and our deployment strategy follows a lot of the same conventions that npm follows. 
 
 ## Jitsu, The Nodejitsu Command Line Tool 
 
@@ -69,6 +72,7 @@ Samurai is an easy to use web admin where you can manage and deploy your Node.js
 If you are an advanced user, you might want to automate your deployment using scripts instead of manually deploying your application from Samurai or Jitsu. Nodejitsu provides a [high-level JSON API](#Using_The_API) which will allow you to deploy applications programmatically. 
 
 You can see a detailed specification of the API [here](#Using_The_API).
+
 
 <a name="Using_The_Jitsu_Client"></a>
 
@@ -90,7 +94,7 @@ Jitsu is mostly self-documenting. For additional resources you can visit it's so
 <a name="Using_The_API"></a>
 # Using The API
 
-Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON).
+Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON). The API is the most low-level way of interacting with the Nodejitsu platform. You'll probably want to use our CLI tool jitu or our login directly at [http://nodejitsu.com](http://nodejitsu.com)
 
 - [Applications](#Applications)
 - [Snapshots](#Snapshots)
@@ -98,6 +102,8 @@ Nodejitsu provides a web API for developers who want to interact with the Nodeji
 - [Databases](#API_Databases)
 - [Logging](#Logging)
 - [Marketplace](#Marketplace)
+
+The documentation here should be an accurate representation of our current API, but you can always look directly at our [API wrappers](https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api) in `jitsu` to see a working example of an application built against our REST API.
 
 ## Authentication 
 
@@ -108,7 +114,7 @@ Most of the calls to the API will require that you authenticate using your Nodej
      // get all applications for User "Marak"
      curl --user Marak:password http://nodejitsu.com/apps/marak
 
-TODO: add example of what raw outgoing http request should look like
+If you are trying to use our API directly and are having issues with Basic Auth, please feel free to email support@nodejitsu.com.
 
 <a name="Applications"></a>
 ## Applications
@@ -373,11 +379,45 @@ details.
 
 
 ## Understanding the package.json format
-
+<a name="package_json"></a>
 A package.json file describes your application, its dependencies, and other various application configuration. For a detailed spec on creating a package.json you can check out Isaac's fine documentation [here](https://github.com/isaacs/npm/blob/master/doc/developers.md#readme). 
 
+## Preparing a package.json for your application
 
-For a quick overview there are a few important fields you should be aware of. Here is a sample package.json from the [hellonode](http://github.com/marak/hellonode) app.
+Nodejitsu requires that you create a valid [package.json](#package_json) for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when contructing your package.json file, we provide wizards in our CLI tool and web-site for creating one. 
+
+Here is an example of what your package.json might look like:
 
 
-    TODO: add example here of minimal package.json and full featured one from helloworld app.
+    {
+      "name": "hellonode",
+      "subdomain": "hellonode",
+      "scripts": {
+        "start": "server.js"
+      },
+      "version": "0.0.0"
+    }
+
+Notice the "scripts" property? This is where you'll store information about specific scripts in your application. The "start" property indicates the script that will get called when your application is started. 
+
+## Specifying dependencies in your package.json
+
+If your application requires additional dependencies or third-party libraries, Nodejitsu fully supports npm module dependency resolution. All you have to do is list your dependencies the exact same way you would if you were packaging a module for npm. Here is an example of the same package.json with a few dependencies.
+
+
+    {
+      "name": "hellonode",
+      "subdomain": "hellonode",
+      "scripts": {
+        "start": "server.js"
+      },
+      "dependencies": {
+        "async": ">= 0.1.8",
+        "colors": ">= 0.5.0",
+        "request": ">= 1.9.0",
+        "vows": ">= 0.5.8",
+      },
+      "version": "0.0.0"
+    }
+
+Your dependencies will be resolved when your application deploys to Nodejitsu.
