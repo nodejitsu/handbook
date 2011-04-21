@@ -89,9 +89,8 @@ And visit
 [https://github.com/isaacs/npm](https://github.com/isaacs/npm) for
 details.
 
-
-## Understanding the package.json format
 <a name="package_json"></a>
+## Understanding the package.json format
 A package.json file describes your application, its dependencies, and other various application configuration. For a detailed spec on creating a package.json you can check out Isaac's fine documentation [here](https://github.com/isaacs/npm/blob/master/doc/developers.md#readme). 
 
 ## Preparing a package.json for your application

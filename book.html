@@ -106,7 +106,7 @@ Deploying Applications</h1>
 </ul>
 
 
-<p>If it is your first time deploying an application and are eager to get started, we recommend that you try out <a href="#Using_The_Jitsu_Client" data-bare-link="true">Jitsu</a>, our CLI tool. Jitsu has a one line installer, it's self-documenting, and you'll be able to deploy your app in seconds.</p>
+<p>If it is your first time deploying an application and you are eager to get started, we recommend that you try out <a href="#Using_The_Jitsu_Client" data-bare-link="true">Jitsu</a>, our CLI tool. Jitsu has a one line installer, it's self-documenting, and you'll be able to deploy your app in seconds.</p>
 
 </div>
 <div class='mp'>
@@ -122,12 +122,80 @@ Using The Jitsu Client</h1>
 <pre><code> [sudo] npm install jitsu
 </code></pre>
 
-<h2 id="Usage">Usage</h2>
+<p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png" /></p>
 
-<pre><code> jitsu help
+<h2 id="One-line-deployment">One-line deployment</h2>
+
+<pre><code>cd /path/to/myapp
+jitsu deploy
 </code></pre>
 
-<p>Jitsu is mostly self-documenting. For additional resources you can visit it's source code repository located @ <a href="http://github.com/nodejitsu/jitsu" data-bare-link="true">http://github.com/nodejitsu/jitsu</a>.</p>
+<p>This will create a new application, package.json ( if you need one ), and deploy the current path to <a href="http://nodejitsu.com">Nodejitsu</a>. If it's your first deployment, you'll be prompted for some information such as <em>subdomain</em> and <em>start script</em> but it's really easy and we promise it will only take a few seconds.</p>
+
+<p>If you have any issues deploying your node.js application please feel free to open up an issue on the <a href="https://github.com/nodejitsu/jitsu/issues">Github Issues</a> section of the jitsu homepage. We'll have someone get back to you in a flash!</p>
+
+<h2 id="Usage">Usage</h2>
+
+<p><code>jitsu</code> is mostly self documenting. After installation, run the <code>jitsu</code> command from your command line.</p>
+
+<p>If it's your first time using <code>jitsu</code>, you will be prompted to login with an existing account or create a new account.</p>
+
+<p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png" /></p>
+
+<p><strong>After you've logged in, you can start deploying apps immediately!</strong></p>
+
+<h2 id="Command-Line-Usage">Command Line Usage</h2>
+
+<p><code>jitsu</code> is mostly self-documenting. Try any of these commands to get started.</p>
+
+<p>  <strong>Usage:</strong></p>
+
+<pre><code>jitsu &lt;resource> &lt;action> &lt;param1> &lt;param2> ...
+</code></pre>
+
+<p>  <strong>Common Commands:</strong></p>
+
+<p>  <em>Deploys current path to <a href="http://nodejitsu.com">Nodejitsu</a></em></p>
+
+<pre><code>jitsu deploy
+</code></pre>
+
+<p>  <em>Creates a new application on <a href="http://nodejitsu.com">Nodejitsu</a></em></p>
+
+<pre><code>jitsu create
+</code></pre>
+
+<p>  <em>Lists all applications for the current user</em></p>
+
+<pre><code>jitsu list
+</code></pre>
+
+<p>  <em>Additional Commands</em></p>
+
+<pre><code>jitsu apps
+jitsu snapshots
+jitsu users
+jitsu conf
+jitsu logout
+</code></pre>
+
+<h3 id="Help">Help</h3>
+
+<p>Jitsu is mostly self documenting. We suggest just trying it out. All commands will yield friendly messages to you if you specify incorrect parameters. If you find anything difficult to use, please open up a Github issue or pull request!</p>
+
+<pre><code>jitsu help
+jitsu help apps
+jitsu help snapshots
+jitsu help users
+jitsu help config
+</code></pre>
+
+<h2 id="-jitsuconf-file">.jitsuconf file</h2>
+
+<p>All configuration data for your local <code>jitsu</code> install is located in the <em>.jitsuconf</em> file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes via:</p>
+
+<pre><code>jitsu config
+</code></pre>
 
 </div>
 <div class='mp'>
@@ -455,10 +523,11 @@ and easy one-liner for installing on Unix.</p>
 <a href="https://github.com/isaacs/npm" data-bare-link="true">https://github.com/isaacs/npm</a> for
 details.</p>
 
+<p><a name="package_json"></a></p>
+
 <h2 id="Understanding-the-package-json-format">Understanding the package.json format</h2>
 
-<p><a name="package_json"></a>
-A package.json file describes your application, its dependencies, and other various application configuration. For a detailed spec on creating a package.json you can check out Isaac's fine documentation <a href="https://github.com/isaacs/npm/blob/master/doc/developers.md#readme">here</a>.</p>
+<p>A package.json file describes your application, its dependencies, and other various application configuration. For a detailed spec on creating a package.json you can check out Isaac's fine documentation <a href="https://github.com/isaacs/npm/blob/master/doc/developers.md#readme">here</a>.</p>
 
 <h2 id="Preparing-a-package-json-for-your-application">Preparing a package.json for your application</h2>
 
