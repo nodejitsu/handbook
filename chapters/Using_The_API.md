@@ -1,7 +1,7 @@
 <a name="Using_The_API"></a>
 # Using The API
 
-Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON). The API is the most low-level way of interacting with the Nodejitsu platform. You'll probably want to use our CLI tool jitu or our login directly at [http://nodejitsu.com](http://nodejitsu.com)
+Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON). The API is the most low-level way of interacting with the Nodejitsu platform. For most deployment scenarios you should use our command line tool, [jitsu](#Using_The_Jitsu_Client), or login directly at [http://nodejitsu.com](http://nodejitsu.com)
 
 - [Applications](#Applications)
 - [Snapshots](#Snapshots)
@@ -10,7 +10,7 @@ Nodejitsu provides a web API for developers who want to interact with the Nodeji
 - [Logging](#Logging)
 - [Marketplace](#Marketplace)
 
-The documentation here should be an accurate representation of our current API, but you can always look directly at our [API wrappers](https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api) in `jitsu` to see a working example of an application built against our REST API.
+The documentation here should be an accurate representation of our current API, but you can always look directly at our [API wrappers](https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api) in `jitsu` to see a working example of an application built against Nodejitsu's REST API.
 
 ## Authentication 
 
@@ -21,7 +21,7 @@ Most of the calls to the API will require that you authenticate using your Nodej
      // get all applications for User "Marak"
      curl --user Marak:password http://nodejitsu.com/apps/marak
 
-If you are trying to use our API directly and are having issues with Basic Auth, please feel free to email support@nodejitsu.com.
+If you are trying to use our API directly and are having issues with Basic Auth, please feel free to email [support@nodejitsu.com](mailto:support@nodejitsu.com)
 
 <a name="Applications"></a>
 ## Applications

@@ -2,7 +2,7 @@
 
 # Using The Jitsu Client
 
-[Jitsu](http://github.com/nodejitsu/jitsu) is a [Command Line Tool (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access you can still do everything Jitsu can do through our web admin, [Samurai](http://nodejitsu.com). 
+[Jitsu](http://github.com/nodejitsu/jitsu) is a [Command Line Interface (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access you can still do everything Jitsu can do through our web admin, [Samurai](http://nodejitsu.com). 
 
 Jitsu requires the Node Package Manager ( npm ). If you need help installing npm go to: [Installing npm](#Installing_npm)
 
@@ -13,14 +13,6 @@ Jitsu requires the Node Package Manager ( npm ). If you need help installing npm
 
 <img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png"/>
 
-## One-line deployment
-
-    cd /path/to/myapp
-    jitsu deploy
-
-This will create a new application, package.json ( if you need one ), and deploy the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *subdomain* and *start script* but it's really easy and we promise it will only take a few seconds.
-
-If you have any issues deploying your node.js application please feel free to open up an issue on the [Github Issues](https://github.com/nodejitsu/jitsu/issues) section of the jitsu homepage. We'll have someone get back to you in a flash!
 
 ## Usage
 
@@ -32,6 +24,14 @@ If it's your first time using `jitsu`, you will be prompted to login with an exi
 
 **After you've logged in, you can start deploying apps immediately!**
 
+## One-line deployment
+
+    cd /path/to/myapp
+    jitsu deploy
+
+This will create a new application, package.json ( if you need one ), and deploy the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *subdomain* and *start script* but it's really easy and we promise it will only take a few seconds.
+
+If you have any issues deploying your node.js application please feel free to open up an issue on the [Github Issues](https://github.com/nodejitsu/jitsu/issues) section of the jitsu homepage. We'll have someone get back to you in a flash!
 
 
 ## Command Line Usage

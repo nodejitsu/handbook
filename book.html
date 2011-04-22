@@ -113,7 +113,7 @@ Deploying Applications</h1>
 <h1><p><a name="Using_The_Jitsu_Client"></a></p>
 
 Using The Jitsu Client</h1>
-<p><a href="http://github.com/nodejitsu/jitsu">Jitsu</a> is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Tool (CLI)</a> for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access you can still do everything Jitsu can do through our web admin, <a href="http://nodejitsu.com">Samurai</a>.</p>
+<p><a href="http://github.com/nodejitsu/jitsu">Jitsu</a> is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface (CLI)</a> for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access you can still do everything Jitsu can do through our web admin, <a href="http://nodejitsu.com">Samurai</a>.</p>
 
 <p>Jitsu requires the Node Package Manager ( npm ). If you need help installing npm go to: <a href="#Installing_npm" data-bare-link="true">Installing npm</a></p>
 
@@ -124,16 +124,6 @@ Using The Jitsu Client</h1>
 
 <p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png" /></p>
 
-<h2 id="One-line-deployment">One-line deployment</h2>
-
-<pre><code>cd /path/to/myapp
-jitsu deploy
-</code></pre>
-
-<p>This will create a new application, package.json ( if you need one ), and deploy the current path to <a href="http://nodejitsu.com">Nodejitsu</a>. If it's your first deployment, you'll be prompted for some information such as <em>subdomain</em> and <em>start script</em> but it's really easy and we promise it will only take a few seconds.</p>
-
-<p>If you have any issues deploying your node.js application please feel free to open up an issue on the <a href="https://github.com/nodejitsu/jitsu/issues">Github Issues</a> section of the jitsu homepage. We'll have someone get back to you in a flash!</p>
-
 <h2 id="Usage">Usage</h2>
 
 <p><code>jitsu</code> is mostly self documenting. After installation, run the <code>jitsu</code> command from your command line.</p>
@@ -143,6 +133,16 @@ jitsu deploy
 <p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png" /></p>
 
 <p><strong>After you've logged in, you can start deploying apps immediately!</strong></p>
+
+<h2 id="One-line-deployment">One-line deployment</h2>
+
+<pre><code>cd /path/to/myapp
+jitsu deploy
+</code></pre>
+
+<p>This will create a new application, package.json ( if you need one ), and deploy the current path to <a href="http://nodejitsu.com">Nodejitsu</a>. If it's your first deployment, you'll be prompted for some information such as <em>subdomain</em> and <em>start script</em> but it's really easy and we promise it will only take a few seconds.</p>
+
+<p>If you have any issues deploying your node.js application please feel free to open up an issue on the <a href="https://github.com/nodejitsu/jitsu/issues">Github Issues</a> section of the jitsu homepage. We'll have someone get back to you in a flash!</p>
 
 <h2 id="Command-Line-Usage">Command Line Usage</h2>
 
@@ -202,7 +202,7 @@ jitsu help config
 <h1><p><a name="Using_The_API"></a></p>
 
 Using The API</h1>
-<p>Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTful</a> and communicates via <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>. The API is the most low-level way of interacting with the Nodejitsu platform. You'll probably want to use our CLI tool jitu or our login directly at <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a></p>
+<p>Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTful</a> and communicates via <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>. The API is the most low-level way of interacting with the Nodejitsu platform. For most deployment scenarios you should use our command line tool, <a href="#Using_The_Jitsu_Client" data-bare-link="true">jitsu</a>, or login directly at <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a></p>
 
 <ul>
 <li><a href="#Applications" data-bare-link="true">Applications</a></li>
@@ -214,7 +214,7 @@ Using The API</h1>
 </ul>
 
 
-<p>The documentation here should be an accurate representation of our current API, but you can always look directly at our <a href="https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api">API wrappers</a> in <code>jitsu</code> to see a working example of an application built against our REST API.</p>
+<p>The documentation here should be an accurate representation of our current API, but you can always look directly at our <a href="https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api">API wrappers</a> in <code>jitsu</code> to see a working example of an application built against Nodejitsu's REST API.</p>
 
 <h2 id="Authentication">Authentication</h2>
 
@@ -226,7 +226,7 @@ Using The API</h1>
  curl --user Marak:password http://nodejitsu.com/apps/marak
 </code></pre>
 
-<p>If you are trying to use our API directly and are having issues with Basic Auth, please feel free to email support@nodejitsu.com.</p>
+<p>If you are trying to use our API directly and are having issues with Basic Auth, please feel free to email <a href="mailto:support@nodejitsu.com" data-bare-link="true">support@nodejitsu.com</a></p>
 
 <p><a name="Applications"></a></p>
 
