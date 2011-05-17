@@ -1,4 +1,3 @@
-
 # The Nodejitsu Handbook
 
 *A gentle introduction to the art of Nodejitsu*
@@ -163,7 +162,7 @@ Most of the calls to the API will require that you authenticate using your Nodej
 **Here is an example using the command line utility, [Curl](http://curl.haxx.se/).**
 
      // get all applications for User "Marak"
-     curl --user Marak:password http://nodejitsu.com/apps/marak
+     curl --user Marak:password http://www.nodejitsu.com/api/apps/marak
 
 If you are trying to use our API directly and are having issues with Basic Auth, please feel free to email [support@nodejitsu.com](mailto:support@nodejitsu.com)
 
