@@ -93,6 +93,7 @@ details.
 <a name="New_to_Node"></a>
 ## New to Node.js?
 **Don't be scared!**  There are plenty of resources out there for beginners.  
+
 - [The Node.js Community Wiki](https://github.com/joyent/node/wiki)
 - [The nodejs.org Official Docs:](http://nodejs.org/docs/v0.4.8/api/)
 - The #Node.js and #nodesupport rooms on [irc.freenode.net](http://freenode.net)
