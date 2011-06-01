@@ -457,12 +457,12 @@ details.
 
 <a name="New_to_Node"></a>
 ## New to Node.js?
-**Don't be scared!**  There are plenty of resources out there for beginners.  
 
-- [The Node.js Community Wiki](https://github.com/joyent/node/wiki)
+**Don't be scared!**  There are plenty of resources out there for beginners.  Here are just a few:
+
 - [The nodejs.org Official Docs:](http://nodejs.org/docs/v0.4.8/api/)
-- The #Node.js and #nodesupport rooms on [irc.freenode.net](http://freenode.net)
-- @NodeKohai on Twitter
+- The #Node.js, #nodejitsu and #nodesupport rooms on [irc.freenode.net](http://webchat.freenode.net/)
+- [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai)
 
 <a name="Package_Json"></a>
 ## Understanding the package.json format
