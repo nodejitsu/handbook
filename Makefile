@@ -27,7 +27,7 @@ regenerate: clean all
 
 book.pdf: $(HTML)
 	@echo "\n... generating $@"
-	htmldoc $(HTML) $(PDF_FLAGS) --outfile $@
+	htmldoc $(HTML) $(PDF_FLAGS) --webpage --outfile $@
 
 book.md: $(HTML)
 	@echo "\n... generating $@"
@@ -44,7 +44,7 @@ book.html: pages/head.html pages/tail.html $(HTML)
 
 %.html: %.md
 	ronn --pipe --fragment $< \
-		| sed -E 's/<h1>([^ ]+) - /<h1>/' \
+		| sed -r 's/<h1>([^ ]+) - /<h1>/' \
 		> $@
 
 book.mobi:
