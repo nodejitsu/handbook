@@ -5,7 +5,7 @@
 We've got three basic ways to deploy your application. 
 
 - [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu Command Line Tool 
-- [Samurai](http://nodejitsu.com), An easy to use Web Admin
+- [Samurai](http://develop.nodejitsu.com/), An easy to use Web Admin
 - The [API](#Using_The_API), A high-level JSON API
 
 

@@ -24,8 +24,8 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
 
 - [Deploying Applications](#Deploying_Applications)
 - [Using the Jitsu Client](#Using_The_Jitsu_Client)
-    - Installation
-    - Usage
+    - Installation(#Installation)
+    - Usage(#Usage)
 - [Using the API](#Using_The_API)
     - [Applications](#Applications)
     - [Snapshots](#Snapshots)
@@ -52,7 +52,7 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
 We've got three basic ways to deploy your application. 
 
 - [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu Command Line Tool 
-- [Samurai](http://nodejitsu.com), An easy to use Web Admin
+- [Samurai](http://develop.nodejitsu.com/), An easy to use Web Admin
 - The [API](#Using_The_API), A high-level JSON API
 
 
@@ -89,14 +89,14 @@ Now it's time to learn some Jitsu.
 
 Jitsu requires the Node Package Manager ( npm ). If you need help installing npm go to: [Installing npm](#Installing_npm)
 
-
+<a name="Installation"></a>
 ## Installation
 
      [sudo] npm install jitsu
 
 <img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png"/>
 
-
+<a name="Usage"></a>
 ## Usage
 
 `jitsu` is mostly self documenting. After installation, run the `jitsu` command from your command line.
@@ -278,7 +278,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 ## Databases
 
-Databases are an integral part to most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.
+Databases are an integral part of most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.
 
 #### Create a new Database
 
@@ -300,7 +300,7 @@ Databases are an integral part to most applications. The Nodejitsu API allows yo
 
 ## Logging
 
-Logging is a very important feature to any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. TODO: add better description on logging
+Logging is a very important feature in any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. TODO: add better description on logging
 
 #### Get all logs for a user
 

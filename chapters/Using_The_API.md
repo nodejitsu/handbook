@@ -109,7 +109,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 ## Databases
 
-Databases are an integral part to most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.
+Databases are an integral part of most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.
 
 #### Create a new Database
 
@@ -131,7 +131,7 @@ Databases are an integral part to most applications. The Nodejitsu API allows yo
 
 ## Logging
 
-Logging is a very important feature to any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. TODO: add better description on logging
+Logging is a very important feature in any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. TODO: add better description on logging
 
 #### Get all logs for a user
 

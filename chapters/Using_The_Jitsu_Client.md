@@ -6,14 +6,14 @@
 
 Jitsu requires the Node Package Manager ( npm ). If you need help installing npm go to: [Installing npm](#Installing_npm)
 
-
+<a name="Installation"></a>
 ## Installation
 
      [sudo] npm install jitsu
 
 <img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png"/>
 
-
+<a name="Usage"></a>
 ## Usage
 
 `jitsu` is mostly self documenting. After installation, run the `jitsu` command from your command line.
