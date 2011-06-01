@@ -20,7 +20,8 @@
     - Where to find
     - How to contribute
 - [Additional Information](#Additional_Information)
-    - Installing Node.js
-    - Installing NPM
-    - Creating a package.json
+    - [Installing Node.js](#Installing_Node)
+    - [Installing NPM](#Installing_npm)
+    - [New to Node?](#New_to_Node)
+    - [Creating a package.json](#Package_Json)
 

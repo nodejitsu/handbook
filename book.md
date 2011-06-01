@@ -41,9 +41,10 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
     - Where to find
     - How to contribute
 - [Additional Information](#Additional_Information)
-    - Installing Node.js
-    - Installing NPM
-    - Creating a package.json
+    - [Installing Node.js](#Installing_Node)
+    - [Installing NPM](#Installing_npm)
+    - [New to Node?](#New_to_Node)
+    - [Creating a package.json](#Package_Json)
 
 <a name="Deploying_Applications"></a>
 # Deploying Applications
@@ -79,7 +80,7 @@ Let's start with a very basic node.js http server:
      }).listen(80); // the server will listen on port 80
 
 That's all the code you'll need for starters - name the file `server.js` (or anything else you'd like), and put it in a folder named `myapp`.
-Now it's time to learn some Jitsu.
+We'll come back to this code in a minute - now, it's time to learn some Jitsu.
 
 <a name="Using_The_Jitsu_Client"></a>
 
@@ -369,7 +370,7 @@ Anyone can contribute to any Nodejitsu open-source projects at any time. [Github
 
 If you are new to Node.js and Node.js application deployment, you might find the following section helpful.
 
-
+<a name="Installing_Node"></a>
 ## Installing Node.js
 
 ### Building and Installing Node.js
@@ -453,13 +454,22 @@ And visit
 [https://github.com/isaacs/npm](https://github.com/isaacs/npm) for
 details.
 
-<a name="package_json"></a>
+
+<a name="New_to_Node"></a>
+## New to Node.js?
+**Don't be scared!**  There are plenty of resources out there for beginners.  
+- [The Node.js Community Wiki](https://github.com/joyent/node/wiki)
+- [The nodejs.org Official Docs:](http://nodejs.org/docs/v0.4.8/api/)
+- The #Node.js and #nodesupport rooms on [irc.freenode.net](http://freenode.net)
+- @NodeKohai on Twitter
+
+<a name="Package_Json"></a>
 ## Understanding the package.json format
 A package.json file describes your application, its dependencies, and other various application configuration. For a detailed spec on creating a package.json you can check out Isaac's fine documentation [here](https://github.com/isaacs/npm/blob/master/doc/developers.md#readme). 
 
 ## Preparing a package.json for your application
 
-Nodejitsu requires that you create a valid [package.json](#package_json) for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when contructing your package.json file, we provide wizards in our CLI tool and web-site for creating one. 
+Nodejitsu requires that you create a valid [package.json](#package_json) for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when constructing your package.json file, we provide wizards in our CLI tool and on our website for creating one. 
 
 Here is an example of what your package.json might look like:
 

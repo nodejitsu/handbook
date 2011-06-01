@@ -32,5 +32,5 @@ Let's start with a very basic node.js http server:
      }).listen(80); // the server will listen on port 80
 
 That's all the code you'll need for starters - name the file `server.js` (or anything else you'd like), and put it in a folder named `myapp`.
-Now it's time to learn some Jitsu.
+We'll come back to this code in a minute - now, it's time to learn some Jitsu.
 
