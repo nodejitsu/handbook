@@ -24,8 +24,8 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
 
 - [Deploying Applications](#Deploying_Applications)
 - [Using the Jitsu Client](#Using_The_Jitsu_Client)
-    - Installation(#Installation)
-    - Usage(#Usage)
+    - [Installation](#Installation)
+    - [Usage](#Usage)
 - [Using the API](#Using_The_API)
     - [Applications](#Applications)
     - [Snapshots](#Snapshots)
@@ -356,13 +356,13 @@ A lot of Nodejitsu's technology stack is released as open-source software. We ch
 
 ## Where to find
 
-Nodejitsu hosts it's open-source projects on [Github.com](http://github.com/nodejitsu). Github is website for sharing and collobrating on source code. You can get source code without creating an account and if you want to create an account it's free. You'll need a [Git](http://gitscm.org/) client if you wish to check out any of our code repositories. 
+Nodejitsu hosts its open-source projects on [Github.com](http://github.com/nodejitsu). Github is website for sharing and collobrating on source code. You can get source code without creating an account and if you want to create an account it's free. You'll need a [Git](http://gitscm.org/) client if you wish to check out any of our code repositories. 
 
 You can visit our open-source project directory at: [http://github.com/nodejitsu](http://github.com/nodejitsu)
 
 ## How to contribute
 
-Anyone can contribute to any Nodejitsu open-source projects at anytime. [Github](http://github.com/nodejitsu) has the facilities for managing patches, issues, code comments, version control, etc. If you have any questions about a project you sign up and create a Github issue. We'll make sure one our Ninja's gets back to you soon.
+Anyone can contribute to any Nodejitsu open-source projects at any time. [Github](http://github.com/nodejitsu) has the facilities for managing patches, issues, code comments, version control, etc. If you have any questions about a project you sign up and create a Github issue. We'll make sure one our ninjas gets back to you soon.
 <a name="Additional_Information"></a>
 
 # Additional Information

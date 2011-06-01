@@ -3,8 +3,8 @@
 
 - [Deploying Applications](#Deploying_Applications)
 - [Using the Jitsu Client](#Using_The_Jitsu_Client)
-    - Installation(#Installation)
-    - Usage(#Usage)
+    - [Installation](#Installation)
+    - [Usage](#Usage)
 - [Using the API](#Using_The_API)
     - [Applications](#Applications)
     - [Snapshots](#Snapshots)
