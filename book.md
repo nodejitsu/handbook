@@ -58,14 +58,21 @@ We've got three basic ways to deploy your application.
 
 If it is your first time deploying an application and you are eager to get started, we recommend that you try out [Jitsu](#Using_The_Jitsu_Client), our CLI tool. Jitsu has a one line installer, it's self-documenting, and you'll be able to deploy your app in seconds.
 
-Let's start with a variation of the basic http server example from nodejs.org:
+Let's start with a very basic node.js http server:
 
+     // requires node's http module
      var http = require('http');
+     // creates a new httpServer instance
      http.createServer(function (req, res) {
+       // ^^ this is the callback, or request handler for the httpServer
+       // respond to the browser, write some headers so the 
+       // browser knows what type of content we are sending
        res.writeHead(200, {'Content-Type': 'text/html'});
-       res.end('<h1>Wow, it IS easy to get started with Jitsu!</h1>\n');
-     }).listen(1337, "127.0.0.1");
-     console.log('Server running at http://127.0.0.1:1337/');
+       // write some content to the browser that your user will see
+       res.write('<h1>hello, i know nodejitsu.</h1>')
+       // close the response
+       res.end();
+     }).listen(80); // the server will listen on port 80
 
 That's all the code you'll need for starters - name the file `server.js` (or anything else you'd like), and put it in a folder named `myapp`.
 Now it's time to learn some Jitsu.
@@ -102,6 +109,8 @@ If it's your first time using `jitsu`, you will be prompted to login with an exi
     jitsu deploy
 
 This will create a new application, package.json ( if you need one ), and deploy the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *subdomain* and *start script* but it's really easy and we promise it will only take a few seconds.
+
+Now just open up your favorite browser, and go to yoursubdomain.nodejitsu.com.  If everything has been set up correctly, then you, too, are on the path of nodejitsu!
 
 If you have any issues deploying your node.js application please feel free to open up an issue on the [Github Issues](https://github.com/nodejitsu/jitsu/issues) section of the jitsu homepage. We'll have someone get back to you in a flash!
 
@@ -141,7 +150,7 @@ If you have any issues deploying your node.js application please feel free to op
 
 ### Help
 
-Jitsu is mostly self documenting. We suggest just trying it out. All commands will yield friendly messages to you if you specify incorrect parameters. If you find anything difficult to use, please open up a Github issue or pull request! 
+All commands will yield friendly messages to you if you specify incorrect parameters, but we have also included help commands for all available command and configuration options. If you find anything difficult to use, please open up a Github issue or pull request! 
 
     jitsu help
     jitsu help apps

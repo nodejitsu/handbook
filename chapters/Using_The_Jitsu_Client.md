@@ -31,6 +31,8 @@ If it's your first time using `jitsu`, you will be prompted to login with an exi
 
 This will create a new application, package.json ( if you need one ), and deploy the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *subdomain* and *start script* but it's really easy and we promise it will only take a few seconds.
 
+Now just open up your favorite browser, and go to yoursubdomain.nodejitsu.com.  If everything has been set up correctly, then you, too, are on the path of nodejitsu!
+
 If you have any issues deploying your node.js application please feel free to open up an issue on the [Github Issues](https://github.com/nodejitsu/jitsu/issues) section of the jitsu homepage. We'll have someone get back to you in a flash!
 
 
@@ -69,7 +71,7 @@ If you have any issues deploying your node.js application please feel free to op
 
 ### Help
 
-Jitsu is mostly self documenting. We suggest just trying it out. All commands will yield friendly messages to you if you specify incorrect parameters. If you find anything difficult to use, please open up a Github issue or pull request! 
+All commands will yield friendly messages to you if you specify incorrect parameters, but we have also included help commands for all available command and configuration options. If you find anything difficult to use, please open up a Github issue or pull request! 
 
     jitsu help
     jitsu help apps
