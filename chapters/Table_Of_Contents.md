@@ -8,7 +8,7 @@
 - [Using the API](#Using_The_API)
     - [Applications](#Applications)
     - [Snapshots](#Snapshots)
-    - [Users](#User)
+    - [Users](#Users)
     - [Databases](#Databases)
     - [Logging](#Logging)
     - [Marketplace](#Marketplace)

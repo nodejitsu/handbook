@@ -29,7 +29,7 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
 - [Using the API](#Using_The_API)
     - [Applications](#Applications)
     - [Snapshots](#Snapshots)
-    - [Users](#User)
+    - [Users](#Users)
     - [Databases](#Databases)
     - [Logging](#Logging)
     - [Marketplace](#Marketplace)
