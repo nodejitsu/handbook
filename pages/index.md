@@ -7,13 +7,11 @@
 
 You only need to know 3 things to get started:
 
-1)We're Nodejitsu, and we can give you scalable, fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll find.
+- We're Nodejitsu, and we can give you scalable, fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll find.
+- Our entire stack is [open source](http://github.com/nodejitsu) and you can use our tools anywhere else you'd like to.
+- Getting started with [your first app](#Deploying_Applications) is [simple.](#Using_The_Jitsu_Client)
 
-2)Our entire stack is [open source](http://github.com/nodejitsu) and you can use our tools anywhere else you'd like to.
-
-3)Getting started with your first app is [simple.](#Deploying_Applications)
-
-##The Full Read:
+##Introduction
 
 Welcome to the Nodejitsu handbook. This document will help familiarize you with deploying your Node.js applications to the cloud while also providing detailed information about Nodejitsu's platform specific features. This is a living document which you can submit patches to @ [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
 
@@ -24,7 +22,7 @@ We are a collective of seasoned developers who have been devoted to the Node.js 
 
 ## What Is Nodejitsu?
 
-[Nodejitsu](http://nodejitsu.com/) is the Platform as A Service and Marketplace for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Our platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications. Our deployment tools are the most user-friendly in the industry and our customer support is unparalleled. 
+[Nodejitsu](http://nodejitsu.com/) is the Platform as a Service and Marketplace for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Our platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications. Our deployment tools are the most user-friendly in the industry and our customer support is unparalleled. 
 
 ## How Can I Get Started?
 

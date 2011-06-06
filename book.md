@@ -3,6 +3,16 @@
 
 *A gentle introduction to the art of Nodejitsu*
 
+##New and Impatient?  Want to get started fast?
+
+You only need to know 3 things to get started:
+
+- We're Nodejitsu, and we can give you scalable, fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll find.
+- Our entire stack is [open source](http://github.com/nodejitsu) and you can use our tools anywhere else you'd like to.
+- Getting started with [your first app](#Deploying_Applications) is [simple.](#Using_The_Jitsu_Client)
+
+##Introduction
+
 Welcome to the Nodejitsu handbook. This document will help familiarize you with deploying your Node.js applications to the cloud while also providing detailed information about Nodejitsu's platform specific features. This is a living document which you can submit patches to @ [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
 
 
@@ -12,7 +22,7 @@ We are a collective of seasoned developers who have been devoted to the Node.js 
 
 ## What Is Nodejitsu?
 
-[Nodejitsu](http://nodejitsu.com/) is the Platform as A Service and Marketplace for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Our platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications. Our deployment tools are the most user-friendly in the industry and our customer support is unparalleled. 
+[Nodejitsu](http://nodejitsu.com/) is the Platform as a Service and Marketplace for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Our platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications. Our deployment tools are the most user-friendly in the industry and our customer support is unparalleled. 
 
 ## How Can I Get Started?
 
@@ -26,16 +36,6 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
 - [Using the Jitsu Client](#Using_The_Jitsu_Client)
     - [Installation](#Installation)
     - [Usage](#Usage)
-- [Using the API](#Using_The_API)
-    - [Applications](#Applications)
-    - [Snapshots](#Snapshots)
-    - [Users](#Users)
-    - [Databases](#Databases)
-    - [Logging](#Logging)
-    - [Marketplace](#Marketplace)
-- [Using Databases](#Using_Databases)
-    - Creating new Databases
-    - Connecting existing Databases
 - [Nodejitsu's Open-source Projects](#Open_source_Projects)
     - Why open-source
     - Where to find
@@ -45,6 +45,14 @@ So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is 
     - [Installing NPM](#Installing_npm)
     - [New to Node?](#New_to_Node)
     - [Creating a package.json](#Package_Json)
+    - [Using Databases](#Using_Databases)
+- [Using the JSON API](handbook/blob/master/API.md#Using_The_API)
+    - [Applications](handbook/blob/master/API.md#Applications)
+    - [Snapshots](handbook/blob/master/API.md#Snapshots)
+    - [Users](handbook/blob/master/API.md#Users)
+    - [Databases](handbook/blob/master/API.md#Databases)
+    - [Logging](handbook/blob/master/API.md#Logging)
+    - [Marketplace](handbook/blob/master/API.md#Marketplace)
 
 <a name="Deploying_Applications"></a>
 # Deploying Applications
