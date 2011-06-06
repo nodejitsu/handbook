@@ -15,7 +15,7 @@
     - [New to Node?](#New_to_Node)
     - [Creating a package.json](#Package_Json)
     - [Using Databases](#Using_Databases)
-- [Using the API](handbook/blob/master/API.md#Using_The_API)
+- [Using the JSON API](handbook/blob/master/API.md#Using_The_API)
     - [Applications](handbook/blob/master/API.md#Applications)
     - [Snapshots](handbook/blob/master/API.md#Snapshots)
     - [Users](handbook/blob/master/API.md#Users)
