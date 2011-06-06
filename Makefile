@@ -27,7 +27,7 @@ regenerate: clean all
 
 book.pdf: $(HTML)
 	@echo "\n... generating $@"
-	htmldoc $(HTML) $(PDF_FLAGS) --webpage --outfile $@
+	htmldoc --webpage -f $@ $(PDF_FLAGS) $(HTML)
 
 book.md: $(HTML)
 	@echo "\n... generating $@"
