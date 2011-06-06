@@ -23,10 +23,10 @@ README = pages/index.md \
 	chapters/Deploying_Applications.md \
 	chapters/Using_The_Jitsu_Client.md \
 	chapters/Open_Source_Projects.md \
-	chapters/Additional_Information.md 
-
-API = chapters/Using_The_API.md \
+	chapters/Additional_Information.md \
 	chapters/Databases.md 
+
+API = chapters/Using_The_API.md 
 
 
 HTML = $(MD:.md=.html)
