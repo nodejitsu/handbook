@@ -3,24 +3,35 @@
 #
 
 PDF_FLAGS = --fontsize 9.0 \
-			--linkstyle plain \
-			--linkcolor blue \
-			--embedfonts \
-			--footer "c 1" \
-			--no-toc
+		--linkstyle plain \
+		--linkcolor blue \
+		--embedfonts \
+		--footer "c 1" \
+		--no-toc
 
 MD = pages/index.md \
-      	 chapters/Table_Of_Contents.md \
-      	 chapters/Deploying_Applications.md \
-      	 chapters/Using_The_Jitsu_Client.md \
-      	 chapters/Using_The_API.md \
-      	 chapters/Databases.md \
-      	 chapters/Open_Source_Projects.md \
-      	 chapters/Additional_Information.md
+	chapters/Table_Of_Contents.md \
+	chapters/Deploying_Applications.md \
+	chapters/Using_The_Jitsu_Client.md \
+	chapters/Using_The_API.md \
+	chapters/Databases.md \
+	chapters/Open_Source_Projects.md \
+	chapters/Additional_Information.md
+
+README = pages/index.md \
+	chapters/Table_Of_Contents.md \
+	chapters/Deploying_Applications.md \
+	chapters/Using_The_Jitsu_Client.md \
+	chapters/Open_Source_Projects.md \
+	chapters/Additional_Information.md 
+
+API = chapters/Using_The_API.md \
+	chapters/Databases.md 
+
 
 HTML = $(MD:.md=.html)
 
-all: book.html book.pdf book.md ReadMe.md clear
+all: book.html book.pdf book.md ReadMe.md API.md clear
 
 regenerate: clean all
 	git commit -a -m 'Regenerated book' && echo done
@@ -32,10 +43,14 @@ book.pdf: $(HTML)
 book.md: $(HTML)
 	@echo "\n... generating $@"
 	cat $(MD) > book.md
-  
+
 ReadMe.md: $(HTML)
 	@echo "\n... generating $@"
-	cat $(MD) > ReadMe.md
+	cat $(README) > ReadMe.md
+
+API.md: $(HTML)
+	@echo "\n... generating $@"
+	cat $(API) > API.md
 
 book.html: pages/head.html pages/tail.html $(HTML)
 	@echo "\n... generating $@"
