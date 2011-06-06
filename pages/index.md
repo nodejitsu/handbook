@@ -9,7 +9,7 @@ You only need to know 3 things to get started:
 
 - We're Nodejitsu, and we can give you scalable, fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll find.
 - Our entire stack is [open source](http://github.com/nodejitsu) and you can use our tools anywhere else you'd like to.
-- Getting started with [your first app](#Deploying_Applications) is [simple.](#Using_The_Jitsu_Client)
+- Getting started with [your first app](#Deploying_Applications) is [simple](#Using_The_Jitsu_Client) with our Jitsu command-line interface.
 
 ##Introduction
 
