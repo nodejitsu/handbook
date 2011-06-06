@@ -3,9 +3,9 @@
 
 *A gentle introduction to the art of Nodejitsu*
 
-**New and Impatient?  Want to get started fast?**
+##New and Impatient?  Want to get started fast?
 
-Well, we've got a quick 1-2-3 for you.  
+You only need to know 3 things to get started:
 
 1)We're Nodejitsu, and we can give you scalable, fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll find.
 
@@ -13,7 +13,7 @@ Well, we've got a quick 1-2-3 for you.
 
 3)Getting started with your first app is [simple.](#Deploying_Applications)
 
-**The Full Read:**
+##The Full Read:
 
 Welcome to the Nodejitsu handbook. This document will help familiarize you with deploying your Node.js applications to the cloud while also providing detailed information about Nodejitsu's platform specific features. This is a living document which you can submit patches to @ [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
 
