@@ -147,7 +147,7 @@ We'll come back to this code in a minute - now, it's time to learn some Jitsu.</
 Using The Jitsu Client</h1>
 <p><a href="http://github.com/nodejitsu/jitsu">Jitsu</a> is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface (CLI)</a> for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access you can still do everything Jitsu can do through our web admin, <a href="http://nodejitsu.com">Samurai</a>.</p>
 
-<p>Jitsu requires the Node Package Manager ( npm ). If you need help installing npm go to: <a href="#Installing_npm" data-bare-link="true">Installing npm</a></p>
+<p>Jitsu requires the Node Package Manager (npm). If you need help installing npm go to: <a href="#Installing_npm" data-bare-link="true">Installing npm</a></p>
 
 <p><a name="Installation"></a></p>
 
@@ -176,7 +176,7 @@ Using The Jitsu Client</h1>
 jitsu deploy
 </code></pre>
 
-<p>This will create a new application, package.json ( if you need one ), and deploy the current path to <a href="http://nodejitsu.com">Nodejitsu</a>. If it's your first deployment, you'll be prompted for some information such as <em>subdomain</em> and <em>start script</em> but it's really easy and we promise it will only take a few seconds.</p>
+<p>This will create a new application, package.json (if you need one), and deploy the current path to <a href="http://nodejitsu.com">Nodejitsu</a>. If it's your first deployment, you'll be prompted for some information such as <em>subdomain</em> and <em>start script</em> but it's really easy and we promise it will only take a few seconds.</p>
 
 <p>Now just open up your favorite browser, and go to yoursubdomain.nodejitsu.com.  If everything has been set up correctly, then you, too, are on the path of nodejitsu!</p>
 
@@ -451,11 +451,11 @@ Using Databases</h1>
 <h1><p><a name="#Open_source_Projects"></a></p>
 
 Open-source Projects</h1>
-<h2 id="Why-open-source">Why open-source</h2>
+<h2 id="Why-open-source-">Why open-source?</h2>
 
 <p>A lot of Nodejitsu's technology stack is released as open-source software. We choose to do this for many reasons. Aside from being able to give back to the very awesome Node.js community, releasing pieces of our stack as open-source allows other developers to review and improve our software. We've already received invaluable contributions to our platform from developers who would have never seen our code if we had not open-sourced it.</p>
 
-<h2 id="Where-to-find">Where to find</h2>
+<h2 id="Where-to-find-it">Where to find it</h2>
 
 <p>Nodejitsu hosts its open-source projects on <a href="http://github.com/nodejitsu">Github.com</a>. Github is website for sharing and collobrating on source code. You can get source code without creating an account and if you want to create an account it's free. You'll need a <a href="http://gitscm.org/">Git</a> client if you wish to check out any of our code repositories.</p>
 
@@ -463,7 +463,7 @@ Open-source Projects</h1>
 
 <h2 id="How-to-contribute">How to contribute</h2>
 
-<p>Anyone can contribute to any Nodejitsu open-source projects at any time. <a href="http://github.com/nodejitsu">Github</a> has the facilities for managing patches, issues, code comments, version control, etc. If you have any questions about a project you sign up and create a Github issue. We'll make sure one our ninjas gets back to you soon.</p>
+<p>Anyone can contribute to any of our Nodejitsu open-source projects at any time. <a href="http://github.com/nodejitsu">Github</a> has the facilities for managing patches, issues, code comments, version control, and just about anything else an open source developer could need.  If you have any questions about a project, simply sign up and create a Github issue. We'll make sure one our ninjas gets back to you with ninja speed!</p>
 
 </div>
 <div class='mp'>
@@ -554,10 +554,12 @@ and easy one-liner for installing on Unix.</p>
 <pre><code>$ curl http://npmjs.org/install.sh | sh
 </code></pre>
 
-<p>To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> ( The Nodejitsu deployment CLI tool )</p>
+<p>To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> (The Nodejitsu deployment CLI tool)</p>
 
 <pre><code>$ npm install jitsu
 </code></pre>
+
+<p>The number of npm modules available is vast - try a <a href="http://search.npmjs.org">search!</a></p>
 
 <p>And visit
 <a href="https://github.com/isaacs/npm" data-bare-link="true">https://github.com/isaacs/npm</a> for
@@ -570,7 +572,7 @@ details.</p>
 <p><strong>Don't be scared!</strong>  There are plenty of resources out there for beginners.  Here are just a few:</p>
 
 <ul>
-<li><a href="http://nodejs.org/docs/v0.4.8/api/">The nodejs.org Official Docs:</a></li>
+<li><a href="http://nodejs.org/docs/v0.4.8/api/">The nodejs.org Official Docs</a></li>
 <li>The #Node.js, #nodejitsu and #nodesupport rooms on <a href="http://webchat.freenode.net/">irc.freenode.net</a></li>
 <li><a href="http://twitter.com/#!/NodeKohai">@NodeKohai on Twitter</a></li>
 </ul>
@@ -580,7 +582,7 @@ details.</p>
 
 <h2 id="Understanding-the-package-json-format">Understanding the package.json format</h2>
 
-<p>A package.json file describes your application, its dependencies, and other various application configuration. For a detailed spec on creating a package.json you can check out Isaac's fine documentation <a href="https://github.com/isaacs/npm/blob/master/doc/developers.md#readme">here</a>.</p>
+<p>A package.json file describes your application, its dependencies, and other various application metadata. For a detailed spec on creating a package.json you can check out Isaac's fine documentation <a href="https://github.com/isaacs/npm/blob/master/doc/developers.md#readme">here</a>.</p>
 
 <h2 id="Preparing-a-package-json-for-your-application">Preparing a package.json for your application</h2>
 

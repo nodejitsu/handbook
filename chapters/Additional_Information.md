@@ -85,6 +85,8 @@ To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> 
 
     $ npm install jitsu
 
+The number of npm modules available is vast - try a [search!](http://search.npmjs.org)  
+
 And visit
 [https://github.com/isaacs/npm](https://github.com/isaacs/npm) for
 details.
@@ -95,13 +97,13 @@ details.
 
 **Don't be scared!**  There are plenty of resources out there for beginners.  Here are just a few:
 
-- [The nodejs.org Official Docs:](http://nodejs.org/docs/v0.4.8/api/)
+- [The nodejs.org Official Docs](http://nodejs.org/docs/v0.4.8/api/)
 - The #Node.js, #nodejitsu and #nodesupport rooms on [irc.freenode.net](http://webchat.freenode.net/)
 - [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai)
 
 <a name="Package_Json"></a>
 ## Understanding the package.json format
-A package.json file describes your application, its dependencies, and other various application configuration. For a detailed spec on creating a package.json you can check out Isaac's fine documentation [here](https://github.com/isaacs/npm/blob/master/doc/developers.md#readme). 
+A package.json file describes your application, its dependencies, and other various application metadata. For a detailed spec on creating a package.json you can check out Isaac's fine documentation [here](https://github.com/isaacs/npm/blob/master/doc/developers.md#readme). 
 
 ## Preparing a package.json for your application
 
