@@ -96,7 +96,7 @@ We'll come back to this code in a minute - now, it's time to learn some Jitsu.
 
 [Jitsu](http://github.com/nodejitsu/jitsu) is a [Command Line Interface (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access you can still do everything Jitsu can do through our web admin, [Samurai](http://nodejitsu.com). 
 
-Jitsu requires the Node Package Manager ( npm ). If you need help installing npm go to: [Installing npm](#Installing_npm)
+Jitsu requires the Node Package Manager (npm). If you need help installing npm go to: [Installing npm](#Installing_npm)
 
 <a name="Installation"></a>
 ## Installation
@@ -121,7 +121,7 @@ If it's your first time using `jitsu`, you will be prompted to login with an exi
     cd /path/to/myapp
     jitsu deploy
 
-This will create a new application, package.json ( if you need one ), and deploy the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *subdomain* and *start script* but it's really easy and we promise it will only take a few seconds.
+This will create a new application, package.json (if you need one), and deploy the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *subdomain* and *start script* but it's really easy and we promise it will only take a few seconds.
 
 Now just open up your favorite browser, and go to yoursubdomain.nodejitsu.com.  If everything has been set up correctly, then you, too, are on the path of nodejitsu!
 
@@ -274,7 +274,7 @@ and easy one-liner for installing on Unix.
 
     $ curl http://npmjs.org/install.sh | sh
 
-To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> ( The Nodejitsu deployment CLI tool )
+To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> (The Nodejitsu deployment CLI tool)
 
     $ npm install jitsu
 

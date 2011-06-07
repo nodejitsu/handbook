@@ -81,7 +81,7 @@ and easy one-liner for installing on Unix.
 
     $ curl http://npmjs.org/install.sh | sh
 
-To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> ( The Nodejitsu deployment CLI tool )
+To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> (The Nodejitsu deployment CLI tool)
 
     $ npm install jitsu
 
