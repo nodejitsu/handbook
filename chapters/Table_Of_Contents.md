@@ -6,9 +6,9 @@
     - [Installation](#Installation)
     - [Usage](#Usage)
 - [Nodejitsu's Open-source Projects](#Open_source_Projects)
-    - Why open-source
-    - Where to find
-    - How to contribute
+    - [Why open-source](#Why_Open_Source)
+    - [Where to find them](#Where_To_Find_Them)
+    - [How to contribute](#How_To_Contribute)
 - [Additional Information](#Additional_Information)
     - [Installing Node.js](#Installing_Node)
     - [Installing NPM](#Installing_npm)
