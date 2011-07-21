@@ -9,8 +9,9 @@ PDF_FLAGS = --fontsize 9.0 \
 		--footer "c 1" \
 		--no-toc
 
-MD = pages/index.md \
+MD = pages/title.md \
 	chapters/Table_Of_Contents.md \
+    chapters/Introduction.md\
 	chapters/Deploying_Applications.md \
 	chapters/Using_The_Jitsu_Client.md \
 	chapters/Using_The_API.md \
@@ -20,6 +21,7 @@ MD = pages/index.md \
 
 README = pages/index.md \
 	chapters/Table_Of_Contents.md \
+    chapters/Introduction.md\
 	chapters/Deploying_Applications.md \
 	chapters/Using_The_Jitsu_Client.md \
 	chapters/Open_Source_Projects.md \
