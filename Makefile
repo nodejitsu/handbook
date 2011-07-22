@@ -14,6 +14,11 @@ MD = pages/title.md \
     chapters/introduction.md \
     chapters/hello_world.md \
 	chapters/open_source_projects.md \
+    chapters/platform_features.md \
+    chapters/jitsu.md \
+    chapters/web_admin.md \
+    chapters/json_api.md \
+    chapters/haibu.md \
     chapters/troubleshooting_and_support.md \
 	chapters/appendices.md
 
