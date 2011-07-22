@@ -1,11 +1,23 @@
 # Hello World: A Tutorial
 
-<!--Expand this. Point to resources!-->
-This assumes that you have installed node and npm.
+In this tutorial, you will write a simple "hello world" web application in
+Node.js, and then deploy it using `jitsu`, Nodejitsu's command line interface.
+
+Before you get started, you should have both
+[Node.js](http://nodejs.org/#download) and [npm](http://npmjs.org/), the Node.js
+package manager, installed.
+
+<!--
+A good idea would be to link to further resources on installing node and npm.
+This may include the handbook appendices, nodedocs.org and/or particular pages
+in the documentation for the projects.
+-->
 
 ## Write A Server:
 
-Let's start with a very basic node.js http server:
+Let's start with a very basic node.js http server. Create a folder called
+`myapp/` and then create a file inside the folder called `server.js` inside of
+it with the following code:
 
      // requires node's http module
      var http = require('http');
@@ -25,48 +37,73 @@ Let's start with a very basic node.js http server:
        res.end();
      }).listen(80); // the server will listen on port 80
 
-That's all the code you'll need for starters - name the file `server.js` (or anything else you'd like), and put it in a folder named `myapp`.
+That's all the code you'll need for starters.
 
 ## Deploy with `jitsu`:
 
-We've got three basic ways to deploy your application. 
+There are three basic ways to deploy your application. 
 
-- [Jitsu](#Using_The_Jitsu_Client), The Nodejitsu Command Line Tool 
-- [The web admin](http://develop.nodejitsu.com/), An easy to use Web Admin
-- The JSON [API](#Using_The_API)
+* `jitsu`, The Nodejitsu command line tool 
+* The Nodejitsu [Web Application](http://develop.nodejitsu.com/), An easy to use
+web interface for managing your applications
+* The JSON [API](#Using_The_API)
 
-If it is your first time deploying an application and you are eager to get started, we recommend that you try out [Jitsu](#Using_The_Jitsu_Client), our CLI tool. Jitsu has a one line installer, it's self-documenting, and you'll be able to deploy your app in seconds.
+[`jitsu`](http://github.com/nodejitsu/jitsu) is a
+[Command Line Interface (CLI)](http://en.wikipedia.org/wiki/Command-line_interface)
+for interacting with the Nodejitsu platform. It's open-source and easy to use.
+We've designed Jitsu to be suitable for command line beginners, but still be
+powerful and extensible enough for production usage. If you aren't a fan of the
+command line or don't have terminal access you can still do everything `jitsu`
+can do through the [Nodejitsu Web Application](http://nodejitsu.com).
 
-[Jitsu](http://github.com/nodejitsu/jitsu) is a [Command Line Interface (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access you can still do everything Jitsu can do through our web admin, [Samurai](http://nodejitsu.com). 
+<!--Make sure that all these links point to the proper URLs-->
+In this tutorial, we use `jitsu` to deploy our "hello world" application. If
+this is your first time deploying an application and you are eager to get
+started, we recommend using `jitsu`; it has a one line installer, it's self-documenting, and with it you'll be able to deploy your app in seconds.
 
-Jitsu requires the Node Package Manager (npm). If you need help installing npm go to: [Installing npm](#Installing_npm)
-
-<a name="Installation"></a>
 ## Installation
 
-     [sudo] npm install jitsu
+In order to install `jitsu`, open a terminal and type:
 
-<img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png"/>
+     [sudo] npm install -g jitsu
 
-<a name="Usage"></a>
-## Usage
+<!-- Update this image!-->
+![](https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png)
 
-`jitsu` is mostly self documenting. After installation, run the `jitsu` command from your command line.
+This command will install `jitsu` on your system; the `-g` makes npm install it
+globally.
 
-If it's your first time using `jitsu`, you will be prompted to login with an existing account or create a new account.
+<!-- Expand this block! Or, combine with another block.-->
+`jitsu` is mostly self documenting. 
 
+After installation, run the `jitsu` command from your command line. Since it's
+your first time using `jitsu`, you will be prompted to login with an existing
+account or to create a new account.
+
+<!-- Update this image?-->
 <img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png"/>
 
-**After you've logged in, you can start deploying apps immediately!**
+**Once you've logged in, you can deploy your app immediately.**
 
 ## One-line deployment
+
+Open a terminal:
+
+<!-- Is /path/to/myapp the best way to say this? Probably. :( -->
 
     cd /path/to/myapp
     jitsu deploy
 
-This will create a new application, package.json (if you need one), and deploy the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *subdomain* and *start script* but it's really easy and we promise it will only take a few seconds.
+<!-- Expand! Run through the details of below, *assuming it's the first time*-->
+This will create a new application snapshot, generate or update the package.json
+for the project, and deploy the project in the current path to
+[Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be
+prompted for some information such as *subdomain* and *start script* but it's
+really easy and we promise it will only
+take a few seconds.
 
-Now just open up your favorite browser, and go to yoursubdomain.nodejitsu.com.  If everything has been set up correctly, then you, too, are on the path of nodejitsu!
-
-If you have any issues deploying your node.js application please feel free to open up an issue on the [Github Issues](https://github.com/nodejitsu/jitsu/issues) section of the jitsu homepage. We'll have someone get back to you in a flash!
+<!--Consider this without the prior context of 'go here for support.'-->
+Now just open up your favorite browser, and go to `yoursubdomain.nodejitsu.com`.
+If everything has been set up correctly, then you, too, are on the path of
+nodejitsu!
 
