@@ -1,3 +1,9 @@
+# Features of the Nodejitsu Platform
+
+## Deployment
+## Snapshots
+## Databases
+
 # The Jitsu Client
 
 <!--
