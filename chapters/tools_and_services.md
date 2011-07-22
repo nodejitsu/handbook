@@ -3,6 +3,7 @@
 ## Deployment
 ## Snapshots
 ## Databases
+## Marketplace
 
 # The Jitsu Client
 
@@ -341,8 +342,6 @@ Logging is a very important feature in any professional grade Node.js applicatio
 #### Get logs for a specific application
 
      GET /logs/:user-id/:app-id
-
-<a name="Marketplace"></a>
 
 ## Marketplace
 
