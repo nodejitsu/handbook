@@ -1,7 +1,11 @@
 # Features of the Nodejitsu Platform
 
 ## Deployment
+<!--stub out!-->
+
 ## Snapshots
+<!--stub out!-->
+
 ## Databases
 
 Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
@@ -19,6 +23,9 @@ If you already have an externally hosted Database, Nodejitsu is capable of conne
 
 If you want to connect a Database to your Node.js application, Nodejitsu provides you with sample code for each Database type as well as the ability to specify database connection strings in your application's package.json
 
-     TODO: Add better package.json configuration description
+
+<!--TODO: Add better package.json configuration description-->
 
 ## Marketplace
+
+<!--stub out!-->
