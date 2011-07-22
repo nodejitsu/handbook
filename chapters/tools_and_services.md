@@ -1,87 +1,161 @@
-# Using The Jitsu Client
+# The Jitsu Client
 
-[Jitsu](http://github.com/nodejitsu/jitsu) is a [Command Line Interface (CLI)](http://en.wikipedia.org/wiki/Command-line_interface) for interacting with the Nodejitsu platform. It's open-source and easy to use. We've designed Jitsu to be suitable for command line beginners, but still be powerful and extensible enough for production usage. If you aren't a fan of the command line or don't have terminal access you can still do everything Jitsu can do through our web admin, [Samurai](http://nodejitsu.com). 
+<!--
+This section is going to repeat stuff from the tutorial. Unfortunate, perhaps,
+but I think this is for the best as these sections should be standalone.
+-->
 
-Jitsu requires the Node Package Manager (npm). If you need help installing npm go to: [Installing npm](#Installing_npm)
+<!--
+That said, this should be rewritten so it's not *exactly* the same copy. In fact
+some of the material from the tutorial could be streamlined as the rest is
+here anyway.
+-->
 
-<a name="Installation"></a>
+[`jitsu`](http://github.com/nodejitsu/jitsu) is a
+[Command Line Interface (CLI)](http://en.wikipedia.org/wiki/Command-line_interface)
+for interacting with the Nodejitsu platform. It's open-source and easy to use.
+We've designed Jitsu to be suitable for command line beginners, but still be
+powerful and extensible enough for production usage.
+
 ## Installation
 
-     [sudo] npm install jitsu
+`jitsu` is distrubited using the Node Package Manager (npm). Installing `jitsu`
+with npm is a snap:
 
-<img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png"/>
+     [sudo] npm install -g jitsu
 
-<a name="Usage"></a>
+This command installs `jitsu` on the system globally.
+
 ## Usage
 
-`jitsu` is mostly self documenting. After installation, run the `jitsu` command from your command line.
-
-If it's your first time using `jitsu`, you will be prompted to login with an existing account or create a new account.
-
-<img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png"/>
-
-**After you've logged in, you can start deploying apps immediately!**
-
-## One-line deployment
-
-    cd /path/to/myapp
-    jitsu deploy
-
-This will create a new application, package.json (if you need one), and deploy the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *subdomain* and *start script* but it's really easy and we promise it will only take a few seconds.
-
-Now just open up your favorite browser, and go to yoursubdomain.nodejitsu.com.  If everything has been set up correctly, then you, too, are on the path of nodejitsu!
-
-If you have any issues deploying your node.js application please feel free to open up an issue on the [Github Issues](https://github.com/nodejitsu/jitsu/issues) section of the jitsu homepage. We'll have someone get back to you in a flash!
-
-
-## Command Line Usage
-
-`jitsu` is mostly self-documenting. Try any of these commands to get started.
-
-
-  **Usage:**
+Commands for `jitsu` follow this pattern:
 
     jitsu <resource> <action> <param1> <param2> ...
 
-  **Common Commands:**
+For example, in `jitsu apps deploy`, "apps" is the resource and "deploy" is the
+action.
 
-  *Deploys current path to [Nodejitsu](http://nodejitsu.com)*
+<!-- alphabetize these? Also, is ### appropriate? -->
 
-    jitsu deploy
+### `jitsu deploy` (`jitsu apps deploy`)
 
-  *Creates a new application on [Nodejitsu](http://nodejitsu.com)*
+`jitsu deploy` will attempt to deploy the application in the current directory
+to [Nodejitsu](http://nodejitsu.com). It deploys your application using the
+following steps:
 
-    jitsu create
+1. Creates the application (if necessary)
+2. Creates or validates the package.json
+3. Packages and creates a new snapshot
+4. Stops the application (if neccessary)
+5. Starts the application
 
-  *Lists all applications for the current user*
+### `jitsu create` (`jitsu apps create`)
 
-    jitsu list
+<!--Discuss the package.json behavior in depth.-->
+`jitsu create` will create a new application. This entails generating a
+package.json for your app, for the purposes of deployment.
 
-  *Additional Commands*
+### `jitsu list` (`jitsu apps list`)
 
-    jitsu apps
-    jitsu snapshots
-    jitsu users
-    jitsu conf
-    jitsu logout
+`jitsu list` lists your applications, as well as their respective states,
+subdomains, entry points and latest snapshots.
 
+<!-- Screenshot -->
 
+### `jitsu apps <action>`
 
-### Help
+In addition to the commands aliased to `jitsu create`, `jitsu deploy` and 
+`jitsu list`, the `apps` resource contains a number of other actions.
 
-All commands will yield friendly messages to you if you specify incorrect parameters, but we have also included help commands for all available command and configuration options. If you find anything difficult to use, please open up a Github issue or pull request! 
+#### `jitsu apps view <name>`:
 
-    jitsu help
-    jitsu help apps
-    jitsu help snapshots
-    jitsu help users
-    jitsu help config
+Lists the information for the application in the current directory. If `<name>`
+is supplied, then that application's information is listed instead.
+
+#### `jitsu apps update <name>`:
+
+<!-- What does this do, exactly? I'm not sure. -->
+
+Updates the application in the current directory with the information in the
+`package.json` file. If `<name>` is supplied, the application with `<name>` is
+updated instead.
+
+#### `jitsu apps destroy <name>`
+
+<!-- We need to elaborate on what "destroying" an app means. -->
+
+Destroys the application in the current directory. If `<name>` is supplied then that application is destroyed instead.
+
+<!-- We also need to elaborate on what start/stop/restart means. -->
+
+#### `jitsu apps start <name>`
+
+Starts the application in the current directory. If `<name>` is supplied then
+that application is started instead.
+
+#### `jitsu apps restart <name>`
+
+Restarts the application in the current directory. If `<name>` is supplied then
+that application is restarted instead.
+
+#### `jitsu apps stop <name>`
+
+Stops the application in the current directory. If `<name>` is supplied then
+that application is stopped instead.
+
+### `jitsu config <action>`
+
+`jitsu config` commands allow you to edit your local jitsu confuration file.
+
+#### `jitsu config list`
+
+Lists all configuration values currently set for the user.
+
+#### `jitsu config set <key> <value>`
+
+Sets the specified `<key>`/`<value>` pair in the jitsu configuration.
+
+#### `jitsu config get <key> <value>`
+
+Gets the specified `<key>`/`<value>` pair in the jitsu configuration.
+
+#### `jitsu config delete <key>`
+
+Deletes the specified `<key>` in the jitsu configuration.
+
+### `jitsu help <resource> <action>`
+
+All commands will yield friendly messages to you if you specify incorrect
+parameters. Additionally, `jitsu help` will return useful help messages about
+any given resource or resource/action pair. for instance:
+
+    josh@pidgey:~$ jitsu help apps deploy
+    info:   Welcome to Nodejitsu
+    info:   It worked if it ends with Nodejitsu ok
+    info:   Executing command help apps deploy
+    help:   
+    help:   
+    help:   Deploys an application using the following steps:
+    help:   
+    help:     1. Creates the application (if necessary)
+    help:     2. Creates or validates the package.json
+    help:     3. Packages and creates a new snapshot
+    help:     4. Stops the application (if neccessary)
+    help:     5. Starts the application
+    help:   
+    help:   jitsu deploy
+    help:   jitsu apps deploy
+    help:   
+    info:   Nodejitsu ok
+    josh@pidgey:~$ 
+
+If no
+resource and/or action are specified, then `jitsu help` alone will describe
+what resources are available.
 
 ## .jitsuconf file
 
-All configuration data for your local `jitsu` install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes via:
-
-    jitsu config
+All configuration data for your local `jitsu` install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
 
 # Web Admin
 
