@@ -10,14 +10,12 @@ PDF_FLAGS = --fontsize 9.0 \
 		--no-toc
 
 MD = pages/title.md \
-	chapters/Table_Of_Contents.md \
-    chapters/Introduction.md\
-	chapters/Deploying_Applications.md \
-	chapters/Using_The_Jitsu_Client.md \
-	chapters/Using_The_API.md \
-	chapters/Databases.md \
-	chapters/Open_Source_Projects.md \
-	chapters/Additional_Information.md
+	chapters/Table_Of_Contents.md \ #Hoping to autogenerate, yo
+    chapters/introduction.md \
+    chapters/hello_world.md \
+	chapters/open_source_projects.md \
+    chapters/troubleshooting_and_support.md \
+	chapters/appendices.md
 
 README = pages/index.md \
 	chapters/Table_Of_Contents.md \
