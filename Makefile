@@ -20,7 +20,7 @@ MD = pages/title.md \
     chapters/json_api.md \
     chapters/haibu.md \
     chapters/troubleshooting_and_support.md \
-	chapters/appendices.md
+	chapters/appendix.md
 
 README = pages/index.md \
 	chapters/Table_Of_Contents.md \
