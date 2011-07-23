@@ -4,8 +4,8 @@ In this tutorial, you will write a simple "hello world" web application in
 Node.js, and then deploy it using `jitsu`, Nodejitsu's command line interface.
 
 Before you get started, you should have both
-[Node.js](http://nodejs.org/#download) and [npm](http://npmjs.org/), the Node.js
-package manager, installed.
+[Node.js](http://nodejs.org/#download) and the
+[Node Package Manager](http://npmjs.org/) (npm) installed.
 
 <!--
 A good idea would be to link to further resources on installing node and npm.
@@ -41,8 +41,9 @@ That's all the code you'll need for starters.
 
 ## Deploy with `jitsu`:
 
-There are three basic ways to deploy your application. 
+There are three basic ways to deploy applications to Nodejitsu:
 
+<!--Make sure that all these links point to the proper URLs-->
 * `jitsu`, The Nodejitsu command line tool 
 * The Nodejitsu [Web Application](http://develop.nodejitsu.com/), An easy to use
 web interface for managing your applications
@@ -56,7 +57,6 @@ powerful and extensible enough for production usage. If you aren't a fan of the
 command line or don't have terminal access you can still do everything `jitsu`
 can do through the [Nodejitsu Web Application](http://nodejitsu.com).
 
-<!--Make sure that all these links point to the proper URLs-->
 In this tutorial, we use `jitsu` to deploy our "hello world" application. If
 this is your first time deploying an application and you are eager to get
 started, we recommend using `jitsu`; it has a one line installer, it's self-documenting, and with it you'll be able to deploy your app in seconds.
@@ -73,9 +73,6 @@ In order to install `jitsu`, open a terminal and type:
 This command will install `jitsu` on your system; the `-g` makes npm install it
 globally.
 
-<!-- Expand this block! Or, combine with another block.-->
-`jitsu` is mostly self documenting. 
-
 After installation, run the `jitsu` command from your command line. Since it's
 your first time using `jitsu`, you will be prompted to login with an existing
 account or to create a new account.
@@ -85,7 +82,7 @@ account or to create a new account.
 
 **Once you've logged in, you can deploy your app immediately.**
 
-## One-line deployment
+## One Line Deployment
 
 Open a terminal:
 
@@ -95,8 +92,8 @@ Open a terminal:
     jitsu deploy
 
 <!-- Expand! Run through the details of below, *assuming it's the first time*-->
-This will create a new application snapshot, generate or update the package.json
-for the project, and deploy the project in the current path to
+This will create a new application snapshot, generate and or update project
+metadata, and deploy the project in the current path to
 [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be
 prompted for some information such as *subdomain* and *start script* but it's
 really easy and we promise it will only
