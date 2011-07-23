@@ -1,11 +1,5 @@
+# Appendix
 
-<a name="Additional_Information"></a>
-
-# Additional Information
-
-If you are new to Node.js and Node.js application deployment, you might find the following section helpful.
-
-<a name="Installing_Node"></a>
 ## Installing Node.js
 
 ### Building and Installing Node.js
