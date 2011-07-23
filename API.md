@@ -1,5 +1,4 @@
-<a name="Using_The_API"></a>
-# Using The API
+# JSON API
 
 Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON](http://en.wikipedia.org/wiki/JSON). The API is the most low-level way of interacting with the Nodejitsu platform. For most deployment scenarios you should use our command line tool, [jitsu](#Using_The_Jitsu_Client), or login directly at [http://nodejitsu.com](http://nodejitsu.com)
 
@@ -140,8 +139,6 @@ Logging is a very important feature in any professional grade Node.js applicatio
 #### Get logs for a specific application
 
      GET /logs/:user-id/:app-id
-
-<a name="Marketplace"></a>
 
 ## Marketplace
 
