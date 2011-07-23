@@ -9,8 +9,9 @@ PDF_FLAGS = --fontsize 9.0 \
 		--footer "c 1" \
 		--no-toc
 
+#Hoping to autogenerate the ToC.
 MD = pages/title.md \
-	chapters/Table_Of_Contents.md \ #Hoping to autogenerate, yo
+	chapters/Table_Of_Contents.md \
     chapters/introduction.md \
     chapters/hello_world.md \
 	chapters/open_source_projects.md \
@@ -22,17 +23,9 @@ MD = pages/title.md \
     chapters/troubleshooting_and_support.md \
 	chapters/appendix.md
 
-README = pages/index.md \
-	chapters/Table_Of_Contents.md \
-    chapters/Introduction.md\
-	chapters/Deploying_Applications.md \
-	chapters/Using_The_Jitsu_Client.md \
-	chapters/Open_Source_Projects.md \
-	chapters/Additional_Information.md \
-	chapters/Databases.md 
+README = chapters/introduction.md
 
-API = chapters/Using_The_API.md 
-
+API = chapters/json_api.md 
 
 HTML = $(MD:.md=.html)
 
