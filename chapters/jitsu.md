@@ -1,10 +1,10 @@
+<a link='#jitsu'>
 # The Jitsu Client
 
-[`jitsu`](http://github.com/nodejitsu/jitsu) is a
-[Command Line Interface (CLI)](http://en.wikipedia.org/wiki/Command-line_interface)
-for interacting with the Nodejitsu platform. It's open-source and easy to use.
-We've designed Jitsu to be suitable for command line beginners, but still be
-powerful and extensible enough for production usage.
+[Jitsu](http://github.com/nodejitsu/jitsu) is a
+[Command Line Interface](http://en.wikipedia.org/wiki/Command-line_interface)
+(CLI) for interacting with the Nodejitsu platform. It's open-source and easy
+to use.
 
 ## Installation
 
