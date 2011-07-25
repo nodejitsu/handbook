@@ -1,4 +1,4 @@
-<a link='#features' />
+<a name='#features' />
 # Features of the Nodejitsu Platform
 
 ## Introduction
