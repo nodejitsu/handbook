@@ -37,7 +37,7 @@ action.
 
 <!-- alphabetize these? Also, is ### appropriate? -->
 
-### `jitsu deploy` (`jitsu apps deploy`)
+### jitsu deploy (jitsu apps deploy)
 
 `jitsu deploy` will attempt to deploy the application in the current directory
 to [Nodejitsu](http://nodejitsu.com). It deploys your application using the
@@ -49,81 +49,30 @@ following steps:
 4. Stops the application (if neccessary)
 5. Starts the application
 
-### `jitsu create` (`jitsu apps create`)
+### jitsu create (jitsu apps create)
 
 <!--Discuss the package.json behavior in depth.-->
 `jitsu create` will create a new application. This entails generating a
 package.json for your app, for the purposes of deployment.
 
-### `jitsu list` (`jitsu apps list`)
+### jitsu list (jitsu apps list)
 
 `jitsu list` lists your applications, as well as their respective states,
 subdomains, entry points and latest snapshots.
 
 <!-- Screenshot -->
 
-### `jitsu apps <action>`
+### jitsu apps <action>
 
 In addition to the commands aliased to `jitsu create`, `jitsu deploy` and 
-`jitsu list`, the `apps` resource contains a number of other actions.
+`jitsu list`, the `apps` resource allows you to create, destroy, stop, start and
+otherwise interact with your applications.
 
-#### `jitsu apps view <name>`:
-
-Lists the information for the application in the current directory. If `<name>`
-is supplied, then that application's information is listed instead.
-
-#### `jitsu apps update <name>`:
-
-<!-- What does this do, exactly? I'm not sure. -->
-
-Updates the application in the current directory with the information in the
-`package.json` file. If `<name>` is supplied, the application with `<name>` is
-updated instead.
-
-#### `jitsu apps destroy <name>`
-
-<!-- We need to elaborate on what "destroying" an app means. -->
-
-Destroys the application in the current directory. If `<name>` is supplied then that application is destroyed instead.
-
-<!-- We also need to elaborate on what start/stop/restart means. -->
-
-#### `jitsu apps start <name>`
-
-Starts the application in the current directory. If `<name>` is supplied then
-that application is started instead.
-
-#### `jitsu apps restart <name>`
-
-Restarts the application in the current directory. If `<name>` is supplied then
-that application is restarted instead.
-
-#### `jitsu apps stop <name>`
-
-Stops the application in the current directory. If `<name>` is supplied then
-that application is stopped instead.
-
-### `jitsu config <action>`
+### jitsu config <action>
 
 `jitsu config` commands allow you to edit your local jitsu confuration file.
 
-#### `jitsu config list`
-
-Lists all configuration values currently set for the user.
-
-#### `jitsu config set <key> <value>`
-
-Sets the specified `<key>`/`<value>` pair in the jitsu configuration.
-
-#### `jitsu config get <key> <value>`
-
-Gets the specified `<key>`/`<value>` pair in the jitsu configuration.
-
-#### `jitsu config delete <key>`
-
-Deletes the specified `<key>` in the jitsu configuration.
-
-### `jitsu help <resource> <action>`
+### jitsu help <resource> <action>
 
 All commands will yield friendly messages to you if you specify incorrect
 parameters. Additionally, `jitsu help` will return useful help messages about
@@ -149,42 +98,22 @@ any given resource or resource/action pair. for instance:
     info:   Nodejitsu ok
     josh@pidgey:~$ 
 
-If no
-resource and/or action are specified, then `jitsu help` alone will describe
-what resources are available.
+If no resource and/or action are specified, then `jitsu help` alone will
+describe what resources are available.
 
-## `jitsu snapshots`
+## jitsu snapshots
 
-<!--Elaborate on what, exactly, snapshots are.-->
+`jitsu snapshots *` commands allow you to work with snapshots for your 
+Applications on Nodejitsu. Snapshots are images of your Application's code that
+are deployed to the Nodejitsu Platform.
 
-`jitsu snapshots *` commands allow you to work with snapshots
-for your Applications on Nodejitsu. Snapshots are images of your
-Application's code that are deployed to the Nodejitsu Platform.
+For commands that take a `<name>` parameter, if no parameter is supplied,
+`jitsu` will attempt to read the package.json from the current directory.
 
-For commands that take a `<name>` parameter, if no parameter
-is supplied, `jitsu` will attempt to read the package.json
-from the current directory.
-
-<!--stub out!-->
-#### `jitsu snapshots create`
-#### `jitsu snapshots list`
-#### `jitsu snapshots list <app-name>`
-#### `jitsu snapshots activate`
-#### `jitsu snapshots activate <app-name>`
-#### `jitsu snapshots destroy`
-#### `jitsu snapshots destroy <app-name>`
-
-### `jitsu users`
-
+## jitsu users
 
 `jitsu users *` commands allow you to work with new or existing Nodejitsu user
 accounts. You will be prompted for additional user information as required.
-
-<!--stub out!-->
-#### `jitsu users create <username>`
-#### `jitsu users available <username>`
-#### `jitsu users confirm <username>`
-#### `jitsu users logout` (`jitsu logout`)
 
 ## .jitsuconf file
 
