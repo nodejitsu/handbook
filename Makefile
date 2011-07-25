@@ -88,7 +88,7 @@ book.epub:
 	ebook-convert book.html book.epub \
 		--title "Nodejitsu Handbook" \
 		--no-default-epub-cover \
-		--authors "Marak Squires" \
+		--authors "Marak Squires, Joshua Holbrook" \
 		--language en \
 		--cover pages/cover.jpg
 
