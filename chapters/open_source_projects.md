@@ -2,8 +2,7 @@
 
 ## Why Open Source
 
-<!-- We could easily wax poetic about this.-->
-A lot of Nodejitsu's technology stack is released as open source software. We
+Most of Nodejitsu's technology stack is released as open source software. We
 choose to do this for many reasons. Aside from being able to give back to the
 Node.js community, releasing pieces of our stack as open-source allows other
 developers to review and improve our software. We've already received invaluable
@@ -22,14 +21,9 @@ code repositories.
 
 ## How To Contribute
 
-<!--
-Contains some material that could easily be refactored into troubleshooting,
-and probably *should* be.
--->
-
 Anyone can contribute to any of our Nodejitsu open-source projects at any time.
 Our [github site](http://github.com/nodejitsu) has the facilities for managing
 patches, issues, code comments, version control, and just about anything else an
-open source developer could need.  If you have any questions about a project,
-simply sign up and create a Github issue. We'll make sure one our ninjas gets
-back to you with ninja speed!
+open source developer could need.
+
+<!-- TODO: Elaborate on how to contribute. -->
