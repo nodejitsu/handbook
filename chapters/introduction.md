@@ -1,3 +1,4 @@
+<a link="introduction" />
 ## Introduction
 
 The Nodejitsu handbook will help you to familiarize yourself with deploying your
@@ -36,13 +37,12 @@ three things to get started:
 fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll
 find.
 
-* Getting started with [your first app](#Deploying_Applications) is
-[simple](#Using_The_Jitsu_Client) with our Jitsu command-line interface; we'll 
-show you how.
+* Getting started with [your first app](#hiworld) is simple with our
+[jitsu](#jitsu) command-line interface; we'll [show you how](#hiworld).
 
 * Most of our stack is [open source](http://github.com/nodejitsu) and you can
-use our tools anywhere else you'd like to.
+[use our tools](#opensource) anywhere else you'd like to.
 
-The Nodejitsu Handbook also contains information on other ways to deploy your
-applications, how to run your own cloud with our software, and where to get help
-when you need it.
+The Nodejitsu Handbook also contains information on [other ways to deploy your
+applications](#deployment), how to [run your own cloud](#haibu) with our
+software, and where to [get help](#support) when you need it.
