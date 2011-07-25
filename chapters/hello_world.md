@@ -72,7 +72,7 @@ your first time using jitsu, you will be prompted to login with an existing
 account or to create a new account.
 
 <!-- image depicts user logging in -->
-<img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png"/>
+![](https://github.com/nodejitsu/jitsu/raw/master/assets/login.png)
 
 **Once you've logged in, you can deploy your app immediately.**
 
