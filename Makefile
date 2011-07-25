@@ -14,16 +14,35 @@ MD = pages/title.md \
 	chapters/Table_Of_Contents.md \
     chapters/introduction.md \
     chapters/hello_world.md \
-	chapters/open_source_projects.md \
     chapters/platform_features.md \
     chapters/jitsu.md \
     chapters/web_admin.md \
     chapters/json_api.md \
     chapters/haibu.md \
-    chapters/troubleshooting_and_support.md \
-	chapters/appendix.md
+	chapters/open_source_projects.md \
+    chapters/troubleshooting.md \
+    chapters/support.md \
+	appendices/installing_node.md \
+    appendices/package.json.md \
+    appendices/resources.md \
+    appendices/building_the_handbook.md
 
-README = chapters/introduction.md
+README = pages/title.md \
+	chapters/Table_Of_Contents.md \
+    chapters/introduction.md \
+    chapters/hello_world.md \
+    chapters/platform_features.md \
+    chapters/jitsu.md \
+    chapters/web_admin.md \
+    chapters/json_api.md \
+    chapters/haibu.md \
+	chapters/open_source_projects.md \
+    chapters/troubleshooting.md \
+    chapters/support.md \
+	appendices/installing_node.md \
+    appendices/package.json.md \
+    appendices/resources.md \
+    appendices/building_the_handbook.md
 
 API = chapters/json_api.md 
 
