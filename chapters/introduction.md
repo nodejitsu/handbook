@@ -51,3 +51,4 @@ for your Node.js apps - and we're the best you'll find.
 our tools anywhere else you'd like to.
 
 * Getting started with [your first app](#Deploying_Applications) is [simple](#Using_The_Jitsu_Client) with our Jitsu command-line interface.
+
