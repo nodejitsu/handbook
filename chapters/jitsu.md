@@ -1,16 +1,5 @@
 # The Jitsu Client
 
-<!--
-This section is going to repeat stuff from the tutorial. Unfortunate, perhaps,
-but I think this is for the best as these sections should be standalone.
--->
-
-<!--
-That said, this should be rewritten so it's not *exactly* the same copy. In fact
-some of the material from the tutorial could be streamlined as the rest is
-here anyway.
--->
-
 [`jitsu`](http://github.com/nodejitsu/jitsu) is a
 [Command Line Interface (CLI)](http://en.wikipedia.org/wiki/Command-line_interface)
 for interacting with the Nodejitsu platform. It's open-source and easy to use.
@@ -19,23 +8,21 @@ powerful and extensible enough for production usage.
 
 ## Installation
 
-`jitsu` is distrubited using the Node Package Manager (npm). Installing `jitsu`
+Jitsu is distrubited using the Node Package Manager (npm). Installing jitsu
 with npm is a snap:
 
      [sudo] npm install -g jitsu
 
-This command installs `jitsu` on the system globally.
+This command installs jitsu on the system globally.
 
 ## Usage
 
-Commands for `jitsu` follow this pattern:
+Commands for jitsu follow this pattern:
 
     jitsu <resource> <action> <param1> <param2> ...
 
 For example, in `jitsu apps deploy`, "apps" is the resource and "deploy" is the
 action.
-
-<!-- alphabetize these? Also, is ### appropriate? -->
 
 ### jitsu deploy (jitsu apps deploy)
 
@@ -62,18 +49,9 @@ subdomains, entry points and latest snapshots.
 
 <!-- Screenshot -->
 
-### jitsu apps <action>
-
-In addition to the commands aliased to `jitsu create`, `jitsu deploy` and 
-`jitsu list`, the `apps` resource allows you to create, destroy, stop, start and
-otherwise interact with your applications.
-
-### jitsu config <action>
-
-`jitsu config` commands allow you to edit your local jitsu confuration file.
-
 ### jitsu help <resource> <action>
 
+Jitsu is self-documenting.
 All commands will yield friendly messages to you if you specify incorrect
 parameters. Additionally, `jitsu help` will return useful help messages about
 any given resource or resource/action pair. for instance:
@@ -101,6 +79,16 @@ any given resource or resource/action pair. for instance:
 If no resource and/or action are specified, then `jitsu help` alone will
 describe what resources are available.
 
+### jitsu apps <action>
+
+In addition to the commands aliased to `jitsu create`, `jitsu deploy` and 
+`jitsu list`, the `apps` resource allows you to create, destroy, stop, start and
+otherwise interact with your applications.
+
+### jitsu config <action>
+
+`jitsu config` commands allow you to edit your local jitsu confuration file.
+
 ## jitsu snapshots
 
 `jitsu snapshots *` commands allow you to work with snapshots for your 
@@ -108,7 +96,7 @@ Applications on Nodejitsu. Snapshots are images of your Application's code that
 are deployed to the Nodejitsu Platform.
 
 For commands that take a `<name>` parameter, if no parameter is supplied,
-`jitsu` will attempt to read the package.json from the current directory.
+jitsu will attempt to read the package.json from the current directory.
 
 ## jitsu users
 
@@ -117,4 +105,4 @@ accounts. You will be prompted for additional user information as required.
 
 ## .jitsuconf file
 
-All configuration data for your local `jitsu` install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
+All configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
