@@ -43,7 +43,7 @@ If you already have an externally hosted Database, Nodejitsu is capable of
 connecting to it. We've got Database hosting if you need it, but we fully
 support externally hosted Databases.
 
-<!--TODO: Describe this functionality.-->
+<!--TODO: Describe existing database functionality.-->
 
 ### Connecting Applications to Databases
 
@@ -51,7 +51,7 @@ If you want to connect a Database to your Node.js application, Nodejitsu
 provides you with sample code for each Database type as well as the ability to
 specify database connection strings in your application's package.json.
 
-<!--TODO: Describe this functionality.-->
+<!--TODO: Describe the database connecting functionality.-->
 
 <!-- ## Marketplace -->
 
