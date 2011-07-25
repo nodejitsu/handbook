@@ -18,8 +18,6 @@ probably used code we've helped create. You can find our open source code at
 
 ### What Is Nodejitsu?
 
-<!--issues with: myriad. Scads? XD-->
-
 [Nodejitsu](http://nodejitsu.com/) is a Platform as a Service and a Marketplace
 for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js
 applications into the cloud with a myriad of additional features. Our platform
@@ -29,26 +27,22 @@ most user-friendly in the industry and our customer support is unparalleled.
 
 ### Getting Started
 
-<!--
-This is the MOST IMPORTANT place to make edits. It should accurately reflect the
-contents of the document. It should also be written in a "nice" style. Refer to
-the writing for other projects (ie, books and manuals at home) for style
-pointers.
--->
+So you wish to learn the ways of Nodejitsu? Excellent! You only need to know
+three things to get started:
 
-So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is
-the first step! Below, you will find the Table of Contents which provides an
-overview of the systems which comprise Nodejitsu. We suggest starting at
-[Deploying Applications](#Deploying_Applications). You can also always visit our
-website at [http://nodejitsu.com](http://nodejitsu.com).
+<!-- TODO: Fix all these links!!-->
 
-You only need to know 3 things to get started:
+* We're [Nodejitsu](http://nodejitsu.com), and we can give you scalable,
+fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll
+find.
 
-* We're Nodejitsu, and we can give you scalable, fault-tolerant cloud hosting
-for your Node.js apps - and we're the best you'll find.
+* Getting started with [your first app](#Deploying_Applications) is
+[simple](#Using_The_Jitsu_Client) with our Jitsu command-line interface; we'll 
+show you how.
 
-* Our entire stack is [open source](http://github.com/nodejitsu) and you can use
-our tools anywhere else you'd like to.
+* Most of our stack is [open source](http://github.com/nodejitsu) and you can
+use our tools anywhere else you'd like to.
 
-* Getting started with [your first app](#Deploying_Applications) is [simple](#Using_The_Jitsu_Client) with our Jitsu command-line interface.
-
+The Nodejitsu Handbook also contains information on other ways to deploy your
+applications, how to run your own cloud with our software, and where to get help
+when you need it.
