@@ -5,10 +5,8 @@ In this tutorial, you will write a simple "hello world" web application in
 Node.js, and then deploy it using jitsu, Nodejitsu's command line interface.
 
 Before you get started, you should have both
-[node.js](http://nodejs.org/#download) and the
-[Node Package Manager](http://npmjs.org/) (npm) installed. For more information
-on how to [install node.js](#apx:node) and [npm](#apx:npm), refer to the
-appendices.
+[node.js](https://github.com/joyent/node/wiki) and the
+[Node Package Manager](https://github.com/isaacs/npm/#readme) (npm) installed.
 
 ## Write A Server:
 
