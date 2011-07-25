@@ -41,25 +41,19 @@ deploy!
 
 ## Deploy with Jitsu:
 
-There are three basic ways to deploy applications to Nodejitsu:
+In this tutorial, we use [jitsu](http://github.com/nodejitsu/jitsu) to deploy
+our "hello world" application. Jitsu is a
+[Command Line Interface](http://en.wikipedia.org/wiki/Command-line_interface)
+for using Nodejitsu's platform. We've designed Jitsu to be
+suitable for command line beginners, but still be powerful and extensible
+enough for production usage. If you aren't a fan of the command line or don't
+have terminal access you can still do everything jitsu can do through the
+[Nodejitsu Web Application](http://nodejitsu.com).
 
-<!--Make sure that all these links point to the proper URLs-->
-* [Jitsu](#jitsu), The Nodejitsu command line tool 
-* The Nodejitsu [Web Application](#web_admin), An easy to
-use web interface for managing your applications
-* The JSON [API](#json_api)
-
-[Jitsu](http://github.com/nodejitsu/jitsu) is a
-[Command Line Interface (CLI)](http://en.wikipedia.org/wiki/Command-line_interface)
-for interacting with the Nodejitsu platform. It's open-source and easy to use.
-We've designed Jitsu to be suitable for command line beginners, but still be
-powerful and extensible enough for production usage. If you aren't a fan of the
-command line or don't have terminal access you can still do everything jitsu
-can do through the [Nodejitsu Web Application](http://nodejitsu.com).
-
-In this tutorial, we use jitsu to deploy our "hello world" application. If
-this is your first time deploying an application and you are eager to get
-started, we recommend using jitsu: it has a one line installer, it's self-documenting, and with it you'll be able to deploy your app in seconds.
+If this is your first time deploying an application and you are eager to get
+started, we recommend using jitsu: it has a one line installer, it's
+self-documenting, and with it you'll be able to deploy your app in seconds.
+Plus, it's what's in the tutorial.
 
 ## Installation
 
