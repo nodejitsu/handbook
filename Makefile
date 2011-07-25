@@ -98,9 +98,11 @@ view: book.pdf
 clean:
 	rm -f book.*
 	rm -f chapters/*.html
+    rm -f appendices/*.html
 
 clear:
 	rm -f chapters/*.html
+    rm -f appendices/*.html
 	rm -f pages/index.html
 
 .PHONY: view clean regenerate
