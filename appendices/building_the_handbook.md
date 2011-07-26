@@ -16,9 +16,8 @@ Ubuntu systems, the rubygems package does not add its bin folder
 (`/var/lib/gems/1.8/bin` in Karmic) to your $PATH variable, so add something
 like:
 
-'''
-PATH="/var/lib/gems/1.8/bin:$PATH"
-'''
+    PATH="/var/lib/gems/1.8/bin:$PATH"
+
 
 to the end of your `~/.profile` file and activate it by running `. ~/.profile`.
 
