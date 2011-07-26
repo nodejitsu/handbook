@@ -16,7 +16,7 @@
 * [Appendix: Resources](#resources)
 * [Appendix: Building The Handbook](#build)
 
-<a name="#introduction" />
+<a name="introduction" />
 ## Introduction
 
 The Nodejitsu handbook will help you to familiarize yourself with deploying your
@@ -64,7 +64,7 @@ find.
 The Nodejitsu Handbook also contains information on [other ways to deploy your
 applications](#deployment), how to [run your own cloud](#haibu) with our
 software, and where to [get help](#support) when you need it.
-<a name="#hiworld" />
+<a name="hiworld" />
 # Hello World: A Tutorial
 
 In this tutorial, you will write a simple "hello world" web application in
@@ -166,7 +166,7 @@ Now just open up your favorite browser, and go to
 `yoursubdomain.nodejitsu.com`. If everything has been set up correctly, then
 you, too, are on the path of nodejitsu!
 
-<a name='#features' />
+<a name='features' />
 # Features of the Nodejitsu Platform
 
 ## Introduction
@@ -227,7 +227,7 @@ The Marketplace is an online store where you can browse ready to deploy
 Node.js Applications. The Marketplace is a great place to start if you are new
 to Node.js development or want to share your existing Node.js Application with
 the world.
-<a name='#jitsu'>
+<a name='jitsu'>
 # The Jitsu Client
 
 [Jitsu](http://github.com/nodejitsu/jitsu) is a
@@ -335,7 +335,7 @@ accounts. You will be prompted for additional user information as required.
 ## .jitsuconf file
 
 All configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
-<a link='#webapp' />
+<a link='webapp' />
 # Nodejitsu Web Application
 
 The Nodejitsu Web Application allows developers to administrate their
@@ -347,6 +347,7 @@ including deployment, snapshots and database connectivity.
 ![](https://github.com/jesusabdullah/handbook/raw/master/fig/webapp.png)
 
 The web admin interface may be found at <http://develop.nodejitsu.com>.
+<link name='api'>
 # JSON API
 
 <!--
@@ -498,6 +499,7 @@ logging are consistent with the jitsu and webapp documentation.
 
     GET /databases/:user-id/:id
 
+<link name='haibu'>
 # Haibu
 
 <!--TODO: Go through a Haibu install, flesh out the docs!-->
@@ -519,6 +521,7 @@ that mirrors the functionality of Nodejitsu's cloud platform.
 This is a stub, mostly because haibu's documentation is still "in the works"
 from what I can tell.
 -->
+<a name='opensource'>
 # Open Source Projects
 
 ## Why Open Source
@@ -551,6 +554,7 @@ open source developer could need.
 <!--# Troubleshooting-->
 
 <!-- TODO: troubleshoot! -->
+<a name='support'>
 # Support
 
 Nodejitsu has a team of developers standing by to assist users with any issues
@@ -638,6 +642,8 @@ for beginners.  Here are just a few:
 - The #Node.js, #nodejitsu and #nodesupport rooms on [irc.freenode.net](http://webchat.freenode.net/)
 - [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai)
 - <search.npmjs.org>
+
+
 <a name='build'>
 # Building the Nodejitsu Handbook
 
