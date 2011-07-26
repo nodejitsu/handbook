@@ -1,5 +1,5 @@
 <a name='resources'>
-## Resources
+## Appendix: Resources
 
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
 for beginners.  Here are just a few:

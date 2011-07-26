@@ -1,5 +1,5 @@
 <a name='build'>
-# Building the Nodejitsu Handbook
+# Appendix: Building the Nodejitsu Handbook
 
 ## Dependencies
 
