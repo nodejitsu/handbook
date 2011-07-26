@@ -335,7 +335,8 @@ accounts. You will be prompted for additional user information as required.
 ## .jitsuconf file
 
 All configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
-<a link='webapp' />
+
+<a name='webapp' />
 # Nodejitsu Web Application
 
 The Nodejitsu Web Application allows developers to administrate their
