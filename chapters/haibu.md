@@ -1,5 +1,7 @@
 # Haibu
 
+<!--TODO: Go through a Haibu install, flesh out the docs!-->
+
 <!--basically a copy-paste job from the haibu docs-->
 `haibu` is the open-source node.js project for spawning and managing several
 node.js applications on a single server. It's an integral part of Nodejitsu's

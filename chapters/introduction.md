@@ -1,4 +1,4 @@
-<a link="introduction" />
+<a name="#introduction" />
 ## Introduction
 
 The Nodejitsu handbook will help you to familiarize yourself with deploying your
