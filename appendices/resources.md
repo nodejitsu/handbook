@@ -9,3 +9,5 @@ for beginners.  Here are just a few:
 - The #Node.js, #nodejitsu and #nodesupport rooms on [irc.freenode.net](http://webchat.freenode.net/)
 - [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai)
 - <search.npmjs.org>
+
+
