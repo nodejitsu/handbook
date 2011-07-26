@@ -11,7 +11,7 @@ PDF_FLAGS = --fontsize 9.0 \
 
 #Hoping to autogenerate the ToC.
 MD = pages/title.md \
-	chapters/Table_Of_Contents.md \
+	chapters/toc.md \
     chapters/introduction.md \
     chapters/hello_world.md \
     chapters/platform_features.md \
@@ -22,13 +22,12 @@ MD = pages/title.md \
 	chapters/open_source_projects.md \
     chapters/troubleshooting.md \
     chapters/support.md \
-	appendices/installing_node.md \
     appendices/package.json.md \
     appendices/resources.md \
     appendices/building_the_handbook.md
 
-README = pages/title.md \
-	chapters/Table_Of_Contents.md \
+README =  pages/title.md \
+	chapters/toc.md \
     chapters/introduction.md \
     chapters/hello_world.md \
     chapters/platform_features.md \
@@ -39,7 +38,6 @@ README = pages/title.md \
 	chapters/open_source_projects.md \
     chapters/troubleshooting.md \
     chapters/support.md \
-	appendices/installing_node.md \
     appendices/package.json.md \
     appendices/resources.md \
     appendices/building_the_handbook.md
