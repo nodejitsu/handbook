@@ -33,43 +33,18 @@
 <div class='mp'>
 <h1>Table of Contents</h1>
 <ul>
-<li><a href="#Deploying_Applications" data-bare-link="true">Deploying Applications</a></li>
-<li><a href="#Using_The_Jitsu_Client" data-bare-link="true">Using the Jitsu Client</a>
-
-<ul>
-<li><a href="#Installation" data-bare-link="true">Installation</a></li>
-<li><a href="#Usage" data-bare-link="true">Usage</a></li>
-</ul>
-</li>
-<li><a href="#Open_source_Projects" data-bare-link="true">Nodejitsu's Open-source Projects</a>
-
-<ul>
-<li><a href="#Why_Open_Source" data-bare-link="true">Why open-source</a></li>
-<li><a href="#Where_To_Find_Them" data-bare-link="true">Where to find them</a></li>
-<li><a href="#How_To_Contribute" data-bare-link="true">How to contribute</a></li>
-</ul>
-</li>
-<li><a href="#Additional_Information" data-bare-link="true">Additional Information</a>
-
-<ul>
-<li><a href="#Installing_Node" data-bare-link="true">Installing Node.js</a></li>
-<li><a href="#Installing_npm" data-bare-link="true">Installing NPM</a></li>
-<li><a href="#New_to_Node" data-bare-link="true">New to Node?</a></li>
-<li><a href="#Package_Json" data-bare-link="true">Creating a package.json</a></li>
-<li><a href="#Using_Databases" data-bare-link="true">Using Databases</a></li>
-</ul>
-</li>
-<li><a href="handbook/blob/master/API.md#Using_The_API">Using the JSON API</a>
-
-<ul>
-<li><a href="handbook/blob/master/API.md#Applications">Applications</a></li>
-<li><a href="handbook/blob/master/API.md#Snapshots">Snapshots</a></li>
-<li><a href="handbook/blob/master/API.md#Users">Users</a></li>
-<li><a href="handbook/blob/master/API.md#Databases">Databases</a></li>
-<li><a href="handbook/blob/master/API.md#Logging">Logging</a></li>
-<li><a href="handbook/blob/master/API.md#Marketplace">Marketplace</a></li>
-</ul>
-</li>
+<li><a href="#introduction" data-bare-link="true">Introduction</a></li>
+<li><a href="#hiworld" data-bare-link="true">Hello World: A Tutorial</a></li>
+<li><a href="#features" data-bare-link="true">Platform Features</a></li>
+<li><a href="#jitsu" data-bare-link="true">Jitsu</a></li>
+<li><a href="#webapp" data-bare-link="true">Nodejitsu Web Application</a></li>
+<li><a href="#api" data-bare-link="true">JSON API</a></li>
+<li><a href="#haibu" data-bare-link="true">Haibu</a></li>
+<li><a href="#opensource" data-bare-link="true">Open Source Projects</a></li>
+<li><a href="#support" data-bare-link="true">Support</a></li>
+<li><a href="#package.json" data-bare-link="true">Appendix: package.json</a></li>
+<li><a href="#resources" data-bare-link="true">Appendix: Resources</a></li>
+<li><a href="#build" data-bare-link="true">Appendix: Building The Handbook</a></li>
 </ul>
 
 
@@ -79,6 +54,8 @@
 <p class="man-name">
   <code>introduction</code>
 </p>
+<p><a name="#introduction" /></p>
+
 <h2 id="Introduction">Introduction</h2>
 
 <p>The Nodejitsu handbook will help you to familiarize yourself with deploying your
@@ -99,9 +76,6 @@ probably used code we've helped create. You can find our open source code at
 
 <h3 id="What-Is-Nodejitsu-">What Is Nodejitsu?</h3>
 
-<!--issues with: myriad. Scads? XD-->
-
-
 <p><a href="http://nodejitsu.com/">Nodejitsu</a> is a Platform as a Service and a Marketplace
 for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js
 applications into the cloud with a myriad of additional features. Our platform
@@ -111,47 +85,38 @@ most user-friendly in the industry and our customer support is unparalleled.</p>
 
 <h3 id="Getting-Started">Getting Started</h3>
 
-<!--
-This is the MOST IMPORTANT place to make edits. It should accurately reflect the
-contents of the document. It should also be written in a "nice" style. Refer to
-the writing for other projects (ie, books and manuals at home) for style
-pointers.
--->
+<p>So you wish to learn the ways of Nodejitsu? Excellent! You only need to know
+three things to get started:</p>
 
+<!-- TODO: Fix all these links!!-->
 
-<p>So you wish to learn the ways of Nodejitsu? Excellent! Reading this sentence is
-the first step! Below, you will find the Table of Contents which provides an
-overview of the systems which comprise Nodejitsu. We suggest starting at
-<a href="#Deploying_Applications" data-bare-link="true">Deploying Applications</a>. You can also always visit our
-website at <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a>.</p>
-
-<p>You only need to know 3 things to get started:</p>
 
 <ul>
-<li><p>We're Nodejitsu, and we can give you scalable, fault-tolerant cloud hosting
-for your Node.js apps - and we're the best you'll find.</p></li>
-<li><p>Our entire stack is <a href="http://github.com/nodejitsu">open source</a> and you can use
-our tools anywhere else you'd like to.</p></li>
-<li><p>Getting started with <a href="#Deploying_Applications" data-bare-link="true">your first app</a> is <a href="#Using_The_Jitsu_Client" data-bare-link="true">simple</a> with our Jitsu command-line interface.</p></li>
+<li><p>We're <a href="http://nodejitsu.com">Nodejitsu</a>, and we can give you scalable,
+fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll
+find.</p></li>
+<li><p>Getting started with <a href="#hiworld" data-bare-link="true">your first app</a> is simple with our
+<a href="#jitsu" data-bare-link="true">jitsu</a> command-line interface; we'll <a href="#hiworld" data-bare-link="true">show you how</a>.</p></li>
+<li><p>Most of our stack is <a href="http://github.com/nodejitsu">open source</a> and you can
+<a href="#opensource" data-bare-link="true">use our tools</a> anywhere else you'd like to.</p></li>
 </ul>
 
 
+<p>The Nodejitsu Handbook also contains information on <a href="#deployment" data-bare-link="true">other ways to deploy your
+applications</a>, how to <a href="#haibu" data-bare-link="true">run your own cloud</a> with our
+software, and where to <a href="#support" data-bare-link="true">get help</a> when you need it.</p>
+
 </div>
 <div class='mp'>
-<h1>Hello World: A Tutorial</h1>
+<h1><p><a name="#hiworld" /></p>
+
+Hello World: A Tutorial</h1>
 <p>In this tutorial, you will write a simple "hello world" web application in
-Node.js, and then deploy it using <code>jitsu</code>, Nodejitsu's command line interface.</p>
+Node.js, and then deploy it using jitsu, Nodejitsu's command line interface.</p>
 
 <p>Before you get started, you should have both
-<a href="http://nodejs.org/#download">Node.js</a> and the
-<a href="http://npmjs.org/">Node Package Manager</a> (npm) installed.</p>
-
-<!--
-A good idea would be to link to further resources on installing node and npm.
-This may include the handbook appendices, nodedocs.org and/or particular pages
-in the documentation for the projects.
--->
-
+<a href="https://github.com/joyent/node/wiki">node.js</a> and the
+<a href="https://github.com/isaacs/npm/#readme">Node Package Manager</a> (npm) installed.</p>
 
 <h2 id="Write-A-Server-">Write A Server:</h2>
 
@@ -159,68 +124,64 @@ in the documentation for the projects.
 <code>myapp/</code> and then create a file inside the folder called <code>server.js</code> inside of
 it with the following code:</p>
 
-<pre><code> // requires node's http module
- var http = require('http');
+<p>```
+// requires node's http module
+var http = require('http');</p>
 
- // creates a new httpServer instance
- http.createServer(function (req, res) {
-   // this is the callback, or request handler for the httpServer
+<p>// creates a new httpServer instance
+http.createServer(function (req, res) {
+  // this is the callback, or request handler for the httpServer</p>
 
-   // respond to the browser, write some headers so the 
-   // browser knows what type of content we are sending
-   res.writeHead(200, {'Content-Type': 'text/html'});
+<p>  // respond to the browser, write some headers so the
+  // browser knows what type of content we are sending
+  res.writeHead(200, {'Content-Type': 'text/html'});</p>
 
-   // write some content to the browser that your user will see
-   res.write('&lt;h1&gt;hello, i know nodejitsu.&lt;/h1&gt;')
+<p>  // write some content to the browser that your user will see
+  res.write('<h1>hello, i know nodejitsu.</h1>')</p>
 
-   // close the response
-   res.end();
- }).listen(80); // the server will listen on port 80
-</code></pre>
+<p>  // close the response
+  res.end();
+})<span class="man-ref">.listen<span class="s">(80)</span></span>; // the server will listen on port 80
+```</p>
 
-<p>That's all the code you'll need for starters.</p>
+<p>That's all the code you'll need for starters. Save your server and get ready to
+deploy!</p>
 
-<h2 id="Deploy-with-jitsu-">Deploy with <code>jitsu</code>:</h2>
+<h2 id="Deploy-with-Jitsu-">Deploy with Jitsu:</h2>
 
-<p>There are three basic ways to deploy applications to Nodejitsu:</p>
+<p>In this tutorial, we use <a href="http://github.com/nodejitsu/jitsu">jitsu</a> to deploy
+our "hello world" application. Jitsu is a
+<a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface</a>
+for using Nodejitsu's platform. We've designed Jitsu to be
+suitable for command line beginners, but still be powerful and extensible
+enough for production usage. If you aren't a fan of the command line or don't
+have terminal access you can still do everything jitsu can do through the
+<a href="http://nodejitsu.com">Nodejitsu Web Application</a>.</p>
 
-<p><var>!--Make sure that all these links point to the proper URLs--</var>
-* <code>jitsu</code>, The Nodejitsu command line tool
-* The Nodejitsu <a href="http://develop.nodejitsu.com/">Web Application</a>, An easy to use
-web interface for managing your applications
-* The JSON <a href="#Using_The_API" data-bare-link="true">API</a></p>
-
-<p><a href="http://github.com/nodejitsu/jitsu"><code>jitsu</code></a> is a
-<a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface (CLI)</a>
-for interacting with the Nodejitsu platform. It's open-source and easy to use.
-We've designed Jitsu to be suitable for command line beginners, but still be
-powerful and extensible enough for production usage. If you aren't a fan of the
-command line or don't have terminal access you can still do everything <code>jitsu</code>
-can do through the <a href="http://nodejitsu.com">Nodejitsu Web Application</a>.</p>
-
-<p>In this tutorial, we use <code>jitsu</code> to deploy our "hello world" application. If
-this is your first time deploying an application and you are eager to get
-started, we recommend using <code>jitsu</code>; it has a one line installer, it's self-documenting, and with it you'll be able to deploy your app in seconds.</p>
+<p>If this is your first time deploying an application and you are eager to get
+started, we recommend using jitsu: it has a one line installer, it's
+self-documenting, and with it you'll be able to deploy your app in seconds.
+Plus, it's what's in the tutorial.</p>
 
 <h2 id="Installation">Installation</h2>
 
-<p>In order to install <code>jitsu</code>, open a terminal and type:</p>
+<p>In order to install jitsu, open a terminal and type:</p>
 
 <pre><code> [sudo] npm install -g jitsu
 </code></pre>
 
-<p><var>!-- Update this image!--</var>
-<img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png" alt="" /></p>
-
-<p>This command will install <code>jitsu</code> on your system; the <code>-g</code> makes npm install it
+<p>This command will install jitsu on your system; the <code>-g</code> makes npm install it
 globally.</p>
 
+<p><var>!-- image depicts the results of running <code>jitsu</code> --</var>
+<img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png" alt="" /></p>
+
 <p>After installation, run the <code>jitsu</code> command from your command line. Since it's
-your first time using <code>jitsu</code>, you will be prompted to login with an existing
+your first time using jitsu, you will be prompted to login with an existing
 account or to create a new account.</p>
 
-<p><var>!-- Update this image?--</var>
-<img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png" /></p>
+<p><var>!-- image depicts user logging in --</var>
+<img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png" alt="" /></p>
 
 <p><strong>Once you've logged in, you can deploy your app immediately.</strong></p>
 
@@ -235,132 +196,112 @@ account or to create a new account.</p>
 jitsu deploy
 </code></pre>
 
-<p><var>!-- Expand! Run through the details of below, <em>assuming it's the first time</em>--</var>
-This will create a new application snapshot, generate and or update project
+<p>This will create a new application snapshot, generate and or update project
 metadata, and deploy the project in the current path to
 <a href="http://nodejitsu.com">Nodejitsu</a>. If it's your first deployment, you'll be
-prompted for some information such as <em>subdomain</em> and <em>start script</em> but it's
-really easy and we promise it will only
-take a few seconds.</p>
-
-<!--Consider this without the prior context of 'go here for support.'-->
-
-
-<p>Now just open up your favorite browser, and go to <code>yoursubdomain.nodejitsu.com</code>.
-If everything has been set up correctly, then you, too, are on the path of
-nodejitsu!</p>
-
-</div>
-<div class='mp'>
-<h1>Open Source Projects</h1>
-<h2 id="Why-Open-Source">Why Open Source</h2>
-
-<!-- We could easily wax poetic about this.-->
-
-
-<p>A lot of Nodejitsu's technology stack is released as open source software. We
-choose to do this for many reasons. Aside from being able to give back to the
-Node.js community, releasing pieces of our stack as open-source allows other
-developers to review and improve our software. We've already received invaluable
-contributions to our platform from developers who would have never seen our code
-if we had not open-sourced it.</p>
-
-<h2 id="Where-To-Find-Our-Projects">Where To Find Our Projects</h2>
-
-<p>Nodejitsu hosts its open-source projects on <a href="https://github.com">Github</a>
-at <a href="http://github.com/nodejitsu" data-bare-link="true">http://github.com/nodejitsu</a>. Github is a web site for sharing and
-collobrating on source code using <a href="http://gitscm.org/">git</a>, a popular version
-control system. You can get our source code without creating an account at
-github, and if you want to create an account it's free. You will need a
-<a href="http://git-scm.com/download">git client</a> client if you wish to clone any of our
-code repositories.</p>
-
-<h2 id="How-To-Contribute">How To Contribute</h2>
+prompted for some information such as <em>your app's name</em>, its <em>nodejitsu
+subdomain</em>, and its <em>start script.</em> It's really easy and we promise it will
+only take a few seconds.</p>
 
 <!--
-Contains some material that could easily be refactored into troubleshooting,
-and probably *should* be.
+    prompt: subdomain (virtual-window): virtualwindow
+    prompt: scripts.start (server.js): 
+    prompt: version (0.0.0): 
 -->
 
 
-<p>Anyone can contribute to any of our Nodejitsu open-source projects at any time.
-Our <a href="http://github.com/nodejitsu">github site</a> has the facilities for managing
-patches, issues, code comments, version control, and just about anything else an
-open source developer could need.  If you have any questions about a project,
-simply sign up and create a Github issue. We'll make sure one our ninjas gets
-back to you with ninja speed!</p>
+<p>Now just open up your favorite browser, and go to
+<code>yoursubdomain.nodejitsu.com</code>. If everything has been set up correctly, then
+you, too, are on the path of nodejitsu!</p>
 
 </div>
 <div class='mp'>
-<h1>Features of the Nodejitsu Platform</h1>
-<h2 id="Deployment">Deployment</h2>
+<h1><p><a name="#features" /></p>
 
-<p><var>!--stub out!--</var></p>
+Features of the Nodejitsu Platform</h1>
+<h2 id="Introduction">Introduction</h2>
+
+<p>The Nodejitsu platform makes writing and deploying web applications a snap!
+In addition to simple yet powerful tools for deployment, the Nodejitsu platform
+also has snapshot management, database hosting and connectivity, and a
+marketplace!</p>
+
+<p>There are three main tools for deploying applications to Nodejitsu:</p>
+
+<p><var>!--Make sure that all these links point to the proper URLs--</var>
+* <a href="#jitsu" data-bare-link="true">Jitsu</a>, The Nodejitsu command line tool
+* The Nodejitsu <a href="#web_admin" data-bare-link="true">Web Application</a>, An easy to use web interface for
+managing your applications
+* Nodejitsu's JSON <a href="#json_api" data-bare-link="true">API</a></p>
+
+<p>Each of these tools allow developers to access the exact same functionality.</p>
 
 <h2 id="Snapshots">Snapshots</h2>
 
-<p><var>!--stub out!--</var></p>
+<p>Every time you deploy to Nodejitsu, we automatically take a
+<a href="http://en.wikipedia.org/wiki/Snapshot_(computer_storage)">snapshot</a> of your
+application. Using any of our tools, you can view and manage snapshots, or even
+roll back to an old snapshot when disaster strikes in your production
+environment.</p>
 
 <h2 id="Databases">Databases</h2>
 
-<p>Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you FREE instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.</p>
+<p>Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you <em>free</em> instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.</p>
 
 <h3 id="Creating-new-Databases">Creating new Databases</h3>
 
-<p>If you require database hosting you can create a new database instance of any of our supported databases using <a href="#Deploying_Applications" data-bare-link="true">Samurai</a>, <a href="#Using_The_Jitsu_Client" data-bare-link="true">Jitsu</a>, or our <a href="#Using_The_API" data-bare-link="true">API</a>.</p>
+<p>If you require database hosting you can create a new database instance of any
+of our supported databases using <a href="#jitsu" data-bare-link="true">jitsu</a>, the
+<a href="#webapp" data-bare-link="true">Nodejitsu Web Application</a>, or Nodejitsu's <a href="#api" data-bare-link="true">API</a>.</p>
 
 <h3 id="Existing-Databases">Existing Databases</h3>
 
-<p>If you already have an externally hosted Database, Nodejitsu is capable of connecting to it. We've got Database hosting if you need it, but we fully support externally hosted Databases. Feel free to drop us an email if you have any questions.</p>
+<p>If you already have an externally hosted Database, Nodejitsu is capable of
+connecting to it. We've got Database hosting if you need it, but we fully
+support externally hosted Databases.</p>
+
+<!--TODO: Describe existing database functionality.-->
+
 
 <h3 id="Connecting-Applications-to-Databases">Connecting Applications to Databases</h3>
 
-<p>If you want to connect a Database to your Node.js application, Nodejitsu provides you with sample code for each Database type as well as the ability to specify database connection strings in your application's package.json</p>
+<p>If you want to connect a Database to your Node.js application, Nodejitsu
+provides you with sample code for each Database type as well as the ability to
+specify database connection strings in your application's package.json.</p>
 
-<!--TODO: Add better package.json configuration description-->
+<!--TODO: Describe the database connecting functionality.-->
 
 
 <h2 id="Marketplace">Marketplace</h2>
 
-<p><var>!--stub out!--</var></p>
+<p>The Marketplace is an online store where you can browse ready to deploy
+Node.js Applications. The Marketplace is a great place to start if you are new
+to Node.js development or want to share your existing Node.js Application with
+the world.</p>
 
 </div>
 <div class='mp'>
-<h1>The Jitsu Client</h1>
-<!--
-This section is going to repeat stuff from the tutorial. Unfortunate, perhaps,
-but I think this is for the best as these sections should be standalone.
--->
+<h1><p><a name="#jitsu" /></p>
 
-
-
-
-<!--
-That said, this should be rewritten so it's not *exactly* the same copy. In fact
-some of the material from the tutorial could be streamlined as the rest is
-here anyway.
--->
-
-
-<p><a href="http://github.com/nodejitsu/jitsu"><code>jitsu</code></a> is a
-<a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface (CLI)</a>
-for interacting with the Nodejitsu platform. It's open-source and easy to use.
-We've designed Jitsu to be suitable for command line beginners, but still be
-powerful and extensible enough for production usage.</p>
+The Jitsu Client</h1>
+<p><a href="http://github.com/nodejitsu/jitsu">Jitsu</a> is a
+<a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface</a>
+(CLI) for interacting with the Nodejitsu platform. It's open-source and easy
+to use.</p>
 
 <h2 id="Installation">Installation</h2>
 
-<p><code>jitsu</code> is distrubited using the Node Package Manager (npm). Installing <code>jitsu</code>
+<p>Jitsu is distrubited using the Node Package Manager (npm). Installing jitsu
 with npm is a snap:</p>
 
 <pre><code> [sudo] npm install -g jitsu
 </code></pre>
 
-<p>This command installs <code>jitsu</code> on the system globally.</p>
+<p>This command installs jitsu on the system globally.</p>
 
 <h2 id="Usage">Usage</h2>
 
-<p>Commands for <code>jitsu</code> follow this pattern:</p>
+<p>Commands for jitsu follow this pattern:</p>
 
 <pre><code>jitsu &lt;resource> &lt;action> &lt;param1> &lt;param2> ...
 </code></pre>
@@ -368,9 +309,7 @@ with npm is a snap:</p>
 <p>For example, in <code>jitsu apps deploy</code>, "apps" is the resource and "deploy" is the
 action.</p>
 
-<p><var>!-- alphabetize these? Also, is ### appropriate? --</var></p>
-
-<h3 id="jitsu-deploy-jitsu-apps-deploy-"><code>jitsu deploy</code> (<code>jitsu apps deploy</code>)</h3>
+<h3 id="jitsu-deploy-jitsu-apps-deploy-">jitsu deploy (jitsu apps deploy)</h3>
 
 <p><code>jitsu deploy</code> will attempt to deploy the application in the current directory
 to <a href="http://nodejitsu.com">Nodejitsu</a>. It deploys your application using the
@@ -385,7 +324,7 @@ following steps:</p>
 </ol>
 
 
-<h3 id="jitsu-create-jitsu-apps-create-"><code>jitsu create</code> (<code>jitsu apps create</code>)</h3>
+<h3 id="jitsu-create-jitsu-apps-create-">jitsu create (jitsu apps create)</h3>
 
 <!--Discuss the package.json behavior in depth.-->
 
@@ -393,80 +332,17 @@ following steps:</p>
 <p><code>jitsu create</code> will create a new application. This entails generating a
 package.json for your app, for the purposes of deployment.</p>
 
-<h3 id="jitsu-list-jitsu-apps-list-"><code>jitsu list</code> (<code>jitsu apps list</code>)</h3>
+<h3 id="jitsu-list-jitsu-apps-list-">jitsu list (jitsu apps list)</h3>
 
 <p><code>jitsu list</code> lists your applications, as well as their respective states,
 subdomains, entry points and latest snapshots.</p>
 
 <p><var>!-- Screenshot --</var></p>
 
-<h3 id="jitsu-apps-action-"><code>jitsu apps &lt;action></code></h3>
+<h3 id="jitsu-help-resource-action">jitsu help <var>resource</var> <var>action</var></h3>
 
-<p>In addition to the commands aliased to <code>jitsu create</code>, <code>jitsu deploy</code> and
-<code>jitsu list</code>, the <code>apps</code> resource contains a number of other actions.</p>
-
-<h4 id="jitsu-apps-view-name-"><code>jitsu apps view &lt;name></code>:</h4>
-
-<p>Lists the information for the application in the current directory. If <code>&lt;name></code>
-is supplied, then that application's information is listed instead.</p>
-
-<h4 id="jitsu-apps-update-name-"><code>jitsu apps update &lt;name></code>:</h4>
-
-<!-- What does this do, exactly? I'm not sure. -->
-
-
-<p>Updates the application in the current directory with the information in the
-<code>package.json</code> file. If <code>&lt;name></code> is supplied, the application with <code>&lt;name></code> is
-updated instead.</p>
-
-<h4 id="jitsu-apps-destroy-name-"><code>jitsu apps destroy &lt;name></code></h4>
-
-<!-- We need to elaborate on what "destroying" an app means. -->
-
-
-<p>Destroys the application in the current directory. If <code>&lt;name></code> is supplied then that application is destroyed instead.</p>
-
-<!-- We also need to elaborate on what start/stop/restart means. -->
-
-
-<h4 id="jitsu-apps-start-name-"><code>jitsu apps start &lt;name></code></h4>
-
-<p>Starts the application in the current directory. If <code>&lt;name></code> is supplied then
-that application is started instead.</p>
-
-<h4 id="jitsu-apps-restart-name-"><code>jitsu apps restart &lt;name></code></h4>
-
-<p>Restarts the application in the current directory. If <code>&lt;name></code> is supplied then
-that application is restarted instead.</p>
-
-<h4 id="jitsu-apps-stop-name-"><code>jitsu apps stop &lt;name></code></h4>
-
-<p>Stops the application in the current directory. If <code>&lt;name></code> is supplied then
-that application is stopped instead.</p>
-
-<h3 id="jitsu-config-action-"><code>jitsu config &lt;action></code></h3>
-
-<p><code>jitsu config</code> commands allow you to edit your local jitsu confuration file.</p>
-
-<h4 id="jitsu-config-list"><code>jitsu config list</code></h4>
-
-<p>Lists all configuration values currently set for the user.</p>
-
-<h4 id="jitsu-config-set-key-value-"><code>jitsu config set &lt;key> &lt;value></code></h4>
-
-<p>Sets the specified <code>&lt;key></code>/<code>&lt;value></code> pair in the jitsu configuration.</p>
-
-<h4 id="jitsu-config-get-key-value-"><code>jitsu config get &lt;key> &lt;value></code></h4>
-
-<p>Gets the specified <code>&lt;key></code>/<code>&lt;value></code> pair in the jitsu configuration.</p>
-
-<h4 id="jitsu-config-delete-key-"><code>jitsu config delete &lt;key></code></h4>
-
-<p>Deletes the specified <code>&lt;key></code> in the jitsu configuration.</p>
-
-<h3 id="jitsu-help-resource-action-"><code>jitsu help &lt;resource> &lt;action></code></h3>
-
-<p>All commands will yield friendly messages to you if you specify incorrect
+<p>Jitsu is self-documenting.
+All commands will yield friendly messages to you if you specify incorrect
 parameters. Additionally, <code>jitsu help</code> will return useful help messages about
 any given resource or resource/action pair. for instance:</p>
 
@@ -491,166 +367,151 @@ info:   Nodejitsu ok
 josh@pidgey:~$ 
 </code></pre>
 
-<p>If no
-resource and/or action are specified, then <code>jitsu help</code> alone will describe
-what resources are available.</p>
+<p>If no resource and/or action are specified, then <code>jitsu help</code> alone will
+describe what resources are available.</p>
 
-<h2 id="jitsu-snapshots"><code>jitsu snapshots</code></h2>
+<h3 id="jitsu-apps-action">jitsu apps <var>action</var></h3>
 
-<!--Elaborate on what, exactly, snapshots are.-->
+<p>In addition to the commands aliased to <code>jitsu create</code>, <code>jitsu deploy</code> and
+<code>jitsu list</code>, the <code>apps</code> resource allows you to create, destroy, stop, start and
+otherwise interact with your applications.</p>
 
+<h3 id="jitsu-config-action">jitsu config <var>action</var></h3>
 
-<p><code>jitsu snapshots *</code> commands allow you to work with snapshots
-for your Applications on Nodejitsu. Snapshots are images of your
-Application's code that are deployed to the Nodejitsu Platform.</p>
+<p><code>jitsu config</code> commands allow you to edit your local jitsu confuration file.</p>
 
-<p>For commands that take a <code>&lt;name></code> parameter, if no parameter
-is supplied, <code>jitsu</code> will attempt to read the package.json
-from the current directory.</p>
+<h2 id="jitsu-snapshots-action">jitsu snapshots <var>action</var></h2>
 
-<p><var>!--stub out!--</var></p>
+<p><code>jitsu snapshots *</code> commands allow you to work with snapshots for your
+Applications on Nodejitsu. Snapshots are images of your Application's code that
+are deployed to the Nodejitsu Platform.</p>
 
-<h4 id="jitsu-snapshots-create"><code>jitsu snapshots create</code></h4>
+<p>For commands that take a <code>&lt;name></code> parameter, if no parameter is supplied,
+jitsu will attempt to read the package.json from the current directory.</p>
 
-<h4 id="jitsu-snapshots-list"><code>jitsu snapshots list</code></h4>
-
-<h4 id="jitsu-snapshots-list-app-name-"><code>jitsu snapshots list &lt;app-name></code></h4>
-
-<h4 id="jitsu-snapshots-activate"><code>jitsu snapshots activate</code></h4>
-
-<h4 id="jitsu-snapshots-activate-app-name-"><code>jitsu snapshots activate &lt;app-name></code></h4>
-
-<h4 id="jitsu-snapshots-destroy"><code>jitsu snapshots destroy</code></h4>
-
-<h4 id="jitsu-snapshots-destroy-app-name-"><code>jitsu snapshots destroy &lt;app-name></code></h4>
-
-<h3 id="jitsu-users"><code>jitsu users</code></h3>
+<h2 id="jitsu-users-action">jitsu users <var>action</var></h2>
 
 <p><code>jitsu users *</code> commands allow you to work with new or existing Nodejitsu user
 accounts. You will be prompted for additional user information as required.</p>
 
-<p><var>!--stub out!--</var></p>
-
-<h4 id="jitsu-users-create-username-"><code>jitsu users create &lt;username></code></h4>
-
-<h4 id="jitsu-users-available-username-"><code>jitsu users available &lt;username></code></h4>
-
-<h4 id="jitsu-users-confirm-username-"><code>jitsu users confirm &lt;username></code></h4>
-
-<h4 id="jitsu-users-logout-jitsu-logout-"><code>jitsu users logout</code> (<code>jitsu logout</code>)</h4>
-
 <h2 id="-jitsuconf-file">.jitsuconf file</h2>
 
-<p>All configuration data for your local <code>jitsu</code> install is located in the <em>.jitsuconf</em> file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using <code>jitsu config</code>.</p>
+<p>All configuration data for your local jitsu install is located in the <em>.jitsuconf</em> file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using <code>jitsu config</code>.</p>
 
 </div>
 <div class='mp'>
-<h1>Web Admin</h1>
-<p><var>!--STUB OUT!--</var></p>
+<h1><p><a link="#webapp" /></p>
+
+Nodejitsu Web Application</h1>
+<p>The Nodejitsu Web Application allows developers to administrate their
+applications through a web interface. This interface allows access to all the
+same functionality that can be found in <a href="#jitsu" data-bare-link="true">jitsu</a> or the <a href="#api" data-bare-link="true">JSON API</a>,
+including deployment, snapshots and database connectivity.</p>
+
+<!-- WARNING: Points to josh's github repo, not nodejitsu's! -->
+
+
+<p><img src="https://github.com/jesusabdullah/handbook/raw/master/assets/webapp.png" alt="" /></p>
+
+<p>The web admin interface may be found at <a href="http://develop.nodejitsu.com" data-bare-link="true">http://develop.nodejitsu.com</a>.</p>
 
 </div>
 <div class='mp'>
 <h1>JSON API</h1>
-<p>Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTful</a> and communicates via <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>. The API is the most low-level way of interacting with the Nodejitsu platform. For most deployment scenarios you should use our command line tool, <a href="#Using_The_Jitsu_Client" data-bare-link="true">jitsu</a>, or login directly at <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a></p>
-
-<ul>
-<li><a href="#Applications" data-bare-link="true">Applications</a></li>
-<li><a href="#Snapshots" data-bare-link="true">Snapshots</a></li>
-<li><a href="#User" data-bare-link="true">Users</a></li>
-<li><a href="#API_Databases" data-bare-link="true">Databases</a></li>
-<li><a href="#Logging" data-bare-link="true">Logging</a></li>
-<li><a href="#Marketplace" data-bare-link="true">Marketplace</a></li>
-</ul>
+<!--
+TODO: Make sure that the documentation of the API is consistent with the 
+current implementation!
+-->
 
 
-<p>The documentation here should be an accurate representation of our current API, but you can always look directly at our <a href="https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api">API wrappers</a> in <code>jitsu</code> to see a working example of an application built against Nodejitsu's REST API.</p>
+<p>Nodejitsu provides a web API for developers who want to interact with the
+Nodejitsu platform programatically. This API is built to be
+<a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTful</a> and
+communicates via <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>. The API is the most
+low-level way of interacting with the Nodejitsu platform. For most deployment
+scenarios you should use our command line tool, <a href="#jitsu" data-bare-link="true">jitsu</a>, or the
+<a href="#webapp" data-bare-link="true">online administrative interface</a>.</p>
+
+<p>Jitsu is implemented by
+<a href="https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api">wrapping the JSON API</a>.</p>
 
 <h2 id="Authentication">Authentication</h2>
 
-<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the User API, the Jitsu CLI, or just by visiting <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a>. Currently, we support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a>. If you haven't used Basic Auth before don't fret, it's easy!</p>
+<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the user API, the <a href="#jitsu" data-bare-link="true">jitsu CLI</a>, or just by visiting <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a>. Currently, we support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a>. If you haven't used Basic Auth before, don't fret; it's easy!</p>
 
-<p><strong>Here is an example using the command line utility, <a href="http://curl.haxx.se/">Curl</a>.</strong></p>
+<p>Here is an example using the command line utility,
+<a href="http://curl.haxx.se/">Curl</a>:</p>
 
 <pre><code> // get all applications for User "Marak"
  curl --user Marak:password http://nodejitsu.com/apps/marak
 </code></pre>
 
-<p>If you are trying to use our API directly and are having issues with Basic Auth, please feel free to email <a href="mailto:support@nodejitsu.com" data-bare-link="true">support@nodejitsu.com</a></p>
-
-<p><a name="Applications"></a></p>
-
 <h2 id="Applications">Applications</h2>
 
 <p>Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: <a href="#package_json" data-bare-link="true">package.json</a></p>
 
-<h4 id="Get-all-Applications-for-a-User">Get all Applications for a User</h4>
+<h3 id="Get-all-Applications-for-a-User">Get all Applications for a User</h3>
 
 <pre><code> GET /apps/:user-id
 </code></pre>
 
-<h4 id="Create-a-new-Application">Create a new Application</h4>
+<h3 id="Create-a-new-Application">Create a new Application</h3>
 
 <pre><code> POST /apps/:user-id
  { package.json }
 </code></pre>
 
-<h4 id="Start-an-Application">Start an Application</h4>
+<h3 id="Start-an-Application">Start an Application</h3>
 
 <pre><code> POST /apps/:user-id/:app-id/start
 </code></pre>
 
-<h4 id="Stop-an-Application">Stop an Application</h4>
+<h3 id="Stop-an-Application">Stop an Application</h3>
 
 <pre><code> POST /apps/:user-id/:app-id/stop
 </code></pre>
 
-<h4 id="Restart-an-Application">Restart an Application</h4>
+<h3 id="Restart-an-Application">Restart an Application</h3>
 
 <pre><code> POST /apps/:user-id/:app-id/restart
 </code></pre>
 
-<h4 id="Update-an-Application">Update an Application</h4>
+<h3 id="Update-an-Application">Update an Application</h3>
 
 <pre><code> PUT /apps/:user-id
  { package.json }
 </code></pre>
 
-<h4 id="Delete-an-Application">Delete an Application</h4>
+<h3 id="Delete-an-Application">Delete an Application</h3>
 
 <pre><code> DELETE /apps/:user-id/:app-id/remove
 </code></pre>
 
-<p><a name="Snapshots"></a></p>
-
 <h2 id="Snapshots">Snapshots</h2>
 
-<p>Snapshots are an easy way to capture the current state of your application. Once a Snapshot of your application is created you can roll back and activate that Snapshot at any time.</p>
-
-<h4 id="Make-an-existing-snapshot-the-active-app">Make an existing snapshot the active app</h4>
+<h3 id="Make-an-existing-snapshot-the-active-app">Make an existing snapshot the active app</h3>
 
 <pre><code>PUT /apps/:user-id/:app-id/snapshots/:id/active
 </code></pre>
 
-<h4 id="Activate-Deploy-a-snapshot">Activate / Deploy a snapshot</h4>
+<h3 id="Activate-Deploy-a-snapshot">Activate / Deploy a snapshot</h3>
 
 <pre><code>POST /apps/:user-id/:snapshots/:id
 </code></pre>
 
-<h4 id="Show-a-catalog-of-all-Snapshot-for-an-Application">Show a catalog of all Snapshot for an Application</h4>
+<h3 id="Show-a-catalog-of-all-Snapshot-for-an-Application">Show a catalog of all Snapshot for an Application</h3>
 
 <pre><code>GET /apps/:user-id/:app-id/snapshots
 </code></pre>
 
-<h4 id="Show-the-contents-of-a-Snapshot">Show the contents of a Snapshot</h4>
+<h3 id="Show-the-contents-of-a-Snapshot">Show the contents of a Snapshot</h3>
 
 <pre><code>GET /apps/:user-id/:app-id/snapshots/:id
 </code></pre>
 
-<p><a name="Users"></a></p>
-
 <h2 id="Users">Users</h2>
 
-<h4 id="Create-a-new-User-Sign-up-for-a-free-Nodejitsu-account">Create a new User / Sign-up for a free Nodejitsu account</h4>
+<h3 id="Create-a-new-User-Sign-up-for-a-free-Nodejitsu-account">Create a new User / Sign-up for a free Nodejitsu account</h3>
 
 <p>Email address is the only required field.</p>
 
@@ -660,7 +521,7 @@ accounts. You will be prompted for additional user information as required.</p>
  }
 </code></pre>
 
-<h4 id="Confirm-a-User-account">Confirm a User account</h4>
+<h3 id="Confirm-a-User-account">Confirm a User account</h3>
 
 <p>All User accounts must be confirmed. When a new User is created, a confirmation email will be sent to the email address associated with that user. In this email there will be an invite code. This code must be sent to the API to confirm the account.</p>
 
@@ -670,7 +531,7 @@ accounts. You will be prompted for additional user information as required.</p>
 }
 </code></pre>
 
-<h4 id="Update-User">Update User</h4>
+<h3 id="Update-User">Update User</h3>
 
 <pre><code>PUT /users/:user-id
 {
@@ -678,13 +539,11 @@ accounts. You will be prompted for additional user information as required.</p>
 }
 </code></pre>
 
-<p><a name="Databases"></a></p>
-
 <h2 id="Databases">Databases</h2>
 
 <p>Databases are an integral part of most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.</p>
 
-<h4 id="Create-a-new-Database">Create a new Database</h4>
+<h3 id="Create-a-new-Database">Create a new Database</h3>
 
 <pre><code> POST /databases/:user-id/:database-id
 
@@ -693,35 +552,37 @@ accounts. You will be prompted for additional user information as required.</p>
  }
 </code></pre>
 
-<h4 id="Get-information-about-a-Database">Get information about a Database</h4>
+<h3 id="Get-information-about-a-Database">Get information about a Database</h3>
 
 <pre><code>GET /databases/:user-id/:database-id
 </code></pre>
 
-<h4 id="Delete-a-Database">Delete a Database</h4>
+<h3 id="Delete-a-Database">Delete a Database</h3>
 
 <pre><code>DELETE /databases/:user-id/:database-id
 </code></pre>
 
-<p><a name="Logging"></a></p>
-
 <h2 id="Logging">Logging</h2>
 
-<p>Logging is a very important feature in any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. TODO: add better description on logging</p>
+<p>Logging is a very important feature in any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved.</p>
 
-<h4 id="Get-all-logs-for-a-user">Get all logs for a user</h4>
+<!--
+TODO: add better description on logging. Also, make sure that descriptions of
+logging are consistent with the jitsu and webapp documentation.
+-->
+
+
+<h3 id="Get-all-logs-for-a-user">Get all logs for a user</h3>
 
 <pre><code> GET /logs/:user-id/
 </code></pre>
 
-<h4 id="Get-logs-for-a-specific-application">Get logs for a specific application</h4>
+<h3 id="Get-logs-for-a-specific-application">Get logs for a specific application</h3>
 
 <pre><code> GET /logs/:user-id/:app-id
 </code></pre>
 
 <h2 id="Marketplace">Marketplace</h2>
-
-<p>The Marketplace is an online store where you can browse ready to deploy Node.js Applications. The Marketplace is a great place to start if you are new to Node.js development or want to share your existing Node.js Application with the world.</p>
 
 <h4 id="Get-all-Marketplace-Applications">Get all Marketplace Applications</h4>
 
@@ -736,6 +597,9 @@ accounts. You will be prompted for additional user information as required.</p>
 </div>
 <div class='mp'>
 <h1>Haibu</h1>
+<!--TODO: Go through a Haibu install, flesh out the docs!-->
+
+
 <p><var>!--basically a copy-paste job from the haibu docs--</var>
 <code>haibu</code> is the open-source node.js project for spawning and managing several
 node.js applications on a single server. It's an integral part of Nodejitsu's
@@ -761,124 +625,89 @@ from what I can tell.
 
 </div>
 <div class='mp'>
-<h1>Troubleshooting</h1>
-<h2 id="Frequently-Asked-Questions">Frequently Asked Questions</h2>
+<h1>Open Source Projects</h1>
+<h2 id="Why-Open-Source">Why Open Source</h2>
 
-<p><var>!-- What <em>are</em> these FAQs? --</var></p>
+<p>Most of Nodejitsu's technology stack is released as open source software. We
+choose to do this for many reasons. Aside from being able to give back to the
+Node.js community, releasing pieces of our stack as open-source allows other
+developers to review and improve our software. We've already received invaluable
+contributions to our platform from developers who would have never seen our code
+if we had not open-sourced it.</p>
 
-<h2 id="Common-Problems-and-Mistakes">Common Problems and Mistakes</h2>
+<h2 id="Where-To-Find-Our-Projects">Where To Find Our Projects</h2>
 
-<p><var>!-- What <em>are</em> these problems, anyway? --</var></p>
+<p>Nodejitsu hosts its open-source projects on <a href="https://github.com">Github</a>
+at <a href="http://github.com/nodejitsu" data-bare-link="true">http://github.com/nodejitsu</a>. Github is a web site for sharing and
+collobrating on source code using <a href="http://gitscm.org/">git</a>, a popular version
+control system. You can get our source code without creating an account at
+github, and if you want to create an account it's free. You will need a
+<a href="http://git-scm.com/download">git client</a> client if you wish to clone any of our
+code repositories.</p>
+
+<h2 id="How-To-Contribute">How To Contribute</h2>
+
+<p>Anyone can contribute to any of our Nodejitsu open-source projects at any time.
+Our <a href="http://github.com/nodejitsu">github site</a> has the facilities for managing
+patches, issues, code comments, version control, and just about anything else an
+open source developer could need.</p>
+
+<!-- TODO: Elaborate on how to contribute. -->
+
+
+
 
 </div>
 <div class='mp'>
-<h1>Appendix</h1>
-<h2 id="Installing-Node-js">Installing Node.js</h2>
+<h2 id="NAME">NAME</h2>
+<p class="man-name">
+  <code>troubleshooting</code>
+</p>
+<p><var>!--# Troubleshooting--</var></p>
 
-<h3 id="Building-and-Installing-Node-js">Building and Installing Node.js</h3>
-
-<h3 id="Step-1-Pick-Your-Platform">Step 1 - Pick Your Platform</h3>
-
-<p>Node should install out of the box on Linux, Macintosh, and Solaris.</p>
-
-<p>With some effort you should be able to get it running on other Unix
-platforms and Windows (either via Cygwin or MinGW).</p>
-
-<h3 id="Step-2-Prerequisites">Step 2 - Prerequisites</h3>
-
-<p>Node has several dependencies, but fortunately most of them are
-distributed along with it.  If you are building from source you should
-only need 2 things.</p>
-
-<ul>
-<li><p><strong>python</strong> - version 2.4 or higher. The build tools distributed with
-Node run on python.</p></li>
-<li><p><strong>libssl-dev</strong> - If you plan to use SSL/TLS encryption in your
-networking, you'll need this.  Libssl is the library used in the
-<a href="http://www.openssl.org/">openssl</a> tool. On Linux and Unix systems
-it can usually be installed with your favorite package manager. The
-lib comes pre- installed on OS X.</p></li>
-</ul>
+<!-- TODO: troubleshoot! -->
 
 
-<h3 id="Step-3a-Installing-on-Unix-including-BSD-and-Mac-">Step 3a - Installing on Unix (including BSD and Mac)</h3>
-
-<p><strong>Building from source</strong></p>
-
-<p>Use make to build and install Node (execute the following on the command line)</p>
-
-<pre><code>git clone https://github.com/joyent/node.git
-cd node
-export JOBS=2 # optional, sets number of parallel commands.
-mkdir ~/local
-./configure --prefix=$HOME/local/node
-make
-make install
-export PATH=$HOME/local/node/bin:$PATH
-</code></pre>
-
-<p>If you have any installation problems, look at <a href="https://github.com/ry/node/wiki/Troubleshooting-Installation">Troubleshooting
-Installation</a>, try an <a href="https://gist.github.com/579814">alternate installation method</a>, or stop into <a href="http://webchat.freenode.net/?channels=node.js&amp;uio=d4">#node.js</a> and ask questions.</p>
-
-<p><strong>Pre-built binaries</strong></p>
-
-<p>You can also install node from packages: [[Installing Node.js via package manager]]</p>
-
-<h3 id="Step-3b-Building-on-Windows">Step 3b - Building on Windows</h3>
-
-<p><strong>Pre-built binaries</strong></p>
-
-<p>Self-contained binaries are available at <a href="http://node-js.prcn.co.cc/">node-js.prcn.co.cc</a></p>
-
-<p><strong>Building from source</strong></p>
-
-<p>There are two ways of building Node on Windows. One is over the Cygwin
-emulation layer the other is using MinGW (GNU toolchain for
-windows). See the
-<a href="https://github.com/ry/node/wiki/Building-node.js-on-Cygwin-%28Windows%29">Cygwin</a>
-and <a href="https://github.com/ry/node/wiki/Building-node.js-on-mingw">MinGW</a>
-pages.</p>
-
-<p>Neither builds are satisfactorily stable but it is possible to get
-something running.</p>
-
-<h3 id="Step-4-Install-NPM">Step 4 - Install NPM</h3>
-
-<p><a name="Installing_npm"></a></p>
-
-<p>NPM is a package manager that has become the de-facto standard for
-installing additional node libraries and programs. Here's the quick
-and easy one-liner for installing on Unix.</p>
-
-<pre><code>$ curl http://npmjs.org/install.sh | sh
-</code></pre>
-
-<p>To install a library e.g. <a href="http://github.com/nodejitsu/jitsu">jitsu</a> (The Nodejitsu deployment CLI tool)</p>
-
-<pre><code>$ npm install jitsu
-</code></pre>
-
-<p>The number of npm modules available is vast - try a <a href="http://search.npmjs.org">search!</a></p>
-
-<p>And visit
-<a href="https://github.com/isaacs/npm" data-bare-link="true">https://github.com/isaacs/npm</a> for
-details.</p>
-
-<p><a name="New_to_Node"></a></p>
-
-<h2 id="New-to-Node-js-">New to Node.js?</h2>
-
-<p><strong>Don't be scared!</strong>  There are plenty of resources out there for beginners.  Here are just a few:</p>
-
-<ul>
-<li><a href="http://nodejs.org/docs/v0.4.8/api/">The nodejs.org Official Docs</a></li>
-<li>The #Node.js, #nodejitsu and #nodesupport rooms on <a href="http://webchat.freenode.net/">irc.freenode.net</a></li>
-<li><a href="http://twitter.com/#!/NodeKohai">@NodeKohai on Twitter</a></li>
-</ul>
 
 
-<p><a name="Package_Json"></a></p>
+</div>
+<div class='mp'>
+<h1>Support</h1>
+<p>Nodejitsu has a team of developers standing by to assist users with any issues
+they may come across while deploying and administrating their web applications
+on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
+turnaround on all issues you may have.</p>
 
+<h2 id="E-mail">E-mail</h2>
+
+<p>If you have any issues, feel free to email us at
+<a href="email:support@nodejitsu.com">support@nodejitsu.com</a>. One of our ninjas will get
+back to you at ninja speed!</p>
+
+<h2 id="Github">Github</h2>
+
+<p>Each of Nodejitsu's open source projects uses Github Issues to manage bugs and
+related software problems. For example, if a user has difficulty with jitsu,
+they can submit an issue at <a href="https://github.com/nodejitsu/jitsu/issues" data-bare-link="true">https://github.com/nodejitsu/jitsu/issues</a>. Github
+Issues is a great way to report bugs in our software!</p>
+
+<h2 id="IRC">IRC</h2>
+
+<p>Nodejitsu has a channel on &lt;irc://freenode.net/#nodejitsu> where Nodejitsu
+developers are standing by to support users around the clock. Drop by to ask
+questions, get assistance or even just to hang out!</p>
+
+<h2 id="Twitter">Twitter</h2>
+
+<p>Nodejitsu has an official twitter account at <a href="https://twitter.com/#!/nodejitsu" data-bare-link="true">https://twitter.com/#!/nodejitsu</a>.
+Follow us to get the latest news about Nodejitsu, or mention us if you have
+issues!</p>
+
+</div>
+<div class='mp'>
+<h1><p><a name="#package" /></p>
+
+Appendix: package.json</h1>
 <h2 id="Understanding-the-package-json-format">Understanding the package.json format</h2>
 
 <p>A package.json file describes your application, its dependencies, and other various application metadata. For a detailed spec on creating a package.json you can check out Isaac's fine documentation <a href="https://github.com/isaacs/npm/blob/master/doc/developers.md#readme">here</a>.</p>
@@ -922,6 +751,67 @@ details.</p>
 </code></pre>
 
 <p>Your dependencies will be resolved when your application deploys to Nodejitsu.</p>
+
+</div>
+<div class='mp'>
+<h2 id="NAME">NAME</h2>
+<p class="man-name">
+  <code>resources</code>
+</p>
+<p><a name="#resources" /></p>
+
+<h2 id="Resources">Resources</h2>
+
+<p>New to Node.js? <strong>Don't be scared!</strong>  There are plenty of resources out there
+for beginners.  Here are just a few:</p>
+
+<ul>
+<li><a href="http://nodejs.org/docs/v0.4.10/api/">The nodejs.org Official Docs</a></li>
+<li>The <a href="https://github.com/joyent/node/wiki">Node.js Wiki</a></li>
+<li>The #Node.js, #nodejitsu and #nodesupport rooms on <a href="http://webchat.freenode.net/">irc.freenode.net</a></li>
+<li><a href="http://twitter.com/#!/NodeKohai">@NodeKohai on Twitter</a></li>
+<li>&lt;search.npmjs.org></li>
+</ul>
+
+
+</div>
+<div class='mp'>
+<h1><p><a name="#build" /></p>
+
+Building the Nodejitsu Handbook</h1>
+<h2 id="Dependencies">Dependencies</h2>
+
+<p>The build process for the handbook has a few dependencies:</p>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Make_(software)">make</a></li>
+<li><a href="https://github.com/rtomayko/ronn">ronn</a></li>
+<li><a href="http://www.htmldoc.org/">htmldoc</a></li>
+</ul>
+
+
+<p>Make and htmldoc should be available via your operating system's package manager
+(ie. apt-get). ronn is available on <a href="http://rubygems.org/">rubygems</a>, which in
+turn should be available via your operating system's package manager as well. On
+Ubuntu systems, the rubygems package does not add its bin folder
+(<code>/var/lib/gems/1.8/bin</code> in Karmic) to your $PATH variable, so add something
+like:</p>
+
+<p>'''
+PATH="/var/lib/gems/1.8/bin:$PATH"
+'''</p>
+
+<p>to the end of your <code>~/.profile</code> file and activate it by running <code>. ~/.profile</code>.</p>
+
+<h2 id="Build-Process">Build Process</h2>
+
+<p>Once you've installed the dependencies, all you have to do is:</p>
+
+<pre><code>$ make
+</code></pre>
+
+<p>and the files <code>./book.md</code>, <code>book.pdf</code>, <code>book.html</code>, <code>API.md</code> and <code>ReadMe.md</code>
+should all be generated.</p>
 
 </div>
   </body>
