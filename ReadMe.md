@@ -582,7 +582,7 @@ questions, get assistance or even just to hang out!
 Nodejitsu has an official twitter account at <https://twitter.com/#!/nodejitsu>.
 Follow us to get the latest news about Nodejitsu, or mention us if you have
 issues!
-<a name='#package'>
+<a name='package'>
 # Appendix: package.json
 
 ## Understanding the package.json format
@@ -627,7 +627,7 @@ If your application requires additional dependencies or third-party libraries, N
     }
 
 Your dependencies will be resolved when your application deploys to Nodejitsu.
-<a name='#resources'>
+<a name='resources'>
 ## Resources
 
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
@@ -638,7 +638,7 @@ for beginners.  Here are just a few:
 - The #Node.js, #nodejitsu and #nodesupport rooms on [irc.freenode.net](http://webchat.freenode.net/)
 - [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai)
 - <search.npmjs.org>
-<a name='#build'>
+<a name='build'>
 # Building the Nodejitsu Handbook
 
 ## Dependencies
