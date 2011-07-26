@@ -80,7 +80,7 @@ Let's start with a very basic node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js` inside of
 it with the following code:
 
-```
+``` js
 // requires node's http module
 var http = require('http');
     
