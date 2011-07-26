@@ -1,4 +1,4 @@
-<a name='#build'>
+<a name='build'>
 # Building the Nodejitsu Handbook
 
 ## Dependencies

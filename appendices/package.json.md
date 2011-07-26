@@ -1,4 +1,4 @@
-<a name='#package'>
+<a name='package'>
 # Appendix: package.json
 
 ## Understanding the package.json format

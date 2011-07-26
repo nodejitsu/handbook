@@ -1,4 +1,4 @@
-<a name='#resources'>
+<a name='resources'>
 ## Resources
 
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
