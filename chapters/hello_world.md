@@ -1,4 +1,4 @@
-<a name="#hiworld" />
+<a name="hiworld" />
 # Hello World: A Tutorial
 
 In this tutorial, you will write a simple "hello world" web application in

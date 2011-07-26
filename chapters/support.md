@@ -1,3 +1,4 @@
+<a name='support'>
 # Support
 
 Nodejitsu has a team of developers standing by to assist users with any issues

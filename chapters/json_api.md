@@ -1,3 +1,4 @@
+<link name='api'>
 # JSON API
 
 <!--

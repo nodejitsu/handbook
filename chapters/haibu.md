@@ -1,3 +1,4 @@
+<link name='haibu'>
 # Haibu
 
 <!--TODO: Go through a Haibu install, flesh out the docs!-->

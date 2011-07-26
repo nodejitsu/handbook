@@ -1,4 +1,4 @@
-<a name='#jitsu'>
+<a name='jitsu'>
 # The Jitsu Client
 
 [Jitsu](http://github.com/nodejitsu/jitsu) is a
