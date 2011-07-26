@@ -8,6 +8,6 @@ for beginners.  Here are just a few:
 - The [Node.js Wiki](https://github.com/joyent/node/wiki)
 - The #Node.js, #nodejitsu and #nodesupport rooms on [irc.freenode.net](http://webchat.freenode.net/)
 - [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai)
-- <search.npmjs.org>
+- <http://search.npmjs.org>
 
 
