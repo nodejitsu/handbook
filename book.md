@@ -633,7 +633,7 @@ If your application requires additional dependencies or third-party libraries, N
 
 Your dependencies will be resolved when your application deploys to Nodejitsu.
 <a name='resources'>
-## Resources
+## Appendix: Resources
 
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
 for beginners.  Here are just a few:
@@ -646,7 +646,7 @@ for beginners.  Here are just a few:
 
 
 <a name='build'>
-# Building the Nodejitsu Handbook
+# Appendix: Building the Nodejitsu Handbook
 
 ## Dependencies
 
