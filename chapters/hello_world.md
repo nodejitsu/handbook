@@ -11,8 +11,8 @@ Before you get started, you should have both
 ## Write A Server:
 
 Let's start with a very basic node.js http server. Create a folder called
-`myapp/` and then create a file inside the folder called `server.js` inside of
-it with the following code:
+`myapp/` and then create a file inside the folder called `server.js`. Inside
+this file, write the following code:
 
 ```js
 // requires node's http module
@@ -86,8 +86,8 @@ Open a terminal:
 This will create a new application snapshot, generate and/or update project
 metadata, and deploy the project in the current path to
 [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be
-prompted for some information such as *your app's name*, its *nodejitsu
-subdomain*, and its *start script.* It's really easy and we promise it will 
+prompted for some information such as *<u>your app's name</u>*, its 
+*<u>nodejitsu subdomain</u>*, and its *<u>start script</u>*. It's really easy and we promise it will 
 only take a few seconds.
 
 <!--
