@@ -6,7 +6,7 @@
 * [Jitsu](#jitsu)
 * [Nodejitsu Web Application](#webapp)
 * [JSON API](#api)
-* [Haibu](#haibu)
+* [Create Your Own Cloud With Haibu](#haibu)
 * [Open Source Projects](#opensource)
 * [Support](#support)
 * [Appendix: package.json](#package.json)
