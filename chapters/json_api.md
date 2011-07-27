@@ -105,8 +105,6 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
      
 ## Databases
 
-Databases are an integral part of most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.
-
 ### Create a new Database
 
      POST /databases/:user-id/:database-id
