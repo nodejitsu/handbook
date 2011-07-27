@@ -9,7 +9,7 @@ to use.
 ## Installation
 
 Jitsu is distrubited using the Node Package Manager (npm). Installing jitsu
-with npm is a snap:
+with npm is as simple as a single command:
 
      [sudo] npm install -g jitsu
 
