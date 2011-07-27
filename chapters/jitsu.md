@@ -89,7 +89,7 @@ otherwise interact with your applications.
 
 `jitsu config` commands allow you to edit your local jitsu confuration file.
 
-## jitsu snapshots <action>
+### jitsu snapshots <action>
 
 `jitsu snapshots *` commands allow you to work with snapshots for your 
 Applications on Nodejitsu. Snapshots are images of your Application's code that
@@ -98,7 +98,7 @@ are deployed to the Nodejitsu Platform.
 For commands that take a `<name>` parameter, if no parameter is supplied,
 jitsu will attempt to read the package.json from the current directory.
 
-## jitsu users <action>
+### jitsu users <action>
 
 `jitsu users *` commands allow you to work with new or existing Nodejitsu user
 accounts. You will be prompted for additional user information as required.
