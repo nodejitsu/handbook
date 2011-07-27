@@ -1,8 +1,6 @@
 <a name='features' />
 # Features of the Nodejitsu Platform
 
-## Introduction
-
 The Nodejitsu platform makes writing and deploying web applications a snap!
 In addition to simple yet powerful tools for deployment, the Nodejitsu platform
 also has snapshot management, database hosting and connectivity, and a
