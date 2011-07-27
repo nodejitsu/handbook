@@ -19,10 +19,10 @@
 <a name="introduction" />
 ## Introduction
 
-The Nodejitsu handbook will help you to familiarize yourself with deploying your
-Node.js applications to the cloud using Nodejitsu's services. It also provides
-detailed information about the Nodejitsu platform's advanced features and
-information on getting support when you need it.
+Welcome to the Nodejitsu handbook. This document will help familiarize you with
+deploying your Node.js applications to the cloud while also providing
+detailed information about Nodejitsu's platform-specific features and about
+where to get support when you need it.
 
 This is a living document which you can submit patches to at
 [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
@@ -80,25 +80,23 @@ Let's start with a very basic node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js` inside of
 it with the following code:
 
-``` js
-// requires node's http module
-var http = require('http');
-    
-// creates a new httpServer instance
-http.createServer(function (req, res) {
-  // this is the callback, or request handler for the httpServer
-  
-  // respond to the browser, write some headers so the 
-  // browser knows what type of content we are sending
-  res.writeHead(200, {'Content-Type': 'text/html'});
-       
-  // write some content to the browser that your user will see
-  res.write('<h1>hello, i know nodejitsu.</h1>')
-  
-  // close the response
-  res.end();
-}).listen(80); // the server will listen on port 80
-```
+    // requires node's http module
+    var http = require('http');
+        
+    // creates a new httpServer instance
+    http.createServer(function (req, res) {
+      // this is the callback, or request handler for the httpServer
+      
+      // respond to the browser, write some headers so the 
+      // browser knows what type of content we are sending
+      res.writeHead(200, {'Content-Type': 'text/html'});
+           
+      // write some content to the browser that your user will see
+      res.write('<h1>hello, i know nodejitsu.</h1>')
+      
+      // close the response
+      res.end();
+    }).listen(80); // the server will listen on port 80
 
 That's all the code you'll need for starters. Save your server and get ready to
 deploy!
@@ -168,8 +166,6 @@ you, too, are on the path of nodejitsu!
 
 <a name='features' />
 # Features of the Nodejitsu Platform
-
-## Introduction
 
 The Nodejitsu platform makes writing and deploying web applications a snap!
 In addition to simple yet powerful tools for deployment, the Nodejitsu platform
@@ -503,25 +499,57 @@ logging are consistent with the jitsu and webapp documentation.
 <link name='haibu'>
 # Haibu
 
-<!--TODO: Go through a Haibu install, flesh out the docs!-->
+<!-- A lot of this material is a copy-paste job from the haibu docs.-->
 
-<!--basically a copy-paste job from the haibu docs-->
-`haibu` is the open-source node.js project for spawning and managing several
-node.js applications on a single server. It's an integral part of Nodejitsu's
+Haibu is an open-source tool for spawning and managing several node.js
+applications on a single server. It's an integral part of Nodejitsu's
 production stack and is fully supported by a dedicated team of core node.js
 developers.
 
-<!--
-This is what's *interesting* about haibu, and why it's documented here. I want
-to really drive this home.
--->
-By installing `haibu`, a user creates a development environment for themselves
-that mirrors the functionality of Nodejitsu's cloud platform.
+By installing haibu, a user creates a development environment for themselves
+that mirrors the functionality of Nodejitsu's cloud platform! Any project that
+can be deployed on Nodejitsu can be ran by haibu.
+
+Haibu, which is Japanese for "hive", wraps node.js applications in a "carapace"
+and converts them into managed "drones". This approach allows haibu to directly
+interact with node.js applications and add all sorts of additional
+functionality. Haibu also contains a plugin system, so you can easily add even
+more functionality.
+
+haibu builds on this concept of "drones" and exposes a robust and granular API
+for interacting with your node.js applications. At a low level, haibu's API is
+exposed as a RESTFul HTTP webservice. Any system that supports basic HTTP
+requests can communicate with a haibu server. If you are working in Node.js,
+haibu comes with a high-level Node.js API client.
+
+## Installation
+
+    [sudo] npm install -g haibu
+
+This will install haibu globally.
+
+## Usage
+
+Haibu comes with three applications, one of which is optional:
+
+* `haibu-server` is the program that manages your node.js web applications.
+Haibu-server allows you to manage and track your drones.
+
+* `haibu` is the user interface for interacting with (and administrating) a
+running haibu-server.
+
+* `haibu-balancer` \[*optional*\] is a load balancer tool, used to split
+requests across  multiple drones of the same application. It is entirely
+optional, and many deployments won't have a need for it.
 
 <!--
-This is a stub, mostly because haibu's documentation is still "in the works"
-from what I can tell.
+It may be nice to flesh this out with an example deployment, but I think this
+should be relatively low priority.
 -->
+
+## Additional Documentation
+
+For more documentation, visit haibu's [github page](https://github.com/nodejitsu/haibu).
 <a name='opensource'>
 # Open Source Projects
 
@@ -584,7 +612,7 @@ questions, get assistance or even just to hang out!
 
 ## Twitter
 
-Nodejitsu has an official twitter account at <https://twitter.com/#!/nodejitsu>.
+Nodejitsu has an official twitter account at <https://twitter.com/nodejitsu>.
 Follow us to get the latest news about Nodejitsu, or mention us if you have
 issues!
 <a name='package'>
