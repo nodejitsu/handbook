@@ -17,7 +17,7 @@ at <http://github.com/nodejitsu>. Github is a web site for sharing and
 collobrating on source code using [git](http://gitscm.org/), a popular version
 control system. You can get our source code without creating an account at
 github, and if you want to create an account it's free. You will need a 
-[git client](http://git-scm.com/download) client if you wish to clone any of our
+[git client](http://git-scm.com/download) if you wish to clone any of our
 code repositories.
 
 ## How To Contribute
