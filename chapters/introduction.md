@@ -1,10 +1,10 @@
 <a name="introduction" />
 ## Introduction
 
-The Nodejitsu handbook will help you to familiarize yourself with deploying your
-Node.js applications to the cloud using Nodejitsu's services. It also provides
-detailed information about the Nodejitsu platform's advanced features and
-information on getting support when you need it.
+Welcome to the Nodejitsu handbook. This document will help familiarize you with
+deploying your Node.js applications to the cloud while also providing
+detailed information about Nodejitsu's platform-specific features and about
+where to get support when you need it.
 
 This is a living document which you can submit patches to at
 [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
