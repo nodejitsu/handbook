@@ -18,7 +18,7 @@ interact with node.js applications and add all sorts of additional
 functionality. Haibu also contains a plugin system, so you can easily add even
 more functionality.
 
-haibu builds on this concept of "drones" and exposes a robust and granular API
+Haibu builds on this concept of "drones" and exposes a robust and granular API
 for interacting with your node.js applications. At a low level, haibu's API is
 exposed as a RESTFul HTTP webservice. Any system that supports basic HTTP
 requests can communicate with a haibu server. If you are working in Node.js,
