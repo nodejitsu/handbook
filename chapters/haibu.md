@@ -1,5 +1,5 @@
-<link name='haibu'>
-# Haibu
+<a name='haibu' />
+# Create Your Own Cloud With Haibu
 
 <!-- A lot of this material is a copy-paste job from the haibu docs.-->
 

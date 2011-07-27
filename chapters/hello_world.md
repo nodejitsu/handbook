@@ -83,7 +83,7 @@ Open a terminal:
     cd /path/to/myapp
     jitsu deploy
 
-This will create a new application snapshot, generate and or update project
+This will create a new application snapshot, generate and/or update project
 metadata, and deploy the project in the current path to
 [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be
 prompted for some information such as *your app's name*, its *nodejitsu
