@@ -27,6 +27,6 @@ questions, get assistance or even just to hang out!
 
 ## Twitter
 
-Nodejitsu has an official twitter account at <https://twitter.com/#!/nodejitsu>.
+Nodejitsu has an official twitter account at <https://twitter.com/nodejitsu>.
 Follow us to get the latest news about Nodejitsu, or mention us if you have
 issues!
