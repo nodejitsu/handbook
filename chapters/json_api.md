@@ -25,7 +25,7 @@ Here is an example using the command line utility,
 [Curl](http://curl.haxx.se/):
 
      // get all applications for User "Marak"
-     curl --user Marak:password http://nodejitsu.com/apps/marak
+     curl --user Marak:password http://api.nodejitsu.com/apps/marak
 
 ## Applications
 
