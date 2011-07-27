@@ -9,7 +9,7 @@
 * [Jitsu](#jitsu)
 * [Nodejitsu Web Application](#webapp)
 * [JSON API](#api)
-* [Haibu](#haibu)
+* [Create Your Own Cloud With Haibu](#haibu)
 * [Open Source Projects](#opensource)
 * [Support](#support)
 * [Appendix: package.json](#package.json)
@@ -77,8 +77,8 @@ Before you get started, you should have both
 ## Write A Server:
 
 Let's start with a very basic node.js http server. Create a folder called
-`myapp/` and then create a file inside the folder called `server.js` inside of
-it with the following code:
+`myapp/` and then create a file inside the folder called `server.js`. Inside
+this file, write the following code:
 
 ```js
 // requires node's http module
@@ -149,11 +149,11 @@ Open a terminal:
     cd /path/to/myapp
     jitsu deploy
 
-This will create a new application snapshot, generate and or update project
+This will create a new application snapshot, generate and/or update project
 metadata, and deploy the project in the current path to
 [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be
-prompted for some information such as *your app's name*, its *nodejitsu
-subdomain*, and its *start script.* It's really easy and we promise it will 
+prompted for some information such as *<u>your app's name</u>*, its 
+*<u>nodejitsu subdomain</u>*, and its *<u>start script</u>*. It's really easy and we promise it will 
 only take a few seconds.
 
 <!--
@@ -316,7 +316,7 @@ otherwise interact with your applications.
 
 `jitsu config` commands allow you to edit your local jitsu confuration file.
 
-## jitsu snapshots <action>
+### jitsu snapshots <action>
 
 `jitsu snapshots *` commands allow you to work with snapshots for your 
 Applications on Nodejitsu. Snapshots are images of your Application's code that
@@ -325,7 +325,7 @@ are deployed to the Nodejitsu Platform.
 For commands that take a `<name>` parameter, if no parameter is supplied,
 jitsu will attempt to read the package.json from the current directory.
 
-## jitsu users <action>
+### jitsu users <action>
 
 `jitsu users *` commands allow you to work with new or existing Nodejitsu user
 accounts. You will be prompted for additional user information as required.
@@ -498,8 +498,8 @@ logging are consistent with the jitsu and webapp documentation.
 
     GET /databases/:user-id/:id
 
-<link name='haibu'>
-# Haibu
+<a name='haibu' />
+# Create Your Own Cloud With Haibu
 
 <!-- A lot of this material is a copy-paste job from the haibu docs.-->
 
@@ -518,7 +518,7 @@ interact with node.js applications and add all sorts of additional
 functionality. Haibu also contains a plugin system, so you can easily add even
 more functionality.
 
-haibu builds on this concept of "drones" and exposes a robust and granular API
+Haibu builds on this concept of "drones" and exposes a robust and granular API
 for interacting with your node.js applications. At a low level, haibu's API is
 exposed as a RESTFul HTTP webservice. Any system that supports basic HTTP
 requests can communicate with a haibu server. If you are working in Node.js,
@@ -571,7 +571,7 @@ at <http://github.com/nodejitsu>. Github is a web site for sharing and
 collobrating on source code using [git](http://gitscm.org/), a popular version
 control system. You can get our source code without creating an account at
 github, and if you want to create an account it's free. You will need a 
-[git client](http://git-scm.com/download) client if you wish to clone any of our
+[git client](http://git-scm.com/download) if you wish to clone any of our
 code repositories.
 
 ## How To Contribute
