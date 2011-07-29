@@ -1,4 +1,4 @@
-<a name='jitsu'>
+<a name='jitsu'></a>
 # The Jitsu Client
 
 [Jitsu](http://github.com/nodejitsu/jitsu) is a
@@ -13,7 +13,7 @@ with npm is a snap:
 
      [sudo] npm install -g jitsu
 
-This command installs jitsu on the system globally.
+This command installs jitsu to your Node path, so that it may be run like any other global shell command.
 
 ## Usage
 
@@ -38,7 +38,6 @@ following steps:
 
 ### jitsu create (jitsu apps create)
 
-<!--Discuss the package.json behavior in depth.-->
 `jitsu create` will create a new application. This entails generating a
 package.json for your app, for the purposes of deployment.
 
@@ -46,8 +45,6 @@ package.json for your app, for the purposes of deployment.
 
 `jitsu list` lists your applications, as well as their respective states,
 subdomains, entry points and latest snapshots.
-
-<!-- Screenshot -->
 
 ### jitsu help <resource> <action>
 

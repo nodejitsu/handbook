@@ -1,4 +1,4 @@
-<a name='build'>
+<a name='build'></a>
 # Appendix: Building the Nodejitsu Handbook
 
 ## Dependencies
@@ -12,8 +12,8 @@ The build process for the handbook has a few dependencies:
 Make and htmldoc should be available via your operating system's package manager
 (ie. apt-get). ronn is available on [rubygems](http://rubygems.org/), which in
 turn should be available via your operating system's package manager as well. On
-Ubuntu systems, the rubygems package does not add its bin folder
-(`/var/lib/gems/1.8/bin` in Karmic) to your $PATH variable, so add something
+Debian-based systems, the rubygems package does not add its bin folder
+(`/var/lib/gems/1.8/bin`) to your $PATH variable, so add something
 like:
 
     PATH="/var/lib/gems/1.8/bin:$PATH"

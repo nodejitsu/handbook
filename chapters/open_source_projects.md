@@ -27,4 +27,3 @@ Our [github site](http://github.com/nodejitsu) has the facilities for managing
 patches, issues, code comments, version control, and just about anything else an
 open source developer could need.
 
-<!-- TODO: Elaborate on how to contribute. -->
