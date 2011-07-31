@@ -1,3 +1,3 @@
-<!--# Troubleshooting-->
+# Troubleshooting
 
-<!-- TODO: troubleshoot! -->
+This section will describe how to troubleshoot various problems.

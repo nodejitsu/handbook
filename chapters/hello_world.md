@@ -14,25 +14,24 @@ Let's start with a very basic node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
 this file, write the following code:
 
-```js
-// requires node's http module
-var http = require('http');
-    
-// creates a new httpServer instance
-http.createServer(function (req, res) {
-  // this is the callback, or request handler for the httpServer
-  
-  // respond to the browser, write some headers so the 
-  // browser knows what type of content we are sending
-  res.writeHead(200, {'Content-Type': 'text/html'});
-       
-  // write some content to the browser that your user will see
-  res.write('<h1>hello, i know nodejitsu.</h1>')
-  
-  // close the response
-  res.end();
-}).listen(80); // the server will listen on port 80
-```
+      // requires node's http module
+      var http = require('http');
+          
+      // creates a new httpServer instance
+      http.createServer(function (req, res) {
+        // this is the callback, or request handler for the httpServer
+        
+        // respond to the browser, write some headers so the 
+        // browser knows what type of content we are sending
+        res.writeHead(200, {'Content-Type': 'text/html'});
+             
+        // write some content to the browser that your user will see
+        res.write('<h1>hello, i know nodejitsu.</h1>')
+        
+        // close the response
+        res.end();
+      }).listen(80); // the server will listen on port 80
+
 
 That's all the code you'll need for starters. Save your server and get ready to
 deploy!
@@ -62,14 +61,12 @@ In order to install jitsu, open a terminal and type:
 This command will install jitsu on your system; the `-g` makes npm install it
 globally.
 
-<!-- image depicts the results of running `jitsu` -->
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png)
 
 After installation, run the `jitsu` command from your command line. Since it's
 your first time using jitsu, you will be prompted to login with an existing
 account or to create a new account.
 
-<!-- image depicts user logging in -->
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/login.png)
 
 **Once you've logged in, you can deploy your app immediately.**
@@ -78,9 +75,7 @@ account or to create a new account.
 
 Open a terminal:
 
-<!-- Is /path/to/myapp the best way to say this? Probably. :( -->
-
-    cd /path/to/myapp
+    cd /home/me/myapp
     jitsu deploy
 
 This will create a new application snapshot, generate and/or update project
@@ -90,11 +85,11 @@ prompted for some information such as *<u>your app's name</u>*, its
 *<u>nodejitsu subdomain</u>*, and its *<u>start script</u>*. It's really easy and we promise it will 
 only take a few seconds.
 
-<!--
+
     prompt: subdomain (virtual-window): virtualwindow
     prompt: scripts.start (server.js): 
     prompt: version (0.0.0): 
--->
+
 
 Now just open up your favorite browser, and go to
 `yoursubdomain.nodejitsu.com`. If everything has been set up correctly, then

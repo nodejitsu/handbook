@@ -1,5 +1,5 @@
-<a name="introduction" />
-## Introduction
+# Introduction
+<a name="introduction"></a>
 
 Welcome to the Nodejitsu handbook. This document will help familiarize you with
 deploying your Node.js applications to the cloud while also providing
@@ -9,15 +9,16 @@ where to get support when you need it.
 This is a living document which you can submit patches to at
 [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
 
-### Who Is Nodejitsu?
+## Who Is Nodejitsu?
 
-We are a collective of seasoned developers who have been devoted to the Node.js
-project since 2009. We are community leaders who have created and contributed to
+We are a collection of seasoned developers who have been devoted to the Node.js
+community since 2009. We are community leaders who have created and contributed to
 hundreds of open-source Node.js projects. If you have used Node.js, you've
-probably used code we've helped create. You can find our open source code at
-<http://github.com/nodejitsu>.
+probably used some of the projects we've helped create. 
 
-### What Is Nodejitsu?
+You can find a list of our open source projects at <http://github.com/nodejitsu>.
+
+## What Is Nodejitsu?
 
 [Nodejitsu](http://nodejitsu.com/) is a Platform as a Service and a Marketplace
 for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js
@@ -26,12 +27,10 @@ provides a robust suite of functionality to assist in the development,
 management, and deployment of Node.js applications. Our deployment tools are the
 most user-friendly in the industry and our customer support is unparalleled. 
 
-### Getting Started
+## Getting Started
 
 So you wish to learn the ways of Nodejitsu? Excellent! You only need to know
 three things to get started:
-
-<!-- TODO: Fix all these links!!-->
 
 * We're [Nodejitsu](http://nodejitsu.com), and we can give you scalable,
 fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll

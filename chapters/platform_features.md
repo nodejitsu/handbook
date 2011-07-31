@@ -8,7 +8,6 @@ marketplace!
 
 There are three main tools for deploying applications to Nodejitsu:
 
-<!--Make sure that all these links point to the proper URLs-->
 * [Jitsu](#jitsu), The Nodejitsu command line tool 
 * The Nodejitsu [Web Application](#web_admin), An easy to use web interface for
 managing your applications
@@ -41,15 +40,12 @@ If you already have an externally hosted Database, Nodejitsu is capable of
 connecting to it. We've got Database hosting if you need it, but we fully
 support externally hosted Databases.
 
-<!--TODO: Describe existing database functionality.-->
 
 ### Connecting Applications to Databases
 
 If you want to connect a Database to your Node.js application, Nodejitsu
 provides you with sample code for each Database type as well as the ability to
 specify database connection strings in your application's package.json.
-
-<!--TODO: Describe the database connecting functionality.-->
 
 ## Marketplace
 

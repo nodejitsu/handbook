@@ -1,6 +1,6 @@
 # The Nodejitsu Handbook
 
-*A gentle introduction to the art of Nodejitsu*  
+*A gentle introduction to the art of Nodejitsu*
 # Table of Contents
 
 * [Introduction](#introduction)
@@ -16,8 +16,8 @@
 * [Appendix: Resources](#resources)
 * [Appendix: Building The Handbook](#build)
 
-<a name="introduction" />
-## Introduction
+# Introduction
+<a name="introduction"></a>
 
 Welcome to the Nodejitsu handbook. This document will help familiarize you with
 deploying your Node.js applications to the cloud while also providing
@@ -27,15 +27,16 @@ where to get support when you need it.
 This is a living document which you can submit patches to at
 [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
 
-### Who Is Nodejitsu?
+## Who Is Nodejitsu?
 
-We are a collective of seasoned developers who have been devoted to the Node.js
-project since 2009. We are community leaders who have created and contributed to
+We are a collection of seasoned developers who have been devoted to the Node.js
+community since 2009. We are community leaders who have created and contributed to
 hundreds of open-source Node.js projects. If you have used Node.js, you've
-probably used code we've helped create. You can find our open source code at
-<http://github.com/nodejitsu>.
+probably used some of the projects we've helped create. 
 
-### What Is Nodejitsu?
+You can find a list of our open source projects at <http://github.com/nodejitsu>.
+
+## What Is Nodejitsu?
 
 [Nodejitsu](http://nodejitsu.com/) is a Platform as a Service and a Marketplace
 for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js
@@ -44,12 +45,10 @@ provides a robust suite of functionality to assist in the development,
 management, and deployment of Node.js applications. Our deployment tools are the
 most user-friendly in the industry and our customer support is unparalleled. 
 
-### Getting Started
+## Getting Started
 
 So you wish to learn the ways of Nodejitsu? Excellent! You only need to know
 three things to get started:
-
-<!-- TODO: Fix all these links!!-->
 
 * We're [Nodejitsu](http://nodejitsu.com), and we can give you scalable,
 fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll
@@ -80,25 +79,24 @@ Let's start with a very basic node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
 this file, write the following code:
 
-```js
-// requires node's http module
-var http = require('http');
-    
-// creates a new httpServer instance
-http.createServer(function (req, res) {
-  // this is the callback, or request handler for the httpServer
-  
-  // respond to the browser, write some headers so the 
-  // browser knows what type of content we are sending
-  res.writeHead(200, {'Content-Type': 'text/html'});
-       
-  // write some content to the browser that your user will see
-  res.write('<h1>hello, i know nodejitsu.</h1>')
-  
-  // close the response
-  res.end();
-}).listen(80); // the server will listen on port 80
-```
+      // requires node's http module
+      var http = require('http');
+          
+      // creates a new httpServer instance
+      http.createServer(function (req, res) {
+        // this is the callback, or request handler for the httpServer
+        
+        // respond to the browser, write some headers so the 
+        // browser knows what type of content we are sending
+        res.writeHead(200, {'Content-Type': 'text/html'});
+             
+        // write some content to the browser that your user will see
+        res.write('<h1>hello, i know nodejitsu.</h1>')
+        
+        // close the response
+        res.end();
+      }).listen(80); // the server will listen on port 80
+
 
 That's all the code you'll need for starters. Save your server and get ready to
 deploy!
@@ -128,14 +126,12 @@ In order to install jitsu, open a terminal and type:
 This command will install jitsu on your system; the `-g` makes npm install it
 globally.
 
-<!-- image depicts the results of running `jitsu` -->
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png)
 
 After installation, run the `jitsu` command from your command line. Since it's
 your first time using jitsu, you will be prompted to login with an existing
 account or to create a new account.
 
-<!-- image depicts user logging in -->
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/login.png)
 
 **Once you've logged in, you can deploy your app immediately.**
@@ -144,9 +140,7 @@ account or to create a new account.
 
 Open a terminal:
 
-<!-- Is /path/to/myapp the best way to say this? Probably. :( -->
-
-    cd /path/to/myapp
+    cd /home/me/myapp
     jitsu deploy
 
 This will create a new application snapshot, generate and/or update project
@@ -156,11 +150,11 @@ prompted for some information such as *<u>your app's name</u>*, its
 *<u>nodejitsu subdomain</u>*, and its *<u>start script</u>*. It's really easy and we promise it will 
 only take a few seconds.
 
-<!--
+
     prompt: subdomain (virtual-window): virtualwindow
     prompt: scripts.start (server.js): 
     prompt: version (0.0.0): 
--->
+
 
 Now just open up your favorite browser, and go to
 `yoursubdomain.nodejitsu.com`. If everything has been set up correctly, then
@@ -176,7 +170,6 @@ marketplace!
 
 There are three main tools for deploying applications to Nodejitsu:
 
-<!--Make sure that all these links point to the proper URLs-->
 * [Jitsu](#jitsu), The Nodejitsu command line tool 
 * The Nodejitsu [Web Application](#web_admin), An easy to use web interface for
 managing your applications
@@ -209,7 +202,6 @@ If you already have an externally hosted Database, Nodejitsu is capable of
 connecting to it. We've got Database hosting if you need it, but we fully
 support externally hosted Databases.
 
-<!--TODO: Describe existing database functionality.-->
 
 ### Connecting Applications to Databases
 
@@ -217,15 +209,13 @@ If you want to connect a Database to your Node.js application, Nodejitsu
 provides you with sample code for each Database type as well as the ability to
 specify database connection strings in your application's package.json.
 
-<!--TODO: Describe the database connecting functionality.-->
-
 ## Marketplace
 
 The Marketplace is an online store where you can browse ready to deploy
 Node.js Applications. The Marketplace is a great place to start if you are new
 to Node.js development or want to share your existing Node.js Application with
 the world.
-<a name='jitsu'>
+<a name='jitsu'></a>
 # The Jitsu Client
 
 [Jitsu](http://github.com/nodejitsu/jitsu) is a
@@ -240,7 +230,7 @@ with npm is a snap:
 
      [sudo] npm install -g jitsu
 
-This command installs jitsu on the system globally.
+This command installs jitsu to your Node path, so that it may be run like any other global shell command.
 
 ## Usage
 
@@ -265,7 +255,6 @@ following steps:
 
 ### jitsu create (jitsu apps create)
 
-<!--Discuss the package.json behavior in depth.-->
 `jitsu create` will create a new application. This entails generating a
 package.json for your app, for the purposes of deployment.
 
@@ -273,8 +262,6 @@ package.json for your app, for the purposes of deployment.
 
 `jitsu list` lists your applications, as well as their respective states,
 subdomains, entry points and latest snapshots.
-
-<!-- Screenshot -->
 
 ### jitsu help <resource> <action>
 
@@ -342,17 +329,10 @@ applications through a web interface. This interface allows access to all the
 same functionality that can be found in [jitsu](#jitsu) or the [JSON API](#api),
 including deployment, snapshots and database connectivity.
 
-<!-- WARNING: Points to josh's github repo, not nodejitsu's! -->
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/webapp.png)
-
 The web admin interface may be found at <http://develop.nodejitsu.com>.
 <link name='api'>
 # JSON API
 
-<!--
-TODO: Make sure that the documentation of the API is consistent with the 
-current implementation!
--->
 
 Nodejitsu provides a web API for developers who want to interact with the
 Nodejitsu platform programatically. This API is built to be
@@ -475,11 +455,6 @@ Databases are an integral part of most applications. The Nodejitsu API allows yo
 
 Logging is a very important feature in any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. 
 
-<!--
-TODO: add better description on logging. Also, make sure that descriptions of
-logging are consistent with the jitsu and webapp documentation.
--->
-
 ### Get all logs for a user
 
      GET /logs/:user-id/
@@ -500,8 +475,6 @@ logging are consistent with the jitsu and webapp documentation.
 
 <a name='haibu' />
 # Create Your Own Cloud With Haibu
-
-<!-- A lot of this material is a copy-paste job from the haibu docs.-->
 
 Haibu is an open-source tool for spawning and managing several node.js
 applications on a single server. It's an integral part of Nodejitsu's
@@ -544,10 +517,9 @@ running haibu-server.
 requests across  multiple drones of the same application. It is entirely
 optional, and many deployments won't have a need for it.
 
-<!--
 It may be nice to flesh this out with an example deployment, but I think this
 should be relatively low priority.
--->
+
 
 ## Additional Documentation
 
@@ -581,10 +553,9 @@ Our [github site](http://github.com/nodejitsu) has the facilities for managing
 patches, issues, code comments, version control, and just about anything else an
 open source developer could need.
 
-<!-- TODO: Elaborate on how to contribute. -->
-<!--# Troubleshooting-->
+# Troubleshooting
 
-<!-- TODO: troubleshoot! -->
+This section will describe how to troubleshoot various problems.
 <a name='support'>
 # Support
 
@@ -617,7 +588,7 @@ questions, get assistance or even just to hang out!
 Nodejitsu has an official twitter account at <https://twitter.com/nodejitsu>.
 Follow us to get the latest news about Nodejitsu, or mention us if you have
 issues!
-<a name='package'>
+<a name='package'></a>
 # Appendix: package.json
 
 ## Understanding the package.json format
@@ -662,8 +633,8 @@ If your application requires additional dependencies or third-party libraries, N
     }
 
 Your dependencies will be resolved when your application deploys to Nodejitsu.
-<a name='resources'>
-## Appendix: Resources
+# Appendix: Resources
+<a name='resources'></a>
 
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
 for beginners.  Here are just a few:
@@ -675,7 +646,7 @@ for beginners.  Here are just a few:
 - <http://search.npmjs.org>
 
 
-<a name='build'>
+<a name='build'></a>
 # Appendix: Building the Nodejitsu Handbook
 
 ## Dependencies
@@ -689,8 +660,8 @@ The build process for the handbook has a few dependencies:
 Make and htmldoc should be available via your operating system's package manager
 (ie. apt-get). ronn is available on [rubygems](http://rubygems.org/), which in
 turn should be available via your operating system's package manager as well. On
-Ubuntu systems, the rubygems package does not add its bin folder
-(`/var/lib/gems/1.8/bin` in Karmic) to your $PATH variable, so add something
+Debian-based systems, the rubygems package does not add its bin folder
+(`/var/lib/gems/1.8/bin`) to your $PATH variable, so add something
 like:
 
     PATH="/var/lib/gems/1.8/bin:$PATH"

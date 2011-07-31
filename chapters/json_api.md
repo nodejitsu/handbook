@@ -1,10 +1,6 @@
 <link name='api'>
 # JSON API
 
-<!--
-TODO: Make sure that the documentation of the API is consistent with the 
-current implementation!
--->
 
 Nodejitsu provides a web API for developers who want to interact with the
 Nodejitsu platform programatically. This API is built to be
@@ -124,11 +120,6 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 ## Logging
 
 Logging is a very important feature in any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. 
-
-<!--
-TODO: add better description on logging. Also, make sure that descriptions of
-logging are consistent with the jitsu and webapp documentation.
--->
 
 ### Get all logs for a user
 

@@ -1,8 +1,6 @@
 <a name='haibu' />
 # Create Your Own Cloud With Haibu
 
-<!-- A lot of this material is a copy-paste job from the haibu docs.-->
-
 Haibu is an open-source tool for spawning and managing several node.js
 applications on a single server. It's an integral part of Nodejitsu's
 production stack and is fully supported by a dedicated team of core node.js
@@ -44,10 +42,9 @@ running haibu-server.
 requests across  multiple drones of the same application. It is entirely
 optional, and many deployments won't have a need for it.
 
-<!--
 It may be nice to flesh this out with an example deployment, but I think this
 should be relatively low priority.
--->
+
 
 ## Additional Documentation
 
