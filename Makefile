@@ -18,6 +18,7 @@ MD = pages/title.md \
     chapters/jitsu.md \
     chapters/web_admin.md \
     chapters/json_api.md \
+    chapters/mailchimp.md \
     chapters/haibu.md \
 	  chapters/open_source_projects.md \
     chapters/troubleshooting.md \
@@ -34,6 +35,7 @@ README =  pages/title.md \
     chapters/jitsu.md \
     chapters/web_admin.md \
     chapters/json_api.md \
+    chapters/mailchimp.md \
     chapters/haibu.md \
 	  chapters/open_source_projects.md \
     chapters/troubleshooting.md \
