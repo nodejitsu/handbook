@@ -75,7 +75,8 @@ In order to interact with the MailChimp add-on in particular, use the
     http://api.nodejitsu.com/addons/jesusabdullah/signups | pretty-json
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
-      0     0    0     0    0     0      0      0 --:--:-- --:--100   695  100   695    0     0    732      0 --:--:-- --:--:-- --:--:--  3390
+    100   695  100   695    0     0    507      0  0:00:01  0:00:01 --:--:--  3373
+
     { lists: 
        { total: 1,
          data: 
