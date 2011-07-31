@@ -1,4 +1,4 @@
-<link name='api'>
+<a name='api' />
 # JSON API
 
 
@@ -21,7 +21,7 @@ Here is an example using the command line utility,
 [Curl](http://curl.haxx.se/):
 
      // get all applications for User "Marak"
-     curl --user Marak:password http://nodejitsu.com/apps/marak
+     curl --user Marak:password http://api.nodejitsu.com/apps/marak
 
 ## Applications
 
@@ -100,8 +100,6 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
     }
      
 ## Databases
-
-Databases are an integral part of most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.
 
 ### Create a new Database
 

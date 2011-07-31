@@ -10,6 +10,7 @@
 * [Nodejitsu Web Application](#webapp)
 * [JSON API](#api)
 * [Create Your Own Cloud With Haibu](#haibu)
+* [Nodejitsu Integration with MailChimp](#mailchimp)
 * [Open Source Projects](#opensource)
 * [Support](#support)
 * [Appendix: package.json](#package.json)
@@ -193,8 +194,8 @@ Applications on Nodejitsu are ready to be connected to any database. If you have
 
 If you require database hosting you can create a new database instance of any
 of our supported databases using [jitsu](#jitsu), the
-[Nodejitsu Web Application](#webapp), or Nodejitsu's [API](#api).
-
+[Nodejitsu Web Application](#webapp), or Nodejitsu's [API](#api). Cloud
+database hosting is currently provided by CouchOne, Redis2Go and MongoHQ.
 
 ### Existing Databases
 
@@ -226,7 +227,7 @@ to use.
 ## Installation
 
 Jitsu is distrubited using the Node Package Manager (npm). Installing jitsu
-with npm is a snap:
+with npm is as simple as a single command:
 
      [sudo] npm install -g jitsu
 
@@ -329,8 +330,10 @@ applications through a web interface. This interface allows access to all the
 same functionality that can be found in [jitsu](#jitsu) or the [JSON API](#api),
 including deployment, snapshots and database connectivity.
 
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/webapp.png)
+
 The web admin interface may be found at <http://develop.nodejitsu.com>.
-<link name='api'>
+<a name='api' />
 # JSON API
 
 
@@ -353,7 +356,7 @@ Here is an example using the command line utility,
 [Curl](http://curl.haxx.se/):
 
      // get all applications for User "Marak"
-     curl --user Marak:password http://nodejitsu.com/apps/marak
+     curl --user Marak:password http://api.nodejitsu.com/apps/marak
 
 ## Applications
 
@@ -433,8 +436,6 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
      
 ## Databases
 
-Databases are an integral part of most applications. The Nodejitsu API allows you to dynamically create new hosted database instances for your applications. Cloud database hosting is provided by: CouchOne, Redis2Go and MongoHQ.
-
 ### Create a new Database
 
      POST /databases/:user-id/:database-id
@@ -472,6 +473,152 @@ Logging is a very important feature in any professional grade Node.js applicatio
 #### Get a specific Marketplace Application
 
     GET /databases/:user-id/:id
+
+<a name="#mailchimp" />
+# Mailchimp Integration in Nodejitsu
+
+Nodejitsu features integration with [MailChimp](http://mailchimp.com). What is
+MailChimp? In their [own words](http://mailchimp.com/about/):
+
+    MailChimp makes it easy to design exceptional email campaigns, share them on
+    social networks, integrate with web services you already use, manage
+    subscribers and track your results. You'll love mixing and matching
+    MailChimp's templates, features and integrations to suit your needs—think of
+    it as your own personal newsletter publishing platform.
+
+But what about integration? MailChimp integration with Nodejitsu means that you
+can interact with your MailChimp lists using the same Nodejitsu API that you use
+to interact with your apps!
+
+## Getting Started
+
+In order to set up the MailChimp integration, you have to
+[sign up for MailChimp](http://mailchimp.com/signup) at
+[their web site](http://mailchimp.com):
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/signup_page.png)
+
+Once you sign up for MailChimp, they can help you get your bearings so you can
+get to managing e-mail campaigns quick:
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/dashboard_help.png)
+
+But, in order to integrate with Nodejitsu, what you should do is go to the
+API keys page from the side-menu:
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/api_keys_dropdown.png)
+
+Here, you can see an API key:
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/api_keys.png)
+
+All you have to do to link your MailChimp account with your Nodejitsu account
+is to copy-and-paste this API key into Nodejitsu's web application interface:
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard_api_key.png)
+
+Now you're good to go! Nodejitsu reports that I have one mailing list, and that
+the two subscribers are my mother and myself.
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard.png)
+
+## Interacting with your lists via the Nodejitsu JSON API: A Broad Overview
+
+Like the rest of Nodejitsu's features, addon functionality can be accessed using
+Nodejitsu's JSON API. For example, here's what happens when I
+`GET /addons/:user-id`, minus some private information:
+
+    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
+    http://api.nodejitsu.com/addons/jesusabdullah/ | pretty-json
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100   332  100   332    0     0     53      0  0:00:06  0:00:06 --:--:--  3192
+    { _id: 'jesusabdullah',
+      username: 'jesusabdullah',
+      'password-salt': '************',
+      password: '********************************',
+      email: 'josh.holbrook@gmail.com',
+      'addons-mailchimp-apikey': '********************************-us2',
+      _rev: '3-2df3731e8cc48d8e11511096dad140e8',
+      status: 'active',
+      inviteCode: '***********',
+      resource: 'User' }
+
+In order to interact with the MailChimp add-on in particular, use the
+`/addons/:user-id/signups` resource:
+
+    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
+    http://api.nodejitsu.com/addons/jesusabdullah/signups | pretty-json
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100   695  100   695    0     0    507      0  0:00:01  0:00:01 --:--:--  3373
+
+    { lists: 
+       { total: 1,
+         data: 
+          [ { id: 'f3b7d6450c',
+              web_id: 646837,
+              name: 'Example Mailing List',
+              date_created: '2011-07-26 01:06:42',
+              email_type_option: false,
+              use_awesomebar: true,
+              default_from_name: 'Joshua Holbrook',
+              default_from_email: 'josh.holbrook@gmail.com',
+              default_subject: 'Relevant AND Non-Spammy!',
+              default_language: 'en',
+              list_rating: 0,
+              stats: 
+               { member_count: 2,
+                 unsubscribe_count: 0,
+                 cleaned_count: 0,
+                 member_count_since_send: 3,
+                 unsubscribe_count_since_send: 0,
+                 cleaned_count_since_send: 0,
+                 campaign_count: 0,
+                 grouping_count: 0,
+                 group_count: 0,
+                 merge_var_count: 0,
+                 avg_sub_rate: null,
+                 avg_unsub_rate: null,
+                 target_sub_rate: null,
+                 open_rate: null,
+                 click_rate: null },
+              modules: [] } ] } }
+
+You can use the list ID to access the particular list information with
+`GET /addons/:user-id/signups/:list-id/`:
+
+    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
+    http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c | pretty-json
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+      0     0    0     0    0     0      0      0 --:--:-- --:--100   154  100   154    0     0    182      0 --:--:-- --:--:-- --:--:--   785
+    { total: 2,
+      data: 
+       [ { email: 'holbrook@*********.net',
+           timestamp: '2011-07-26 01:08:11' },
+         { email: 'josh@nodejitsu.com',
+           timestamp: '2011-07-26 01:09:11' } ] }
+
+This confirms that Mom is in my example list.
+
+## More API Commands:
+
+* **Retrieve your API key:**
+
+    GET /addons/:user-id/signups/apikey/
+
+* **Set your API key:**
+
+    PUT /addons/:user-id/signups/apikey/
+
+* **Subscribe to a list:**
+
+    POST /addons/:user-id/signups/:list-id/subscribe/
+
+* **Unsubscribe from a list:**
+
+    POST /addons/:user-id/signups/:list-id/unsubscribe/
 
 <a name='haibu' />
 # Create Your Own Cloud With Haibu
