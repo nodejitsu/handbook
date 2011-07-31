@@ -52,25 +52,25 @@ Like the rest of Nodejitsu's features, addon functionality can be accessed using
 Nodejitsu's JSON API. For example, here's what happens when I
 `GET /addons/:user-id`, minus some private information:
 
-    josh@pidgey:~$ curl --user 'jesusabdullah:█████████████' http://api.nodejitsu.com/addons/jesusabdullah/ | pretty-json
+    josh@pidgey:~$ curl --user 'jesusabdullah:*************' http://api.nodejitsu.com/addons/jesusabdullah/ | pretty-json
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
     100   332  100   332    0     0     53      0  0:00:06  0:00:06 --:--:--  3192
     { _id: 'jesusabdullah',
       username: 'jesusabdullah',
-      'password-salt': '████████████',
-      password: '████████████████████████████████',
+      'password-salt': '************',
+      password: '********************************',
       email: 'josh.holbrook@gmail.com',
-      'addons-mailchimp-apikey': '████████████████████████████████-us2',
+      'addons-mailchimp-apikey': '********************************-us2',
       _rev: '3-2df3731e8cc48d8e11511096dad140e8',
       status: 'active',
-      inviteCode: '███████████',
+      inviteCode: '***********',
       resource: 'User' }
 
 In order to interact with the MailChimp add-on in particular, use the
 `/addons/:user-id/signups` resource:
 
-    josh@pidgey:~$ curl --user 'jesusabdullah:█████████████' http://api.nodejitsu.com/addons/jesusabdullah/signups | pretty-json
+    josh@pidgey:~$ curl --user 'jesusabdullah:*************' http://api.nodejitsu.com/addons/jesusabdullah/signups | pretty-json
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
       0     0    0     0    0     0      0      0 --:--:-- --:--100   695  100   695    0     0    732      0 --:--:-- --:--:-- --:--:--  3390
@@ -109,13 +109,13 @@ In order to interact with the MailChimp add-on in particular, use the
 You can use the list ID to access the particular list information with
 `GET /addons/:user-id/signups/:list-id/`:
 
-    josh@pidgey:~$ curl --user 'jesusabdullah:█████████████' http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c | pretty-json
+    josh@pidgey:~$ curl --user 'jesusabdullah:*************' http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c | pretty-json
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
       0     0    0     0    0     0      0      0 --:--:-- --:--100   154  100   154    0     0    182      0 --:--:-- --:--:-- --:--:--   785
     { total: 2,
       data: 
-       [ { email: 'holbrook@█████████.net',
+       [ { email: 'holbrook@*********.net',
            timestamp: '2011-07-26 01:08:11' },
          { email: 'josh@nodejitsu.com',
            timestamp: '2011-07-26 01:09:11' } ] }
