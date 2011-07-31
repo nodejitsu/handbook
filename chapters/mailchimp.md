@@ -52,7 +52,8 @@ Like the rest of Nodejitsu's features, addon functionality can be accessed using
 Nodejitsu's JSON API. For example, here's what happens when I
 `GET /addons/:user-id`, minus some private information:
 
-    josh@pidgey:~$ curl --user 'jesusabdullah:*************' http://api.nodejitsu.com/addons/jesusabdullah/ | pretty-json
+    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
+    http://api.nodejitsu.com/addons/jesusabdullah/ | pretty-json
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
     100   332  100   332    0     0     53      0  0:00:06  0:00:06 --:--:--  3192
@@ -70,7 +71,8 @@ Nodejitsu's JSON API. For example, here's what happens when I
 In order to interact with the MailChimp add-on in particular, use the
 `/addons/:user-id/signups` resource:
 
-    josh@pidgey:~$ curl --user 'jesusabdullah:*************' http://api.nodejitsu.com/addons/jesusabdullah/signups | pretty-json
+    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
+    http://api.nodejitsu.com/addons/jesusabdullah/signups | pretty-json
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
       0     0    0     0    0     0      0      0 --:--:-- --:--100   695  100   695    0     0    732      0 --:--:-- --:--:-- --:--:--  3390
@@ -109,7 +111,8 @@ In order to interact with the MailChimp add-on in particular, use the
 You can use the list ID to access the particular list information with
 `GET /addons/:user-id/signups/:list-id/`:
 
-    josh@pidgey:~$ curl --user 'jesusabdullah:*************' http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c | pretty-json
+    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
+    http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c | pretty-json
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
       0     0    0     0    0     0      0      0 --:--:-- --:--100   154  100   154    0     0    182      0 --:--:-- --:--:-- --:--:--   785
@@ -139,3 +142,4 @@ This confirms that Mom is in my example list.
 * **Unsubscribe from a list:**
 
     POST /addons/:user-id/signups/:list-id/unsubscribe/
+
