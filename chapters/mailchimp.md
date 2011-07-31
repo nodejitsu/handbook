@@ -39,12 +39,12 @@ Here, you can see an API key:
 All you have to do to link your MailChimp account with your Nodejitsu account
 is to copy-and-paste this API key into Nodejitsu's web application interface:
 
-!![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard_api_key.png)
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard_api_key.png)
 
 Now you're good to go! Nodejitsu reports that I have one mailing list, and that
 the two subscribers are my mother and myself.
 
-!![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard.png)
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard.png)
 
 ## Interacting with your lists via the Nodejitsu JSON API: A Broad Overview
 
