@@ -116,7 +116,7 @@ You can use the list ID to access the particular list information with
     http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c | pretty-json
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
-      0     0    0     0    0     0      0      0 --:--:-- --:--100   154  100   154    0     0    182      0 --:--:-- --:--:-- --:--:--   785
+    100   154  100   154    0     0    158      0 --:--:-- --:--:-- --:--:--   802
     { total: 2,
       data: 
        [ { email: 'holbrook@*********.net',
