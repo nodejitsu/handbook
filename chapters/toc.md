@@ -7,6 +7,7 @@
 * [Nodejitsu Web Application](#webapp)
 * [JSON API](#api)
 * [Create Your Own Cloud With Haibu](#haibu)
+* [Nodejitsu Integration with MailChimp](#mailchimp)
 * [Open Source Projects](#opensource)
 * [Support](#support)
 * [Appendix: package.json](#package.json)
