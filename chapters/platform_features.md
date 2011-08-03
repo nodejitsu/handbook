@@ -43,9 +43,11 @@ support externally hosted Databases.
 
 ### Connecting Applications to Databases
 
-If you want to connect a Database to your Node.js application, Nodejitsu
-provides you with sample code for each Database type as well as the ability to
-specify database connection strings in your application's package.json.
+Whenever you create a database using Nodejitsu, you will be provided with all
+the information you need to connect to your database. For instance, if you
+`jitsu databases create mongo`, jitsu will tell you the url for your new
+mongo database on mongohq, which you can copy-paste directly into your mongo
+library's connect method.
 
 ## Addons
 
