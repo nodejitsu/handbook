@@ -45,9 +45,26 @@ support externally hosted Databases.
 
 Whenever you create a database using Nodejitsu, you will be provided with all
 the information you need to connect to your database. For instance, if you
-`jitsu databases create mongo`, jitsu will tell you the url for your new
-mongo database on mongohq, which you can copy-paste directly into your mongo
-library's connect method.
+`jitsu databases create mongo myMongo`, jitsu will tell you the url for your new
+mongo database on mongohq:
+
+    info:   Welcome to Nodejitsu
+    info:   It worked if it ends with Nodejitsu ok
+    info:   Executing command databases create mongo myMongo
+    info:   Database myMongo was created.
+    info:   Database name: myMongo
+    info:   Database type: mongo
+    info:   Connection url: mongodb://nodejitsu:pass@staff.mongohq.com:10057/
+    info:   Nodejitsu ok
+
+You can copy-paste this url directly into your mongo library's connect method.
+For example, in Mongoose:
+
+    var mongoose = require('mongoose');
+
+    mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
+
+Now you're connected to your database!
 
 ## Addons
 
