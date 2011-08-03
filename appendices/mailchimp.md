@@ -1,5 +1,5 @@
-<a name="#mailchimp" />
-# Mailchimp Integration in Nodejitsu
+<a name="#apx:mailchimp" />
+# Appendix: Mailchimp Integration in Nodejitsu
 
 Nodejitsu features integration with [MailChimp](http://mailchimp.com). What is
 MailChimp? In their [own words](http://mailchimp.com/about/):
@@ -27,14 +27,11 @@ get to managing e-mail campaigns quick:
 
 ![](https://github.com/jesusabdullah/handbook/raw/master/fig/dashboard_help.png)
 
-But, in order to integrate with Nodejitsu, what you should do is go to the
-API keys page from the side-menu:
+But, in order to integrate with Nodejitsu, what you need is an API key. The
+easiest way to get an API key *right now* is to visit
+<https://admin.mailchimp.com/account/api-key-popup>:
 
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/api_keys_dropdown.png)
-
-Here, you can see an API key:
-
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/api_keys.png)
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/api_key_popup.png)
 
 All you have to do to link your MailChimp account with your Nodejitsu account
 is to copy-and-paste this API key into Nodejitsu's web application interface:
@@ -42,7 +39,7 @@ is to copy-and-paste this API key into Nodejitsu's web application interface:
 ![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard_api_key.png)
 
 Now you're good to go! Nodejitsu reports that I have one mailing list, and that
-the two subscribers are my mother and myself.
+the two subscribers are Josh's mother and himself.
 
 ![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard.png)
 
@@ -50,81 +47,74 @@ the two subscribers are my mother and myself.
 
 Like the rest of Nodejitsu's features, addon functionality can be accessed using
 Nodejitsu's JSON API. For example, here's what happens when I
-`GET /addons/:user-id`, minus some private information:
+`GET /addons/:user-id`:
 
-    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
-    http://api.nodejitsu.com/addons/jesusabdullah/ | pretty-json
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100   332  100   332    0     0     53      0  0:00:06  0:00:06 --:--:--  3192
-    { _id: 'jesusabdullah',
-      username: 'jesusabdullah',
-      'password-salt': '************',
-      password: '********************************',
-      email: 'josh.holbrook@gmail.com',
-      'addons-mailchimp-apikey': '********************************-us2',
-      _rev: '3-2df3731e8cc48d8e11511096dad140e8',
-      status: 'active',
-      inviteCode: '***********',
-      resource: 'User' }
+    $ curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/
+
+
+    { "_id": "jesusabdullah",
+      "username": "jesusabdullah",
+      "password-salt": "************",
+      "password": "********************************",
+      "email": "josh.holbrook@gmail.com",
+      "addons-mailchimp-apikey": "********************************-us2",
+      "_rev": "3-2df3731e8cc48d8e11511096dad140e8",
+      "status": "active",
+      "inviteCode": "***********",
+      "resource": "User" }
 
 In order to interact with the MailChimp add-on in particular, use the
 `/addons/:user-id/signups` resource:
 
-    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
-    http://api.nodejitsu.com/addons/jesusabdullah/signups | pretty-json
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100   695  100   695    0     0    507      0  0:00:01  0:00:01 --:--:--  3373
+    $ curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/signups
 
-    { lists: 
-       { total: 1,
-         data: 
-          [ { id: 'f3b7d6450c',
-              web_id: 646837,
-              name: 'Example Mailing List',
-              date_created: '2011-07-26 01:06:42',
-              email_type_option: false,
-              use_awesomebar: true,
-              default_from_name: 'Joshua Holbrook',
-              default_from_email: 'josh.holbrook@gmail.com',
-              default_subject: 'Relevant AND Non-Spammy!',
-              default_language: 'en',
-              list_rating: 0,
-              stats: 
-               { member_count: 2,
-                 unsubscribe_count: 0,
-                 cleaned_count: 0,
-                 member_count_since_send: 3,
-                 unsubscribe_count_since_send: 0,
-                 cleaned_count_since_send: 0,
-                 campaign_count: 0,
-                 grouping_count: 0,
-                 group_count: 0,
-                 merge_var_count: 0,
-                 avg_sub_rate: null,
-                 avg_unsub_rate: null,
-                 target_sub_rate: null,
-                 open_rate: null,
-                 click_rate: null },
-              modules: [] } ] } }
+
+    { "lists": 
+       { "total": 1,
+         "data": 
+          [ { "id": "f3b7d6450c",
+              "web_id": 646837,
+              "name": "Example Mailing List",
+              "date_created": "2011-07-26 01:06:42",
+              "email_type_option": false,
+              "use_awesomebar": true,
+              "default_from_name": "Joshua Holbrook",
+              "default_from_email": "josh.holbrook@gmail.com",
+              "default_subject": "Relevant AND Non-Spammy!",
+              "default_language": "en",
+              "list_rating": 0,
+              "stats": 
+               { "member_count": 2,
+                 "unsubscribe_count": 0,
+                 "cleaned_count": 0,
+                 "member_count_since_send": 3,
+                 "unsubscribe_count_since_send": 0,
+                 "cleaned_count_since_send": 0,
+                 "campaign_count": 0,
+                 "grouping_count": 0,
+                 "group_count": 0,
+                 "merge_var_count": 0,
+                 "avg_sub_rate": null,
+                 "avg_unsub_rate": null,
+                 "target_sub_rate": null,
+                 "open_rate": null,
+                 "click_rate": null },
+              "modules": [] } ] } }
 
 You can use the list ID to access the particular list information with
 `GET /addons/:user-id/signups/:list-id/`:
 
-    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
-    http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c | pretty-json
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100   154  100   154    0     0    158      0 --:--:-- --:--:-- --:--:--   802
-    { total: 2,
-      data: 
-       [ { email: 'holbrook@*********.net',
-           timestamp: '2011-07-26 01:08:11' },
-         { email: 'josh@nodejitsu.com',
-           timestamp: '2011-07-26 01:09:11' } ] }
+    curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c
 
-This confirms that Mom is in my example list.
+
+    { "total": 2,
+      "data": 
+       [ { "email": "holbrook@*********.net",
+           "timestamp": "2011-07-26 01:08:11" },
+         { "email": "josh@nodejitsu.com",
+           "timestamp": "2011-07-26 01:09:11" } ] }
+
+This confirms that Josh and his Mom are is in the example list.
 
 ## More API Commands:
 
