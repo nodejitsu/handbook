@@ -18,11 +18,11 @@ MD = pages/title.md \
     chapters/jitsu.md \
     chapters/web_admin.md \
     chapters/json_api.md \
-    chapters/mailchimp.md \
     chapters/haibu.md \
 	  chapters/open_source_projects.md \
     chapters/troubleshooting.md \
     chapters/support.md \
+    appendices/mailchimp.md \
     appendices/package.json.md \
     appendices/resources.md \
     appendices/building_the_handbook.md
@@ -35,11 +35,11 @@ README =  pages/title.md \
     chapters/jitsu.md \
     chapters/web_admin.md \
     chapters/json_api.md \
-    chapters/mailchimp.md \
     chapters/haibu.md \
 	  chapters/open_source_projects.md \
     chapters/troubleshooting.md \
     chapters/support.md \
+    appendices/mailchimp.md \
     appendices/package.json.md \
     appendices/resources.md \
     appendices/building_the_handbook.md
