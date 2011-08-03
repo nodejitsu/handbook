@@ -47,6 +47,13 @@ If you want to connect a Database to your Node.js application, Nodejitsu
 provides you with sample code for each Database type as well as the ability to
 specify database connection strings in your application's package.json.
 
+## Addons
+
+Addons add functionality to your apps by extending and adding features to
+Nodejitsu's platform and integrating third party services. For instance,
+one of our addons provides powerful [Mailchimp](http://mailchimp.com)-based
+[mailing list management](#apx:mailchimp).
+
 ## Marketplace
 
 The Marketplace is an online store where you can browse ready to deploy
