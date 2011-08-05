@@ -58,7 +58,7 @@ mongo database on mongohq:
     info:   Nodejitsu ok
 
 You can copy-paste this url directly into your mongo library's connect method.
-For example, in Mongoose:
+For example, in [Mongoose](https://github.com/learnboost/mongoose/):
 
     var mongoose = require('mongoose');
 
