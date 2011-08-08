@@ -10,7 +10,7 @@
 * [Open Source Projects](#opensource)
 * [Support](#support)
 * [Appendix: Nodejitsu Integration with MailChimp](#apx:mailchimp)
-* [Appendix: package.json](#package.json)
-* [Appendix: Resources](#resources)
-* [Appendix: Building The Handbook](#build)
+* [Appendix: package.json](#apx:package)
+* [Appendix: Resources](#apx:resources)
+* [Appendix: Building The Handbook](#apx:build)
 
