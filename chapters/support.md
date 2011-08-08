@@ -1,5 +1,5 @@
-<a name='support'>
 # Support
+<a name='support'></a>
 
 Nodejitsu has a team of developers standing by to assist users with any issues
 they may come across while deploying and administrating their web applications

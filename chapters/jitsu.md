@@ -1,5 +1,5 @@
-<a name='jitsu'></a>
 # The Jitsu Client
+<a name='jitsu'></a>
 
 [Jitsu](http://github.com/nodejitsu/jitsu) is a
 [Command Line Interface](http://en.wikipedia.org/wiki/Command-line_interface)

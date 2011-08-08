@@ -1,5 +1,5 @@
-<a name='features' />
 # Features of the Nodejitsu Platform
+<a name='features'></a>
 
 The Nodejitsu platform makes writing and deploying web applications a snap!
 In addition to simple yet powerful tools for deployment, the Nodejitsu platform

@@ -1,5 +1,5 @@
-<a name='haibu' />
 # Create Your Own Cloud With Haibu
+<a name='haibu'></a>
 
 Haibu is an open-source tool for spawning and managing several node.js
 applications on a single server. It's an integral part of Nodejitsu's

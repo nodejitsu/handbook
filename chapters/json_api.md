@@ -1,6 +1,5 @@
-<a name='api' />
 # JSON API
-
+<a name='api'></a>
 
 Nodejitsu provides a web API for developers who want to interact with the
 Nodejitsu platform programatically. This API is built to be
