@@ -4,11 +4,11 @@
 Nodejitsu features integration with [MailChimp](http://mailchimp.com). What is
 MailChimp? In their [own words](http://mailchimp.com/about/):
 
-    MailChimp makes it easy to design exceptional email campaigns, share them on
-    social networks, integrate with web services you already use, manage
-    subscribers and track your results. You'll love mixing and matching
-    MailChimp's templates, features and integrations to suit your needs—think of
-    it as your own personal newsletter publishing platform.
+> MailChimp makes it easy to design exceptional email campaigns, share them on
+> social networks, integrate with web services you already use, manage
+> subscribers and track your results. You'll love mixing and matching
+> MailChimp's templates, features and integrations to suit your needs—think of
+> it as your own personal newsletter publishing platform.
 
 But what about integration? MailChimp integration with Nodejitsu means that you
 can interact with your MailChimp lists using the same Nodejitsu API that you use
@@ -46,8 +46,8 @@ the two subscribers are Josh's mother and himself.
 ## Interacting with your lists via the Nodejitsu JSON API: A Broad Overview
 
 Like the rest of Nodejitsu's features, addon functionality can be accessed using
-Nodejitsu's JSON API. For example, here's what happens when I
-`GET /addons/:user-id`:
+Nodejitsu's JSON API. For example, here's what happens when you get 
+`/addons/:user-id`:
 
     $ curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/
 
@@ -102,7 +102,7 @@ In order to interact with the MailChimp add-on in particular, use the
               "modules": [] } ] } }
 
 You can use the list ID to access the particular list information with
-`GET /addons/:user-id/signups/:list-id/`:
+`/addons/:user-id/signups/:list-id/`:
 
     curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c
 
