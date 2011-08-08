@@ -1,6 +1,5 @@
-<a name='api' />
 # JSON API
-
+<a name='api'></a>
 
 Nodejitsu provides a web API for developers who want to interact with the
 Nodejitsu platform programatically. This API is built to be
@@ -104,9 +103,8 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 ### Create a new Database
 
      POST /databases/:user-id/:database-id
-       
      {
-       type: "Couch || Redis || Mongo"
+       type: "couch" || "redis" || "mongo"
      }
 
 ### Get information about a Database
@@ -119,7 +117,9 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 ## Logging
 
-Logging is a very important feature in any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. 
+Logging is a very important feature in any professional grade Node.js
+application. Nodejitsu provides integrated logging solutions for your
+applications. Your logs are always saved and ready to be retrieved. 
 
 ### Get all logs for a user
 

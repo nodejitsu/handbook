@@ -10,12 +10,12 @@
 * [Nodejitsu Web Application](#webapp)
 * [JSON API](#api)
 * [Create Your Own Cloud With Haibu](#haibu)
-* [Nodejitsu Integration with MailChimp](#mailchimp)
 * [Open Source Projects](#opensource)
 * [Support](#support)
-* [Appendix: package.json](#package.json)
-* [Appendix: Resources](#resources)
-* [Appendix: Building The Handbook](#build)
+* [Appendix: Nodejitsu Integration with MailChimp](#apx:mailchimp)
+* [Appendix: package.json](#apx:package)
+* [Appendix: Resources](#apx:resources)
+* [Appendix: Building The Handbook](#apx:build)
 
 # Introduction
 <a name="introduction"></a>
@@ -23,7 +23,7 @@
 Welcome to the Nodejitsu handbook. This document will help familiarize you with
 deploying your Node.js applications to the cloud while also providing
 detailed information about Nodejitsu's platform-specific features and about
-where to get support when you need it.
+where to get help when you need it.
 
 This is a living document which you can submit patches to at
 [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
@@ -56,16 +56,17 @@ fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll
 find.
 
 * Getting started with [your first app](#hiworld) is simple with our
-[jitsu](#jitsu) command-line interface; we'll [show you how](#hiworld).
+[jitsu](#jitsu) command-line interface - we'll [show you how](#hiworld).
 
 * Most of our stack is [open source](http://github.com/nodejitsu) and you can
 [use our tools](#opensource) anywhere else you'd like to.
 
 The Nodejitsu Handbook also contains information on [other ways to deploy your
 applications](#deployment), how to [run your own cloud](#haibu) with our
-software, and where to [get help](#support) when you need it.
-<a name="hiworld" />
+software, and where to [find support](#support).
+
 # Hello World: A Tutorial
+<a name="hiworld"></a>
 
 In this tutorial, you will write a simple "hello world" web application in
 Node.js, and then deploy it using jitsu, Nodejitsu's command line interface.
@@ -76,7 +77,7 @@ Before you get started, you should have both
 
 ## Write A Server:
 
-Let's start with a very basic node.js http server. Create a folder called
+Let's start with a very basic Node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
 this file, write the following code:
 
@@ -104,10 +105,10 @@ deploy!
 
 ## Deploy with Jitsu:
 
-In this tutorial, we use [jitsu](http://github.com/nodejitsu/jitsu) to deploy
+In this tutorial, we will use [jitsu](http://github.com/nodejitsu/jitsu) to deploy
 our "hello world" application. Jitsu is a
 [Command Line Interface](http://en.wikipedia.org/wiki/Command-line_interface)
-for using Nodejitsu's platform. We've designed Jitsu to be
+for using Nodejitsu's platform. We've designed jitsu to be
 suitable for command line beginners, but still be powerful and extensible
 enough for production usage. If you aren't a fan of the command line or don't
 have terminal access you can still do everything jitsu can do through the
@@ -130,7 +131,7 @@ globally.
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png)
 
 After installation, run the `jitsu` command from your command line. Since it's
-your first time using jitsu, you will be prompted to login with an existing
+your first time using jitsu, you will be prompted to log in with an existing
 account or to create a new account.
 
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/login.png)
@@ -161,8 +162,8 @@ Now just open up your favorite browser, and go to
 `yoursubdomain.nodejitsu.com`. If everything has been set up correctly, then
 you, too, are on the path of nodejitsu!
 
-<a name='features' />
 # Features of the Nodejitsu Platform
+<a name='features'></a>
 
 The Nodejitsu platform makes writing and deploying web applications a snap!
 In addition to simple yet powerful tools for deployment, the Nodejitsu platform
@@ -206,9 +207,35 @@ support externally hosted Databases.
 
 ### Connecting Applications to Databases
 
-If you want to connect a Database to your Node.js application, Nodejitsu
-provides you with sample code for each Database type as well as the ability to
-specify database connection strings in your application's package.json.
+Whenever you create a database using Nodejitsu, you will be provided with all
+the information you need to connect to your database. For instance, if you
+`jitsu databases create mongo myMongo`, jitsu will tell you the url for your new
+mongo database on mongohq:
+
+    info:   Welcome to Nodejitsu
+    info:   It worked if it ends with Nodejitsu ok
+    info:   Executing command databases create mongo myMongo
+    info:   Database myMongo was created.
+    info:   Database name: myMongo
+    info:   Database type: mongo
+    info:   Connection url: mongodb://nodejitsu:pass@staff.mongohq.com:10057/
+    info:   Nodejitsu ok
+
+You can copy-paste this url directly into your mongo library's connect method.
+For example, in [Mongoose](https://github.com/learnboost/mongoose/):
+
+    var mongoose = require('mongoose');
+
+    mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
+
+Now you're connected to your database!
+
+## Addons
+
+Addons add functionality to your apps by extending and adding features to
+Nodejitsu's platform and integrating third party services. For instance,
+one of our addons provides powerful [Mailchimp](http://mailchimp.com)-based
+[mailing list management](#apx:mailchimp).
 
 ## Marketplace
 
@@ -216,8 +243,9 @@ The Marketplace is an online store where you can browse ready to deploy
 Node.js Applications. The Marketplace is a great place to start if you are new
 to Node.js development or want to share your existing Node.js Application with
 the world.
-<a name='jitsu'></a>
+
 # The Jitsu Client
+<a name='jitsu'></a>
 
 [Jitsu](http://github.com/nodejitsu/jitsu) is a
 [Command Line Interface](http://en.wikipedia.org/wiki/Command-line_interface)
@@ -322,8 +350,8 @@ accounts. You will be prompted for additional user information as required.
 
 All configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
 
-<a name='webapp' />
 # Nodejitsu Web Application
+<a name='webapp'></a>
 
 The Nodejitsu Web Application allows developers to administrate their
 applications through a web interface. This interface allows access to all the
@@ -333,9 +361,8 @@ including deployment, snapshots and database connectivity.
 ![](https://github.com/jesusabdullah/handbook/raw/master/fig/webapp.png)
 
 The web admin interface may be found at <http://develop.nodejitsu.com>.
-<a name='api' />
 # JSON API
-
+<a name='api'></a>
 
 Nodejitsu provides a web API for developers who want to interact with the
 Nodejitsu platform programatically. This API is built to be
@@ -439,9 +466,8 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 ### Create a new Database
 
      POST /databases/:user-id/:database-id
-       
      {
-       type: "Couch || Redis || Mongo"
+       type: "couch" || "redis" || "mongo"
      }
 
 ### Get information about a Database
@@ -454,7 +480,9 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 ## Logging
 
-Logging is a very important feature in any professional grade Node.js application. Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved. 
+Logging is a very important feature in any professional grade Node.js
+application. Nodejitsu provides integrated logging solutions for your
+applications. Your logs are always saved and ready to be retrieved. 
 
 ### Get all logs for a user
 
@@ -474,154 +502,8 @@ Logging is a very important feature in any professional grade Node.js applicatio
 
     GET /databases/:user-id/:id
 
-<a name="#mailchimp" />
-# Mailchimp Integration in Nodejitsu
-
-Nodejitsu features integration with [MailChimp](http://mailchimp.com). What is
-MailChimp? In their [own words](http://mailchimp.com/about/):
-
-    MailChimp makes it easy to design exceptional email campaigns, share them on
-    social networks, integrate with web services you already use, manage
-    subscribers and track your results. You'll love mixing and matching
-    MailChimp's templates, features and integrations to suit your needs—think of
-    it as your own personal newsletter publishing platform.
-
-But what about integration? MailChimp integration with Nodejitsu means that you
-can interact with your MailChimp lists using the same Nodejitsu API that you use
-to interact with your apps!
-
-## Getting Started
-
-In order to set up the MailChimp integration, you have to
-[sign up for MailChimp](http://mailchimp.com/signup) at
-[their web site](http://mailchimp.com):
-
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/signup_page.png)
-
-Once you sign up for MailChimp, they can help you get your bearings so you can
-get to managing e-mail campaigns quick:
-
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/dashboard_help.png)
-
-But, in order to integrate with Nodejitsu, what you should do is go to the
-API keys page from the side-menu:
-
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/api_keys_dropdown.png)
-
-Here, you can see an API key:
-
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/api_keys.png)
-
-All you have to do to link your MailChimp account with your Nodejitsu account
-is to copy-and-paste this API key into Nodejitsu's web application interface:
-
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard_api_key.png)
-
-Now you're good to go! Nodejitsu reports that I have one mailing list, and that
-the two subscribers are my mother and myself.
-
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard.png)
-
-## Interacting with your lists via the Nodejitsu JSON API: A Broad Overview
-
-Like the rest of Nodejitsu's features, addon functionality can be accessed using
-Nodejitsu's JSON API. For example, here's what happens when I
-`GET /addons/:user-id`, minus some private information:
-
-    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
-    http://api.nodejitsu.com/addons/jesusabdullah/ | pretty-json
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100   332  100   332    0     0     53      0  0:00:06  0:00:06 --:--:--  3192
-    { _id: 'jesusabdullah',
-      username: 'jesusabdullah',
-      'password-salt': '************',
-      password: '********************************',
-      email: 'josh.holbrook@gmail.com',
-      'addons-mailchimp-apikey': '********************************-us2',
-      _rev: '3-2df3731e8cc48d8e11511096dad140e8',
-      status: 'active',
-      inviteCode: '***********',
-      resource: 'User' }
-
-In order to interact with the MailChimp add-on in particular, use the
-`/addons/:user-id/signups` resource:
-
-    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
-    http://api.nodejitsu.com/addons/jesusabdullah/signups | pretty-json
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100   695  100   695    0     0    507      0  0:00:01  0:00:01 --:--:--  3373
-
-    { lists: 
-       { total: 1,
-         data: 
-          [ { id: 'f3b7d6450c',
-              web_id: 646837,
-              name: 'Example Mailing List',
-              date_created: '2011-07-26 01:06:42',
-              email_type_option: false,
-              use_awesomebar: true,
-              default_from_name: 'Joshua Holbrook',
-              default_from_email: 'josh.holbrook@gmail.com',
-              default_subject: 'Relevant AND Non-Spammy!',
-              default_language: 'en',
-              list_rating: 0,
-              stats: 
-               { member_count: 2,
-                 unsubscribe_count: 0,
-                 cleaned_count: 0,
-                 member_count_since_send: 3,
-                 unsubscribe_count_since_send: 0,
-                 cleaned_count_since_send: 0,
-                 campaign_count: 0,
-                 grouping_count: 0,
-                 group_count: 0,
-                 merge_var_count: 0,
-                 avg_sub_rate: null,
-                 avg_unsub_rate: null,
-                 target_sub_rate: null,
-                 open_rate: null,
-                 click_rate: null },
-              modules: [] } ] } }
-
-You can use the list ID to access the particular list information with
-`GET /addons/:user-id/signups/:list-id/`:
-
-    josh@pidgey:~$ curl --user 'jesusabdullah:*************'
-    http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c | pretty-json
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100   154  100   154    0     0    158      0 --:--:-- --:--:-- --:--:--   802
-    { total: 2,
-      data: 
-       [ { email: 'holbrook@*********.net',
-           timestamp: '2011-07-26 01:08:11' },
-         { email: 'josh@nodejitsu.com',
-           timestamp: '2011-07-26 01:09:11' } ] }
-
-This confirms that Mom is in my example list.
-
-## More API Commands:
-
-* **Retrieve your API key:**
-
-    GET /addons/:user-id/signups/apikey/
-
-* **Set your API key:**
-
-    PUT /addons/:user-id/signups/apikey/
-
-* **Subscribe to a list:**
-
-    POST /addons/:user-id/signups/:list-id/subscribe/
-
-* **Unsubscribe from a list:**
-
-    POST /addons/:user-id/signups/:list-id/unsubscribe/
-
-<a name='haibu' />
 # Create Your Own Cloud With Haibu
+<a name='haibu'></a>
 
 Haibu is an open-source tool for spawning and managing several node.js
 applications on a single server. It's an integral part of Nodejitsu's
@@ -671,8 +553,8 @@ should be relatively low priority.
 ## Additional Documentation
 
 For more documentation, visit haibu's [github page](https://github.com/nodejitsu/haibu).
-<a name='opensource'>
 # Open Source Projects
+<a name='opensource'></a>
 
 ## Why Open Source
 
@@ -700,11 +582,8 @@ Our [github site](http://github.com/nodejitsu) has the facilities for managing
 patches, issues, code comments, version control, and just about anything else an
 open source developer could need.
 
-# Troubleshooting
-
-This section will describe how to troubleshoot various problems.
-<a name='support'>
 # Support
+<a name='support'></a>
 
 Nodejitsu has a team of developers standing by to assist users with any issues
 they may come across while deploying and administrating their web applications
@@ -735,8 +614,144 @@ questions, get assistance or even just to hang out!
 Nodejitsu has an official twitter account at <https://twitter.com/nodejitsu>.
 Follow us to get the latest news about Nodejitsu, or mention us if you have
 issues!
-<a name='package'></a>
+# Appendix: Mailchimp Integration in Nodejitsu
+<a name="apx:mailchimp"></a>
+
+Nodejitsu features integration with [MailChimp](http://mailchimp.com). What is
+MailChimp? In their [own words](http://mailchimp.com/about/):
+
+> MailChimp makes it easy to design exceptional email campaigns, share them on
+> social networks, integrate with web services you already use, manage
+> subscribers and track your results. You'll love mixing and matching
+> MailChimp's templates, features and integrations to suit your needs—think of
+> it as your own personal newsletter publishing platform.
+
+But what about integration? MailChimp integration with Nodejitsu means that you
+can interact with your MailChimp lists using the same Nodejitsu API that you use
+to interact with your apps!
+
+## Getting Started
+
+In order to set up the MailChimp integration, you have to
+[sign up for MailChimp](http://mailchimp.com/signup) at
+[their web site](http://mailchimp.com):
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/signup_page.png)
+
+Once you sign up for MailChimp, they can help you get your bearings so you can
+get to managing e-mail campaigns quick:
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/dashboard_help.png)
+
+But, in order to integrate with Nodejitsu, what you need is an API key. The
+easiest way to get an API key *right now* is to visit
+<https://admin.mailchimp.com/account/api-key-popup>:
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/api_key_popup.png)
+
+All you have to do to link your MailChimp account with your Nodejitsu account
+is to copy-and-paste this API key into Nodejitsu's web application interface:
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard_api_key.png)
+
+Now you're good to go! Nodejitsu reports that I have one mailing list, and that
+the two subscribers are Josh's mother and himself.
+
+![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard.png)
+
+## Interacting with your lists via the Nodejitsu JSON API: A Broad Overview
+
+Like the rest of Nodejitsu's features, addon functionality can be accessed using
+Nodejitsu's JSON API. For example, here's what happens when you get 
+`/addons/:user-id`:
+
+    $ curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/
+
+
+    { "_id": "jesusabdullah",
+      "username": "jesusabdullah",
+      "password-salt": "************",
+      "password": "********************************",
+      "email": "josh.holbrook@gmail.com",
+      "addons-mailchimp-apikey": "********************************-us2",
+      "_rev": "3-2df3731e8cc48d8e11511096dad140e8",
+      "status": "active",
+      "inviteCode": "***********",
+      "resource": "User" }
+
+In order to interact with the MailChimp add-on in particular, use the
+`/addons/:user-id/signups` resource:
+
+    $ curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/signups
+
+
+    { "lists": 
+       { "total": 1,
+         "data": 
+          [ { "id": "f3b7d6450c",
+              "web_id": 646837,
+              "name": "Example Mailing List",
+              "date_created": "2011-07-26 01:06:42",
+              "email_type_option": false,
+              "use_awesomebar": true,
+              "default_from_name": "Joshua Holbrook",
+              "default_from_email": "josh.holbrook@gmail.com",
+              "default_subject": "Relevant AND Non-Spammy!",
+              "default_language": "en",
+              "list_rating": 0,
+              "stats": 
+               { "member_count": 2,
+                 "unsubscribe_count": 0,
+                 "cleaned_count": 0,
+                 "member_count_since_send": 3,
+                 "unsubscribe_count_since_send": 0,
+                 "cleaned_count_since_send": 0,
+                 "campaign_count": 0,
+                 "grouping_count": 0,
+                 "group_count": 0,
+                 "merge_var_count": 0,
+                 "avg_sub_rate": null,
+                 "avg_unsub_rate": null,
+                 "target_sub_rate": null,
+                 "open_rate": null,
+                 "click_rate": null },
+              "modules": [] } ] } }
+
+You can use the list ID to access the particular list information with
+`/addons/:user-id/signups/:list-id/`:
+
+    curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c
+
+
+    { "total": 2,
+      "data": 
+       [ { "email": "holbrook@*********.net",
+           "timestamp": "2011-07-26 01:08:11" },
+         { "email": "josh@nodejitsu.com",
+           "timestamp": "2011-07-26 01:09:11" } ] }
+
+This confirms that Josh and his Mom are is in the example list.
+
+## More API Commands:
+
+* **Retrieve your API key:**
+
+    GET /addons/:user-id/signups/apikey/
+
+* **Set your API key:**
+
+    PUT /addons/:user-id/signups/apikey/
+
+* **Subscribe to a list:**
+
+    POST /addons/:user-id/signups/:list-id/subscribe/
+
+* **Unsubscribe from a list:**
+
+    POST /addons/:user-id/signups/:list-id/unsubscribe/
+
 # Appendix: package.json
+<a name='apx:package'></a>
 
 ## Understanding the package.json format
 A package.json file describes your application, its dependencies, and other various application metadata. For a detailed spec on creating a package.json you can check out Isaac's fine documentation [here](https://github.com/isaacs/npm/blob/master/doc/developers.md#readme). 
@@ -781,20 +796,27 @@ If your application requires additional dependencies or third-party libraries, N
 
 Your dependencies will be resolved when your application deploys to Nodejitsu.
 # Appendix: Resources
-<a name='resources'></a>
+<a name='apx:resources'></a>
 
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
 for beginners.  Here are just a few:
 
-- [The nodejs.org Official Docs](http://nodejs.org/docs/v0.4.10/api/)
-- The [Node.js Wiki](https://github.com/joyent/node/wiki)
-- The #Node.js, #nodejitsu and #nodesupport rooms on [irc.freenode.net](http://webchat.freenode.net/)
-- [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai)
-- <http://search.npmjs.org>
+- [The nodejs.org Official Docs](http://nodejs.org/docs/v0.4.10/api/) document
+all of Node.js's core APIs.
+- The [Node.js Wiki](https://github.com/joyent/node/wiki) contains information
+such as an FAQ, installation instructions, and lists of modules.
+- The #Node.js, #nodejitsu and #nodesupport channels on
+[irc.freenode.net](http://webchat.freenode.net/) are ready to help you with any
+Node.js issues and concerns you may have.
+- [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai) is an irc bot that
+shares Node.js tweets with the #nodejitsu irc channel. Ask it a quick question
+and it just might give you an answer!
+- <http://search.npmjs.org> is a great place to check for modules that might
+already solve your problem.
 
 
-<a name='build'></a>
 # Appendix: Building the Nodejitsu Handbook
+<a name='apx:build'></a>
 
 ## Dependencies
 
