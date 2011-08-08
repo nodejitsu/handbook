@@ -10,7 +10,7 @@ Before you get started, you should have both
 
 ## Write A Server:
 
-Let's start with a very basic node.js http server. Create a folder called
+Let's start with a very basic Node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
 this file, write the following code:
 
@@ -38,10 +38,10 @@ deploy!
 
 ## Deploy with Jitsu:
 
-In this tutorial, we use [jitsu](http://github.com/nodejitsu/jitsu) to deploy
+In this tutorial, we will use [jitsu](http://github.com/nodejitsu/jitsu) to deploy
 our "hello world" application. Jitsu is a
 [Command Line Interface](http://en.wikipedia.org/wiki/Command-line_interface)
-for using Nodejitsu's platform. We've designed Jitsu to be
+for using Nodejitsu's platform. We've designed jitsu to be
 suitable for command line beginners, but still be powerful and extensible
 enough for production usage. If you aren't a fan of the command line or don't
 have terminal access you can still do everything jitsu can do through the
@@ -64,7 +64,7 @@ globally.
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png)
 
 After installation, run the `jitsu` command from your command line. Since it's
-your first time using jitsu, you will be prompted to login with an existing
+your first time using jitsu, you will be prompted to log in with an existing
 account or to create a new account.
 
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/login.png)
