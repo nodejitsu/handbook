@@ -1,5 +1,5 @@
-<a name='package'></a>
 # Appendix: package.json
+<a name='apx:package'></a>
 
 ## Understanding the package.json format
 A package.json file describes your application, its dependencies, and other various application metadata. For a detailed spec on creating a package.json you can check out Isaac's fine documentation [here](https://github.com/isaacs/npm/blob/master/doc/developers.md#readme). 

@@ -1,5 +1,5 @@
-<a name="#apx:mailchimp" />
 # Appendix: Mailchimp Integration in Nodejitsu
+<a name="apx:mailchimp"></a>
 
 Nodejitsu features integration with [MailChimp](http://mailchimp.com). What is
 MailChimp? In their [own words](http://mailchimp.com/about/):

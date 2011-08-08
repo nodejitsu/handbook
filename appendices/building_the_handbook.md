@@ -1,5 +1,5 @@
-<a name='build'></a>
 # Appendix: Building the Nodejitsu Handbook
+<a name='apx:build'></a>
 
 ## Dependencies
 

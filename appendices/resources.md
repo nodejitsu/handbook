@@ -1,5 +1,5 @@
 # Appendix: Resources
-<a name='resources'></a>
+<a name='apx:resources'></a>
 
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
 for beginners.  Here are just a few:
