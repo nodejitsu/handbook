@@ -21,7 +21,7 @@ Issues is a great way to report bugs in our software!
 
 ## IRC
 
-Nodejitsu has a channel on <irc://freenode.net/#nodejitsu> where Nodejitsu
+Nodejitsu has a channel on (irc://freenode.net/#nodejitsu)[irc://freenode.net/#nodejitsu] where Nodejitsu
 developers are standing by to support users around the clock. Drop by to ask
 questions, get assistance or even just to hang out!
 
