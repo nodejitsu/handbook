@@ -617,9 +617,10 @@ Follow us to get the latest news about Nodejitsu, or mention us if you have
 issues!
 # Table of Appendices
 <a name="apx"></a>
-* [package.json](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:package)
-* [Resources](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:resources)
-* [Building The Handbook](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:build)
+
+* [package.json](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:package)  
+* [Resources](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:resources)  
+* [Building The Handbook](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:build)  
 
 # Appendix: Mailchimp Integration in Nodejitsu
 <a name="apx:mailchimp"></a>
