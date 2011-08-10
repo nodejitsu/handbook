@@ -12,11 +12,10 @@
 * [Create Your Own Cloud With Haibu](#haibu)
 * [Open Source Projects](#opensource)
 * [Support](#support)
-* Appendices
-    * [Appendix: Nodejitsu Integration with MailChimp](#apx:mailchimp)
-    * [Appendix: package.json](#apx:package)
-    * [Appendix: Resources](#apx:resources)
-    * [Appendix: Building The Handbook](#apx:build)
+* [Appendix: Nodejitsu Integration with MailChimp](#apx:mailchimp)
+* [Appendix: package.json](#apx:package)
+* [Appendix: Resources](#apx:resources)
+* [Appendix: Building The Handbook](#apx:build)
 
 
 # Introduction
@@ -616,6 +615,12 @@ questions, get assistance or even just to hang out!
 Nodejitsu has an official twitter account at <https://twitter.com/nodejitsu>.
 Follow us to get the latest news about Nodejitsu, or mention us if you have
 issues!
+# Table of Appendices
+<a name="apx"></a>
+* [package.json](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:package)
+* [Resources](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:resources)
+* [Building The Handbook](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:build)
+
 # Appendix: Mailchimp Integration in Nodejitsu
 <a name="apx:mailchimp"></a>
 
