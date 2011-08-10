@@ -21,13 +21,14 @@ MD = pages/title.md \
     chapters/haibu.md \
     chapters/open_source_projects.md \
     chapters/support.md \
+    appendices/toc.md \
     appendices/mailchimp.md \
     appendices/package.json.md \
     appendices/resources.md \
     appendices/building_the_handbook.md
 
 README =  pages/title.md \
-    chapters/toc.md \
+    chapters/toc.readme.md \
     chapters/introduction.md \
     chapters/hello_world.md \
     chapters/platform_features.md \
