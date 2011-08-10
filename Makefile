@@ -36,11 +36,7 @@ README =  pages/title.md \
     chapters/json_api.md \
     chapters/haibu.md \
     chapters/open_source_projects.md \
-    chapters/support.md \
-    appendices/mailchimp.md \
-    appendices/package.json.md \
-    appendices/resources.md \
-    appendices/building_the_handbook.md
+    chapters/support.md
 
 API = chapters/json_api.md 
 
