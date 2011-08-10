@@ -786,10 +786,9 @@ If your application requires additional dependencies or third-party libraries, N
         "start": "server.js"
       },
       "dependencies": {
-        "async": ">= 0.1.8",
-        "colors": ">= 0.5.0",
-        "request": ">= 1.9.0",
-        "vows": ">= 0.5.8",
+        "async": "0.1.x",
+        "colors": "0.5.x",
+        "request": "1.9.x"
       },
       "version": "0.0.0"
     }
