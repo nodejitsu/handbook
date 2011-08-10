@@ -23,7 +23,7 @@ If you have issues, you can always contact us via email, at
 ## IRC
 
 Nodejitsu has a channel on [freenode](http://webchat.freenode.net/) at
-(irc://freenode.net/#nodejitsu)[irc://freenode.net/#nodejitsu], where Nodejitsu
+<a href="irc://freenode.net/#nodejitsu">irc://freenode.net/#nodejitsu</a>, where Nodejitsu
 developers are standing by to support users around the clock. Drop by to ask
 questions, get assistance or even just to hang out!
 
