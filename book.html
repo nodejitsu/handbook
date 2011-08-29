@@ -42,10 +42,7 @@
 <li><a href="#haibu" data-bare-link="true">Create Your Own Cloud With Haibu</a></li>
 <li><a href="#opensource" data-bare-link="true">Open Source Projects</a></li>
 <li><a href="#support" data-bare-link="true">Support</a></li>
-<li><a href="#apx:mailchimp" data-bare-link="true">Appendix: Nodejitsu Integration with MailChimp</a></li>
-<li><a href="#apx:package" data-bare-link="true">Appendix: package.json</a></li>
-<li><a href="#apx:resources" data-bare-link="true">Appendix: Resources</a></li>
-<li><a href="#apx:build" data-bare-link="true">Appendix: Building The Handbook</a></li>
+<li><a href="#apx" data-bare-link="true">Appendices</a></li>
 </ul>
 
 
@@ -379,6 +376,16 @@ describe what resources are available.</p>
 <p>In addition to the commands aliased to <code>jitsu create</code>, <code>jitsu deploy</code> and
 <code>jitsu list</code>, the <code>apps</code> resource allows you to create, destroy, stop, start and
 otherwise interact with your applications.</p>
+
+<h3 id="jitsu-env-action">jitsu env <var>action</var></h3>
+
+<p>Jitsu allows you to set environment variables on your production environment.
+For example, <a href="http://expressjs.com">Express</a>, a popular node.js web framework,
+uses the <code>NODE_ENV</code> environment variable to change behavior based on whether the
+environment is for development or production. In the case of Express, nodejitsu
+has <code>NODE_ENV</code> set to "production" by default, but if one wanted to change this
+variable or add more for their application, <code>jitsu env</code> supplies the tools to
+do so.</p>
 
 <h3 id="jitsu-config-action">jitsu config <var>action</var></h3>
 

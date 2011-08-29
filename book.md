@@ -12,11 +12,7 @@
 * [Create Your Own Cloud With Haibu](#haibu)
 * [Open Source Projects](#opensource)
 * [Support](#support)
-* [Appendix: Nodejitsu Integration with MailChimp](#apx:mailchimp)
-* [Appendix: package.json](#apx:package)
-* [Appendix: Resources](#apx:resources)
-* [Appendix: Building The Handbook](#apx:build)
-
+* [Appendices](#apx)
 
 # Introduction
 <a name="introduction"></a>
@@ -328,6 +324,16 @@ describe what resources are available.
 In addition to the commands aliased to `jitsu create`, `jitsu deploy` and 
 `jitsu list`, the `apps` resource allows you to create, destroy, stop, start and
 otherwise interact with your applications.
+
+### jitsu env <action>
+
+Jitsu allows you to set environment variables on your production environment.
+For example, [Express](http://expressjs.com), a popular node.js web framework,
+uses the `NODE_ENV` environment variable to change behavior based on whether the
+environment is for development or production. In the case of Express, nodejitsu
+has `NODE_ENV` set to "production" by default, but if one wanted to change this
+variable or add more for their application, `jitsu env` supplies the tools to
+do so.
 
 ### jitsu config <action>
 
