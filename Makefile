@@ -11,7 +11,7 @@ PDF_FLAGS = --fontsize 9.0 \
 
 #Hoping to autogenerate the ToC.
 MD = pages/title.md \
-    chapters/toc.local.md \
+    chapters/toc.md \
     chapters/introduction.md \
     chapters/hello_world.md \
     chapters/platform_features.md \

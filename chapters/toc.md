@@ -9,10 +9,5 @@
 * [Create Your Own Cloud With Haibu](#haibu)
 * [Open Source Projects](#opensource)
 * [Support](#support)
-* Appendices
-    * [Appendix: Nodejitsu Integration with MailChimp](#apx:mailchimp)
-    * [Appendix: package.json](#apx:package)
-    * [Appendix: Resources](#apx:resources)
-    * [Appendix: Building The Handbook](#apx:build)
-
+* [Appendices](#apx)
 
