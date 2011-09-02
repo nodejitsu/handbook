@@ -571,12 +571,22 @@ applications. Your logs are always saved and ready to be retrieved.</p>
 
 <h3 id="Get-all-logs-for-a-user">Get all logs for a user</h3>
 
-<pre><code> GET /logs/:user-id/
+<pre><code>POST /logs/:user-id/
+{
+  "from": "NOW-3YEARS",
+  "until": "NOW",
+  "rows": 15
+} 
 </code></pre>
 
 <h3 id="Get-logs-for-a-specific-application">Get logs for a specific application</h3>
 
-<pre><code> GET /logs/:user-id/:app-id
+<pre><code>POST /logs/:user-id/:app-id
+{
+  "from": "NOW-3YEARS",
+  "until": "NOW",
+  "rows": 15
+} 
 </code></pre>
 
 <h2 id="Marketplace">Marketplace</h2>

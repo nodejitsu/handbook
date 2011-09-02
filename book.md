@@ -493,11 +493,21 @@ applications. Your logs are always saved and ready to be retrieved.
 
 ### Get all logs for a user
 
-     GET /logs/:user-id/
+    POST /logs/:user-id/
+    {
+      "from": "NOW-3YEARS",
+      "until": "NOW",
+      "rows": 15
+    } 
 
 ### Get logs for a specific application
 
-     GET /logs/:user-id/:app-id
+    POST /logs/:user-id/:app-id
+    {
+      "from": "NOW-3YEARS",
+      "until": "NOW",
+      "rows": 15
+    } 
 
 ## Marketplace
 
