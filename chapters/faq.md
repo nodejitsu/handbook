@@ -11,3 +11,9 @@ Connecting to other servers using arbitrary ports requires no special considerat
 
 The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
 
+
+## "Why won't this C++ addon module/dependency install?"
+
+Some C++ addons require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/), which is not available on nodejitsu's platform.
+
+There is currently no process for getting a library such as cairo installed on our infrastructure.
