@@ -41,6 +41,7 @@
 <li><a href="#api" data-bare-link="true">JSON API</a></li>
 <li><a href="#haibu" data-bare-link="true">Create Your Own Cloud With Haibu</a></li>
 <li><a href="#opensource" data-bare-link="true">Open Source Projects</a></li>
+<li><a href="#faq" data-bare-link="true">Frequently Asked Questions</a></li>
 <li><a href="#support" data-bare-link="true">Support</a></li>
 <li><a href="#apx" data-bare-link="true">Appendices</a></li>
 </ul>
@@ -726,6 +727,27 @@ example, if a developer finds a bug in our open-source
 <a href="https://github.com/nodejitsu/node-http-proxy">http proxy</a>, they can submit an
 issue at <a href="https://github.com/nodejitsu/node-http-proxy/issues" data-bare-link="true">https://github.com/nodejitsu/node-http-proxy/issues</a> and tell us about
 their bug.</p>
+
+</div>
+<div class='mp'>
+<h1>Frequently Asked Questions</h1>
+<p><a name="faq"></a></p>
+
+<h2 id="-How-are-programs-kept-alive-Do-I-need-to-use-Forever-">"How are programs kept alive? Do I need to use Forever?"</h2>
+
+<p>Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running, much less use Forever.</p>
+
+<h2 id="-How-can-I-make-my-app-use-a-port-other-than-port-80-">"How can I make my app use a port other than port 80?"</h2>
+
+<p>Connecting to other servers using arbitrary ports requires no special considerations. However, <em>listening</em> for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains.</p>
+
+<p>The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.</p>
+
+<h2 id="-Why-won-t-this-C-addon-compile-">"Why won't this C++ addon compile?"</h2>
+
+<p>Many <a href="http://nodejs.org/docs/v0.4.10/api/addons.html">C++ addons</a> require libraries that are not included in Nodejitsu's infrastructure by default. For example, <a href="https://github.com/learnboost/node-canvas">node-canvas</a> requires <a href="http://cairographics.org/">cairo</a>, which is not available on nodejitsu's platform.</p>
+
+<p>There is currently no process for getting a library such as cairo installed on our infrastructure.</p>
 
 </div>
 <div class='mp'>
