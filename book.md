@@ -600,6 +600,25 @@ Our [github site](http://github.com/nodejitsu) has the facilities for managing
 patches, issues, code comments, version control, and just about anything else an
 open source developer could need.
 
+# Frequently Asked Questions
+<a name='faq'></a>
+
+## "How are programs kept alive? Do I need to use Forever?"
+
+Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running, much less use Forever.
+
+## "How can I make my app use a port other than port 80?"
+
+Connecting to other servers using arbitrary ports requires no special considerations. However, *listening* for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains.
+
+The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
+
+
+## "Why won't this C++ addon compile?"
+
+Many [C++ addons](http://nodejs.org/docs/v0.4.10/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/), which is not available on nodejitsu's platform.
+
+There is currently no process for getting a library such as cairo installed on our infrastructure.
 # Support
 <a name='support'></a>
 
@@ -637,25 +656,6 @@ example, if a developer finds a bug in our open-source
 [http proxy](https://github.com/nodejitsu/node-http-proxy), they can submit an
 issue at <https://github.com/nodejitsu/node-http-proxy/issues> and tell us about
 their bug.
-# Frequently Asked Questions
-<a name='faq'></a>
-
-## "How are programs kept alive? Do I need to use Forever?"
-
-Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running, much less use Forever.
-
-## "How can I make my app use a port other than port 80?"
-
-Connecting to other servers using arbitrary ports requires no special considerations. However, *listening* for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains.
-
-The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
-
-
-## "Why won't this C++ addon compile?"
-
-Many [C++ addons](http://nodejs.org/docs/v0.4.10/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/), which is not available on nodejitsu's platform.
-
-There is currently no process for getting a library such as cairo installed on our infrastructure.
 # Table of Appendices
 <a name="apx"></a>
 
