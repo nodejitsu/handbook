@@ -21,6 +21,7 @@ MD = pages/title.md \
     chapters/haibu.md \
     chapters/open_source_projects.md \
     chapters/support.md \
+    chapters/faq.md \
     appendices/toc.md \
     appendices/mailchimp.md \
     appendices/package.json.md \
@@ -37,6 +38,7 @@ README =  pages/title.md \
     chapters/json_api.md \
     chapters/haibu.md \
     chapters/open_source_projects.md \
+    chapters/faq.md \
     chapters/support.md
 
 API = chapters/json_api.md 

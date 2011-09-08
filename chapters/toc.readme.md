@@ -8,6 +8,7 @@
 * [JSON API](#api)
 * [Create Your Own Cloud With Haibu](#haibu)
 * [Open Source Projects](#opensource)
+* [Frequently Asked Questions](#faq)
 * [Support](#support)
 * [Appendices](https://github.com/nodejitsu/handbook/blob/master/book.md#apx)
 
