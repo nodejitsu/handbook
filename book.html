@@ -693,6 +693,15 @@ open source developer could need.</p>
 <h1>Frequently Asked Questions</h1>
 <p><a name="faq"></a></p>
 
+<h2 id="-How-do-I-reset-my-password-">"How do I reset my password?"</h2>
+
+<p>One way is to use jitsu. Simply type:</p>
+
+<pre><code>jitsu apps forgot :username
+</code></pre>
+
+<p>where <code>:username</code> is your username. Alternately, go to <a href="http://develop.nodejitsu.com/" data-bare-link="true">http://develop.nodejitsu.com/</a> and click the "forgot password" link, where you will be prompted for your username. Either process will send you an email with further instructions.</p>
+
 <h2 id="-How-are-programs-kept-alive-Do-I-need-to-use-Forever-">"How are programs kept alive? Do I need to use Forever?"</h2>
 
 <p>Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running, much less use Forever.</p>
@@ -708,6 +717,21 @@ open source developer could need.</p>
 <p>Many <a href="http://nodejs.org/docs/v0.4.10/api/addons.html">C++ addons</a> require libraries that are not included in Nodejitsu's infrastructure by default. For example, <a href="https://github.com/learnboost/node-canvas">node-canvas</a> requires <a href="http://cairographics.org/">cairo</a>, which is not available on nodejitsu's platform.</p>
 
 <p>There is currently no process for getting a library such as cairo installed on our infrastructure.</p>
+
+<h2 id="-How-do-I-specify-which-files-not-to-bundle-How-do-I-know-what-files-are-getting-bundled-">"How do I specify which files not to bundle? How do I know what files are getting bundled?"</h2>
+
+<p>Jitsu uses npm to bundle files, meaning that jitsu bundles files in exactly the same manner than npm bundles published modules. You can read about this in <a href="http://npmjs.org/doc/developers.html">npm's documentation</a>.</p>
+
+<p>In more detail: npm uses a file called <code>.npmignore</code>, which should contain a list of files and folders to ignore for the purpose of bundling. If this file does not exist, npm will use git's ignore file, called <code>.gitignore</code>, instead. This means that, if you want to bundle files that are ignored by git, you should create an <code>.npmignore</code> even if it's blank.</p>
+
+<p><em>Note</em>: There is a minor but important difference between how <code>.npmignore</code> and <code>.gitignore</code> list folders. In the case of <code>.npmignore</code>, ignored folders should have a trailing slash:</p>
+
+<pre><code>folderToIgnore/
+</code></pre>
+
+<p>In contrast, this is not necessary for <code>.gitignore</code>, and listing <code>folderToIgnore</code> without a trailing slash will work as expected.</p>
+
+<p>Finally, jitsu has the ability to bundle your app without deploying with the <code>jitsu package create</code> command. You can use this to make sure that the resulting .tgz file is as you expect.</p>
 
 </div>
 <div class='mp'>
