@@ -621,6 +621,10 @@ Connecting to other servers using arbitrary ports requires no special considerat
 
 The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
 
+## "How can I point my custom domain to my nodejitsu app?"
+
+Nodejitsu can assist with DNS issues on a case-by-case basis. If your project has a special domain, [contact us](http://nodejitsu.assistly.com) and we'll help you out.
+
 
 ## "Why won't this C++ addon compile?"
 
