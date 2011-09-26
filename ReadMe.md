@@ -607,7 +607,7 @@ open source developer could need.
 
 One way is to use jitsu. Simply type:
 
-    jitsu apps forgot :username
+    jitsu users forgot :username
 
 where `:username` is your username. Alternately, go to <http://develop.nodejitsu.com/> and click the "forgot password" link, where you will be prompted for your username. Either process will send you an email with further instructions.
 
