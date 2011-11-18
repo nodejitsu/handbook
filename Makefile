@@ -23,7 +23,6 @@ MD = pages/title.md \
     chapters/faq.md \
     chapters/support.md \
     appendices/toc.md \
-    appendices/mailchimp.md \
     appendices/package.json.md \
     appendices/resources.md \
     appendices/building_the_handbook.md
