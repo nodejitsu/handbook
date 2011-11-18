@@ -9,6 +9,10 @@ One way is to use jitsu. Simply type:
 
 where `:username` is your username. Alternately, go to <http://develop.nodejitsu.com/> and click the "forgot password" link, where you will be prompted for your username. Either process will send you an email with further instructions.
 
+## "Is there a cheatsheet somewhere?"
+
+There sure is! Check out <http://cheatsheet.nodejitsu.com>.
+
 ## "How are programs kept alive? Do I need to use Forever?"
 
 Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running, much less use Forever.
