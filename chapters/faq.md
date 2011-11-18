@@ -21,7 +21,7 @@ The ability to host tcp applications on nodejitsu and listen on non-80 ports is 
 
 ## "How can I point my custom domain to my nodejitsu app?"
 
-Nodejitsu can assist with DNS issues on a case-by-case basis. If your project has a special domain, [contact us](http://nodejitsu.assistly.com) and we'll help you out.
+Yes! For directions on how to set up a custom domain with Nodejitsu, [go here](http://dns.nodejitsu.com).
 
 
 ## "Why won't this C++ addon compile?"
