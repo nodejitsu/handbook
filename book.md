@@ -230,12 +230,16 @@ Now you're connected to your database!
 
 ## Addons
 
+*Note: Coming soon!*
+
 Addons add functionality to your apps by extending and adding features to
 Nodejitsu's platform and integrating third party services. For instance,
 one of our addons provides powerful [Mailchimp](http://mailchimp.com)-based
-[mailing list management](#apx:mailchimp).
+mailing list management.
 
 ## Marketplace
+
+*Note: Coming soon!*
 
 The Marketplace is an online store where you can browse ready to deploy
 Node.js Applications. The Marketplace is a great place to start if you are new
@@ -621,7 +625,7 @@ Nodejitsu's cloud services watch your programs for you! You shouldn't have to do
 
 ## "How can I make my app use a port other than port 80?"
 
-Connecting to other servers using arbitrary ports requires no special considerations. However, *listening* for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains.
+Connecting to other servers using arbitrary ports requires no special considerations. However, *listening* for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains. Consequentially, each subdomain may only host one listening service.
 
 The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
 
@@ -632,9 +636,7 @@ Yes! For directions on how to set up a custom domain with Nodejitsu, [go here](h
 
 ## "Why won't this C++ addon compile?"
 
-Many [C++ addons](http://nodejs.org/docs/v0.4.10/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/), which is not available on nodejitsu's platform.
-
-There is currently no process for getting a library such as cairo installed on our infrastructure.
+Many [C++ addons](http://nodejs.org/docs/v0.4.10/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/), which only recently became available on nodejitsu's platform.
 
 ## "How do I specify which files not to bundle? How do I know what files are getting bundled?"
 
