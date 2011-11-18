@@ -68,12 +68,16 @@ Now you're connected to your database!
 
 ## Addons
 
+*Note: Coming soon!*
+
 Addons add functionality to your apps by extending and adding features to
 Nodejitsu's platform and integrating third party services. For instance,
 one of our addons provides powerful [Mailchimp](http://mailchimp.com)-based
-[mailing list management](#apx:mailchimp).
+mailing list management.
 
 ## Marketplace
+
+*Note: Coming soon!*
 
 The Marketplace is an online store where you can browse ready to deploy
 Node.js Applications. The Marketplace is a great place to start if you are new
