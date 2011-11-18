@@ -611,6 +611,10 @@ One way is to use jitsu. Simply type:
 
 where `:username` is your username. Alternately, go to <http://develop.nodejitsu.com/> and click the "forgot password" link, where you will be prompted for your username. Either process will send you an email with further instructions.
 
+## "Is there a cheatsheet somewhere?"
+
+There sure is! Check out <http://cheatsheet.nodejitsu.com>.
+
 ## "How are programs kept alive? Do I need to use Forever?"
 
 Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running, much less use Forever.
@@ -623,7 +627,7 @@ The ability to host tcp applications on nodejitsu and listen on non-80 ports is 
 
 ## "How can I point my custom domain to my nodejitsu app?"
 
-Nodejitsu can assist with DNS issues on a case-by-case basis. If your project has a special domain, [contact us](http://nodejitsu.assistly.com) and we'll help you out.
+Yes! For directions on how to set up a custom domain with Nodejitsu, [go here](http://dns.nodejitsu.com).
 
 
 ## "Why won't this C++ addon compile?"
@@ -881,7 +885,7 @@ for beginners.  Here are just a few:
 all of Node.js's core APIs.
 - The [Node.js Wiki](https://github.com/joyent/node/wiki) contains information
 such as an FAQ, installation instructions, and lists of modules.
-- The #Node.js, #nodejitsu and #nodesupport channels on
+- The #Node.js and #nodejitsu channels on
 [irc.freenode.net](http://webchat.freenode.net/) are ready to help you with any
 Node.js issues and concerns you may have.
 - [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai) is an irc bot that
