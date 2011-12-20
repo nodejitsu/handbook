@@ -3,8 +3,7 @@
 
 The Nodejitsu platform makes writing and deploying web applications a snap!
 In addition to simple yet powerful tools for deployment, the Nodejitsu platform
-also has snapshot management, database hosting and connectivity, and a
-marketplace!
+also has snapshot management, database hosting and connectivity, and more!
 
 There are three main tools for deploying applications to Nodejitsu:
 
@@ -66,6 +65,14 @@ For example, in [Mongoose](https://github.com/learnboost/mongoose/):
     mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
 
 Now you're connected to your database!
+
+## Environment Variable Management
+
+Nodejitsu allows users to modify the environment variables exposed to their apps using jitsu and our other tools. With jitsu, it's as simple as:
+
+    $ jitsu env set FOO bar
+
+This will set the environment variable $FOO to have the string value "bar".
 
 ## Addons
 
