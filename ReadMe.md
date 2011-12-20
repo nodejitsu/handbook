@@ -165,8 +165,7 @@ you, too, are on the path of nodejitsu!
 
 The Nodejitsu platform makes writing and deploying web applications a snap!
 In addition to simple yet powerful tools for deployment, the Nodejitsu platform
-also has snapshot management, database hosting and connectivity, and a
-marketplace!
+also has snapshot management, database hosting and connectivity, and more!
 
 There are three main tools for deploying applications to Nodejitsu:
 
@@ -228,6 +227,14 @@ For example, in [Mongoose](https://github.com/learnboost/mongoose/):
     mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
 
 Now you're connected to your database!
+
+## Environment Variable Management
+
+Nodejitsu allows users to modify the environment variables exposed to their apps using jitsu and our other tools. With jitsu, it's as simple as:
+
+    $ jitsu env set FOO bar
+
+This will set the environment variable $FOO to have the string value "bar".
 
 ## Addons
 
@@ -359,12 +366,35 @@ jitsu will attempt to read the package.json from the current directory.
 `jitsu users *` commands allow you to work with new or existing Nodejitsu user
 accounts. You will be prompted for additional user information as required.
 
+
+### jitsu install
+
+`jitsu install` is a built-in tool for downloading "starter apps" to speed up development. For example, here's how to use `jitsu install` to download a "hello world" application:
+
+    josh@onix:/tmp$ mkdir helloworld
+    josh@onix:/tmp$ cd helloworld
+    josh@onix:/tmp/helloworld$ jitsu install helloworld
+    info:   Welcome to Nodejitsu
+    info:   It worked if it ends with Nodejitsu ok
+    info:   Executing command install helloworld
+    info:   Installing helloworld locally.
+    warn:   Downloading packages from npm, this may take a moment...
+    info:   helloworld installed.
+    help:   You can now jitsu deploy this application
+    prompt: Would you like to start this application locally? (yes): no
+    info:   Nodejitsu ok
+    josh@onix:/tmp/helloworld$ ls
+    bin  node_modules  package.json  ReadMe.md
+
+
 ## .jitsuconf file
 
 All configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
 
 # Nodejitsu Web Application
 <a name='webapp'></a>
+
+*Note: Coming soon!*
 
 The Nodejitsu Web Application allows developers to administrate their
 applications through a web interface. This interface allows access to all the
@@ -385,12 +415,13 @@ low-level way of interacting with the Nodejitsu platform. For most deployment
 scenarios you should use our command line tool, [jitsu](#jitsu), or the
 [online administrative interface](#webapp).
 
-Jitsu is implemented by
-[wrapping the JSON API](https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api).
+## API Clients
+
+Nodejitsu has a JSON API client for node.js, which may be found [here](https://github.com/nodejitsu/nodejitsu-api) (along with API clients in other languages as they are developed). Jitsu is implemented by using the node.js API client.
 
 ## Authentication 
 
-Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the user API, the [jitsu CLI](#jitsu), or just by visiting [http://nodejitsu.com](http://nodejitsu.com). Currently, we support [Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). If you haven't used Basic Auth before, don't fret; it's easy! 
+Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, the [jitsu CLI](#jitsu), or just by visiting [http://nodejitsu.com](http://nodejitsu.com). Currently, we support [Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). If you haven't used Basic Auth before, don't fret; it's easy! 
 
 Here is an example using the command line utility,
 [Curl](http://curl.haxx.se/):

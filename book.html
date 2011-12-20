@@ -205,8 +205,7 @@ you, too, are on the path of nodejitsu!</p>
 
 <p>The Nodejitsu platform makes writing and deploying web applications a snap!
 In addition to simple yet powerful tools for deployment, the Nodejitsu platform
-also has snapshot management, database hosting and connectivity, and a
-marketplace!</p>
+also has snapshot management, database hosting and connectivity, and more!</p>
 
 <p>There are three main tools for deploying applications to Nodejitsu:</p>
 
@@ -275,6 +274,15 @@ mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
 </code></pre>
 
 <p>Now you're connected to your database!</p>
+
+<h2 id="Environment-Variable-Management">Environment Variable Management</h2>
+
+<p>Nodejitsu allows users to modify the environment variables exposed to their apps using jitsu and our other tools. With jitsu, it's as simple as:</p>
+
+<pre><code>$ jitsu env set FOO bar
+</code></pre>
+
+<p>This will set the environment variable $FOO to have the string value "bar".</p>
 
 <h2 id="Addons">Addons</h2>
 
@@ -414,6 +422,26 @@ jitsu will attempt to read the package.json from the current directory.</p>
 <p><code>jitsu users *</code> commands allow you to work with new or existing Nodejitsu user
 accounts. You will be prompted for additional user information as required.</p>
 
+<h3 id="jitsu-install">jitsu install</h3>
+
+<p><code>jitsu install</code> is a built-in tool for downloading "starter apps" to speed up development. For example, here's how to use <code>jitsu install</code> to download a "hello world" application:</p>
+
+<pre><code>josh@onix:/tmp$ mkdir helloworld
+josh@onix:/tmp$ cd helloworld
+josh@onix:/tmp/helloworld$ jitsu install helloworld
+info:   Welcome to Nodejitsu
+info:   It worked if it ends with Nodejitsu ok
+info:   Executing command install helloworld
+info:   Installing helloworld locally.
+warn:   Downloading packages from npm, this may take a moment...
+info:   helloworld installed.
+help:   You can now jitsu deploy this application
+prompt: Would you like to start this application locally? (yes): no
+info:   Nodejitsu ok
+josh@onix:/tmp/helloworld$ ls
+bin  node_modules  package.json  ReadMe.md
+</code></pre>
+
 <h2 id="-jitsuconf-file">.jitsuconf file</h2>
 
 <p>All configuration data for your local jitsu install is located in the <em>.jitsuconf</em> file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using <code>jitsu config</code>.</p>
@@ -422,6 +450,8 @@ accounts. You will be prompted for additional user information as required.</p>
 <div class='mp'>
 <h1>Nodejitsu Web Application</h1>
 <p><a name="webapp"></a></p>
+
+<p><em>Note: Coming soon!</em></p>
 
 <p>The Nodejitsu Web Application allows developers to administrate their
 applications through a web interface. This interface allows access to all the
@@ -445,12 +475,13 @@ low-level way of interacting with the Nodejitsu platform. For most deployment
 scenarios you should use our command line tool, <a href="#jitsu" data-bare-link="true">jitsu</a>, or the
 <a href="#webapp" data-bare-link="true">online administrative interface</a>.</p>
 
-<p>Jitsu is implemented by
-<a href="https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api">wrapping the JSON API</a>.</p>
+<h2 id="API-Clients">API Clients</h2>
+
+<p>Nodejitsu has a JSON API client for node.js, which may be found <a href="https://github.com/nodejitsu/nodejitsu-api">here</a> (along with API clients in other languages as they are developed). Jitsu is implemented by using the node.js API client.</p>
 
 <h2 id="Authentication">Authentication</h2>
 
-<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the user API, the <a href="#jitsu" data-bare-link="true">jitsu CLI</a>, or just by visiting <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a>. Currently, we support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a>. If you haven't used Basic Auth before, don't fret; it's easy!</p>
+<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, the <a href="#jitsu" data-bare-link="true">jitsu CLI</a>, or just by visiting <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a>. Currently, we support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a>. If you haven't used Basic Auth before, don't fret; it's easy!</p>
 
 <p>Here is an example using the command line utility,
 <a href="http://curl.haxx.se/">Curl</a>:</p>

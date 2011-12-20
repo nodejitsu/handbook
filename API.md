@@ -9,12 +9,13 @@ low-level way of interacting with the Nodejitsu platform. For most deployment
 scenarios you should use our command line tool, [jitsu](#jitsu), or the
 [online administrative interface](#webapp).
 
-Jitsu is implemented by
-[wrapping the JSON API](https://github.com/nodejitsu/jitsu/tree/master/lib/jitsu/api).
+## API Clients
+
+Nodejitsu has a JSON API client for node.js, which may be found [here](https://github.com/nodejitsu/nodejitsu-api) (along with API clients in other languages as they are developed). Jitsu is implemented by using the node.js API client.
 
 ## Authentication 
 
-Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the user API, the [jitsu CLI](#jitsu), or just by visiting [http://nodejitsu.com](http://nodejitsu.com). Currently, we support [Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). If you haven't used Basic Auth before, don't fret; it's easy! 
+Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, the [jitsu CLI](#jitsu), or just by visiting [http://nodejitsu.com](http://nodejitsu.com). Currently, we support [Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). If you haven't used Basic Auth before, don't fret; it's easy! 
 
 Here is an example using the command line utility,
 [Curl](http://curl.haxx.se/):
