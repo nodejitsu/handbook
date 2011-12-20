@@ -33,7 +33,7 @@ community since 2009. We are community leaders who have created and contributed 
 hundreds of open-source Node.js projects. If you have used Node.js, you've
 probably used some of the projects we've helped create. 
 
-You can find a list of our open source projects at <http://github.com/nodejitsu>.
+You can find our open source projects at <https://github.com/nodejitsu>, <https://github.com/flatiron> and <https://github.com/nodeapps>.
 
 ## What Is Nodejitsu?
 
@@ -110,7 +110,7 @@ for using Nodejitsu's platform. We've designed jitsu to be
 suitable for command line beginners, but still be powerful and extensible
 enough for production usage. If you aren't a fan of the command line or don't
 have terminal access you can still do everything jitsu can do through the
-[Nodejitsu Web Application](http://nodejitsu.com).
+[Nodejitsu Web Application](http://develop.nodejitsu.com/).
 
 If this is your first time deploying an application and you are eager to get
 started, we recommend using jitsu: it has a one line installer, it's
@@ -178,6 +178,7 @@ managing your applications
 Each of these tools allow developers to access the exact same functionality.
 
 ## Snapshots
+<a name='features/snapshots'></a>
 
 Every time you deploy to Nodejitsu, we automatically take a
 [snapshot](http://en.wikipedia.org/wiki/Snapshot_\(computer_storage\)) of your
@@ -186,6 +187,7 @@ roll back to an old snapshot when disaster strikes in your production
 environment.
 
 ## Databases
+<a name='features/databases'></a>
 
 Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
 
@@ -201,7 +203,6 @@ database hosting is currently provided by CouchOne, Redis2Go and MongoHQ.
 If you already have an externally hosted Database, Nodejitsu is capable of
 connecting to it. We've got Database hosting if you need it, but we fully
 support externally hosted Databases.
-
 
 ### Connecting Applications to Databases
 
@@ -296,7 +297,7 @@ subdomains, entry points and latest snapshots.
 
 ### jitsu help <resource> <action>
 
-Jitsu is self-documenting.
+*Jitsu is self-documenting.*
 All commands will yield friendly messages to you if you specify incorrect
 parameters. Additionally, `jitsu help` will return useful help messages about
 any given resource or resource/action pair. for instance:
@@ -399,7 +400,7 @@ Here is an example using the command line utility,
 
 ## Applications
 
-Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: [package.json](#package_json)
+Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings and authors. For more information about the package.json format see: [package.json](#package_json)
 
 ### Get all Applications for a User
     
@@ -589,8 +590,13 @@ if we had not open-sourced it.
 
 ## Where To Find Our Projects
 
-Nodejitsu hosts its open-source projects on [Github](https://github.com)
-at <http://github.com/nodejitsu>. Github is a web site for sharing and
+Nodejitsu hosts its open-source projects on [Github](https://github.com):
+
+* *<https://github.com/nodejitsu>*: Open source components of Nodejitsu's PaaS
+* *<https://github.com/flatiron>*: Nodejitsu's "anti-framework" for building web and cli applications
+* *<https://github.com/nodeapps>*: A collection of node.js applications ready to use
+
+Github is a web site for sharing and
 collobrating on source code using [git](http://gitscm.org/), a popular version
 control system. You can get our source code without creating an account at
 github, and if you want to create an account it's free. You will need a 
@@ -599,8 +605,8 @@ code repositories.
 
 ## How To Contribute
 
-Anyone can contribute to any of our Nodejitsu open-source projects at any time.
-Our [github site](http://github.com/nodejitsu) has the facilities for managing
+Anyone can contribute to any of our open-source projects at any time.
+Our [github site](https://github.com/nodejitsu) has the facilities for managing
 patches, issues, code comments, version control, and just about anything else an
 open source developer could need.
 
@@ -659,15 +665,6 @@ Nodejitsu has a team of developers standing by to assist users with any issues
 they may come across while deploying and administrating their web applications
 on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
 turnaround on all issues you may have!
-
-## Assistly
-
-Our [Assistly](http://nodejitsu.assistly.com/) support center is a great
-resource! Our support center includes a knowledge base where you can search for
-the information you need, but if you can't find what you're looking for our
-support center also allows users to post questions to Nodejitsu's support staff
-using Assistly's "Q&A" feature. Post a question, and one of our ninjas will
-get back to you at ninja speed!
 
 ## E-mail
 

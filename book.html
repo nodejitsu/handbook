@@ -67,7 +67,7 @@ community since 2009. We are community leaders who have created and contributed 
 hundreds of open-source Node.js projects. If you have used Node.js, you've
 probably used some of the projects we've helped create.</p>
 
-<p>You can find a list of our open source projects at <a href="http://github.com/nodejitsu" data-bare-link="true">http://github.com/nodejitsu</a>.</p>
+<p>You can find our open source projects at <a href="https://github.com/nodejitsu" data-bare-link="true">https://github.com/nodejitsu</a>, <a href="https://github.com/flatiron" data-bare-link="true">https://github.com/flatiron</a> and <a href="https://github.com/nodeapps" data-bare-link="true">https://github.com/nodeapps</a>.</p>
 
 <h2 id="What-Is-Nodejitsu-">What Is Nodejitsu?</h2>
 
@@ -147,7 +147,7 @@ for using Nodejitsu's platform. We've designed jitsu to be
 suitable for command line beginners, but still be powerful and extensible
 enough for production usage. If you aren't a fan of the command line or don't
 have terminal access you can still do everything jitsu can do through the
-<a href="http://nodejitsu.com">Nodejitsu Web Application</a>.</p>
+<a href="http://develop.nodejitsu.com/">Nodejitsu Web Application</a>.</p>
 
 <p>If this is your first time deploying an application and you are eager to get
 started, we recommend using jitsu: it has a one line installer, it's
@@ -222,6 +222,8 @@ managing your applications</li>
 
 <h2 id="Snapshots">Snapshots</h2>
 
+<p><a name="features/snapshots"></a></p>
+
 <p>Every time you deploy to Nodejitsu, we automatically take a
 <a href="http://en.wikipedia.org/wiki/Snapshot_(computer_storage)">snapshot</a> of your
 application. Using any of our tools, you can view and manage snapshots, or even
@@ -229,6 +231,8 @@ roll back to an old snapshot when disaster strikes in your production
 environment.</p>
 
 <h2 id="Databases">Databases</h2>
+
+<p><a name="features/databases"></a></p>
 
 <p>Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you <em>free</em> instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.</p>
 
@@ -347,7 +351,7 @@ subdomains, entry points and latest snapshots.</p>
 
 <h3 id="jitsu-help-resource-action">jitsu help <var>resource</var> <var>action</var></h3>
 
-<p>Jitsu is self-documenting.
+<p><em>Jitsu is self-documenting.</em>
 All commands will yield friendly messages to you if you specify incorrect
 parameters. Additionally, <code>jitsu help</code> will return useful help messages about
 any given resource or resource/action pair. for instance:</p>
@@ -457,7 +461,7 @@ scenarios you should use our command line tool, <a href="#jitsu" data-bare-link=
 
 <h2 id="Applications">Applications</h2>
 
-<p>Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings, authors, etc. For more information about the package.json format see: <a href="#package_json" data-bare-link="true">package.json</a></p>
+<p>Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings and authors. For more information about the package.json format see: <a href="#package_json" data-bare-link="true">package.json</a></p>
 
 <h3 id="Get-all-Applications-for-a-User">Get all Applications for a User</h3>
 
@@ -677,8 +681,16 @@ if we had not open-sourced it.</p>
 
 <h2 id="Where-To-Find-Our-Projects">Where To Find Our Projects</h2>
 
-<p>Nodejitsu hosts its open-source projects on <a href="https://github.com">Github</a>
-at <a href="http://github.com/nodejitsu" data-bare-link="true">http://github.com/nodejitsu</a>. Github is a web site for sharing and
+<p>Nodejitsu hosts its open-source projects on <a href="https://github.com">Github</a>:</p>
+
+<ul>
+<li><em><a href="https://github.com/nodejitsu" data-bare-link="true">https://github.com/nodejitsu</a></em>: Open source components of Nodejitsu's PaaS</li>
+<li><em><a href="https://github.com/flatiron" data-bare-link="true">https://github.com/flatiron</a></em>: Nodejitsu's "anti-framework" for building web and cli applications</li>
+<li><em><a href="https://github.com/nodeapps" data-bare-link="true">https://github.com/nodeapps</a></em>: A collection of node.js applications ready to use</li>
+</ul>
+
+
+<p>Github is a web site for sharing and
 collobrating on source code using <a href="http://gitscm.org/">git</a>, a popular version
 control system. You can get our source code without creating an account at
 github, and if you want to create an account it's free. You will need a
@@ -687,8 +699,8 @@ code repositories.</p>
 
 <h2 id="How-To-Contribute">How To Contribute</h2>
 
-<p>Anyone can contribute to any of our Nodejitsu open-source projects at any time.
-Our <a href="http://github.com/nodejitsu">github site</a> has the facilities for managing
+<p>Anyone can contribute to any of our open-source projects at any time.
+Our <a href="https://github.com/nodejitsu">github site</a> has the facilities for managing
 patches, issues, code comments, version control, and just about anything else an
 open source developer could need.</p>
 
@@ -752,15 +764,6 @@ open source developer could need.</p>
 they may come across while deploying and administrating their web applications
 on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
 turnaround on all issues you may have!</p>
-
-<h2 id="Assistly">Assistly</h2>
-
-<p>Our <a href="http://nodejitsu.assistly.com/">Assistly</a> support center is a great
-resource! Our support center includes a knowledge base where you can search for
-the information you need, but if you can't find what you're looking for our
-support center also allows users to post questions to Nodejitsu's support staff
-using Assistly's "Q&amp;A" feature. Post a question, and one of our ninjas will
-get back to you at ninja speed!</p>
 
 <h2 id="E-mail">E-mail</h2>
 
