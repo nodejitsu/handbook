@@ -110,6 +110,27 @@ jitsu will attempt to read the package.json from the current directory.
 `jitsu users *` commands allow you to work with new or existing Nodejitsu user
 accounts. You will be prompted for additional user information as required.
 
+
+### jitsu install
+
+`jitsu install` is a built-in tool for downloading "starter apps" to speed up development. For example, here's how to use `jitsu install` to download a "hello world" application:
+
+    josh@onix:/tmp$ mkdir helloworld
+    josh@onix:/tmp$ cd helloworld
+    josh@onix:/tmp/helloworld$ jitsu install helloworld
+    info:   Welcome to Nodejitsu
+    info:   It worked if it ends with Nodejitsu ok
+    info:   Executing command install helloworld
+    info:   Installing helloworld locally.
+    warn:   Downloading packages from npm, this may take a moment...
+    info:   helloworld installed.
+    help:   You can now jitsu deploy this application
+    prompt: Would you like to start this application locally? (yes): no
+    info:   Nodejitsu ok
+    josh@onix:/tmp/helloworld$ ls
+    bin  node_modules  package.json  ReadMe.md
+
+
 ## .jitsuconf file
 
 All configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
