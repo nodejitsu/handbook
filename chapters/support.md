@@ -6,15 +6,6 @@ they may come across while deploying and administrating their web applications
 on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
 turnaround on all issues you may have!
 
-## Assistly
-
-Our [Assistly](http://nodejitsu.assistly.com/) support center is a great
-resource! Our support center includes a knowledge base where you can search for
-the information you need, but if you can't find what you're looking for our
-support center also allows users to post questions to Nodejitsu's support staff
-using Assistly's "Q&A" feature. Post a question, and one of our ninjas will
-get back to you at ninja speed!
-
 ## E-mail
 
 If you have issues, you can always contact us via email, at

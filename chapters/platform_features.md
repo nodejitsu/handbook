@@ -16,6 +16,7 @@ managing your applications
 Each of these tools allow developers to access the exact same functionality.
 
 ## Snapshots
+<a name='features/snapshots'></a>
 
 Every time you deploy to Nodejitsu, we automatically take a
 [snapshot](http://en.wikipedia.org/wiki/Snapshot_\(computer_storage\)) of your
@@ -24,6 +25,7 @@ roll back to an old snapshot when disaster strikes in your production
 environment.
 
 ## Databases
+<a name='features/databases'></a>
 
 Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
 
@@ -39,7 +41,6 @@ database hosting is currently provided by CouchOne, Redis2Go and MongoHQ.
 If you already have an externally hosted Database, Nodejitsu is capable of
 connecting to it. We've got Database hosting if you need it, but we fully
 support externally hosted Databases.
-
 
 ### Connecting Applications to Databases
 

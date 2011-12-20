@@ -12,8 +12,13 @@ if we had not open-sourced it.
 
 ## Where To Find Our Projects
 
-Nodejitsu hosts its open-source projects on [Github](https://github.com)
-at <http://github.com/nodejitsu>. Github is a web site for sharing and
+Nodejitsu hosts its open-source projects on [Github](https://github.com):
+
+* *<https://github.com/nodejitsu>*: Open source components of Nodejitsu's PaaS
+* *<https://github.com/flatiron>*: Nodejitsu's "anti-framework" for building web and cli applications
+* *<https://github.com/nodeapps>*: A collection of node.js applications ready to use
+
+Github is a web site for sharing and
 collobrating on source code using [git](http://gitscm.org/), a popular version
 control system. You can get our source code without creating an account at
 github, and if you want to create an account it's free. You will need a 
@@ -22,8 +27,8 @@ code repositories.
 
 ## How To Contribute
 
-Anyone can contribute to any of our Nodejitsu open-source projects at any time.
-Our [github site](http://github.com/nodejitsu) has the facilities for managing
+Anyone can contribute to any of our open-source projects at any time.
+Our [github site](https://github.com/nodejitsu) has the facilities for managing
 patches, issues, code comments, version control, and just about anything else an
 open source developer could need.
 

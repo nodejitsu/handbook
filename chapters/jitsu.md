@@ -48,7 +48,7 @@ subdomains, entry points and latest snapshots.
 
 ### jitsu help <resource> <action>
 
-Jitsu is self-documenting.
+*Jitsu is self-documenting.*
 All commands will yield friendly messages to you if you specify incorrect
 parameters. Additionally, `jitsu help` will return useful help messages about
 any given resource or resource/action pair. for instance:
