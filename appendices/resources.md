@@ -8,7 +8,7 @@ for beginners.  Here are just a few:
 all of Node.js's core APIs.
 - The [Node.js Wiki](https://github.com/joyent/node/wiki) contains information
 such as an FAQ, installation instructions, and lists of modules.
-- The #Node.js, #nodejitsu and #nodesupport channels on
+- The #Node.js and #nodejitsu channels on
 [irc.freenode.net](http://webchat.freenode.net/) are ready to help you with any
 Node.js issues and concerns you may have.
 - [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai) is an irc bot that
