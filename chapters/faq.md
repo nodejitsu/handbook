@@ -27,6 +27,13 @@ The ability to host tcp applications on nodejitsu and listen on non-80 ports is 
 
 Yes! For directions on how to set up a custom domain with Nodejitsu, [go here](http://dns.nodejitsu.com).
 
+## "How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"
+
+There are three ways to disable the require-analyzer:
+
+* Use the `--noanalyze` flag when running jitsu commands to disable it on a one-time basis.
+* Add `"analyze": false` to your package.json to disable it on a per-app basis.
+* Set "analyze" to `false` in your `~/.jitsuconf` to disable it on a global level.
 
 ## "Why won't this C++ addon compile?"
 
