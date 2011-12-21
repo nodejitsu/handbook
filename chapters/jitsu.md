@@ -131,7 +131,13 @@ accounts. You will be prompted for additional user information as required.
     bin  node_modules  package.json  ReadMe.md
 
 
-## .jitsuconf file
+## Configuring jitsu
 
-All configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
+All user-level configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
 
+### Selected Properties of .jitsuconf
+
+* *loglength*: Change this to modify the default length of returned logs from `jitsu logs`.
+* *loglevel*: Change this to modify the logging levels displayed by jitsu. Defaults to "info".
+* *colors*: Change this to false to turn off jitsu's colors. Defaults to `true`.
+* *analyze*: Change this to false to disable require-analyzer for all apps. Defaults to `true`.
