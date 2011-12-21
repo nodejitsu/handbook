@@ -442,9 +442,19 @@ josh@onix:/tmp/helloworld$ ls
 bin  node_modules  package.json  ReadMe.md
 </code></pre>
 
-<h2 id="-jitsuconf-file">.jitsuconf file</h2>
+<h2 id="Configuring-jitsu">Configuring jitsu</h2>
 
-<p>All configuration data for your local jitsu install is located in the <em>.jitsuconf</em> file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using <code>jitsu config</code>.</p>
+<p>All user-level configuration data for your local jitsu install is located in the <em>.jitsuconf</em> file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using <code>jitsu config</code>.</p>
+
+<h3 id="Selected-Properties-of-jitsuconf">Selected Properties of .jitsuconf</h3>
+
+<ul>
+<li><em>loglength</em>: Change this to modify the default length of returned logs from <code>jitsu logs</code>.</li>
+<li><em>loglevel</em>: Change this to modify the logging levels displayed by jitsu. Defaults to "info".</li>
+<li><em>colors</em>: Change this to false to turn off jitsu's colors. Defaults to <code>true</code>.</li>
+<li><em>analyze</em>: Change this to false to disable require-analyzer for all apps. Defaults to <code>true</code>.</li>
+</ul>
+
 
 </div>
 <div class='mp'>
@@ -767,6 +777,17 @@ open source developer could need.</p>
 
 <p>Yes! For directions on how to set up a custom domain with Nodejitsu, <a href="http://dns.nodejitsu.com">go here</a>.</p>
 
+<h2 id="-How-can-I-turn-off-the-require-analyzer-in-jitsu-I-want-to-manage-my-own-dependencies-">"How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"</h2>
+
+<p>There are three ways to disable the require-analyzer:</p>
+
+<ul>
+<li>Use the <code>--noanalyze</code> flag when running jitsu commands to disable it on a one-time basis.</li>
+<li>Add <code>"analyze": false</code> to your package.json to disable it on a per-app basis.</li>
+<li>Set "analyze" to <code>false</code> in your <code>~/.jitsuconf</code> to disable it on a global level.</li>
+</ul>
+
+
 <h2 id="-Why-won-t-this-C-addon-compile-">"Why won't this C++ addon compile?"</h2>
 
 <p>Many <a href="http://nodejs.org/docs/v0.4.10/api/addons.html">C++ addons</a> require libraries that are not included in Nodejitsu's infrastructure by default. For example, <a href="https://github.com/learnboost/node-canvas">node-canvas</a> requires <a href="http://cairographics.org/">cairo</a>, which only recently became available on nodejitsu's platform.</p>
@@ -849,13 +870,13 @@ their bug.</p>
   "name": "hellonode",
   "subdomain": "hellonode",
   "scripts": {
-    "start": "server.js"
+    "start": "node server.js"
   },
   "version": "0.0.0"
 }
 </code></pre>
 
-<p>Notice the "scripts" property? This is where you'll store information about specific scripts in your application. The "start" property indicates the script that will get called when your application is started.</p>
+<p>Notice the "scripts" property? This is where you'll store information about specific scripts in your application. The "start" property indicates the script that will get called when your application is started. Usage is compatible with <code>npm start</code>.</p>
 
 <h2 id="Specifying-dependencies-in-your-package-json">Specifying dependencies in your package.json</h2>
 

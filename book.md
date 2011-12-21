@@ -387,10 +387,16 @@ accounts. You will be prompted for additional user information as required.
     bin  node_modules  package.json  ReadMe.md
 
 
-## .jitsuconf file
+## Configuring jitsu
 
-All configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
+All user-level configuration data for your local jitsu install is located in the *.jitsuconf* file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using `jitsu config`.
 
+### Selected Properties of .jitsuconf
+
+* *loglength*: Change this to modify the default length of returned logs from `jitsu logs`.
+* *loglevel*: Change this to modify the logging levels displayed by jitsu. Defaults to "info".
+* *colors*: Change this to false to turn off jitsu's colors. Defaults to `true`.
+* *analyze*: Change this to false to disable require-analyzer for all apps. Defaults to `true`.
 # Nodejitsu Web Application
 <a name='webapp'></a>
 
@@ -670,6 +676,13 @@ The ability to host tcp applications on nodejitsu and listen on non-80 ports is 
 
 Yes! For directions on how to set up a custom domain with Nodejitsu, [go here](http://dns.nodejitsu.com).
 
+## "How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"
+
+There are three ways to disable the require-analyzer:
+
+* Use the `--noanalyze` flag when running jitsu commands to disable it on a one-time basis.
+* Add `"analyze": false` to your package.json to disable it on a per-app basis.
+* Set "analyze" to `false` in your `~/.jitsuconf` to disable it on a global level.
 
 ## "Why won't this C++ addon compile?"
 
@@ -742,12 +755,12 @@ Here is an example of what your package.json might look like:
       "name": "hellonode",
       "subdomain": "hellonode",
       "scripts": {
-        "start": "server.js"
+        "start": "node server.js"
       },
       "version": "0.0.0"
     }
 
-Notice the "scripts" property? This is where you'll store information about specific scripts in your application. The "start" property indicates the script that will get called when your application is started. 
+Notice the "scripts" property? This is where you'll store information about specific scripts in your application. The "start" property indicates the script that will get called when your application is started. Usage is compatible with `npm start`.
 
 ## Specifying dependencies in your package.json
 
