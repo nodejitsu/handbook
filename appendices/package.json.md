@@ -15,12 +15,12 @@ Here is an example of what your package.json might look like:
       "name": "hellonode",
       "subdomain": "hellonode",
       "scripts": {
-        "start": "server.js"
+        "start": "node server.js"
       },
       "version": "0.0.0"
     }
 
-Notice the "scripts" property? This is where you'll store information about specific scripts in your application. The "start" property indicates the script that will get called when your application is started. 
+Notice the "scripts" property? This is where you'll store information about specific scripts in your application. The "start" property indicates the script that will get called when your application is started. Usage is compatible with `npm start`.
 
 ## Specifying dependencies in your package.json
 
