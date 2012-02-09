@@ -219,6 +219,28 @@ managing your applications</li>
 
 <p>Each of these tools allow developers to access the exact same functionality.</p>
 
+<h2 id="Multi-Version-node-support">Multi-Version node support</h2>
+
+<p>Nodejitsu allows users to choose which version of node they want their application to run on. This means that not only do we now support v0.6, but also that users may continue to use v0.4 if they would like.</p>
+
+<p>In order to set your node version, specify it in your <code>package.json</code>'s "engines" field. For example:</p>
+
+<pre><code>{
+  "author": "Nodejitsu &lt;josh@nodejitsu.com&gt;",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node bin/server"
+  },
+  "analyze": false,
+  "name": "helloworld",
+  "engines": {
+    "node": "v0.6.x"
+  }
+}
+</code></pre>
+
+<p>If no node engine is specified, nodejitsu will default to v0.4.12.</p>
+
 <h2 id="Snapshots">Snapshots</h2>
 
 <p><a name="features/snapshots"></a></p>
