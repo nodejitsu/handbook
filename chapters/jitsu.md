@@ -94,7 +94,7 @@ do so.
 
 ### jitsu config <action>
 
-`jitsu config` commands allow you to edit your local jitsu confuration file.
+`jitsu config` commands allow you to edit your local jitsu configuration file.
 
 ### jitsu snapshots <action>
 

@@ -16,7 +16,7 @@ If you have issues, you can always contact us via email, at
 Nodejitsu has a channel on [freenode](http://webchat.freenode.net/) at
 <a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>, where Nodejitsu
 developers are standing by to support users around the clock. Drop by to ask
-questions, get assistance or even just to hang out!
+questions, get assistance, or even just to hang out!
 
 ## Github Issues
 

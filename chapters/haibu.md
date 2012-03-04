@@ -8,7 +8,7 @@ developers.
 
 By installing haibu, a user creates a development environment for themselves
 that mirrors the functionality of Nodejitsu's cloud platform! Any project that
-can be deployed on Nodejitsu can be ran by haibu.
+can be deployed on Nodejitsu can be run by haibu.
 
 Haibu, which is Japanese for "hive", wraps node.js applications in a "carapace"
 and converts them into managed "drones". This approach allows haibu to directly
