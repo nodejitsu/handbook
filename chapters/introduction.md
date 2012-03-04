@@ -20,12 +20,7 @@ You can find our open source projects at <https://github.com/nodejitsu>, <https:
 
 ## What Is Nodejitsu?
 
-[Nodejitsu](http://nodejitsu.com/) is a Platform as a Service and a Marketplace
-for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js
-applications into the cloud with a myriad of additional features. Our platform
-provides a robust suite of functionality to assist in the development,
-management, and deployment of Node.js applications. Our deployment tools are the
-most user-friendly in the industry and our customer support is unparalleled. 
+[Nodejitsu](http://nodejitsu.com/) is a [Platform as a Service] (http://en.wikipedia.org/wiki/Platform_as_a_service) and a Marketplace for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js applications into the cloud with a myriad of additional features. Our platform provides a robust suite of functionality to assist in the development, management, and deployment of Node.js applications. Our team is firmly devoted to creating the most user-friendly tools in the industry and to providing the most enjoyable and helpful customer support experience as possible. 
 
 ## Getting Started
 
@@ -33,8 +28,7 @@ So you wish to learn the ways of Nodejitsu? Excellent! You only need to know
 three things to get started:
 
 * We're [Nodejitsu](http://nodejitsu.com), and we can give you scalable,
-fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll
-find.
+fault-tolerant cloud hosting for your Node.js apps.  We are dedicated to making sure our customers and other developers have an exceptional experience using our platform and open source software.
 
 * Getting started with [your first app](#hiworld) is simple with our
 [jitsu](#jitsu) command-line interface - we'll [show you how](#hiworld).
