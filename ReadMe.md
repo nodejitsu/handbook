@@ -41,9 +41,8 @@ You can find our open source projects at <https://github.com/nodejitsu>, <https:
 for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js
 applications into the cloud with a myriad of additional features. Our platform
 provides a robust suite of functionality to assist in the development,
-management, and deployment of Node.js applications. Our team is firmly devoted
-to creating the most user-friendly tools in the industry and to providing the most
-enjoyable and helpful customer support experience as possible. 
+management, and deployment of Node.js applications. Our deployment tools are the
+most user-friendly in the industry and our customer support is unparalleled. 
 
 ## Getting Started
 
@@ -74,7 +73,7 @@ Before you get started, you should have both
 [node.js](https://github.com/joyent/node/wiki) and the
 [Node Package Manager](https://github.com/isaacs/npm/#readme) (npm) installed.
 
-## Write A Server
+## Write A Server:
 
 Let's start with a very basic Node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
@@ -102,7 +101,7 @@ this file, write the following code:
 That's all the code you'll need for starters. Save your server and get ready to
 deploy!
 
-## Deploy with Jitsu
+## Deploy with Jitsu:
 
 In this tutorial, we will use [jitsu](http://github.com/nodejitsu/jitsu) to deploy
 our "hello world" application. Jitsu is a
@@ -177,6 +176,27 @@ managing your applications
 
 Each of these tools allow developers to access the exact same functionality.
 
+## Multi-Version node support
+
+Nodejitsu allows users to choose which version of node they want their application to run on. This means that not only do we now support v0.6, but also that users may continue to use v0.4 if they would like.
+
+In order to set your node version, specify it in your `package.json`'s "engines" field. For example:
+
+    {
+      "author": "Nodejitsu <josh@nodejitsu.com>",
+      "version": "0.1.0",
+      "scripts": {
+        "start": "node bin/server"
+      },
+      "analyze": false,
+      "name": "helloworld",
+      "engines": {
+        "node": "v0.6.x"
+      }
+    }
+
+If no node engine is specified, nodejitsu will default to v0.4.12.
+
 ## Snapshots
 <a name='features/snapshots'></a>
 
@@ -189,7 +209,7 @@ environment.
 ## Databases
 <a name='features/databases'></a>
 
-Applications on Nodejitsu are ready to be connected to any database. If you already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
+Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
 
 ### Creating new Databases
 
@@ -351,7 +371,7 @@ do so.
 
 ### jitsu config <action>
 
-`jitsu config` commands allow you to edit your local jitsu configuration file.
+`jitsu config` commands allow you to edit your local jitsu confuration file.
 
 ### jitsu snapshots <action>
 
@@ -573,7 +593,7 @@ developers.
 
 By installing haibu, a user creates a development environment for themselves
 that mirrors the functionality of Nodejitsu's cloud platform! Any project that
-can be deployed on Nodejitsu can be run by haibu.
+can be deployed on Nodejitsu can be ran by haibu.
 
 Haibu, which is Japanese for "hive", wraps node.js applications in a "carapace"
 and converts them into managed "drones". This approach allows haibu to directly
@@ -721,7 +741,7 @@ If you have issues, you can always contact us via email, at
 Nodejitsu has a channel on [freenode](http://webchat.freenode.net/) at
 <a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>, where Nodejitsu
 developers are standing by to support users around the clock. Drop by to ask
-questions, get assistance, or even just to hang out!
+questions, get assistance or even just to hang out!
 
 ## Github Issues
 
