@@ -216,7 +216,7 @@ Applications on Nodejitsu are ready to be connected to any database. If you have
 If you require database hosting you can create a new database instance of any
 of our supported databases using [jitsu](#jitsu), the
 [Nodejitsu Web Application](#webapp), or Nodejitsu's [API](#api). Cloud
-database hosting is currently provided by CouchOne, Redis2Go and MongoHQ.
+database hosting is currently provided by Iris Couch, Redis2Go and MongoHQ.
 
 ### Existing Databases
 
