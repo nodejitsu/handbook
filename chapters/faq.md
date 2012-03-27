@@ -45,11 +45,5 @@ Jitsu uses npm to bundle files, meaning that jitsu bundles files in exactly the 
 
 In more detail: npm uses a file called `.npmignore`, which should contain a list of files and folders to ignore for the purpose of bundling. If this file does not exist, npm will use git's ignore file, called `.gitignore`, instead. This means that, if you want to bundle files that are ignored by git, you should create an `.npmignore` even if it's blank.
 
-*Note*: There is a minor but important difference between how `.npmignore` and `.gitignore` list folders. In the case of `.npmignore`, ignored folders should have a trailing slash:
-
-    folderToIgnore/
-
-In contrast, this is not necessary for `.gitignore`, and listing `folderToIgnore` without a trailing slash will work as expected.
-
 Finally, jitsu has the ability to bundle your app without deploying with the `jitsu package create` command. You can use this to make sure that the resulting .tgz file is as you expect.
 
