@@ -216,7 +216,7 @@ Applications on Nodejitsu are ready to be connected to any database. If you have
 If you require database hosting you can create a new database instance of any
 of our supported databases using [jitsu](#jitsu), the
 [Nodejitsu Web Application](#webapp), or Nodejitsu's [API](#api). Cloud
-database hosting is currently provided by Iris Couch, Redis2Go and MongoHQ.
+database hosting is currently provided by CouchOne, Redis2Go and MongoHQ.
 
 ### Existing Databases
 
@@ -714,12 +714,6 @@ Many [C++ addons](http://nodejs.org/docs/v0.4.10/api/addons.html) require librar
 Jitsu uses npm to bundle files, meaning that jitsu bundles files in exactly the same manner than npm bundles published modules. You can read about this in [npm's documentation](http://npmjs.org/doc/developers.html).
 
 In more detail: npm uses a file called `.npmignore`, which should contain a list of files and folders to ignore for the purpose of bundling. If this file does not exist, npm will use git's ignore file, called `.gitignore`, instead. This means that, if you want to bundle files that are ignored by git, you should create an `.npmignore` even if it's blank.
-
-*Note*: There is a minor but important difference between how `.npmignore` and `.gitignore` list folders. In the case of `.npmignore`, ignored folders should have a trailing slash:
-
-    folderToIgnore/
-
-In contrast, this is not necessary for `.gitignore`, and listing `folderToIgnore` without a trailing slash will work as expected.
 
 Finally, jitsu has the ability to bundle your app without deploying with the `jitsu package create` command. You can use this to make sure that the resulting .tgz file is as you expect.
 

@@ -55,7 +55,7 @@ Applications are the core of the Nodejitsu API. Each application represents a se
 
 ### Delete an Application
 
-     DELETE /apps/:user-id/:app-id
+     DELETE /apps/:user-id/:app-id/remove
 
 ## Snapshots
 
