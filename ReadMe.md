@@ -209,7 +209,7 @@ environment.
 ## Databases
 <a name='features/databases'></a>
 
-Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
+Applications on Nodejitsu are ready to be connected to any database. If you already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
 
 ### Creating new Databases
 
@@ -263,7 +263,7 @@ This will set the environment variable $FOO to have the string value "bar".
 
 Addons add functionality to your apps by extending and adding features to
 Nodejitsu's platform and integrating third party services. For instance,
-one of our addons provides powerful [Mailchimp](http://mailchimp.com)-based
+one of our addons provides powerful [MailChimp](http://mailchimp.com)-based
 mailing list management.
 
 ## Marketplace
@@ -285,7 +285,7 @@ to use.
 
 ## Installation
 
-Jitsu is distrubited using the Node Package Manager (npm). Installing jitsu
+Jitsu is distributed using the Node Package Manager (npm). Installing jitsu
 with npm is as simple as a single command:
 
      [sudo] npm install -g jitsu
@@ -310,7 +310,7 @@ following steps:
 1. Creates the application (if necessary)
 2. Creates or validates the package.json
 3. Packages and creates a new snapshot
-4. Stops the application (if neccessary)
+4. Stops the application (if necessary)
 5. Starts the application
 
 ### jitsu create (jitsu apps create)
@@ -371,7 +371,7 @@ do so.
 
 ### jitsu config <action>
 
-`jitsu config` commands allow you to edit your local jitsu confuration file.
+`jitsu config` commands allow you to edit your local jitsu configuration file.
 
 ### jitsu snapshots <action>
 
@@ -551,7 +551,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 ## Logging
 
-Logging is a very important feature in any professional grade Node.js
+Logging is a very important feature in any professional-grade Node.js
 application. Nodejitsu provides integrated logging solutions for your
 applications. Your logs are always saved and ready to be retrieved. 
 
@@ -591,7 +591,7 @@ applications on a single server. It's an integral part of Nodejitsu's
 production stack and is fully supported by a dedicated team of core node.js
 developers.
 
-By installing haibu, a user creates a development environment for themselves
+By installing haibu, a user creates a development environment for himself
 that mirrors the functionality of Nodejitsu's cloud platform! Any project that
 can be deployed on Nodejitsu can be ran by haibu.
 
@@ -603,7 +603,7 @@ more functionality.
 
 Haibu builds on this concept of "drones" and exposes a robust and granular API
 for interacting with your node.js applications. At a low level, haibu's API is
-exposed as a RESTFul HTTP webservice. Any system that supports basic HTTP
+exposed as a RESTFul HTTP web service. Any system that supports basic HTTP
 requests can communicate with a haibu server. If you are working in Node.js,
 haibu comes with a high-level Node.js API client.
 
@@ -655,7 +655,7 @@ Nodejitsu hosts its open-source projects on [Github](https://github.com):
 * *<https://github.com/nodeapps>*: A collection of node.js applications ready to use
 
 Github is a web site for sharing and
-collobrating on source code using [git](http://gitscm.org/), a popular version
+collaborating on source code using [git](http://gitscm.org/), a popular version
 control system. You can get our source code without creating an account at
 github, and if you want to create an account it's free. You will need a 
 [git client](http://git-scm.com/download) if you wish to clone any of our
