@@ -8,7 +8,7 @@ Before you get started, you should have both
 [node.js](https://github.com/joyent/node/wiki) and the
 [Node Package Manager](https://github.com/isaacs/npm/#readme) (npm) installed.
 
-## Write A Server:
+## Write A Server
 
 Let's start with a very basic Node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
@@ -32,11 +32,14 @@ this file, write the following code:
         res.end();
       }).listen(80); // the server will listen on port 80
 
-
 That's all the code you'll need for starters. Save your server and get ready to
 deploy!
 
-## Deploy with Jitsu:
+For more information on setting up a basic HTTP server, handling simple server requests,
+and routing these requests using Node.js, [here](http://www.nodebeginner.org/) is a guide 
+to help you dive a bit deeper.
+
+## Deploy with Jitsu
 
 In this tutorial, we will use [jitsu](http://github.com/nodejitsu/jitsu) to deploy
 our "hello world" application. Jitsu is a
@@ -94,4 +97,9 @@ only take a few seconds.
 Now just open up your favorite browser, and go to
 `yoursubdomain.nodejitsu.com`. If everything has been set up correctly, then
 you, too, are on the path of nodejitsu!
+
+If for some reason your first 'jitsu deploy' command returns an error, try entering the command again.
+If you're given an error again, join our chanel on [freenode](http://webchat.freenode.net/) at 
+[irc://irc.freenode.net/#nodejitsu](irc://irc.freenode.net/#nodejitsu) and we'd be happy to help you
+troubleshoot your problem.
 
