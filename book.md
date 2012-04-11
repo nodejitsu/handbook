@@ -13,7 +13,7 @@
 * [Open Source Projects](#opensource)
 * [Frequently Asked Questions](#faq)
 * [Support](#support)
-* [Appendices](https://github.com/nodejitsu/handbook/blob/master/book.md#apx)
+* [Appendices](#apx)
 
 # Introduction
 <a name="introduction"></a>
@@ -737,3 +737,117 @@ example, if a developer finds a bug in our open-source
 [http proxy](https://github.com/nodejitsu/node-http-proxy), they can submit an
 issue at <https://github.com/nodejitsu/node-http-proxy/issues> and tell us about
 their bug.
+# Table of Appendices
+<a name="apx"></a>
+
+* [Mailchimp Integration in Nodejitsu](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:mailchimp)  
+* [package.json](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:package)  
+* [Resources](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:resources)  
+* [Building The Handbook](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:build)  
+
+# Appendix: package.json
+<a name='apx:package'></a>
+
+## Understanding the package.json format
+A package.json file describes your application, its dependencies, and other various application metadata. For a detailed spec on creating a package.json you can check out Isaac's fine documentation [here](https://github.com/isaacs/npm/blob/master/doc/developers.md#readme). 
+
+## Preparing a package.json for your application
+
+Nodejitsu requires that you create a valid [package.json](#package_json) for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when constructing your package.json file, we provide wizards in our CLI tool and on our website for creating one. 
+
+Here is an example of what your package.json might look like:
+
+
+    {
+      "name": "hellonode",
+      "subdomain": "hellonode",
+      "scripts": {
+        "start": "node server.js"
+      },
+      "version": "0.0.0"
+    }
+
+Notice the "scripts" property? This is where you'll store information about specific scripts in your application. The "start" property indicates the script that will get called when your application is started. Usage is compatible with `npm start`.
+
+## Specifying dependencies in your package.json
+
+If your application requires additional dependencies or third-party libraries, Nodejitsu fully supports npm module dependency resolution. All you have to do is list your dependencies the exact same way you would if you were packaging a module for npm. Here is an example of the same package.json with a few dependencies.
+
+
+    {
+      "name": "hellonode",
+      "subdomain": "hellonode",
+      "scripts": {
+        "start": "server.js"
+      },
+      "dependencies": {
+        "async": "0.1.x",
+        "colors": "0.5.x",
+        "request": "1.9.x"
+      },
+      "version": "0.0.0"
+    }
+
+Your dependencies will be resolved when your application deploys to Nodejitsu.
+
+## Nodejitsu-Specific package.json Properties
+
+A few package.json properties have special behavior on the Nodejitsu platform:
+
+* *subdomain*: Specify the subdomain for your hosted app's nodejitsu url (for example, `subdomain.nodejitsu.com`.
+* *domains*: A list of custom domains for your hosted app. See <http://dns.nodejitsu.com>.
+* *env*: Specify environment variables for your app (for example, NODE_ENV="production" is set by default).
+* *scripts.start*: This field is also used for `npm start`. However, nodejitsu's current implementation takes a path, whereas npm's implementation takes a shell command.
+* *analyze*: Set this to "false" to force jitsu to not analyze for the app's dependencies.
+
+# Appendix: Resources
+<a name='apx:resources'></a>
+
+New to Node.js? **Don't be scared!**  There are plenty of resources out there
+for beginners.  Here are just a few:
+
+- [The nodejs.org Official Docs](http://nodejs.org/docs/v0.4.10/api/) document
+all of Node.js's core APIs.
+- The [Node.js Wiki](https://github.com/joyent/node/wiki) contains information
+such as an FAQ, installation instructions, and lists of modules.
+- The #Node.js and #nodejitsu channels on
+[irc.freenode.net](http://webchat.freenode.net/) are ready to help you with any
+Node.js issues and concerns you may have.
+- [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai) is an irc bot that
+shares Node.js tweets with the #nodejitsu irc channel. Ask it a quick question
+and it just might give you an answer!
+- <http://search.npmjs.org> is a great place to check for modules that might
+already solve your problem.
+
+
+# Appendix: Building the Nodejitsu Handbook
+<a name='apx:build'></a>
+
+## Dependencies
+
+The build process for the handbook has a few dependencies:
+
+* [make](http://en.wikipedia.org/wiki/Make_\(software\))
+* [ronn](https://github.com/rtomayko/ronn)
+* [htmldoc](http://www.htmldoc.org/)
+
+Make and htmldoc should be available via your operating system's package manager
+(ie. apt-get). ronn is available on [rubygems](http://rubygems.org/), which in
+turn should be available via your operating system's package manager as well. On
+Debian-based systems, the rubygems package does not add its bin folder
+(`/var/lib/gems/1.8/bin`) to your $PATH variable, so add something
+like:
+
+    PATH="/var/lib/gems/1.8/bin:$PATH"
+
+
+to the end of your `~/.profile` file and activate it by running `. ~/.profile`.
+
+## Build Process
+
+Once you've installed the dependencies, all you have to do is:
+
+    $ make
+
+and the files `./book.md`, `book.pdf`, `book.html`, `API.md` and `ReadMe.md`
+should all be generated.
