@@ -8,7 +8,7 @@ to use.
 
 ## Installation
 
-Jitsu is distrubited using the Node Package Manager (npm). Installing jitsu
+Jitsu is distributed using the Node Package Manager (npm). Installing jitsu
 with npm is as simple as a single command:
 
      [sudo] npm install -g jitsu
@@ -33,7 +33,7 @@ following steps:
 1. Creates the application (if necessary)
 2. Creates or validates the package.json
 3. Packages and creates a new snapshot
-4. Stops the application (if neccessary)
+4. Stops the application (if necessary)
 5. Starts the application
 
 ### jitsu create (jitsu apps create)
@@ -94,7 +94,7 @@ do so.
 
 ### jitsu config <action>
 
-`jitsu config` commands allow you to edit your local jitsu confuration file.
+`jitsu config` commands allow you to edit your local jitsu configuration file.
 
 ### jitsu snapshots <action>
 
