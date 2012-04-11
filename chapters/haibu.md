@@ -6,7 +6,7 @@ applications on a single server. It's an integral part of Nodejitsu's
 production stack and is fully supported by a dedicated team of core node.js
 developers.
 
-By installing haibu, a user creates a development environment for themselves
+By installing haibu, a user creates a development environment for himself
 that mirrors the functionality of Nodejitsu's cloud platform! Any project that
 can be deployed on Nodejitsu can be ran by haibu.
 
@@ -18,7 +18,7 @@ more functionality.
 
 Haibu builds on this concept of "drones" and exposes a robust and granular API
 for interacting with your node.js applications. At a low level, haibu's API is
-exposed as a RESTFul HTTP webservice. Any system that supports basic HTTP
+exposed as a RESTFul HTTP web service. Any system that supports basic HTTP
 requests can communicate with a haibu server. If you are working in Node.js,
 haibu comes with a high-level Node.js API client.
 

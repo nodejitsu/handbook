@@ -47,7 +47,7 @@ environment.
 ## Databases
 <a name='features/databases'></a>
 
-Applications on Nodejitsu are ready to be connected to any database. If you have already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
+Applications on Nodejitsu are ready to be connected to any database. If you already have a database running, Nodejitsu can connect to your existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
 
 ### Creating new Databases
 
@@ -99,7 +99,7 @@ This will set the environment variable $FOO to have the string value "bar".
 
 Addons add functionality to your apps by extending and adding features to
 Nodejitsu's platform and integrating third party services. For instance,
-one of our addons provides powerful [Mailchimp](http://mailchimp.com)-based
+one of our addons provides powerful [MailChimp](http://mailchimp.com)-based
 mailing list management.
 
 ## Marketplace
