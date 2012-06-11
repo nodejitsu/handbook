@@ -60,7 +60,7 @@ Applications are the core of the Nodejitsu API. Each application represents a se
 ## Snapshots
 
 ### Make an existing snapshot the active app
-    PUT /apps/:user-id/:app-id/snapshots/:id/active
+    POST /apps/:user-id/:app-id/snapshots/:id/activate
 
 ### Activate / Deploy a snapshot
     POST /apps/:user-id/:snapshots/:id
