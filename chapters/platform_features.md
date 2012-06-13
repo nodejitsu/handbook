@@ -97,14 +97,14 @@ Available commands are `list`, `get`, `set`, `delete`, and
 
 `jitsu env list` will list any and all enviroment variables in an apps 
 current working directory(Note: the app needs to have been deployed before the 
-enviroment variables can be accessed).
+enviroment variables can be accessed).  
 `jitsu env list <myapp>` will list any and all enviroment variables related 
-to \<myapp\> in an account.
+to `<myapp>` in an account.  
 `jitsu env get <key>` will display the apps key enviroment variable 
-\<value\>.
-`jitsu env set <key> <value>` will set the apps \<key\> enviroment variable 
-to \<value\>.
-`jitsu env get <key>` will delete the apps \<key\> enviroment variable.
+`<value>`.  
+`jitsu env set <key> <value>` will set the apps `<key>` enviroment variable 
+to `<value>`.  
+`jitsu env get <key>` will delete the apps `<key>` enviroment variable.  
 `jitsu env clear` will delete all of the apps enviroment variables after a 
 prompt.
 
