@@ -90,13 +90,14 @@ Now you're connected to your database!
 ## Environment Variable Management
 
 Nodejitsu allows users to modify the environment variables exposed to their 
-apps using jitsu and our other tools. 
+apps using jitsu and our other tools. When an enviroment variable is changed 
+it is necessary restart your app for it to take effect.
 
 Available commands are `list`, `get`, `set`, `delete`, and 
 `clear`. 
 
 `jitsu env list` will list any and all enviroment variables in an apps 
-current working directory(Note: the app needs to have been deployed before the 
+current working directory (Note: the app needs to have been deployed before the 
 enviroment variables can be accessed).  
 `jitsu env list <myapp>` will list any and all enviroment variables related 
 to `<myapp>` in an account.  
@@ -114,7 +115,8 @@ An Example:
 
 
 This will set the environment variable $NODE_ENV to have the string value 
-"production".
+"production". Remember, this will not take effect until the app is restarted 
+(`jitsu apps restart`).
 
 ## Addons
 
