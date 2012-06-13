@@ -34,7 +34,7 @@ hundreds of open-source Node.js projects. If you have used Node.js, you've
 probably used some of the projects we've helped create. 
 
 You can find our open source projects at <https://github.com/nodejitsu>, <https://github.com/flatiron>, 
-<https://github.com/hookio> and <https://github.com/nodeapps>.
+<https://github.com/hookio>, and <https://github.com/nodeapps>.
 
 ## What Is Nodejitsu?
 
@@ -257,23 +257,23 @@ Now you're connected to your database!
 ## Environment Variable Management
 
 Nodejitsu allows users to modify the environment variables exposed to their 
-apps using jitsu and our other tools. When an enviroment variable is changed 
+apps using jitsu and our other tools. When an environment variable is changed 
 it is necessary restart your app for it to take effect.
 
 Available commands are `list`, `get`, `set`, `delete`, and 
 `clear`. 
 
-`jitsu env list` will list any and all enviroment variables in an apps 
+`jitsu env list` will list any and all environment variables in an apps 
 current working directory (Note: the app needs to have been deployed before the 
-enviroment variables can be accessed).  
-`jitsu env list <myapp>` will list any and all enviroment variables related 
+environment variables can be accessed).  
+`jitsu env list <myapp>` will list any and all environment variables related 
 to `<myapp>` in an account.  
-`jitsu env get <key>` will display the apps key enviroment variable 
+`jitsu env get <key>` will display the apps key environment variable 
 `<value>`.  
-`jitsu env set <key> <value>` will set the apps `<key>` enviroment variable 
+`jitsu env set <key> <value>` will set the apps `<key>` environment variable 
 to `<value>`.  
-`jitsu env get <key>` will delete the apps `<key>` enviroment variable.  
-`jitsu env clear` will delete all of the apps enviroment variables after a 
+`jitsu env get <key>` will delete the apps `<key>` environment variable.  
+`jitsu env clear` will delete all of the apps environment variables after a 
 prompt.
 
 An Example:
@@ -761,7 +761,7 @@ developers are standing by to support users around the clock. Drop by to ask
 questions, get assistance or even just to hang out!
 
 [Kohai](https://github.com/nodejitsu/kohai) is an IRC bot that has some basic abilities 
-to help you among other features. To bring up his help dialouge just type `!help` into
+to help you among other features. To bring up his help dialogue just type `!help` into
 the #nodejitsu channel and Kohai will message you.
 
 ## Github Issues
