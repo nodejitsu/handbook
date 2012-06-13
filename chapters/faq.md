@@ -25,7 +25,7 @@ The ability to host tcp applications on nodejitsu and listen on non-80 ports is 
 
 ## "How can I point my custom domain to my nodejitsu app?"
 
-Yes! For directions on how to set up a custom domain with Nodejitsu, [go here](http://dns.nodejitsu.com).
+Yes! For directions on how to set up a custom domain with Nodejitsu, check out <http://dns.nodejitsu.com>.
 
 ## "How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"
 
