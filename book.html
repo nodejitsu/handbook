@@ -58,7 +58,7 @@ detailed information about Nodejitsu's platform-specific features and about
 where to get help when you need it.</p>
 
 <p>This is a living document which you can submit patches to at
-<a data-bare-link="true" href="http://github.com/nodejitsu/handbook">http://github.com/nodejitsu/handbook</a>.</p>
+<a href="http://github.com/nodejitsu/handbook" data-bare-link="true">http://github.com/nodejitsu/handbook</a>.</p>
 
 <h2 id="Who-Is-Nodejitsu-">Who Is Nodejitsu?</h2>
 
@@ -67,7 +67,8 @@ community since 2009. We are community leaders who have created and contributed 
 hundreds of open-source Node.js projects. If you have used Node.js, you've
 probably used some of the projects we've helped create.</p>
 
-<p>You can find our open source projects at <a data-bare-link="true" href="https://github.com/nodejitsu">https://github.com/nodejitsu</a>, <a data-bare-link="true" href="https://github.com/flatiron">https://github.com/flatiron</a> and <a data-bare-link="true" href="https://github.com/nodeapps">https://github.com/nodeapps</a>.</p>
+<p>You can find our open source projects at <a href="https://github.com/nodejitsu" data-bare-link="true">https://github.com/nodejitsu</a>, <a href="https://github.com/flatiron" data-bare-link="true">https://github.com/flatiron</a>,
+<a href="https://github.com/hookio" data-bare-link="true">https://github.com/hookio</a>, and <a href="https://github.com/nodeapps" data-bare-link="true">https://github.com/nodeapps</a>.</p>
 
 <h2 id="What-Is-Nodejitsu-">What Is Nodejitsu?</h2>
 
@@ -87,16 +88,16 @@ three things to get started:</p>
 <li><p>We're <a href="http://nodejitsu.com">Nodejitsu</a>, and we can give you scalable,
 fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll
 find.</p></li>
-<li><p>Getting started with <a data-bare-link="true" href="#hiworld">your first app</a> is simple with our
-<a data-bare-link="true" href="#jitsu">jitsu</a> command-line interface - we'll <a data-bare-link="true" href="#hiworld">show you how</a>.</p></li>
+<li><p>Getting started with <a href="#hiworld" data-bare-link="true">your first app</a> is simple with our
+<a href="#jitsu" data-bare-link="true">jitsu</a> command-line interface - we'll <a href="#hiworld" data-bare-link="true">show you how</a>.</p></li>
 <li><p>Most of our stack is <a href="http://github.com/nodejitsu">open source</a> and you can
-<a data-bare-link="true" href="#opensource">use our tools</a> anywhere else you'd like to.</p></li>
+<a href="#opensource" data-bare-link="true">use our tools</a> anywhere else you'd like to.</p></li>
 </ul>
 
 
-<p>The Nodejitsu Handbook also contains information on <a data-bare-link="true" href="#deployment">other ways to deploy your
-applications</a>, how to <a data-bare-link="true" href="#haibu">run your own cloud</a> with our
-software, and where to <a data-bare-link="true" href="#support">find support</a>.</p>
+<p>The Nodejitsu Handbook also contains information on <a href="#deployment" data-bare-link="true">other ways to deploy your
+applications</a>, how to <a href="#haibu" data-bare-link="true">run your own cloud</a> with our
+software, and where to <a href="#support" data-bare-link="true">find support</a>.</p>
 
 </div>
 <div class='mp'>
@@ -106,9 +107,11 @@ software, and where to <a data-bare-link="true" href="#support">find support</a>
 <p>In this tutorial, you will write a simple "hello world" web application in
 Node.js, and then deploy it using jitsu, Nodejitsu's command line interface.</p>
 
-<p>Before you get started, you should have both
-<a href="https://github.com/joyent/node/wiki">node.js</a> and the
-<a href="https://github.com/isaacs/npm/#readme">Node Package Manager</a> (npm) installed.</p>
+<p>Before you get started, you should have
+<a href="https://github.com/joyent/node/wiki">node.js</a> installed. If you are using
+a node.js version older than v0.6.0 (not recommended) you will also need to
+separately install
+<a href="https://github.com/isaacs/npm/#readme">Node Package Manager</a> (npm).</p>
 
 <h2 id="Write-A-Server-">Write A Server:</h2>
 
@@ -116,23 +119,23 @@ Node.js, and then deploy it using jitsu, Nodejitsu's command line interface.</p>
 <code>myapp/</code> and then create a file inside the folder called <code>server.js</code>. Inside
 this file, write the following code:</p>
 
-<pre><code>  // requires node's http module
-  var http = require('http');
+<pre><code>// requires node's http module
+var http = require('http');
 
-  // creates a new httpServer instance
-  http.createServer(function (req, res) {
-    // this is the callback, or request handler for the httpServer
+// creates a new httpServer instance
+http.createServer(function (req, res) {
+  // this is the callback, or request handler for the httpServer
 
-    // respond to the browser, write some headers so the 
-    // browser knows what type of content we are sending
-    res.writeHead(200, {'Content-Type': 'text/html'});
+  // respond to the browser, write some headers so the 
+  // browser knows what type of content we are sending
+  res.writeHead(200, {'Content-Type': 'text/html'});
 
-    // write some content to the browser that your user will see
-    res.write('&lt;h1&gt;hello, i know nodejitsu.&lt;/h1&gt;')
+  // write some content to the browser that your user will see
+  res.write('&lt;h1&gt;hello, i know nodejitsu.&lt;/h1&gt;');
 
-    // close the response
-    res.end();
-  }).listen(80); // the server will listen on port 80
+  // close the response
+  res.end();
+}).listen(80); // the server will listen on port 80
 </code></pre>
 
 <p>That's all the code you'll need for starters. Save your server and get ready to
@@ -162,15 +165,15 @@ Plus, it's what's in the tutorial.</p>
 </code></pre>
 
 <p>This command will install jitsu on your system; the <code>-g</code> makes npm install it
-globally.</p>
+globally, rather than a local module.</p>
 
-<p><img alt="" src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png" /></p>
+<p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png" alt="" /></p>
 
 <p>After installation, run the <code>jitsu</code> command from your command line. Since it's
 your first time using jitsu, you will be prompted to log in with an existing
 account or to create a new account.</p>
 
-<p><img alt="" src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png" /></p>
+<p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png" alt="" /></p>
 
 <p><strong>Once you've logged in, you can deploy your app immediately.</strong></p>
 
@@ -289,7 +292,6 @@ info:   Nodejitsu ok
 For example, in <a href="https://github.com/learnboost/mongoose/">Mongoose</a>:</p>
 
 <pre><code>var mongoose = require('mongoose');
-
 mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
 </code></pre>
 
@@ -297,12 +299,34 @@ mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
 
 <h2 id="Environment-Variable-Management">Environment Variable Management</h2>
 
-<p>Nodejitsu allows users to modify the environment variables exposed to their apps using jitsu and our other tools. With jitsu, it's as simple as:</p>
+<p>Nodejitsu allows users to modify the environment variables exposed to their
+apps using jitsu and our other tools. When an environment variable is changed
+it is necessary restart your app for it to take effect.</p>
 
-<pre><code>$ jitsu env set FOO bar
+<p>Available commands are <code>list</code>, <code>get</code>, <code>set</code>, <code>delete</code>, and
+<code>clear</code>.</p>
+
+<p><code>jitsu env list</code> will list any and all environment variables in an apps
+current working directory (Note: the app needs to have been deployed before the
+environment variables can be accessed).<br />
+<code>jitsu env list &lt;myapp></code> will list any and all environment variables related
+to <code>&lt;myapp></code> in an account.<br />
+<code>jitsu env get &lt;key></code> will display the apps key environment variable
+<code>&lt;value></code>.<br />
+<code>jitsu env set &lt;key> &lt;value></code> will set the apps <code>&lt;key></code> environment variable
+to <code>&lt;value></code>.<br />
+<code>jitsu env get &lt;key></code> will delete the apps <code>&lt;key></code> environment variable.<br />
+<code>jitsu env clear</code> will delete all of the apps environment variables after a
+prompt.</p>
+
+<p>An Example:</p>
+
+<pre><code>$ jitsu env set NODE_ENV production
 </code></pre>
 
-<p>This will set the environment variable $FOO to have the string value "bar".</p>
+<p>This will set the environment variable $NODE_ENV to have the string value
+"production". Remember, this will not take effect until the app is restarted
+(<code>jitsu apps restart</code>).</p>
 
 <h2 id="Addons">Addons</h2>
 
@@ -496,8 +520,8 @@ Nodejitsu platform programatically. This API is built to be
 <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTful</a> and
 communicates via <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>. The API is the most
 low-level way of interacting with the Nodejitsu platform. For most deployment
-scenarios you should use our command line tool, <a data-bare-link="true" href="#jitsu">jitsu</a>, or the
-<a data-bare-link="true" href="#webapp">online administrative interface</a>.</p>
+scenarios you should use our command line tool, <a href="#jitsu" data-bare-link="true">jitsu</a>, or the
+<a href="#webapp" data-bare-link="true">online administrative interface</a>.</p>
 
 <h2 id="API-Clients">API Clients</h2>
 
@@ -505,7 +529,7 @@ scenarios you should use our command line tool, <a data-bare-link="true" href="#
 
 <h2 id="Authentication">Authentication</h2>
 
-<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, the <a data-bare-link="true" href="#jitsu">jitsu CLI</a>, or just by visiting <a data-bare-link="true" href="http://nodejitsu.com">http://nodejitsu.com</a>. Currently, we support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a>. If you haven't used Basic Auth before, don't fret; it's easy!</p>
+<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, the <a href="#jitsu" data-bare-link="true">jitsu CLI</a>, or just by visiting <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a>. Currently, we support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a>. If you haven't used Basic Auth before, don't fret; it's easy!</p>
 
 <p>Here is an example using the command line utility,
 <a href="http://curl.haxx.se/">Curl</a>:</p>
@@ -516,7 +540,7 @@ scenarios you should use our command line tool, <a data-bare-link="true" href="#
 
 <h2 id="Applications">Applications</h2>
 
-<p>Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings and authors. For more information about the package.json format see: <a data-bare-link="true" href="#package_json">package.json</a></p>
+<p>Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings and authors. For more information about the package.json format see: <a href="#package_json" data-bare-link="true">package.json</a></p>
 
 <h3 id="Get-all-Applications-for-a-User">Get all Applications for a User</h3>
 
@@ -739,9 +763,9 @@ if we had not open-sourced it.</p>
 <p>Nodejitsu hosts its open-source projects on <a href="https://github.com">Github</a>:</p>
 
 <ul>
-<li><em><a data-bare-link="true" href="https://github.com/nodejitsu">https://github.com/nodejitsu</a></em>: Open source components of Nodejitsu's PaaS</li>
-<li><em><a data-bare-link="true" href="https://github.com/flatiron">https://github.com/flatiron</a></em>: Nodejitsu's "anti-framework" for building web and cli applications</li>
-<li><em><a data-bare-link="true" href="https://github.com/nodeapps">https://github.com/nodeapps</a></em>: A collection of node.js applications ready to use</li>
+<li><em><a href="https://github.com/nodejitsu" data-bare-link="true">https://github.com/nodejitsu</a></em>: Open source components of Nodejitsu's PaaS</li>
+<li><em><a href="https://github.com/flatiron" data-bare-link="true">https://github.com/flatiron</a></em>: Nodejitsu's "anti-framework" for building web and cli applications</li>
+<li><em><a href="https://github.com/nodeapps" data-bare-link="true">https://github.com/nodeapps</a></em>: A collection of node.js applications ready to use</li>
 </ul>
 
 
@@ -789,7 +813,7 @@ open source developer could need.</p>
 
 <h2 id="-How-can-I-point-my-custom-domain-to-my-nodejitsu-app-">"How can I point my custom domain to my nodejitsu app?"</h2>
 
-<p>Yes! For directions on how to set up a custom domain with Nodejitsu, <a href="http://dns.nodejitsu.com">go here</a>.</p>
+<p>Yes! For directions on how to set up a custom domain with Nodejitsu, check out <a href="http://dns.nodejitsu.com" data-bare-link="true">http://dns.nodejitsu.com</a>.</p>
 
 <h2 id="-How-can-I-turn-off-the-require-analyzer-in-jitsu-I-want-to-manage-my-own-dependencies-">"How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"</h2>
 
@@ -824,17 +848,22 @@ they may come across while deploying and administrating their web applications
 on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
 turnaround on all issues you may have!</p>
 
-<h2 id="E-mail">E-mail</h2>
+<h2 id="bug-jit-su-E-mail">bug.jit.su / E-mail</h2>
 
-<p>If you have issues, you can always contact us via email, at
+<p><a href="http://bug.jit.su/" data-bare-link="true">http://bug.jit.su/</a> is a webapp we built for users to submit bugs and/or
+problems(Recommended). You can also contact us via email, at
 <strong><a href="email:support@nodejitsu.com">support@nodejitsu.com</a></strong>.</p>
 
-<h2 id="IRC">IRC</h2>
+<h2 id="IRC-and-Kohai">IRC and Kohai</h2>
 
 <p>Nodejitsu has a channel on <a href="http://webchat.freenode.net/">freenode</a> at
 <a href="irc://irc.freenode.net/#nodejitsu" data-bare-link="true">irc://irc.freenode.net/#nodejitsu</a>, where Nodejitsu
 developers are standing by to support users around the clock. Drop by to ask
 questions, get assistance or even just to hang out!</p>
+
+<p><a href="https://github.com/nodejitsu/kohai">Kohai</a> is an IRC bot that has some basic abilities
+to help you among other features. To bring up his help dialogue just type <code>!help</code> into
+the #nodejitsu channel and Kohai will message you.</p>
 
 <h2 id="Github-Issues">Github Issues</h2>
 
@@ -869,7 +898,7 @@ their bug.</p>
 
 <h2 id="Preparing-a-package-json-for-your-application">Preparing a package.json for your application</h2>
 
-<p>Nodejitsu requires that you create a valid <a data-bare-link="true" href="#package_json">package.json</a> for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when constructing your package.json file, we provide wizards in our CLI tool and on our website for creating one.</p>
+<p>Nodejitsu requires that you create a valid <a href="#package_json" data-bare-link="true">package.json</a> for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when constructing your package.json file, we provide wizards in our CLI tool and on our website for creating one.</p>
 
 <p>Here is an example of what your package.json might look like:</p>
 
@@ -912,7 +941,7 @@ their bug.</p>
 
 <ul>
 <li><em>subdomain</em>: Specify the subdomain for your hosted app's nodejitsu url (for example, <code>subdomain.nodejitsu.com</code>.</li>
-<li><em>domains</em>: A list of custom domains for your hosted app. See <a data-bare-link="true" href="http://dns.nodejitsu.com">http://dns.nodejitsu.com</a>.</li>
+<li><em>domains</em>: A list of custom domains for your hosted app. See <a href="http://dns.nodejitsu.com" data-bare-link="true">http://dns.nodejitsu.com</a>.</li>
 <li><em>env</em>: Specify environment variables for your app (for example, NODE_ENV="production" is set by default).</li>
 <li><em>scripts.start</em>: This field is also used for <code>npm start</code>. However, nodejitsu's current implementation takes a path, whereas npm's implementation takes a shell command.</li>
 <li><em>analyze</em>: Set this to "false" to force jitsu to not analyze for the app's dependencies.</li>
@@ -938,7 +967,7 @@ Node.js issues and concerns you may have.</li>
 <li><a href="http://twitter.com/#!/NodeKohai">@NodeKohai on Twitter</a> is an irc bot that
 shares Node.js tweets with the #nodejitsu irc channel. Ask it a quick question
 and it just might give you an answer!</li>
-<li><a data-bare-link="true" href="http://search.npmjs.org">http://search.npmjs.org</a> is a great place to check for modules that might
+<li><a href="http://search.npmjs.org" data-bare-link="true">http://search.npmjs.org</a> is a great place to check for modules that might
 already solve your problem.</li>
 </ul>
 

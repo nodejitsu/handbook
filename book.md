@@ -33,7 +33,8 @@ community since 2009. We are community leaders who have created and contributed 
 hundreds of open-source Node.js projects. If you have used Node.js, you've
 probably used some of the projects we've helped create. 
 
-You can find our open source projects at <https://github.com/nodejitsu>, <https://github.com/flatiron> and <https://github.com/nodeapps>.
+You can find our open source projects at <https://github.com/nodejitsu>, <https://github.com/flatiron>, 
+<https://github.com/hookio>, and <https://github.com/nodeapps>.
 
 ## What Is Nodejitsu?
 
@@ -69,9 +70,11 @@ software, and where to [find support](#support).
 In this tutorial, you will write a simple "hello world" web application in
 Node.js, and then deploy it using jitsu, Nodejitsu's command line interface.
 
-Before you get started, you should have both
-[node.js](https://github.com/joyent/node/wiki) and the
-[Node Package Manager](https://github.com/isaacs/npm/#readme) (npm) installed.
+Before you get started, you should have 
+[node.js](https://github.com/joyent/node/wiki) installed. If you are using 
+a node.js version older than v0.6.0 (not recommended) you will also need to 
+separately install 
+[Node Package Manager](https://github.com/isaacs/npm/#readme) (npm).
 
 ## Write A Server:
 
@@ -79,23 +82,25 @@ Let's start with a very basic Node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
 this file, write the following code:
 
-      // requires node's http module
-      var http = require('http');
-          
-      // creates a new httpServer instance
-      http.createServer(function (req, res) {
-        // this is the callback, or request handler for the httpServer
+
+    // requires node's http module
+    var http = require('http');
         
-        // respond to the browser, write some headers so the 
-        // browser knows what type of content we are sending
-        res.writeHead(200, {'Content-Type': 'text/html'});
-             
-        // write some content to the browser that your user will see
-        res.write('<h1>hello, i know nodejitsu.</h1>')
-        
-        // close the response
-        res.end();
-      }).listen(80); // the server will listen on port 80
+    // creates a new httpServer instance
+    http.createServer(function (req, res) {
+      // this is the callback, or request handler for the httpServer
+      
+      // respond to the browser, write some headers so the 
+      // browser knows what type of content we are sending
+      res.writeHead(200, {'Content-Type': 'text/html'});
+           
+      // write some content to the browser that your user will see
+      res.write('<h1>hello, i know nodejitsu.</h1>');
+      
+      // close the response
+      res.end();
+    }).listen(80); // the server will listen on port 80
+
 
 
 That's all the code you'll need for starters. Save your server and get ready to
@@ -124,7 +129,7 @@ In order to install jitsu, open a terminal and type:
      [sudo] npm install -g jitsu
 
 This command will install jitsu on your system; the `-g` makes npm install it
-globally.
+globally, rather than a local module.
 
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png)
 
@@ -182,6 +187,7 @@ Nodejitsu allows users to choose which version of node they want their applicati
 
 In order to set your node version, specify it in your `package.json`'s "engines" field. For example:
 
+
     {
       "author": "Nodejitsu <josh@nodejitsu.com>",
       "version": "0.1.0",
@@ -194,6 +200,7 @@ In order to set your node version, specify it in your `package.json`'s "engines"
         "node": "v0.6.x"
       }
     }
+
 
 If no node engine is specified, nodejitsu will default to v0.4.12.
 
@@ -242,18 +249,41 @@ You can copy-paste this url directly into your mongo library's connect method.
 For example, in [Mongoose](https://github.com/learnboost/mongoose/):
 
     var mongoose = require('mongoose');
-
     mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
+
 
 Now you're connected to your database!
 
 ## Environment Variable Management
 
-Nodejitsu allows users to modify the environment variables exposed to their apps using jitsu and our other tools. With jitsu, it's as simple as:
+Nodejitsu allows users to modify the environment variables exposed to their 
+apps using jitsu and our other tools. When an environment variable is changed 
+it is necessary restart your app for it to take effect.
 
-    $ jitsu env set FOO bar
+Available commands are `list`, `get`, `set`, `delete`, and 
+`clear`. 
 
-This will set the environment variable $FOO to have the string value "bar".
+`jitsu env list` will list any and all environment variables in an apps 
+current working directory (Note: the app needs to have been deployed before the 
+environment variables can be accessed).  
+`jitsu env list <myapp>` will list any and all environment variables related 
+to `<myapp>` in an account.  
+`jitsu env get <key>` will display the apps key environment variable 
+`<value>`.  
+`jitsu env set <key> <value>` will set the apps `<key>` environment variable 
+to `<value>`.  
+`jitsu env get <key>` will delete the apps `<key>` environment variable.  
+`jitsu env clear` will delete all of the apps environment variables after a 
+prompt.
+
+An Example:
+
+    $ jitsu env set NODE_ENV production
+
+
+This will set the environment variable $NODE_ENV to have the string value 
+"production". Remember, this will not take effect until the app is restarted 
+(`jitsu apps restart`).
 
 ## Addons
 
@@ -687,7 +717,7 @@ The ability to host tcp applications on nodejitsu and listen on non-80 ports is 
 
 ## "How can I point my custom domain to my nodejitsu app?"
 
-Yes! For directions on how to set up a custom domain with Nodejitsu, [go here](http://dns.nodejitsu.com).
+Yes! For directions on how to set up a custom domain with Nodejitsu, check out <http://dns.nodejitsu.com>.
 
 ## "How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"
 
@@ -717,17 +747,22 @@ they may come across while deploying and administrating their web applications
 on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
 turnaround on all issues you may have!
 
-## E-mail
+## bug.jit.su / E-mail
 
-If you have issues, you can always contact us via email, at
+<http://bug.jit.su/> is a webapp we built for users to submit bugs and/or 
+problems(Recommended). You can also contact us via email, at
 **[support@nodejitsu.com](email:support@nodejitsu.com)**.
 
-## IRC
+## IRC and Kohai
 
 Nodejitsu has a channel on [freenode](http://webchat.freenode.net/) at
 <a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>, where Nodejitsu
 developers are standing by to support users around the clock. Drop by to ask
 questions, get assistance or even just to hang out!
+
+[Kohai](https://github.com/nodejitsu/kohai) is an IRC bot that has some basic abilities 
+to help you among other features. To bring up his help dialogue just type `!help` into
+the #nodejitsu channel and Kohai will message you.
 
 ## Github Issues
 

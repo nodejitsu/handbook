@@ -4,9 +4,11 @@
 In this tutorial, you will write a simple "hello world" web application in
 Node.js, and then deploy it using jitsu, Nodejitsu's command line interface.
 
-Before you get started, you should have both
-[node.js](https://github.com/joyent/node/wiki) and the
-[Node Package Manager](https://github.com/isaacs/npm/#readme) (npm) installed.
+Before you get started, you should have 
+[node.js](https://github.com/joyent/node/wiki) installed. If you are using 
+a node.js version older than v0.6.0 (not recommended) you will also need to 
+separately install 
+[Node Package Manager](https://github.com/isaacs/npm/#readme) (npm).
 
 ## Write A Server:
 
@@ -14,23 +16,25 @@ Let's start with a very basic Node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
 this file, write the following code:
 
-      // requires node's http module
-      var http = require('http');
-          
-      // creates a new httpServer instance
-      http.createServer(function (req, res) {
-        // this is the callback, or request handler for the httpServer
+
+    // requires node's http module
+    var http = require('http');
         
-        // respond to the browser, write some headers so the 
-        // browser knows what type of content we are sending
-        res.writeHead(200, {'Content-Type': 'text/html'});
-             
-        // write some content to the browser that your user will see
-        res.write('<h1>hello, i know nodejitsu.</h1>');
-        
-        // close the response
-        res.end();
-      }).listen(80); // the server will listen on port 80
+    // creates a new httpServer instance
+    http.createServer(function (req, res) {
+      // this is the callback, or request handler for the httpServer
+      
+      // respond to the browser, write some headers so the 
+      // browser knows what type of content we are sending
+      res.writeHead(200, {'Content-Type': 'text/html'});
+           
+      // write some content to the browser that your user will see
+      res.write('<h1>hello, i know nodejitsu.</h1>');
+      
+      // close the response
+      res.end();
+    }).listen(80); // the server will listen on port 80
+
 
 
 That's all the code you'll need for starters. Save your server and get ready to
@@ -59,7 +63,7 @@ In order to install jitsu, open a terminal and type:
      [sudo] npm install -g jitsu
 
 This command will install jitsu on your system; the `-g` makes npm install it
-globally.
+globally, rather than a local module.
 
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png)
 
