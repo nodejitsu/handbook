@@ -17,7 +17,7 @@ hundreds of open-source Node.js projects. If you have used Node.js, you've
 probably used some of the projects we've helped create. 
 
 You can find our open source projects at <https://github.com/nodejitsu>, <https://github.com/flatiron>, 
-<https://github.com/hookio> and <https://github.com/nodeapps>.
+<https://github.com/hookio>, and <https://github.com/nodeapps>.
 
 ## What Is Nodejitsu?
 

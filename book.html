@@ -300,13 +300,14 @@ mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
 <h2 id="Environment-Variable-Management">Environment Variable Management</h2>
 
 <p>Nodejitsu allows users to modify the environment variables exposed to their
-apps using jitsu and our other tools.</p>
+apps using jitsu and our other tools. When an enviroment variable is changed
+it is necessary restart your app for it to take effect.</p>
 
 <p>Available commands are <code>list</code>, <code>get</code>, <code>set</code>, <code>delete</code>, and
 <code>clear</code>.</p>
 
 <p><code>jitsu env list</code> will list any and all enviroment variables in an apps
-current working directory(Note: the app needs to have been deployed before the
+current working directory (Note: the app needs to have been deployed before the
 enviroment variables can be accessed).<br />
 <code>jitsu env list &lt;myapp></code> will list any and all enviroment variables related
 to <code>&lt;myapp></code> in an account.<br />
@@ -324,7 +325,8 @@ prompt.</p>
 </code></pre>
 
 <p>This will set the environment variable $NODE_ENV to have the string value
-"production".</p>
+"production". Remember, this will not take effect until the app is restarted
+(<code>jitsu apps restart</code>).</p>
 
 <h2 id="Addons">Addons</h2>
 
