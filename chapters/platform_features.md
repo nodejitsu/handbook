@@ -91,11 +91,33 @@ Now you're connected to your database!
 
 ## Environment Variable Management
 
-Nodejitsu allows users to modify the environment variables exposed to their apps using jitsu and our other tools. With jitsu, it's as simple as:
+Nodejitsu allows users to modify the environment variables exposed to their 
+apps using jitsu and our other tools. 
 
-    $ jitsu env set FOO bar
+Available commands are ```list```, ```get```, ```set```, ```delete```, and 
+```clear```. 
 
-This will set the environment variable $FOO to have the string value "bar".
+```jitsu env list``` will list any and all enviroment variables in an apps 
+current working directory(Note: the app needs to have been deployed before the 
+enviroment variables can be accessed).
+```jitsu env list <myapp>``` will list any and all enviroment variables related 
+to <myapp> in an account.
+```jitsu env get <key>``` will display the apps key enviroment variable 
+<value>.
+```jitsu env set <key> <value>``` will set the apps <key> enviroment variable 
+to <value>.
+```jitsu env get <key>``` will delete the apps <key> enviroment variable.
+```jitsu env clear``` will delete all of the apps enviroment variables after a 
+prompt.
+
+An Example:
+
+```
+$ jitsu env set NODE_ENV production
+```
+
+This will set the environment variable $NODE_ENV to have the string value 
+"production".
 
 ## Addons
 
