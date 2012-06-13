@@ -20,7 +20,7 @@ developers are standing by to support users around the clock. Drop by to ask
 questions, get assistance or even just to hang out!
 
 [Kohai](https://github.com/nodejitsu/kohai) is an IRC bot that has some basic abilities 
-to help you among other features. To bring up his help dialouge just type ```!help``` into
+to help you among other features. To bring up his help dialouge just type `!help` into
 the #nodejitsu channel and Kohai will message you.
 
 ## Github Issues

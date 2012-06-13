@@ -21,20 +21,19 @@ Nodejitsu allows users to choose which version of node they want their applicati
 In order to set your node version, specify it in your `package.json`'s "engines" field. For example:
 
 
-```json
-{
-  "author": "Nodejitsu <josh@nodejitsu.com>",
-  "version": "0.1.0",
-  "scripts": {
-    "start": "node bin/server"
-  },
-  "analyze": false,
-  "name": "helloworld",
-  "engines": {
-    "node": "v0.6.x"
-  }
-}
-```
+    {
+      "author": "Nodejitsu <josh@nodejitsu.com>",
+      "version": "0.1.0",
+      "scripts": {
+        "start": "node bin/server"
+      },
+      "analyze": false,
+      "name": "helloworld",
+      "engines": {
+        "node": "v0.6.x"
+      }
+    }
+
 
 If no node engine is specified, nodejitsu will default to v0.4.12.
 
@@ -82,10 +81,9 @@ mongo database on mongohq:
 You can copy-paste this url directly into your mongo library's connect method.
 For example, in [Mongoose](https://github.com/learnboost/mongoose/):
 
-```javascript
-var mongoose = require('mongoose');
-mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
-```
+    var mongoose = require('mongoose');
+    mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
+
 
 Now you're connected to your database!
 
@@ -94,27 +92,26 @@ Now you're connected to your database!
 Nodejitsu allows users to modify the environment variables exposed to their 
 apps using jitsu and our other tools. 
 
-Available commands are ```list```, ```get```, ```set```, ```delete```, and 
-```clear```. 
+Available commands are `list`, `get`, `set`, `delete`, and 
+`clear`. 
 
-```jitsu env list``` will list any and all enviroment variables in an apps 
+`jitsu env list` will list any and all enviroment variables in an apps 
 current working directory(Note: the app needs to have been deployed before the 
 enviroment variables can be accessed).
-```jitsu env list <myapp>``` will list any and all enviroment variables related 
-to <myapp> in an account.
-```jitsu env get <key>``` will display the apps key enviroment variable 
-<value>.
-```jitsu env set <key> <value>``` will set the apps <key> enviroment variable 
-to <value>.
-```jitsu env get <key>``` will delete the apps <key> enviroment variable.
-```jitsu env clear``` will delete all of the apps enviroment variables after a 
+`jitsu env list <myapp>` will list any and all enviroment variables related 
+to \<myapp\> in an account.
+`jitsu env get <key>` will display the apps key enviroment variable 
+\<value\>.
+`jitsu env set <key> <value>` will set the apps \<key\> enviroment variable 
+to \<value\>.
+`jitsu env get <key>` will delete the apps \<key\> enviroment variable.
+`jitsu env clear` will delete all of the apps enviroment variables after a 
 prompt.
 
 An Example:
 
-```
-$ jitsu env set NODE_ENV production
-```
+    $ jitsu env set NODE_ENV production
+
 
 This will set the environment variable $NODE_ENV to have the string value 
 "production".
