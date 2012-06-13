@@ -20,18 +20,21 @@ Nodejitsu allows users to choose which version of node they want their applicati
 
 In order to set your node version, specify it in your `package.json`'s "engines" field. For example:
 
-    {
-      "author": "Nodejitsu <josh@nodejitsu.com>",
-      "version": "0.1.0",
-      "scripts": {
-        "start": "node bin/server"
-      },
-      "analyze": false,
-      "name": "helloworld",
-      "engines": {
-        "node": "v0.6.x"
-      }
-    }
+
+```json
+{
+  "author": "Nodejitsu <josh@nodejitsu.com>",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node bin/server"
+  },
+  "analyze": false,
+  "name": "helloworld",
+  "engines": {
+    "node": "v0.6.x"
+  }
+}
+```
 
 If no node engine is specified, nodejitsu will default to v0.4.12.
 
@@ -79,9 +82,10 @@ mongo database on mongohq:
 You can copy-paste this url directly into your mongo library's connect method.
 For example, in [Mongoose](https://github.com/learnboost/mongoose/):
 
-    var mongoose = require('mongoose');
-
-    mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
+```javascript
+var mongoose = require('mongoose');
+mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
+```
 
 Now you're connected to your database!
 
