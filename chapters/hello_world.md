@@ -63,7 +63,7 @@ In order to install jitsu, open a terminal and type:
      [sudo] npm install -g jitsu
 
 This command will install jitsu on your system; the `-g` makes npm install it
-globally, rather than a local module.
+globally, rather than as a local module.
 
 ![](https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png)
 
