@@ -272,7 +272,7 @@ to `<myapp>` in an account.
 `<value>`.  
 `jitsu env set <key> <value>` will set the apps `<key>` environment variable 
 to `<value>`.  
-`jitsu env get <key>` will delete the apps `<key>` environment variable.  
+`jitsu env delete <key>` will delete the apps `<key>` environment variable.  
 `jitsu env clear` will delete all of the apps environment variables after a 
 prompt.
 
