@@ -1,0 +1,18 @@
+{
+  "author": "Nodejitsu <support@nodejitsu.com> (http://nodejitsu.com)",
+  "name": "handbook",
+  "description": "A gentle introduction to the art of nodejitsu",
+  "version": "0.1.0",
+  "homepage": "http://handbook.jit.su",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nodejitsu/handbook.git"
+  },
+  "dependencies": {
+    "http-server": "~0.5.1"
+  },
+  "scripts": {
+    "install": "make",
+    "start": "node ./bin/server"
+  }
+}
