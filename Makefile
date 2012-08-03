@@ -107,11 +107,14 @@ clean:
 	rm -f book.*
 	rm -f chapters/*.html
 	rm -f appendices/*.html
+	rm -f pages/index.html
+	rm -f pages/title.html
 	rm -rf public
 
 clear:
 	rm -f chapters/*.html
 	rm -f appendices/*.html
 	rm -f pages/index.html
+	rm -f pages/title.html
 
 .PHONY: view clean regenerate

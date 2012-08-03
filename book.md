@@ -883,7 +883,6 @@ their bug.
 # Table of Appendices
 <a name="apx"></a>
 
-* [Mailchimp Integration in Nodejitsu](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:mailchimp)  
 * [package.json](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:package)  
 * [Resources](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:resources)  
 * [Building The Handbook](https://github.com/nodejitsu/handbook/blob/master/book.md#apx:build)  
@@ -961,10 +960,11 @@ Node.js issues and concerns you may have.
 - [@NodeKohai on Twitter](http://twitter.com/#!/NodeKohai) is an irc bot that
 shares Node.js tweets with the #nodejitsu irc channel. Ask it a quick question
 and it just might give you an answer!
-- <http://search.npmjs.org> is a great place to check for modules that might
+- <http://npmjs.org> is a great place to check for modules that might
 already solve your problem.
-
-
+- <http://cheatsheet.jit.su> is a nodejitsu cheatsheet listing the most common commands.
+- <http://package.json.jit.su> is an interactive reference for the package.json format.
+- <http://blog.nodejitsu.com/npm-cheatsheet> is a quick cheatsheet for npm commands.
 # Appendix: Building the Nodejitsu Handbook
 <a name='apx:build'></a>
 
