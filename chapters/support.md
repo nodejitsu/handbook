@@ -6,20 +6,20 @@ they may come across while deploying and administrating their web applications
 on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
 turnaround on all issues you may have!
 
-## bug.jit.su / E-mail
+## E-mail
 
-<http://bug.jit.su/> is a webapp we built for users to submit bugs and/or 
-problems(Recommended). You can also contact us via email, at
+You can also contact us via email, at
 **[support@nodejitsu.com](email:support@nodejitsu.com)**.
 
 ## IRC and Kohai
 
-Nodejitsu has a channel on [freenode](http://webchat.freenode.net/) at
-<a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>, where Nodejitsu
-developers are standing by to support users around the clock. Drop by to ask
+Nodejitsu has a channel on freenode at
+<a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>
+([http://webchat.jit.su](http://webchat.jit.su)), where Nodejitsu
+staff are standing by to support users around the clock. Drop by to ask
 questions, get assistance or even just to hang out!
 
-[Kohai](https://github.com/nodejitsu/kohai) is an IRC bot that has some basic abilities 
+[Kohai](https://github.com/nodejitsu/kohai) is an IRC bot that has some basic abilities
 to help you among other features. To bring up his help dialogue just type `!help` into
 the #nodejitsu channel and Kohai will message you.
 

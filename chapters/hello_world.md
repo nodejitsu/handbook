@@ -60,7 +60,7 @@ Plus, it's what's in the tutorial.
 
 In order to install jitsu, open a terminal and type:
 
-     [sudo] npm install -g jitsu
+     [sudo] npm install jitsu -g
 
 This command will install jitsu on your system; the `-g` makes npm install it
 globally, rather than as a local module.
@@ -90,12 +90,12 @@ prompted for some information such as *<u>your app's name</u>*, its
 only take a few seconds.
 
 
-    prompt: subdomain (virtual-window): virtualwindow
+    prompt: subdomain (myapp): myapp
     prompt: scripts.start (server.js): 
     prompt: version (0.0.0): 
 
 
 Now just open up your favorite browser, and go to
-`yoursubdomain.nodejitsu.com`. If everything has been set up correctly, then
+`myapp.nodejitsu.com`. If everything has been set up correctly, then
 you, too, are on the path of nodejitsu!
 

@@ -4,7 +4,7 @@
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
 for beginners.  Here are just a few:
 
-- [The nodejs.org Official Docs](http://nodejs.org/docs/v0.4.10/api/) document
+- [The nodejs.org Official Docs](http://nodejs.org/docs/latest/api/) document
 all of Node.js's core APIs.
 - The [Node.js Wiki](https://github.com/joyent/node/wiki) contains information
 such as an FAQ, installation instructions, and lists of modules.

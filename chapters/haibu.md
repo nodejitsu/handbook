@@ -24,27 +24,31 @@ haibu comes with a high-level Node.js API client.
 
 ## Installation
 
-    [sudo] npm install -g haibu
+    [sudo] npm install haibu -g
 
-This will install haibu globally.
+This will install haibu globally. You can also grab the source [directly from git](https://github.com/nodejitsu/haibu).
 
 ## Usage
 
-Haibu comes with three applications, one of which is optional:
+To start haibu, all you have to do is run `haibu`:
 
-* `haibu-server` is the program that manages your node.js web applications.
-Haibu-server allows you to manage and track your drones.
+    $ haibu 
+          __                  __               
+         / /_    ______  __  / /_     __  __   
+        / __ \  / __  / / / /  __ \  / / / /   
+       / / / / / /_/ / / / /  /_/ / / /_/ /    
+      /_/ /_/  \__,_/ /_/ /_/\___/  \__,_/     
+      
+      This is Open Source Software available under
+      the MIT License.
+      
+      © 2010 Nodejitsu Inc.
+      All Rights Reserved - www.nodejitsu.com
+      haibu started @ 10.0.1.4 on port 9002 as api-server
+        using plugins: config, exceptions, directories, log, http
 
-* `haibu` is the user interface for interacting with (and administrating) a
-running haibu-server.
-
-* `haibu-balancer` \[*optional*\] is a load balancer tool, used to split
-requests across  multiple drones of the same application. It is entirely
-optional, and many deployments won't have a need for it.
-
-It may be nice to flesh this out with an example deployment, but I think this
-should be relatively low priority.
-
+Haibu is an http server that exposes a REST api on port 9002. You can either
+access this API client with a regular HTTP client, or use our [haibu-api](https://github.com/nodejitsu/haibu-api/tree/master/node.js) module. Unfortunately, jitsu does not work with haibu's HTTP API, only the nodejitsu API.
 
 ## Additional Documentation
 

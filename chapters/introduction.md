@@ -44,6 +44,5 @@ find.
 [use our tools](#opensource) anywhere else you'd like to.
 
 The Nodejitsu Handbook also contains information on [other ways to deploy your
-applications](#deployment), how to [run your own cloud](#haibu) with our
-software, and where to [find support](#support).
+applications](#deployment) and where to [find support](#support).
 

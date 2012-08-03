@@ -36,11 +36,6 @@ following steps:
 4. Stops the application (if necessary)
 5. Starts the application
 
-### jitsu create (jitsu apps create)
-
-`jitsu create` will create a new application. This entails generating a
-package.json for your app, for the purposes of deployment.
-
 ### jitsu list (jitsu apps list)
 
 `jitsu list` lists your applications, as well as their respective states,
@@ -115,10 +110,8 @@ accounts. You will be prompted for additional user information as required.
 
 `jitsu install` is a built-in tool for downloading "starter apps" to speed up development. For example, here's how to use `jitsu install` to download a "hello world" application:
 
-    josh@onix:/tmp$ mkdir helloworld
-    josh@onix:/tmp$ cd helloworld
-    josh@onix:/tmp/helloworld$ jitsu install helloworld
-    info:   Welcome to Nodejitsu
+    josh@onix:/tmp$ jitsu install helloworld
+    info:   Welcome to Nodejitsu jesusabdullah
     info:   It worked if it ends with Nodejitsu ok
     info:   Executing command install helloworld
     info:   Installing helloworld locally.
@@ -127,6 +120,7 @@ accounts. You will be prompted for additional user information as required.
     help:   You can now jitsu deploy this application
     prompt: Would you like to start this application locally? (yes): no
     info:   Nodejitsu ok
+    josh@onix:/tmp$ cd helloworld
     josh@onix:/tmp/helloworld$ ls
     bin  node_modules  package.json  ReadMe.md
 

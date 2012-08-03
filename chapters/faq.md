@@ -1,6 +1,8 @@
 # Frequently Asked Questions
 <a name='faq'></a>
 
+**For more information about pricing, see [the pricing FAQ](http://nodejitsu.com/paas/faq.html).**
+
 ## "How do I reset my password?"
 
 One way is to use jitsu. Simply type:
@@ -23,10 +25,6 @@ Connecting to other servers using arbitrary ports requires no special considerat
 
 The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
 
-## "How can I point my custom domain to my nodejitsu app?"
-
-Yes! For directions on how to set up a custom domain with Nodejitsu, check out <http://dns.nodejitsu.com>.
-
 ## "How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"
 
 There are three ways to disable the require-analyzer:
@@ -37,7 +35,7 @@ There are three ways to disable the require-analyzer:
 
 ## "Why won't this C++ addon compile?"
 
-Many [C++ addons](http://nodejs.org/docs/v0.4.10/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/), which only recently became available on nodejitsu's platform.
+Many [C++ addons](http://nodejs.org/docs/latest/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/). Nodejitsu has cairo and many other such libraries, but may not have some more obscure ones.
 
 ## "How do I specify which files not to bundle? How do I know what files are getting bundled?"
 
