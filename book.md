@@ -61,8 +61,7 @@ find.
 [use our tools](#opensource) anywhere else you'd like to.
 
 The Nodejitsu Handbook also contains information on [other ways to deploy your
-applications](#deployment), how to [run your own cloud](#haibu) with our
-software, and where to [find support](#support).
+applications](#deployment) and where to [find support](#support).
 
 # Hello World: A Tutorial
 <a name="hiworld"></a>
@@ -126,7 +125,7 @@ Plus, it's what's in the tutorial.
 
 In order to install jitsu, open a terminal and type:
 
-     [sudo] npm install -g jitsu
+     [sudo] npm install jitsu -g
 
 This command will install jitsu on your system; the `-g` makes npm install it
 globally, rather than as a local module.
@@ -156,13 +155,13 @@ prompted for some information such as *<u>your app's name</u>*, its
 only take a few seconds.
 
 
-    prompt: subdomain (virtual-window): virtualwindow
+    prompt: subdomain (myapp): myapp
     prompt: scripts.start (server.js): 
     prompt: version (0.0.0): 
 
 
 Now just open up your favorite browser, and go to
-`yoursubdomain.nodejitsu.com`. If everything has been set up correctly, then
+`myapp.nodejitsu.com`. If everything has been set up correctly, then
 you, too, are on the path of nodejitsu!
 
 # Features of the Nodejitsu Platform
@@ -172,20 +171,28 @@ The Nodejitsu platform makes writing and deploying web applications a snap!
 In addition to simple yet powerful tools for deployment, the Nodejitsu platform
 also has snapshot management, database hosting and connectivity, and more!
 
-There are three main tools for deploying applications to Nodejitsu:
+There are three main tools for deploying and managing applications to Nodejitsu:
 
 * [Jitsu](#jitsu), The Nodejitsu command line tool 
 * The Nodejitsu [Web Application](#web_admin), An easy to use web interface for
 managing your applications
 * Nodejitsu's JSON [API](#json_api)
 
-Each of these tools allow developers to access the exact same functionality.
+Each of these tools allow developers to access the same functionality.
 
-## Multi-Version node support
+## Application Scalability with Drones
 
-Nodejitsu allows users to choose which version of node they want their application to run on. This means that not only do we now support v0.6, but also that users may continue to use v0.4 if they would like.
+Each deployed application runs as a [drone](https://github.com/nodejitsu/haibu-carapace) on a [haibu](https://github.com/nodejitsu/haibu) application server. Because of this architecture, one app can be served by *any amount of drones on arbitrary machines*, giving you many options for scaling your application.
 
-In order to set your node version, specify it in your `package.json`'s "engines" field. For example:
+## Zero Downtime Deploys
+
+When deploying a new application, nodejitsu keeps hosting your old app version until the new deploy is confirmed to be running. This means your applications never go down, even if you have a bad deploy.
+
+## Multi-Version Node Support
+
+Nodejitsu allows users to choose which version of node they want their
+application to run on. In order to set your node version, specify it in your 
+`package.json`'s "engines" field. For example:
 
 
     {
@@ -202,7 +209,7 @@ In order to set your node version, specify it in your `package.json`'s "engines"
     }
 
 
-If no node engine is specified, nodejitsu will default to v0.4.12.
+If no node engine is specified, jitsu will prompt for it automatically.
 
 ## Snapshots
 <a name='features/snapshots'></a>
@@ -211,7 +218,13 @@ Every time you deploy to Nodejitsu, we automatically take a
 [snapshot](http://en.wikipedia.org/wiki/Snapshot_\(computer_storage\)) of your
 application. Using any of our tools, you can view and manage snapshots, or even
 roll back to an old snapshot when disaster strikes in your production 
-environment.
+environment. *During a deploy, nodejitsu will create a new snapshot automatically.*
+
+Jitsu commands for snapshot management include:
+
+* `jitsu snapshots list <app-name>` will list all snapshots for an application.
+* `jitsu snapshots activate <app-name>` allows you to choose which snapshot your drones are running.
+* `jitsu snapshots fetch <app-name>` will download a specified snapshot of your application to your computer.
 
 ## Databases
 <a name='features/databases'></a>
@@ -221,7 +234,7 @@ Applications on Nodejitsu are ready to be connected to any database. If you alre
 ### Creating new Databases
 
 If you require database hosting you can create a new database instance of any
-of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](#api). Cloud database hosting is currently provided by IrisCouch, Redis2Go and MongoHQ.
+of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](#api). Cloud database hosting is currently provided by [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and [MongoHQ](https://www.mongohq.com).
 
 ### Existing Databases
 
@@ -232,18 +245,71 @@ support externally hosted Databases.
 ### Connecting Applications to Databases
 
 Whenever you create a database using Nodejitsu, you will be provided with all
-the information you need to connect to your database. For instance, if you
-`jitsu databases create mongo myMongo`, jitsu will tell you the url for your new
-mongo database on mongohq:
+the information you need to connect to your database.
 
-    info:   Welcome to Nodejitsu
+#### CouchDB
+
+If you run `jitsu databases create couchdb myCouch`, jitsu will tell you the
+url for your new couchdb from iriscouch:
+
+    info:    Welcome to Nodejitsu user
+    info:    It worked if it ends with Nodejitsu ok
+    info:    Executing command databases create couchdb myCouch
+    info:    Database myCouch was created.
+    data:    Database Type: couch
+    data:    Database Name: myCouch
+    data:    Connection url: http://subdomain.iriscouch.com:5984
+    data:    SSL connection url: https://subdomain.iriscouch.com:6984
+    info:    Nodejitsu ok
+
+You can connect to this database using any http client, or a couchdb specific
+library. For example, you can connect with curl:
+
+
+    $ curl http://subdomain.iriscouch.com:5984
+
+Or, you can connect with [nano](https://github.com/dscape/nano):
+
+    var nano = require('nano')('http://nodejitsudb944957670256.iriscouch.com:5984');
+
+You can also access your database in your browser by going to http://subdomain.iriscouch.com:5984/_utils .
+
+
+#### MongoDB
+
+If you run `jitsu databases create mongo myMongo`, jitsu 
+will supply a connection string for your new mongo database on mongohq:
+
+    info:   Welcome to Nodejitsu user
     info:   It worked if it ends with Nodejitsu ok
     info:   Executing command databases create mongo myMongo
     info:   Database myMongo was created.
     info:   Database name: myMongo
     info:   Database type: mongo
-    info:   Connection url: mongodb://nodejitsu:pass@staff.mongohq.com:10057/
+    info:   Connection url: mongodb://nodejitsu:pass@subdomain.mongohq.com:10057/somedatabase
     info:   Nodejitsu ok
+
+You can connect to this using the `mongo` CLI client tool like so:
+
+    $ mongo subdomain.mongohq.com:100027/somedatabase -u nodejitsu -p pass
+
+or with the `mongodb-native` module:
+
+    var mongodb = require('mongodb');
+    var db = new mongodb.Db('somedatabase',
+      new mongodb.Server('subdomain.mongohq.com', 10027, {})
+    );
+    db.open(function (err, db_p) {
+      if (err) { throw err; }
+      db.authenticate('nodejitsu', 'pass', function (err, replies) {
+        // You are now connected and authenticated.
+      });
+    });
+
+or with mongoose:
+
+    var mongoose = require('mongoose');
+    mongoose.connect('mongodb://nodejitsu:pass@subdomain.mongohq.com:10057/somedatabase');
 
 You can copy-paste this url directly into your mongo library's connect method.
 For example, in [Mongoose](https://github.com/learnboost/mongoose/):
@@ -251,8 +317,36 @@ For example, in [Mongoose](https://github.com/learnboost/mongoose/):
     var mongoose = require('mongoose');
     mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
 
+#### Redis
 
-Now you're connected to your database!
+Running `jitsu databases create redis myRedis` will create a redis instance supplied by redistogo:
+
+    info:    Welcome to Nodejitsu user
+    info:    It worked if it ends with Nodejitsu ok
+    info:    Executing command databases create r testRedis
+    info:    A new redis has been created
+    data:    Database Type: redis
+    data:    Database Name: testRedis
+    data:    Connection host: subdomain.redistogo.com
+    data:    Connection port: 5309
+    data:    Connection auth: pass
+    info:    Nodejitsu ok
+
+**Note:** Some versions of jitsu may show a connection string, eg. `redis://nodejitsu:pass@subdomain.redistogo.com:5309`.
+
+You can connect to your redis with the `redis-cli` cli client:
+
+    $ redis-cli -h subdomain.redistogo.com -p 5309 -a pass
+
+or with the `redis` module:
+
+    var redis = require('redis');
+    var client = redis.createClient('subdomain.redistogo.com, 5309);
+    client.auth('pass', function (err) {
+      if (err) { throw err; }
+      // You are now authed with your redis.
+    });
+
 
 ## Environment Variable Management
 
@@ -272,7 +366,7 @@ to `<myapp>` in an account.
 `<value>`.  
 `jitsu env set <key> <value>` will set the apps `<key>` environment variable 
 to `<value>`.  
-`jitsu env get <key>` will delete the apps `<key>` environment variable.  
+`jitsu env delete <key>` will delete the apps `<key>` environment variable.  
 `jitsu env clear` will delete all of the apps environment variables after a 
 prompt.
 
@@ -284,6 +378,24 @@ An Example:
 This will set the environment variable $NODE_ENV to have the string value 
 "production". Remember, this will not take effect until the app is restarted 
 (`jitsu apps restart`).
+
+## SSL on nodejitsu.com subdomains
+
+Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomains automatically! For example, the app behind [http://nodejitsu.com](http://nodejitsu.com) is serving http, but visiting [https://nodejitsu.com](https://nodejitsu.com) works without any special action on our part.
+
+Please note that this only works with `nodejitsu.com` (not `jitsu.com` or `jit.su`) at this time.
+
+## Custom Domains
+
+We allow users to host their applications on custom domains by specifying their
+app's domains in their `package.json` and then properly configuring their DNS.
+If you'd like to know how, just read the instructions at [http://dns.jit.su](http://dns.jit.su)!
+
+### SSL Certificates for Custom Domains
+
+Our balancers use [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) which allow them to receive SSL traffic from multiple domains---including yours! If, for example, you owned `mydomain.com` and wanted secure connections, all you need are your .pem and .key files!
+
+*Note: This feature is not exposed through our API or other tools at this time. If you need this feature, please contact support at `support@nodejitsu.com`.*
 
 ## Addons
 
@@ -340,11 +452,6 @@ following steps:
 3. Packages and creates a new snapshot
 4. Stops the application (if necessary)
 5. Starts the application
-
-### jitsu create (jitsu apps create)
-
-`jitsu create` will create a new application. This entails generating a
-package.json for your app, for the purposes of deployment.
 
 ### jitsu list (jitsu apps list)
 
@@ -420,10 +527,8 @@ accounts. You will be prompted for additional user information as required.
 
 `jitsu install` is a built-in tool for downloading "starter apps" to speed up development. For example, here's how to use `jitsu install` to download a "hello world" application:
 
-    josh@onix:/tmp$ mkdir helloworld
-    josh@onix:/tmp$ cd helloworld
-    josh@onix:/tmp/helloworld$ jitsu install helloworld
-    info:   Welcome to Nodejitsu
+    josh@onix:/tmp$ jitsu install helloworld
+    info:   Welcome to Nodejitsu jesusabdullah
     info:   It worked if it ends with Nodejitsu ok
     info:   Executing command install helloworld
     info:   Installing helloworld locally.
@@ -432,6 +537,7 @@ accounts. You will be prompted for additional user information as required.
     help:   You can now jitsu deploy this application
     prompt: Would you like to start this application locally? (yes): no
     info:   Nodejitsu ok
+    josh@onix:/tmp$ cd helloworld
     josh@onix:/tmp/helloworld$ ls
     bin  node_modules  package.json  ReadMe.md
 
@@ -631,27 +737,31 @@ haibu comes with a high-level Node.js API client.
 
 ## Installation
 
-    [sudo] npm install -g haibu
+    [sudo] npm install haibu -g
 
-This will install haibu globally.
+This will install haibu globally. You can also grab the source [directly from git](https://github.com/nodejitsu/haibu).
 
 ## Usage
 
-Haibu comes with three applications, one of which is optional:
+To start haibu, all you have to do is run `haibu`:
 
-* `haibu-server` is the program that manages your node.js web applications.
-Haibu-server allows you to manage and track your drones.
+    $ haibu 
+          __                  __               
+         / /_    ______  __  / /_     __  __   
+        / __ \  / __  / / / /  __ \  / / / /   
+       / / / / / /_/ / / / /  /_/ / / /_/ /    
+      /_/ /_/  \__,_/ /_/ /_/\___/  \__,_/     
+      
+      This is Open Source Software available under
+      the MIT License.
+      
+      © 2010 Nodejitsu Inc.
+      All Rights Reserved - www.nodejitsu.com
+      haibu started @ 10.0.1.4 on port 9002 as api-server
+        using plugins: config, exceptions, directories, log, http
 
-* `haibu` is the user interface for interacting with (and administrating) a
-running haibu-server.
-
-* `haibu-balancer` \[*optional*\] is a load balancer tool, used to split
-requests across  multiple drones of the same application. It is entirely
-optional, and many deployments won't have a need for it.
-
-It may be nice to flesh this out with an example deployment, but I think this
-should be relatively low priority.
-
+Haibu is an http server that exposes a REST api on port 9002. You can either
+access this API client with a regular HTTP client, or use our [haibu-api](https://github.com/nodejitsu/haibu-api/tree/master/node.js) module. Unfortunately, jitsu does not work with haibu's HTTP API, only the nodejitsu API.
 
 ## Additional Documentation
 
@@ -693,6 +803,8 @@ open source developer could need.
 # Frequently Asked Questions
 <a name='faq'></a>
 
+**For more information about pricing, see [the pricing FAQ](http://nodejitsu.com/paas/faq.html).**
+
 ## "How do I reset my password?"
 
 One way is to use jitsu. Simply type:
@@ -715,10 +827,6 @@ Connecting to other servers using arbitrary ports requires no special considerat
 
 The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
 
-## "How can I point my custom domain to my nodejitsu app?"
-
-Yes! For directions on how to set up a custom domain with Nodejitsu, check out <http://dns.nodejitsu.com>.
-
 ## "How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"
 
 There are three ways to disable the require-analyzer:
@@ -729,7 +837,7 @@ There are three ways to disable the require-analyzer:
 
 ## "Why won't this C++ addon compile?"
 
-Many [C++ addons](http://nodejs.org/docs/v0.4.10/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/), which only recently became available on nodejitsu's platform.
+Many [C++ addons](http://nodejs.org/docs/latest/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/). Nodejitsu has cairo and many other such libraries, but may not have some more obscure ones.
 
 ## "How do I specify which files not to bundle? How do I know what files are getting bundled?"
 
@@ -747,20 +855,20 @@ they may come across while deploying and administrating their web applications
 on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
 turnaround on all issues you may have!
 
-## bug.jit.su / E-mail
+## E-mail
 
-<http://bug.jit.su/> is a webapp we built for users to submit bugs and/or 
-problems(Recommended). You can also contact us via email, at
+You can also contact us via email, at
 **[support@nodejitsu.com](email:support@nodejitsu.com)**.
 
 ## IRC and Kohai
 
-Nodejitsu has a channel on [freenode](http://webchat.freenode.net/) at
-<a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>, where Nodejitsu
-developers are standing by to support users around the clock. Drop by to ask
+Nodejitsu has a channel on freenode at
+<a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>
+([http://webchat.jit.su](http://webchat.jit.su)), where Nodejitsu
+staff are standing by to support users around the clock. Drop by to ask
 questions, get assistance or even just to hang out!
 
-[Kohai](https://github.com/nodejitsu/kohai) is an IRC bot that has some basic abilities 
+[Kohai](https://github.com/nodejitsu/kohai) is an IRC bot that has some basic abilities
 to help you among other features. To bring up his help dialogue just type `!help` into
 the #nodejitsu channel and Kohai will message you.
 
@@ -782,6 +890,8 @@ their bug.
 
 # Appendix: package.json
 <a name='apx:package'></a>
+
+**[package.json.jit.su](http://package.json.jit.su) is an interactive package.json properties explorer! Highly recommended.**
 
 ## Understanding the package.json format
 A package.json file describes your application, its dependencies, and other various application metadata. For a detailed spec on creating a package.json you can check out Isaac's fine documentation [here](https://github.com/isaacs/npm/blob/master/doc/developers.md#readme). 
@@ -841,7 +951,7 @@ A few package.json properties have special behavior on the Nodejitsu platform:
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
 for beginners.  Here are just a few:
 
-- [The nodejs.org Official Docs](http://nodejs.org/docs/v0.4.10/api/) document
+- [The nodejs.org Official Docs](http://nodejs.org/docs/latest/api/) document
 all of Node.js's core APIs.
 - The [Node.js Wiki](https://github.com/joyent/node/wiki) contains information
 such as an FAQ, installation instructions, and lists of modules.
