@@ -9,7 +9,6 @@ PDF_FLAGS = --fontsize 9.0 \
 		--footer "c 1" \
 		--no-toc
 
-#Hoping to autogenerate the ToC.
 MD = pages/title.md \
     chapters/toc.md \
     chapters/introduction.md \
@@ -74,8 +73,9 @@ public:
 	mkdir public
 
 website: book.html public
-	@echo "\n... generating $@"
+	@echo "\n... copying items into ./public"
 	cp book.html public/index.html
+	cp book.pdf public/book.pdf
 	cp -r fig public/fig
 
 serve: website

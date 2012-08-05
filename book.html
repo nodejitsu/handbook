@@ -26,8 +26,24 @@
     </style>
   </head>
   <body><div class='mp'>
-<h1>The Nodejitsu Handbook</h1>
+<h1><p><a href="https://github.com/nodejitsu/handbook/"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" style="position: absolute; top: 0; right: 0; border: 0;" alt="Fork me on GitHub" /></a></p>
+
+The Nodejitsu Handbook</h1>
 <p><em>A gentle introduction to the art of Nodejitsu</em></p>
+
+<h2 id="Quick-Links-">Quick Links:</h2>
+
+<ul>
+<li><a href="book.pdf">The Nodejitsu Handbook (.pdf)</a></li>
+<li><a href="https://github.com/nodejitsu/handbook/blob/master/book.md#faq">Frequently Asked Questions</a></li>
+<li><a href="http://cheatsheet.jit.su/">The Nodejitsu Cheatsheet</a></li>
+<li><a href="http://blog.nodejitsu.com/npm-cheatsheet">The NPM Cheatsheet</a></li>
+<li><a href="http://package.json.jit.su/">The package.json Reference</a></li>
+<li><a href="http://dns.jit.su">How To Set Up Custom DNS</a></li>
+<li><a href="https://github.com/nodejitsu/handbook/blob/master/API.md">API Documentation</a></li>
+<li><a href="https://github.com/nodejitsu/handbook/blob/master/book.md#apx:build">How To Build The Handbook</a></li>
+</ul>
+
 
 </div>
 <div class='mp'>
@@ -58,7 +74,7 @@ detailed information about Nodejitsu's platform-specific features and about
 where to get help when you need it.</p>
 
 <p>This is a living document which you can submit patches to at
-<a data-bare-link="true" href="http://github.com/nodejitsu/handbook">http://github.com/nodejitsu/handbook</a>.</p>
+<a href="http://github.com/nodejitsu/handbook" data-bare-link="true">http://github.com/nodejitsu/handbook</a>.</p>
 
 <h2 id="Who-Is-Nodejitsu-">Who Is Nodejitsu?</h2>
 
@@ -67,8 +83,8 @@ community since 2009. We are community leaders who have created and contributed 
 hundreds of open-source Node.js projects. If you have used Node.js, you've
 probably used some of the projects we've helped create.</p>
 
-<p>You can find our open source projects at <a data-bare-link="true" href="https://github.com/nodejitsu">https://github.com/nodejitsu</a>, <a data-bare-link="true" href="https://github.com/flatiron">https://github.com/flatiron</a>,
-<a data-bare-link="true" href="https://github.com/hookio">https://github.com/hookio</a>, and <a data-bare-link="true" href="https://github.com/nodeapps">https://github.com/nodeapps</a>.</p>
+<p>You can find our open source projects at <a href="https://github.com/nodejitsu" data-bare-link="true">https://github.com/nodejitsu</a>, <a href="https://github.com/flatiron" data-bare-link="true">https://github.com/flatiron</a>,
+<a href="https://github.com/hookio" data-bare-link="true">https://github.com/hookio</a>, and <a href="https://github.com/nodeapps" data-bare-link="true">https://github.com/nodeapps</a>.</p>
 
 <h2 id="What-Is-Nodejitsu-">What Is Nodejitsu?</h2>
 
@@ -88,15 +104,15 @@ three things to get started:</p>
 <li><p>We're <a href="http://nodejitsu.com">Nodejitsu</a>, and we can give you scalable,
 fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll
 find.</p></li>
-<li><p>Getting started with <a data-bare-link="true" href="#hiworld">your first app</a> is simple with our
-<a data-bare-link="true" href="#jitsu">jitsu</a> command-line interface - we'll <a data-bare-link="true" href="#hiworld">show you how</a>.</p></li>
+<li><p>Getting started with <a href="#hiworld" data-bare-link="true">your first app</a> is simple with our
+<a href="#jitsu" data-bare-link="true">jitsu</a> command-line interface - we'll <a href="#hiworld" data-bare-link="true">show you how</a>.</p></li>
 <li><p>Most of our stack is <a href="http://github.com/nodejitsu">open source</a> and you can
-<a data-bare-link="true" href="#opensource">use our tools</a> anywhere else you'd like to.</p></li>
+<a href="#opensource" data-bare-link="true">use our tools</a> anywhere else you'd like to.</p></li>
 </ul>
 
 
-<p>The Nodejitsu Handbook also contains information on <a data-bare-link="true" href="#deployment">other ways to deploy your
-applications</a> and where to <a data-bare-link="true" href="#support">find support</a>.</p>
+<p>The Nodejitsu Handbook also contains information on <a href="#deployment" data-bare-link="true">other ways to deploy your
+applications</a> and where to <a href="#support" data-bare-link="true">find support</a>.</p>
 
 </div>
 <div class='mp'>
@@ -212,10 +228,10 @@ also has snapshot management, database hosting and connectivity, and more!</p>
 <p>There are three main tools for deploying and managing applications to Nodejitsu:</p>
 
 <ul>
-<li><a data-bare-link="true" href="#jitsu">Jitsu</a>, The Nodejitsu command line tool</li>
-<li>The Nodejitsu <a data-bare-link="true" href="#web_admin">Web Application</a>, An easy to use web interface for
+<li><a href="#jitsu" data-bare-link="true">Jitsu</a>, The Nodejitsu command line tool</li>
+<li>The Nodejitsu <a href="#web_admin" data-bare-link="true">Web Application</a>, An easy to use web interface for
 managing your applications</li>
-<li>Nodejitsu's JSON <a data-bare-link="true" href="#json_api">API</a></li>
+<li>Nodejitsu's JSON <a href="#json_api" data-bare-link="true">API</a></li>
 </ul>
 
 
@@ -279,7 +295,7 @@ environment. <em>During a deploy, nodejitsu will create a new snapshot automatic
 <h3 id="Creating-new-Databases">Creating new Databases</h3>
 
 <p>If you require database hosting you can create a new database instance of any
-of our supported databases using <a data-bare-link="true" href="#jitsu">jitsu</a> or Nodejitsu's <a data-bare-link="true" href="#api">API</a>. Cloud database hosting is currently provided by <a href="http://www.iriscouch.com">IrisCouch</a>, <a href="http://redistogo.com">RedisToGo</a> and <a href="https://www.mongohq.com">MongoHQ</a>.</p>
+of our supported databases using <a href="#jitsu" data-bare-link="true">jitsu</a> or Nodejitsu's <a href="#api" data-bare-link="true">API</a>. Cloud database hosting is currently provided by <a href="http://www.iriscouch.com">IrisCouch</a>, <a href="http://redistogo.com">RedisToGo</a> and <a href="https://www.mongohq.com">MongoHQ</a>.</p>
 
 <h3 id="Existing-Databases">Existing Databases</h3>
 
@@ -434,7 +450,7 @@ prompt.</p>
 
 <h2 id="SSL-on-nodejitsu-com-subdomains">SSL on nodejitsu.com subdomains</h2>
 
-<p>Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomains automatically! For example, the app behind <a data-bare-link="true" href="http://nodejitsu.com">http://nodejitsu.com</a> is serving http, but visiting <a data-bare-link="true" href="https://nodejitsu.com">https://nodejitsu.com</a> works without any special action on our part.</p>
+<p>Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomains automatically! For example, the app behind <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a> is serving http, but visiting <a href="https://nodejitsu.com" data-bare-link="true">https://nodejitsu.com</a> works without any special action on our part.</p>
 
 <p>Please note that this only works with <code>nodejitsu.com</code> (not <code>jitsu.com</code> or <code>jit.su</code>) at this time.</p>
 
@@ -442,7 +458,7 @@ prompt.</p>
 
 <p>We allow users to host their applications on custom domains by specifying their
 app's domains in their <code>package.json</code> and then properly configuring their DNS.
-If you'd like to know how, just read the instructions at <a data-bare-link="true" href="http://dns.jit.su">http://dns.jit.su</a>!</p>
+If you'd like to know how, just read the instructions at <a href="http://dns.jit.su" data-bare-link="true">http://dns.jit.su</a>!</p>
 
 <h3 id="SSL-Certificates-for-Custom-Domains">SSL Certificates for Custom Domains</h3>
 
@@ -622,9 +638,9 @@ bin  node_modules  package.json  ReadMe.md
 <p><a name="webapp"></a></p>
 
 <p>The Nodejitsu Web Application allows developers to administrate their
-applications through a web interface. This interface allows access to the same deployment functionality that can be found in <a href="#jitsu" data-bare-link="true">jitsu</a> or the <a href="#api" data-bare-link="true">JSON API</a>.</p>
+applications through a web interface. This interface allows access to the same deployment functionality that can be found in <a data-bare-link="true" href="#jitsu">jitsu</a> or the <a data-bare-link="true" href="#api">JSON API</a>.</p>
 
-<p>The web admin interface may be found at <a href="http://develop.nodejitsu.com" data-bare-link="true">http://develop.nodejitsu.com</a>.</p>
+<p>The web admin interface may be found at <a data-bare-link="true" href="http://develop.nodejitsu.com">http://develop.nodejitsu.com</a>.</p>
 
 </div>
 <div class='mp'>
@@ -636,8 +652,8 @@ Nodejitsu platform programatically. This API is built to be
 <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTful</a> and
 communicates via <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>. The API is the most
 low-level way of interacting with the Nodejitsu platform. For most deployment
-scenarios you should use our command line tool, <a data-bare-link="true" href="#jitsu">jitsu</a>, or the
-<a data-bare-link="true" href="#webapp">online administrative interface</a>.</p>
+scenarios you should use our command line tool, <a href="#jitsu" data-bare-link="true">jitsu</a>, or the
+<a href="#webapp" data-bare-link="true">online administrative interface</a>.</p>
 
 <h2 id="API-Clients">API Clients</h2>
 
@@ -645,7 +661,7 @@ scenarios you should use our command line tool, <a data-bare-link="true" href="#
 
 <h2 id="Authentication">Authentication</h2>
 
-<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, the <a data-bare-link="true" href="#jitsu">jitsu CLI</a>, or just by visiting <a data-bare-link="true" href="http://nodejitsu.com">http://nodejitsu.com</a>. Currently, we support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a>. If you haven't used Basic Auth before, don't fret; it's easy!</p>
+<p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, the <a href="#jitsu" data-bare-link="true">jitsu CLI</a>, or just by visiting <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a>. Currently, we support <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a>. If you haven't used Basic Auth before, don't fret; it's easy!</p>
 
 <p>Here is an example using the command line utility,
 <a href="http://curl.haxx.se/">Curl</a>:</p>
@@ -656,7 +672,7 @@ scenarios you should use our command line tool, <a data-bare-link="true" href="#
 
 <h2 id="Applications">Applications</h2>
 
-<p>Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings and authors. For more information about the package.json format see: <a data-bare-link="true" href="#package_json">package.json</a></p>
+<p>Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings and authors. For more information about the package.json format see: <a href="#package_json" data-bare-link="true">package.json</a></p>
 
 <h3 id="Get-all-Applications-for-a-User">Get all Applications for a User</h3>
 
@@ -975,8 +991,8 @@ turnaround on all issues you may have!</p>
 <h2 id="IRC-and-Kohai">IRC and Kohai</h2>
 
 <p>Nodejitsu has a channel on freenode at
-<a href="irc://irc.freenode.net/#nodejitsu" data-bare-link="true">irc://irc.freenode.net/#nodejitsu</a>
-(<a href="http://webchat.jit.su" data-bare-link="true">http://webchat.jit.su</a>), where Nodejitsu
+<a data-bare-link="true" href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>
+(<a data-bare-link="true" href="http://webchat.jit.su">http://webchat.jit.su</a>), where Nodejitsu
 staff are standing by to support users around the clock. Drop by to ask
 questions, get assistance or even just to hang out!</p>
 
@@ -990,7 +1006,7 @@ the #nodejitsu channel and Kohai will message you.</p>
 related software problems. Github Issues is most useful for developers. For
 example, if a developer finds a bug in our open-source
 <a href="https://github.com/nodejitsu/node-http-proxy">http proxy</a>, they can submit an
-issue at <a href="https://github.com/nodejitsu/node-http-proxy/issues" data-bare-link="true">https://github.com/nodejitsu/node-http-proxy/issues</a> and tell us about
+issue at <a data-bare-link="true" href="https://github.com/nodejitsu/node-http-proxy/issues">https://github.com/nodejitsu/node-http-proxy/issues</a> and tell us about
 their bug.</p>
 
 </div>
@@ -1018,7 +1034,7 @@ their bug.</p>
 
 <h2 id="Preparing-a-package-json-for-your-application">Preparing a package.json for your application</h2>
 
-<p>Nodejitsu requires that you create a valid <a href="#package_json" data-bare-link="true">package.json</a> for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when constructing your package.json file, we provide wizards in our CLI tool and on our website for creating one.</p>
+<p>Nodejitsu requires that you create a valid <a data-bare-link="true" href="#package_json">package.json</a> for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when constructing your package.json file, we provide wizards in our CLI tool and on our website for creating one.</p>
 
 <p>Here is an example of what your package.json might look like:</p>
 
@@ -1061,7 +1077,7 @@ their bug.</p>
 
 <ul>
 <li><em>subdomain</em>: Specify the subdomain for your hosted app's nodejitsu url (for example, <code>subdomain.nodejitsu.com</code>.</li>
-<li><em>domains</em>: A list of custom domains for your hosted app. See <a href="http://dns.nodejitsu.com" data-bare-link="true">http://dns.nodejitsu.com</a>.</li>
+<li><em>domains</em>: A list of custom domains for your hosted app. See <a data-bare-link="true" href="http://dns.nodejitsu.com">http://dns.nodejitsu.com</a>.</li>
 <li><em>env</em>: Specify environment variables for your app (for example, NODE_ENV="production" is set by default).</li>
 <li><em>scripts.start</em>: This field is also used for <code>npm start</code>. However, nodejitsu's current implementation takes a path, whereas npm's implementation takes a shell command.</li>
 <li><em>analyze</em>: Set this to "false" to force jitsu to not analyze for the app's dependencies.</li>
@@ -1087,11 +1103,11 @@ Node.js issues and concerns you may have.</li>
 <li><a href="http://twitter.com/#!/NodeKohai">@NodeKohai on Twitter</a> is an irc bot that
 shares Node.js tweets with the #nodejitsu irc channel. Ask it a quick question
 and it just might give you an answer!</li>
-<li><a data-bare-link="true" href="http://npmjs.org">http://npmjs.org</a> is a great place to check for modules that might
+<li><a href="http://npmjs.org" data-bare-link="true">http://npmjs.org</a> is a great place to check for modules that might
 already solve your problem.</li>
-<li><a data-bare-link="true" href="http://cheatsheet.jit.su">http://cheatsheet.jit.su</a> is a nodejitsu cheatsheet listing the most common commands.</li>
-<li><a data-bare-link="true" href="http://package.json.jit.su">http://package.json.jit.su</a> is an interactive reference for the package.json format.</li>
-<li><a data-bare-link="true" href="http://blog.nodejitsu.com/npm-cheatsheet">http://blog.nodejitsu.com/npm-cheatsheet</a> is a quick cheatsheet for npm commands.</li>
+<li><a href="http://cheatsheet.jit.su" data-bare-link="true">http://cheatsheet.jit.su</a> is a nodejitsu cheatsheet listing the most common commands.</li>
+<li><a href="http://package.json.jit.su" data-bare-link="true">http://package.json.jit.su</a> is an interactive reference for the package.json format.</li>
+<li><a href="http://blog.nodejitsu.com/npm-cheatsheet" data-bare-link="true">http://blog.nodejitsu.com/npm-cheatsheet</a> is a quick cheatsheet for npm commands.</li>
 </ul>
 
 
