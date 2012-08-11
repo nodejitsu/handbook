@@ -175,7 +175,7 @@ You can connect to your redis with the `redis-cli` cli client:
 or with the `redis` module:
 
     var redis = require('redis');
-    var client = redis.createClient('subdomain.redistogo.com, 5309);
+    var client = redis.createClient(5309, 'subdomain.redistogo.com');
     client.auth('pass', function (err) {
       if (err) { throw err; }
       // You are now authed with your redis.
