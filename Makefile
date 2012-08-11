@@ -48,6 +48,11 @@ all: book.html book.pdf book.md ReadMe.md API.md website clear
 regenerate: clean all
 	git commit -a -m '[dist] Regenerated handbook' && echo done
 
+publish: clean all
+	git commit -am '[dist] Regenerated handbook'
+	git push origin master
+	./bin/deploy.sh
+
 book.pdf: $(HTML)
 	@echo "\n... generating $@"
 	htmldoc --webpage -f $@ $(PDF_FLAGS) $(HTML)
