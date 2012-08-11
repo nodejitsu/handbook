@@ -2,7 +2,7 @@
   "author": "Nodejitsu <support@nodejitsu.com> (http://nodejitsu.com)",
   "name": "handbook",
   "description": "A gentle introduction to the art of nodejitsu",
-  "version": "0.2.0-1",
+  "version": "0.2.0-2",
   "subdomain": "handbook",
   "homepage": "http://handbook.jit.su",
   "repository": {
@@ -13,7 +13,6 @@
     "http-server": "~0.5.1"
   },
   "scripts": {
-    "install": "make",
     "start": "node ./bin/server"
   },
   "engines": {
