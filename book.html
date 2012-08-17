@@ -18,11 +18,11 @@
       a {
         color: #000000;
       }
-      
+
       a:hover {
         color: blue;
       }
-      
+
     </style>
   </head>
   <body><div class='mp'>
@@ -141,7 +141,7 @@ var http = require('http');
 http.createServer(function (req, res) {
   // this is the callback, or request handler for the httpServer
 
-  // respond to the browser, write some headers so the 
+  // respond to the browser, write some headers so the
   // browser knows what type of content we are sending
   res.writeHead(200, {'Content-Type': 'text/html'});
 
@@ -208,8 +208,8 @@ prompted for some information such as <em><u>your app's name</u></em>, its
 only take a few seconds.</p>
 
 <pre><code>prompt: subdomain (myapp): myapp
-prompt: scripts.start (server.js): 
-prompt: version (0.0.0): 
+prompt: scripts.start (server.js):
+prompt: version (0.0.0):
 </code></pre>
 
 <p>Now just open up your favorite browser, and go to
@@ -545,21 +545,21 @@ any given resource or resource/action pair. for instance:</p>
 info:   Welcome to Nodejitsu
 info:   It worked if it ends with Nodejitsu ok
 info:   Executing command help apps deploy
-help:   
-help:   
+help:
+help:
 help:   Deploys an application using the following steps:
-help:   
+help:
 help:     1. Creates the application (if necessary)
 help:     2. Creates or validates the package.json
 help:     3. Packages and creates a new snapshot
 help:     4. Stops the application (if neccessary)
 help:     5. Starts the application
-help:   
+help:
 help:   jitsu deploy
 help:   jitsu apps deploy
-help:   
+help:
 info:   Nodejitsu ok
-josh@pidgey:~$ 
+josh@pidgey:~$
 </code></pre>
 
 <p>If no resource and/or action are specified, then <code>jitsu help</code> alone will
@@ -667,7 +667,7 @@ scenarios you should use our command line tool, <a href="#jitsu" data-bare-link=
 <a href="http://curl.haxx.se/">Curl</a>:</p>
 
 <pre><code> // get all applications for User "Marak"
- curl --user Marak:password http://api.nodejitsu.com/apps/marak
+ curl --user Marak:password https://api.nodejitsu.com/apps/marak
 </code></pre>
 
 <h2 id="Applications">Applications</h2>
@@ -796,7 +796,7 @@ applications. Your logs are always saved and ready to be retrieved.</p>
   "from": "NOW-3YEARS",
   "until": "NOW",
   "rows": 15
-} 
+}
 </code></pre>
 
 <h3 id="Get-logs-for-a-specific-application">Get logs for a specific application</h3>
@@ -806,7 +806,7 @@ applications. Your logs are always saved and ready to be retrieved.</p>
   "from": "NOW-3YEARS",
   "until": "NOW",
   "rows": 15
-} 
+}
 </code></pre>
 
 <h2 id="Marketplace">Marketplace</h2>
@@ -858,12 +858,12 @@ haibu comes with a high-level Node.js API client.</p>
 
 <p>To start haibu, all you have to do is run <code>haibu</code>:</p>
 
-<pre><code>$ haibu 
-      __                  __               
-     / /_    ______  __  / /_     __  __   
-    / __ \  / __  / / / /  __ \  / / / /   
-   / / / / / /_/ / / / /  /_/ / / /_/ /    
-  /_/ /_/  \__,_/ /_/ /_/\___/  \__,_/     
+<pre><code>$ haibu
+      __                  __
+     / /_    ______  __  / /_     __  __
+    / __ \  / __  / / / /  __ \  / / / /
+   / / / / / /_/ / / / /  /_/ / / /_/ /
+  /_/ /_/  \__,_/ /_/ /_/\___/  \__,_/
 
   This is Open Source Software available under
   the MIT License.
