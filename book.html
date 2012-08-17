@@ -26,7 +26,7 @@
     </style>
   </head>
   <body><div class='mp'>
-<h1><p><a href="https://github.com/nodejitsu/handbook/"><img alt="Fork me on GitHub" style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" /></a></p>
+<h1><p><a href="https://github.com/nodejitsu/handbook/"><img style="position: absolute; top: 0; right: 0; border: 0;" alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" /></a></p>
 
 The Nodejitsu Handbook</h1>
 <p><em>A gentle introduction to the art of Nodejitsu</em></p>
@@ -184,13 +184,13 @@ Plus, it's what's in the tutorial.</p>
 <p>This command will install jitsu on your system; the <code>-g</code> makes npm install it
 globally, rather than as a local module.</p>
 
-<p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png" alt="" /></p>
+<p><img alt="" src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png" /></p>
 
 <p>After installation, run the <code>jitsu</code> command from your command line. Since it's
 your first time using jitsu, you will be prompted to log in with an existing
 account or to create a new account.</p>
 
-<p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png" alt="" /></p>
+<p><img alt="" src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png" /></p>
 
 <p><strong>Once you've logged in, you can deploy your app immediately.</strong></p>
 
@@ -230,10 +230,10 @@ also has snapshot management, database hosting and connectivity, and more!</p>
 <p>There are three main tools for deploying and managing applications to Nodejitsu:</p>
 
 <ul>
-<li><a href="#jitsu" data-bare-link="true">Jitsu</a>, The Nodejitsu command line tool</li>
-<li>The Nodejitsu <a href="#web_admin" data-bare-link="true">Web Application</a>, An easy to use web interface for
+<li><a data-bare-link="true" href="#jitsu">Jitsu</a>, The Nodejitsu command line tool</li>
+<li>The Nodejitsu <a data-bare-link="true" href="#web_admin">Web Application</a>, An easy to use web interface for
 managing your applications</li>
-<li>Nodejitsu's JSON <a href="#json_api" data-bare-link="true">API</a></li>
+<li>Nodejitsu's JSON <a data-bare-link="true" href="#json_api">API</a></li>
 </ul>
 
 
@@ -303,7 +303,7 @@ database hosting.</p>
 <h3 id="Creating-new-Databases">Creating new Databases</h3>
 
 <p>If you require database hosting you can create a new database instance of any
-of our supported databases using <a href="#jitsu" data-bare-link="true">jitsu</a> or Nodejitsu's <a href="#api" data-bare-link="true">API</a>.
+of our supported databases using <a data-bare-link="true" href="#jitsu">jitsu</a> or Nodejitsu's <a data-bare-link="true" href="#api">API</a>.
 Cloud database hosting is currently provided by
 <a href="http://www.iriscouch.com">IrisCouch</a>, <a href="http://redistogo.com">RedisToGo</a>
 and <a href="https://www.mongohq.com">MongoHQ</a>.</p>
@@ -461,17 +461,20 @@ prompt.</p>
 
 <h2 id="SSL-on-nodejitsu-com-subdomains">SSL on nodejitsu.com subdomains</h2>
 
-<p>Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomains automatically! For example, the app behind <a href="http://nodejitsu.com" data-bare-link="true">http://nodejitsu.com</a> is serving http, but visiting <a href="https://nodejitsu.com" data-bare-link="true">https://nodejitsu.com</a> works without any special action on our part.</p>
+<p>Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomains automatically! For example, the app behind <a data-bare-link="true" href="http://nodejitsu.com">http://nodejitsu.com</a> is serving http, but visiting <a data-bare-link="true" href="https://nodejitsu.com">https://nodejitsu.com</a> works without any special action on our part.</p>
 
 <p>Please note that this only works with <code>nodejitsu.com</code> (not <code>jitsu.com</code> or <code>jit.su</code>) at this time.</p>
 
-<p>If you need to identify if yo uare recieving http or https traffic use the <code>x-forwarded-proto</code> response header value, see <a href="http://headers.jit.su/">headers.jit.su</a> for more information on headers passed through the balancers.</p>
+<p>If you need to identify if you are receiving http or https traffic use the
+<code>x-forwarded-proto</code> response header value, see
+<a href="http://headers.jit.su/">headers.jit.su</a> for more information on headers
+passed through the balancers.</p>
 
 <h2 id="Custom-Domains">Custom Domains</h2>
 
 <p>We allow users to host their applications on custom domains by specifying their
 app's domains in their <code>package.json</code> and then properly configuring their DNS.
-If you'd like to know how, just read the instructions at <a href="http://dns.jit.su" data-bare-link="true">http://dns.jit.su</a>!</p>
+If you'd like to know how, just read the instructions at <a data-bare-link="true" href="http://dns.jit.su">http://dns.jit.su</a>!</p>
 
 <h3 id="SSL-Certificates-for-Custom-Domains">SSL Certificates for Custom Domains</h3>
 
@@ -651,9 +654,9 @@ bin  node_modules  package.json  ReadMe.md
 <p><a name="webapp"></a></p>
 
 <p>The Nodejitsu Web Application allows developers to administrate their
-applications through a web interface. This interface allows access to the same deployment functionality that can be found in <a href="#jitsu" data-bare-link="true">jitsu</a> or the <a href="#api" data-bare-link="true">JSON API</a>.</p>
+applications through a web interface. This interface allows access to the same deployment functionality that can be found in <a data-bare-link="true" href="#jitsu">jitsu</a> or the <a data-bare-link="true" href="#api">JSON API</a>.</p>
 
-<p>The web admin interface may be found at <a href="http://develop.nodejitsu.com" data-bare-link="true">http://develop.nodejitsu.com</a>.</p>
+<p>The web admin interface may be found at <a data-bare-link="true" href="http://develop.nodejitsu.com">http://develop.nodejitsu.com</a>.</p>
 
 </div>
 <div class='mp'>
@@ -974,6 +977,10 @@ open source developer could need.</p>
 </ul>
 
 
+<h2 id="-How-Do-I-add-my-GitHub-repository-as-a-dependency-">"How Do I add my GitHub repository as a dependency?"</h2>
+
+<p>Use the following format: <code>https://github.com/:user/:repo/tarball/:branch</code></p>
+
 <h2 id="-Why-won-t-this-C-addon-compile-">"Why won't this C++ addon compile?"</h2>
 
 <p>Many <a href="http://nodejs.org/docs/latest/api/addons.html">C++ addons</a> require libraries that are not included in Nodejitsu's infrastructure by default. For example, <a href="https://github.com/learnboost/node-canvas">node-canvas</a> requires <a href="http://cairographics.org/">cairo</a>. Nodejitsu has cairo and many other such libraries, but may not have some more obscure ones.</p>
@@ -999,10 +1006,10 @@ turnaround on all issues you may have!</p>
 <p>The following can be extremely helpful for the support team if you have them ahead of time:</p>
 
 <ol>
-<li>username/appname</li>
-<li>A <a href="https://gist.github.com/">gist</a> of your package.json file</li>
-<li>A <a href="https://gist.github.com/">gist</a> of your command/action and error output file</li>
-<li>Versions of tools and apps; <code>jitsu -v</code>, <code>node -v</code>, <code>npm -v</code></li>
+<li>username/appname.</li>
+<li>A <a href="https://gist.github.com/">gist</a> of your package.json file.</li>
+<li>A <a href="https://gist.github.com/">gist</a> of your command/action and error output.</li>
+<li>Versions of tools and apps; <code>jitsu -v</code>, <code>node -v</code>, <code>npm -v</code>.</li>
 <li>The platform you are working on--Linux, Mac, Windows, etc.</li>
 </ol>
 

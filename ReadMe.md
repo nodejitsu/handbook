@@ -411,7 +411,10 @@ Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomain
 
 Please note that this only works with `nodejitsu.com` (not `jitsu.com` or `jit.su`) at this time.
 
-If you need to identify if yo uare recieving http or https traffic use the `x-forwarded-proto` response header value, see [headers.jit.su](http://headers.jit.su/) for more information on headers passed through the balancers.
+If you need to identify if you are receiving http or https traffic use the 
+`x-forwarded-proto` response header value, see 
+[headers.jit.su](http://headers.jit.su/) for more information on headers 
+passed through the balancers.
 
 ## Custom Domains
 
@@ -863,6 +866,10 @@ There are three ways to disable the require-analyzer:
 * Add `"analyze": false` to your package.json to disable it on a per-app basis.
 * Set "analyze" to `false` in your `~/.jitsuconf` to disable it on a global level.
 
+## "How Do I add my GitHub repository as a dependency?"
+
+Use the following format: `https://github.com/:user/:repo/tarball/:branch`
+
 ## "Why won't this C++ addon compile?"
 
 Many [C++ addons](http://nodejs.org/docs/latest/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/). Nodejitsu has cairo and many other such libraries, but may not have some more obscure ones.
@@ -885,10 +892,10 @@ turnaround on all issues you may have!
 
 The following can be extremely helpful for the support team if you have them ahead of time:
 
-1. username/appname
-1. A [gist](https://gist.github.com/) of your package.json file
-1. A [gist](https://gist.github.com/) of your command/action and error output file
-1. Versions of tools and apps; `jitsu -v`, `node -v`, `npm -v`
+1. username/appname.
+1. A [gist](https://gist.github.com/) of your package.json file.
+1. A [gist](https://gist.github.com/) of your command/action and error output.
+1. Versions of tools and apps; `jitsu -v`, `node -v`, `npm -v`.
 1. The platform you are working on--Linux, Mac, Windows, etc.
 
 ## E-mail
