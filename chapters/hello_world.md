@@ -10,7 +10,7 @@ a node.js version older than v0.6.0 (not recommended) you will also need to
 separately install 
 [Node Package Manager](https://github.com/isaacs/npm/#readme) (npm).
 
-## Write A Server:
+## Write A Server
 
 Let's start with a very basic Node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
@@ -33,14 +33,14 @@ this file, write the following code:
       
       // close the response
       res.end();
-    }).listen(80); // the server will listen on port 80
+    }).listen(8080); // the server will listen on port 8080
 
 
 
 That's all the code you'll need for starters. Save your server and get ready to
 deploy!
 
-## Deploy with Jitsu:
+## Deploy with Jitsu
 
 In this tutorial, we will use [jitsu](http://github.com/nodejitsu/jitsu) to deploy
 our "hello world" application. Jitsu is a

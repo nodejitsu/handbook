@@ -63,12 +63,21 @@ Jitsu commands for snapshot management include:
 ## Databases
 <a name='features/databases'></a>
 
-Applications on Nodejitsu are ready to be connected to any database. If you already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
+Applications on Nodejitsu are ready to be connected to any database. If you
+already have a database running, Nodejitsu can connect to your pre-existing
+database. If you require a new database, Nodejitsu can provide you *free*
+instances of several different types of databases. These free instances are
+great for development purposes or hobby sites. If you require a high traffic
+or production database we provide an easy upgrade path to industrial strength
+database hosting.
 
 ### Creating new Databases
 
 If you require database hosting you can create a new database instance of any
-of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](#api). Cloud database hosting is currently provided by [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and [MongoHQ](https://www.mongohq.com).
+of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](#api).
+Cloud database hosting is currently provided by 
+[IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) 
+and [MongoHQ](https://www.mongohq.com).
 
 ### Existing Databases
 
@@ -218,6 +227,8 @@ This will set the environment variable $NODE_ENV to have the string value
 Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomains automatically! For example, the app behind [http://nodejitsu.com](http://nodejitsu.com) is serving http, but visiting [https://nodejitsu.com](https://nodejitsu.com) works without any special action on our part.
 
 Please note that this only works with `nodejitsu.com` (not `jitsu.com` or `jit.su`) at this time.
+
+If you need to identify if yo uare recieving http or https traffic use the `x-forwarded-proto` response header value, see [headers.jit.su](http://headers.jit.su/) for more information on headers passed through the balancers.
 
 ## Custom Domains
 

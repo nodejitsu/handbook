@@ -8,6 +8,8 @@ where to get help when you need it.
 
 This is a living document which you can submit patches to at
 [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
+Note that this ReadMe.md file is generated from the individual content files in the
+`/chapters` folder, so any edits should be made to those source files, not `book.md`.
 
 ## Who Is Nodejitsu?
 

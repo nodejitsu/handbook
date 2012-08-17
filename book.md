@@ -40,6 +40,8 @@ where to get help when you need it.
 
 This is a living document which you can submit patches to at
 [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook).
+Note that this ReadMe.md file is generated from the individual content files in the
+`/chapters` folder, so any edits should be made to those source files, not `book.md`.
 
 ## Who Is Nodejitsu?
 
@@ -90,7 +92,7 @@ a node.js version older than v0.6.0 (not recommended) you will also need to
 separately install 
 [Node Package Manager](https://github.com/isaacs/npm/#readme) (npm).
 
-## Write A Server:
+## Write A Server
 
 Let's start with a very basic Node.js http server. Create a folder called
 `myapp/` and then create a file inside the folder called `server.js`. Inside
@@ -113,14 +115,14 @@ this file, write the following code:
       
       // close the response
       res.end();
-    }).listen(80); // the server will listen on port 80
+    }).listen(8080); // the server will listen on port 8080
 
 
 
 That's all the code you'll need for starters. Save your server and get ready to
 deploy!
 
-## Deploy with Jitsu:
+## Deploy with Jitsu
 
 In this tutorial, we will use [jitsu](http://github.com/nodejitsu/jitsu) to deploy
 our "hello world" application. Jitsu is a
@@ -244,12 +246,21 @@ Jitsu commands for snapshot management include:
 ## Databases
 <a name='features/databases'></a>
 
-Applications on Nodejitsu are ready to be connected to any database. If you already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
+Applications on Nodejitsu are ready to be connected to any database. If you
+already have a database running, Nodejitsu can connect to your pre-existing
+database. If you require a new database, Nodejitsu can provide you *free*
+instances of several different types of databases. These free instances are
+great for development purposes or hobby sites. If you require a high traffic
+or production database we provide an easy upgrade path to industrial strength
+database hosting.
 
 ### Creating new Databases
 
 If you require database hosting you can create a new database instance of any
-of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](#api). Cloud database hosting is currently provided by [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and [MongoHQ](https://www.mongohq.com).
+of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](#api).
+Cloud database hosting is currently provided by 
+[IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) 
+and [MongoHQ](https://www.mongohq.com).
 
 ### Existing Databases
 
@@ -399,6 +410,8 @@ This will set the environment variable $NODE_ENV to have the string value
 Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomains automatically! For example, the app behind [http://nodejitsu.com](http://nodejitsu.com) is serving http, but visiting [https://nodejitsu.com](https://nodejitsu.com) works without any special action on our part.
 
 Please note that this only works with `nodejitsu.com` (not `jitsu.com` or `jit.su`) at this time.
+
+If you need to identify if yo uare recieving http or https traffic use the `x-forwarded-proto` response header value, see [headers.jit.su](http://headers.jit.su/) for more information on headers passed through the balancers.
 
 ## Custom Domains
 
@@ -870,6 +883,14 @@ they may come across while deploying and administrating their web applications
 on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
 turnaround on all issues you may have!
 
+The following can be extremely helpful for the support team if you have them ahead of time:
+
+1. username/appname
+1. A [gist](https://gist.github.com/) of your package.json file
+1. A [gist](https://gist.github.com/) of your command/action and error output file
+1. Versions of tools and apps; `jitsu -v`, `node -v`, `npm -v`
+1. The platform you are working on--Linux, Mac, Windows, etc.
+
 ## E-mail
 
 You can also contact us via email, at
@@ -881,7 +902,7 @@ Nodejitsu has a channel on freenode at
 <a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>
 ([http://webchat.jit.su](http://webchat.jit.su)), where Nodejitsu
 staff are standing by to support users around the clock. Drop by to ask
-questions, get assistance or even just to hang out!
+questions, get assistance, or even just to hang out!
 
 [Kohai](https://github.com/nodejitsu/kohai) is an IRC bot that has some basic abilities
 to help you among other features. To bring up his help dialogue just type `!help` into

@@ -6,6 +6,14 @@ they may come across while deploying and administrating their web applications
 on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast
 turnaround on all issues you may have!
 
+The following can be extremely helpful for the support team if you have them ahead of time:
+
+1. username/appname
+1. A [gist](https://gist.github.com/) of your package.json file
+1. A [gist](https://gist.github.com/) of your command/action and error output file
+1. Versions of tools and apps; `jitsu -v`, `node -v`, `npm -v`
+1. The platform you are working on--Linux, Mac, Windows, etc.
+
 ## E-mail
 
 You can also contact us via email, at
@@ -17,7 +25,7 @@ Nodejitsu has a channel on freenode at
 <a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>
 ([http://webchat.jit.su](http://webchat.jit.su)), where Nodejitsu
 staff are standing by to support users around the clock. Drop by to ask
-questions, get assistance or even just to hang out!
+questions, get assistance, or even just to hang out!
 
 [Kohai](https://github.com/nodejitsu/kohai) is an IRC bot that has some basic abilities
 to help you among other features. To bring up his help dialogue just type `!help` into
