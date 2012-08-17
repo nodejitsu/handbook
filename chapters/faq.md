@@ -33,6 +33,10 @@ There are three ways to disable the require-analyzer:
 * Add `"analyze": false` to your package.json to disable it on a per-app basis.
 * Set "analyze" to `false` in your `~/.jitsuconf` to disable it on a global level.
 
+## "How Do I add my GitHub repository as a dependency?"
+
+Use the following format: `https://github.com/:user/:repo/tarball/:branch`
+
 ## "Why won't this C++ addon compile?"
 
 Many [C++ addons](http://nodejs.org/docs/latest/api/addons.html) require libraries that are not included in Nodejitsu's infrastructure by default. For example, [node-canvas](https://github.com/learnboost/node-canvas) requires [cairo](http://cairographics.org/). Nodejitsu has cairo and many other such libraries, but may not have some more obscure ones.
