@@ -49,7 +49,7 @@ Like the rest of Nodejitsu's features, addon functionality can be accessed using
 Nodejitsu's JSON API. For example, here's what happens when you get 
 `/addons/:user-id`:
 
-    $ curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/
+    $ curl --user 'jesusabdullah:abc123' https://api.nodejitsu.com/addons/jesusabdullah/
 
 
     { "_id": "jesusabdullah",
@@ -66,7 +66,7 @@ Nodejitsu's JSON API. For example, here's what happens when you get
 In order to interact with the MailChimp add-on in particular, use the
 `/addons/:user-id/signups` resource:
 
-    $ curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/signups
+    $ curl --user 'jesusabdullah:abc123' https://api.nodejitsu.com/addons/jesusabdullah/signups
 
 
     { "lists": 
@@ -104,7 +104,7 @@ In order to interact with the MailChimp add-on in particular, use the
 You can use the list ID to access the particular list information with
 `/addons/:user-id/signups/:list-id/`:
 
-    curl --user 'jesusabdullah:abc123' http://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c
+    curl --user 'jesusabdullah:abc123' https://api.nodejitsu.com/addons/jesusabdullah/signups/f3b7d6450c
 
 
     { "total": 2,
