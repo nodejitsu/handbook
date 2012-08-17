@@ -113,7 +113,7 @@ this file, write the following code:
       
       // close the response
       res.end();
-    }).listen(80); // the server will listen on port 80
+    }).listen(3000); // the server will remap the port to 80
 
 
 
