@@ -8,10 +8,10 @@ turnaround on all issues you may have!
 
 The following can be extremely helpful for the support team if you have them ahead of time:
 
-1. username/appname
-1. A [gist](https://gist.github.com/) of your package.json file
-1. A [gist](https://gist.github.com/) of your command/action and error output file
-1. Versions of tools and apps; `jitsu -v`, `node -v`, `npm -v`
+1. username/appname.
+1. A [gist](https://gist.github.com/) of your package.json file.
+1. A [gist](https://gist.github.com/) of your command/action and error output.
+1. Versions of tools and apps; `jitsu -v`, `node -v`, `npm -v`.
 1. The platform you are working on--Linux, Mac, Windows, etc.
 
 ## E-mail

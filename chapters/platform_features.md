@@ -228,7 +228,10 @@ Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomain
 
 Please note that this only works with `nodejitsu.com` (not `jitsu.com` or `jit.su`) at this time.
 
-If you need to identify if yo uare recieving http or https traffic use the `x-forwarded-proto` response header value, see [headers.jit.su](http://headers.jit.su/) for more information on headers passed through the balancers.
+If you need to identify if you are receiving http or https traffic use the 
+`x-forwarded-proto` response header value, see 
+[headers.jit.su](http://headers.jit.su/) for more information on headers 
+passed through the balancers.
 
 ## Custom Domains
 
