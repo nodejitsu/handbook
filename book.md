@@ -858,6 +858,16 @@ Connecting to other servers using arbitrary ports requires no special considerat
 
 The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
 
+## "Can I use jitsu with Cloud9 IDE (<http://c9.io>)?"
+
+Yes! Follow these steps to install jitsu.
+
+1. Install the latest npm globally: `npm install -g npm`
+
+2. Install the latest jitsu locally: `npm install jitsu`
+
+Now you can use jitsu as usual. If you get error, try `npm rm -g jitsu && npm cache clean`.
+
 ## "How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"
 
 There are three ways to disable the require-analyzer:
