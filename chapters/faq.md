@@ -29,19 +29,11 @@ The ability to host tcp applications on nodejitsu and listen on non-80 ports is 
 
 Yes! Follow these steps to install jitsu.
 
-1. Install the latest npm
+1. Install the latest npm globally: `npm install -g npm`
 
-`npm install -g npm`
+2. Install the latest jitsu locally: `npm install jitsu`
 
-2. Install the latest jitsu
-
-`npm install jitsu`
-
-Now you can use jitsu as usual. If you get error, try the following:
-
-`npm rm -g jitsu`
-
-`npm cache clean`
+Now you can use jitsu as usual. If you get error, try `npm rm -g jitsu && npm cache clean`.
 
 ## "How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!"
 
