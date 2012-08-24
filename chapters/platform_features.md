@@ -219,8 +219,9 @@ An Example:
 
 
 This will set the environment variable $NODE_ENV to have the string value 
-"production". Remember, this will not take effect until the app is restarted 
-(`jitsu apps restart`).
+"production". Remember, this will not take effect until the app is started 
+again (`jitsu apps start` -- there is no need to take your app down with a 
+`restart` with the zero downtime deploys).
 
 ## SSL on nodejitsu.com subdomains
 
