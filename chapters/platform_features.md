@@ -43,7 +43,7 @@ application to run on. In order to set your node version, specify it in your
     }
 
 
-If no node engine is specified, jitsu will prompt for it automatically.
+If no node engine is specified, jitsu will prompt for it automatically. Currently Nodejitsu runs node `0.6.x` and `0.8.x`.
 
 ## Snapshots
 <a name='features/snapshots'></a>
