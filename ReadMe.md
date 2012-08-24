@@ -226,7 +226,7 @@ application to run on. In order to set your node version, specify it in your
     }
 
 
-If no node engine is specified, jitsu will prompt for it automatically.
+If no node engine is specified, jitsu will prompt for it automatically. Currently Nodejitsu runs node `0.6.x` and `0.8.x`.
 
 ## Snapshots
 <a name='features/snapshots'></a>
@@ -402,8 +402,9 @@ An Example:
 
 
 This will set the environment variable $NODE_ENV to have the string value 
-"production". Remember, this will not take effect until the app is restarted 
-(`jitsu apps restart`).
+"production". Remember, this will not take effect until the app is started 
+again (`jitsu apps start` -- there is no need to take your app down with a 
+`restart` with the zero downtime deploys).
 
 ## SSL on nodejitsu.com subdomains
 
@@ -481,8 +482,10 @@ following steps:
 1. Creates the application (if necessary)
 2. Creates or validates the package.json
 3. Packages and creates a new snapshot
-4. Stops the application (if necessary)
-5. Starts the application
+4. Starts the application
+
+If you had a previous deployment running, and the most recent deploy failed, your old 
+application will contnue to run without interruption
 
 ### jitsu list (jitsu apps list)
 
@@ -524,6 +527,9 @@ describe what resources are available.
 In addition to the commands aliased to `jitsu create`, `jitsu deploy` and 
 `jitsu list`, the `apps` resource allows you to create, destroy, stop, start and
 otherwise interact with your applications.
+
+If your app is in a stopped state, you will not be charged for it, ever. To put your
+app in a stopped state run `jitsu apps stop <appname>`.
 
 ### jitsu env <action>
 
