@@ -33,8 +33,10 @@ following steps:
 1. Creates the application (if necessary)
 2. Creates or validates the package.json
 3. Packages and creates a new snapshot
-4. Stops the application (if necessary)
-5. Starts the application
+4. Starts the application
+
+If you had a previous deployment running, and the most recent deploy failed, your old 
+application will contnue to run without interruption
 
 ### jitsu list (jitsu apps list)
 
@@ -76,6 +78,9 @@ describe what resources are available.
 In addition to the commands aliased to `jitsu create`, `jitsu deploy` and 
 `jitsu list`, the `apps` resource allows you to create, destroy, stop, start and
 otherwise interact with your applications.
+
+If your app is in a stopped state, you will not be charged for it, ever. To put your
+app in a stopped state run `jitsu apps stop <appname>`.
 
 ### jitsu env <action>
 
