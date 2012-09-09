@@ -184,12 +184,15 @@ You can connect to your redis with the `redis-cli` cli client:
 or with the `redis` module:
 
     var redis = require('redis');
-    var client = redis.createClient(5309, 'subdomain.redistogo.com');
+    var options = { parser: 'javascript' };
+    var client = redis.createClient(5309, 'subdomain.redistogo.com', options);
     client.auth('pass', function (err) {
       if (err) { throw err; }
       // You are now authed with your redis.
     });
 
+**Note:** You have to explicitly tell `node_redis` to use its javascript parser instead of the one written in C, because the latter
+is causing problems on nodejitsu. Check out the other possible options in the [node redis docs](https://github.com/mranney/node_redis#rediscreateclientport-host-options).
 
 ## Environment Variable Management
 
