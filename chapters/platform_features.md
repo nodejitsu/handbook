@@ -191,10 +191,11 @@ or with the `redis` module:
       // You are now authed with your redis.
     });
 
-**Note:** If you are using an older version of `node_redis`, You may have to 
+**Note:** If you are using an older version of `node_redis`(<0.8.0), You may have to 
 explicitly use its javascript parser instead of the optional native module `hiredis` 
 that may be packaged with it, as there are issues compiling on the nodejitsu 
-platform. Check out the other possible options in the 
+platform. Passing `{ parser: 'javascript' }` to `redis.createClient` will ensure 
+usage of the javascript parser. Check out the other possible options in the 
 [node redis docs](https://github.com/mranney/node_redis#rediscreateclientport-host-options).
 
 ## Environment Variable Management
