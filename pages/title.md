@@ -6,7 +6,7 @@
 
 ## Quick Links:
 
-* [The Nodejitsu Handbook (.pdf)](book.pdf)
+* [The Nodejitsu Handbook (.pdf)](http://handbook.jit.su/book.pdf)
 * [Frequently Asked Questions](https://github.com/nodejitsu/handbook/#faq)
 * [The Nodejitsu Cheatsheet](http://cheatsheet.jit.su/)
 * [The NPM Cheatsheet](http://blog.nodejitsu.com/npm-cheatsheet)
