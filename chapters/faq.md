@@ -23,7 +23,7 @@ Nodejitsu's cloud services watch your programs for you! You shouldn't have to do
 
 Connecting to other servers using arbitrary ports requires no special considerations. However, *listening* for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains. Consequentially, each subdomain may only host one listening service.
 
-The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
+The ability to host TCP applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
 
 ## "Can I use jitsu with Cloud9 IDE (<http://c9.io>)?"
 
@@ -59,3 +59,8 @@ In more detail: npm uses a file called `.npmignore`, which should contain a list
 
 Finally, jitsu has the ability to bundle your app without deploying with the `jitsu package create` command. You can use this to make sure that the resulting .tgz file is as you expect.
 
+## "How do I fix `Error: package.json error: can't find starting script`?"
+
+Nodejitsu requires a starting script in the package.json to know which script to run to start your application. You need to make sure that the start.scripts field in your package.json points to the correct starting script.
+
+A common issue is using "node app" as the value of script.start in your package.json. This won't work on Nodejitsu because the file extension is not specified. You'll need to do something along the lines of "node app.js".
