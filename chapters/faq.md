@@ -61,6 +61,6 @@ Finally, jitsu has the ability to bundle your app without deploying with the `ji
 
 ## "How do I fix `Error: package.json error: can't find starting script`?"
 
-Nodejitsu requires a starting script in the package.json to know which script to run to start your application. You need to make sure that the start.scripts field in your package.json points to the correct starting script.
+Nodejitsu requires a starting script in the package.json to know which script to run to start your application. You need to make sure that the scripts.start field in your package.json points to the correct starting script.
 
-A common issue is using "node app" as the value of script.start in your package.json. This won't work on Nodejitsu because the file extension is not specified. You'll need to do something along the lines of "node app.js".
+A common issue is using "node app" as the value of scripts.start in your package.json. This won't work on Nodejitsu because the file extension is not specified. You'll need to do something along the lines of "node app.js".
