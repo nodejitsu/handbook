@@ -25,6 +25,17 @@ Connecting to other servers using arbitrary ports requires no special considerat
 
 The ability to host TCP applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
 
+## "How do I make Koding work with jitsu?"
+
+By default, Koding will not install packages globally, due to a permission error. You can fix this by setting the
+npm prefix to a location that you have permissions to access, like your home directory. To do this, simply run:
+
+`npm config set prefix ~`
+
+And then you can install jitsu normally:
+
+`npm i jitsu -g`
+
 ## "Can I use jitsu with Cloud9 IDE (<http://c9.io>)?"
 
 Yes! Follow these steps to install jitsu.
