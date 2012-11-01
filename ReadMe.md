@@ -1,12 +1,10 @@
-<a href="https://github.com/nodejitsu/handbook/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
-
 # The Nodejitsu Handbook
 
 *A gentle introduction to the art of Nodejitsu*
 
 ## Quick Links:
 
-* [The Nodejitsu Handbook (.pdf)](book.pdf)
+* [The Nodejitsu Handbook (.pdf)](http://handbook.jit.su/book.pdf)
 * [Frequently Asked Questions](https://github.com/nodejitsu/handbook/#faq)
 * [The Nodejitsu Cheatsheet](http://cheatsheet.jit.su/)
 * [The NPM Cheatsheet](http://blog.nodejitsu.com/npm-cheatsheet)
@@ -367,12 +365,19 @@ You can connect to your redis with the `redis-cli` cli client:
 or with the `redis` module:
 
     var redis = require('redis');
-    var client = redis.createClient(5309, 'subdomain.redistogo.com');
+    var options = { parser: 'javascript' };
+    var client = redis.createClient(5309, 'subdomain.redistogo.com', options);
     client.auth('pass', function (err) {
       if (err) { throw err; }
       // You are now authed with your redis.
     });
 
+**Note:** If you are using an older version of `node_redis`(<0.8.0), You may have to 
+explicitly use its javascript parser instead of the optional native module `hiredis` 
+that may be packaged with it, as there are issues compiling on the nodejitsu 
+platform. Passing `{ parser: 'javascript' }` to `redis.createClient` will ensure 
+usage of the javascript parser. Check out the other possible options in the 
+[node redis docs](https://github.com/mranney/node_redis#rediscreateclientport-host-options).
 
 ## Environment Variable Management
 
@@ -862,7 +867,18 @@ Nodejitsu's cloud services watch your programs for you! You shouldn't have to do
 
 Connecting to other servers using arbitrary ports requires no special considerations. However, *listening* for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains. Consequentially, each subdomain may only host one listening service.
 
-The ability to host tcp applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
+The ability to host TCP applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
+
+## "How do I make Koding work with jitsu?"
+
+By default, Koding will not install packages globally, due to a permission error. You can fix this by setting the
+npm prefix to a location that you have permissions to access, like your home directory. To do this, simply run:
+
+`npm config set prefix ~`
+
+And then you can install jitsu normally:
+
+`npm i jitsu -g`
 
 ## "Can I use jitsu with Cloud9 IDE (<http://c9.io>)?"
 
@@ -898,6 +914,11 @@ In more detail: npm uses a file called `.npmignore`, which should contain a list
 
 Finally, jitsu has the ability to bundle your app without deploying with the `jitsu package create` command. You can use this to make sure that the resulting .tgz file is as you expect.
 
+## "How do I fix `Error: package.json error: can't find starting script`?"
+
+Nodejitsu requires a starting script in the package.json to know which script to run to start your application. You need to make sure that the scripts.start field in your package.json points to the correct starting script.
+
+A common issue is using "node app" as the value of scripts.start in your package.json. This won't work on Nodejitsu because the file extension is not specified. You'll need to do something along the lines of "node app.js".
 # Support
 <a name='support'></a>
 
