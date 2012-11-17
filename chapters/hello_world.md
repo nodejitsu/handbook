@@ -49,7 +49,7 @@ for using Nodejitsu's platform. We've designed jitsu to be
 suitable for command line beginners, but still be powerful and extensible
 enough for production usage. If you aren't a fan of the command line or don't
 have terminal access you can still do app deployments through the
-[Nodejitsu Web Application](http://develop.nodejitsu.com/).
+[Nodejitsu Web Application](https://webops.nodejitsu.com/).
 
 If this is your first time deploying an application and you are eager to get
 started, we recommend using jitsu: it has a one line installer, it's

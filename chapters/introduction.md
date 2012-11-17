@@ -23,8 +23,7 @@ You can find our open source projects at <https://github.com/nodejitsu>, <https:
 
 ## What Is Nodejitsu?
 
-[Nodejitsu](http://nodejitsu.com/) is a Platform as a Service and a Marketplace
-for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js
+[Nodejitsu](http://nodejitsu.com/) is a Platform as a Service for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js
 applications into the cloud with a myriad of additional features. Our platform
 provides a robust suite of functionality to assist in the development,
 management, and deployment of Node.js applications. Our deployment tools are the

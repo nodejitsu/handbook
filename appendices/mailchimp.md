@@ -20,28 +20,28 @@ In order to set up the MailChimp integration, you have to
 [sign up for MailChimp](http://mailchimp.com/signup) at
 [their web site](http://mailchimp.com):
 
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/signup_page.png)
+![](https://github.com/nodejitsu/handbook/raw/master/fig/signup_page.png)
 
 Once you sign up for MailChimp, they can help you get your bearings so you can
 get to managing e-mail campaigns quick:
 
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/dashboard_help.png)
+![](https://github.com/nodejitsu/handbook/raw/master/fig/dashboard_help.png)
 
 But, in order to integrate with Nodejitsu, what you need is an API key. The
 easiest way to get an API key *right now* is to visit
 <https://admin.mailchimp.com/account/api-key-popup>:
 
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/api_key_popup.png)
+![](https://github.com/nodejitsu/handbook/raw/master/fig/api_key_popup.png)
 
 All you have to do to link your MailChimp account with your Nodejitsu account
 is to copy-and-paste this API key into Nodejitsu's web application interface:
 
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard_api_key.png)
+![](https://github.com/nodejitsu/handbook/raw/master/fig/nodejitsu_dashboard_api_key.png)
 
 Now you're good to go! Nodejitsu reports that I have one mailing list, and that
 the two subscribers are Josh's mother and himself.
 
-![](https://github.com/jesusabdullah/handbook/raw/master/fig/nodejitsu_dashboard.png)
+![](https://github.com/nodejitsu/handbook/raw/master/fig/nodejitsu_dashboard.png)
 
 ## Interacting with your lists via the Nodejitsu JSON API: A Broad Overview
 
@@ -114,7 +114,7 @@ You can use the list ID to access the particular list information with
          { "email": "josh@nodejitsu.com",
            "timestamp": "2011-07-26 01:09:11" } ] }
 
-This confirms that Josh and his Mom are is in the example list.
+This confirms that Josh is in the example list.
 
 ## More API Commands:
 

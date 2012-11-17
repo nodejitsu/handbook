@@ -77,7 +77,7 @@ If you require database hosting you can create a new database instance of any
 of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](#api).
 Cloud database hosting is currently provided by 
 [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) 
-and [MongoHQ](https://www.mongohq.com).
+and [MongoLab](https://www.mongolab.com).
 
 ### Existing Databases
 
@@ -121,7 +121,7 @@ You can also access your database in your browser by going to http://subdomain.i
 #### MongoDB
 
 If you run `jitsu databases create mongo myMongo`, jitsu 
-will supply a connection string for your new mongo database on mongohq:
+will supply a connection string for your new mongo database on mongolab:
 
     info:   Welcome to Nodejitsu user
     info:   It worked if it ends with Nodejitsu ok
@@ -134,13 +134,13 @@ will supply a connection string for your new mongo database on mongohq:
 
 You can connect to this using the `mongo` CLI client tool like so:
 
-    $ mongo subdomain.mongohq.com:100027/somedatabase -u nodejitsu -p pass
+    $ mongo subdomain.mongolab.com:100027/somedatabase -u nodejitsu -p pass
 
 or with the `mongodb-native` module:
 
     var mongodb = require('mongodb');
     var db = new mongodb.Db('somedatabase',
-      new mongodb.Server('subdomain.mongohq.com', 10027, {})
+      new mongodb.Server('subdomain.mongolab.com', 10027, {})
     );
     db.open(function (err, db_p) {
       if (err) { throw err; }
@@ -152,13 +152,13 @@ or with the `mongodb-native` module:
 or with mongoose:
 
     var mongoose = require('mongoose');
-    mongoose.connect('mongodb://nodejitsu:pass@subdomain.mongohq.com:10057/somedatabase');
+    mongoose.connect('mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/somedatabase');
 
 You can copy-paste this url directly into your mongo library's connect method.
 For example, in [Mongoose](https://github.com/learnboost/mongoose/):
 
     var mongoose = require('mongoose');
-    mongoose.connect("mongodb://nodejitsu:pass@staff.mongohq.com:10057/");
+    mongoose.connect("mongodb://nodejitsu:pass@staff.mongolab.com:10057/");
 
 #### Redis
 
