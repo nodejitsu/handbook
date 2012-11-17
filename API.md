@@ -1,31 +1,31 @@
 # JSON API
 <a name='api'></a>
 
-Nodejitsu provides a web API for developers who want to interact with the
-Nodejitsu platform programatically. This API is built to be
-[RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and
-communicates via [JSON](http://en.wikipedia.org/wiki/JSON). The API is the most
-low-level way of interacting with the Nodejitsu platform. For most deployment
-scenarios you should use our command line tool, [jitsu](#jitsu), or the
-[online administrative interface](#webapp).
+Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON]. The API is the most low-level way of interacting with the Nodejitsu platform. For most deployment scenarios you should use our command line tool, [jitsu], the [online administrative interface][webops], or use our [WebHook API][webhooks] when integrating with third party services.
 
 ## API Clients
 
-Nodejitsu has a JSON API client for node.js, which may be found [here](https://github.com/nodejitsu/nodejitsu-api) (along with API clients in other languages as they are developed). Jitsu is implemented by using the node.js API client.
+Nodejitsu has a JSON API client for node.js, which may be found at [github.com/nodejitsu/nodejitsu-api](https://github.com/nodejitsu/nodejitsu-api) (along with API clients in other languages as they are developed). 
 
-## Authentication 
+`jitsu` is implemented by using the node.js API client.
 
-Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, the [jitsu CLI](#jitsu), or just by visiting [http://nodejitsu.com](http://nodejitsu.com). Currently, we support [Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). If you haven't used Basic Auth before, don't fret; it's easy! 
+## Authentication
 
-Here is an example using the command line utility,
-[Curl](http://curl.haxx.se/):
+Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, [jitsu], or just by visiting [nodejitsu.com][nodejitsu]. 
+
+Currently, we support [Basic Authentication](http://en.wikipedia.org/wiki/Basic_access_authentication) and Token authentication.
+
+Here is an example using the command line utility with Basic authentication,
+[curl]:
 
      // get all applications for User "Marak"
      curl --user Marak:password https://api.nodejitsu.com/apps/marak
 
+Token authentication works the same way but instead of providing a password you need to provide an API token. Even though you can authenticate with an API token it does restrict access to your user profile, password, etc for security reasons.
+
 ## Applications
 
-Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings and authors. For more information about the package.json format see: [package.json](#package_json)
+Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings and authors. For more information about the `package.json` format see: [package.json](http://package.json.jit.su)
 
 ### Get all Applications for a User
     
@@ -55,9 +55,11 @@ Applications are the core of the Nodejitsu API. Each application represents a se
 
 ### Delete an Application
 
-     DELETE /apps/:user-id/:app-id/remove
+     DELETE /apps/:user-id/:app-id
 
 ## Snapshots
+
+Application snapshots are kept so you can keep track of each of your deployments. You can use [jitsu], or our [online administrative interface][webops] to revert to a specific snapshot, or download the code you have running in the server.
 
 ### Make an existing snapshot the active app
     POST /apps/:user-id/:app-id/snapshots/:id/activate
@@ -70,7 +72,6 @@ Applications are the core of the Nodejitsu API. Each application represents a se
 
 ### Show the contents of a Snapshot
     GET /apps/:user-id/:app-id/snapshots/:id
-
 
 ## Users
 
@@ -98,14 +99,51 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
     {
       password: "new_password"
     }
-     
+
+### Get User API Tokens
+
+    GET /users/:user-id/tokens
+
+### Delete an API Token
+
+    DELETE /users/:user-id/tokens/:token-id
+
+### Create an API Token
+
+Token and provider are mandatory
+
+    PUT /users/:user-id/tokens/:token-id
+    {
+      token: "SEVMTE8gWUVTIEkgQU0gRE9HCg", // mandatory
+      provider: "github", // mandatory
+      id: "a string id 123" // optional, helps humans identify the key
+    }
+
+### Get User Third Party Tokens
+
+Users sometimes need Nodejitsu to store an authorization token for a service they want us to use for them. e.g. For us to deploy a private repository you have in Github we need you to give Nodejitsu access to your github account.
+
+Third Party tokens serve this purpose. The current supported providers are:
+
+* [Github](http://github.com)
+
+    GET /users/:user-id/thirdparty
+
+### Delete an API Token
+
+    DELETE /users/:user-id/thirdparty/:token-id
+
+### Create an API Token
+
+    PUT /users/:user-id/thirdparty/:token-id
+
 ## Databases
 
 ### Create a new Database
 
      POST /databases/:user-id/:database-id
      {
-       type: "couch" || "redis" || "mongo"
+       type: "couch" || "redis" || "mongo" || "mongohq" || "redistogo"
      }
 
 ### Get information about a Database
@@ -118,9 +156,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 ## Logging
 
-Logging is a very important feature in any professional grade Node.js
-application. Nodejitsu provides integrated logging solutions for your
-applications. Your logs are always saved and ready to be retrieved. 
+Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved.
 
 ### Get all logs for a user
 
@@ -140,13 +176,10 @@ applications. Your logs are always saved and ready to be retrieved.
       "rows": 15
     } 
 
-## Marketplace
 
-#### Get all Marketplace Applications
-
-    GET /marketplace
-
-#### Get a specific Marketplace Application
-
-    GET /databases/:user-id/:id
-
+[jitsu]: http://github.com/nodejitsu/jitsu
+[JSON]: http://en.wikipedia.org/wiki/JSON
+[webops]: https://webops.jit.su
+[webhooks]: https://webhooks.nodejitsu.com
+[nodejitsu]: http://nodejitsu.com
+[curl]: http://curl.haxx.se/
