@@ -16,6 +16,7 @@ MD = pages/title.md \
     chapters/platform_features.md \
     chapters/jitsu.md \
     chapters/web_admin.md \
+    chapters/webhooks.md \
     chapters/json_api.md \
     chapters/haibu.md \
     chapters/open_source_projects.md \
@@ -33,6 +34,7 @@ README =  pages/title.md \
     chapters/platform_features.md \
     chapters/jitsu.md \
     chapters/web_admin.md \
+    chapters/webhooks.md \
     chapters/json_api.md \
     chapters/haibu.md \
     chapters/open_source_projects.md \
