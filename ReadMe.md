@@ -21,7 +21,7 @@
 * [Platform Features](#features)
 * [Jitsu](#jitsu)
 * [Nodejitsu Web Application](#webapp)
-* [Nodejitsu Web Hook API](#webhooks)
+* [Nodejitsu Web Hook API](#nodejitsu-web-hook-api)
 * [JSON API](#api)
 * [Create Your Own Cloud With Haibu](#haibu)
 * [Open Source Projects](#opensource)
@@ -603,28 +603,77 @@ applications through a web interface. This interface allows access to the same d
 The web admin interface may be found at <https://webops.nodejitsu.com>.
 # Nodejitsu Web-hook API
 
-<a name="index"></a>
-## Table of Contents
-* [API Documentation](#api)
-    * [Deploy](#deploy)
-        * [Accept](#deploy-accept)
-        * [Headers](#deploy-headers)
-        * [Errors](#deploy-errors)
-    * [Status](#status)
-        * [Parameters](#status-qs)
-        * [Headers](#status-headers)
-        * [Errors](#status-errors)
-    * [Changes](#changes)
-        * [Parameters](#changes-qs)
-        * [Headers](#changes-headers)
-        * [Errors](#changes-errors)
-    * [Auth](#auth)
-        * [Parameters](#auth-qs)
-        * [Headers](#auth-headers)
-        * [Errors](#auth-errors)
-* [Sample Payloads](#payloads)
-    * [Travis](#payloads-travis)
-    * [Github](#payloads-github)
+Access the `Admin` section on your open source node.js Github repository. Click `Service Hooks` and then `Nodejitsu`. You will be presented with a form with four fields:
+
+* Username, which defaults to your Github username
+* Password, your password or a valid Nodejitsu authentication token
+* Branch, where you can define the branch you wish to deploy and defaults to master
+* Endpoint, which defaults to https://webhooks.nodejitsu.com
+
+![The Github Interface for Nodejitsu](https://lh4.googleusercontent.com/-kiN3YkEG_ys/UJqQ-4aGJbI/AAAAAAAADFc/esjmrqD_2IY/s945/Screenshot%252B2012-11-07%252Bat%252B16.42.57.png)
+
+Select `Active` and hit `Update Settings`. From now on every-time you commit to Github (in the designated deployment branch) we will deploy that application for you. That simple.
+
+## Monitoring deployments
+
+There's several ways to access the deployment status in the Nodejitsu Webhook API, and you can find the complete documentation at [webhooks.nodejitsu.com](http://webhooks.nodejitsu.com).
+
+The most fun way to monitor your deployment is with the realtime status changes feed.
+
+``` sh
+# if your username is foo and password is bar this would be 
+# https://foo:bar@webhooks.nodejitsu.com/1/status/foo/changes
+curl https://username:password@webhooks.nodejitsu.com/1/status/username/changes?include_docs=auto
+```
+
+This will create an HTTP keep alive connection that pushes the status to you in realtime every time someone invokes our API:
+
+``` js
+{
+  "id": "https://webhooks.nodejitsu.com/1/status/dscape/changes/2b3de47c2ce04a9dda4d31aac5000bab",
+  "app_name": "hello-world-api-flatiron",
+  "uuid": "aa6e9b1332436698771",
+  "status": "ok",
+  "provider": "travis",
+  "commit": "dscape/hello-world-flatiron-api/96410ed970f6224a4cd3c450150c5d65bbc77fcd"
+}
+```
+
+Each request to our API is logged with a unique `uuid`, so you can use it to refer possible issues to our support staff.
+
+We are now ready to deploy, go back to Github and click `Test Hook`. You should be up and running shortly.
+
+## Travis
+
+What about continuous integration?  We added [Travis-CI](http://travis-ci.org/) so you can feel safe about your deployments. Simply add something like this in your `.travis.yml` file.
+
+```
+notifications:
+  webhooks: 
+    urls:
+      - http://webhooks.nodejitsu.com/1/deploy
+    on_success: always
+    on_failure: never
+```
+
+Internally our API will try to see if you have Travis configured like this, and if you do it will put the deployment request from Github on a hold until Travis informs us all tests have passed.
+
+If tests failed we won't deploy. Simple.
+
+## Deploying Private Repos & Commit Status API
+
+If you authorize access so we can use your github account we can do more fun stuff like allowing you to deploy your private repositories, or even update your [commit status](https://github.com/blog/1227-commit-status-api) and check if a deployment worked directly in github.
+
+![Commit Status API](https://lh5.googleusercontent.com/-UK1ktEYEDqo/UKb8QKsaaNI/AAAAAAAADF0/5Pvdkh1_SDM/s829/Screenshot%252B2012-11-17%252Bat%252B02.29.29.png)
+
+To authorize simply do:
+
+``` sh
+curl -X POST \
+  -H "Content-type: application/json" \
+  --data "{ \"credentials\": githubUser:githubPassword }" \
+  https://nodejitsuUser:nodejitsuPass@webhooks.nodejitsu.com/1/auth/github 
+```
 
 <a name="api"></a>
 ## API Documentation
@@ -1049,282 +1098,7 @@ Bottom line if you want to do deployments for private repositories do not specif
     <td>401</td>
     <td>We tried to authenticate with github but it failed</td>
   </tr>
-</table>
-
-<a name="payloads"></a>
-## Sample Payloads
-
-<a name="payloads-travis"></a>
-### Travis
-
-``` json
-{
-  "id": 875154,
-  "number": "11",
-  "status": 0,
-  "started_at": "2012-03-15T20:41:58Z",
-  "finished_at": "2012-03-15T20:42:29Z",
-  "duration": 61,
-  "config": {
-    "language": "node_js",
-    "node_js": [
-    0.6,
-    0.7
-    ],
-    "branches": {
-      "only": [
-      "master"
-      ]
-    },
-    "notifications": {
-      "webhooks": {
-        "urls": [
-        "http://webhooks.jit.su/deploy"
-        ],
-        "on_success": "always",
-        "on_failure": "never"
-      }
-    },
-    ".configured": true
-  },
-  "status_message": "Passed",
-  "repository": {
-    "id": 10134,
-    "name": "hello-world-flatiron-api",
-    "owner_name": "dscape",
-    "url": "https://github.com/dscape/hello-world-flatiron-api"
-  },
-  "matrix": [
-  {
-    "id": 875155,
-    "repository_id": 10134,
-    "number": "11.1",
-    "state": "finished",
-    "started_at": "2012-03-15T20:41:58Z",
-    "finished_at": "2012-03-15T20:42:28Z",
-    "config": {
-      "language": "node_js",
-      "node_js": 0.6,
-      "branches": {
-        "only": [
-        "master"
-        ]
-      },
-      "notifications": {
-        "webhooks": {
-          "urls": [
-          "http://webhooks.jit.su/deploy"
-          ],
-          "on_success": "always",
-          "on_failure": "never"
-        }
-      },
-      ".configured": true
-    },
-    "status": 0,
-    "log": "Using worker: nodejs1.worker.travis-ci.org:travis-nodejs-1\n\n$ cd ~/builds\r\n$ git clone --depth=100 --quiet git://github.com/dscape/hello-world-flatiron-api.git dscape/hello-world-flatiron-api\r\n$ cd dscape/hello-world-flatiron-api\r\n$ git checkout -qf 31f836acffeca4c88ff29d8e86f8c572707fd84a\r\n$ export TRAVIS_NODE_VERSION=0.6\r\n$ nvm use 0.6\r\nNow using node v0.6.12\r\n$ node --version\r\nv0.6.12\r\n$ npm --version\r\n1.1.4\r\n$ npm install\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/flatiron\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/specify\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/union\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/specify\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/flatiron\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/union\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/flatiron/-/flatiron-0.1.14.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/specify/-/specify-0.1.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/union/-/union-0.1.8.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/flatiron/-/flatiron-0.1.14.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/union/-/union-0.1.8.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/specify/-/specify-0.1.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/difflet\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/optimist/0.3.1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/prompt/0.1.12\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/director/1.0.9-1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/pkginfo/0.2.3\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/broadway/0.1.13\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/qs/0.3.2\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/pkginfo\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/difflet\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/difflet/-/difflet-0.2.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/director/1.0.9-1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/prompt/0.1.12\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/optimist/0.3.1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/director/-/director-1.0.9-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/prompt/-/prompt-0.1.12.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/optimist/-/optimist-0.3.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/colors\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/difflet/-/difflet-0.2.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/broadway/0.1.13\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/broadway/-/broadway-0.1.13.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/pkginfo/0.2.3\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/pkginfo/-/pkginfo-0.2.3.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/pkginfo\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/director/-/director-1.0.9-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/qs/0.3.2\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/qs/-/qs-0.3.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/prompt/-/prompt-0.1.12.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/broadway/-/broadway-0.1.13.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/optimist/-/optimist-0.3.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/pkginfo/-/pkginfo-0.2.3.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/qs/-/qs-0.3.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/deep-equal\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/traverse\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/charm\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/charm\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/charm/-/charm-0.0.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/deep-equal\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/deep-equal/-/deep-equal-0.0.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/traverse\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/traverse/-/traverse-0.6.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/charm/-/charm-0.0.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/deep-equal/-/deep-equal-0.0.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/traverse/-/traverse-0.6.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/wordwrap\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/winston\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors/0.6.0-1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/cliff/0.1.7\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/eventemitter2/0.4.8\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/nconf/0.5.1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/winston/0.5.10\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/utile/0.0.10\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/wordwrap\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 304 https://registry.npmjs.org/colors\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/cliff/0.1.7\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/eventemitter2/0.4.8\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/cliff/-/cliff-0.1.7.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.8.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/winston\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/winston/-/winston-0.5.10.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/nconf/0.5.1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/nconf/-/nconf-0.5.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/colors/0.6.0-1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/utile/0.0.10\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/utile/-/utile-0.0.10.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/winston/0.5.10\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/async/-/async-0.1.18.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.8.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/cliff/-/cliff-0.1.7.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/winston/-/winston-0.5.10.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/nconf/-/nconf-0.5.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/utile/-/utile-0.0.10.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/async/-/async-0.1.18.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/ncp\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/rimraf\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/mkdirp\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/mkdirp\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/eyes\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 304 https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/ncp\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/rimraf\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/ncp/-/ncp-0.2.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/rimraf/-/rimraf-1.0.9.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/ini\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/loggly\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/stack-trace\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/ncp/-/ncp-0.2.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/rimraf/-/rimraf-1.0.9.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/eyes\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/eyes/-/eyes-0.1.7.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 304 https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/eyes/-/eyes-0.1.7.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/ini\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/stack-trace\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/ini/-/ini-1.0.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/stack-trace/-/stack-trace-0.0.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/loggly\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/loggly/-/loggly-0.3.11.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[30;41mWARN\u001b[0m \u001b[35meyes@0.1.7\u001b[0m dependencies field should be hash of <name>:<version-range> pairs\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/stack-trace/-/stack-trace-0.0.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/ini/-/ini-1.0.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/loggly/-/loggly-0.3.11.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/request\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/timespan\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/timespan\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/timespan/-/timespan-2.2.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/request\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/request/-/request-2.9.153.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/timespan/-/timespan-2.2.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/request/-/request-2.9.153.tgz\r\r\nunion@0.1.8 ./node_modules/union \r\r\n├── qs@0.3.2\r\r\n└── pkginfo@0.2.3\r\r\nspecify@0.1.6 ./node_modules/specify \r\r\n├── colors@0.6.0-1\r\r\n└── difflet@0.2.1\r\r\nflatiron@0.1.14 ./node_modules/flatiron \r\r\n├── pkginfo@0.2.3\r\r\n├── director@1.0.9-1\r\r\n├── optimist@0.3.1 (wordwrap@0.0.2)\r\r\n├── prompt@0.1.12 (colors@0.6.0-1 async@0.1.18 winston@0.5.10)\r\r\n└── broadway@0.1.13\r\r\n$ npm test\r\n\r\r\n> hello-world-api-flatiron@0.0.1 test /home/vagrant/builds/dscape/hello-world-flatiron-api\r\r\n> ls -tr test/*.js | xargs -I{} node {}\r\r\n\r\r\n\u001b[32m✔\u001b[39m 2/2 \u001b[36mhello#uuid\u001b[39m \r\n\u001b[32m✔\u001b[39m 2/2 \u001b[36msummary\u001b[39m \r\n\nDone. Build script exited with: 0\n",
-    "result": 0,
-    "parent_id": 875154,
-    "commit": "abcda798007da3eefe5ea96715366e327ae1af91",
-    "branch": "master",
-    "message": "travis",
-    "committed_at": "2012-03-15T19:26:12Z",
-    "committer_name": "Nuno Job",
-    "committer_email": "nunojobpinto@gmail.com",
-    "author_name": "Nuno Job",
-    "author_email": "nunojobpinto@gmail.com",
-    "compare_url": "https://github.com/dscape/hello-world-flatiron-api/compare/db082ee...31f836a"
-  },
-  {
-    "id": 875156,
-    "repository_id": 10134,
-    "number": "11.2",
-    "state": "finished",
-    "started_at": "2012-03-15T20:41:58Z",
-    "finished_at": "2012-03-15T20:42:29Z",
-    "config": {
-      "language": "node_js",
-      "node_js": 0.7,
-      "branches": {
-        "only": [
-        "master"
-        ]
-      },
-      "notifications": {
-        "webhooks": {
-          "urls": [
-          "http://webhooks.jit.su/deploy"
-          ],
-          "on_success": "always",
-          "on_failure": "never"
-        }
-      },
-      ".configured": true
-    },
-    "status": 0,
-    "log": "Using worker: nodejs1.worker.travis-ci.org:travis-nodejs-3\n\n$ cd ~/builds\r\n$ git clone --depth=100 --quiet git://github.com/dscape/hello-world-flatiron-api.git dscape/hello-world-flatiron-api\r\n$ cd dscape/hello-world-flatiron-api\r\n$ git checkout -qf 31f836acffeca4c88ff29d8e86f8c572707fd84a\r\n$ export TRAVIS_NODE_VERSION=0.7\r\n$ nvm use 0.7\r\nNow using node v0.7.6\r\n$ node --version\r\nv0.7.6\r\n$ npm --version\r\n1.1.8\r\n$ npm install\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/flatiron\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/union\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/specify\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/flatiron\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/flatiron/-/flatiron-0.1.14.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/union\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/union/-/union-0.1.8.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/specify\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/specify/-/specify-0.1.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/union/-/union-0.1.8.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/flatiron/-/flatiron-0.1.14.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/specify/-/specify-0.1.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/difflet\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/pkginfo\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/broadway/0.1.13\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/optimist/0.3.1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/qs/0.3.2\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/prompt/0.1.12\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/director/1.0.9-1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/pkginfo/0.2.3\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/difflet\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/difflet/-/difflet-0.2.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/colors\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/optimist/0.3.1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/optimist/-/optimist-0.3.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/broadway/0.1.13\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/broadway/-/broadway-0.1.13.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/pkginfo\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/pkginfo/-/pkginfo-0.2.3.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/qs/0.3.2\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/qs/-/qs-0.3.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/difflet/-/difflet-0.2.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/prompt/0.1.12\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/prompt/-/prompt-0.1.12.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/director/1.0.9-1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/director/-/director-1.0.9-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/pkginfo/-/pkginfo-0.2.3.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/broadway/-/broadway-0.1.13.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/optimist/-/optimist-0.3.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/pkginfo/0.2.3\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/prompt/-/prompt-0.1.12.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/qs/-/qs-0.3.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/director/-/director-1.0.9-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/traverse\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/charm\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/deep-equal\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/deep-equal\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/deep-equal/-/deep-equal-0.0.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/wordwrap\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors/0.6.0-1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/cliff/0.1.7\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/winston\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/eventemitter2/0.4.8\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/nconf/0.5.1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/winston/0.5.10\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/utile/0.0.10\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/traverse\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/charm\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/traverse/-/traverse-0.6.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/charm/-/charm-0.0.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/deep-equal/-/deep-equal-0.0.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/cliff/0.1.7\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/cliff/-/cliff-0.1.7.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/wordwrap\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/colors/0.6.0-1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/eventemitter2/0.4.8\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.8.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/nconf/0.5.1\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/nconf/-/nconf-0.5.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 304 https://registry.npmjs.org/colors\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/winston\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/winston/-/winston-0.5.10.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/winston/0.5.10\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/utile/0.0.10\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/utile/-/utile-0.0.10.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/traverse/-/traverse-0.6.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/charm/-/charm-0.0.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/cliff/-/cliff-0.1.7.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/async/-/async-0.1.18.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/nconf/-/nconf-0.5.1.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/winston/-/winston-0.5.10.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/utile/-/utile-0.0.10.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.8.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/async/-/async-0.1.18.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/eyes\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/loggly\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/stack-trace\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/mkdirp\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/ini\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/ncp\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/rimraf\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/mkdirp\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/eyes\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/eyes/-/eyes-0.1.7.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/stack-trace\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/stack-trace/-/stack-trace-0.0.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/ini\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/ini/-/ini-1.0.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/loggly\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/loggly/-/loggly-0.3.11.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 304 https://registry.npmjs.org/async\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/eyes/-/eyes-0.1.7.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/ini/-/ini-1.0.2.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/rimraf\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/ncp\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/stack-trace/-/stack-trace-0.0.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/rimraf/-/rimraf-1.0.9.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/ncp/-/ncp-0.2.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/loggly/-/loggly-0.3.11.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/request\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/timespan\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/rimraf/-/rimraf-1.0.9.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/ncp/-/ncp-0.2.6.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/timespan\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/timespan/-/timespan-2.2.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/request\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m \u001b[35mGET\u001b[0m https://registry.npmjs.org/request/-/request-2.9.153.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/timespan/-/timespan-2.2.0.tgz\r\r\n\u001b[37;40mnpm\u001b[0m \u001b[32;40mhttp\u001b[0m 200 https://registry.npmjs.org/request/-/request-2.9.153.tgz\r\r\nunion@0.1.8 ./node_modules/union \r\r\n├── qs@0.3.2\r\r\n└── pkginfo@0.2.3\r\r\nspecify@0.1.6 ./node_modules/specify \r\r\n├── colors@0.6.0-1\r\r\n└── difflet@0.2.1\r\r\nflatiron@0.1.14 ./node_modules/flatiron \r\r\n├── pkginfo@0.2.3\r\r\n├── director@1.0.9-1\r\r\n├── optimist@0.3.1 (wordwrap@0.0.2)\r\r\n├── prompt@0.1.12 (colors@0.6.0-1 async@0.1.18 winston@0.5.10)\r\r\n└── broadway@0.1.13\r\r\n$ npm test\r\n\r\r\n> hello-world-api-flatiron@0.0.1 test /home/vagrant/builds/dscape/hello-world-flatiron-api\r\r\n> ls -tr test/*.js | xargs -I{} node {}\r\r\n\r\r\n\u001b[32m✔\u001b[39m 2/2 \u001b[36mhello#uuid\u001b[39m \r\n\u001b[32m✔\u001b[39m 2/2 \u001b[36msummary\u001b[39m \r\n\nDone. Build script exited with: 0\n",
-    "result": 0,
-    "parent_id": 875154,
-    "commit": "abcda798007da3eefe5ea96715366e327ae1af91",
-    "branch": "master",
-    "message": "travis",
-    "committed_at": "2012-03-15T19:26:12Z",
-    "committer_name": "Nuno Job",
-    "committer_email": "nunojobpinto@gmail.com",
-    "author_name": "Nuno Job",
-    "author_email": "nunojobpinto@gmail.com",
-    "compare_url": "https://github.com/dscape/hello-world-flatiron-api/compare/db082ee...31f836a"
-  }
-  ],
-  "commit": "abcda798007da3eefe5ea96715366e327ae1af91",
-  "branch": "master",
-  "message": "travis",
-  "compare_url": "https://github.com/dscape/hello-world-flatiron-api/compare/db082ee...31f836a",
-  "committed_at": "2012-03-15T19:26:12Z",
-  "committer_name": "Nuno Job",
-  "committer_email": "nunojobpinto@gmail.com",
-  "author_name": "Nuno Job",
-  "author_email": "nunojobpinto@gmail.com"
-}
-```
-
-<a name="payloads-github"></a>
-### Github
-
-
-``` json
-{
-  "pusher": {
-    "name": "none"
-  },
-  "repository": {
-    "name": "hello-world-flatiron-api",
-    "size": 92,
-    "has_wiki": true,
-    "created_at": "2012/03/15 09:58:36 -0700",
-    "watchers": 1,
-    "private": false,
-    "fork": false,
-    "url": "https://github.com/dscape/hello-world-flatiron-api",
-    "language": "JavaScript",
-    "pushed_at": "2012/03/15 12:26:21 -0700",
-    "has_downloads": true,
-    "open_issues": 0,
-    "homepage": "",
-    "has_issues": true,
-    "forks": 1,
-    "description": "Sample Flatironjs Application - Hello World API",
-    "owner": {
-      "name": "dscape",
-      "email": "nunojobpinto@gmail.com"
-    }
-  },
-  "forced": false,
-  "head_commit": {
-    "added": [],
-    "modified": [".travis.yml"],
-    "author": {
-      "name": "Nuno Job",
-      "username": "dscape",
-      "email": "nunojobpinto@gmail.com"
-    },
-    "timestamp": "2012-03-15T12:26:12-07:00",
-    "removed": [],
-    "url": "https://github.com/dscape/hello-world-flatiron-api/commit/31f836acffeca4c88ff29d8e86f8c572707fd84a",
-    "id": "31f836acffeca4c88ff29d8e86f8c572707fd84a",
-    "distinct": true,
-    "message": "travis",
-    "committer": {
-      "name": "Nuno Job",
-      "username": "dscape",
-      "email": "nunojobpinto@gmail.com"
-    }
-  },
-  "after": "abcda798007da3eefe5ea96715366e327ae1af91",
-  "deleted": false,
-  "ref": "refs/heads/master",
-  "commits": [
-  {
-    "added": [
-    ".travis.yml",
-    "test/uuid.js"
-    ],
-    "modified": [
-    "index.js",
-    "package.json"
-    ],
-    "author": {
-      "name": "Nuno Job",
-      "username": "dscape",
-      "email": "nunojobpinto@gmail.com"
-    },
-    "timestamp": "2012-03-15T10:19:36-07:00",
-    "removed": [
-    ],
-    "url": "https://github.com/dscape/hello-world-flatiron-api/commit/f32b8cd499cfcff0c125c829b94b410960bb0f63",
-    "id": "f32b8cd499cfcff0c125c829b94b410960bb0f63",
-    "distinct": true,
-    "message": "[test] added test\n\nadded travisyml",
-    "committer": {
-      "name": "Nuno Job",
-      "username": "dscape",
-      "email": "nunojobpinto@gmail.com"
-    }
-  },
-  {
-    "added": [
-    "README.md"
-    ],
-    "modified": [
-    ],
-    "author": {
-      "name": "Nuno Job",
-      "username": "dscape",
-      "email": "nunojobpinto@gmail.com"
-    },
-    "timestamp": "2012-03-15T12:23:46-07:00",
-    "removed": [
-    ],
-    "url": "https://github.com/dscape/hello-world-flatiron-api/commit/85c18350581e55698deaef7bce70cf384e5ae1e3",
-    "id": "85c18350581e55698deaef7bce70cf384e5ae1e3",
-    "distinct": true,
-    "message": "travis",
-    "committer": {
-      "name": "Nuno Job",
-      "username": "dscape",
-      "email": "nunojobpinto@gmail.com"
-    }
-  },
-  {
-    "added": [
-    ],
-    "modified": [
-    ".travis.yml"
-    ],
-    "author": {
-      "name": "Nuno Job",
-      "username": "dscape",
-      "email": "nunojobpinto@gmail.com"
-    },
-    "timestamp": "2012-03-15T12:26:12-07:00",
-    "removed": [
-    ],
-    "url": "https://github.com/dscape/hello-world-flatiron-api/commit/31f836acffeca4c88ff29d8e86f8c572707fd84a",
-    "id": "31f836acffeca4c88ff29d8e86f8c572707fd84a",
-    "distinct": true,
-    "message": "travis",
-    "committer": {
-      "name": "Nuno Job",
-      "username": "dscape",
-      "email": "nunojobpinto@gmail.com"
-    }
-  }
-  ],
-  "before": "db082eee314d92856639ad75b795798ab247473e",
-  "compare": "https://github.com/dscape/hello-world-flatiron-api/compare/db082ee...31f836a",
-  "created": false
-}
-```# JSON API
+</table># JSON API
 <a name='api'></a>
 
 Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON]. The API is the most low-level way of interacting with the Nodejitsu platform. For most deployment scenarios you should use our command line tool, [jitsu], the [online administrative interface][webops], or use our [WebHook API][webhooks] when integrating with third party services.
