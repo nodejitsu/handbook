@@ -5,7 +5,7 @@
 * [Platform Features](#features)
 * [Jitsu](#jitsu)
 * [Nodejitsu Web Application](#webapp)
-* [Nodejitsu Web Hook API](#webhooks)
+* [Nodejitsu Web Hook API](#nodejitsu-web-hook-api)
 * [JSON API](#api)
 * [Create Your Own Cloud With Haibu](#haibu)
 * [Open Source Projects](#opensource)
