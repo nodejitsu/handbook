@@ -127,7 +127,9 @@ Third Party tokens serve this purpose. The current supported providers are:
 
 * [Github](http://github.com)
 
-    GET /users/:user-id/thirdparty
+```
+GET /users/:user-id/thirdparty
+```
 
 ### Delete an API Token
 

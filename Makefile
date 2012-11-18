@@ -89,6 +89,9 @@ serve: website
 	@echo "\n... serving website!"
 	node ./bin/server
 
+#
+# -r doesnt work on osx, use -E
+#
 %.html: %.md
 	ronn --pipe --fragment $< \
 		| sed -r 's/<h1>([^ ]+) - /<h1>/' \
