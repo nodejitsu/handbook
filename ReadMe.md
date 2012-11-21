@@ -675,6 +675,10 @@ curl -X POST \
   https://nodejitsuUser:nodejitsuPass@webhooks.nodejitsu.com/1/auth/github 
 ```
 
+## But wait, I have API keys I can't commit to Github as open source?!
+
+Don't worry, you can use `jitsu set env` to set environment variables that you can access with `process.env`. Check our [handbook](https://github.com/nodejitsu/handbook#environment-variable-management) for more information. Environment variables set this way persist across deployments and are also available in our [webops](https://webops.nodejitsu.com) application.
+
 <a name="api"></a>
 ## API Documentation
 
