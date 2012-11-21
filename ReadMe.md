@@ -606,7 +606,7 @@ The web admin interface may be found at <https://webops.nodejitsu.com>.
 Access the `Admin` section on your open source node.js Github repository. Click `Service Hooks` and then `Nodejitsu`. You will be presented with a form with four fields:
 
 * Username, which defaults to your Github username
-* Password, your password or a valid Nodejitsu authentication token
+* Password, your password or a valid [Nodejitsu API authentication token](https://github.com/nodejitsu/handbook#create-an-api-token)
 * Branch, where you can define the branch you wish to deploy and defaults to master
 * Endpoint, which defaults to https://webhooks.nodejitsu.com
 
@@ -1212,12 +1212,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 Token and provider are mandatory
 
-    PUT /users/:user-id/tokens/:token-id
-    {
-      token: "SEVMTE8gWUVTIEkgQU0gRE9HCg", // mandatory
-      provider: "github", // mandatory
-      id: "a string id 123" // optional, helps humans identify the key
-    }
+    POST /users/:user-id/tokens
 
 ### Get User Third Party Tokens
 
@@ -1231,13 +1226,18 @@ Third Party tokens serve this purpose. The current supported providers are:
 GET /users/:user-id/thirdparty
 ```
 
-### Delete an API Token
+### Delete an Third Party Token
 
     DELETE /users/:user-id/thirdparty/:token-id
 
-### Create an API Token
+### Create an Third Party Token
 
-    PUT /users/:user-id/thirdparty/:token-id
+    POST /users/:user-id/thirdparty
+    {
+      token: "SEVMTE8gWUVTIEkgQU0gRE9HCg", // mandatory
+      provider: "github", // mandatory
+      id: "a string id 123" // optional, helps humans identify the key
+    }
 
 ## Databases
 

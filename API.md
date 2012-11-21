@@ -112,12 +112,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
 Token and provider are mandatory
 
-    PUT /users/:user-id/tokens/:token-id
-    {
-      token: "SEVMTE8gWUVTIEkgQU0gRE9HCg", // mandatory
-      provider: "github", // mandatory
-      id: "a string id 123" // optional, helps humans identify the key
-    }
+    POST /users/:user-id/tokens
 
 ### Get User Third Party Tokens
 
@@ -131,13 +126,18 @@ Third Party tokens serve this purpose. The current supported providers are:
 GET /users/:user-id/thirdparty
 ```
 
-### Delete an API Token
+### Delete an Third Party Token
 
     DELETE /users/:user-id/thirdparty/:token-id
 
-### Create an API Token
+### Create an Third Party Token
 
-    PUT /users/:user-id/thirdparty/:token-id
+    POST /users/:user-id/thirdparty
+    {
+      token: "SEVMTE8gWUVTIEkgQU0gRE9HCg", // mandatory
+      provider: "github", // mandatory
+      id: "a string id 123" // optional, helps humans identify the key
+    }
 
 ## Databases
 
