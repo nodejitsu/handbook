@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+
+	<title>The Nodejitsu Handbook</title>
+
+	<meta name="description" content="The Nodejitsu Handbook - A gentle introduction to the art of Nodejitsu" />
+	<meta name="author" content="Nodejitsu Inc" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="stylesheet" href="/css/base.dev.css">
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">  
+
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body class="container">
+
+  <nav role="navigation" class="navigation">
+    <div class="row">
+      <ul>
+        <li><a href="http://nodejitsu.com/" class="sprite logo hide-text">Nodejitsu Inc.</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+
+    <aside class="tableofcontents threecol" role="complementary">
+      <h2>Table of contents</h2>
+      <div id="toc">
+<ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart" class="title">a-quickstart</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/faq" class="title">a-quickstart/faq</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/features" class="title">a-quickstart/features</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/hello-world" class="title">a-quickstart/hello-world</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/jitsu" class="title">jitsu</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/webops" class="title">webops</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/support" class="title">support</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/api" class="title">api</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/api/webhooks" class="title">api/webhooks</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/appendix/haibu" class="title">appendix/haibu</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/open-source" class="title">appendix/open-source</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/package" class="title">appendix/package</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/resources" class="title">appendix/resources</a>
+    </div>
+  </li>
+</ul></div>
+    </aside>
+    <div class="full-height threecol"></div>
+
+    
+    <div class="content sevencol" role="main">
+      <article id="content" class="tab-content intro"><div>
+  <div class="page-details">
+    <h1 class="title">a-quickstart/hello-world</h1>
+  </div>
+  <div class="content"><h1>Hello World: A Tutorial</h1>
+<p><a name="hiworld"></a>
+
+</p>
+<p>In this tutorial, you will write a simple &quot;hello world&quot; web application in
+Node.js, and then deploy it using jitsu, Nodejitsu&#39;s command line interface.
+
+</p>
+<p>Before you get started, you should have 
+<a href="https://github.com/joyent/node/wiki">node.js</a> installed. If you are using 
+a node.js version older than v0.6.0 (not recommended) you will also need to 
+separately install 
+<a href="https://github.com/isaacs/npm/#readme">Node Package Manager</a> (npm).
+
+</p>
+<h2>Write A Server</h2>
+<p>Let&#39;s start with a very basic Node.js http server. Create a folder called
+<code>myapp/</code> and then create a file inside the folder called <code>server.js</code>. Inside
+this file, write the following code:
+
+
+</p>
+<pre><code>// requires node&#39;s http module
+var http = require(&#39;http&#39;);
+
+// creates a new httpServer instance
+http.createServer(function (req, res) {
+  // this is the callback, or request handler for the httpServer
+
+  // respond to the browser, write some headers so the 
+  // browser knows what type of content we are sending
+  res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/html&#39;});
+
+  // write some content to the browser that your user will see
+  res.write(&#39;&lt;h1&gt;hello, i know nodejitsu.&lt;/h1&gt;&#39;);
+
+  // close the response
+  res.end();
+}).listen(8080); // the server will listen on port 8080</code></pre>
+<p>That&#39;s all the code you&#39;ll need for starters. Save your server and get ready to
+deploy!
+
+</p>
+<h2>Deploy with Jitsu</h2>
+<p>In this tutorial, we will use <a href="http://github.com/nodejitsu/jitsu">jitsu</a> to deploy
+our &quot;hello world&quot; application. Jitsu is a
+<a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface</a>
+for using Nodejitsu&#39;s platform. We&#39;ve designed jitsu to be
+suitable for command line beginners, but still be powerful and extensible
+enough for production usage. If you aren&#39;t a fan of the command line or don&#39;t
+have terminal access you can still do app deployments through the
+<a href="https://webops.nodejitsu.com/">Nodejitsu Web Application</a>.
+
+</p>
+<p>If this is your first time deploying an application and you are eager to get
+started, we recommend using jitsu: it has a one line installer, it&#39;s
+self-documenting, and with it you&#39;ll be able to deploy your app in seconds.
+Plus, it&#39;s what&#39;s in the tutorial.
+
+</p>
+<h2>Installation</h2>
+<p>In order to install jitsu, open a terminal and type:
+
+</p>
+<pre><code> [sudo] npm install jitsu -g</code></pre>
+<p>This command will install jitsu on your system; the <code>-g</code> makes npm install it
+globally, rather than as a local module.
+
+</p>
+<p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/jitsu.png" alt="">
+
+</p>
+<p>After installation, run the <code>jitsu</code> command from your command line. Since it&#39;s
+your first time using jitsu, you will be prompted to log in with an existing
+account or to create a new account.
+
+</p>
+<p><img src="https://github.com/nodejitsu/jitsu/raw/master/assets/login.png" alt="">
+
+</p>
+<p><strong>Once you&#39;ve logged in, you can deploy your app immediately.</strong>
+
+</p>
+<h2>One Line Deployment</h2>
+<p>Open a terminal:
+
+</p>
+<pre><code>cd /home/me/myapp
+jitsu deploy</code></pre>
+<p>This will create a new application snapshot, generate and/or update project
+metadata, and deploy the project in the current path to
+<a href="http://nodejitsu.com">Nodejitsu</a>. If it&#39;s your first deployment, you&#39;ll be
+prompted for some information such as <em><u>your app&#39;s name</u></em>, its 
+<em><u>nodejitsu subdomain</u></em>, and its <em><u>start script</u></em>. It&#39;s really easy and we promise it will 
+only take a few seconds.
+
+
+</p>
+<pre><code>prompt: subdomain (myapp): myapp
+prompt: scripts.start (server.js): 
+prompt: version (0.0.0): </code></pre>
+<p>Now just open up your favorite browser, and go to
+<code>myapp.nodejitsu.com</code>. If everything has been set up correctly, then
+you, too, are on the path of nodejitsu!
+
+</p>
+</div>
+</div></article>
+    </div>
+    <!-- content -->
+  </div>
+  <!-- row -->
+
+  <footer role="contentinfo" class="copyright">
+    <p>&copy; 2010-2012 Nodejitsu Inc.</p>
+    <a href="http://legal.nodejitsu.com/privacy" class="last">Privacy policy</a>
+    <a href="http://legal.nodejitsu.com/terms-of-service">Terms of Service</a>
+  </footer>
+
+  <script src="../public/js/ui.js"></script>
+
+</body>
+</html>

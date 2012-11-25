@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+
+	<title>The Nodejitsu Handbook</title>
+
+	<meta name="description" content="The Nodejitsu Handbook - A gentle introduction to the art of Nodejitsu" />
+	<meta name="author" content="Nodejitsu Inc" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="stylesheet" href="/css/base.dev.css">
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">  
+
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body class="container">
+
+  <nav role="navigation" class="navigation">
+    <div class="row">
+      <ul>
+        <li><a href="http://nodejitsu.com/" class="sprite logo hide-text">Nodejitsu Inc.</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+
+    <aside class="tableofcontents threecol" role="complementary">
+      <h2>Table of contents</h2>
+      <div id="toc">
+<ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart" class="title">a-quickstart</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/faq" class="title">a-quickstart/faq</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/features" class="title">a-quickstart/features</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/hello-world" class="title">a-quickstart/hello-world</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/jitsu" class="title">jitsu</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/webops" class="title">webops</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/support" class="title">support</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/api" class="title">api</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/api/webhooks" class="title">api/webhooks</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/appendix/haibu" class="title">appendix/haibu</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/open-source" class="title">appendix/open-source</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/package" class="title">appendix/package</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/resources" class="title">appendix/resources</a>
+    </div>
+  </li>
+</ul></div>
+    </aside>
+    <div class="full-height threecol"></div>
+
+    
+    <div class="content sevencol" role="main">
+      <article id="content" class="tab-content intro"><div>
+  <div class="page-details">
+    <h1 class="title"></h1>
+  </div>
+  <div class="content"><h1>Introduction</h1>
+<p><a name="introduction"></a>
+
+</p>
+<p>Welcome to the Nodejitsu handbook. This document will help familiarize you with
+deploying your Node.js applications to the cloud while also providing
+detailed information about Nodejitsu&#39;s platform-specific features and about
+where to get help when you need it.
+
+</p>
+<p>This is a living document which you can submit patches to at
+<a href="http://github.com/nodejitsu/handbook"><a href="http://github.com/nodejitsu/handbook">http://github.com/nodejitsu/handbook</a></a>.
+Note that this ReadMe.md file is generated from the individual content files in the
+<code>/chapters</code> folder, so any edits should be made to those source files, not <code>book.md</code>.
+
+</p>
+<h2>Who Is Nodejitsu?</h2>
+<p>We are a collection of seasoned developers who have been devoted to the Node.js
+community since 2009. We are community leaders who have created and contributed to
+hundreds of open-source Node.js projects. If you have used Node.js, you&#39;ve
+probably used some of the projects we&#39;ve helped create. 
+
+</p>
+<p>You can find our open source projects at <a href="https://github.com/nodejitsu">https://github.com/nodejitsu</a>, <a href="https://github.com/flatiron">https://github.com/flatiron</a>, 
+</p>
+<p><a href="https://github.com/hookio">https://github.com/hookio</a>, and <a href="https://github.com/nodeapps">https://github.com/nodeapps</a>.
+
+</p>
+<h2>What Is Nodejitsu?</h2>
+<p><a href="http://nodejitsu.com/">Nodejitsu</a> is a Platform as a Service for Node.js applications. Nodejitsu allows you to seamlessly deploy your Node.js
+applications into the cloud with a myriad of additional features. Our platform
+provides a robust suite of functionality to assist in the development,
+management, and deployment of Node.js applications. Our deployment tools are the
+most user-friendly in the industry and our customer support is unparalleled. 
+
+</p>
+<h2>Getting Started</h2>
+<p>So you wish to learn the ways of Nodejitsu? Excellent! You only need to know
+three things to get started:
+
+</p>
+<ul>
+<li><p>We&#39;re <a href="http://nodejitsu.com">Nodejitsu</a>, and we can give you scalable,
+fault-tolerant cloud hosting for your Node.js apps - and we&#39;re the best you&#39;ll
+find.</p>
+</li>
+<li><p>Getting started with <a href="#hiworld">your first app</a> is simple with our
+<a href="#jitsu">jitsu</a> command-line interface - we&#39;ll <a href="#hiworld">show you how</a>.</p>
+</li>
+<li><p>Most of our stack is <a href="http://github.com/nodejitsu">open source</a> and you can
+<a href="#opensource">use our tools</a> anywhere else you&#39;d like to.</p>
+</li>
+</ul>
+<p>The Nodejitsu Handbook also contains information on <a href="#deployment">other ways to deploy your
+applications</a> and where to <a href="#support">find support</a>.
+
+</p>
+</div>
+</div></article>
+    </div>
+    <!-- content -->
+  </div>
+  <!-- row -->
+
+  <footer role="contentinfo" class="copyright">
+    <p>&copy; 2010-2012 Nodejitsu Inc.</p>
+    <a href="http://legal.nodejitsu.com/privacy" class="last">Privacy policy</a>
+    <a href="http://legal.nodejitsu.com/terms-of-service">Terms of Service</a>
+  </footer>
+
+  <script src="../public/js/ui.js"></script>
+
+</body>
+</html>

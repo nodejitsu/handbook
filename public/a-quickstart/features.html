@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+
+	<title>The Nodejitsu Handbook</title>
+
+	<meta name="description" content="The Nodejitsu Handbook - A gentle introduction to the art of Nodejitsu" />
+	<meta name="author" content="Nodejitsu Inc" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="stylesheet" href="/css/base.dev.css">
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">  
+
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body class="container">
+
+  <nav role="navigation" class="navigation">
+    <div class="row">
+      <ul>
+        <li><a href="http://nodejitsu.com/" class="sprite logo hide-text">Nodejitsu Inc.</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+
+    <aside class="tableofcontents threecol" role="complementary">
+      <h2>Table of contents</h2>
+      <div id="toc">
+<ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart" class="title">a-quickstart</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/faq" class="title">a-quickstart/faq</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/features" class="title">a-quickstart/features</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/hello-world" class="title">a-quickstart/hello-world</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/jitsu" class="title">jitsu</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/webops" class="title">webops</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/support" class="title">support</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/api" class="title">api</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/api/webhooks" class="title">api/webhooks</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/appendix/haibu" class="title">appendix/haibu</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/open-source" class="title">appendix/open-source</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/package" class="title">appendix/package</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/resources" class="title">appendix/resources</a>
+    </div>
+  </li>
+</ul></div>
+    </aside>
+    <div class="full-height threecol"></div>
+
+    
+    <div class="content sevencol" role="main">
+      <article id="content" class="tab-content intro"><div>
+  <div class="page-details">
+    <h1 class="title">a-quickstart/features</h1>
+  </div>
+  <div class="content"><h1>Features of the Nodejitsu Platform</h1>
+<p><a name='features'></a>
+
+</p>
+<p>The Nodejitsu platform makes writing and deploying web applications a snap!
+In addition to simple yet powerful tools for deployment, the Nodejitsu platform
+also has snapshot management, database hosting and connectivity, and more!
+
+</p>
+<p>There are three main tools for deploying and managing applications to Nodejitsu:
+
+</p>
+<ul>
+<li><a href="#jitsu">Jitsu</a>, The Nodejitsu command line tool </li>
+<li>The Nodejitsu <a href="#web_admin">Web Application</a>, An easy to use web interface for
+managing your applications</li>
+<li>Nodejitsu&#39;s JSON <a href="#json_api">API</a></li>
+</ul>
+<p>Each of these tools allow developers to access the same functionality.
+
+</p>
+<h2>Application Scalability with Drones</h2>
+<p>Each deployed application runs as a <a href="https://github.com/nodejitsu/haibu-carapace">drone</a> on a <a href="https://github.com/nodejitsu/haibu">haibu</a> application server. Because of this architecture, one app can be served by <em>any amount of drones on arbitrary machines</em>, giving you many options for scaling your application.
+
+</p>
+<h2>Zero Downtime Deploys</h2>
+<p>When deploying a new application, nodejitsu keeps hosting your old app version until the new deploy is confirmed to be running. This means your applications never go down, even if you have a bad deploy.
+
+</p>
+<h2>Multi-Version Node Support</h2>
+<p>Nodejitsu allows users to choose which version of node they want their
+application to run on. In order to set your node version, specify it in your 
+<code>package.json</code>&#39;s &quot;engines&quot; field. For example:
+
+
+</p>
+<pre><code>{
+  &quot;author&quot;: &quot;Nodejitsu &lt;josh@nodejitsu.com&gt;&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node bin/server&quot;
+  },
+  &quot;analyze&quot;: false,
+  &quot;name&quot;: &quot;helloworld&quot;,
+  &quot;engines&quot;: {
+    &quot;node&quot;: &quot;v0.6.x&quot;
+  }
+}</code></pre>
+<p>If no node engine is specified, jitsu will prompt for it automatically. Currently Nodejitsu runs node <code>0.6.x</code> and <code>0.8.x</code>.
+
+</p>
+<h2>Snapshots</h2>
+<p><a name='features/snapshots'></a>
+
+</p>
+<p>Every time you deploy to Nodejitsu, we automatically take a
+<a href="http://en.wikipedia.org/wiki/Snapshot_\(computer_storage\">snapshot</a>) of your
+application. Using any of our tools, you can view and manage snapshots, or even
+roll back to an old snapshot when disaster strikes in your production 
+environment. <em>During a deploy, nodejitsu will create a new snapshot automatically.</em>
+
+</p>
+<p>Jitsu commands for snapshot management include:
+
+</p>
+<ul>
+<li><code>jitsu snapshots list &lt;app-name&gt;</code> will list all snapshots for an application.</li>
+<li><code>jitsu snapshots activate &lt;app-name&gt;</code> allows you to choose which snapshot your drones are running.</li>
+<li><code>jitsu snapshots fetch &lt;app-name&gt;</code> will download a specified snapshot of your application to your computer.</li>
+</ul>
+<h2>Databases</h2>
+<p><a name='features/databases'></a>
+
+</p>
+<p>Applications on Nodejitsu are ready to be connected to any database. If you
+already have a database running, Nodejitsu can connect to your pre-existing
+database. If you require a new database, Nodejitsu can provide you <em>free</em>
+instances of several different types of databases. These free instances are
+great for development purposes or hobby sites. If you require a high traffic
+or production database we provide an easy upgrade path to industrial strength
+database hosting.
+
+</p>
+<h3>Creating new Databases</h3>
+<p>If you require database hosting you can create a new database instance of any
+of our supported databases using <a href="#jitsu">jitsu</a> or Nodejitsu&#39;s <a href="#api">API</a>.
+Cloud database hosting is currently provided by 
+<a href="http://www.iriscouch.com">IrisCouch</a>, <a href="http://redistogo.com">RedisToGo</a> 
+and <a href="https://www.mongolab.com">MongoLab</a>.
+
+</p>
+<h3>Existing Databases</h3>
+<p>If you already have an externally hosted Database, Nodejitsu is capable of
+connecting to it. We&#39;ve got Database hosting if you need it, but we fully
+support externally hosted Databases.
+
+</p>
+<h3>Connecting Applications to Databases</h3>
+<p>Whenever you create a database using Nodejitsu, you will be provided with all
+the information you need to connect to your database.
+
+</p>
+<h4>CouchDB</h4>
+<p>If you run <code>jitsu databases create couchdb myCouch</code>, jitsu will tell you the
+url for your new couchdb from iriscouch:
+
+</p>
+<pre><code>info:    Welcome to Nodejitsu user
+info:    It worked if it ends with Nodejitsu ok
+info:    Executing command databases create couchdb myCouch
+info:    Database myCouch was created.
+data:    Database Type: couch
+data:    Database Name: myCouch
+data:    Connection url: http://subdomain.iriscouch.com:5984
+data:    SSL connection url: https://subdomain.iriscouch.com:6984
+info:    Nodejitsu ok</code></pre>
+<p>You can connect to this database using any http client, or a couchdb specific
+library. For example, you can connect with curl:
+
+
+</p>
+<pre><code>$ curl http://subdomain.iriscouch.com:5984</code></pre>
+<p>Or, you can connect with <a href="https://github.com/dscape/nano">nano</a>:
+
+</p>
+<pre><code>var nano = require(&#39;nano&#39;)(&#39;http://nodejitsudb944957670256.iriscouch.com:5984&#39;);</code></pre>
+<p>You can also access your database in your browser by going to <a href="http://subdomain.iriscouch.com:5984/_utils">http://subdomain.iriscouch.com:5984/_utils</a> .
+
+
+</p>
+<h4>MongoDB</h4>
+<p>If you run <code>jitsu databases create mongo myMongo</code>, jitsu 
+will supply a connection string for your new mongo database on mongolab:
+
+</p>
+<pre><code>info:   Welcome to Nodejitsu user
+info:   It worked if it ends with Nodejitsu ok
+info:   Executing command databases create mongo myMongo
+info:   Database myMongo was created.
+info:   Database name: myMongo
+info:   Database type: mongo
+info:   Connection url: mongodb://nodejitsu:pass@subdomain.mongohq.com:10057/somedatabase
+info:   Nodejitsu ok</code></pre>
+<p>You can connect to this using the <code>mongo</code> CLI client tool like so:
+
+</p>
+<pre><code>$ mongo subdomain.mongolab.com:100027/somedatabase -u nodejitsu -p pass</code></pre>
+<p>or with the <code>mongodb-native</code> module:
+
+</p>
+<pre><code>var mongodb = require(&#39;mongodb&#39;);
+var db = new mongodb.Db(&#39;somedatabase&#39;,
+  new mongodb.Server(&#39;subdomain.mongolab.com&#39;, 10027, {})
+);
+db.open(function (err, db_p) {
+  if (err) { throw err; }
+  db.authenticate(&#39;nodejitsu&#39;, &#39;pass&#39;, function (err, replies) {
+    // You are now connected and authenticated.
+  });
+});</code></pre>
+<p>or with mongoose:
+
+</p>
+<pre><code>var mongoose = require(&#39;mongoose&#39;);
+mongoose.connect(&#39;mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/somedatabase&#39;);</code></pre>
+<p>You can copy-paste this url directly into your mongo library&#39;s connect method.
+For example, in <a href="https://github.com/learnboost/mongoose/">Mongoose</a>:
+
+</p>
+<pre><code>var mongoose = require(&#39;mongoose&#39;);
+mongoose.connect(&quot;mongodb://nodejitsu:pass@staff.mongolab.com:10057/&quot;);</code></pre>
+<h4>Redis</h4>
+<p>Running <code>jitsu databases create redis myRedis</code> will create a redis instance supplied by redistogo:
+
+</p>
+<pre><code>info:    Welcome to Nodejitsu user
+info:    It worked if it ends with Nodejitsu ok
+info:    Executing command databases create r testRedis
+info:    A new redis has been created
+data:    Database Type: redis
+data:    Database Name: testRedis
+data:    Connection host: subdomain.redistogo.com
+data:    Connection port: 5309
+data:    Connection auth: pass
+info:    Nodejitsu ok</code></pre>
+<p><strong>Note:</strong> Some versions of jitsu may show a connection string, eg. <code>redis://nodejitsu:pass@subdomain.redistogo.com:5309</code>.
+
+</p>
+<p>You can connect to your redis with the <code>redis-cli</code> cli client:
+
+</p>
+<pre><code>$ redis-cli -h subdomain.redistogo.com -p 5309 -a pass</code></pre>
+<p>or with the <code>redis</code> module:
+
+</p>
+<pre><code>var redis = require(&#39;redis&#39;);
+var options = { parser: &#39;javascript&#39; };
+var client = redis.createClient(5309, &#39;subdomain.redistogo.com&#39;, options);
+client.auth(&#39;pass&#39;, function (err) {
+  if (err) { throw err; }
+  // You are now authed with your redis.
+});</code></pre>
+<p><strong>Note:</strong> If you are using an older version of <code>node_redis</code>(&lt;0.8.0), You may have to 
+explicitly use its javascript parser instead of the optional native module <code>hiredis</code> 
+that may be packaged with it, as there are issues compiling on the nodejitsu 
+platform. Passing <code>{ parser: &#39;javascript&#39; }</code> to <code>redis.createClient</code> will ensure 
+usage of the javascript parser. Check out the other possible options in the 
+<a href="https://github.com/mranney/node_redis#rediscreateclientport-host-options">node redis docs</a>.
+
+</p>
+<h2>Environment Variable Management</h2>
+<p>Nodejitsu allows users to modify the environment variables exposed to their 
+apps using jitsu and our other tools. When an environment variable is changed 
+it is necessary restart your app for it to take effect.
+
+</p>
+<p>Available commands are <code>list</code>, <code>get</code>, <code>set</code>, <code>delete</code>, and 
+<code>clear</code>. 
+
+</p>
+<p><code>jitsu env list</code> will list any and all environment variables in an apps 
+current working directory (Note: the app needs to have been deployed before the 
+environment variables can be accessed).<br><code>jitsu env list &lt;myapp&gt;</code> will list any and all environment variables related 
+to <code>&lt;myapp&gt;</code> in an account.<br><code>jitsu env get &lt;key&gt;</code> will display the apps key environment variable 
+<code>&lt;value&gt;</code>.<br><code>jitsu env set &lt;key&gt; &lt;value&gt;</code> will set the apps <code>&lt;key&gt;</code> environment variable 
+to <code>&lt;value&gt;</code>.<br><code>jitsu env delete &lt;key&gt;</code> will delete the apps <code>&lt;key&gt;</code> environment variable.<br><code>jitsu env clear</code> will delete all of the apps environment variables after a 
+prompt.
+
+</p>
+<p>An Example:
+
+</p>
+<pre><code>$ jitsu env set NODE_ENV production</code></pre>
+<p>This will set the environment variable $NODE_ENV to have the string value 
+&quot;production&quot;. Remember, this will not take effect until the app is started 
+again (<code>jitsu apps start</code> -- there is no need to take your app down with a 
+<code>restart</code> with the zero downtime deploys).
+
+</p>
+<h2>SSL on nodejitsu.com subdomains</h2>
+<p>Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomains automatically! For example, the app behind <a href="http://nodejitsu.com"><a href="http://nodejitsu.com">http://nodejitsu.com</a></a> is serving http, but visiting <a href="https://nodejitsu.com"><a href="https://nodejitsu.com">https://nodejitsu.com</a></a> works without any special action on our part.
+
+</p>
+<p>Please note that this only works with <code>nodejitsu.com</code> (not <code>jitsu.com</code> or <code>jit.su</code>) at this time.
+
+</p>
+<p>If you need to identify if you are receiving http or https traffic use the 
+<code>x-forwarded-proto</code> response header value, see 
+<a href="http://headers.jit.su/">headers.jit.su</a> for more information on headers 
+passed through the balancers.
+
+</p>
+<h2>Custom Domains</h2>
+<p>We allow users to host their applications on custom domains by specifying their
+app&#39;s domains in their <code>package.json</code> and then properly configuring their DNS.
+If you&#39;d like to know how, just read the instructions at <a href="http://dns.jit.su"><a href="http://dns.jit.su">http://dns.jit.su</a></a>!
+
+</p>
+<h3>SSL Certificates for Custom Domains</h3>
+<p>Our balancers use <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">SNI</a> which allow them to receive SSL traffic from multiple domains---including yours! If, for example, you owned <code>mydomain.com</code> and wanted secure connections, all you need are your .pem and .key files!
+
+</p>
+<p><em>Note: This feature is not exposed through our API or other tools at this time. If you need this feature, please contact support at <code>support@nodejitsu.com</code>.</em>
+
+</p>
+<h2>Addons</h2>
+<p><em>Note: Coming soon!</em>
+
+</p>
+<p>Addons add functionality to your apps by extending and adding features to
+Nodejitsu&#39;s platform and integrating third party services. For instance,
+one of our addons provides powerful <a href="http://mailchimp.com">Mailchimp</a>-based
+mailing list management.
+
+</p>
+<h2>Marketplace</h2>
+<p><em>Note: Coming soon!</em>
+
+</p>
+<p>The Marketplace is an online store where you can browse ready to deploy
+Node.js Applications. The Marketplace is a great place to start if you are new
+to Node.js development or want to share your existing Node.js Application with
+the world.
+
+</p>
+</div>
+</div></article>
+    </div>
+    <!-- content -->
+  </div>
+  <!-- row -->
+
+  <footer role="contentinfo" class="copyright">
+    <p>&copy; 2010-2012 Nodejitsu Inc.</p>
+    <a href="http://legal.nodejitsu.com/privacy" class="last">Privacy policy</a>
+    <a href="http://legal.nodejitsu.com/terms-of-service">Terms of Service</a>
+  </footer>
+
+  <script src="../public/js/ui.js"></script>
+
+</body>
+</html>

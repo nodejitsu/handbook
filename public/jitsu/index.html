@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+
+	<title>The Nodejitsu Handbook</title>
+
+	<meta name="description" content="The Nodejitsu Handbook - A gentle introduction to the art of Nodejitsu" />
+	<meta name="author" content="Nodejitsu Inc" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="stylesheet" href="/css/base.dev.css">
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">  
+
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body class="container">
+
+  <nav role="navigation" class="navigation">
+    <div class="row">
+      <ul>
+        <li><a href="http://nodejitsu.com/" class="sprite logo hide-text">Nodejitsu Inc.</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+
+    <aside class="tableofcontents threecol" role="complementary">
+      <h2>Table of contents</h2>
+      <div id="toc">
+<ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart" class="title">a-quickstart</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/faq" class="title">a-quickstart/faq</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/features" class="title">a-quickstart/features</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/hello-world" class="title">a-quickstart/hello-world</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/jitsu" class="title">jitsu</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/webops" class="title">webops</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/support" class="title">support</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/api" class="title">api</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/api/webhooks" class="title">api/webhooks</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/appendix/haibu" class="title">appendix/haibu</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/open-source" class="title">appendix/open-source</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/package" class="title">appendix/package</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/resources" class="title">appendix/resources</a>
+    </div>
+  </li>
+</ul></div>
+    </aside>
+    <div class="full-height threecol"></div>
+
+    
+    <div class="content sevencol" role="main">
+      <article id="content" class="tab-content intro"><div>
+  <div class="page-details">
+    <h1 class="title">jitsu</h1>
+  </div>
+  <div class="content"><h1>The Jitsu Client</h1>
+<p><a name='jitsu'></a>
+
+</p>
+<p><a href="http://github.com/nodejitsu/jitsu">Jitsu</a> is a
+<a href="http://en.wikipedia.org/wiki/Command-line_interface">Command Line Interface</a>
+(CLI) for interacting with the Nodejitsu platform. It&#39;s open-source and easy
+to use.
+
+</p>
+<h2>Installation</h2>
+<p>Jitsu is distributed using the Node Package Manager (npm). Installing jitsu
+with npm is as simple as a single command:
+
+</p>
+<pre><code> [sudo] npm install -g jitsu</code></pre>
+<p>This command installs jitsu to your Node path, so that it may be run like any other global shell command.
+
+</p>
+<h2>Usage</h2>
+<p>Commands for jitsu follow this pattern:
+
+</p>
+<pre><code>jitsu &lt;resource&gt; &lt;action&gt; &lt;param1&gt; &lt;param2&gt; ...</code></pre>
+<p>For example, in <code>jitsu apps deploy</code>, &quot;apps&quot; is the resource and &quot;deploy&quot; is the
+action.
+
+</p>
+<h3>jitsu deploy (jitsu apps deploy)</h3>
+<p><code>jitsu deploy</code> will attempt to deploy the application in the current directory
+to <a href="http://nodejitsu.com">Nodejitsu</a>. It deploys your application using the
+following steps:
+
+</p>
+<ol>
+<li>Creates the application (if necessary)</li>
+<li>Creates or validates the package.json</li>
+<li>Packages and creates a new snapshot</li>
+<li>Starts the application</li>
+</ol>
+<p>If you had a previous deployment running, and the most recent deploy failed, your old 
+application will contnue to run without interruption
+
+</p>
+<h3>jitsu list (jitsu apps list)</h3>
+<p><code>jitsu list</code> lists your applications, as well as their respective states,
+subdomains, entry points and latest snapshots.
+
+</p>
+<h3>jitsu help <resource> <action></h3>
+<p><em>Jitsu is self-documenting.</em>
+All commands will yield friendly messages to you if you specify incorrect
+parameters. Additionally, <code>jitsu help</code> will return useful help messages about
+any given resource or resource/action pair. for instance:
+
+</p>
+<pre><code>josh@pidgey:~$ jitsu help apps deploy
+info:   Welcome to Nodejitsu
+info:   It worked if it ends with Nodejitsu ok
+info:   Executing command help apps deploy
+help:   
+help:   
+help:   Deploys an application using the following steps:
+help:   
+help:     1. Creates the application (if necessary)
+help:     2. Creates or validates the package.json
+help:     3. Packages and creates a new snapshot
+help:     4. Stops the application (if neccessary)
+help:     5. Starts the application
+help:   
+help:   jitsu deploy
+help:   jitsu apps deploy
+help:   
+info:   Nodejitsu ok
+josh@pidgey:~$ </code></pre>
+<p>If no resource and/or action are specified, then <code>jitsu help</code> alone will
+describe what resources are available.
+
+</p>
+<h3>jitsu apps <action></h3>
+<p>In addition to the commands aliased to <code>jitsu create</code>, <code>jitsu deploy</code> and 
+<code>jitsu list</code>, the <code>apps</code> resource allows you to create, destroy, stop, start and
+otherwise interact with your applications.
+
+</p>
+<p>If your app is in a stopped state, you will not be charged for it, ever. To put your
+app in a stopped state run <code>jitsu apps stop &lt;appname&gt;</code>.
+
+</p>
+<h3>jitsu env <action></h3>
+<p>Jitsu allows you to set environment variables on your production environment.
+For example, <a href="http://expressjs.com">Express</a>, a popular node.js web framework,
+uses the <code>NODE_ENV</code> environment variable to change behavior based on whether the
+environment is for development or production. In the case of Express, nodejitsu
+has <code>NODE_ENV</code> set to &quot;production&quot; by default, but if one wanted to change this
+variable or add more for their application, <code>jitsu env</code> supplies the tools to
+do so.
+
+</p>
+<h3>jitsu config <action></h3>
+<p><code>jitsu config</code> commands allow you to edit your local jitsu configuration file.
+
+</p>
+<h3>jitsu snapshots <action></h3>
+<p><code>jitsu snapshots *</code> commands allow you to work with snapshots for your 
+Applications on Nodejitsu. Snapshots are images of your Application&#39;s code that
+are deployed to the Nodejitsu Platform.
+
+</p>
+<p>For commands that take a <code>&lt;name&gt;</code> parameter, if no parameter is supplied,
+jitsu will attempt to read the package.json from the current directory.
+
+</p>
+<h3>jitsu users <action></h3>
+<p><code>jitsu users *</code> commands allow you to work with new or existing Nodejitsu user
+accounts. You will be prompted for additional user information as required.
+
+
+</p>
+<h3>jitsu install</h3>
+<p><code>jitsu install</code> is a built-in tool for downloading &quot;starter apps&quot; to speed up development. For example, here&#39;s how to use <code>jitsu install</code> to download a &quot;hello world&quot; application:
+
+</p>
+<pre><code>josh@onix:/tmp$ jitsu install helloworld
+info:   Welcome to Nodejitsu jesusabdullah
+info:   It worked if it ends with Nodejitsu ok
+info:   Executing command install helloworld
+info:   Installing helloworld locally.
+warn:   Downloading packages from npm, this may take a moment...
+info:   helloworld installed.
+help:   You can now jitsu deploy this application
+prompt: Would you like to start this application locally? (yes): no
+info:   Nodejitsu ok
+josh@onix:/tmp$ cd helloworld
+josh@onix:/tmp/helloworld$ ls
+bin  node_modules  package.json  ReadMe.md</code></pre>
+<h2>Configuring jitsu</h2>
+<p>All user-level configuration data for your local jitsu install is located in the <em>.jitsuconf</em> file located in your home directory. Directly modifying this file is not advised. You should be able to make all configuration changes using <code>jitsu config</code>.
+
+</p>
+<h3>Selected Properties of .jitsuconf</h3>
+<ul>
+<li><em>loglength</em>: Change this to modify the default length of returned logs from <code>jitsu logs</code>.</li>
+<li><em>loglevel</em>: Change this to modify the logging levels displayed by jitsu. Defaults to &quot;info&quot;.</li>
+<li><em>colors</em>: Change this to false to turn off jitsu&#39;s colors. Defaults to <code>true</code>.</li>
+<li><em>analyze</em>: Change this to false to disable require-analyzer for all apps. Defaults to <code>true</code>.</li>
+</ul>
+</div>
+</div></article>
+    </div>
+    <!-- content -->
+  </div>
+  <!-- row -->
+
+  <footer role="contentinfo" class="copyright">
+    <p>&copy; 2010-2012 Nodejitsu Inc.</p>
+    <a href="http://legal.nodejitsu.com/privacy" class="last">Privacy policy</a>
+    <a href="http://legal.nodejitsu.com/terms-of-service">Terms of Service</a>
+  </footer>
+
+  <script src="../public/js/ui.js"></script>
+
+</body>
+</html>
