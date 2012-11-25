@@ -59,7 +59,7 @@ If tests failed we won't deploy. Simple.
 
 ## Deploying Private Repos & Commit Status API
 
-If you authorize access so we can use your github account we can do more fun stuff like allowing you to deploy your private repositories, or even update your [commit status](https://github.com/blog/1227-commit-status-api) and check if a deployment worked directly in github.
+If you authorize access so we can use your github account we can do more fun stuff like allowing you to deploy your private repositories, or even update your [commit status](https://github.com/blog/1227-commit-status-api) and check if a deployment worked directly in github. We don't save any passwords - we just use the password to retrieve a token to save.
 
 ![Commit Status API](https://lh5.googleusercontent.com/-UK1ktEYEDqo/UKb8QKsaaNI/AAAAAAAADF0/5Pvdkh1_SDM/s829/Screenshot%252B2012-11-17%252Bat%252B02.29.29.png)
 
