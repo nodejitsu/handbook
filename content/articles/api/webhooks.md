@@ -17,7 +17,7 @@ There's several ways to access the deployment status in the Nodejitsu Webhook AP
 
 The most fun way to monitor your deployment is with the realtime status changes feed.
 
-``` sh
+``` bash
 # if your username is foo and password is bar this would be 
 # https://foo:bar@webhooks.nodejitsu.com/1/status/foo/changes
 curl https://username:password@webhooks.nodejitsu.com/1/status/username/changes?include_docs=auto
@@ -65,7 +65,7 @@ If you authorize access so we can use your github account we can do more fun stu
 
 To authorize simply do:
 
-``` sh
+``` bash
 curl -X POST \
   -H "Content-type: application/json" \
   --data "{ \"credentials\": githubUser:githubPassword }" \

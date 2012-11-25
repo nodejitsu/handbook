@@ -1,0 +1,39 @@
+{
+  "pages": {
+    "index": {
+      "partial": "article",
+      "partials": {
+        "toc": {
+          "partial": "topic",
+          "tree": "article",
+          "truncate": true,
+          "sort": [
+            "a-quickstart",
+            "jitsu",
+            "webops",
+            "support",
+            "api",
+            "appendix"
+          ]
+        }
+      }
+    },
+    "article": {
+      "partials": {
+        "toc": {
+          "partial": "topic",
+          "tree": "article",
+          "truncate": true,
+          "sort": [
+            "a-quickstart",
+            "jitsu",
+            "webops",
+            "support",
+            "api",
+            "appendix"
+          ]
+        }
+      }
+    }
+  }  
+}
