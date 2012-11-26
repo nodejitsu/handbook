@@ -117,12 +117,16 @@
   <div class="content"><p>Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">RESTful</a> and communicates via <a href="http://en.wikipedia.org/wiki/JSON">JSON</a>. The API is the most low-level way of interacting with the Nodejitsu platform. For most deployment scenarios you should use our command line tool, <a href="http://github.com/nodejitsu/jitsu">jitsu</a>, the <a href="https://webops.jit.su">online administrative interface</a>, or use our <a href="https://webhooks.nodejitsu.com">WebHook API</a> when integrating with third party services.
 
 </p>
+<p><hr>
+</p>
 <h2>API Clients</h2>
 <p>Nodejitsu has a JSON API client for node.js, which may be found at <a href="https://github.com/nodejitsu/nodejitsu-api">github.com/nodejitsu/nodejitsu-api</a> (along with API clients in other languages as they are developed). 
 
 </p>
 <p><code>jitsu</code> is implemented by using the node.js API client.
 
+</p>
+<p><hr>
 </p>
 <h2>Authentication</h2>
 <p>Most of the calls to the API will require that you authenticate using your Nodejitsu account. If you do not have an account it is possible to create one using the API, <a href="http://github.com/nodejitsu/jitsu">jitsu</a>, or just by visiting <a href="http://nodejitsu.com">nodejitsu.com</a>. 
@@ -139,6 +143,8 @@
  curl --user Marak:password https://api.nodejitsu.com/apps/marak</code></pre>
 <p>Token authentication works the same way but instead of providing a password you need to provide an API token. Even though you can authenticate with an API token it does restrict access to your user profile, password, etc for security reasons.
 
+</p>
+<p><hr>
 </p>
 <h2>Applications</h2>
 <p>Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it&#39;s dependencies, database connections, configuration settings and authors. For more information about the <code>package.json</code> format see: <a href="http://package.json.jit.su">package.json</a>
@@ -160,6 +166,8 @@
  { package.json }</code></pre>
 <h3>Delete an Application</h3>
 <pre><code> DELETE /apps/:user-id/:app-id</code></pre>
+<p><hr>
+</p>
 <h2>Snapshots</h2>
 <p>Application snapshots are kept so you can keep track of each of your deployments. You can use <a href="http://github.com/nodejitsu/jitsu">jitsu</a>, or our <a href="https://webops.jit.su">online administrative interface</a> to revert to a specific snapshot, or download the code you have running in the server.
 
@@ -172,6 +180,8 @@
 <pre><code>GET /apps/:user-id/:app-id/snapshots</code></pre>
 <h3>Show the contents of a Snapshot</h3>
 <pre><code>GET /apps/:user-id/:app-id/snapshots/:id</code></pre>
+<p><hr>
+</p>
 <h2>Users</h2>
 <h3>Create a new User / Sign-up for a free Nodejitsu account</h3>
 <p>Email address is the only required field.
@@ -223,6 +233,8 @@
   provider: &quot;github&quot;, // mandatory
   id: &quot;a string id 123&quot; // optional, helps humans identify the key
 }</code></pre>
+<p><hr>
+</p>
 <h2>Databases</h2>
 <h3>Create a new Database</h3>
 <pre><code> POST /databases/:user-id/:database-id
@@ -233,6 +245,8 @@
 <pre><code>GET /databases/:user-id/:database-id</code></pre>
 <h3>Delete a Database</h3>
 <pre><code>DELETE /databases/:user-id/:database-id</code></pre>
+<p><hr>
+</p>
 <h2>Logging</h2>
 <p>Nodejitsu provides integrated logging solutions for your applications. Your logs are always saved and ready to be retrieved.
 
