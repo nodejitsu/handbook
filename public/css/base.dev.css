@@ -1014,3 +1014,5 @@ table tr th,table tr td{border:1px solid #CCC;text-align:left;margin:0;padding:6
 table tr th{font-weight:bold;}
 table{border-collapse:collapse;border-spacing:0;}
 table tr:nth-child(2n){background-color:#F8F8F8;}
+
+.view-github { float: right; }
