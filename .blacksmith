@@ -9,8 +9,7 @@
           "truncate": true,
           "sort": [
             "a-quickstart",
-            "jitsu",
-            "webops",
+            "features",
             "support",
             "api",
             "appendix"
@@ -25,9 +24,8 @@
           "tree": "article",
           "truncate": true,
           "sort": [
-            "a-quickstart",
-            "jitsu",
-            "webops",
+          "a-quickstart",
+          "features",
             "support",
             "api",
             "appendix"
