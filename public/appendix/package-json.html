@@ -41,65 +41,67 @@
 <ul class="vertical-tabs">
   <li class="tree">
     <div class="page-details">
-      <a href="/a-quickstart" class="title">a-quickstart</a>
+      <a href="/a-quickstart" class="title">Quickstart</a>
     </div>
   </li><li class="tree">
     <div class="page-details">
-      <a href="/a-quickstart/faq" class="title">a-quickstart/faq</a>
+      <a href="/a-quickstart/faq" class="title">FAQ</a>
     </div>
   </li><li class="tree">
     <div class="page-details">
-      <a href="/a-quickstart/features" class="title">a-quickstart/features</a>
-    </div>
-  </li><li class="tree">
-    <div class="page-details">
-      <a href="/a-quickstart/hello-world" class="title">a-quickstart/hello-world</a>
+      <a href="/a-quickstart/hello-world" class="title">Hello World: A Tutorial</a>
     </div>
   </li>
 </ul><ul class="vertical-tabs">
   <li class="tree">
     <div class="page-details">
-      <a href="/jitsu" class="title">jitsu</a>
+      <a href="/features" class="title">Platform Features</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/webhooks" class="title">Continuous Deployment</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/webops" class="title">Using Webops</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/jitsu" class="title">Using the jitsu CLI</a>
     </div>
   </li>
 </ul><ul class="vertical-tabs">
   <li class="tree">
     <div class="page-details">
-      <a href="/webops" class="title">webops</a>
+      <a href="/support" class="title">Need Support?</a>
     </div>
   </li>
 </ul><ul class="vertical-tabs">
   <li class="tree">
     <div class="page-details">
-      <a href="/support" class="title">support</a>
+      <a href="/api" class="title">JSON API</a>
     </div>
   </li>
 </ul><ul class="vertical-tabs">
   <li class="tree">
     <div class="page-details">
-      <a href="/api" class="title">api</a>
+      <a href="/appendix" class="title">Appendix</a>
     </div>
   </li><li class="tree">
     <div class="page-details">
-      <a href="/api/webhooks" class="title">api/webhooks</a>
-    </div>
-  </li>
-</ul><ul class="vertical-tabs">
-  <li class="tree">
-    <div class="page-details">
-      <a href="/appendix/haibu" class="title">appendix/haibu</a>
+      <a href="/appendix/resources" class="title">More Resources</a>
     </div>
   </li><li class="tree">
     <div class="page-details">
-      <a href="/appendix/open-source" class="title">appendix/open-source</a>
+      <a href="/appendix/open-source" class="title">Open Source Projects</a>
     </div>
   </li><li class="tree">
     <div class="page-details">
-      <a href="/appendix/package" class="title">appendix/package</a>
+      <a href="/appendix/haibu" class="title">Run it yourself With Haibu</a>
     </div>
   </li><li class="tree">
     <div class="page-details">
-      <a href="/appendix/resources" class="title">appendix/resources</a>
+      <a href="/appendix/package-json" class="title">Understanding package.json</a>
     </div>
   </li>
 </ul></div>
@@ -107,21 +109,21 @@
     <div class="full-height threecol"></div>
 
     
-    <div class="content sevencol" role="main">
+    <div class="content eightcol" role="main">
       <article id="content" class="tab-content intro"><div>
   <div class="page-details">
-    <h1 class="title">appendix/package</h1>
+    <h1 class="title">Understanding package.json</h1>
   </div>
-  <div class="content"><h1>Appendix: package.json</h1>
-<p><a name='apx:package'></a>
-
+  <div class="content"><p><hr>
+<strong><a href="http://package.json.jit.su">package.json.jit.su</a> is an interactive package.json properties explorer! Highly recommended.</strong>
 </p>
-<p><strong><a href="http://package.json.jit.su">package.json.jit.su</a> is an interactive package.json properties explorer! Highly recommended.</strong>
+<hr>
 
-</p>
 <h2>Understanding the package.json format</h2>
 <p>A package.json file describes your application, its dependencies, and other various application metadata. For a detailed spec on creating a package.json you can check out Isaac&#39;s fine documentation <a href="https://github.com/isaacs/npm/blob/master/doc/developers.md#readme">here</a>. 
 
+</p>
+<p><hr>
 </p>
 <h2>Preparing a package.json for your application</h2>
 <p>Nodejitsu requires that you create a valid <a href="#package_json">package.json</a> for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when constructing your package.json file, we provide wizards in our CLI tool and on our website for creating one. 
@@ -129,39 +131,42 @@
 </p>
 <p>Here is an example of what your package.json might look like:
 
-
 </p>
-<pre><code>{
-  &quot;name&quot;: &quot;hellonode&quot;,
-  &quot;subdomain&quot;: &quot;hellonode&quot;,
-  &quot;scripts&quot;: {
-    &quot;start&quot;: &quot;node server.js&quot;
-  },
-  &quot;version&quot;: &quot;0.0.0&quot;
-}</code></pre>
+<pre><code class="lang-js">  {
+    <span class="string">"name"</span>: <span class="string">"hellonode"</span>,
+    <span class="string">"subdomain"</span>: <span class="string">"hellonode"</span>,
+    <span class="string">"scripts"</span>: {
+      <span class="string">"start"</span>: <span class="string">"node server.js"</span>
+    },
+    <span class="string">"version"</span>: <span class="string">"0.0.0"</span>
+  }</code></pre>
 <p>Notice the &quot;scripts&quot; property? This is where you&#39;ll store information about specific scripts in your application. The &quot;start&quot; property indicates the script that will get called when your application is started. Usage is compatible with <code>npm start</code>.
 
+</p>
+<p><hr>
 </p>
 <h2>Specifying dependencies in your package.json</h2>
 <p>If your application requires additional dependencies or third-party libraries, Nodejitsu fully supports npm module dependency resolution. All you have to do is list your dependencies the exact same way you would if you were packaging a module for npm. Here is an example of the same package.json with a few dependencies.
 
-
 </p>
-<pre><code>{
-  &quot;name&quot;: &quot;hellonode&quot;,
-  &quot;subdomain&quot;: &quot;hellonode&quot;,
-  &quot;scripts&quot;: {
-    &quot;start&quot;: &quot;server.js&quot;
-  },
-  &quot;dependencies&quot;: {
-    &quot;async&quot;: &quot;0.1.x&quot;,
-    &quot;colors&quot;: &quot;0.5.x&quot;,
-    &quot;request&quot;: &quot;1.9.x&quot;
-  },
-  &quot;version&quot;: &quot;0.0.0&quot;
-}</code></pre>
+<pre><code class="lang-js">  {
+    <span class="string">"name"</span>: <span class="string">"hellonode"</span>,
+    <span class="string">"subdomain"</span>: <span class="string">"hellonode"</span>,
+    <span class="string">"scripts"</span>: {
+      <span class="string">"start"</span>: <span class="string">"server.js"</span>
+    },
+    <span class="string">"dependencies"</span>: {
+      <span class="string">"async"</span>: <span class="string">"0.1.x"</span>,
+      <span class="string">"colors"</span>: <span class="string">"0.5.x"</span>,
+      <span class="string">"request"</span>: <span class="string">"1.9.x"</span>
+    },
+    <span class="string">"version"</span>: <span class="string">"0.0.0"</span>
+  }
+`</code></pre>
 <p>Your dependencies will be resolved when your application deploys to Nodejitsu.
 
+</p>
+<p><hr>
 </p>
 <h2>Nodejitsu-Specific package.json Properties</h2>
 <p>A few package.json properties have special behavior on the Nodejitsu platform:

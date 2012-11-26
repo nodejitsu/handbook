@@ -974,7 +974,7 @@ pre > code {
  
 pre { 
 	border: 1px solid #e0ded3;
-  background-color: #f0efe8;
+  background-color: ghostWhite;
   border-radius: 4px;
 	margin: 20px 10px 30px 0;
 	padding: 10px;
@@ -983,7 +983,7 @@ pre {
 }
 
 code {
-  background-color: #f0efe8;
+  background-color: ghostWhite;
   color: rgba(0,0,0, 1);
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   white-space: pre;
@@ -1007,3 +1007,10 @@ code .number               { color: red }
 code .comment              { color: grey }
 
 
+/*********************************************
+ * TABLES
+ *********************************************/
+table tr th,table tr td{border:1px solid #CCC;text-align:left;margin:0;padding:6px 13px;}
+table tr th{font-weight:bold;}
+table{border-collapse:collapse;border-spacing:0;}
+table tr:nth-child(2n){background-color:#F8F8F8;}
