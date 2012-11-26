@@ -1,6 +1,3 @@
-# JSON API
-<a name='api'></a>
-
 Nodejitsu provides a web API for developers who want to interact with the Nodejitsu platform programatically. This API is built to be [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) and communicates via [JSON]. The API is the most low-level way of interacting with the Nodejitsu platform. For most deployment scenarios you should use our command line tool, [jitsu], the [online administrative interface][webops], or use our [WebHook API][webhooks] when integrating with third party services.
 
 ## API Clients
@@ -185,3 +182,5 @@ Nodejitsu provides integrated logging solutions for your applications. Your logs
 [webhooks]: https://webhooks.nodejitsu.com
 [nodejitsu]: http://nodejitsu.com
 [curl]: http://curl.haxx.se/
+
+[meta:title]: <> (JSON API)

@@ -1,5 +1,3 @@
-# Nodejitsu Web-hook API
-
 Access the `Admin` section on your open source node.js Github repository. Click `Service Hooks` and then `Nodejitsu`. You will be presented with a form with four fields:
 
 * Username, which defaults to your Github username
@@ -500,3 +498,5 @@ Bottom line if you want to do deployments for private repositories do not specif
     <td>We tried to authenticate with github but it failed</td>
   </tr>
 </table>
+
+[meta:title]: <> (Continuous Deployment)

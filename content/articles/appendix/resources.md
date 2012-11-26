@@ -1,6 +1,3 @@
-# Appendix: Resources
-<a name='apx:resources'></a>
-
 New to Node.js? **Don't be scared!**  There are plenty of resources out there
 for beginners.  Here are just a few:
 
@@ -19,3 +16,5 @@ already solve your problem.
 - <http://cheatsheet.jit.su> is a nodejitsu cheatsheet listing the most common commands.
 - <http://package.json.jit.su> is an interactive reference for the package.json format.
 - <http://blog.nodejitsu.com/npm-cheatsheet> is a quick cheatsheet for npm commands.
+
+[meta:title]: <> (More Resources)
