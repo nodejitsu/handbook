@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 
-var httpServer = require('http-server'),
-    path = require('path');
+var port = process.env.PORT || process.env.C9_PORT || 8080;
 
-var port = 8000,
-    host = '0.0.0.0',
-    root = path.resolve(__dirname, '../public');
-
-var server = httpServer.createServer({
-  root: root,
-  autoIndex: false,
-  cache: true
+var server = require('http-server').createServer({
+  root: './public/',
+  ext: 'html'
 });
 
-server.listen(port, host, function () {
-  console.log(root);
-  console.log('Now hosting the handbook on http://%s:%s', host, port);
+server.listen(process.env.PORT || process.env.C9_PORT || 8080, function () {
+  console.log('Starting up http-server, serving '
+    + server.root
+    + ' on port: '
+    + port);
+  console.log('Hit CTRL-C to stop the server');
+});
+
+process.on('SIGINT', function() {
+  console.log('http-server stopped.');
+  return process.exit();
 });

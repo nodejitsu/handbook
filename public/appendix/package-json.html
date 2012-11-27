@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+
+	<title>The Nodejitsu Handbook</title>
+
+	<meta name="description" content="The Nodejitsu Handbook - A gentle introduction to the art of Nodejitsu" />
+	<meta name="author" content="Nodejitsu Inc" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="stylesheet" href="/css/base.dev.css">
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">  
+
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body class="container">
+
+  <nav role="navigation" class="navigation">
+    <div class="row">
+      <ul>
+        <li><a href="http://nodejitsu.com/" class="sprite logo hide-text">Nodejitsu Inc.</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+
+    <aside class="tableofcontents threecol" role="complementary">
+      <h2>Table of contents</h2>
+      <div id="toc">
+<ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart" class="title">Quickstart</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/faq" class="title">FAQ</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/hello-world" class="title">Hello World: A Tutorial</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/features" class="title">Platform Features</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/webhooks" class="title">Continuous Deployment</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/webops" class="title">Using Webops</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/jitsu" class="title">Using the jitsu CLI</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/support" class="title">Need Support?</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/api" class="title">JSON API</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/appendix" class="title">Appendix</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/resources" class="title">More Resources</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/open-source" class="title">Open Source Projects</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/haibu" class="title">Run it yourself With Haibu</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/package-json" class="title">Understanding package.json</a>
+    </div>
+  </li>
+</ul></div>
+    </aside>
+    <div class="full-height threecol"></div>
+
+    
+    <div class="content eightcol" role="main">
+      <article id="content" class="tab-content intro"><div>
+  <div class="page-details">
+    <a class="view-github" href="https://github.com/nodejitsu/handbook/blob/blacksmith-1.0/content/articles/appendix/package-json.md">View on Github</a>
+    <h1 class="title">Understanding package.json</h1>
+  </div>
+  <div class="content"><p><hr>
+<strong><a href="http://package.json.jit.su">package.json.jit.su</a> is an interactive package.json properties explorer! Highly recommended.</strong>
+</p>
+<hr>
+
+<h2>Understanding the package.json format</h2>
+<p>A package.json file describes your application, its dependencies, and other various application metadata. For a detailed spec on creating a package.json you can check out Isaac&#39;s fine documentation <a href="https://github.com/isaacs/npm/blob/master/doc/developers.md#readme">here</a>. 
+
+</p>
+<p><hr>
+</p>
+<h2>Preparing a package.json for your application</h2>
+<p>Nodejitsu requires that you create a valid <a href="#package_json">package.json</a> for your application. The package.json will determine certain important pieces of information about your application which are required for deployment. Since sometimes it can get confusing when constructing your package.json file, we provide wizards in our CLI tool and on our website for creating one. 
+
+</p>
+<p>Here is an example of what your package.json might look like:
+
+</p>
+<pre><code class="lang-js">  {
+    <span class="string">"name"</span>: <span class="string">"hellonode"</span>,
+    <span class="string">"subdomain"</span>: <span class="string">"hellonode"</span>,
+    <span class="string">"scripts"</span>: {
+      <span class="string">"start"</span>: <span class="string">"node server.js"</span>
+    },
+    <span class="string">"version"</span>: <span class="string">"0.0.0"</span>
+  }</code></pre>
+<p>Notice the &quot;scripts&quot; property? This is where you&#39;ll store information about specific scripts in your application. The &quot;start&quot; property indicates the script that will get called when your application is started. Usage is compatible with <code>npm start</code>.
+
+</p>
+<p><hr>
+</p>
+<h2>Specifying dependencies in your package.json</h2>
+<p>If your application requires additional dependencies or third-party libraries, Nodejitsu fully supports npm module dependency resolution. All you have to do is list your dependencies the exact same way you would if you were packaging a module for npm. Here is an example of the same package.json with a few dependencies.
+
+</p>
+<pre><code class="lang-js">  {
+    <span class="string">"name"</span>: <span class="string">"hellonode"</span>,
+    <span class="string">"subdomain"</span>: <span class="string">"hellonode"</span>,
+    <span class="string">"scripts"</span>: {
+      <span class="string">"start"</span>: <span class="string">"server.js"</span>
+    },
+    <span class="string">"dependencies"</span>: {
+      <span class="string">"async"</span>: <span class="string">"0.1.x"</span>,
+      <span class="string">"colors"</span>: <span class="string">"0.5.x"</span>,
+      <span class="string">"request"</span>: <span class="string">"1.9.x"</span>
+    },
+    <span class="string">"version"</span>: <span class="string">"0.0.0"</span>
+  }
+`</code></pre>
+<p>Your dependencies will be resolved when your application deploys to Nodejitsu.
+
+</p>
+<p><hr>
+</p>
+<h2>Nodejitsu-Specific package.json Properties</h2>
+<p>A few package.json properties have special behavior on the Nodejitsu platform:
+
+</p>
+<ul>
+<li><em>subdomain</em>: Specify the subdomain for your hosted app&#39;s nodejitsu url (for example, <code>subdomain.nodejitsu.com</code>.</li>
+<li><em>domains</em>: A list of custom domains for your hosted app. See <a href="http://dns.nodejitsu.com">http://dns.nodejitsu.com</a>.</li>
+<li><em>env</em>: Specify environment variables for your app (for example, NODE_ENV=&quot;production&quot; is set by default).</li>
+<li><em>scripts.start</em>: This field is also used for <code>npm start</code>. However, nodejitsu&#39;s current implementation takes a path, whereas npm&#39;s implementation takes a shell command.</li>
+<li><em>analyze</em>: Set this to &quot;false&quot; to force jitsu to not analyze for the app&#39;s dependencies.</li>
+</ul>
+</div>
+</div></article>
+    </div>
+    <!-- content -->
+  </div>
+  <!-- row -->
+
+  <footer role="contentinfo" class="copyright">
+    <p>&copy; 2010-2012 Nodejitsu Inc.</p>
+    <a href="http://legal.nodejitsu.com/privacy" class="last">Privacy policy</a>
+    <a href="http://legal.nodejitsu.com/terms-of-service">Terms of Service</a>
+  </footer>
+
+  <script src="../public/js/ui.js"></script>
+
+</body>
+</html>
