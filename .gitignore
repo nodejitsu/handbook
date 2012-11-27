@@ -4,3 +4,5 @@
 book.pdf
 book.md
 book.html
+node_modules
+npm-debug.log

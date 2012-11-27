@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+
+	<title>The Nodejitsu Handbook</title>
+
+	<meta name="description" content="The Nodejitsu Handbook - A gentle introduction to the art of Nodejitsu" />
+	<meta name="author" content="Nodejitsu Inc" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="stylesheet" href="/css/base.dev.css">
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">  
+
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body class="container">
+
+  <nav role="navigation" class="navigation">
+    <div class="row">
+      <ul>
+        <li><a href="http://nodejitsu.com/" class="sprite logo hide-text">Nodejitsu Inc.</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+
+    <aside class="tableofcontents threecol" role="complementary">
+      <h2>Table of contents</h2>
+      <div id="toc">
+<ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart" class="title">Quickstart</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/faq" class="title">FAQ</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/hello-world" class="title">Hello World: A Tutorial</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/features" class="title">Platform Features</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/webhooks" class="title">Continuous Deployment</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/webops" class="title">Using Webops</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/jitsu" class="title">Using the jitsu CLI</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/support" class="title">Need Support?</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/api" class="title">JSON API</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/appendix" class="title">Appendix</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/resources" class="title">More Resources</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/open-source" class="title">Open Source Projects</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/haibu" class="title">Run it yourself With Haibu</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/package-json" class="title">Understanding package.json</a>
+    </div>
+  </li>
+</ul></div>
+    </aside>
+    <div class="full-height threecol"></div>
+
+    
+    <div class="content eightcol" role="main">
+      <article id="content" class="tab-content intro"><div>
+  <div class="page-details">
+    <a class="view-github" href="https://github.com/nodejitsu/handbook/blob/blacksmith-1.0/content/articles/support.md">View on Github</a>
+    <h1 class="title">Need Support?</h1>
+  </div>
+  <div class="content"><p>Nodejitsu has a team of developers standing by to assist users with any issues they may come across while deploying and administrating their web applications on the Nodejitsu platform. Nodejitsu strives to have a lightning-fast turnaround on all issues you may have!
+
+</p>
+<p>The following can be extremely helpful for the support team if you have them ahead of time:
+
+</p>
+<ol>
+<li>username/appname.</li>
+<li>A <a href="https://gist.github.com/">gist</a> of your package.json file.</li>
+<li>A <a href="https://gist.github.com/">gist</a> of your command/action and error output.</li>
+<li>Versions of tools and apps; <code>jitsu -v</code>, <code>node -v</code>, <code>npm -v</code>.</li>
+<li>The platform you are working on -- Linux, Mac, Windows, etc.</li>
+</ol>
+<p><hr>
+</p>
+<h2>E-mail</h2>
+<p>You can also contact us via email, at <strong><a href="email:support@nodejitsu.com">support@nodejitsu.com</a></strong>.
+
+</p>
+<p><hr>
+</p>
+<h2>IRC and Kohai</h2>
+<p>Nodejitsu has a channel on freenode at <a href="irc://irc.freenode.net/#nodejitsu">irc://irc.freenode.net/#nodejitsu</a>
+(<a href="http://webchat.jit.su"><a href="http://webchat.jit.su">http://webchat.jit.su</a></a>), where Nodejitsu staff are standing by to support users around the clock. Drop by to ask questions, get assistance, or even just to hang out!
+
+</p>
+<p><a href="https://github.com/nodejitsu/kohai">Kohai</a> is an IRC bot that has some basic abilities
+to help you among other features. To bring up his help dialogue just type <code>!help</code> into
+the #nodejitsu channel and Kohai will message you.
+
+</p>
+<p><hr>
+</p>
+<h2>Github Issues</h2>
+<p>Each of Nodejitsu&#39;s open source projects uses Github Issues to manage bugs and related software problems. Github Issues is most useful for developers. For example, if a developer finds a bug in our open-source <a href="https://github.com/nodejitsu/node-http-proxy">http proxy</a>, they can submit an issue at <a href="https://github.com/nodejitsu/node-http-proxy/issues">https://github.com/nodejitsu/node-http-proxy/issues</a> and tell us about their bug.
+
+</p>
+</div>
+</div></article>
+    </div>
+    <!-- content -->
+  </div>
+  <!-- row -->
+
+  <footer role="contentinfo" class="copyright">
+    <p>&copy; 2010-2012 Nodejitsu Inc.</p>
+    <a href="http://legal.nodejitsu.com/privacy" class="last">Privacy policy</a>
+    <a href="http://legal.nodejitsu.com/terms-of-service">Terms of Service</a>
+  </footer>
+
+  <script src="../public/js/ui.js"></script>
+
+</body>
+</html>
