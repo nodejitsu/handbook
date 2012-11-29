@@ -1,7 +1,7 @@
 Access the `Admin` section on your open source node.js Github repository. Click `Service Hooks` and then `Nodejitsu`. You will be presented with a form with four fields:
 
 * Username, which defaults to your Github username
-* Password, your password or a valid [Nodejitsu API authentication token](https://github.com/nodejitsu/handbook#create-an-api-token)
+* Password, your password or a valid [Nodejitsu API authentication token](https://handbook.nodejitsu.com/api#create-an-api-token)
 * Branch, where you can define the branch you wish to deploy and defaults to master
 * Endpoint, which defaults to https://webhooks.nodejitsu.com
 
@@ -72,7 +72,7 @@ curl -X POST \
 
 ## But wait, I have API keys I can't commit to Github as open source?!
 
-Don't worry, you can use `jitsu set env` to set environment variables that you can access with `process.env`. Check our [handbook](https://github.com/nodejitsu/handbook#environment-variable-management) for more information. Environment variables set this way persist across deployments and are also available in our [webops](https://webops.nodejitsu.com) application.
+Don't worry, you can use `jitsu set env` to set environment variables that you can access with `process.env`. Check our [handbook](https://handbook.nodejitsu.com/features#feature/envvars) for more information. Environment variables set this way persist across deployments and are also available in our [webops](https://webops.nodejitsu.com) application.
 
 <a name="api"></a>
 ## API Documentation

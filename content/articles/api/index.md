@@ -110,6 +110,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 
     DELETE /users/:user-id/tokens/:token-id
 
+<a name="create-an-api-token"></a>
 ### Create an API Token
 
 Token and provider are mandatory
