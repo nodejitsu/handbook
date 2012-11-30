@@ -123,7 +123,7 @@ Users sometimes need Nodejitsu to store an authorization token for a service the
 
 Third Party tokens serve this purpose. The current supported providers are:
 
-* [Github](http://github.com)
+* [Github](https://help.github.com/articles/creating-an-oauth-token-for-command-line-use)
 
 ```
 GET /users/:user-id/thirdparty
