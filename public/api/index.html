@@ -212,10 +212,7 @@
 <p><a name="create-an-api-token"></a>
 </p>
 <h3>Create an API Token</h3>
-<p>Token and provider are mandatory
-
-</p>
-<pre><code>POST /users/:user-id/tokens</code></pre>
+<pre><code>PUT /users/:user-id/tokens</code></pre>
 <h3>Get User Third Party Tokens</h3>
 <p>Users sometimes need Nodejitsu to store an authorization token for a service they want us to use for them. e.g. For us to deploy a private repository you have in Github we need you to give Nodejitsu access to your github account.
 
@@ -230,6 +227,9 @@
 <h3>Delete an Third Party Token</h3>
 <pre><code>DELETE /users/:user-id/thirdparty/:token-id</code></pre>
 <h3>Create an Third Party Token</h3>
+<p>Token and provider are mandatory
+
+</p>
 <pre><code>POST /users/:user-id/thirdparty
 {
   token: &quot;SEVMTE8gWUVTIEkgQU0gRE9HCg&quot;, // mandatory
