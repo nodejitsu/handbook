@@ -113,9 +113,7 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 <a name="create-an-api-token"></a>
 ### Create an API Token
 
-Token and provider are mandatory
-
-    POST /users/:user-id/tokens
+    PUT /users/:user-id/tokens
 
 ### Get User Third Party Tokens
 
@@ -134,6 +132,8 @@ GET /users/:user-id/thirdparty
     DELETE /users/:user-id/thirdparty/:token-id
 
 ### Create an Third Party Token
+
+Token and provider are mandatory
 
     POST /users/:user-id/thirdparty
     {
