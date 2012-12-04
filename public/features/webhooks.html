@@ -115,7 +115,8 @@
     <a class="view-github" href="https://github.com/nodejitsu/handbook/blob/master/content/articles/features/webhooks.md">View on Github</a>
     <h1 class="title">Continuous Deployment</h1>
   </div>
-  <div class="content"><p>Access the <code>Admin</code> section on your open source node.js Github repository. Click <code>Service Hooks</code> and then <code>Nodejitsu</code>. You will be presented with a form with four fields:
+  <div class="content"><p><a name="webhookapi-index"></a>
+Access the <code>Admin</code> section on your open source node.js Github repository. Click <code>Service Hooks</code> and then <code>Nodejitsu</code>. You will be presented with a form with four fields:
 
 </p>
 <ul>
@@ -129,6 +130,8 @@
 </p>
 <p>Select <code>Active</code> and hit <code>Update Settings</code>. From now on every-time you commit to Github (in the designated deployment branch) we will deploy that application for you. That simple.
 
+</p>
+<p><a name="webhookapi-monitoring"></a>
 </p>
 <h2>Monitoring deployments</h2>
 <p>There&#39;s several ways to access the deployment status in the Nodejitsu Webhook API, and you can find the complete documentation at <a href="http://webhooks.nodejitsu.com">webhooks.nodejitsu.com</a>.
@@ -157,6 +160,8 @@ curl https://username:password@webhooks.nodejitsu.com/1/status/username/changes?
 <p>We are now ready to deploy, go back to Github and click <code>Test Hook</code>. You should be up and running shortly.
 
 </p>
+<p><a name="webhookapi-travis"></a>
+</p>
 <h2>Travis</h2>
 <p>What about continuous integration?  We added <a href="http://travis-ci.org/">Travis-CI</a> so you can feel safe about your deployments. Simply add something like this in your <code>.travis.yml</code> file.
 
@@ -173,6 +178,8 @@ curl https://username:password@webhooks.nodejitsu.com/1/status/username/changes?
 <p>If tests failed we won&#39;t deploy. Simple.
 
 </p>
+<p><a name="webhookapi-privaterepos"></a>
+</p>
 <h2>Deploying Private Repos &amp; Commit Status API</h2>
 <p>If you authorize access so we can use your github account we can do more fun stuff like allowing you to deploy your private repositories, or even update your <a href="https://github.com/blog/1227-commit-status-api">commit status</a> and check if a deployment worked directly in github. We don&#39;t save any passwords - we just use the password to retrieve a token to save.
 
@@ -185,13 +192,15 @@ curl https://username:password@webhooks.nodejitsu.com/1/status/username/changes?
 </p>
 <pre><code class="lang-bash">curl -X POST \
   -H <span class="string">"Content-type: application/json"</span> \
-  --data <span class="string">"{ \"credentials\": githubUser:githubPassword }"</span> \
+  --data <span class="string">"{ \"credentials\": \"githubUser:githubPassword\" }"</span> \
   https://nodejitsuUser:nodejitsuPass@webhooks.nodejitsu.com/1/auth/github</code></pre>
+<p><a name="webhookapi-apikeys"></a>
+</p>
 <h2>But wait, I have API keys I can&#39;t commit to Github as open source?!</h2>
 <p>Don&#39;t worry, you can use <code>jitsu set env</code> to set environment variables that you can access with <code>process.env</code>. Check our <a href="https://handbook.nodejitsu.com/features#feature/envvars">handbook</a> for more information. Environment variables set this way persist across deployments and are also available in our <a href="https://webops.nodejitsu.com">webops</a> application.
 
 </p>
-<p><a name="api"></a>
+<p><a name="webhookapi-api"></a>
 </p>
 <h2>API Documentation</h2>
 <p><a name="deploy"></a>
@@ -495,7 +504,7 @@ GET /1/status/:user/changes/:id</code></pre>
 <p><a name="auth"></a>
 </p>
 <h3>auth</h3>
-<pre><code>GET /1/auth/github</code></pre>
+<pre><code>POST /1/auth/github</code></pre>
 <p>Tries to get authorization from github, so elevated privileges can be used on that service. This will give us access to get working code from your repositories and change the status of a specific pull request
 
 </p>
