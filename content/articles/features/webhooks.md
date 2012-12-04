@@ -1,3 +1,4 @@
+<a name="webhookapi-index"></a>
 Access the `Admin` section on your open source node.js Github repository. Click `Service Hooks` and then `Nodejitsu`. You will be presented with a form with four fields:
 
 * Username, which defaults to your Github username
@@ -9,6 +10,7 @@ Access the `Admin` section on your open source node.js Github repository. Click 
 
 Select `Active` and hit `Update Settings`. From now on every-time you commit to Github (in the designated deployment branch) we will deploy that application for you. That simple.
 
+<a name="webhookapi-monitoring"></a>
 ## Monitoring deployments
 
 There's several ways to access the deployment status in the Nodejitsu Webhook API, and you can find the complete documentation at [webhooks.nodejitsu.com](http://webhooks.nodejitsu.com).
@@ -38,6 +40,7 @@ Each request to our API is logged with a unique `uuid`, so you can use it to ref
 
 We are now ready to deploy, go back to Github and click `Test Hook`. You should be up and running shortly.
 
+<a name="webhookapi-travis"></a>
 ## Travis
 
 What about continuous integration?  We added [Travis-CI](http://travis-ci.org/) so you can feel safe about your deployments. Simply add something like this in your `.travis.yml` file.
@@ -55,6 +58,7 @@ Internally our API will try to see if you have Travis configured like this, and 
 
 If tests failed we won't deploy. Simple.
 
+<a name="webhookapi-privaterepos"></a>
 ## Deploying Private Repos & Commit Status API
 
 If you authorize access so we can use your github account we can do more fun stuff like allowing you to deploy your private repositories, or even update your [commit status](https://github.com/blog/1227-commit-status-api) and check if a deployment worked directly in github. We don't save any passwords - we just use the password to retrieve a token to save.
@@ -70,11 +74,12 @@ curl -X POST \
   https://nodejitsuUser:nodejitsuPass@webhooks.nodejitsu.com/1/auth/github 
 ```
 
+<a name="webhookapi-apikeys"></a>
 ## But wait, I have API keys I can't commit to Github as open source?!
 
 Don't worry, you can use `jitsu set env` to set environment variables that you can access with `process.env`. Check our [handbook](https://handbook.nodejitsu.com/features#feature/envvars) for more information. Environment variables set this way persist across deployments and are also available in our [webops](https://webops.nodejitsu.com) application.
 
-<a name="api"></a>
+<a name="webhookapi-api"></a>
 ## API Documentation
 
 <a name="deploy"></a>
