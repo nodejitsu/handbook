@@ -968,6 +968,16 @@ pre > code {
   margin: 10px 0;
 }
 
+a.anchor, a.anchor:visited { 
+  color: #CCC;
+  text-decoration: none; 
+}
+
+a.anchor:hover {
+  color: #999;
+  text-decoration: none; 
+}
+
 /*********************************************
  * SYNTAX
  *********************************************/
