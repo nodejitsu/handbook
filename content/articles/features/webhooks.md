@@ -66,7 +66,7 @@ To authorize simply do:
 ``` bash
 curl -X POST \
   -H "Content-type: application/json" \
-  --data "{ \"credentials\": githubUser:githubPassword }" \
+  --data "{ \"credentials\": \"githubUser:githubPassword\" }" \
   https://nodejitsuUser:nodejitsuPass@webhooks.nodejitsu.com/1/auth/github 
 ```
 
