@@ -41,7 +41,7 @@
 
       previous_slug = stack.slice(0, stack.length-1).map(function (elem) {
         return elem[1];
-      }).join('-')
+      }).join('-');
 
       if(previous_slug && previous_slug !== '') {
         slug = previous_slug + '-' + slug;
