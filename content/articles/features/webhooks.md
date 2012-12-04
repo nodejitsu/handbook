@@ -391,7 +391,7 @@ curl https://dscape:password@webhooks.nodejitsu.com/1/status/dscape/changes?incl
 ### auth
 
 ```
-GET /1/auth/github
+POST /1/auth/github
 ```
 
 Tries to get authorization from github, so elevated privileges can be used on that service. This will give us access to get working code from your repositories and change the status of a specific pull request
