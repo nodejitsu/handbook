@@ -23,3 +23,5 @@ The Nodejitsu Handbook is built with [`blacksmith`][blacksmith], so all you need
 ```
   bin/server
 ```
+
+[blacksmith]: https://github.com/flatiron/blacksmith
