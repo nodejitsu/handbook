@@ -212,7 +212,8 @@
 <p><a name="create-an-api-token"></a>
 </p>
 <h3>Create an API Token</h3>
-<pre><code>PUT /users/:user-id/tokens</code></pre>
+<pre><code>POST /users/:user-id/tokens
+PUT  /users/:user-id/tokens/:my-named-token</code></pre>
 <h3>Get User Third Party Tokens</h3>
 <p>Users sometimes need Nodejitsu to store an authorization token for a service they want us to use for them. e.g. For us to deploy a private repository you have in Github we need you to give Nodejitsu access to your github account.
 

@@ -113,7 +113,8 @@ All User accounts must be confirmed. When a new User is created, a confirmation 
 <a name="create-an-api-token"></a>
 ### Create an API Token
 
-    PUT /users/:user-id/tokens
+    POST /users/:user-id/tokens
+    PUT  /users/:user-id/tokens/:my-named-token
 
 ### Get User Third Party Tokens
 
