@@ -20,7 +20,7 @@ The most fun way to monitor your deployment is with the realtime status changes 
 ``` bash
 # if your username is foo and password is bar this would be 
 # https://foo:bar@webhooks.nodejitsu.com/1/status/foo/changes
-curl https://username:password@webhooks.nodejitsu.com/1/status/username/changes?include_docs=auto
+curl -u username https://webhooks.nodejitsu.com/1/status/username/changes?include_docs=auto
 ```
 
 This will create an HTTP keep alive connection that pushes the status to you in realtime every time someone invokes our API:
@@ -97,7 +97,7 @@ Check [Sample Payloads](#payloads) for examples. This method is normally called 
 You must configure the github webhook to use the travis webhook. Works under the assumption that if your repository has a `.travis.yml` file and that contains at least one webhook notification we shouldn't deploy from the github request, but instead wait until travis triggers the notify event and calls our API. This effectively means that if travis tests don't pass your application does not get deployed.
 
 ```
-curl -X POST -d @file https://user:pass@webhooks.nodejitsu.com/1/deploy
+curl -X POST -u username -d @file https://webhooks.nodejitsu.com/1/deploy
 ```
 
 Authentication can use a pair of `user:pass` or `user:apiToken`.
@@ -204,7 +204,7 @@ GET /1/status/:user/webhooks/:application
 Gets the install status for a specific user. Useful to determine if the deploy worked, or why it failed. `:user` is your nodejitsu username and `:application` is your application name.
 
 ```
-curl https://dscape:password@webhooks.nodejitsu.com/1/status/dscape/webhooks/hello-world-api-flatiron?limit=10\&skip=20
+curl -u dscape  https:/webhooks.nodejitsu.com/1/status/dscape/webhooks/hello-world-api-flatiron?limit=10\&skip=20
 ```
 
 <a name="status-qs"></a>
@@ -306,7 +306,7 @@ GET /1/status/:user/changes/:id
 Streams log files as you deploy application with a changes stream. When you provide an id it will just return that entry and close the http connection.
 
 ```
-curl https://dscape:password@webhooks.nodejitsu.com/1/status/dscape/changes?include_docs=true
+curl -u dscape https://webhooks.nodejitsu.com/1/status/dscape/changes?include_docs=true
 ```
 
 <a name="changes-qs"></a>
@@ -402,7 +402,9 @@ POST /1/auth/github
 Tries to get authorization from github, so elevated privileges can be used on that service. This will give us access to get working code from your repositories and change the status of a specific pull request
 
 ```
-curl -X POST nodejitsuUser:nodejitsuPwd@webhooks.nodejitsu.com/1/auth/github --data '{"credentials":"githubUser:githubPass"}' --header "Content-type: application/json" 
+curl -X POST -u nodejitsuUser https://webhooks.nodejitsu.com/1/auth/github \
+  --data '{"credentials":"githubUser:githubPass"}' \
+  --header "Content-type: application/json"
 ```
 
 <a name="auth-qs"></a>
