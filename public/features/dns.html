@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+
+  <title>The Nodejitsu Handbook</title>
+
+  <meta name="description" content="The Nodejitsu Handbook - A gentle introduction to the art of Nodejitsu" />
+  <meta name="author" content="Nodejitsu Inc" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="stylesheet" href="/css/base.dev.css">
+  <link rel="stylesheet" href="/css/github.min.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">  
+
+  <script src="/js/highlight.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+  <script src="/js/slugify.js"></script>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body class="container">
+
+  <nav role="navigation" class="navigation">
+    <div class="row">
+      <ul>
+        <li><a href="/" class="sprite logo hide-text">Nodejitsu Inc.</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+
+    <aside class="tableofcontents threecol" role="complementary">
+      <h2>Table of contents</h2>
+      <div id="toc">
+<ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart" class="title">Quickstart</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/faq" class="title">FAQ</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/a-quickstart/hello-world" class="title">Hello World: A Tutorial</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/features" class="title">Platform Features</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/webhooks" class="title">Continuous Deployment</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/dns" class="title">Using My Own Domain (DNS)</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/webops" class="title">Using Webops</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/features/jitsu" class="title">Using the jitsu CLI</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/support" class="title">Need Support?</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/api" class="title">JSON API</a>
+    </div>
+  </li>
+</ul><ul class="vertical-tabs">
+  <li class="tree">
+    <div class="page-details">
+      <a href="/appendix" class="title">Appendix</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/resources" class="title">More Resources</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/open-source" class="title">Open Source Projects</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/haibu" class="title">Run it yourself With Haibu</a>
+    </div>
+  </li><li class="tree">
+    <div class="page-details">
+      <a href="/appendix/package-json" class="title">Understanding package.json</a>
+    </div>
+  </li>
+</ul></div>
+    </aside>
+    <div class="full-height threecol"></div>
+
+    
+    <div class="content eightcol" role="main">
+      <article id="content" class="tab-content intro"><div>
+  <div class="page-details">
+    <a class="view-github" href="https://github.com/nodejitsu/handbook/blob/master/content/articles/features/dns.md">View on Github</a>
+    <h1 class="title">Using My Own Domain (DNS)</h1>
+  </div>
+  <div class="content"><p>Here&#39;s how to set up a custom domain name for your Nodejitsu app:
+
+</p>
+<h2>Get a list of ip addresses for Nodejitsu&#39;s balancers:</h2>
+<p>If you&#39;re on the command line, you can get the latest version of this list by running:
+
+</p>
+<pre><code class="lang-bash">$ host nodejitsu.com
+nodejitsu.com has address 165.225.131.5
+nodejitsu.com has address 165.225.129.253
+nodejitsu.com has address 165.225.130.235
+nodejitsu.com has address 165.225.130.237
+nodejitsu.com has address 165.225.130.238
+nodejitsu.com has address 165.225.130.239
+nodejitsu.com has address 165.225.130.240
+nodejitsu.com has address 165.225.130.241
+nodejitsu.com has address 165.225.131.4</code></pre>
+<h2>Set the A-record for your app</h2>
+<p>Using your DNS provider, modify the A-record for your domain to point to the ip addresses you found in step 1. This process depends on your DNS hosting provider. Add <strong>all</strong> of these addresses to your A-records, as they serve as fallbacks for each other.
+
+</p>
+<h2>Modify your package.json</h2>
+<p>Nodejitsu uses a special field in your package.json, called &quot;domains&quot;, to keep track of an app&#39;s assigned custom domains. For example, the app hosted at <a href="http://jesusabdullah.jit.su">http://jesusabdullah.jit.su</a> has the following package.json:
+
+</p>
+<pre><code class="lang-js">{
+  <span class="string">"name"</span>: <span class="string">"myapp"</span>,
+  <span class="string">"subdomain"</span>: <span class="string">"myapp"</span>,
+  <span class="string">"domains"</span>: [
+    <span class="string">"myawesomedomain.com"</span>,
+    <span class="string">"www.myawesomedomain.com"</span>
+  ],
+  <span class="string">"scripts"</span>: {
+    <span class="string">"start"</span>: <span class="string">"server.js"</span>
+  },
+  <span class="string">"version"</span>: <span class="string">"0.0.1"</span>,
+  <span class="string">"engines"</span>: {
+    <span class="string">"node"</span>: <span class="string">"0.8.x"</span>
+  }
+}</code></pre>
+<p>In this example, the &quot;domains&quot; property is a list of domains you want to point to your application.
+
+</p>
+<h2>Push your changes to nodejitsu</h2>
+<p>The most painless way to do this, if your app is already running, is to use <code>jitsu apps update</code> to push only your package.json:
+
+</p>
+<pre><code class="lang-bash">$ jitsu apps update
+info:   Welcome to Nodejitsu
+info:   It worked <span class="keyword">if</span> it ends with Nodejitsu ok
+info:   Executing command apps update
+info:   Authenticated as nodejitsu_user
+info:   Updating application myapp with:
+data:   {
+data:       domains: <span class="test_condition">[ <span class="string">'myawesomedomain.com'</span>, <span class="string">'www.myawesomedomain.com'</span> ]</span>
+data:   }
+info:   Nodejitsu ok</code></pre>
+<h2>Test it out!</h2>
+<p><a href="http://www.myawesomedomain.com">http://www.myawesomedomain.com</a>
+
+</p>
+<p>Don&#39;t forget to give it some time so DNS resolves, and add a &quot;powered by Nodejitsu&quot; badge to your homepage (or just give a shout-out on Twitter)
+
+</p>
+</div>
+</div></article>
+    </div>
+    <!-- content -->
+  </div>
+  <!-- row -->
+
+  <footer role="contentinfo" class="copyright">
+    <p>&copy; 2010-2012 Nodejitsu Inc.</p>
+    <a href="http://legal.nodejitsu.com/privacy" class="last">Privacy policy</a>
+    <a href="http://legal.nodejitsu.com/terms-of-service">Terms of Service</a>
+  </footer>
+
+  <script src="../public/js/ui.js"></script>
+
+</body>
+</html>
