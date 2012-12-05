@@ -233,7 +233,7 @@ If you need to identify if you are receiving http or https traffic use the `x-fo
 
 We allow users to host their applications on custom domains by specifying their
 app's domains in their `package.json` and then properly configuring their DNS.
-If you'd like to know how, just read the instructions at [http://dns.jit.su](http://dns.jit.su)!
+If you'd like to know how, just read the instructions at [our DNS section](http://handbook.jitsu.com/features/dns)!
 
 ### SSL Certificates for Custom Domains
 

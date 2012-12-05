@@ -54,7 +54,7 @@ Your dependencies will be resolved when your application deploys to Nodejitsu.
 A few package.json properties have special behavior on the Nodejitsu platform:
 
 * *subdomain*: Specify the subdomain for your hosted app's nodejitsu url (for example, `subdomain.nodejitsu.com`.
-* *domains*: A list of custom domains for your hosted app. See <http://dns.nodejitsu.com>.
+* *domains*: A list of custom domains for your hosted app. See <http://handbook.jitsu.com/features/dns>.
 * *env*: Specify environment variables for your app (for example, NODE_ENV="production" is set by default).
 * *scripts.start*: This field is also used for `npm start`. However, nodejitsu's current implementation takes a path, whereas npm's implementation takes a shell command.
 * *analyze*: Set this to "false" to force jitsu to not analyze for the app's dependencies.
