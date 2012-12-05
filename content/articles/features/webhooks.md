@@ -70,8 +70,15 @@ To authorize simply do:
 ``` bash
 curl -X POST \
   -H "Content-type: application/json" \
-  --data "{ \"credentials\": \"githubUser:githubPassword\" }" \
-  https://nodejitsuUser:nodejitsuPass@webhooks.nodejitsu.com/1/auth/github 
+  https://webhooks.nodejitsu.com/1/auth/github \
+  --data '{ "credentials": "githubUser:githubPassword" }' \
+  -u nodejitsuUser:nodejitsuPass
+```
+
+**Note:** If your shell does not allow you to use the above format use the single line command below:
+
+``` bash
+curl -X POST https://webhooks.nodejitsu.com/1/auth/github -H "Content-type: application/json" --data '{ "credentials": "githubUser:githubPassword" }' -u nodejitsuUser:nodejitsuPass
 ```
 
 <a name="webhookapi-apikeys"></a>
