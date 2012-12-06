@@ -16,5 +16,6 @@ already solve your problem.
 - <http://cheatsheet.jit.su> is a nodejitsu cheatsheet listing the most common commands.
 - <http://package.json.jit.su> is an interactive reference for the package.json format.
 - <http://blog.nodejitsu.com/npm-cheatsheet> is a quick cheatsheet for npm commands.
+- <http://errors.jit.su> is a reference for common jitsu deploy issues.
 
 [meta:title]: <> (More Resources)
