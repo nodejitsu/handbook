@@ -67,7 +67,7 @@ Every time you deploy to Nodejitsu, we automatically take a [snapshot](http://en
 * `jitsu snapshots fetch <app-name>` will download a specified snapshot of your application to your computer.
 
 <hr>
-<a name='features/databases'></a>
+<a name='feature/databases'></a>
 ## Databases
 
 Applications on Nodejitsu are ready to be connected to any database. If you already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
