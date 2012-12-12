@@ -1,4 +1,4 @@
-[![Nodejitsu Deploy Status](https://webhooks.jit.su/nodejitsu/handbook.png)](https://webops.jit.su#nodejitsu/webhooks)
+[![Nodejitsu Deploy Status](https://webhooks.nodejitsu.com/nodejitsu/handbook.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
 
 # The Nodejitsu Handbook
 

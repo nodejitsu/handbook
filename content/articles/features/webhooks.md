@@ -48,12 +48,12 @@ If you use our continuous deployment solution and wish there was a easier way to
 This is simple, if your username was `nodejitsu` and your github repository was called `handbook` you could get deployment status by simply adding this to your `readme.md` file:
 
 ``` markdown
-[![Nodejitsu Deploy Status Badges](https://webhooks.jit.su/nodejitsu/handbook.png)](https://webops.jit.su#nodejitsu/webhooks)
+[![Nodejitsu Deploy Status Badges](https://webhooks.nodejitsu.com/nodejitsu/handbook.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
 ```
 
 It will look something like this:
 
-[![Nodejitsu Deploy Status Badges](https://webhooks.jit.su/nodejitsu/handbook.png)](https://webops.jit.su#nodejitsu/webhooks)
+[![Nodejitsu Deploy Status Badges](https://webhooks.nodejitsu.com/nodejitsu/handbook.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
 
 <a name="webhookapi-travis"></a>
 ## Travis
