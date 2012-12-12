@@ -40,6 +40,21 @@ Each request to our API is logged with a unique `uuid`, so you can use it to ref
 
 We are now ready to deploy, go back to Github and click `Test Hook`. You should be up and running shortly.
 
+<a name="webhookapi-badges"></a>
+## Badges
+
+If you use our continuous deployment solution and wish there was a easier way to see if the latest deployment worked you can now use our Continuous Deployment Badges.
+
+This is simple, if your username was `nodejitsu` and your github repository was called `handbook` you could get deployment status by simply adding this to your `readme.md` file:
+
+``` markdown
+[![Nodejitsu Deploy Status Badges](http://webhooks.jit.su/nodejitsu/handbook.png)](https://webops.jit.su#nodejitsu/webhooks)
+```
+
+It will look something like this:
+
+[![Nodejitsu Deploy Status Badges](http://webhooks.jit.su/nodejitsu/handbook.png)](https://webops.jit.su#nodejitsu/webhooks)
+
 <a name="webhookapi-travis"></a>
 ## Travis
 
@@ -72,13 +87,13 @@ curl -X POST \
   -H "Content-type: application/json" \
   https://webhooks.nodejitsu.com/1/auth/github \
   --data '{ "credentials": "githubUser:githubPassword" }' \
-  -u nodejitsuUser:nodejitsuPass
+  -u nodejitsuUser
 ```
 
 **Note:** If your shell does not allow you to use the above format use the single line command below:
 
 ``` bash
-curl -X POST https://webhooks.nodejitsu.com/1/auth/github -H "Content-type: application/json" --data '{ "credentials": "githubUser:githubPassword" }' -u nodejitsuUser:nodejitsuPass
+curl -X POST https://webhooks.nodejitsu.com/1/auth/github -H "Content-type: application/json" --data '{ "credentials": "githubUser:githubPassword" }' -u nodejitsuUser
 ```
 
 <a name="webhookapi-apikeys"></a>
