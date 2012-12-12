@@ -1,3 +1,5 @@
+[![Nodejitsu Deploy Status](http://webhooks.jit.su/nodejitsu/handbook.png)](https://webops.jit.su#nodejitsu/webhooks)
+
 # The Nodejitsu Handbook
 
 **You can view the Handbook online at http://handbook.jitsu.com**
