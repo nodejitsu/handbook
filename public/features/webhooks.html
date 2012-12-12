@@ -166,6 +166,22 @@ curl -u username https://webhooks.nodejitsu.com/1/status/username/changes?includ
 <p>We are now ready to deploy, go back to Github and click <code>Test Hook</code>. You should be up and running shortly.
 
 </p>
+<p><a name="webhookapi-badges"></a>
+</p>
+<h2>Badges</h2>
+<p>If you use our continuous deployment solution and wish there was a easier way to see if the latest deployment worked you can now use our Continuous Deployment Badges.
+
+</p>
+<p>This is simple, if your username was <code>nodejitsu</code> and your github repository was called <code>handbook</code> you could get deployment status by simply adding this to your <code>readme.md</code> file:
+
+</p>
+<pre><code class="lang-markdown"><span class="link_label">[![Nodejitsu Deploy Status Badges](http://webhooks.jit.su/nodejitsu/handbook.png)]</span>(<span class="link_url">https://webops.jit.su#nodejitsu/webhooks</span>)</code></pre>
+<p>It will look something like this:
+
+</p>
+<p><a href="https://webops.jit.su#nodejitsu/webhooks"><img src="http://webhooks.jit.su/nodejitsu/handbook.png" alt="Nodejitsu Deploy Status Badges"></a>
+
+</p>
 <p><a name="webhookapi-travis"></a>
 </p>
 <h2>Travis</h2>
@@ -198,8 +214,13 @@ curl -u username https://webhooks.nodejitsu.com/1/status/username/changes?includ
 </p>
 <pre><code class="lang-bash">curl -X POST \
   -H <span class="string">"Content-type: application/json"</span> \
-  --data <span class="string">"{ \"credentials\": \"githubUser:githubPassword\" }"</span> \
-  https://nodejitsuUser:nodejitsuPass@webhooks.nodejitsu.com/1/auth/github</code></pre>
+  https://webhooks.nodejitsu.com/1/auth/github \
+  --data <span class="string">'{ "credentials": "githubUser:githubPassword" }'</span> \
+  -u nodejitsuUser:nodejitsuPass</code></pre>
+<p><strong>Note:</strong> If your shell does not allow you to use the above format use the single line command below:
+
+</p>
+<pre><code class="lang-bash">curl -X POST https://webhooks.nodejitsu.com/1/auth/github -H <span class="string">"Content-type: application/json"</span> --data <span class="string">'{ "credentials": "githubUser:githubPassword" }'</span> -u nodejitsuUser:nodejitsuPass</code></pre>
 <p><a name="webhookapi-apikeys"></a>
 </p>
 <h2>But wait, I have API keys I can&#39;t commit to Github as open source?!</h2>
