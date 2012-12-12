@@ -216,11 +216,11 @@ curl -u username https://webhooks.nodejitsu.com/1/status/username/changes?includ
   -H <span class="string">"Content-type: application/json"</span> \
   https://webhooks.nodejitsu.com/1/auth/github \
   --data <span class="string">'{ "credentials": "githubUser:githubPassword" }'</span> \
-  -u nodejitsuUser:nodejitsuPass</code></pre>
+  -u nodejitsuUser</code></pre>
 <p><strong>Note:</strong> If your shell does not allow you to use the above format use the single line command below:
 
 </p>
-<pre><code class="lang-bash">curl -X POST https://webhooks.nodejitsu.com/1/auth/github -H <span class="string">"Content-type: application/json"</span> --data <span class="string">'{ "credentials": "githubUser:githubPassword" }'</span> -u nodejitsuUser:nodejitsuPass</code></pre>
+<pre><code class="lang-bash">curl -X POST https://webhooks.nodejitsu.com/1/auth/github -H <span class="string">"Content-type: application/json"</span> --data <span class="string">'{ "credentials": "githubUser:githubPassword" }'</span> -u nodejitsuUser</code></pre>
 <p><a name="webhookapi-apikeys"></a>
 </p>
 <h2>But wait, I have API keys I can&#39;t commit to Github as open source?!</h2>
