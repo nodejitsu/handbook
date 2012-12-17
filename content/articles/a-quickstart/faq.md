@@ -84,4 +84,11 @@ Nodejitsu requires a starting script in the package.json to know which script to
 
 A common issue is using "node app" as the value of scripts.start in your package.json. This won't work on Nodejitsu because the file extension is not specified. You'll need to do something along the lines of "node app.js".
 
+<hr>
+## How do I choose what port to use in Nodejitsu?
+
+At Nodejitsu it's super important for us that you can run your application just like you do in your local machine. That said, you don't have to choose a specific port: just make sure you don't try to listen in any port  < 1024. __(to listen on those ports you need to run with `sudo`, and we don't do that in our servers)__.
+
+Internally our load balancers know what port your application is listening on. If you chose port `1337` our load balancer will proxy the traffic that is directed to your Nodejitsu application (e.g. foo.jit.su) on port `80` to whatever the port you choose in your application (e.g. 1337).
+
 [meta:title]: <> (FAQ)
