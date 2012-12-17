@@ -87,7 +87,7 @@ A common issue is using "node app" as the value of scripts.start in your package
 <hr>
 ## How do I choose what port to use in Nodejitsu?
 
-At Nodejitsu it's super important for us that you can run your application just like you do in your local machine. That said, you don't have to choose a specific port: just make sure you don't try to listen in any port  < 1024. __(to listen on those ports you need to run with `sudo`, and we don't do that in our servers)__.
+At Nodejitsu it's super important for us that you can run your application just like you do in your local machine. That said, you don't have to choose a specific port: just make sure it is either 80 or > 1024. __(to listen on those ports you need to run with `sudo`, and we don't do that in our servers. Port 80 gets overriden to 1024)__.
 
 Internally our load balancers know what port your application is listening on. If you chose port `1337` our load balancer will proxy the traffic that is directed to your Nodejitsu application (e.g. foo.jit.su) on port `80` to whatever the port you choose in your application (e.g. 1337).
 
