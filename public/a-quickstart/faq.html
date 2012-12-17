@@ -228,6 +228,15 @@ npm prefix to a location that you have permissions to access, like your home dir
 <p>A common issue is using &quot;node app&quot; as the value of scripts.start in your package.json. This won&#39;t work on Nodejitsu because the file extension is not specified. You&#39;ll need to do something along the lines of &quot;node app.js&quot;.
 
 </p>
+<p><hr>
+</p>
+<h2>How do I choose what port to use in Nodejitsu?</h2>
+<p>At Nodejitsu it&#39;s super important for us that you can run your application just like you do in your local machine. That said, you don&#39;t have to choose a specific port: just make sure you don&#39;t try to listen in any port  &lt; 1024. <strong>(to listen on those ports you need to run with <code>sudo</code>, and we don&#39;t do that in our servers)</strong>.
+
+</p>
+<p>Internally our load balancers know what port your application is listening on. If you chose port <code>1337</code> our load balancer will proxy the traffic that is directed to your Nodejitsu application (e.g. foo.jit.su) on port <code>80</code> to whatever the port you choose in your application (e.g. 1337).
+
+</p>
 </div>
 </div></article>
     </div>
