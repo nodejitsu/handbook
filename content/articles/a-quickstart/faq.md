@@ -130,3 +130,12 @@ request with HTTP. See the following code for an example
     })
 
     app.listen(8090)
+
+<hr>
+## How do I change the timezone on my drone?
+
+You can set the `TZ` environment variable with `jitsu env`. A list of time zones
+can be found [here](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+Here is an example:
+
+    jitsu env set TZ America/Los_Angeles
