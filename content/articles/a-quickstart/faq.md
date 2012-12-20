@@ -91,13 +91,11 @@ At Nodejitsu it's super important for us that you can run your application just 
 
 Internally our load balancers know what port your application is listening on. If you chose port `1337` our load balancer will proxy the traffic that is directed to your Nodejitsu application (e.g. foo.jit.su) on port `80` to whatever the port you choose in your application (e.g. 1337).
 
-[meta:title]: <> (FAQ)
-
 <hr>
 ## How do I force my clients to use HTTPS with my application?
 
 You'll need to redirect your clients to the HTTPS address when they make a
-request with HTTP. See the following code for an example
+request with HTTP. See the following code for an example:
 
     // http
     var http = require('http');
@@ -139,3 +137,5 @@ can be found [here](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 Here is an example:
 
     jitsu env set TZ America/Los_Angeles
+
+[meta:title]: <> (FAQ)
