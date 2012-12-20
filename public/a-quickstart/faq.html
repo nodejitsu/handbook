@@ -149,7 +149,7 @@
 <p><hr>
 </p>
 <h2>&quot;How can I make my app use a port other than port 80?&quot;</h2>
-<p>Connecting to other servers using arbitrary ports requires no special considerations. However, <em>listening</em> for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains. Consequentially, each subdomain may only host one listening service.
+<p>Connecting to other servers using arbitrary ports requires no special considerations. However, <em>listening</em> for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains. Consequentially, each subdomain may only host one listening service. Note that this does not mean you can only listen to port 80 from your app; since Nodejitsu redirects it to port 80 you can listen on any port from your app. However, you can only access your app <em>externally</em> through port 80.
 
 </p>
 <p>The ability to host TCP applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
@@ -237,6 +237,53 @@ npm prefix to a location that you have permissions to access, like your home dir
 <p>Internally our load balancers know what port your application is listening on. If you chose port <code>1337</code> our load balancer will proxy the traffic that is directed to your Nodejitsu application (e.g. foo.jit.su) on port <code>80</code> to whatever the port you choose in your application (e.g. 1337).
 
 </p>
+<p><hr>
+</p>
+<h2>How do I force my clients to use HTTPS with my application?</h2>
+<p>You&#39;ll need to redirect your clients to the HTTPS address when they make a
+request with HTTP. See the following code for an example:
+
+</p>
+<pre><code>// http
+var http = require(&#39;http&#39;);
+
+var server = http.createServer(function (req, res) {
+  // optional, for HSTS - see https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security
+  res.setHeader(&#39;Strict-Transport-Security&#39;, &#39;max-age=8640000; includeSubDomains&#39;);
+
+  if (req.headers[&#39;x-forwarded-proto&#39;] !== &#39;https&#39;) {
+    var url = &#39;https://&#39; + req.headers.host + &#39;/&#39;;
+    res.writeHead(301, {&#39;location&#39;: url});
+    return res.end(&#39;Redirecting to &lt;a href=&quot;&#39; + url + &#39;&quot;&gt;&#39; + url + &#39;&lt;/a&gt;.&#39;);
+  }
+});
+
+server.listen(8080);
+
+//express
+var express = require(&#39;express&#39;)
+
+var app = express()
+
+app.use(function (req, res, next) {
+  // see above
+  res.setHeader(&#39;Strict-Transport-Security&#39;, &#39;max-age=8640000; includeSubDomains&#39;)
+
+  if (req.headers[&#39;x-forwarded-proto&#39;] !== &#39;https&#39;) {
+    return res.redirect(301, &#39;https://&#39; + req.headers.host + &#39;/&#39;)
+  }
+})
+
+app.listen(8090)</code></pre>
+<p><hr>
+</p>
+<h2>How do I change the timezone on my drone?</h2>
+<p>You can set the <code>TZ</code> environment variable with <code>jitsu env</code>. A list of time zones
+can be found <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">here</a>.
+Here is an example:
+
+</p>
+<pre><code>jitsu env set TZ America/Los_Angeles</code></pre>
 </div>
 </div></article>
     </div>
