@@ -23,7 +23,7 @@ Nodejitsu's cloud services watch your programs for you! You shouldn't have to do
 <hr>
 ## "How can I make my app use a port other than port 80?"
 
-Connecting to other servers using arbitrary ports requires no special considerations. However, *listening* for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains. Consequentially, each subdomain may only host one listening service.
+Connecting to other servers using arbitrary ports requires no special considerations. However, *listening* for outside connections is currently limited to port 80 on the Nodejitsu platform because we require http host headers for domain name resolution of subdomains. Consequentially, each subdomain may only host one listening service. Note that this does not mean you can only listen to port 80 from your app; since Nodejitsu redirects it to port 80 you can listen on any port from your app. However, you can only access your app *externally* through port 80.
 
 The ability to host TCP applications on nodejitsu and listen on non-80 ports is on our roadmap but has no associated timeline.
 
