@@ -25,7 +25,7 @@ Let's start with a very basic Node.js http server. Create a folder called `myapp
   }).listen(8080); // the server will listen on port 8080
 ```
 
-That's all the code you'll need for starters. Save your server and get ready todeploy!
+That's all the code you'll need for starters. Save your server and get ready to deploy!
 
 <hr>
 ## Deploy with `jitsu`
