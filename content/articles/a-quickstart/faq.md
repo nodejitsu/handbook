@@ -91,4 +91,9 @@ At Nodejitsu it's super important for us that you can run your application just 
 
 Internally our load balancers know what port your application is listening on. If you chose port `1337` our load balancer will proxy the traffic that is directed to your Nodejitsu application (e.g. foo.jit.su) on port `80` to whatever the port you choose in your application (e.g. 1337).
 
+<hr>
+## I'm getting an error: listen EACCESS when starting my application in Nodejitsu
+
+Check the answer above, "How do I choose what port to use in Nodejitsu?". You are trying to use a root level port (between 0-1024).
+
 [meta:title]: <> (FAQ)
