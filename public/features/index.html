@@ -139,6 +139,7 @@
 
 <ul>
 <li><a href="#feature/drones">Application Scalability with Drones</a></li>
+<li><a href="#feature/sticky-sessions">Load Balancer Sticky Sessions</a></li>
 <li><a href="#feature/zero-downtime">Zero-downtime Deploys</a></li>
 <li><a href="#feature/multi-node">Multi-Version Node Support</a></li>
 <li><a href="#feature/snapshots">Versioning with Snapshots</a></li>
@@ -152,6 +153,13 @@
 </p>
 <h2>Application Scalability with Drones</h2>
 <p>Each deployed application runs as a <a href="https://github.com/nodejitsu/haibu-carapace">drone</a> on a <a href="https://github.com/nodejitsu/haibu">haibu</a> application server. Because of this architecture, one app can be served by <em>any amount of drones on arbitrary machines</em>, giving you many options for scaling your application.
+
+</p>
+<p><hr>
+<a name="feature/sticky-sessions"></a>
+</p>
+<h2>Load Balancer Sticky Sessions</h2>
+<p>When clients connect to the load balancers, they get routed to the same drone over multiple requests. This is required for WebSockets to work. After each deploy, the associations are lost, so this does not persist between deploys.
 
 </p>
 <p><hr>

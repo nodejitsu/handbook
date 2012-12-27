@@ -11,6 +11,7 @@ Each of these tools allow developers to access the same functionality.
 <hr>
 
 * [Application Scalability with Drones](#feature/drones)
+* [Load Balancer Sticky Sessions](#feature/sticky-sessions)
 * [Zero-downtime Deploys](#feature/zero-downtime)
 * [Multi-Version Node Support](#feature/multi-node)
 * [Versioning with Snapshots](#feature/snapshots)
@@ -24,6 +25,12 @@ Each of these tools allow developers to access the same functionality.
 ## Application Scalability with Drones
 
 Each deployed application runs as a [drone](https://github.com/nodejitsu/haibu-carapace) on a [haibu](https://github.com/nodejitsu/haibu) application server. Because of this architecture, one app can be served by *any amount of drones on arbitrary machines*, giving you many options for scaling your application.
+
+<hr>
+<a name="feature/sticky-sessions"></a>
+## Load Balancer Sticky Sessions
+
+When clients connect to the load balancers, they get routed to the same drone over multiple requests. This is required for WebSockets to work. After each deploy, the associations are lost, so this does not persist between deploys.
 
 <hr>
 <a name="feature/zero-downtime"></a>
