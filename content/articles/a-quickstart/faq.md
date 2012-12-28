@@ -143,4 +143,11 @@ Here is an example:
 
     jitsu env set TZ America/Los_Angeles
 
+<hr>
+## Where are personal plan drones hosted?
+
+Drones for personal plans on Nodejitsu are hosted on Joyent's us-east-1 datacenter.
+Note that this is only for personal plans, business plan users are able to choose
+their datacenter.
+
 [meta:title]: <> (FAQ)
