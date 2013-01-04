@@ -13,7 +13,7 @@ Note that this entire website is generated from the individual content files in 
 
 We are a collection of seasoned developers who have been devoted to the Node.js community since 2009. We are community leaders who have created and contributed to hundreds of open-source Node.js projects. If you have used Node.js, you've probably used some of the projects we've helped create. 
 
-You can find our open source projects at <https://github.com/nodejitsu>, <https://github.com/flatiron>, <https://github.com/hookio>, and <https://github.com/nodeapps>.
+You can find our open source projects at <https://github.com/nodejitsu>, <https://github.com/flatiron>, and <https://github.com/nodeapps>.
 
 <hr>
 ## What Is Nodejitsu?
