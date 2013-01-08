@@ -143,4 +143,11 @@ Here is an example:
 
     jitsu env set TZ America/Los_Angeles
 
+<hr>
+## How do subdomains work and what are the valid subdomains?
+
+Valid subdomains are strings 1-n characters long that begin and end with alphanumerical characters while the remaining letters can be alphanumerics or a hyphen, underscore, or period. 
+If a user submits an app whose subdomain is `helloworld.jit.su` he will be able to register applications that prepend something to `helloworld` (for example `static.helloworld.jit.su`) while other users won't. This is to prevent domain hijacking.
+
+
 [meta:title]: <> (FAQ)
