@@ -6,3 +6,11 @@ book.md
 book.html
 node_modules
 npm-debug.log
+
+# Ignore all the contents in the public folder as they are auto generated
+public/*
+
+# But don't ignore our assets
+!public/css/
+!public/js/
+!public/img/
