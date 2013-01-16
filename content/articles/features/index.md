@@ -2,9 +2,9 @@ The Nodejitsu platform makes writing and deploying web applications a snap! In a
 
 There are three main tools for deploying and managing applications to Nodejitsu:
 
-* [`jitsu`](#jitsu), the Nodejitsu command line tool 
-* The Webops [Web Application](#web_admin), an easy to use web interface for managing your applications
-* Nodejitsu's JSON [API](#json_api)
+* [`jitsu`](#jitsu), the Nodejitsu command line tool
+* The Webops [Web Application](/features/webops), an easy to use web interface for managing your applications
+* Nodejitsu's JSON [API](/api)
 
 Each of these tools allow developers to access the same functionality.
 
@@ -81,7 +81,7 @@ Applications on Nodejitsu are ready to be connected to any database. If you alre
 
 ### Creating new Databases
 
-If you require database hosting you can create a new database instance of any of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](#api). Cloud database hosting is currently provided by [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and [MongoLab](https://www.mongolab.com).
+If you require database hosting you can create a new database instance of any of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](/api). Cloud database hosting is currently provided by [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and [MongoLab](https://www.mongolab.com).
 
 ### Existing Databases
 
@@ -121,7 +121,7 @@ You can also access your database in your browser by going to http://subdomain.i
 
 #### MongoDB
 
-If you run `jitsu databases create mongo myMongo`, jitsu 
+If you run `jitsu databases create mongo myMongo`, jitsu
 will supply a connection string for your new mongo database on mongolab:
 
     info:   Welcome to Nodejitsu user
@@ -192,29 +192,29 @@ or with the `redis` module:
       // You are now authed with your redis.
     });
 
-**Note:** If you are using an older version of `node_redis`(<0.8.0), You may have to 
-explicitly use its javascript parser instead of the optional native module `hiredis` 
-that may be packaged with it, as there are issues compiling on the nodejitsu 
-platform. Passing `{ parser: 'javascript' }` to `redis.createClient` will ensure 
-usage of the javascript parser. Check out the other possible options in the 
+**Note:** If you are using an older version of `node_redis`(<0.8.0), You may have to
+explicitly use its javascript parser instead of the optional native module `hiredis`
+that may be packaged with it, as there are issues compiling on the nodejitsu
+platform. Passing `{ parser: 'javascript' }` to `redis.createClient` will ensure
+usage of the javascript parser. Check out the other possible options in the
 [node redis docs](https://github.com/mranney/node_redis#rediscreateclientport-host-options).
 
 <hr>
 <a name="feature/envvars"></a>
 ## Environment Variable Management
 
-Nodejitsu allows users to modify the environment variables exposed to their 
-apps using jitsu and our other tools. When an environment variable is changed 
+Nodejitsu allows users to modify the environment variables exposed to their
+apps using jitsu and our other tools. When an environment variable is changed
 it is necessary restart your app for it to take effect.
 
-Available commands are `list`, `get`, `set`, `delete`, and 
-`clear`. 
+Available commands are `list`, `get`, `set`, `delete`, and
+`clear`.
 
-* `jitsu env list` will list any and all environment variables in an apps current working directory (Note: the app needs to have been deployed before the environment variables can be accessed).  
-* `jitsu env list <myapp>` will list any and all environment variables related  to `<myapp>` in an account.  
-* `jitsu env get <key>` will display the apps key environment variable `<value>`.  
+* `jitsu env list` will list any and all environment variables in an apps current working directory (Note: the app needs to have been deployed before the environment variables can be accessed).
+* `jitsu env list <myapp>` will list any and all environment variables related  to `<myapp>` in an account.
+* `jitsu env get <key>` will display the apps key environment variable `<value>`.
 * `jitsu env set <key> <value>` will set the apps `<key>` environment variable to `<value>`.
-* `jitsu env delete <key>` will delete the apps `<key>` environment variable.  
+* `jitsu env delete <key>` will delete the apps `<key>` environment variable.
 * `jitsu env clear` will delete all of the apps environment variables after a prompt.
 
 An Example:
@@ -231,7 +231,7 @@ This will set the environment variable $NODE_ENV to have the string value  "prod
 
 Our balancers can proxy https to http, so you get SSL on nodejitsu.com subdomains automatically! For example, the app behind [http://nodejitsu.com](http://nodejitsu.com) is serving http, but visiting [https://nodejitsu.com](https://nodejitsu.com) works without any special action on our part.
 
-If you need to identify if you are receiving http or https traffic use the `x-forwarded-proto` response header value, see 
+If you need to identify if you are receiving http or https traffic use the `x-forwarded-proto` response header value, see
 [headers.jit.su](http://headers.jit.su/) for more information on headers passed through the balancers.
 
 <hr>
@@ -246,6 +246,6 @@ If you'd like to know how, just read the instructions at [our DNS section](http:
 
 Our balancers use [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) which allow them to receive SSL traffic from multiple domains---including yours! If, for example, you owned `mydomain.com` and wanted secure connections, all you need are your .pem and .key files!
 
-*Note: This feature is not exposed through our API or other tools at this time. If you need this feature, please contact support at `support@nodejitsu.com`.*
+*Note: This feature is not exposed through our API or other tools at this time. If you need this feature, please contact support at [support@nodejitsu.com](email:support@nodejitsu.com).*
 
 [meta:title]: <> (Platform Features)
