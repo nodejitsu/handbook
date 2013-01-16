@@ -81,7 +81,7 @@ Applications on Nodejitsu are ready to be connected to any database. If you alre
 
 ### Creating new Databases
 
-If you require database hosting you can create a new database instance of any of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](#api). Cloud database hosting is currently provided by [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and [MongoLab](https://www.mongolab.com).
+If you require database hosting you can create a new database instance of any of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](/api). Cloud database hosting is currently provided by [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and [MongoLab](https://www.mongolab.com).
 
 ### Existing Databases
 
@@ -246,6 +246,6 @@ If you'd like to know how, just read the instructions at [our DNS section](http:
 
 Our balancers use [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication) which allow them to receive SSL traffic from multiple domains---including yours! If, for example, you owned `mydomain.com` and wanted secure connections, all you need are your .pem and .key files!
 
-*Note: This feature is not exposed through our API or other tools at this time. If you need this feature, please contact support at `support@nodejitsu.com`.*
+*Note: This feature is not exposed through our API or other tools at this time. If you need this feature, please contact support at [support@nodejitsu.com](email:support@nodejitsu.com).*
 
 [meta:title]: <> (Platform Features)
