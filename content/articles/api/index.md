@@ -66,13 +66,13 @@ Application snapshots are kept so you can keep track of each of your deployments
     POST /apps/:user-id/:app-id/snapshots/:id/activate
 
 ### Activate / Deploy a snapshot
-    POST /apps/:user-id/:snapshots/:id
+    POST /apps/:user-id/snapshots/:id
 
 ### Show a catalog of all Snapshot for an Application
     GET /apps/:user-id/:app-id/snapshots
 
-### Show the contents of a Snapshot
-    GET /apps/:user-id/:app-id/snapshots/:id
+### Show/Download the contents of a Snapshot
+    GET /apps/:user-id/:app-id/snapshots/:id.tgz
 
 <hr>
 ## Users
