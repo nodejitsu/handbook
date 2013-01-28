@@ -11,7 +11,7 @@ The following can be extremely helpful for the support team if you have them ahe
 <hr>
 ## E-mail
 
-You can also contact us via email, at **[support@nodejitsu.com](email:support@nodejitsu.com)**.
+You can also contact us via email, at **[support@nodejitsu.com](mailto:support@nodejitsu.com)**.
 
 <hr>
 ## IRC and Kohai
