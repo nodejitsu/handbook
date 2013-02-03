@@ -156,11 +156,6 @@ Drones for personal plans on Nodejitsu are hosted on Joyent's us-east-1 datacent
 Note that this is only for personal plans, business plan users are able to choose
 their datacenter.
 
-<hr>
-## How do subdomains work and what are the valid subdomains?
-
-Valid subdomains are strings 1-n characters long that begin and end with alphanumerical characters. 
-If a user submits an app whose subdomain is `helloworld.jit.su` he will be able to register applications that prepend something to `helloworld` (for example `static.helloworld.jit.su`) while other users won't. This is to prevent domain hijacking.
 
 
 
