@@ -57,7 +57,7 @@ If your application requires additional dependencies or third-party libraries, N
 
 Your dependencies will be resolved when your application deploys to Nodejitsu.
 
-**TIP:** When install your dependencies, use the `--save` flag like `npm install --save flatiron` to add the dependencies and its versions to the package.json
+**TIP:** When installing your dependencies, use the `--save` flag like `npm install --save flatiron` to add the dependencies and theirs versions to the package.json
 
 <hr>
 ## Nodejitsu-Specific package.json Properties

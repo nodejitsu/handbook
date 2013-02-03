@@ -8,7 +8,7 @@ One way is to use jitsu. Simply type:
 
     jitsu users forgot :username
 
-where `:username` is your username. Alternately, go to <http://webops.nodejitsu.com/> and click the "login" link then search for the link like "Did you by any chance forget your password?", where you will be prompted for your username. Either process will send you an email with further instructions.
+where `:username` is your username. Alternately, go to <http://webops.nodejitsu.com/> and click the "login" link; then search for the link "Did you by any chance forget your password?", where you will be prompted for your username. Either process will send you an email with further instructions.
 
 <hr>
 ## "Is there a cheatsheet somewhere?"
@@ -56,7 +56,7 @@ There are three ways to disable the require-analyzer:
 
 * Use the `--noanalyze` flag when running jitsu commands to disable it on a one-time basis.
 * Add `"analyze": false` to your package.json to disable it on a per-app basis.
-* Set "analyze" to `false` in your jitsu config using the command: `jitsu config set analyze false` to disable it on a global level.Or add the option to the config file `~/.jitsuconf` 
+* Set "analyze" to `false` in your jitsu config using the command: `jitsu config set analyze false` to disable it on a global level, or add the option to the config file `~/.jitsuconf` 
 
 <hr>
 ## "How Do I add my GitHub repository as a dependency?"
@@ -82,7 +82,7 @@ Finally, jitsu has the ability to bundle your app without deploying with the `ji
 
 Nodejitsu requires a starting script in the package.json to know which script to run to start your application. You need to make sure that the scripts.start field in your package.json points to the correct starting script.
 
-A common issue is using "node app" as the value of scripts.start in your package.json. This won't work on Nodejitsu because the file extension is not specified. You'll need to do something along the lines of "node app.js". Also you can use just the name of the main file "app.js".
+A common issue is using "node app" as the value of scripts.start in your package.json. This won't work on Nodejitsu because the file extension is not specified. You'll need to do something along the lines of "node app.js".You can also use just the name of the main file, "app.js".
 
 <hr>
 ## How do I choose what port to use in Nodejitsu?
@@ -94,7 +94,7 @@ Internally our load balancers know what port your application is listening on. I
 <hr>
 ## I'm getting an error: listen EACCESS when starting my application in Nodejitsu
 
-Check the answer above, "[How do I choose what port to use in Nodejitsu?](/a-quickstart/faq#faq-how-do-i-choose-what-port-to-use-in-nodejitsu)". You are trying to use a root level port (between 0-1024). Please put your app to listen in a port greater than 1024.
+Check the answer above, "[How do I choose what port to use in Nodejitsu?](/a-quickstart/faq#faq-how-do-i-choose-what-port-to-use-in-nodejitsu)". You are trying to use a root level port (between 0-1024). Please set your app to listen on a port greater than 1024.
 
 <hr>
 ## How do I force my clients to use HTTPS with my application?
@@ -159,7 +159,7 @@ their datacenter.
 <hr>
 ## Can I use [cluster](https://github.com/LearnBoost/cluster) to improve the availability of my app?
 
-Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running. If you need to scale your app, we offer the simply way of "[drones](/features#feature/drones)", you can add many drones to fit your needs.
+Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running. If you need to scale your app, we offer the simple way of "[drones](/features#feature/drones)", where you can add more drones to fit your needs.
 
 
 [meta:title]: <> (FAQ)
