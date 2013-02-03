@@ -1,8 +1,8 @@
-The Nodejitsu platform makes writing and deploying web applications a snap! In addition to simple yet powerful tools for deployment, the Nodejitsu platform also has snapshot management, database hosting and connectivity, and more!
+The Nodejitsu platform makes writing and deploying web applications a snap! In addition to simple yet powerful tools for deployment, the Nodejitsu platform also has snapshot management, database provisioning, database connectivity, and more!
 
 There are three main tools for deploying and managing applications to Nodejitsu:
 
-* [`jitsu`](#jitsu), the Nodejitsu command line tool
+* [`jitsu`](/features/jitsu), the Nodejitsu command line tool
 * The Webops [Web Application](/features/webops), an easy to use web interface for managing your applications
 * Nodejitsu's JSON [API](/api)
 
@@ -70,18 +70,19 @@ Every time you deploy to Nodejitsu, we automatically take a [snapshot](http://en
 `jitsu` commands for snapshot management include:
 
 * `jitsu snapshots list <app-name>` will list all snapshots for an application.
-* `jitsu snapshots activate <app-name>` allows you to choose which snapshot your drones are running.
-* `jitsu snapshots fetch <app-name>` will download a specified snapshot of your application to your computer.
+* `jitsu snapshots activate <snapshot-name>` allows you to choose which snapshot your drones are running.
+* `jitsu snapshots fetch <snapshot-name>` will download a specified snapshot of your application to your computer.
 
 <hr>
 <a name='feature/databases'></a>
 ## Databases
 
-Applications on Nodejitsu are ready to be connected to any database. If you already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we provide an easy upgrade path to industrial strength database hosting.
+Applications on Nodejitsu are ready to be connected to any database. If you already have a database running, Nodejitsu can connect to your pre-existing database. If you require a new database, Nodejitsu can provide you *free* instances of several different types of databases. These free instances are great for development purposes or hobby sites. If you require a high traffic or production database we'll connect you with our database partners and you can speak directly to them about your database needs.
+
 
 ### Creating new Databases
 
-If you require database hosting you can create a new database instance of any of our supported databases using [jitsu](#jitsu) or Nodejitsu's [API](/api). Cloud database hosting is currently provided by [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and [MongoLab](https://www.mongolab.com).
+If you require database hosting you can create a new database instance of any of our supported databases using [jitsu](/features/jitsu) or Nodejitsu's [API](/api). Cloud database hosting is currently provided by [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and [MongoLab](https://www.mongolab.com).
 
 ### Existing Databases
 
@@ -127,20 +128,20 @@ will supply a connection string for your new mongo database on mongolab:
     info:   Welcome to Nodejitsu user
     info:   It worked if it ends with Nodejitsu ok
     info:   Executing command databases create mongo myMongo
-    info:   Database myMongo was created.
+    info:   A new mongo has been created
     info:   Database name: myMongo
     info:   Database type: mongo
-    info:   Connection url: mongodb://nodejitsu:pass@subdomain.mongohq.com:10057/somedatabase
+    info:   Connection url: mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/myMongo
     info:   Nodejitsu ok
 
 You can connect to this using the `mongo` CLI client tool like so:
 
-    $ mongo subdomain.mongolab.com:100027/somedatabase -u nodejitsu -p pass
+    $ mongo subdomain.mongolab.com:100027/myMongo -u nodejitsu -p pass
 
 or with the `mongodb-native` module:
 
     var mongodb = require('mongodb');
-    var db = new mongodb.Db('somedatabase',
+    var db = new mongodb.Db('myMongo',
       new mongodb.Server('subdomain.mongolab.com', 10027, {})
     );
     db.open(function (err, db_p) {
@@ -153,13 +154,13 @@ or with the `mongodb-native` module:
 or with mongoose:
 
     var mongoose = require('mongoose');
-    mongoose.connect('mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/somedatabase');
+    mongoose.connect('mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/myMongo');
 
 You can copy-paste this url directly into your mongo library's connect method.
 For example, in [Mongoose](https://github.com/learnboost/mongoose/):
 
     var mongoose = require('mongoose');
-    mongoose.connect("mongodb://nodejitsu:pass@staff.mongolab.com:10057/");
+    mongoose.connect("mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/");
 
 #### Redis
 
