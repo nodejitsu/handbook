@@ -65,9 +65,10 @@ Open a terminal:
 This will create a new application snapshot, generate and/or update project metadata, and deploy the project in the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *<u>your app's name</u>*, its  *<u>nodejitsu subdomain</u>*, and its *<u>start script</u>*. It's really easy and we promise it will  only take a few seconds.
 
 ```
-  prompt: subdomain (myapp): myapp
-  prompt: scripts.start (server.js): 
-  prompt: version (0.0.0): 
+  prompt: subdomain:  (myapp)
+  prompt: scripts.start:  (server.js)
+  prompt: version: (0.0.0)
+  prompt: engines.node: (0.8.x)
 ``` 
 
 Now just open up your favorite browser, and go to `myapp.nodejitsu.com`. If everything has been set up correctly, then you too, are on the path of nodejitsu!
