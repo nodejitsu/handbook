@@ -1,6 +1,8 @@
 <hr />
 
-Welcome to the **[Business plan](http://nodejitsu.com/paas/pricing)** features, you can deploy your application in a different cloud provider and datacenter, also scale your application at will.
+If you're one of our **[Business Plan](http://nodejitsu.com/paas/pricing)** customers, you have access to special features which give you more selection and reliability.
+
+You can choose which infrastructure provider and datacenter you deploy your application to, and choose how many drones to allocate towards your apps.
 
 To access Business plan features, you need to first make sure you're running the latest version of jitsu. Please run:
 
@@ -15,7 +17,7 @@ Make sure your application is deployed on Nodejitsu before using the following c
 
 ### View cloud information
 
-You can see the information of the cloud where your application is deployed.
+You can view the details for the datacenter and provider where your application is deployed.
 
 Example:
 
@@ -38,7 +40,7 @@ info:    Nodejitsu ok
 
 ### Change cloud provider and datacenter
 
-If you want to change your application to another cloud provider and datacenter you can do it with the following command:
+To change your application to another cloud provider and datacenter, use the following command:
 
 ```
 $ jitsu cloud <cloud> <datacenter>
@@ -73,22 +75,22 @@ info:    Nodejitsu ok
 ```
 
 ### Available Datacenters
-You can setup one of the following [datacenters](http://nodejitsu.com/paas/datacenters):
+You can deploy to any of the following [datacenters](http://nodejitsu.com/paas/datacenters):
 
 #### Joyent
 * Las Vegas, US: ```us-sw-1```
 * Viriginia, US: ```us-east-1```
 * Amsterdam, NL: ```eu-ams-1```
-* San Francisco, US: *not available yet*
 
 #### Telefónica
-* Madrid, ES: *not available yet*
+* Madrid, ES: ```eu-mad-1```
+* London, UK: ```eu-lon-1```
 
 ## Scaling your application
 
-You can scale your application (add more drones / add more ram) using the ```--drones``` and ```--ram``` parameters.
+You can scale your application by adding more drones or ram, using the ```--drones``` and ```--ram``` parameters.
 
-### Add more ram
+### To Add more ram
 
 To setup the RAM of the drone use the ```--ram <size>``` parameter.
 
@@ -121,7 +123,7 @@ info:    Nodejitsu ok
 ```
 
 
-### Add more drones
+### To Add more drones
 To add more drones use the ```--drones <n>``` parameter.
 
 Example:
