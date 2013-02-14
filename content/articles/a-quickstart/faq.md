@@ -130,6 +130,8 @@ request with HTTP. See the following code for an example:
       if (req.headers['x-forwarded-proto'] !== 'https') {
         return res.redirect(301, 'https://' + req.headers.host + '/')
       }
+      
+      next();
     })
 
     app.listen(8090)
