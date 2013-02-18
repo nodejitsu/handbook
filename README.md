@@ -1,29 +1,24 @@
-[![Nodejitsu Deploy Status](https://webhooks.nodejitsu.com/nodejitsu/handbook.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
+[![Nodejitsu Deploy Status](status)](https://webops.nodejitsu.com#nodejitsu/webhooks)
+
+[status]: https://webhooks.nodejitsu.com/nodejitsu/handbook.png
 
 # The Nodejitsu Handbook
 
-**You can view the Handbook online at http://handbook.jitsu.com**
+**You can view the Handbook online at http://www.nodejitsu.com/docs**
 
 Welcome to the Nodejitsu handbook. This document will help familiarize you with deploying your Node.js applications to the cloud while also providing detailed information about Nodejitsu's platform-specific features and about where to get help when you need it.
 
-This is a living document which you can submit patches to at [http://github.com/nodejitsu/handbook](http://github.com/nodejitsu/handbook). Note that this entire website is generated fromfrom the individual content files in the `/content` folder, so any edits should be made to those source files, not `/public/*.html`.
+This is a living document which you can submit patches to at
+[http://github.com/nodejitsu/handbook](repo).
+Handbook content resides in [/content](content) and is easily accessed by using
+the [/lib/handhook.js](handbook),
 
-### Building the Handbook
+[repo]: http://github.com/nodejitsu/handbook
+[content]: #todo
+[handbook]: #todo
 
-The Nodejitsu Handbook is built with [`blacksmith`][blacksmith], so all you need to do is:
+### Using the handbook as module
 
-1. Install `blacksmith` with `npm`
-``` 
-  [sudo] npm install blacksmith -g
-```
-2. Run the `blacksmith` command
-```
-  cd /path/to/handbook
-  blacksmith
-```
-3. Start `bin/server`
-```
-  bin/server
-```
+1. Add the module to package.json 
 
-[blacksmith]: https://github.com/flatiron/blacksmith
+2. Describe use
