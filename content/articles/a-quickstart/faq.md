@@ -8,7 +8,7 @@ One way is to use jitsu. Simply type:
 
     jitsu users forgot :username
 
-where `:username` is your username. Alternately, go to <http://webops.nodejitsu.com/> and click the "login" link; then search for the link "Did you by any chance forget your password?", where you will be prompted for your username. Either process will send you an email with further instructions.
+where `:username` is your username. Alternately, go to <http://webops.nodejitsu.com/> and click the "login" link; then search for the link "Did you by any chance forgot your password?", where you will be prompted for your username. Either process will send you an email with further instructions.
 
 <hr>
 ## "Is there a cheatsheet somewhere?"
@@ -56,7 +56,7 @@ There are three ways to disable the require-analyzer:
 
 * Use the `--noanalyze` flag when running jitsu commands to disable it on a one-time basis.
 * Add `"analyze": false` to your package.json to disable it on a per-app basis.
-* Set "analyze" to `false` in your jitsu config using the command: `jitsu config set analyze false` to disable it on a global level, or add the option to the config file `~/.jitsuconf` 
+* Set "analyze" to `false` in your jitsu config using the command: `jitsu config set analyze false` to disable it on a global level, or add the option to the config file `~/.jitsuconf`
 
 <hr>
 ## "How Do I add my GitHub repository as a dependency?"
@@ -130,7 +130,7 @@ request with HTTP. See the following code for an example:
       if (req.headers['x-forwarded-proto'] !== 'https') {
         return res.redirect(301, 'https://' + req.headers.host + '/')
       }
-      
+
       next();
     })
 
@@ -148,7 +148,7 @@ Here is an example:
 <hr>
 ## How do subdomains work and what are the valid subdomains?
 
-Valid subdomains are strings 1-n characters long that begin and end with alphanumerical characters while the remaining letters can be alphanumerics or a hyphen, underscore, or period. 
+Valid subdomains are strings 1-n characters long that begin and end with alphanumerical characters while the remaining letters can be alphanumerics or a hyphen, underscore, or period.
 If a user submits an app whose subdomain is `helloworld.jit.su` he will be able to register applications that prepend something to `helloworld` (for example `static.helloworld.jit.su`) while other users won't. This is to prevent domain hijacking.
 
 <hr>
