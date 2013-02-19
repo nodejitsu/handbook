@@ -56,7 +56,7 @@ There are three ways to disable the require-analyzer:
 
 * Use the `--noanalyze` flag when running jitsu commands to disable it on a one-time basis.
 * Add `"analyze": false` to your package.json to disable it on a per-app basis.
-* Set "analyze" to `false` in your jitsu config using the command: `jitsu config set analyze false` to disable it on a global level, or add the option to the config file `~/.jitsuconf` 
+* Set "analyze" to `false` in your jitsu config using the command: `jitsu config set analyze false` to disable it on a global level, or add the option to the config file `~/.jitsuconf`
 
 <hr>
 ## "How Do I add my GitHub repository as a dependency?"
@@ -130,7 +130,7 @@ request with HTTP. See the following code for an example:
       if (req.headers['x-forwarded-proto'] !== 'https') {
         return res.redirect(301, 'https://' + req.headers.host + '/')
       }
-      
+
       next();
     })
 
@@ -148,7 +148,7 @@ Here is an example:
 <hr>
 ## How do subdomains work and what are the valid subdomains?
 
-Valid subdomains are strings 1-n characters long that begin and end with alphanumerical characters while the remaining letters can be alphanumerics or a hyphen, underscore, or period. 
+Valid subdomains are strings 1-n characters long that begin and end with alphanumerical characters while the remaining letters can be alphanumerics or a hyphen, underscore, or period.
 If a user submits an app whose subdomain is `helloworld.jit.su` he will be able to register applications that prepend something to `helloworld` (for example `static.helloworld.jit.su`) while other users won't. This is to prevent domain hijacking.
 
 <hr>
@@ -162,6 +162,12 @@ their datacenter.
 ## Can I use [cluster](https://github.com/LearnBoost/cluster) to improve the availability of my app?
 
 Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running. If you need to scale your app, we offer the simple way of "[drones](/features#feature/drones)", where you can add more drones to fit your needs.
+
+<hr>
+
+## When we push our app to Nodejitsu, does it start a new instance, then cut the traffic over from the old one if successful? Or would the app be down if something went wrong?
+
+We always provision a new virtual machine. The old one gets decommissioned if and only if everything went ok, so a failed deploy does not equate to down time.
 
 
 [meta:title]: <> (FAQ)
