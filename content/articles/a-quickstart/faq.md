@@ -119,20 +119,21 @@ request with HTTP. See the following code for an example:
     server.listen(8080);
 
     //express
-    var express = require('express')
+    var express = require('express');
 
-    var app = express()
+    var app = express();
 
     app.use(function (req, res, next) {
       // see above
-      res.setHeader('Strict-Transport-Security', 'max-age=8640000; includeSubDomains')
+      res.setHeader('Strict-Transport-Security', 'max-age=8640000; includeSubDomains');
 
       if (req.headers['x-forwarded-proto'] !== 'https') {
-        return res.redirect(301, 'https://' + req.headers.host + '/')
+        return res.redirect(301, 'https://' + req.headers.host + '/');
       }
-    })
+      next();
+    });
 
-    app.listen(8090)
+    app.listen(8090);
 
 <hr>
 ## How do I change the timezone on my drone?
