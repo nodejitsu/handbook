@@ -163,5 +163,11 @@ their datacenter.
 
 Nodejitsu's cloud services watch your programs for you! You shouldn't have to do anything special to keep your apps running. If you need to scale your app, we offer the simple way of "[drones](/features#feature/drones)", where you can add more drones to fit your needs.
 
+<hr>
+
+## When we push our app to Nodejitsu, does it start a new instance, then cut the traffic over from the old one if successful? Or would the app be down if something went wrong?
+
+We always provision a new virtual machine. The old one gets decommissioned if and only if everything went ok, so a failed deploy does not equate to down time.
+
 
 [meta:title]: <> (FAQ)
