@@ -10,9 +10,6 @@
     "type": "git",
     "url": "git://github.com/nodejitsu/handbook.git"
   },
-  "dependencies": {
-    "nconf": "0.6.7"
-  },
   "engines": {
     "node": "0.8.x"
   }
