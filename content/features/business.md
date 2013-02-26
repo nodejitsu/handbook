@@ -99,35 +99,13 @@ data:    jitsu cloud joyent us-east-1
 data:    jitsu cloud joyent us-sw-1
 data:    jitsu cloud joyent eu-ams-1
 data:    jitsu cloud telefonica eu-london-1
+data:    jitsu cloud telefonica eu-mad-1
 info:    Nodejitsu ok
 ```
 
 ## Setting up your DNS
-To setup your custom DNS domain with the correct datacenter you will need to do the following:
-
-First you need to find the correct domain for your datacenter:
-
-* Joyent
-
-  * us-east-1: ```*.jit.su```
-  * us-sw-1: ```*.jyt.us.sw1.jit.su```
-  * eu-ams-1: ```*.jyt.eu.ams1.jit.su```
-
-* Telefonica
-
-  * eu-lon-1: ```*.tf.eu.lon1.jit.su```
-
-Then you need to know the IP addresses of the load balancers of that datacenter, you can do it using the ``host`` command:
-
-```
-$ host example.jyt.eu.ams1.jit.su 
-nodespdemo.jyt.eu.ams1.jit.su has address 37.153.97.163
-nodespdemo.jyt.eu.ams1.jit.su has address 37.153.97.152
-nodespdemo.jyt.eu.ams1.jit.su has address 37.153.97.50
-nodespdemo.jyt.eu.ams1.jit.su has address 37.153.97.85
-```
-
-Then you can follow the [DNS configuration instructions](/features/dns) from this handbook.
+To setup your custom DNS domain with the correct datacenter you can follow the
+[DNS configuration instructions](/features/dns) from this handbook.
 
 
 ## Scaling your application
