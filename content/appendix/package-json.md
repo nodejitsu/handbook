@@ -71,4 +71,4 @@ A few package.json properties have special behavior on the Nodejitsu platform:
 * *analyze*: Set this to "false" to force jitsu to not analyze for the app's dependencies.
 * *engine*: On Nodejitsu you can choose between different available node.js versions. [Read more](/features#feature/multi-node)
 
-[meta:title]: <> (Understanding package.json)
+[meta:title]: <> (Get into package.json)

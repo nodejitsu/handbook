@@ -68,4 +68,4 @@ http://www.myawesomedomain.com
 
 Don't forget to give it some time so DNS resolves, and add a "powered by Nodejitsu" badge to your homepage (or just give a shout-out on Twitter)
 
-[meta:title]: <> (Using My Own Domain (DNS))
+[meta:title]: <> (Using my domain (DNS))
