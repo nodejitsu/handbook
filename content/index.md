@@ -41,4 +41,4 @@ applications](/features/jitsu#using-the-jitsu-cli-usage-jitsu-deploy-jitsu-apps-
 
 [hello-world]: /a-quickstart/hello-world
 
-[meta:title]: <> (Index)
+[meta:title]: <> (Handbook)
