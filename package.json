@@ -1,7 +1,6 @@
 {
   "author": "Nodejitsu <support@nodejitsu.com> (http://nodejitsu.com)",
   "name": "handbook",
-  "main": "./lib/handbook",
   "description": "A gentle introduction to the art of nodejitsu",
   "version": "0.3.4",
   "subdomain": "handbook",

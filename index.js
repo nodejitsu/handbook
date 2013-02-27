@@ -78,7 +78,7 @@ function get(file) {
   }
 
   return fs.readFileSync(
-    path.resolve(__dirname + '/../content/', file),
+    path.resolve(__dirname + '/content/', file),
     'utf8'
   );
 }
@@ -88,7 +88,7 @@ function get(file) {
 // Returns a catalog by parsing the content directory. Titles are stripped from
 // meta-title inside the .md file, defaults to filename.
 function catalogSync() {
-  return walkSync(path.resolve(__dirname, '../content'));
+  return walkSync(path.resolve(__dirname, 'content'));
 }
 
 // Expose public functions.
