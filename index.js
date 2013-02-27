@@ -1,7 +1,6 @@
 'use strict';
 
-var nconf = require('nconf'),
-    path = require('path'),
+var path = require('path'),
     fs = require('fs'),
     scraper = /\[meta:title\]:\s<>\s\((.+)\)/;
 
