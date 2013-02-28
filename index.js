@@ -2,18 +2,68 @@
 
 var path = require('path'),
     fs = require('fs'),
-    scraper = /\[meta:title\]:\s<>\s\((.+)\)/;
+    natural = require('natural'),
+    tokenizer = new natural.WordTokenizer(),
+    scraper = {
+      title: /\[meta:title\]:\s<>\s\(([^\)]+)\)/,
+      description: /\[meta:description\]:\s<>\s\(([^\)]+)\)/
+    };
 
 //
-// ### function getTitle()
+// ### function scrape()
 // #### @file {String} Filename
-// Scrapes the title from the content by Regular Epression
+// Scrapes the [key] from the content by Regular Epression
 //
-function getTitle(file) {
-  var match = get(file).match(scraper);
+function scrape(content, key) {
+  var match = content.replace(/\n/g, ' ').match(scraper[key]);
 
-  // Only return title if there is a meta:title.
-  return match ? match[1] : '';
+  // Only return scraped content if there is a meta:[key].
+  return match ? match[1].trim() : '';
+}
+
+//
+// ### function frequency()
+// #### @content {String} Document content
+// Return list of words scored by Term Frequency-Inverse Document Frequency.
+//
+function frequency(content) {
+  var tfidf = new natural.TfIdf(),
+      processed = [],
+      words = [];
+
+  // Add the current content.
+  content = content.toLowerCase();
+  tfidf.addDocument(content);
+
+  tokenizer.tokenize(content).forEach(function wordFrequency(word) {
+    // Return early if word is processed, to short or only a number.
+    if (+word || word.length < 3 || !!~processed.indexOf(word)) return;
+
+    words.push({
+      word: word,
+      score: tfidf.tfidf(word, 0)
+    });
+
+    // Add word to processed so tfidf is not called more than required.
+    processed.push(word);
+  });
+
+  return words;
+}
+
+
+//
+// ### function tags()
+// #### @content {String} Document content
+// #### @n {Number} number of tags
+// Return n highest scoring tags as determined by term frequency.
+//
+function tags(content, n) {
+  return frequency(content).sort(function sortByScore(a, b) {
+    return b.score - a.score;
+  }).slice(0, n).map(function extractWords(tag) {
+    return tag.word;
+  });
 }
 
 //
@@ -55,7 +105,7 @@ function walkSync(dir, result, sub) {
       // Append file information to current container.
       result[current][ref] = {
         href: sub ? name.join('/') : '',
-        title: getTitle(file),
+        title: get(file).title,
         path: dir
       };
     }
@@ -76,10 +126,14 @@ function get(file) {
     file = 'index.md';
   }
 
-  return fs.readFileSync(
-    path.resolve(__dirname + '/content/', file),
-    'utf8'
-  );
+  var content = fs.readFileSync(path.resolve(__dirname + '/content/', file), 'utf8');
+
+  return {
+    content: content,
+    description: scrape(content, 'description'),
+    title: scrape(content, 'title'),
+    tags: tags(content, 10)
+  };
 }
 
 //
