@@ -5,8 +5,8 @@ var path = require('path'),
     natural = require('natural'),
     tokenizer = new natural.WordTokenizer(),
     scraper = {
-      title: /\[meta:title\]:\s<>\s\(([^\)]+)\)/,
-      description: /\[meta:description\]:\s<>\s\(([^\)]+)\)/
+      title: /\[meta:title\]:\s<>\s\((.+?)\)(?!\))/,
+      description: /\[meta:description\]:\s<>\s\((.+?)\)(?!\))/
     };
 
 //
