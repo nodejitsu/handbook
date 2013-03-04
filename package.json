@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git://github.com/nodejitsu/handbook.git"
   },
+  "scripts": {
+    "start": "bin/server"
+  },
   "dependencies": {
     "natural": "0.1.19"
   },
