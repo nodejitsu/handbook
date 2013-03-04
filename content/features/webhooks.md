@@ -6,8 +6,7 @@ Access the `Admin` section on your open source node.js Github repository. Click 
 * Branch, where you can define the branch you wish to deploy and defaults to master
 * Endpoint, which defaults to https://webhooks.nodejitsu.com
 
-![The Github Interface for
-Nodejitsu](https://versions.jitsu.com/resources/service-hooks.png)
+![The Github Interface for Nodejitsu](https://versions.jitsu.com/resources/service-hooks.png)
 
 Select `Active` and hit `Update Settings`. From now on every-time you commit to Github (in the designated deployment branch) we will deploy that application for you. That simple.
 
@@ -54,8 +53,7 @@ This is simple, if your username was `nodejitsu` and your github repository was 
 
 It will look something like this:
 
-[![Nodejitsu Deploy Status
-Badges](https://versions.jitsu.com/resources/success.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
+[![Nodejitsu Deploy Status Badges](https://versions.jitsu.com/resources/success.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
 
 <a name="webhookapi-travis"></a>
 ## Travis
