@@ -17,24 +17,24 @@ bar. You will be presented with a login modal dialog. If you forgot the
 credentials for your Nodejitsu account, you can press the "forgot password" link
 and a password recovery e-mail will be sent to you.
 
-![login](/img/webops/login.png)
+![login](https://versions.jitsu.com/resources/login.png)
 
 If you don't have a Nodejitsu account yet, you can register it at our front
 page. Once you register an account a confirmation code will be send to your
 e-mail address. When you have confirmed your account, you can deploy your
 application to the Nodejitsu platform.
 
-![register](/img/webops/register.png)
+![register](https://versions.jitsu.com/resources/register.png)
 
 When you have successfully logged in, you will be redirected to your application's
 page. If you don't have any applications, you will be presented with a simple
 placeholder.
 
-![no applications](/img/webops/noapps.png)
+![no applications](https://versions.jitsu.com/resources/noapps.png)
 
 And if you have applications, you will see our applications page.
 
-![applications](/img/webops/applications.png)
+![applications](https://versions.jitsu.com/resources/applications.png)
 
 ## Managing Your Applications
 
@@ -46,7 +46,7 @@ As you can see in the screenshot above, our application `http-server` is
 currently stopped. We can start it clicking the **start** button in the
 application control menu bar.
 
-![application starting](/img/webops/application-starting.png)
+![application starting](https://versions.jitsu.com/resources/application-starting.png)
 
 It can take a while for an application to start, because we need to build all
 the dependencies and deploy it on multiple drones (when specified). Therefore,
@@ -57,7 +57,7 @@ In addition to starting, stopping and restarting your application, you can also
 modify the ENV variables, start a different snapshot or tail the logs of your
 application.
 
-![tailing](/img/webops/logs.png)
+![tailing](https://versions.jitsu.com/resources/logs.png)
 
 ## Creating a Free Database
 
@@ -71,7 +71,7 @@ and select the provider where you want to host this database. The different
 providers have different limits, so make sure to select one that fits your needs.
 After clicking on the provider, you will be presented by a modal dialog.
 
-![create database](/img/webops/create-database.png)
+![create database](https://versions.jitsu.com/resources/create-database.png)
 
 After you have created the database the database will be listed on the page, and
 you can copy and paste the authorization details and start using the database.
@@ -83,7 +83,7 @@ in the menu bar or clicking the menu item with a cog. Sometimes there will be a
 red notification indicator; this usually means that you have an uncompleted
 account and that some data might still be missing from your account.
 
-![account](/img/webops/account.png)
+![account](https://versions.jitsu.com/resources/account.png)
 
 As you can see in the account screenshot above, I'm missing a couple of things.
 I don't have a Nodejitsu subscription yet and I didn't submit my billing
@@ -95,25 +95,25 @@ will be presented with an addition modal dialog which asks for your password.
 This way we know that you actually have the authority to change the account
 details and submit billing information.
 
-![confirm](/img/webops/account-confirm.png)
+![confirm](https://versions.jitsu.com/resources/account-confirm.png)
 
 After successfully submitting your billing information, you will have access
 to our `plans` tab. Once you are ready to start deploying your application and
 leave the development sandbox, you can select one of the plans that are presented
 here. Simply select the plan you want to run and subscribe.
 
-![plans](/img/webops/plans.png)
+![plans](https://versions.jitsu.com/resources/plans.png)
 
 When you are subscribed to a plan, you can see how many drones you have used and
 upgrade if needed. You can easily see which applications are currently using the
 drones from your plan by clicking on the details button.
 
-![plan details](/img/webops/plan-details.png)
+![plan details](https://versions.jitsu.com/resources/plan-details.png)
 
 In the invoices tab you can see all the charges that are made against your
 credit card.
 
-![invoices](/img/webops/invoices.png)
+![invoices](https://versions.jitsu.com/resources/invoices.png)
 
 Now that you know what WebOps is capable of, try it yourself at
 [https://webops.nodejitsu.com](https://webops.nodejitsu.com)

@@ -6,7 +6,8 @@ Access the `Admin` section on your open source node.js Github repository. Click 
 * Branch, where you can define the branch you wish to deploy and defaults to master
 * Endpoint, which defaults to https://webhooks.nodejitsu.com
 
-![The Github Interface for Nodejitsu](https://lh4.googleusercontent.com/-kiN3YkEG_ys/UJqQ-4aGJbI/AAAAAAAADFc/esjmrqD_2IY/s945/Screenshot%252B2012-11-07%252Bat%252B16.42.57.png)
+![The Github Interface for
+Nodejitsu](https://versions.jitsu.com/resources/service-hooks.png)
 
 Select `Active` and hit `Update Settings`. From now on every-time you commit to Github (in the designated deployment branch) we will deploy that application for you. That simple.
 
@@ -53,7 +54,8 @@ This is simple, if your username was `nodejitsu` and your github repository was 
 
 It will look something like this:
 
-[![Nodejitsu Deploy Status Badges](https://webhooks.nodejitsu.com/nodejitsu/handbook.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
+[![Nodejitsu Deploy Status
+Badges](https://versions.jitsu.com/resources/success.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
 
 <a name="webhookapi-travis"></a>
 ## Travis
@@ -78,7 +80,7 @@ If tests failed we won't deploy. Simple.
 
 If you authorize access so we can use your github account we can do more fun stuff like allowing you to deploy your private repositories, or even update your [commit status](https://github.com/blog/1227-commit-status-api) and check if a deployment worked directly in github. We don't save any passwords - we just use the password to retrieve a token to save.
 
-![Commit Status API](https://lh5.googleusercontent.com/-UK1ktEYEDqo/UKb8QKsaaNI/AAAAAAAADF0/5Pvdkh1_SDM/s829/Screenshot%252B2012-11-17%252Bat%252B02.29.29.png)
+![Commit Status API](https://versions.jitsu.com/resources/merge.png)
 
 To authorize simply do:
 
