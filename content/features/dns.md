@@ -25,7 +25,7 @@ Using your DNS provider, modify the A-record for your domain to point to the ip 
 
 Nodejitsu uses a special field in your package.json, called "domains", to keep track of an app's assigned custom domains. For example, the app hosted at http://jesusabdullah.jit.su has the following package.json:
 
-``` js
+``` javascript
 {
   "name": "myapp",
   "subdomain": "myapp",

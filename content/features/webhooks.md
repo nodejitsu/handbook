@@ -25,7 +25,7 @@ curl -u username https://webhooks.nodejitsu.com/1/status/username/changes?includ
 
 This will create an HTTP keep alive connection that pushes the status to you in realtime every time someone invokes our API:
 
-``` js
+``` javascript
 {
   "id": "https://webhooks.nodejitsu.com/1/status/dscape/changes/2b3de47c2ce04a9dda4d31aac5000bab",
   "app_name": "hello-world-api-flatiron",

@@ -44,7 +44,7 @@ When deploying a new application, nodejitsu keeps hosting your old app version u
 
 Nodejitsu allows users to choose which version of node they want their application to run on. In order to set your node version, specify it in your  `package.json`'s "engines" field. For example:
 
-``` js
+``` javascript
   {
     "author": "Nodejitsu <josh@nodejitsu.com>",
     "version": "0.1.0",

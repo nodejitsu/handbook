@@ -5,7 +5,7 @@ In this tutorial, you will write a simple "hello world" web application in Node.
 
 Let's start with a very basic Node.js http server. Create a folder called `myapp/` and then create a file inside the folder called `server.js`. Inside this file, write the following code:
 
-``` js
+``` javascript
   // requires node's http module
   var http = require('http');
       
@@ -41,7 +41,7 @@ In order to install jitsu, open a terminal and type:
 
 ```
   [sudo] npm install jitsu -g
-````
+```
 
 This command will install jitsu on your system; the `-g` makes npm install it globally, rather than as a local module.
 

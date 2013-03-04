@@ -12,7 +12,7 @@ Nodejitsu requires that you create a valid [package.json](#package_json) for you
 
 Here is an example of what your package.json might look like:
 
-``` js
+``` javascript
   {
     "name": "hellonode",
     "subdomain": "hellonode",
@@ -36,7 +36,7 @@ And what about that "engines" property? Nodejitsu support [multiple versions of 
 If your application requires additional dependencies or third-party libraries, Nodejitsu fully supports npm module dependency resolution. All you have to do is list your dependencies the exact same way you would if you were packaging a module for npm. Here is an example of the same package.json with a few dependencies.
 
 <a name="package_json"></a>
-``` js
+``` javascript
   {
     "name": "hellonode",
     "subdomain": "hellonode",
