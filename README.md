@@ -12,9 +12,9 @@ information about Nodejitsu's platform-specific features and about where to get
 help when you need it.
 
 This is a living document which you can submit patches to at
-[http://github.com/nodejitsu/handbook](repo).
-Handbook content resides in [/content](content) and is easily accessed by using
-several methods of [/index.js](handbook),
+[http://github.com/nodejitsu/handbook][repo].
+Handbook content resides in [/content][content] and is easily accessed by using
+several methods of [/index.js][handbook],
 
 [repo]: http://github.com/nodejitsu/handbook
 [content]: https://github.com/nodejitsu/handbook/tree/master/content
@@ -29,7 +29,7 @@ Note: each subdirectory is expected to at least have an index.md to generate a
 proper catalog.
 
 ## Images
-Images must be added to [/resource](resource). Our [CDN](cdn) will ensure 
+Images must be added to [/resource][resource]. Our [CDN][cdn] will ensure 
 images are fetched from the repository and properly cached. Linking to an 
 image from the article should be done as below:
 
@@ -48,7 +48,7 @@ Call `handbook.get('/a-quickstart/hello-world')` with a relative path to the
 article as first parameter, adding `.md` is optional.
 
 will return an object with keys content, description, title and tags. For more
-details about data for all keys, see [Description, title and tags](description).
+details about data for all keys, see [Description, title and tags][description].
 
 ``` javascript
 {
