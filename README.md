@@ -44,11 +44,11 @@ image from the article should be done as below:
 Simply add handbook as dependency to the package.json.
 
 ### Get markdown content
-Call handbook#get with a relative path to the article as first parameter, adding
-`.md` is optional, per example: `handbook.get('/a-quickstart/hello-world')`
+Call `handbook.get('/a-quickstart/hello-world')` with a relative path to the
+article as first parameter, adding `.md` is optional.
 
 will return an object with keys content, description, title and tags. For more
-details about data for all keys, see #description.
+details about data for all keys, see [Description, title and tags](description).
 
 ``` javascript
 {
@@ -62,8 +62,10 @@ details about data for all keys, see #description.
 }
 ```
 
+[description]: #description-title-and-tags 
+
 ### Get the catalog
-Call handbook#catalogSync to aquire a complete catalog from content
+Call `handbook.catalogSync()` to aquire a complete catalog from content
 (sychronously), which should return an object with paths, href's and titles.
 
 ``` javascript
