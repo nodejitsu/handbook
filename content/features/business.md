@@ -14,7 +14,6 @@ Make sure your application is deployed on Nodejitsu before using the following c
 
 ## Using jitsu cloud
 
-
 ### View cloud information
 
 You can view the details for the datacenter and provider where your application is deployed.
@@ -78,13 +77,13 @@ info:    Nodejitsu ok
 You can deploy to any of the following [datacenters](http://nodejitsu.com/paas/datacenters):
 
 #### Joyent
-* Las Vegas, US: ```us-sw-1```
-* Viriginia, US: ```us-east-1```
-* Amsterdam, NL: ```eu-ams-1```
+* Las Vegas, US: `us-sw-1`
+* Viriginia, US: `us-east-1`
+* Amsterdam, NL: `eu-ams-1`
 
 #### Telefónica
-* Madrid, ES: ```eu-mad-1```
-* London, UK: ```eu-lon-1```
+* Madrid, ES: `eu-mad-1`
+* London, UK: `eu-lon-1`
 
 Or using the following command:
 
@@ -110,11 +109,11 @@ To setup your custom DNS domain with the correct datacenter you can follow the
 
 ## Scaling your application
 
-You can scale your application by adding more drones or ram, using the ```--drones``` and ```--ram``` parameters.
+You can scale your application by adding more drones or ram, using the `--drones` and `--ram` parameters.
 
 ### To Add more ram
 
-To setup the RAM of the drone use the ```--ram <size>``` parameter.
+To setup the RAM of the drone use the `--ram <size>` parameter.
 
 Example:
 
@@ -144,9 +143,8 @@ info:    http://example.jyt.us.sw1.nodejitsu.com on Port 80
 info:    Nodejitsu ok
 ```
 
-
 ### To Add more drones
-To add more drones use the ```--drones <n>``` parameter.
+To add more drones use the `--drones <n>` parameter.
 
 Example:
 
@@ -174,7 +172,6 @@ data:    }
 info:    App example is now started
 info:    http://example.jyt.us.sw1.nodejitsu.com on Port 80
 info:    Nodejitsu ok
-
 ```
 
 [meta:title]: <> (Business Plan Features)

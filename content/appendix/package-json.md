@@ -13,17 +13,17 @@ Nodejitsu requires that you create a valid [package.json](#package_json) for you
 Here is an example of what your package.json might look like:
 
 ``` javascript
-  {
-    "name": "hellonode",
-    "subdomain": "hellonode",
-    "scripts": {
-      "start": "node server.js"
-    },
-    "version": "0.0.0",
-    "engines": {
-      "node": "v0.8.x"
-    }
+{
+  "name": "hellonode",
+  "subdomain": "hellonode",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "0.0.0",
+  "engines": {
+    "node": "v0.8.x"
   }
+}
 ```
 
 Notice the "scripts" property? This is where you'll store information about specific scripts in your application. The "start" property indicates the script that will get called when your application is started. Usage is compatible with `npm start`.
@@ -37,23 +37,23 @@ If your application requires additional dependencies or third-party libraries, N
 
 <a name="package_json"></a>
 ``` javascript
-  {
-    "name": "hellonode",
-    "subdomain": "hellonode",
-    "scripts": {
-      "start": "server.js"
-    },
-    "dependencies": {
-      "async": "0.1.x",
-      "colors": "0.5.x",
-      "request": "1.9.x"
-    },
-    "version": "0.0.0",
-    "engines": {
-      "node": "v0.8.x"
-    }
+{
+  "name": "hellonode",
+  "subdomain": "hellonode",
+  "scripts": {
+    "start": "server.js"
+  },
+  "dependencies": {
+    "async": "0.1.x",
+    "colors": "0.5.x",
+    "request": "1.9.x"
+  },
+  "version": "0.0.0",
+  "engines": {
+    "node": "v0.8.x"
   }
-````
+}
+```
 
 Your dependencies will be resolved when your application deploys to Nodejitsu.
 

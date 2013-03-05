@@ -45,18 +45,18 @@ When deploying a new application, nodejitsu keeps hosting your old app version u
 Nodejitsu allows users to choose which version of node they want their application to run on. In order to set your node version, specify it in your  `package.json`'s "engines" field. For example:
 
 ``` javascript
-  {
-    "author": "Nodejitsu <josh@nodejitsu.com>",
-    "version": "0.1.0",
-    "scripts": {
-      "start": "node bin/server"
-    },
-    "analyze": false,
-    "name": "helloworld",
-    "engines": {
-      "node": "v0.6.x"
-    }
+{
+  "author": "Nodejitsu <josh@nodejitsu.com>",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node bin/server"
+  },
+  "analyze": false,
+  "name": "helloworld",
+  "engines": {
+    "node": "v0.6.x"
   }
+}
 ```
 
 If no node engine is specified, jitsu will prompt for it automatically. Currently Nodejitsu runs node `0.6.x` and `0.8.x`.
@@ -97,26 +97,28 @@ Whenever you create a database using Nodejitsu, you will be provided with all th
 If you run `jitsu databases create couchdb myCouch`, jitsu will tell you the url for your new CouchDB from IrisCouch:
 
 ```
-  info:    Welcome to Nodejitsu user
-  info:    It worked if it ends with Nodejitsu ok
-  info:    Executing command databases create couchdb myCouch
-  info:    Database myCouch was created.
-  data:    Database Type: couch
-  data:    Database Name: myCouch
-  data:    Connection url: http://subdomain.iriscouch.com:5984
-  data:    SSL connection url: https://subdomain.iriscouch.com:6984
-  info:    Nodejitsu ok
+info:    Welcome to Nodejitsu user
+info:    It worked if it ends with Nodejitsu ok
+info:    Executing command databases create couchdb myCouch
+info:    Database myCouch was created.
+data:    Database Type: couch
+data:    Database Name: myCouch
+data:    Connection url: http://subdomain.iriscouch.com:5984
+data:    SSL connection url: https://subdomain.iriscouch.com:6984
+info:    Nodejitsu ok
 ```
 
 You can connect to this database using any http client, or a CouchDB specific library. For example, you can connect with curl:
 
 ``` bash
-  $ curl http://subdomain.iriscouch.com:5984
+$ curl http://subdomain.iriscouch.com:5984
 ```
 
 Or, you can connect with [nano](https://github.com/dscape/nano):
 
-    var nano = require('nano')('http://nodejitsudb944957670256.iriscouch.com:5984');
+``` javascript
+var nano = require('nano')('http://nodejitsudb944957670256.iriscouch.com:5984');
+```
 
 You can also access your database in your browser by going to http://subdomain.iriscouch.com:5984/_utils .
 
@@ -125,73 +127,89 @@ You can also access your database in your browser by going to http://subdomain.i
 If you run `jitsu databases create mongo myMongo`, jitsu
 will supply a connection string for your new mongo database on mongolab:
 
-    info:   Welcome to Nodejitsu user
-    info:   It worked if it ends with Nodejitsu ok
-    info:   Executing command databases create mongo myMongo
-    info:   A new mongo has been created
-    info:   Database name: myMongo
-    info:   Database type: mongo
-    info:   Connection url: mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/myMongo
-    info:   Nodejitsu ok
+```
+info:   Welcome to Nodejitsu user
+info:   It worked if it ends with Nodejitsu ok
+info:   Executing command databases create mongo myMongo
+info:   A new mongo has been created
+info:   Database name: myMongo
+info:   Database type: mongo
+info:   Connection url: mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/myMongo
+info:   Nodejitsu ok
+```
 
 You can connect to this using the `mongo` CLI client tool like so:
 
-    $ mongo subdomain.mongolab.com:100027/myMongo -u nodejitsu -p pass
+```
+$ mongo subdomain.mongolab.com:100027/myMongo -u nodejitsu -p pass
+```
 
 or with the `mongodb-native` module:
 
-    var mongodb = require('mongodb');
-    var db = new mongodb.Db('myMongo',
-      new mongodb.Server('subdomain.mongolab.com', 10027, {})
-    );
-    db.open(function (err, db_p) {
-      if (err) { throw err; }
-      db.authenticate('nodejitsu', 'pass', function (err, replies) {
-        // You are now connected and authenticated.
-      });
-    });
+``` javascript
+var mongodb = require('mongodb');
+var db = new mongodb.Db('myMongo',
+  new mongodb.Server('subdomain.mongolab.com', 10027, {})
+);
+db.open(function (err, db_p) {
+  if (err) { throw err; }
+  db.authenticate('nodejitsu', 'pass', function (err, replies) {
+    // You are now connected and authenticated.
+  });
+});
+```
 
 or with mongoose:
 
-    var mongoose = require('mongoose');
-    mongoose.connect('mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/myMongo');
+``` javascript
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/myMongo');
+```
 
 You can copy-paste this url directly into your mongo library's connect method.
 For example, in [Mongoose](https://github.com/learnboost/mongoose/):
 
-    var mongoose = require('mongoose');
-    mongoose.connect("mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/");
+``` javascript
+var mongoose = require('mongoose');
+mongoose.connect("mongodb://nodejitsu:pass@subdomain.mongolab.com:10057/");
+```
 
 #### Redis
 
 Running `jitsu databases create redis myRedis` will create a redis instance supplied by redistogo:
 
-    info:    Welcome to Nodejitsu user
-    info:    It worked if it ends with Nodejitsu ok
-    info:    Executing command databases create r testRedis
-    info:    A new redis has been created
-    data:    Database Type: redis
-    data:    Database Name: testRedis
-    data:    Connection host: subdomain.redistogo.com
-    data:    Connection port: 5309
-    data:    Connection auth: pass
-    info:    Nodejitsu ok
+```
+info:    Welcome to Nodejitsu user
+info:    It worked if it ends with Nodejitsu ok
+info:    Executing command databases create r testRedis
+info:    A new redis has been created
+data:    Database Type: redis
+data:    Database Name: testRedis
+data:    Connection host: subdomain.redistogo.com
+data:    Connection port: 5309
+data:    Connection auth: pass
+info:    Nodejitsu ok
+```
 
 **Note:** Some versions of jitsu may show a connection string, eg. `redis://nodejitsu:pass@subdomain.redistogo.com:5309`.
 
 You can connect to your redis with the `redis-cli` cli client:
 
-    $ redis-cli -h subdomain.redistogo.com -p 5309 -a pass
+```
+$ redis-cli -h subdomain.redistogo.com -p 5309 -a pass
+```
 
 or with the `redis` module:
 
-    var redis = require('redis');
-    var options = { parser: 'javascript' };
-    var client = redis.createClient(5309, 'subdomain.redistogo.com', options);
-    client.auth('pass', function (err) {
-      if (err) { throw err; }
-      // You are now authed with your redis.
-    });
+``` javascript
+var redis = require('redis');
+var options = { parser: 'javascript' };
+var client = redis.createClient(5309, 'subdomain.redistogo.com', options);
+client.auth('pass', function (err) {
+  if (err) { throw err; }
+  // You are now authed with your redis.
+});
+```
 
 **Note:** If you are using an older version of `node_redis`(<0.8.0), You may have to
 explicitly use its javascript parser instead of the optional native module `hiredis`
@@ -221,7 +239,7 @@ Available commands are `list`, `get`, `set`, `delete`, and
 An Example:
 
 ```
-  $ jitsu env set NODE_ENV production
+$ jitsu env set NODE_ENV production
 ```
 
 This will set the environment variable $NODE_ENV to have the string value  "production". Remember, this will not take effect until the app is started again (`jitsu apps start` -- there is no need to take your app down with a `restart` with the zero downtime deploys).

@@ -60,7 +60,7 @@ It will look something like this:
 
 What about continuous integration?  We added [Travis-CI](http://travis-ci.org/) so you can feel safe about your deployments. Simply add something like this in your `.travis.yml` file.
 
-```
+``` yaml
 notifications:
   webhooks: 
     urls:

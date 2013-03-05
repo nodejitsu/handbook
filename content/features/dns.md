@@ -8,16 +8,16 @@ First you need to select the datacenter endpoint where your application is runni
 
 * Joyent
 
-  * us-east-1: ```*.jit.su```
-  * us-sw-1: ```*.jyt.us.sw1.jit.su```
-  * eu-ams-1: ```*.jyt.eu.ams1.jit.su```
+  * us-east-1: `*.jit.su`
+  * us-sw-1: `*.jyt.us.sw1.jit.su`
+  * eu-ams-1: `*.jyt.eu.ams1.jit.su`
 
 * Telefonica
 
-  * eu-lon-1: ```*.tf.eu.lon1.jit.su```
-  * eu-mad-1: ```*.tf.eu.mad1.jit.su```
+  * eu-lon-1: `*.tf.eu.lon1.jit.su`
+  * eu-mad-1: `*.tf.eu.mad1.jit.su`
 
-Then you can obtain the IP addresses using the ``host`` command with the datacenter address.
+Then you can obtain the IP addresses using the `host` command with the datacenter address.
 
 For example, if you want to obtain the IP addresses of the Amsterdam datacenter `eu-ams-1`, you need to run the following:
 

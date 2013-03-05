@@ -6,7 +6,9 @@
 
 One way is to use jitsu. Simply type:
 
-    jitsu users forgot :username
+```
+jitsu users forgot :username
+```
 
 where `:username` is your username. Alternately, go to <http://webops.nodejitsu.com/> and click the "login" link; then search for the link "Did you by any chance forgot your password?", where you will be prompted for your username. Either process will send you an email with further instructions.
 
@@ -33,11 +35,15 @@ The ability to host TCP applications on nodejitsu and listen on non-80 ports is 
 By default, Koding will not install packages globally, due to a permission error. You can fix this by setting the
 npm prefix to a location that you have permissions to access, like your home directory. To do this, simply run:
 
-`npm config set prefix ~`
+```
+npm config set prefix ~
+```
 
 And then you can install jitsu normally:
 
-`npm i jitsu -g`
+```
+npm i jitsu -g
+```
 
 <hr>
 ## "Can I use jitsu with Cloud9 IDE (<http://c9.io>)?"
@@ -144,7 +150,9 @@ You can set the `TZ` environment variable with `jitsu env`. A list of time zones
 can be found [here](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 Here is an example:
 
-    jitsu env set TZ America/Los_Angeles
+```
+jitsu env set TZ America/Los_Angeles
+```
 
 <hr>
 ## How do subdomains work and what are the valid subdomains?

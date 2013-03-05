@@ -17,8 +17,10 @@ Currently, we support [Basic Authentication](http://en.wikipedia.org/wiki/Basic_
 Here is an example using the command line utility with Basic authentication,
 [curl]:
 
-     // get all applications for User "Marak"
-     curl --user Marak:password https://api.nodejitsu.com/apps/marak
+```
+// get all applications for User "Marak"
+curl --user Marak:password https://api.nodejitsu.com/apps/marak
+```
 
 Token authentication works the same way but instead of providing a password you need to provide an API token. Even though you can authenticate with an API token it does restrict access to your user profile, password, etc for security reasons.
 
@@ -28,34 +30,48 @@ Token authentication works the same way but instead of providing a password you 
 Applications are the core of the Nodejitsu API. Each application represents a set of Node.js code plus a package.json which contains meta-data about the application such as it's dependencies, database connections, configuration settings and authors. For more information about the `package.json` format see: [package.json](http://package.json.jit.su)
 
 ### Get all Applications for a User
-    
-     GET /apps/:user-id
+
+```
+GET /apps/:user-id
+```
 
 ### Create a new Application
 
-     POST /apps/:user-id
-     { package.json }
+```
+POST /apps/:user-id
+{ package.json }
+```
 
 ### Start an Application
 
-     POST /apps/:user-id/:app-id/start
+```
+POST /apps/:user-id/:app-id/start
+```
 
 ### Stop an Application
-     
-     POST /apps/:user-id/:app-id/stop
+
+```
+POST /apps/:user-id/:app-id/stop
+```
 
 ### Restart an Application
-     
-     POST /apps/:user-id/:app-id/restart
+
+```
+POST /apps/:user-id/:app-id/restart
+```
 
 ### Update an Application
 
-     PUT /apps/:user-id
-     { package.json }
+```
+PUT /apps/:user-id
+{ package.json }
+```
 
 ### Delete an Application
 
-     DELETE /apps/:user-id/:app-id
+```
+DELETE /apps/:user-id/:app-id
+```
 
 <hr>
 ## Snapshots
@@ -63,16 +79,28 @@ Applications are the core of the Nodejitsu API. Each application represents a se
 Application snapshots are kept so you can keep track of each of your deployments. You can use [jitsu], or our [online administrative interface][webops] to revert to a specific snapshot, or download the code you have running in the server.
 
 ### Make an existing snapshot the active app
-    POST /apps/:user-id/:app-id/snapshots/:id/activate
+
+```
+POST /apps/:user-id/:app-id/snapshots/:id/activate
+```
 
 ### Activate / Deploy a snapshot
-    POST /apps/:user-id/snapshots/:id
+
+```
+POST /apps/:user-id/snapshots/:id
+```
 
 ### Show a catalog of all Snapshot for an Application
-    GET /apps/:user-id/:app-id/snapshots
+
+```
+GET /apps/:user-id/:app-id/snapshots
+```
 
 ### Show/Download the contents of a Snapshot
-    GET /apps/:user-id/:app-id/snapshots/:id.tgz
+
+```
+GET /apps/:user-id/:app-id/snapshots/:id.tgz
+```
 
 <hr>
 ## Users
@@ -81,40 +109,52 @@ Application snapshots are kept so you can keep track of each of your deployments
 
 Email address is the only required field.
 
-     POST /users/:user-id
-     {
-       email: "youremail@theinternet.com"
-     }
+```
+POST /users/:user-id
+{
+  email: "youremail@theinternet.com"
+}
+```
 
 ### Confirm a User account
 
 All User accounts must be confirmed. When a new User is created, a confirmation email will be sent to the email address associated with that user. In this email there will be an invite code. This code must be sent to the API to confirm the account. 
 
-    POST /users/:user-id
-    {
-      inviteCode: "SecretCode"
-    }
+```
+POST /users/:user-id
+{
+  inviteCode: "SecretCode"
+}
+```
 
 ### Update User
 
-    PUT /users/:user-id
-    {
-      password: "new_password"
-    }
+```
+PUT /users/:user-id
+{
+  password: "new_password"
+}
+```
 
 ### Get User API Tokens
 
-    GET /users/:user-id/tokens
+```
+GET /users/:user-id/tokens
+```
 
 ### Delete an API Token
 
-    DELETE /users/:user-id/tokens/:token-id
+```
+DELETE /users/:user-id/tokens/:token-id
+```
 
 <a name="create-an-api-token"></a>
 ### Create an API Token
 
-    POST /users/:user-id/tokens
-    PUT  /users/:user-id/tokens/:my-named-token
+```
+POST /users/:user-id/tokens
+PUT  /users/:user-id/tokens/:my-named-token
+```
 
 ### Get User Third Party Tokens
 
@@ -130,36 +170,46 @@ GET /users/:user-id/thirdparty
 
 ### Delete an Third Party Token
 
-    DELETE /users/:user-id/thirdparty/:token-id
+```
+DELETE /users/:user-id/thirdparty/:token-id
+```
 
 ### Create an Third Party Token
 
 Token and provider are mandatory
 
-    POST /users/:user-id/thirdparty
-    {
-      token: "SEVMTE8gWUVTIEkgQU0gRE9HCg", // mandatory
-      provider: "github", // mandatory
-      id: "a string id 123" // optional, helps humans identify the key
-    }
+```
+POST /users/:user-id/thirdparty
+{
+  token: "SEVMTE8gWUVTIEkgQU0gRE9HCg", // mandatory
+  provider: "github", // mandatory
+  id: "a string id 123" // optional, helps humans identify the key
+}
+```
 
 <hr>
 ## Databases
 
 ### Create a new Database
 
-     POST /databases/:user-id/:database-id
-     {
-       type: "couch" || "redis" || "mongo" || "mongohq" || "redistogo"
-     }
+```
+POST /databases/:user-id/:database-id
+{
+  type: "couch" || "redis" || "mongo" || "mongohq" || "redistogo"
+}
+```
 
 ### Get information about a Database
 
-    GET /databases/:user-id/:database-id
+```
+GET /databases/:user-id/:database-id
+```
 
 ### Delete a Database
 
-    DELETE /databases/:user-id/:database-id
+```
+DELETE /databases/:user-id/:database-id
+```
 
 <hr>
 ## Logging
@@ -168,22 +218,25 @@ Nodejitsu provides integrated logging solutions for your applications. Your logs
 
 ### Get all logs for a user
 
-    POST /logs/:user-id/
-    {
-      "from": "NOW-3YEARS",
-      "until": "NOW",
-      "rows": 15
-    } 
+```
+POST /logs/:user-id/
+{
+  "from": "NOW-3YEARS",
+  "until": "NOW",
+  "rows": 15
+}
+```
 
 ### Get logs for a specific application
 
-    POST /logs/:user-id/:app-id
-    {
-      "from": "NOW-3YEARS",
-      "until": "NOW",
-      "rows": 15
-    } 
-
+```
+POST /logs/:user-id/:app-id
+{
+  "from": "NOW-3YEARS",
+  "until": "NOW",
+  "rows": 15
+} 
+```
 
 [jitsu]: http://github.com/nodejitsu/jitsu
 [JSON]: http://en.wikipedia.org/wiki/JSON

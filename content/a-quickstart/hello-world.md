@@ -6,23 +6,23 @@ In this tutorial, you will write a simple "hello world" web application in Node.
 Let's start with a very basic Node.js http server. Create a folder called `myapp/` and then create a file inside the folder called `server.js`. Inside this file, write the following code:
 
 ``` javascript
-  // requires node's http module
-  var http = require('http');
-      
-  // creates a new httpServer instance
-  http.createServer(function (req, res) {
-    // this is the callback, or request handler for the httpServer
-    
-    // respond to the browser, write some headers so the 
-    // browser knows what type of content we are sending
-    res.writeHead(200, {'Content-Type': 'text/html'});
-         
-    // write some content to the browser that your user will see
-    res.write('<h1>hello, i know nodejitsu.</h1>');
-    
-    // close the response
-    res.end();
-  }).listen(8080); // the server will listen on port 8080
+// requires node's http module
+var http = require('http');
+
+// creates a new httpServer instance
+http.createServer(function (req, res) {
+  // this is the callback, or request handler for the httpServer
+
+  // respond to the browser, write some headers so the 
+  // browser knows what type of content we are sending
+  res.writeHead(200, {'Content-Type': 'text/html'});
+
+  // write some content to the browser that your user will see
+  res.write('<h1>hello, i know nodejitsu.</h1>');
+
+  // close the response
+  res.end();
+}).listen(8080); // the server will listen on port 8080
 ```
 
 That's all the code you'll need for starters. Save your server and get ready to deploy!
@@ -40,7 +40,7 @@ If this is your first time deploying an application and you are eager to get sta
 In order to install jitsu, open a terminal and type:
 
 ```
-  [sudo] npm install jitsu -g
+[sudo] npm install jitsu -g
 ```
 
 This command will install jitsu on your system; the `-g` makes npm install it globally, rather than as a local module.
@@ -58,18 +58,18 @@ After installation, run the `jitsu` command from your command line. Since it's y
 Open a terminal:
 
 ``` 
-  cd /home/me/myapp
-  jitsu deploy
+cd /home/me/myapp
+jitsu deploy
 ```
 
 This will create a new application snapshot, generate and/or update project metadata, and deploy the project in the current path to [Nodejitsu](http://nodejitsu.com). If it's your first deployment, you'll be prompted for some information such as *<u>your app's name</u>*, its  *<u>nodejitsu subdomain</u>*, and its *<u>start script</u>*. It's really easy and we promise it will  only take a few seconds.
 
 ```
-  prompt: subdomain:  (myapp)
-  prompt: scripts.start:  (server.js)
-  prompt: version: (0.0.0)
-  prompt: engines.node: (0.8.x)
-``` 
+prompt: subdomain:  (myapp)
+prompt: scripts.start:  (server.js)
+prompt: version: (0.0.0)
+prompt: engines.node: (0.8.x)
+```
 
 Now just open up your favorite browser, and go to `myapp.nodejitsu.com`. If everything has been set up correctly, then you too, are on the path of nodejitsu!
 

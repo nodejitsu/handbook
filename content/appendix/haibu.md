@@ -10,7 +10,7 @@ Haibu builds on this concept of "drones" and exposes a robust and granular API f
 ## Installation
 
 ```
-  [sudo] npm install haibu -g
+[sudo] npm install haibu -g
 ```
 
 This will install haibu globally. You can also grab the source [directly from git](https://github.com/nodejitsu/haibu).
@@ -21,20 +21,20 @@ This will install haibu globally. You can also grab the source [directly from gi
 To start haibu, all you have to do is run `haibu`:
 
 ```
-  $ haibu 
-        __                  __               
-       / /_    ______  __  / /_     __  __   
-      / __ \  / __  / / / /  __ \  / / / /   
-     / / / / / /_/ / / / /  /_/ / / /_/ /    
-    /_/ /_/  \__,_/ /_/ /_/\___/  \__,_/     
-  
-    This is Open Source Software available under
-    the MIT License.
-  
-    © 2010 Nodejitsu Inc.
-    All Rights Reserved - www.nodejitsu.com
-    haibu started @ 10.0.1.4 on port 9002 as api-server
-      using plugins: config, exceptions, directories, log, http
+$ haibu 
+      __                  __               
+     / /_    ______  __  / /_     __  __   
+    / __ \  / __  / / / /  __ \  / / / /   
+   / / / / / /_/ / / / /  /_/ / / /_/ /    
+  /_/ /_/  \__,_/ /_/ /_/\___/  \__,_/     
+
+  This is Open Source Software available under
+  the MIT License.
+
+  © 2010 Nodejitsu Inc.
+  All Rights Reserved - www.nodejitsu.com
+  haibu started @ 10.0.1.4 on port 9002 as api-server
+    using plugins: config, exceptions, directories, log, http
 ```
 
 Haibu is an http server that exposes a REST api on port 9002. You can either access this API client with a regular HTTP client, or use our [haibu-api](https://github.com/nodejitsu/haibu-api/tree/master/node.js) module. Unfortunately, jitsu does not work with haibu's HTTP API, only the nodejitsu API.
