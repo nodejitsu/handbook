@@ -118,7 +118,7 @@ info:    Nodejitsu ok
 ## Setting up your DNS
 
 To setup your custom DNS domain with the correct datacenter you can follow the
-[DNS configuration instructions](/docs/features/dns) from this handbook.
+[DNS configuration instructions](/documentation/features/dns) from this handbook.
 
 ---
 

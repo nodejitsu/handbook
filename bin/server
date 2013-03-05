@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 require('http').createServer(function (req, res) {
-  res.writeHead(301, { 'location': 'https://www.nodejitsu.com/docs' + req.url });
+  res.writeHead(301, { 
+    'location': 'https://www.nodejitsu.com/documentation' + req.url 
+  });
   res.end();
 }).listen(8080);
