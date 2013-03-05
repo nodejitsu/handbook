@@ -1,34 +1,65 @@
-Here's how to set up a custom domain name for your Nodejitsu app:
+Here's how to set up a custom domain name for your Nodejitsu application
 
-## Get a list of ip addresses for Nodejitsu's balancers:
+## Get a list of IP addresses for Nodejitsu's balancers
 
-If you're on the command line, you can get the latest version of this list by running:
+### Business Plans
+
+First you need to select the datacenter endpoint where your application is running.
+
+* Joyent
+
+  * us-east-1: ```*.jit.su```
+  * us-sw-1: ```*.jyt.us.sw1.jit.su```
+  * eu-ams-1: ```*.jyt.eu.ams1.jit.su```
+
+* Telefonica
+
+  * eu-lon-1: ```*.tf.eu.lon1.jit.su```
+  * eu-mad-1: ```*.tf.eu.mad1.jit.su```
+
+Then you can obtain the IP addresses using the ``host`` command with the datacenter address.
+
+For example, if you want to obtain the IP addresses of the Amsterdam datacenter `eu-ams-1`, you need to run the following:
 
 ``` bash
-$ host nodejitsu.com
-nodejitsu.com has address 165.225.131.5
-nodejitsu.com has address 165.225.129.253
-nodejitsu.com has address 165.225.130.235
-nodejitsu.com has address 165.225.130.237
-nodejitsu.com has address 165.225.130.238
-nodejitsu.com has address 165.225.130.239
-nodejitsu.com has address 165.225.130.240
-nodejitsu.com has address 165.225.130.241
-nodejitsu.com has address 165.225.131.4
+$ host example.jyt.eu.ams1.jit.su
+example.jyt.eu.ams1.jit.su has address 37.153.97.163
+example.jyt.eu.ams1.jit.su has address 37.153.97.50
+example.jyt.eu.ams1.jit.su has address 37.153.97.85
+example.jyt.eu.ams1.jit.su has address 37.153.97.152
 ```
 
-## Set the A-record for your app
+### Individual Plans
 
-Using your DNS provider, modify the A-record for your domain to point to the ip addresses you found in step 1. This process depends on your DNS hosting provider. Add **all** of these addresses to your A-records, as they serve as fallbacks for each other.
+_Note: Individual plans runs on datacenter 'us-east-1'_
+
+You can get the latest version of this list by running:
+
+``` bash
+$ host jit.su
+jit.su has address 165.225.130.239
+jit.su has address 165.225.131.5
+jit.su has address 165.225.130.238
+jit.su has address 165.225.131.4
+jit.su has address 165.225.130.241
+jit.su has address 165.225.130.237
+jit.su has address 165.225.130.235
+jit.su has address 165.225.129.253
+jit.su has address 165.225.130.240
+```
+
+## Set the A-record for your application
+
+Using your DNS provider, modify the A-record for your domain to point to the IP addresses you found in step 1. This process depends on your DNS hosting provider. Add **all** of these addresses to your A-records, as they serve as fallbacks for each other.
 
 ## Modify your package.json
 
-Nodejitsu uses a special field in your package.json, called "domains", to keep track of an app's assigned custom domains. For example, the app hosted at http://jesusabdullah.jit.su has the following package.json:
+Nodejitsu uses a special field in your package.json, called "domains", to keep track of an app's assigned custom domains. For example, an app hosted at http://awesomeapp.jit.su has the following package.json:
 
 ``` js
 {
-  "name": "myapp",
-  "subdomain": "myapp",
+  "name": "awesomeapp",
+  "subdomain": "awesomeapp",
   "domains": [
     "myawesomedomain.com",
     "www.myawesomedomain.com"
@@ -66,6 +97,6 @@ info:   Nodejitsu ok
 
 http://www.myawesomedomain.com
 
-Don't forget to give it some time so DNS resolves, and add a "powered by Nodejitsu" badge to your homepage (or just give a shout-out on Twitter)
+Don't forget to give it some time so DNS resolves, add a "powered by Nodejitsu" badge to your homepage (or just give a shout-out on Twitter)
 
 [meta:title]: <> (Using My Own Domain (DNS))
