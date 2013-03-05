@@ -11,7 +11,8 @@ var path = require('path'),
 
 //
 // ### function scrape()
-// #### @file {String} Filename
+// #### @content {String} document content
+// #### @key {String} scraper key
 // Scrapes the [key] from the content by Regular Epression
 //
 function scrape(content, key) {
