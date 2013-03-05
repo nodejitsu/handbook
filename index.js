@@ -38,7 +38,7 @@ function frequency(content) {
 
   tokenizer.tokenize(content).forEach(function wordFrequency(word) {
     // Return early if word is processed, to short or only a number.
-    if (+word || word.length < 3 || !!~processed.indexOf(word)) return;
+    if (+word || word.length < 3 || ~processed.indexOf(word)) return;
 
     words.push({
       word: word,
