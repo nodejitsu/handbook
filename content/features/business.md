@@ -1,22 +1,28 @@
-<hr />
+# Business plan features
 
-If you're one of our **[Business Plan](http://nodejitsu.com/paas/pricing)** customers, you have access to special features which give you more selection and reliability.
+If you're one of our **[Business Plan](http://nodejitsu.com/paas/pricing)**
+customers, you have access to special features which give you more selection and
+reliability.
 
-You can choose which infrastructure provider and datacenter you deploy your application to, and choose how many drones to allocate towards your apps.
+You can choose which infrastructure provider and datacenter you deploy your
+application to, and choose how many drones to allocate towards your apps.
 
-To access Business plan features, you need to first make sure you're running the latest version of jitsu. Please run:
+To access Business plan features, you need to first make sure you're running the
+latest version of jitsu. Please run:
 
 ```
 $ [sudo] npm install jitsu -g
 ```
 
-Make sure your application is deployed on Nodejitsu before using the following commands.
+Make sure your application is deployed on Nodejitsu before using the following
+commands.
 
 ## Using jitsu cloud
 
 ### View cloud information
 
-You can view the details for the datacenter and provider where your application is deployed.
+You can view the details for the datacenter and provider where your application
+is deployed.
 
 Example:
 
@@ -39,7 +45,8 @@ info:    Nodejitsu ok
 
 ### Change cloud provider and datacenter
 
-To change your application to another cloud provider and datacenter, use the following command:
+To change your application to another cloud provider and datacenter, use the
+following command:
 
 ```
 $ jitsu cloud <cloud> <datacenter>
@@ -74,14 +81,18 @@ info:    Nodejitsu ok
 ```
 
 ### Available Datacenters
-You can deploy to any of the following [datacenters](http://nodejitsu.com/paas/datacenters):
+
+You can deploy to any of the following
+[datacenters](http://nodejitsu.com/paas/datacenters):
 
 #### Joyent
+
 * Las Vegas, US: `us-sw-1`
 * Viriginia, US: `us-east-1`
 * Amsterdam, NL: `eu-ams-1`
 
 #### Telefónica
+
 * Madrid, ES: `eu-mad-1`
 * London, UK: `eu-lon-1`
 
@@ -102,14 +113,19 @@ data:    jitsu cloud telefonica eu-mad-1
 info:    Nodejitsu ok
 ```
 
-## Setting up your DNS
-To setup your custom DNS domain with the correct datacenter you can follow the
-[DNS configuration instructions](/features/dns) from this handbook.
+---
 
+## Setting up your DNS
+
+To setup your custom DNS domain with the correct datacenter you can follow the
+[DNS configuration instructions](/docs/features/dns) from this handbook.
+
+---
 
 ## Scaling your application
 
-You can scale your application by adding more drones or ram, using the `--drones` and `--ram` parameters.
+You can scale your application by adding more drones or ram, using the
+`--drones` and `--ram` parameters.
 
 ### To Add more ram
 
@@ -144,6 +160,7 @@ info:    Nodejitsu ok
 ```
 
 ### To Add more drones
+
 To add more drones use the `--drones <n>` parameter.
 
 Example:

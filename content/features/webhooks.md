@@ -1,21 +1,32 @@
+# Continuous Deployment using Github
+
 <a name="webhookapi-index"></a>
-Access the `Admin` section on your open source node.js Github repository. Click `Service Hooks` and then `Nodejitsu`. You will be presented with a form with four fields:
+
+Access the `Admin` section on your open source node.js Github repository. Click
+`Service Hooks` and then `Nodejitsu`. You will be presented with a form with
+four fields:
 
 * Username, which defaults to your Github username
-* Password, your password or a valid [Nodejitsu API authentication token](https://handbook.nodejitsu.com/api#create-an-api-token)
+* Password, your password or a valid [Nodejitsu API authentication
+  token](https://handbook.nodejitsu.com/api#create-an-api-token)
 * Branch, where you can define the branch you wish to deploy and defaults to master
 * Endpoint, which defaults to https://webhooks.nodejitsu.com
 
 ![The Github Interface for Nodejitsu](https://versions.jitsu.com/resources/service-hooks.png)
 
-Select `Active` and hit `Update Settings`. From now on every-time you commit to Github (in the designated deployment branch) we will deploy that application for you. That simple.
+Select `Active` and hit `Update Settings`. From now on every-time you commit to
+Github (in the designated deployment branch) we will deploy that application for
+you. That simple.
 
 <a name="webhookapi-monitoring"></a>
 ## Monitoring deployments
 
-There's several ways to access the deployment status in the Nodejitsu Webhook API, and you can find the complete documentation at [webhooks.nodejitsu.com](http://webhooks.nodejitsu.com).
+There's several ways to access the deployment status in the Nodejitsu Webhook
+API, and you can find the complete documentation at
+[webhooks.nodejitsu.com](http://webhooks.nodejitsu.com).
 
-The most fun way to monitor your deployment is with the realtime status changes feed.
+The most fun way to monitor your deployment is with the real-time status changes
+feed.
 
 ``` bash
 # if your username is foo and password is bar this would be 
@@ -23,7 +34,8 @@ The most fun way to monitor your deployment is with the realtime status changes 
 curl -u username https://webhooks.nodejitsu.com/1/status/username/changes?include_docs=auto
 ```
 
-This will create an HTTP keep alive connection that pushes the status to you in realtime every time someone invokes our API:
+This will create an HTTP keep alive connection that pushes the status to you in
+real-time every time someone invokes our API:
 
 ``` javascript
 {
@@ -36,16 +48,22 @@ This will create an HTTP keep alive connection that pushes the status to you in 
 }
 ```
 
-Each request to our API is logged with a unique `uuid`, so you can use it to refer possible issues to our support staff.
+Each request to our API is logged with a unique `uuid`, so you can use it to
+refer possible issues to our support staff.
 
-We are now ready to deploy, go back to Github and click `Test Hook`. You should be up and running shortly.
+We are now ready to deploy, go back to Github and click `Test Hook`. You should
+be up and running shortly.
 
 <a name="webhookapi-badges"></a>
 ## Badges
 
-If you use our continuous deployment solution and wish there was a easier way to see if the latest deployment worked you can now use our Continuous Deployment Badges.
+If you use our continuous deployment solution and wish there was a easier way to
+see if the latest deployment worked you can now use our Continuous Deployment
+Badges.
 
-This is simple, if your username was `nodejitsu` and your github repository was called `handbook` you could get deployment status by simply adding this to your `readme.md` file:
+This is simple, if your username was `nodejitsu` and your github repository was
+called `handbook` you could get deployment status by simply adding this to your
+`readme.md` file:
 
 ``` markdown
 [![Nodejitsu Deploy Status Badges](https://webhooks.nodejitsu.com/nodejitsu/handbook.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
@@ -58,7 +76,9 @@ It will look something like this:
 <a name="webhookapi-travis"></a>
 ## Travis
 
-What about continuous integration?  We added [Travis-CI](http://travis-ci.org/) so you can feel safe about your deployments. Simply add something like this in your `.travis.yml` file.
+What about continuous integration?  We added [Travis-CI](http://travis-ci.org/)
+so you can feel safe about your deployments. Simply add something like this in
+your `.travis.yml` file.
 
 ``` yaml
 notifications:
@@ -69,14 +89,20 @@ notifications:
     on_failure: never
 ```
 
-Internally our API will try to see if you have Travis configured like this, and if you do it will put the deployment request from Github on a hold until Travis informs us all tests have passed.
+Internally our API will try to see if you have Travis configured like this, and
+if you do it will put the deployment request from Github on a hold until Travis
+informs us all tests have passed.
 
 If tests failed we won't deploy. Simple.
 
 <a name="webhookapi-privaterepos"></a>
-## Deploying Private Repos & Commit Status API
+## Deploying Private Repositories & Commit Status API
 
-If you authorize access so we can use your github account we can do more fun stuff like allowing you to deploy your private repositories, or even update your [commit status](https://github.com/blog/1227-commit-status-api) and check if a deployment worked directly in github. We don't save any passwords - we just use the password to retrieve a token to save.
+If you authorize access so we can use your github account we can do more fun
+stuff like allowing you to deploy your private repositories, or even update your
+[commit status](https://github.com/blog/1227-commit-status-api) and check if a
+deployment worked directly in github. We don't save any passwords - we just use
+the password to retrieve a token to save.
 
 ![Commit Status API](https://versions.jitsu.com/resources/merge.png)
 
@@ -90,7 +116,8 @@ curl -X POST \
   -u nodejitsuUser
 ```
 
-**Note:** If your shell does not allow you to use the above format use the single line command below:
+**Note:** If your shell does not allow you to use the above format use the
+single line command below:
 
 ``` bash
 curl -X POST https://webhooks.nodejitsu.com/1/auth/github -H "Content-type: application/json" --data '{ "credentials": "githubUser:githubPassword" }' -u nodejitsuUser
@@ -99,7 +126,11 @@ curl -X POST https://webhooks.nodejitsu.com/1/auth/github -H "Content-type: appl
 <a name="webhookapi-apikeys"></a>
 ## But wait, I have API keys I can't commit to Github as open source?!
 
-Don't worry, you can use `jitsu set env` to set environment variables that you can access with `process.env`. Check our [handbook](https://handbook.nodejitsu.com/features#feature/envvars) for more information. Environment variables set this way persist across deployments and are also available in our [webops](https://webops.nodejitsu.com) application.
+Don't worry, you can use `jitsu set env` to set environment variables that you
+can access with `process.env`. Check our
+[handbook](https://handbook.nodejitsu.com/features#feature/envvars) for more
+information. Environment variables set this way persist across deployments and
+are also available in our [webops](https://webops.nodejitsu.com) application.
 
 <a name="webhookapi-api"></a>
 ## API Documentation
@@ -114,9 +145,16 @@ POST /1/deploy
 
 Deploy a new application with a given payload. 
 
-Check [Sample Payloads](#payloads) for examples. This method is normally called by a [github](http://help.github.com/post-receive-hooks) or [travis](http://about.travis-ci.org/docs/user/build-configuration) web-hook.
+Check [Sample Payloads](#payloads) for examples. This method is normally called
+by a [github](http://help.github.com/post-receive-hooks) or
+[travis](http://about.travis-ci.org/docs/user/build-configuration) web-hook.
 
-You must configure the github webhook to use the travis webhook. Works under the assumption that if your repository has a `.travis.yml` file and that contains at least one webhook notification we shouldn't deploy from the github request, but instead wait until travis triggers the notify event and calls our API. This effectively means that if travis tests don't pass your application does not get deployed.
+You must configure the github webhook to use the travis webhook. Works under the
+assumption that if your repository has a `.travis.yml` file and that contains at
+least one webhook notification we shouldn't deploy from the github request, but
+instead wait until travis triggers the notify event and calls our API. This
+effectively means that if travis tests don't pass your application does not get
+deployed.
 
 ```
 curl -X POST -u username -d @file https://webhooks.nodejitsu.com/1/deploy
@@ -223,7 +261,9 @@ GET /1/status/:user/webhooks
 GET /1/status/:user/webhooks/:application
 ```
 
-Gets the install status for a specific user. Useful to determine if the deploy worked, or why it failed. `:user` is your nodejitsu username and `:application` is your application name.
+Gets the install status for a specific user. Useful to determine if the deploy
+worked, or why it failed. `:user` is your Nodejitsu username and `:application`
+is your application name.
 
 ```
 curl -u dscape  https:/webhooks.nodejitsu.com/1/status/dscape/webhooks/hello-world-api-flatiron?limit=10\&skip=20
@@ -325,7 +365,8 @@ GET /1/status/:user/changes/
 GET /1/status/:user/changes/:id
 ```
 
-Streams log files as you deploy application with a changes stream. When you provide an id it will just return that entry and close the http connection.
+Streams log files as you deploy application with a changes stream. When you
+provide an id it will just return that entry and close the http connection.
 
 ```
 curl -u dscape https://webhooks.nodejitsu.com/1/status/dscape/changes?include_docs=true
@@ -415,13 +456,15 @@ curl -u dscape https://webhooks.nodejitsu.com/1/status/dscape/changes?include_do
 </table>
 
 <a name="auth"></a>
-### auth
+### Auth
 
 ```
 POST /1/auth/github
 ```
 
-Tries to get authorization from github, so elevated privileges can be used on that service. This will give us access to get working code from your repositories and change the status of a specific pull request
+Tries to get authorization from github, so elevated privileges can be used on
+that service. This will give us access to get working code from your
+repositories and change the status of a specific pull request
 
 ```
 curl -X POST -u nodejitsuUser https://webhooks.nodejitsu.com/1/auth/github \
@@ -432,11 +475,17 @@ curl -X POST -u nodejitsuUser https://webhooks.nodejitsu.com/1/auth/github \
 <a name="auth-qs"></a>
 #### Query String Parameters
 
-The `app` parameter exists so you can restrict usage of a token to a individual application. This is useful can then commit status can only be applied to that specific application, and other third party tokens will not be returned.
+The `app` parameter exists so you can restrict usage of a token to a individual
+application. This is useful can then commit status can only be applied to that
+specific application, and other third party tokens will not be returned.
 
-However be careful, when specifying an application we will not be able to use these credentials to access the repository (because when we do that for the first time we still don't know the app name, we learn that from the package.json file).
+However be careful, when specifying an application we will not be able to use
+these credentials to access the repository (because when we do that for the
+first time we still don't know the app name, we learn that from the package.json
+file).
 
-Bottom line if you want to do deployments for private repositories do not specify `app` or you will fail.
+Bottom line if you want to do deployments for private repositories do not
+specify `app` or you will fail.
 
 <table>
   <tr>

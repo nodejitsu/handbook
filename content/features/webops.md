@@ -42,7 +42,7 @@ In the applications page, you can see all the applications that are hosted on
 Nodejitsu in the sidebar. The red and green dots prefixed before their names
 indicate if your applications are started or stopped.
 
-As you can see in the screenshot above, our application `http-server` is
+As you can see in the screen shot above, our application `http-server` is
 currently stopped. We can start it clicking the **start** button in the
 application control menu bar.
 
@@ -85,7 +85,7 @@ account and that some data might still be missing from your account.
 
 ![account](https://versions.jitsu.com/resources/account.png)
 
-As you can see in the account screenshot above, I'm missing a couple of things.
+As you can see in the account screen shot above, I'm missing a couple of things.
 I don't have a Nodejitsu subscription yet and I didn't submit my billing
 information. **If you enter your billing information, we will actually add 1
 extra free month of sandbox time to your account**. So let's fill in our billing
