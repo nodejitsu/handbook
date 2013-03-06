@@ -76,8 +76,7 @@ function tags(content, n) {
 // a collection of markdown files in each folder.
 //
 function walkSync(dir, result, sub) {
-  // Get the directory relative to content.
-  var current = dir.match(/content[\/\w\-]*/)[0];
+  var current = sub ? path.basename(dir) : 'index';
 
   // Prepare containers.
   result = result || {};
@@ -118,9 +117,10 @@ function walkSync(dir, result, sub) {
 //
 // ### function get()
 // #### @file {String} Filename
+// #### @callback {Function} Callback for file contents
 // Returns file content by normalized path
 //
-function get(file) {
+function get(file, callback) {
   if (!!file) {
     file = !!~file.indexOf('.md') ? file : file + '.md';
   } else {
