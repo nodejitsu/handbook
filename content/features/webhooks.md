@@ -165,7 +165,7 @@ Authentication can use a pair of `user:pass` or `user:apiToken`.
 <a name="deploy-accept"></a>
 #### Accept
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Content-type</th>
     <th>Description</th>
@@ -179,7 +179,7 @@ Authentication can use a pair of `user:pass` or `user:apiToken`.
 <a name="deploy-headers"></a>
 #### Response Headers
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Header</th>
     <th>Type</th>
@@ -200,7 +200,7 @@ Authentication can use a pair of `user:pass` or `user:apiToken`.
 <a name="deploy-errors"></a>
 #### Errors
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Error</th>
     <th>Status Code</th>
@@ -272,7 +272,7 @@ curl -u dscape  https:/webhooks.nodejitsu.com/1/status/dscape/webhooks/hello-wor
 <a name="status-qs"></a>
 #### Query String Parameters
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Key</th>
     <th>Type</th>
@@ -293,7 +293,7 @@ curl -u dscape  https:/webhooks.nodejitsu.com/1/status/dscape/webhooks/hello-wor
 <a name="status-headers"></a>
 #### Response Headers
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Header</th>
     <th>Type</th>
@@ -314,7 +314,7 @@ curl -u dscape  https:/webhooks.nodejitsu.com/1/status/dscape/webhooks/hello-wor
 <a name="status-errors"></a>
 #### Errors
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Error</th>
     <th>Status Code</th>
@@ -375,7 +375,7 @@ curl -u dscape https://webhooks.nodejitsu.com/1/status/dscape/changes?include_do
 <a name="changes-qs"></a>
 #### Query String Parameters
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Key</th>
     <th>Type</th>
@@ -391,7 +391,7 @@ curl -u dscape https://webhooks.nodejitsu.com/1/status/dscape/changes?include_do
 <a name="changes-headers"></a>
 #### Response Headers
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Header</th>
     <th>Type</th>
@@ -412,7 +412,7 @@ curl -u dscape https://webhooks.nodejitsu.com/1/status/dscape/changes?include_do
 <a name="changes-errors"></a>
 #### Errors
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Error</th>
     <th>Status Code</th>
@@ -487,7 +487,7 @@ file).
 Bottom line if you want to do deployments for private repositories do not
 specify `app` or you will fail.
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Key</th>
     <th>Type</th>
@@ -503,7 +503,7 @@ specify `app` or you will fail.
 <a name="auth-headers"></a>
 #### Response Headers
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Header</th>
     <th>Type</th>
@@ -524,7 +524,7 @@ specify `app` or you will fail.
 <a name="auth-errors"></a>
 #### Errors
 
-<table>
+<table class="rounded striped">
   <tr>
     <th>Error</th>
     <th>Status Code</th>
