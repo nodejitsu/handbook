@@ -7,8 +7,8 @@ Access the `Admin` section on your open source node.js Github repository. Click
 four fields:
 
 * Username, which defaults to your Github username
-* Password, your password or a valid [Nodejitsu API authentication
-  token](https://handbook.nodejitsu.com/api#create-an-api-token)
+* Password, your password or a valid [Nodejitsu API authentication 
+token](https://handbook.nodejitsu.com/api#create-an-api-token) (`jitsu tokens create github`)
 * Branch, where you can define the branch you wish to deploy and defaults to master
 * Endpoint, which defaults to https://webhooks.nodejitsu.com
 
