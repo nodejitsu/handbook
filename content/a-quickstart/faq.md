@@ -222,6 +222,13 @@ Valid subdomains are strings 1-n characters long that begin and end with
 alphanumerical characters while the remaining letters can be alphanumerics,
 hyphen or a underscore.
 
+Valid subdomains would be
+- helloworld.nodejitsu.com
+- hello-world.nodejitsu.com
+- hello_world.nodejitsu.com
+
+_Note: the use of periods in subdomains is deprecated._
+
 ---
 
 ## Where are personal plan drones hosted?
