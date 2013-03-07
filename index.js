@@ -105,9 +105,12 @@ function walkSync(dir, result, sub) {
       // Append file information to current container.
       result[current][ref] = {
         href: sub ? name.join('/') : '',
-        title: get(file).title,
         path: dir
       };
+
+      get(file, function (error, content) {
+        result[current][ref].title = content.title;
+      });
     }
   });
 
@@ -127,14 +130,15 @@ function get(file, callback) {
     file = 'index.md';
   }
 
-  var content = fs.readFileSync(path.resolve(__dirname + '/content/', file), 'utf8');
-
-  return {
-    content: content,
-    description: scrape(content, 'description'),
-    title: scrape(content, 'title'),
-    tags: tags(content, 10)
-  };
+  file = path.resolve(__dirname + '/content/', file);
+  fs.readFile(file, 'utf8', function read(error, md) {
+    callback.apply(this, [error, {
+      content: md,
+      description: scrape(md, 'description'),
+      title: scrape(md, 'title'),
+      tags: tags(md, 10)
+    }]);
+  });
 }
 
 //
