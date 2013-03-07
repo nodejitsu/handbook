@@ -219,13 +219,15 @@ jitsu env set TZ America/Los_Angeles
 ## How do subdomains work and what are the valid subdomains?
 
 Valid subdomains are strings 1-n characters long that begin and end with
-alphanumerical characters while the remaining letters can be alphanumerics or a
-hyphen, underscore, or period.
+alphanumerical characters while the remaining letters can be alphanumerics,
+hyphen or a underscore.
 
-If a user submits an app whose subdomain is `helloworld.jit.su` he will be able
-to register applications that prepend something to `helloworld` (for example
-`static.helloworld.jit.su`) while other users won't. This is to prevent domain
-hijacking.
+Valid subdomains would be
+- helloworld.nodejitsu.com
+- hello-world.nodejitsu.com
+- hello_world.nodejitsu.com
+
+_Note: the use of periods in subdomains is deprecated._
 
 ---
 
