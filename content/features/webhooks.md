@@ -12,7 +12,7 @@ token](https://handbook.nodejitsu.com/api#create-an-api-token) (`jitsu tokens cr
 * Branch, where you can define the branch you wish to deploy and defaults to master
 * Endpoint, which defaults to https://webhooks.nodejitsu.com
 
-![The Github Interface for Nodejitsu](https://versions.jitsu.com/resources/service-hooks.png)
+![The Github Interface for Nodejitsu](https://versions.nodejitsu.com/id:handbook/resources/service-hooks.png)
 
 Select `Active` and hit `Update Settings`. From now on every-time you commit to
 Github (in the designated deployment branch) we will deploy that application for
@@ -71,7 +71,7 @@ called `handbook` you could get deployment status by simply adding this to your
 
 It will look something like this:
 
-[![Nodejitsu Deploy Status Badges](https://versions.jitsu.com/resources/success.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
+[![Nodejitsu Deploy Status Badges](https://versions.nodejitsu.com/id:handbook/resources/success.png)](https://webops.nodejitsu.com#nodejitsu/webhooks)
 
 <a name="webhookapi-travis"></a>
 ## Travis
@@ -104,7 +104,7 @@ stuff like allowing you to deploy your private repositories, or even update your
 deployment worked directly in github. We don't save any passwords - we just use
 the password to retrieve a token to save.
 
-![Commit Status API](https://versions.jitsu.com/resources/merge.png)
+![Commit Status API](https://versions.nodejitsu.com/id:handbook/resources/merge.png)
 
 To authorize simply do:
 

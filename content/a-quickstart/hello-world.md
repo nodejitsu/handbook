@@ -60,13 +60,13 @@ In order to install jitsu, open a terminal and type:
 This command will install jitsu on your system; the `-g` makes npm install it
 globally, rather than as a local module.
 
-![jitsu](https://versions.jitsu.com/resources/jitsu.png)
+![jitsu](https://versions.nodejitsu.com/id:handbook/resources/jitsu.png)
 
 After installation, run the `jitsu` command from your command line. Since it's
 your first time using jitsu, you will be prompted to log in with an existing
 account or to create a new account.
 
-![logging in to jitsu](https://versions.jitsu.com/resources/jitsu-login.png)
+![logging in to jitsu](https://versions.nodejitsu.com/id:handbook/resources/jitsu-login.png)
 
 **Once you've logged in, you can deploy your app immediately.**
 

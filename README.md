@@ -34,11 +34,11 @@ images are fetched from the repository and properly cached. Linking to an
 image from the article should be done as below:
 
 ```
-![no applications](https://versions.jitsu.com/resources/noapps.png)
+![no applications](https://versions.nodejitsu.com/id:handbook/resources/noapps.png)
 ```
 
 [resource]: https://github.com/nodejitsu/handbook/tree/master/resource
-[cdn]: http://versions.jit.su
+[cdn]: http://versions.nodejitsu.com
 
 ## Using the handbook as module
 Simply add handbook as dependency to the package.json.
