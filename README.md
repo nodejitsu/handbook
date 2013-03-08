@@ -1,7 +1,3 @@
-[![Nodejitsu Deploy Status](status)](https://webops.nodejitsu.com#nodejitsu/webhooks)
-
-[status]: https://webhooks.nodejitsu.com/nodejitsu/handbook.png
-
 # The Nodejitsu Handbook
 
 **You can view the Handbook online at http://www.nodejitsu.com/docs**
