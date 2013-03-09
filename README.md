@@ -4,7 +4,7 @@
 
 # The Nodejitsu Handbook
 
-**You can view the Handbook online at http://www.nodejitsu.com/docs**
+**You can view the Handbook online at https://www.nodejitsu.com/documentation**
 
 Welcome to the Nodejitsu handbook. This document will help familiarize you with 
 deploying your Node.js applications to the cloud while also providing detailed 
