@@ -35,10 +35,9 @@ function normalize(file) {
 }
 
 //
-//
-// ### function normalize()
-// #### @file {String} file name
-// Normalize the file name to resolve to a Markdown or index file.
+// ### function fileContent()
+// #### @content {String} Document content
+// Sugar content with additional properties from scraped content.
 //
 function fileContent(content) {
   return {
