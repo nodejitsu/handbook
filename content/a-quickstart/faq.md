@@ -123,16 +123,16 @@ Finally, jitsu has the ability to bundle your app without deploying with the
 
 ---
 
-## How do I fix `Error: package.json error: can't find starting script`?
+## How do I fix 'Error: package.json error: can't find starting script'?
 
 Nodejitsu requires a starting script in the package.json to know which script to
 run to start your application. You need to make sure that the scripts.start
 field in your package.json points to the correct starting script.
 
-A common issue is using "node app" as the value of scripts.start in your
+A common issue is using `node app` as the value of scripts.start in your
 package.json. This won't work on Nodejitsu because the file extension is not
-specified. You'll need to do something along the lines of "node app.js".You can
-also use just the name of the main file, "app.js".
+specified. You'll need to do something along the lines of `node app.js`.You can
+also use just the name of the main file, `app.js`.
 
 ---
 
@@ -222,10 +222,11 @@ Valid subdomains are strings 1-n characters long that begin and end with
 alphanumerical characters while the remaining letters can be alphanumerics,
 hyphen or a underscore.
 
-Valid subdomains would be
-- helloworld.nodejitsu.com
-- hello-world.nodejitsu.com
-- hello_world.nodejitsu.com
+Valid subdomains would be:
+
++ helloworld.nodejitsu.com
++ hello-world.nodejitsu.com
++ hello_world.nodejitsu.com
 
 _Note: the use of periods in subdomains is deprecated._
 

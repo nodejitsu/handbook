@@ -18,14 +18,14 @@ ahead of time:
 
 ## E-mail
 
-You can also contact us via email, at
+You can contact us via email, at
 **[support@nodejitsu.com](mailto:support@nodejitsu.com)**.
 
 ---
 
 ## IRC
 
-Nodejitsu has a channel on freenode at <irc://irc.freenode.net/#nodejitsu>
+Nodejitsu also has a channel on freenode at <irc://irc.freenode.net/#nodejitsu>
 ([http://webchat.jit.su](http://webchat.jit.su)), where Nodejitsu staff are
 standing by to support users around the clock. Drop by to ask questions, get
 assistance, or even just to hang out!
