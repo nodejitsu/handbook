@@ -335,8 +335,8 @@ which allow them to receive SSL traffic from multiple domains---including yours!
 If, for example, you owned `mydomain.com` and wanted secure connections, all you
 need are your .pem and .key files!
 
-*Note: This feature is not exposed through our API or other tools at this time.
-If you need this feature, please contact support at
+*Note: This feature is only available to users with business plans.
+If you need help with this feature, please contact support at
 [support@nodejitsu.com](email:support@nodejitsu.com).*
 
 [meta:title]: <> (Platform Features)
