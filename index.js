@@ -251,11 +251,11 @@ function prepareSearch(toc) {
 
 //
 // ### function Handbook()
-// Constructor for easy access to Handbook content.
+// Constructor for easy access to Handbook content. On constructuing handbook
+// synchronously prepare the search index. Listening to a search index ready
+// event is not required thus easing the flow.
 //
 function Handbook() {
-  // On constructuing handbook synchronously prepare the search index. Listening
-  // to a search index ready event is not required thus easing the flow.
   prepareSearch(walkSync(loc));
 }
 
@@ -285,8 +285,8 @@ Handbook.prototype.catalog = function catalog(callback) {
 //
 // ### function search()
 // #### @query {String} Query to search against
-// Proxy to the search method of Lunr, returns a list of documents, due to Lunr
-// this must be called on scope of Lunr.
+// Proxy to the search method of Lunr, returns a list of documents, this must
+// be called in Lunr scope.
 //
 Handbook.prototype.search = function (query) {
   return idx.search.call(idx, query);
