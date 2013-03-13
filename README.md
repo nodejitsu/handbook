@@ -41,7 +41,18 @@ image from the article should be done as below:
 [cdn]: http://versions.nodejitsu.com
 
 ## Using the handbook as module
-Simply add handbook as dependency to the package.json.
+Simply add handbook as dependency to the package.json, make sure to call the
+handbook constructor, otherwise the [search index][lunr] will not be initialized
+properly.
+
+``` javascript
+var Handbook = require('handbook'),
+    documentation = new Handbook();
+
+documentation.search('query');
+```
+
+[lunr]: #lunr-search 
 
 ### Get markdown content
 Call `handbook.get('/a-quickstart/hello-world')` with a relative path to the
@@ -117,3 +128,9 @@ possible as an empty string will be returned.
 Tags are parsed from the content by using Term Frequecy-Inverse Document
 Frequency. Ten of the most descriptive tags are returned by default. Currently,
 there is no support for custom tags.
+
+### Lunr search
+Handbooks search engine is powered by [Lunr][github-lunr]. The handbook#search
+method is a simple proxy to Lunr search.
+
+[github-lunr]: https://github.com/olivernn/lunr.js 
