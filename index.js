@@ -10,24 +10,27 @@ var path = require('path'),
     }),
     tokenizer = new natural.WordTokenizer(),
     loc = path.resolve(__dirname, 'content'),
+    html = /(<[^>]*>)|(&[^;]+;)/g,
     scraper = {
       title: /\[meta:title\]:\s<>\s\((.+?)\)(?!\))/,
-      description: /\[meta:description\]:\s<>\s\((.+?)\)(?!\))/
+      description: /\[meta:description\]:\s<>\s\((.+?)\)(?!\))/,
+      firstline: /([\-a-zA-Z0-9&;,]*\s+){5,}\w*/
     };
 
 //
 // ### @private function scrape()
 // #### @content {String} document content
 // #### @key {String} scraper key
+// #### @n {Number} index of match that should be returned
 // Scrapes the [key] from the content by Regular Epression
 //
-function scrape(content, key) {
+function scrape(content, key, n) {
   if (!content) return '';
 
   var match = content.replace(/\n/g, ' ').match(scraper[key]);
 
   // Only return scraped content if there is a meta:[key].
-  return match ? match[1].trim() : '';
+  return match && match[n] ? match[n].trim() : '';
 }
 
 //
@@ -49,8 +52,8 @@ function normalize(file) {
 function fileContent(content) {
   return {
     content: content || '',
-    description: scrape(content, 'description'),
-    title: scrape(content, 'title'),
+    description: scrape(content, 'description', 1) || scrape(content, 'firstline', 0),
+    title: scrape(content, 'title', 1),
     tags: tags(content, 10)
   };
 }
@@ -168,6 +171,7 @@ function walk(dir, callback, result, sub) {
             result[current][ref] = {
               href: sub ? name.join('/') : '',
               title: file.title,
+              description: file.description,
               path: dir
             };
 
@@ -215,9 +219,11 @@ function walkSync(dir, result, sub) {
       if (ref === 'index') name.pop();
 
       // Append file information to current container.
+      file = read(file);
       result[current][ref] = {
         href: sub ? name.join('/') : '',
-        title: read(file).title,
+        title: file.title,
+        description: file.description,
         path: dir
       };
     }
@@ -237,11 +243,10 @@ function prepareSearch(toc) {
 
   Object.keys(toc).forEach(function loopSections(section) {
     Object.keys(toc[section]).forEach(function loopPages(page) {
-      page = (section !== 'index' ? section + '/' : '') + page;
-      document = read(page);
+      document = read((section !== 'index' ? section + '/' : '') + page);
 
       idx.add({
-        id: page,
+        id: section + '/' + page,
         title: document.title,
         body: document.content
       });
