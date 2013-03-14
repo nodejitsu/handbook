@@ -271,8 +271,8 @@ Handbook.prototype.get = function get(file, callback) {
 // content is returned asynchronously.
 //
 Handbook.prototype.catalog = function catalog(callback) {
-  console.log(walkSync(loc));
   if (!callback) return walkSync(loc);
+
   walk(loc, callback);
 };
 
