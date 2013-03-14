@@ -6,11 +6,10 @@ var path = require('path'),
     lunr = require('lunr'),
     tokenizer = new natural.WordTokenizer(),
     loc = path.resolve(__dirname, 'content'),
-    html = /(<[^>]*>)|(&[^;]+;)/g,
     scraper = {
       title: /\[meta:title\]:\s<>\s\((.+?)\)(?!\))/,
       description: /\[meta:description\]:\s<>\s\((.+?)\)(?!\))/,
-      firstline: /([\-a-zA-Z0-9&;,]*\s+){5,}\w*/
+      firstlines: /^((.*\n){2}){1,3}/
     };
 
 //
@@ -23,7 +22,7 @@ var path = require('path'),
 function scrape(content, key, n) {
   if (!content) return '';
 
-  var match = content.replace(/\n/g, ' ').match(scraper[key]);
+  var match = content.match(scraper[key]);
 
   // Only return scraped content if there is a meta:[key].
   return match && match[n] ? match[n].trim() : '';
@@ -48,7 +47,7 @@ function normalize(file) {
 function fileContent(content) {
   return {
     content: content || '',
-    description: scrape(content, 'description', 1) || scrape(content, 'firstline', 0),
+    description: scrape(content, 'description', 1) || scrape(content, 'firstlines', 0),
     title: scrape(content, 'title', 1),
     tags: tags(content, 10)
   };
