@@ -76,40 +76,27 @@ details about data for all keys, see [Description, title and tags][description].
 [description]: #description-title-and-tags 
 
 ### Get the catalog
-Call `handbook.catalogSync()` to aquire a complete catalog from content
-(sychronously), which should return an object with paths, href's and titles.
+Call `handbook.catalog()` to aquire a complete catalog from content
+(sychronously), which should return an object with paths, href's, titles and
+descriptions. If you want to generate the catalog asynchronously then supply a
+callback to the function.
 
 ``` javascript
 { 
-  content: { 
+  index: { 
     index: { 
       href: '',
       title: 'Handbook',
+      description: '# Introduction\n\nWelcome to the Nodejitsu handbook. This document will help familiarize you with\ndeploying your Node.js applications to the cloud while also providing detailed\ninformation about Nodejitsu\'s platform-specific features and about\nwhere to get help when you need it.',
       path: '/var/www/nodejitsu/handbook/content' 
     } 
   },
-  'content/support': { 
+  support: { 
     index: { 
       href: '/support',
       title: 'Need Support?',
+      description: '# Need Support?\n\nNodejitsu has a team of developers standing by to assist users with any issues\nthey may come across while deploying and administrating their web applications\non the Nodejitsu platform. Nodejitsu strives to have a lightning-fast turnaround\non all issues you may have!',
       path: '/var/www/nodejitsu/handbook/content/support' 
-    } 
-  },
-  'content/a-quickstart': { 
-    index: { 
-      href: '/a-quickstart',
-      title: 'Quickstart',
-      path: '/var/www/nodejitsu/handbook/content/a-quickstart' 
-    },
-    faq: { 
-      href: '/a-quickstart/faq',
-      title: 'FAQ',
-      path: '/var/www/nodejitsu/handbook/content/a-quickstart' 
-    },
-    'hello-world': { 
-      href: '/a-quickstart/hello-world',
-      title: 'Hello World: A Tutorial',
-      path: '/var/www/nodejitsu/handbook/content/a-quickstart' 
     } 
   }
 }
