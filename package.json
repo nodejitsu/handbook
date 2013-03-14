@@ -2,7 +2,7 @@
   "author": "Nodejitsu <support@nodejitsu.com> (http://nodejitsu.com)",
   "name": "handbook",
   "description": "A gentle introduction to the art of nodejitsu",
-  "version": "0.3.5",
+  "version": "0.4.0",
   "subdomain": "handbook",
   "homepage": "http://www.nodejitsu.com/docs",
   "repository": {
@@ -13,7 +13,8 @@
     "start": "bin/server"
   },
   "dependencies": {
-    "natural": "0.1.19"
+    "natural": "0.1.19",
+    "lunr": "0.2.x"
   },
   "engines": {
     "node": "0.8.x"

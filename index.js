@@ -3,28 +3,34 @@
 var path = require('path'),
     fs = require('fs'),
     natural = require('natural'),
+    lunr = require('lunr'),
     tokenizer = new natural.WordTokenizer(),
     loc = path.resolve(__dirname, 'content'),
+    html = /(<[^>]*>)|(&[^;]+;)/g,
     scraper = {
       title: /\[meta:title\]:\s<>\s\((.+?)\)(?!\))/,
-      description: /\[meta:description\]:\s<>\s\((.+?)\)(?!\))/
+      description: /\[meta:description\]:\s<>\s\((.+?)\)(?!\))/,
+      firstline: /([\-a-zA-Z0-9&;,]*\s+){5,}\w*/
     };
 
 //
-// ### function scrape()
+// ### @private function scrape()
 // #### @content {String} document content
 // #### @key {String} scraper key
+// #### @n {Number} index of match that should be returned
 // Scrapes the [key] from the content by Regular Epression
 //
-function scrape(content, key) {
+function scrape(content, key, n) {
+  if (!content) return '';
+
   var match = content.replace(/\n/g, ' ').match(scraper[key]);
 
   // Only return scraped content if there is a meta:[key].
-  return match ? match[1].trim() : '';
+  return match && match[n] ? match[n].trim() : '';
 }
 
 //
-// ### function normalize()
+// ### @private function normalize()
 // #### @file {String} file name
 // Normalize the file name to resolve to a Markdown or index file.
 //
@@ -35,21 +41,21 @@ function normalize(file) {
 }
 
 //
-// ### function fileContent()
+// ### @private function fileContent()
 // #### @content {String} Document content
 // Sugar content with additional properties from scraped content.
 //
 function fileContent(content) {
   return {
-    content: content,
-    description: scrape(content, 'description'),
-    title: scrape(content, 'title'),
+    content: content || '',
+    description: scrape(content, 'description', 1) || scrape(content, 'firstline', 0),
+    title: scrape(content, 'title', 1),
     tags: tags(content, 10)
   };
 }
 
 //
-// ### function frequency()
+// ### @private function frequency()
 // #### @content {String} Document content
 // Return list of words scored by Term Frequency-Inverse Document Frequency.
 //
@@ -79,12 +85,14 @@ function frequency(content) {
 }
 
 //
-// ### function tags()
+// ### @private function tags()
 // #### @content {String} Document content
 // #### @n {Number} number of tags
 // Return n highest scoring tags as determined by term frequency.
 //
 function tags(content, n) {
+  if (!content) return [];
+
   return frequency(content).sort(function sortByScore(a, b) {
     return b.score - a.score;
   }).slice(0, n).map(function extractWords(tag) {
@@ -93,7 +101,26 @@ function tags(content, n) {
 }
 
 //
-// ### function walk()
+// ### @private function read()
+// #### @file {String} Filename
+// #### @callback {Function} Callback for file contents
+// Returns file content by normalized path, if a callback is provided, content
+// is returned asynchronously.
+//
+function read(file, callback) {
+  if (!callback) {
+    return fileContent(fs.readFileSync(path.resolve(loc, normalize(file)), 'utf8'));
+  }
+
+  file = path.resolve(loc, normalize(file));
+
+  fs.readFile(file, 'utf8', function read(error, content) {
+    callback.apply(this, [error, fileContent(content)]);
+  });
+}
+
+//
+// ### @private function walk()
 // #### @dir {String} Directory path to crawl
 // #### @result {Object} Append content to current results
 // #### @callback {Function} Callback for sub directory
@@ -136,10 +163,11 @@ function walk(dir, callback, result, sub) {
           if (ref === 'index') name.pop();
 
           // Get the tile of the file.
-          get(file, function getFile(err, file) {
+          read(file, function getFile(err, file) {
             result[current][ref] = {
               href: sub ? name.join('/') : '',
               title: file.title,
+              description: file.description,
               path: dir
             };
 
@@ -152,7 +180,7 @@ function walk(dir, callback, result, sub) {
 }
 
 //
-// ### function walkSync()
+// ### @private function walkSync()
 // #### @dir {String} Directory path to crawl
 // #### @result {Object} Append content to current results
 // #### @sub {Boolean} Is directory subdirectory of dir
@@ -187,9 +215,11 @@ function walkSync(dir, result, sub) {
       if (ref === 'index') name.pop();
 
       // Append file information to current container.
+      file = read(file);
       result[current][ref] = {
         href: sub ? name.join('/') : '',
-        title: get(file).title,
+        title: file.title,
+        description: file.description,
         path: dir
       };
     }
@@ -199,37 +229,63 @@ function walkSync(dir, result, sub) {
 }
 
 //
+// ### function Handbook()
+// Constructor for easy access to Handbook content. On constructuing handbook
+// synchronously prepare the search index. Listening to a search index ready
+// event is not required thus easing the flow.
+//
+function Handbook() {
+  var toc = walkSync(loc),
+      idx = this.idx = lunr(function setupLunr() {
+        this.field('title', { boost: 10 });
+        this.field('body');
+      });
+
+  Object.keys(toc).forEach(function loopSections(section) {
+    Object.keys(toc[section]).forEach(function loopPages(page) {
+      var document = read((section !== 'index' ? section + '/' : '') + page);
+
+      idx.add({
+        id: section + '/' + page,
+        title: document.title,
+        body: document.content
+      });
+    });
+  });
+}
+
+//
 // ### function get()
 // #### @file {String} Filename
 // #### @callback {Function} Callback for file contents
-// Returns file content by normalized path, if a callback is provided, content
-// is returned asynchronously.
+// Proxy method to private async method read. This method can be called
+// synchronously by omitting the callback.
 //
-function get(file, callback) {
-  if (!callback) {
-    return fileContent(fs.readFileSync(path.resolve(loc, normalize(file)), 'utf8'));
-  }
-
-  file = path.resolve(loc, normalize(file));
-
-  fs.readFile(file, 'utf8', function read(error, content) {
-    callback.apply(this, [error, fileContent(content)]);
-  });
-}
+Handbook.prototype.get = function get(file, callback) {
+  read.apply(this, arguments);
+};
 
 //
 // ### function catalog()
 // #### @callback {Function} Callback for catalog/TOC
 // Returns a catalog by parsing the content directory, if a callback is provided
 // content is returned asynchronously.
-function catalog(callback) {
+//
+Handbook.prototype.catalog = function catalog(callback) {
   if (!callback) return walkSync(loc);
 
   walk(loc, callback);
-}
+};
+
+//
+// ### function search()
+// #### @query {String} Query to search against
+// Proxy to the search method of Lunr, returns a list of documents, this must
+// be called in Lunr scope.
+//
+Handbook.prototype.search = function (query) {
+  return this.idx.search.call(this.idx, query);
+};
 
 // Expose public functions.
-module.exports = {
-  get: get,
-  catalog: catalog
-};
+module.exports = Handbook;
