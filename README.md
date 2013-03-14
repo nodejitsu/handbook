@@ -105,7 +105,8 @@ callback to the function.
 ### Description, title and tags
 Adding a description and title to the article is as easy as providing it at the
 bottom of the content as per example. Omitting title and/or description is
-possible as an empty string will be returned.
+possible. The description will be parsed from the first lines of the content.
+The title will be returned with an empty string.
 
 ``` markdown
 [meta:title]: <> (Using the jitsu CLI)
