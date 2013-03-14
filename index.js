@@ -4,10 +4,6 @@ var path = require('path'),
     fs = require('fs'),
     natural = require('natural'),
     lunr = require('lunr'),
-    idx = lunr(function setupLunr() {
-      this.field('title', { boost: 10 });
-      this.field('body');
-    }),
     tokenizer = new natural.WordTokenizer(),
     loc = path.resolve(__dirname, 'content'),
     html = /(<[^>]*>)|(&[^;]+;)/g,
@@ -233,17 +229,21 @@ function walkSync(dir, result, sub) {
 }
 
 //
-// ### @private function prepareSearch()
-// #### @toc {Object} Representation of table of contents
-// Prepare search index to query against, this method may not be exposed
-// as it is synchronously only.
+// ### function Handbook()
+// Constructor for easy access to Handbook content. On constructuing handbook
+// synchronously prepare the search index. Listening to a search index ready
+// event is not required thus easing the flow.
 //
-function prepareSearch(toc) {
-  var document;
+function Handbook() {
+  var toc = walkSync(loc),
+      idx = this.idx = lunr(function setupLunr() {
+        this.field('title', { boost: 10 });
+        this.field('body');
+      });
 
   Object.keys(toc).forEach(function loopSections(section) {
     Object.keys(toc[section]).forEach(function loopPages(page) {
-      document = read((section !== 'index' ? section + '/' : '') + page);
+      var document = read((section !== 'index' ? section + '/' : '') + page);
 
       idx.add({
         id: section + '/' + page,
@@ -252,16 +252,6 @@ function prepareSearch(toc) {
       });
     });
   });
-}
-
-//
-// ### function Handbook()
-// Constructor for easy access to Handbook content. On constructuing handbook
-// synchronously prepare the search index. Listening to a search index ready
-// event is not required thus easing the flow.
-//
-function Handbook() {
-  prepareSearch(walkSync(loc));
 }
 
 //
@@ -294,7 +284,7 @@ Handbook.prototype.catalog = function catalog(callback) {
 // be called in Lunr scope.
 //
 Handbook.prototype.search = function (query) {
-  return idx.search.call(idx, query);
+  return this.idx.search.call(this.idx, query);
 };
 
 // Expose public functions.
