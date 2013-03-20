@@ -36,6 +36,9 @@ function scrape(content, key, n) {
 function normalize(file) {
   if (!file) file = 'index.md';
 
+  // Remove trailing slashes from paths
+  if (file[file.length - 1] === '/') file = file.slice(0, -1);
+
   return ~file.indexOf('.md') ? file : file + '.md';
 }
 
@@ -164,7 +167,7 @@ function walk(dir, callback, result, sub) {
           // Get the tile of the file.
           read(file, function getFile(err, file) {
             result[current][ref] = {
-              href: sub ? name.join('/') : '',
+              href: sub ? name.join('/') + '/' : '/',
               title: file.title,
               description: file.description,
               path: dir
@@ -216,7 +219,7 @@ function walkSync(dir, result, sub) {
       // Append file information to current container.
       file = read(file);
       result[current][ref] = {
-        href: sub ? name.join('/') : '',
+        href: sub ? name.join('/') + '/' : '/',
         title: file.title,
         description: file.description,
         path: dir

@@ -244,7 +244,7 @@ their datacenter.
 
 Nodejitsu's cloud services watch your programs for you! You shouldn't have to do
 anything special to keep your apps running. If you need to scale your app, we
-offer the simple way of "[drones](/features#feature/drones)", where you can add
+offer the simple way of "[drones](/features/#feature/drones)", where you can add
 more drones to fit your needs.
 
 ---

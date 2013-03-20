@@ -2,8 +2,8 @@
 
 The Nodejitsu WebOps interface allows developers to administrate their
 application through a web interface. This web interface offers the same
-functionality that can be found in [jitsu](/features/jitsu) CLI or our 
-[RESTful API](/api).
+functionality that can be found in [jitsu](/features/jitsu/) CLI or our 
+[RESTful API](/api/).
 
 In addition to having feature parity with `jitsu` it also allows you to
 subscribe to our different payed plans. The WebOps interface be found at
