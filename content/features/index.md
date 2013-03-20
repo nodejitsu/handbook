@@ -5,10 +5,10 @@ more!
 
 There are three main tools for deploying and managing applications to Nodejitsu:
 
-* [`jitsu`](/features/jitsu), the Nodejitsu command line tool
-* The Webops [Web Application](/features/webops), an easy to use web interface
+* [`jitsu`](/features/jitsu/), the Nodejitsu command line tool
+* The Webops [Web Application](/features/webops/), an easy to use web interface
   for managing your applications
-* Nodejitsu's JSON [API](/api)
+* Nodejitsu's JSON [API](/api/)
 
 Each of these tools allow developers to access the same functionality.
 
@@ -116,8 +116,8 @@ speak directly to them about your database needs.
 ### Creating new Databases
 
 If you require database hosting you can create a new database instance of any of
-our supported databases using [jitsu](/features/jitsu) or Nodejitsu's
-[API](/api). Cloud database hosting is currently provided by
+our supported databases using [jitsu](/features/jitsu/) or Nodejitsu's
+[API](/api/). Cloud database hosting is currently provided by
 [IrisCouch](http://www.iriscouch.com), [RedisToGo](http://redistogo.com) and
 [MongoLab](https://www.mongolab.com).
 
@@ -326,7 +326,8 @@ through the balancers.
 
 We allow users to host their applications on custom domains by specifying their
 app's domains in their `package.json` and then properly configuring their DNS.
-If you'd like to know how, just read the instructions at [our DNS section](http://handbook.jitsu.com/features/dns)!
+If you'd like to know how, just read the instructions at [our DNS
+section](/features/dns/)!
 
 ### SSL Certificates for Custom Domains
 

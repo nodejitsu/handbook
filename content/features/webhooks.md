@@ -8,7 +8,7 @@ four fields:
 
 * Username, which defaults to your Github username
 * Password, your password or a valid [Nodejitsu API authentication 
-token](https://handbook.nodejitsu.com/api#create-an-api-token) (`jitsu tokens create github`)
+token](/api/#create-an-api-token) (`jitsu tokens create github`)
 * Branch, where you can define the branch you wish to deploy and defaults to master
 * Endpoint, which defaults to https://webhooks.nodejitsu.com
 
@@ -128,7 +128,7 @@ curl -X POST https://webhooks.nodejitsu.com/1/auth/github -H "Content-type: appl
 
 Don't worry, you can use `jitsu set env` to set environment variables that you
 can access with `process.env`. Check our
-[handbook](https://handbook.nodejitsu.com/features#feature/envvars) for more
+[handbook](/features/#feature/envvars) for more
 information. Environment variables set this way persist across deployments and
 are also available in our [webops](https://webops.nodejitsu.com) application.
 
