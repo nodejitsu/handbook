@@ -1,6 +1,6 @@
 # Business plan features
 
-If you're one of our **[Business Plan](http://nodejitsu.com/paas/pricing)**
+If you're one of our **[Business Plan](https://nodejitsu.com/paas/pricing/)**
 customers, you have access to special features which give you more selection and
 reliability.
 
@@ -83,7 +83,7 @@ info:    Nodejitsu ok
 ### Available Datacenters
 
 You can deploy to any of the following
-[datacenters](http://nodejitsu.com/paas/datacenters):
+[datacenters](https://nodejitsu.com/paas/datacenters/):
 
 #### Joyent
 
@@ -118,7 +118,7 @@ info:    Nodejitsu ok
 ## Setting up your DNS
 
 To setup your custom DNS domain with the correct datacenter you can follow the
-[DNS configuration instructions](/documentation/features/dns) from this handbook.
+[DNS configuration instructions](/documentation/features/dns/) from this handbook.
 
 ---
 

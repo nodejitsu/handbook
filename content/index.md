@@ -44,15 +44,15 @@ three things to get started:
   fault-tolerant cloud hosting for your Node.js apps - and we're the best you'll
   find.
 * Getting started with [your first app][hello-world] is simple with our
-  [jitsu](/features/jitsu) command-line interface - we'll
+  [jitsu](/features/jitsu/) command-line interface - we'll
   [show you how][hello-world].
 * Most of our stack is [open source](http://github.com/nodejitsu) and you can
-  [use our tools](/appendix/open-source) anywhere else you'd like to.
+  [use our tools](/appendix/open-source/) anywhere else you'd like to.
 
 The Nodejitsu Handbook also contains information on [other ways to deploy your
 applications](/features/jitsu#using-the-jitsu-cli-usage-jitsu-deploy-jitsu-apps-deploy)
-and where to [find support](/support).
+and where to [find support](/support/).
 
-[hello-world]: /a-quickstart/hello-world
+[hello-world]: /a-quickstart/hello-world/
 
 [meta:title]: <> (Handbook)

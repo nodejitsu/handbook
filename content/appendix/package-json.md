@@ -40,7 +40,7 @@ that will get called when your application is started. Usage is compatible with
 `npm start`.
 
 And what about that "engines" property? Nodejitsu supports 
-[multiple versions of node](/documentation/features#feature/multi-node)
+[multiple versions of node](/documentation/features/#feature/multi-node)
 
 ---
 
@@ -96,7 +96,7 @@ A few package.json properties have special behavior on the Nodejitsu platform:
 * *analyze*: Set this to "false" to force jitsu to not analyze for the app's
   dependencies.
 * *engine*: On Nodejitsu you can choose between different available node.js versions.
-  [Read more](/documentation/features#feature/multi-node)
+  [Read more](/documentation/features/#feature/multi-node)
 
 [meta:title]: <> (Get into package.json)
 [meta:description]: <> (package.json.jit.su is an interactive package explorer, it will get you started quickly and is highly helpful)

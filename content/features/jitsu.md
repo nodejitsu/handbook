@@ -30,7 +30,7 @@ action.
 ### jitsu deploy (jitsu apps deploy)
 
 `jitsu deploy` will attempt to deploy the application in the current directory
-to [Nodejitsu](http://nodejitsu.com). It deploys your application using the
+to [Nodejitsu](https://nodejitsu.com). It deploys your application using the
 following steps:
 
 1. Creates the application (if necessary)
