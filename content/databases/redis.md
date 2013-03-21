@@ -1,4 +1,4 @@
-# Database provisioners
+# Database provisioner's
 
 ## IrisCouch
 
@@ -7,20 +7,20 @@
 
 ## Connecting using the redis-cli CLI tool
 
-If you have redis running locally, you will probably have the `redis-cli`
+If you have Redis running locally, you will probably have the `redis-cli`
 installed as well.
 
 ```bash
 redis-cli -h <hostname> -p <port> -a <password>
 ```
 
-Once you are connected you can simply any of the redis commands. You can type a
+Once you are connected you can simply any of the Redis commands. You can type a
 simple `ping` or `info` command to check if the connection is working as
 intended.
 
-## Connecting to redis using the Node.js Redis module
+## Connecting to Redis using the Node.js redis module
 
-The `redis` module is a complete redis client for Node.js. It supports all the
+The `redis` module is a complete Redis client for Node.js. It supports all the
 commands including support for `EVAL`. The module makes use of it's own pure
 JavaScript parser but has the option to the official `hiredis` C library for
 parsing. The C library however is not compatible with Smart OS (the operating
@@ -53,22 +53,22 @@ client.auth(/* password */, function auth(err) {
 client.ping(function ping(err) { });
 ```
 
-There's more dedicated documentation available in the the
-[node-redis][node-redis] Github repository.
+There's more dedicated documentation available in the [node-redis][node-redis]
+Github repository.
 
-## Connecting to redis using the IrisCouch Redis module
+## Connecting to Redis using the IrisCouch Redis module
 
-The `iris-redis` client is a wrapper for the orfginal `redis` client which makes it
+The `iris-redis` client is a wrapper for the original `redis` client which makes it
 easier to connect to the IrisCouch Redis servers. In addition to that it
 provides you with the option to upgrade your connection to a direct connection
 to reduce the latency between the database and your application. Please note
-that this only works if you are in the same datacenter.
+that this only works if you are in the same data center.
 
 ```bash
 npm install iris-redis --save
 ```
 
-If you want to learn more about this special IrisCouch redis module take a look
+If you want to learn more about this special IrisCouch Redis module take a look
 at the [iris-redis][iris-redis] Github repository.
 
 [node-redis]: https://github.com/mranney/node_redis#readme
