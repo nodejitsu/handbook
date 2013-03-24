@@ -130,6 +130,8 @@ You can scale your application by adding more drones or ram, using the
 ### To Add more ram
 
 To setup the RAM of the drone use the `--ram <size>` parameter.
+Larger drone are metered as multiple 256MB drones.
+For example, two 512MB drones would be metered as four drones. 
 
 Example:
 
