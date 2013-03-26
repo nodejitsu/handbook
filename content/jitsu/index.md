@@ -1,8 +1,8 @@
 # Jitsu
 
 Jitsu is a Command Line Tool (CLI) for managing and deploying Node.js
-applications. It's open-source and easy to use. We've designed jitsu to 
-be suitable for command line beginners, but still be powerful and 
+applications. It's open-source and easy to use. We've designed jitsu to
+be suitable for command line beginners, but still be powerful and
 extensible enough for production usage. Jitsu day to day use:
 
 * [Login](#login)
@@ -18,12 +18,12 @@ can signup after. `npm` is required for installing the `jitsu` package.
 [sudo] npm install jitsu -g
 ```
 
-If you prefer using git repositories over the package you can also install 
+If you prefer using git repositories over the package you can also install
 `jitsu` by cloning the repository and linking with npm after. This would also
-allow you to contribute to jitsu more easily. 
+allow you to contribute to jitsu more easily.
 
 ```bash
-git clone git@github.com:nodejitsu/jitsu.git 
+git clone git@github.com:nodejitsu/jitsu.git
 [sudo] npm link
 ```
 
@@ -36,7 +36,7 @@ line however, execute:
 jitsu signup
 ```
 
-Choose your preferred username and provide a password. If your username is 
+Choose your preferred username and provide a password. If your username is
 already taken you will be provided with adequate feedback. Make sure you enter a
 valid e-mail address.
 
@@ -44,7 +44,8 @@ valid e-mail address.
 
 Before accessing our API through jitsu a login is required. You will be prompted
 to provide you username and password. Your password will be hidden, e.g. if you
-type you'll not see any characters. Don't worry it is working as intended.
+type you'll not see any characters. Don't worry it is working as intended. After
+your logged in every command you execute with `jitsu` is against your account.
 
 ```bash
 jitsu login
@@ -78,8 +79,8 @@ jitsu install helloworld
 ```
 
 If you receive an `EACCES` error the current directory is not writable for
-jitsu. If all goes well, you will be prompted to start the application, by 
-default the server will be listening to *port 8080*. To check the results 
+jitsu. If all goes well, you will be prompted to start the application, by
+default the server will be listening to *port 8080*. To check the results
 visit *http://localhost:8080/*. If you get an `EADDRINUSE` error the *port 8080*
 is already in use. Close the other application before starting the helloworld
 demo.

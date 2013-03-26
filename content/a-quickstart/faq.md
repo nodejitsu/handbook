@@ -258,17 +258,27 @@ and only if everything went ok, so a failed deploy does not equate to down time.
 
 ## Why is the subdirectory or its content not deployed to Nodejitsu?
 
-Execute `npm pack` inside your application and make sure that the resulting 
-package includes the file. Nodejitsu uses the same command when deploying 
+Execute `npm pack` inside your application and make sure that the resulting
+package includes the file. Nodejitsu uses the same command when deploying
 your app.
 
-In case it is not included in the package, you should look into your 
-`gitignore` and/or `.npmignore` files to ensure that the folder or 
-contained files are not ignored. Note that any files/folders starting with 
-`.` like `.DS_Store` are ignored by default and some special ones like `.git` 
+In case it is not included in the package, you should look into your
+`gitignore` and/or `.npmignore` files to ensure that the folder or
+contained files are not ignored. Note that any files/folders starting with
+`.` like `.DS_Store` are ignored by default and some special ones like `.git`
 cannot be unignored since npm prevents that.
 
 To explicitly unignore a file use `!filename` inside either `.gitignore` or
 `.npmignore`.
+
+---
+
+## How can I change the name of my application?
+
+Changing the name is possible, however there's just one caveat. After the name
+change you will loose previous snapshots and other configured settings.
+
+To change the application name do `jitsu destroy`, confirm and finally redeploy
+with `jitsu deploy`. Both commands must be executed within the project folder.
 
 [meta:title]: <> (FAQ)
