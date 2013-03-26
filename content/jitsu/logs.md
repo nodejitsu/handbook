@@ -6,9 +6,9 @@ the logs before calling [support][suppprt] is the way to go. `jitsu logs` can be
 used in a variaty of ways. Executing this command from inside a project folder
 containing a [package.json][package] will show logs for the current project. If
 no logs are generated yet `jitsu logs` will return `No logs for [appname] in
-specified timespan`. 
+specified timespan`.
 
-Running the command outside a project folder will show a list the authenticated 
+Running the command outside a project folder will show a list the authenticated
 users' applications. You will be prompted for which application you would like
 to show the logs. Supplying the *appname* will show the respective logs.
 
@@ -18,7 +18,7 @@ info:    jitsu v0.11.6, node v0.8.14
 info:    It worked if it ends with Nodejitsu ok
 info:    Executing command logs app
 info:    Listing all apps for [username]
-data:    name         state   subdomain          drones running snapshot                      
+data:    name         state   subdomain          drones running snapshot
 data:    [appname]    started [subdomain]        1/3    apps-xxx-0.x.x-xx.tgz
 data:    [appname]    started [subdomain]        1/3    apps-xxx-0.x.x-xx.tgz
 data:    [appname]    started [subdomain]        1/3    apps-xxx-0.x.x-xx.tgz
