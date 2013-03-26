@@ -105,7 +105,7 @@ documentation about:
 
 *Useful commands for business plans*
 
-* [Your cloud](/jitsu/cloud/)
+* [Your cloud](/features/business/)
 
 [deploy]: /jitsu/deploy/
 [signup]: https://www.nodejitsu.com/signup/
