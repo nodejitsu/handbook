@@ -85,7 +85,7 @@ visit *http://localhost:8080/*. If you get an `EADDRINUSE` error the *port 8080*
 is already in use. Close the other application before starting the helloworld
 demo.
 
-This application is running locally ofcourse, see [deploying][deploy] under
+This application is running locally, see [deploying][deploy] under
 additional commands to get it running on our cloud.
 
 ## Additional commands

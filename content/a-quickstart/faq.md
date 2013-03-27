@@ -281,4 +281,22 @@ change you will loose previous snapshots and other configured settings.
 To change the application name do `jitsu destroy`, confirm and finally redeploy
 with `jitsu deploy`. Both commands must be executed within the project folder.
 
+---
+
+## How can I use Socket.IO alongside a http server?
+
+We reroute all traffic to port 80. To use a http server and socket.IO over the
+same port, you need to tie socket.IO in http. [Socket.IO documentation][docs] will
+provide a clear example or try our demo app `jitsu install socket.io`.
+To give you a general idea of the logic:
+
+```
+var app = require('express')()
+  , server = require('http').createServer(app)
+  , io = require('socket.io').listen(server);
+
+server.listen(8080);
+```
+
+[docs]: http://socket.io/#how-to-use
 [meta:title]: <> (FAQ)
