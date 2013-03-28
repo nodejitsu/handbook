@@ -254,4 +254,11 @@ more drones to fit your needs.
 We always provision a new virtual machine. The old one gets decommissioned if
 and only if everything went ok, so a failed deploy does not equate to down time.
 
+---
+
+## Can I write to the file system? What are the limits?
+
+File system on our virtual machines is both readable and writable, but does not
+persist across deploys. Capacity of the file system is 3 GB.
+
 [meta:title]: <> (FAQ)
