@@ -3,7 +3,8 @@
 Jitsu is a Command Line Tool (CLI) for managing and deploying Node.js
 applications. It's open-source and easy to use. We've designed jitsu to
 be suitable for command line beginners, but still be powerful and
-extensible enough for production usage. Jitsu day to day use:
+extensible enough for production usage. Jitsu's commands are available as user
+interface in [webops][webops]. Jitsu day to day use:
 
 * [Login](#login)
 * [Logout](#logout)
