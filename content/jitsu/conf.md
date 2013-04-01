@@ -15,9 +15,10 @@ data:        api-token: '[token]'
 data:    }
 ```
 
-Changing any of the keys is possible through `jitsu conf set [key] [value]`.
+Changing any of the keys is possible through `jitsu config set [key] [value]`.
 For example, to change the `username` to any alternative username execute
-`jitsu conf set username otherusername`.
+`jitsu config set username otherusername`. Note that the command for changing
+settings is `jitsu config` **not** `jitsu conf`!
 
 ---
 
