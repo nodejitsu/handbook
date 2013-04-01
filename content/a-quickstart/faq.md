@@ -256,6 +256,7 @@ and only if everything went ok, so a failed deploy does not equate to down time.
 
 ---
 
+<<<<<<< HEAD
 ## Why is the subdirectory or its content not deployed to Nodejitsu?
 
 Execute `npm pack` inside your application and make sure that the resulting
@@ -297,6 +298,11 @@ var app = require('express')()
 
 server.listen(8080);
 ```
+
+## Can I write to the file system? What are the limits?
+
+File system on our virtual machines is both readable and writable, but does not
+persist across deploys. Capacity of the file system is 3 GB.
 
 [docs]: http://socket.io/#how-to-use
 [meta:title]: <> (FAQ)
