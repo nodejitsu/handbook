@@ -72,6 +72,49 @@ You can also do `jitsu deploy --release patch` to force `jitsu deploy` to
 increase the patch version number. For more fine-grained versioning control
 see [jitsu config --release][release].
 
+## Hooks
+
+Applications can required certain tasks to be done for before or just after
+deployment. For these repetitive tasks we offer pre and post deploy hooks. Hooks
+are scripts that perform some required tasks before starting your application.
+Per example:
+
+```javascript
+{
+  "name": "test-app",
+  "subdomain": "test-app",
+  "scripts": {
+    "predeploy": "echo This will be run before deploying the app",
+    "postdeploy": "echo This will be run after deploying the app",
+    "start": "app.js"
+  },
+  "engines": {
+    "node": "0.6.x"
+  },
+  "version": "0.0.0"
+}
+```
+
+Deploying an application with these deploy hooks, would result in:
+
+```bash
+info:    Welcome to Nodejitsu
+info:    It worked if it ends with Nodejitsu ok
+info:    Executing command deploy
+info:    Analyzing your application dependencies in app.js
+info:    Checking app availability test-app
+info:    Creating app test-app
+This will be run before deploying the app
+info:    Creating snapshot 0.0.0
+info:    Updating app test-app
+info:    Activating snapshot 0.0.0 for test-app
+info:    Starting app test-app
+info:    App test-app is now started
+info:    http://test-app.jit.su on Port 80
+This will be run after deploying the app
+info:    Nodejitsu ok
+```
+
 ## Continuous integration
 
 Nodejitsu also supports continuous integration (CI) for deployments. For more
