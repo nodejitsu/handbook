@@ -76,7 +76,7 @@ prompt:  yes/no:  (yes)
 
 ## Deleting any or all environment variables
 
-Completely clearing your applications environment is possible, but should be
+Completely clearing an applications environment is possible, but should be
 done with caution. As this will also delete predefined variables like
 *SUBDOMAIN*. The usecase for a complete wipe, would be writing a
 [load file](#saving-or-loading) after. Clearing the enviroment against the
