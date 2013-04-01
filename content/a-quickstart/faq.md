@@ -256,7 +256,6 @@ and only if everything went ok, so a failed deploy does not equate to down time.
 
 ---
 
-<<<<<<< HEAD
 ## Why is the subdirectory or its content not deployed to Nodejitsu?
 
 Execute `npm pack` inside your application and make sure that the resulting
