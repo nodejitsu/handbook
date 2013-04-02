@@ -12,6 +12,8 @@ data:        userconfig: '/home/user/.jitsuconf',
 data:        remoteHost: 'api.nodejitsu.com',
 data:        username: '[username]',
 data:        api-token: '[token]'
+data:        api-token-name: '[tokenname]',
+data:        rejectUnauthorized: false
 data:    }
 ```
 

@@ -173,7 +173,8 @@ jitsu apps cloud [appname]                                # list cloud informati
 jitsu apps cloud [name] <provider> <datacenter> [drones]  # change cloud
 ```
 
-Querying for information, could provide the following results:
+Like most `apps` commands, cloud also has a shorthand. Querying for
+information by executing `jitsu cloud`, could provide the following results:
 
 ```bash
 data:    {
