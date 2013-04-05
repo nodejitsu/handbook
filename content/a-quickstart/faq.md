@@ -256,9 +256,52 @@ and only if everything went ok, so a failed deploy does not equate to down time.
 
 ---
 
+## Why is the subdirectory or its content not deployed to Nodejitsu?
+
+Execute `npm pack` inside your application and make sure that the resulting
+package includes the file. Nodejitsu uses the same command when deploying
+your app.
+
+In case it is not included in the package, you should look into your
+`gitignore` and/or `.npmignore` files to ensure that the folder or
+contained files are not ignored. Note that any files/folders starting with
+`.` like `.DS_Store` are ignored by default and some special ones like `.git`
+cannot be unignored since npm prevents that.
+
+To explicitly unignore a file use `!filename` inside either `.gitignore` or
+`.npmignore`.
+
+---
+
+## How can I change the name of my application?
+
+Changing the name is possible, however there's just one caveat. After the name
+change you will loose previous snapshots and other configured settings.
+
+To change the application name do `jitsu destroy`, confirm and finally redeploy
+with `jitsu deploy`. Both commands must be executed within the project folder.
+
+---
+
+## How can I use Socket.IO alongside a http server?
+
+We reroute all traffic to port 80. To use a http server and socket.IO over the
+same port, you need to tie socket.IO in http. [Socket.IO documentation][docs] will
+provide a clear example or try our demo app `jitsu install socket.io`.
+To give you a general idea of the logic:
+
+```
+var app = require('express')()
+  , server = require('http').createServer(app)
+  , io = require('socket.io').listen(server);
+
+server.listen(8080);
+```
+
 ## Can I write to the file system? What are the limits?
 
 File system on our virtual machines is both readable and writable, but does not
 persist across deploys. Capacity of the file system is 3 GB.
 
+[docs]: http://socket.io/#how-to-use
 [meta:title]: <> (FAQ)
