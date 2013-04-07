@@ -150,7 +150,7 @@ there will be an invite code. This code must be sent to the API to confirm the
 account. 
 
 ```
-POST /users/:user-id
+POST /users/:user-id/confirm
 {
   inviteCode: "SecretCode"
 }
