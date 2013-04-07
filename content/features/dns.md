@@ -1,6 +1,8 @@
 ## Get a list of IP addresses for Nodejitsu's balancers
 
-Here's how to set up a custom domain name for your Nodejitsu application.
+Here's information about setting up a custom domain name for your Nodejitsu 
+application. For a step-by-step guide on how to setup a custom domain name 
+visit [dns.jit.su][dns].
 
 ### Business Plans
 
@@ -117,4 +119,5 @@ http://www.myawesomedomain.com
 Don't forget to give it some time so DNS resolves, add a "powered by Nodejitsu"
 badge to your homepage (or just give a shout-out on Twitter)
 
+[dns]: http://dns.jit.su/
 [meta:title]: <> (Using my domain (DNS))
