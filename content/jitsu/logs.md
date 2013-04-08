@@ -2,7 +2,7 @@
 
 Logging is critical for application management. Good logs will make the life of
 a developer easier. For instance, if your application stopped working checking
-the logs before calling [support][suppprt] is the way to go. `jitsu logs` can be
+the logs before calling [support][support] is the way to go. `jitsu logs` can be
 used in a variaty of ways. Executing this command from inside a project folder
 containing a [package.json][package] will show logs for the current project. If
 no logs are generated yet `jitsu logs` will return `No logs for [appname] in
