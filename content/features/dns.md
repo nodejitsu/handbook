@@ -30,6 +30,7 @@ example.jyt.eu.ams1.jit.su has address 37.153.97.50
 example.jyt.eu.ams1.jit.su has address 37.153.97.85
 example.jyt.eu.ams1.jit.su has address 37.153.97.152
 ```
+_Note: If you are on Windows you can use the `nslookup` command._
 
 ---
 
@@ -51,6 +52,8 @@ jit.su has address 165.225.130.235
 jit.su has address 165.225.129.253
 jit.su has address 165.225.130.240
 ```
+
+_Note: If you are on Windows you can use the `nslookup` command._
 
 ---
 
