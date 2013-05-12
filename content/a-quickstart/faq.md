@@ -303,5 +303,13 @@ server.listen(8080);
 File system on our virtual machines is both readable and writable, but does not
 persist across deploys. Capacity of the file system is 3 GB.
 
+---
+
+## I'm getting a HTTP 401 error when using Twitter API. How do I fix it?
+
+This is most likely related to different time zone on our and Twitter's servers.
+To ensure consistency, do `jitsu env set TZ GMT`. This will force your application
+to use GMT timezone.
+
 [docs]: http://socket.io/#how-to-use
 [meta:title]: <> (FAQ)
