@@ -97,4 +97,4 @@ Now just open up your favorite browser, and go to `myapp.nodejitsu.com`. If
 everything has been set up correctly, then you too, are on the path of
 Nodejitsu!
 
-[meta:title]: <> (Hello World: A Tutorial)
+[meta:title]: <> (Quickstart)

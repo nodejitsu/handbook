@@ -53,6 +53,6 @@ The Nodejitsu Handbook also contains information on [other ways to deploy your
 applications](/features/jitsu#using-the-jitsu-cli-usage-jitsu-deploy-jitsu-apps-deploy)
 and where to [find support](/support/).
 
-[hello-world]: /a-quickstart/hello-world/
+[hello-world]: /quickstart/
 
 [meta:title]: <> (Handbook)

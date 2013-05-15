@@ -131,7 +131,7 @@ executed by `jitsu deploy` and governs the snapshots we use for deployment.
 account. More information about this subject can be found in the [FAQ][faq].
 
 [release]: /jitsu/config/#release
-[faq]: /a-quickstart/faq/#why-is-the-subdirectory-or-its-content-not-deployed-to-nodejitsu
+[faq]: /faq/#why-is-the-subdirectory-or-its-content-not-deployed-to-nodejitsu
 [handbook]: /features/webhooks/
 [gettingstarted]: https://www.nodejitsu.com/getting-started-with-github/
 [package]: /appendix/package-json/
