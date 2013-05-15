@@ -66,6 +66,6 @@ you do not remove your active snapshot as this will kill your running applicatio
 
 [git]: http://www.github.com/
 [deploy]: /jitsu/deploy/#what-is-deployed
-[missing]: /a-quickstart/faq/#how-can-i-change-the-name-of-my-application
+[missing]: /faq/#how-can-i-change-the-name-of-my-application
 [package]: /appendix/package-json/
 [meta:title]: <> (Application snapshots)

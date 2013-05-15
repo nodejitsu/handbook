@@ -1,3 +1,5 @@
 {
-  "/a-quickstart/faq/": "/faq/"
+  "/a-quickstart/faq/": "/faq/",
+  "/a-quickstart/hello-world/": "/quickstart/",
+  "/a-quickstart/": "/quickstart/"
 }
