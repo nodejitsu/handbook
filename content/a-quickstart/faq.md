@@ -298,6 +298,8 @@ var app = require('express')()
 server.listen(8080);
 ```
 
+---
+
 ## Can I write to the file system? What are the limits?
 
 File system on our virtual machines is both readable and writable, but does not
