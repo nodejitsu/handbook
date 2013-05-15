@@ -313,5 +313,42 @@ This is most likely related to different time zone on our and Twitter's servers.
 To ensure consistency, do `jitsu env set TZ GMT`. This will force your application
 to use GMT timezone.
 
+---
+
+## What libraries/binaries can I use?
+
+We install following libraries and binaries on our servers:
+
+  * git
+  * OpenSSL
+  * Python 2.7
+  * [gd](http://www.boutell.com/gd/)
+  * [cairo](http://cairographics.org/)
+  * pkg-config
+  * xproto
+  * renderproto
+  * kbproto
+  * [giflib](http://sourceforge.net/projects/giflib/)
+  * [libjpeg](http://libjpeg.sourceforge.net/)
+  * [libpng](http://www.libpng.org/pub/png/libpng.html)
+  * [ImageMagick](http://www.imagemagick.org/script/index.php)
+  * [GraphicsMagick](http://www.graphicsmagick.org/)
+  * zip
+  * unzip
+  * bzip2
+  * gzip
+  * [libxml2](http://www.xmlsoft.org/)
+  * GeoIP
+  * [gmp](http://gmplib.org/)
+  * [icu](http://site.icu-project.org/)
+  * PostgreSQL 9.1 client
+  * gmake
+  * gcc
+  * [ffmpeg](http://www.ffmpeg.org/)
+
+And all of their dependencies.
+
+If you need a specific library and it's missing, we'll do our best to install it. Please email support@nodejitsu.com or hit us up in IRC.
+
 [docs]: http://socket.io/#how-to-use
 [meta:title]: <> (FAQ)
