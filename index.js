@@ -289,5 +289,10 @@ Handbook.prototype.search = function (query) {
   return this.idx.search.call(this.idx, query);
 };
 
+//
+// Expose the 301 routes for the handbook.
+//
+Handbook.redirect = require('./301.json');
+
 // Expose public functions.
 module.exports = Handbook;

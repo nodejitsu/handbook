@@ -28,6 +28,12 @@ subdirectory. Only markdown files included in the catalog.
 Note: each subdirectory is expected to at least have an index.md to generate a
 proper catalog.
 
+## Moving around content
+When you want to move content or complete folders you should update the
+`301.json` file that is in the root of the git repository. This way implementors
+can redirect urls easily without getting 404's. If you are removing content you
+don't need to change anything as it's supposed to 404.
+
 ## Images
 Images must be added to [/resource][resource]. Our [CDN][cdn] will ensure 
 images are fetched from the repository and properly cached. Linking to an 
