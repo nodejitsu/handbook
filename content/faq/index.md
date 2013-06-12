@@ -350,5 +350,14 @@ And all of their dependencies.
 
 If you need a specific library and it's missing, we'll do our best to install it. Please email support@nodejitsu.com or hit us up in IRC.
 
+---
+
+## What are the outogoing IPs?
+
+If you are connecting to a remote host from Nodejitsu, you'll see a connection
+from one of those IPs, depending on which data center your application is in:
+
+  * Joyent, `us-east-1`: 165.225.134.101, 165.225.134.102, 165.225.134.103, 165.225.134.104
+
 [docs]: http://socket.io/#how-to-use
 [meta:title]: <> (FAQ)
