@@ -1,6 +1,6 @@
 # Business plan features
 
-If you're one of our **[Business Plan](https://nodejitsu.com/paas/pricing/)**
+If you're one of our **[Business Plan](https://nodejitsu.com/pricing/)**
 customers, you have access to special features which give you more selection and
 reliability.
 
@@ -131,7 +131,7 @@ You can scale your application by adding more drones or ram, using the
 
 To setup the RAM of the drone use the `--ram <size>` parameter.
 Larger drone are metered as multiple 256MB drones.
-For example, two 512MB drones would be metered as four drones. 
+For example, two 512MB drones would be metered as four drones.
 
 Example:
 
