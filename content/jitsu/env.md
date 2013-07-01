@@ -17,7 +17,7 @@ data:   NODE_ENV production
 
 Changing *NODE_ENV* to staging in stead of the default production is done by
 calling `jitsu env set NODE_ENV staging`. Environment variables changes will
-come into effect after a [restart][restart].
+come into effect after a [`jitsu start`][start].
 
 ---
 
@@ -94,6 +94,6 @@ to confirm.
   "NODE_ENV": "production"
 }
 ```
-[restart]: /jitsu/apps/#restart
+[start]: /jitsu/apps/#start
 [deploy]: /jitsu/deploy/
 [meta:title]: <> (Environment)
