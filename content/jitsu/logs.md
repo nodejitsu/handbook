@@ -53,6 +53,7 @@ are available as well.
 
 ```bash
 jitsu logs tail
+jitsu logs tail [username]/[appname]
 ```
 
 ## Additional useful options
