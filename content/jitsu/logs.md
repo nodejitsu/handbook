@@ -43,16 +43,16 @@ Note the slash between *username* and *appname*. Also *$HOME* should point to th
 location where the configurations are stored, by default this would be your home
 folder.
 
-## Per user
+## Tailing logs
 
-Can't choose which logs to view or if you want to do general monitoring, you
-can show all logs at once by issuing `jitsu logs all`. This will show the logs
-for all applications of the authenticated user. Users with several applications
-might prefer to reduce the number of lines returned. Execute `jitsu logs all [n]`,
-where *n* is an integer. To show a maximum of 10 lines per application, use:
+Tracking issues caused by dynamic application behavior can be difficult to track
+with static logs. That is why Nodejitsu supports tailing logs. This command can
+be issued from the project directory. Tailing logs from any random directory will
+show your list of applications. Also, the additional options listed below
+are available as well.
 
 ```bash
-jitsu logs all 10
+jitsu logs tail
 ```
 
 ## Additional useful options
