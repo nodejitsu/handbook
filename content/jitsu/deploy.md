@@ -89,7 +89,7 @@ Per example:
     "start": "app.js"
   },
   "engines": {
-    "node": "0.6.x"
+    "node": "0.10.x"
   },
   "version": "0.0.0"
 }
