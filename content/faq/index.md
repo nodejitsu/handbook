@@ -359,5 +359,13 @@ from one of those IPs, depending on which data center your application is in:
 
   * Joyent, `us-east-1`: 165.225.134.101, 165.225.134.102, 165.225.134.103, 165.225.134.104
 
+---
+
+## How can I tail the logs of my application?
+
+Simply issue `jitsu logs tail` locally from the applications directory or visit
+webops. Additional information can be found at [tailing logs][logs].
+
+[logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
 [docs]: http://socket.io/#how-to-use
 [meta:title]: <> (FAQ)
