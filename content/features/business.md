@@ -91,11 +91,6 @@ You can deploy to any of the following
 * Viriginia, US: `us-east-1`
 * Amsterdam, NL: `eu-ams-1`
 
-#### Telefónica
-
-* Madrid, ES: `eu-mad-1`
-* London, UK: `eu-lon-1`
-
 Or using the following command:
 
 ```
@@ -108,8 +103,6 @@ info:    You can use one of the following providers
 data:    jitsu cloud joyent us-east-1
 data:    jitsu cloud joyent us-sw-1
 data:    jitsu cloud joyent eu-ams-1
-data:    jitsu cloud telefonica eu-london-1
-data:    jitsu cloud telefonica eu-mad-1
 info:    Nodejitsu ok
 ```
 
