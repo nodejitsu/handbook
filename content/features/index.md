@@ -29,9 +29,8 @@ Each of these tools allow developers to access the same functionality.
 <a name="feature/drones"></a>
 ## Application Scalability with Drones
 
-Each deployed application runs as a
-[drone](https://github.com/nodejitsu/haibu-carapace) on a
-[haibu](https://github.com/nodejitsu/haibu) application server. Because of this
+Each deployed application runs as a drone on a 
+[forza](https://github.com/nodejitsu/forza) application server. Because of this
 architecture, one app can be served by *any amount of drones on arbitrary
 machines*, giving you many options for scaling your application.
 
