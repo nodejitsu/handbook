@@ -364,7 +364,56 @@ from one of those IPs, depending on which data center your application is in:
 ## How can I tail the logs of my application?
 
 Simply issue `jitsu logs tail` locally from the applications directory or visit
-webops. Additional information can be found at [tailing logs][logs].
+webops. Additional information can be found at [tailing logs](https://npmjs.org/package/demeteorizer).
+
+---
+
+## Can I deploy a Meteor application to Nodejitsu?
+Yes, you can!
+
+We support `npm` deployments so you'll need to convert your Meteor application
+to a compatible `npm` package. You can do it easily using [demeteorizer](https://npmjs.org/package/demeteorizer).
+
+1. Install `demeteorizer` usign npm:
+```
+$ [sudo] npm install -g demeteorizer
+```
+
+2. Execute `demeteorizer` in your Meteor application folder:
+```
+$ demeteorizer -o package
+```
+This will create a folder called `package`, this will be your `npm` compatible package to deploy to Nodejitsu.
+
+3. Modify your package before deploy
+
+ Edit your new `package.json` in the `package` folder and do the following:
+
+ - Change engine version to `0.10.x`  *(`0.8.x` will fail to start)*
+```
+"engines": {
+  "node": "0.10.x"
+}
+```
+
+ - Add a start script:
+```
+"scripts" {
+  "start": "node main.js"
+}
+```
+5. Deploy and profit!
+
+ Deploy your application, it will prompt for a subdomain to use in Nodejitsu
+```
+$ jitsu deploy
+```
+ If you are using MongoDB you'll need to define the ENV variable with the connection string and 
+ start again the application.
+```
+$ jitsu env set MONGO_URL "mongodb://user:password@host:port/databasename?autoReconnect=true"
+$ jitsu start
+```
 
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
 [docs]: http://socket.io/#how-to-use
