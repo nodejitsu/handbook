@@ -396,13 +396,7 @@ This will create a folder called `package`, this will be your `npm` compatible p
 }
 ```
 
- - Add a start script:
-```
-"scripts" {
-  "start": "node main.js"
-}
-```
-5. Deploy and profit!
+4. Deploy and profit!
 
  Deploy your application, it will prompt for a subdomain to use in Nodejitsu
 ```
