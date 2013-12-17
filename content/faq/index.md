@@ -385,7 +385,7 @@ $ demeteorizer -o package
 ```
 This will create a folder called `package`, this will be your `npm` compatible package to deploy to Nodejitsu.
 
-3. Modify your package before deploy
+3. Modify your package before deploy:
 
  Edit your new `package.json` in the `package` folder and do the following:
 
@@ -398,12 +398,12 @@ This will create a folder called `package`, this will be your `npm` compatible p
 
 4. Deploy and profit!
 
- Deploy your application, it will prompt for a subdomain to use in Nodejitsu
+ Deploy your application, it will prompt for a subdomain to use in Nodejitsu.
 ```
 $ jitsu deploy
 ```
  If you are using MongoDB you'll need to define the ENV variable with the connection string and 
- start again the application.
+ restart the application.
 ```
 $ jitsu env set MONGO_URL "mongodb://user:password@host:port/databasename?autoReconnect=true"
 $ jitsu start
