@@ -132,7 +132,7 @@ account. More information about this subject can be found in the [FAQ][faq].
 
 [release]: /jitsu/config/#release
 [faq]: /faq/#why-is-the-subdirectory-or-its-content-not-deployed-to-nodejitsu
-[handbook]: /features/webhooks/
+[handbook]: /features/continuous_deployment/
 [gettingstarted]: https://www.nodejitsu.com/getting-started-with-github/
 [package]: /appendix/package-json/
 [meta:title]: <> (Deploying apps)
