@@ -410,7 +410,7 @@ $ jitsu start
 ```
 
 ## How to generate a SSL CSR (Certificate Signing Request) for my Custom Domain?
-You'll need to install [OpeSSL](http://www.openssl.org) in your OS, you can install it with homebrew (Mac OSX) with `brew install openssl` or in Linux (Debian/Ubuntu) with `[sudo] apt-get install openssl`, or download the following binary distrubution for Windows [OpenSSL for Windows](http://www.slproweb.com/products/Win32OpenSSL.html).
+You'll need to install [OpenSSL](http://www.openssl.org) in your OS, you can install it with homebrew (Mac OSX) with `brew install openssl` or in Linux (Debian/Ubuntu) with `[sudo] apt-get install openssl`, or download the following binary distrubution for Windows [OpenSSL for Windows](http://www.slproweb.com/products/Win32OpenSSL.html).
 
 You can generate your CSR with the following command:
 ```
