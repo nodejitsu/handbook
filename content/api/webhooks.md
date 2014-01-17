@@ -8,7 +8,7 @@ POST /
 POST /1/deploy
 ```
 
-Deploy a new application with a given payload. 
+Deploy a new application with a given payload.
 
 Check [Sample Payloads](#payloads) for examples. This method is normally called
 by a [github](http://help.github.com/post-receive-hooks) or
@@ -442,3 +442,4 @@ specify `app` or you will fail.
   </tr>
 </table>
 
+[meta:title]: <> (Continuous Deployment)
