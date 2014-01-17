@@ -149,14 +149,15 @@ are also available in our [webops](https://webops.nodejitsu.com) application.
 
 ![Codeship](https://codeship-images.s3.amazonaws.com/logo_codeship_colour.png)
 
-Codeship tests and deploys your Bitbucket and GitHub commits on a branch-level to Nodejitsu. Simply configure it on the Codeship website within seconds and automate your deployment pipeline.
+[Codeship](https://www.codeship.io) tests and deploys your Bitbucket and GitHub commits on a branch-level to Nodejitsu. Simply configure it on the Codeship website within seconds and automate your deployment pipeline.
 
 All you need to deploy to Nodejitsu is your username and an API token.
 
 ![Codeship Deployment Settings](https://raw.github.com/codeship/screencast-storyboards/v0.4/screenshots/node/nodejitsu/new-deployment.png)
 
 You can read their official step-by-step tutorials and videos in:
-* [Deploy from Bitbucket](http://blog.codeship.io/2013/10/23/how-to-deploy-a-node-js-app-from-bitbucket-to-nodejitsu.html)
-* [Deploy from GitHub](http://blog.codeship.io/2013/10/29/how-to-deploy-a-node-js-app-from-github-to-nodejitsu.html)
+
+* [Continuous Deployment to Nodejitsu from Bitbucket](http://blog.codeship.io/2013/10/23/how-to-deploy-a-node-js-app-from-bitbucket-to-nodejitsu.html)
+* [Continuous Deployment to Nodejitsu from GitHub](http://blog.codeship.io/2013/10/29/how-to-deploy-a-node-js-app-from-github-to-nodejitsu.html)
 
 [meta:title]: <> (Continuous Deployment)
