@@ -409,6 +409,30 @@ $ jitsu env set MONGO_URL "mongodb://user:password@host:port/databasename?autoRe
 $ jitsu start
 ```
 
+## How to generate a SSL CSR (Certificate Signing Request) for my Custom Domain?
+You'll need to install [OpenSSL](http://www.openssl.org) in your OS, you can install it with homebrew (Mac OSX) with `brew install openssl` or in Linux (Debian/Ubuntu) with `[sudo] apt-get install openssl`, or download the following binary distrubution for Windows [OpenSSL for Windows](http://www.slproweb.com/products/Win32OpenSSL.html).
+
+You can generate your CSR with the following command:
+```
+$ openssl req -new -keyout server.key -out server.csr
+```
+
+Or you can follow the instructions of the following SSL providers:
+
+* [Comodo CSR Instructions](https://www.instantssl.com/ssl-certificate-support/csr_generation/ssl-certificate-index.html)
+* [Digicert CSR Instructions](https://www.digicert.com/csr-creation.htm?rid=011592)
+* [RapidSSL CSR Instructions](https://knowledge.rapidssl.com/support/ssl-certificate-support/index?page=content&id=SO6506&actp=search&viewlocale=en_US&searchid=1270237704682)
+* [Thawte CSR Instructions](https://search.thawte.com/support/ssl-digital-certificates/index?page=content&id=AR1108)
+* [VeriSign CSR Instructions](https://knowledge.verisign.com/support/ssl-certificates-support/index?page=content&id=AR235)
+
+## How to upload my SSL certificates to Nodejitsu?
+
+You can upload the certificates under the SSL tab in the application view on [WebOps](https://webops.nodejitsu.com) admin interface.
+Make sure you have a Business plan account and your `package.json` is configured with the custom domains. 
+
+Individual plans can't use Custom SSL but they can use our Free SSL service with `*.jit.su` and `*.nodejitsu.com`. Just prepend the `https://` and it's done.
+
+
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
 [docs]: http://socket.io/#how-to-use
 [meta:title]: <> (FAQ)
