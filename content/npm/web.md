@@ -2,11 +2,11 @@
 
 You can login to your Web Interface in `http://your-subdomain.npm.nodejitsu.com` with your `npm` credentials.
 
-![Login](screenshots/login.png)
+![Login](https://raw2.github.com/nodejitsu/handbook/master/resources/npm/login.png)
 
 ## Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](https://raw2.github.com/nodejitsu/handbook/master/resources/npm/dashboard.png)
 
 ## Packages Policy
 
@@ -28,11 +28,11 @@ All the packages maintained by your team members.
 
 Just write down the public npm username and click on `Add member`.
 
-![Add member](screenshots/add_member.png)
+![Add member](https://raw2.github.com/nodejitsu/handbook/master/resources/npm/add_member.png)
 
 ### Remove member
 To remove a user from your team, click on the `(x)` button right their username.
 
-![List members](screenshots/members.png)
+![List members](https://raw2.github.com/nodejitsu/handbook/master/resources/npm/members.png)
 
 [meta:title]: <> (Web Interface)
