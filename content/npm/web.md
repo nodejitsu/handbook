@@ -1,4 +1,4 @@
-# Web Interface
+# Hosted private npm Web Interface
 
 You can login to your Web Interface in `http://your-subdomain.npm.nodejitsu.com` with your `npm` credentials.
 
@@ -24,7 +24,6 @@ All the packages maintained by your team members.
 
 ## Team Members
 
-
 ### Add member
 
 Just write down the public npm username and click on `Add member`.
@@ -35,6 +34,5 @@ Just write down the public npm username and click on `Add member`.
 To remove a user from your team, click on the `(x)` button right their username.
 
 ![List members](screenshots/members.png)
-
 
 [meta:title]: <> (Web Interface)
