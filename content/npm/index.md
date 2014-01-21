@@ -19,7 +19,7 @@ Why do you need to do these things?
 ```
 npm config set always-auth true
 ```
-* _Don't be strict about SSL:_ Isaac Schlueter runs his own CA for `registry.npmjs.org` which we are in the process of getting setup for `npmjitsu.co`. In the meantime however, we are using a wildcard certificate (e.g. `*.npmjitsu.co`) which causes spurriour SSL warnings unless you set:
+* _Don't be strict about SSL:_ Isaac Schlueter runs his own CA for `registry.npmjs.org` which we are in the process of getting setup for `nodejitsu.com`. In the meantime however, we are using a wildcard certificate (e.g. `*.registry.nodejitsu.com`) which causes spurriour SSL warnings unless you set:
 ```
 npm config set strict-ssl false
 ```
@@ -30,11 +30,11 @@ Requests can be made against your private npm in two ways:
 
 * _Set the registry for all requests:_ This means that every request will hit your private registry
 ```
-  npm config set registry https://your-subdomain.npmjitsu.co
+  npm config set registry https://your-subdomain.registry.nodejitsu.com
 ```
 * _Use the `--reg` flag when necessary:_ The `--reg` flag (short for `--registry`) will allow you to make any request against your private registry:
 ```
-  npm info your-private-module --reg http://your-subdomain.npmjitsu.co
+  npm info your-private-module --reg http://your-subdomain.registry.nodejitsu.com
 ```
 
 **We recommend that you use the `--reg` flag when necessary combined with the `publishConfig` in your package.json.**
@@ -42,8 +42,10 @@ Requests can be made against your private npm in two ways:
 ### 3. Login to the web interface
 
 ```
-http://your-subdomain.npmjitsu.com
+http://your-subdomain.npm.nodejitsu.com
 ```
+
+More information available at the [Web Interface Documentation](web)
 
 ### PROTIP: Publish modules using `publishConfig`
 
@@ -60,7 +62,7 @@ For example:
 
 ``` js
   {
-    "publishConfig": { "registry": "https://your-subdomain.npmjitsu.co" }
+    "publishConfig": { "registry": "https://your-subdomain.registry.nodejitsu.com" }
   }
 ```
 
