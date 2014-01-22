@@ -52,7 +52,7 @@ Requests can be made against your private npm in two ways:
 http://your-subdomain.npm.nodejitsu.com
 ```
 
-More information available at the [Web Interface Documentation](web)
+More information available at the [Web Interface Documentation](/npm/web)
 
 ### PROTIP: Publish modules using `publishConfig`
 
