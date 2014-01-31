@@ -442,7 +442,7 @@ Business plan account and your `package.json` is configured with the custom doma
 Individual plans can't use Custom SSL but they can use our Free SSL service with
 `*.jit.su` and `*.nodejitsu.com`. Just prepend the `https://` and it's done.
 
-## How can I target an application through a specific load balancer?
+## How to target an application through a specific load balancer?
 
 For debugging purposes it's sometimes useful to hit your application through a
 specific balancer. This is easily done by providing a Host header to the
@@ -455,6 +455,17 @@ $ curl --verbose --header 'Host: yourapp.jit.su' 165.225.131.253
 ```
 
 For a list of balancers, check our [list][list].
+
+## How to target a specific drone of an application?
+
+If your application uses multiple drones, we provide a special header for targetting
+a specific drone. Per example, if your application uses 2 drones, you can
+provide either `x-drone: 1` or `x-drone: 2` as header. Note, replace `yourapp` with
+the subdomain of your application.
+
+```
+$ curl --verbose --header 'x-drone: 1' yourapp.jit.su
+```
 
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
 [docs]: http://socket.io/#how-to-use
