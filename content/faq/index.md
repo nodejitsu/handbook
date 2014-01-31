@@ -348,7 +348,8 @@ We install following libraries and binaries on our servers:
 
 And all of their dependencies.
 
-If you need a specific library and it's missing, we'll do our best to install it. Please email support@nodejitsu.com or hit us up in IRC.
+If you need a specific library and it's missing, we'll do our best to install it.
+Please email support@nodejitsu.com or hit us up in IRC.
 
 ---
 
@@ -364,7 +365,8 @@ from one of those IPs, depending on which data center your application is in:
 ## How can I tail the logs of my application?
 
 Simply issue `jitsu logs tail` locally from the applications directory or visit
-webops. Additional information can be found at [tailing logs](https://npmjs.org/package/demeteorizer).
+webops. Additional information can be found at
+[tailing logs](https://npmjs.org/package/demeteorizer).
 
 ---
 
@@ -372,7 +374,8 @@ webops. Additional information can be found at [tailing logs](https://npmjs.org/
 Yes, you can!
 
 We support `npm` deployments so you'll need to convert your Meteor application
-to a compatible `npm` package. You can do it easily using [demeteorizer](https://npmjs.org/package/demeteorizer).
+to a compatible `npm` package. You can do it easily using
+[demeteorizer](https://npmjs.org/package/demeteorizer).
 
 1. Install `demeteorizer` usign npm:
 ```
@@ -383,7 +386,8 @@ $ [sudo] npm install -g demeteorizer
 ```
 $ demeteorizer -o package
 ```
-This will create a folder called `package`, this will be your `npm` compatible package to deploy to Nodejitsu.
+This will create a folder called `package`, this will be your `npm` compatible
+package to deploy to Nodejitsu.
 
 3. Modify your package before deploy:
 
@@ -402,15 +406,19 @@ This will create a folder called `package`, this will be your `npm` compatible p
 ```
 $ jitsu deploy
 ```
- If you are using MongoDB you'll need to define the ENV variable with the connection string and
- restart the application.
+ If you are using MongoDB you'll need to define the ENV variable with the connection
+ string and restart the application.
 ```
 $ jitsu env set MONGO_URL "mongodb://user:password@host:port/databasename?autoReconnect=true"
 $ jitsu start
 ```
 
 ## How to generate a SSL CSR (Certificate Signing Request) for my Custom Domain?
-You'll need to install [OpenSSL](http://www.openssl.org) in your OS, you can install it with homebrew (Mac OSX) with `brew install openssl` or in Linux (Debian/Ubuntu) with `[sudo] apt-get install openssl`, or download the following binary distrubution for Windows [OpenSSL for Windows](http://www.slproweb.com/products/Win32OpenSSL.html).
+You'll need to install [OpenSSL](http://www.openssl.org) in your OS, you can
+install it with homebrew (Mac OSX) with `brew install openssl` or in Linux
+(Debian/Ubuntu) with `[sudo] apt-get install openssl`, or download the following
+binary distrubution for Windows
+[OpenSSL for Windows](http://www.slproweb.com/products/Win32OpenSSL.html).
 
 You can generate your CSR with the following command:
 ```
@@ -419,18 +427,20 @@ $ openssl req -new -keyout server.key -out server.csr
 
 Or you can follow the instructions of the following SSL providers:
 
-* [Comodo CSR Instructions](https://www.instantssl.com/ssl-certificate-support/csr_generation/ssl-certificate-index.html)
-* [Digicert CSR Instructions](https://www.digicert.com/csr-creation.htm?rid=011592)
-* [RapidSSL CSR Instructions](https://knowledge.rapidssl.com/support/ssl-certificate-support/index?page=content&id=SO6506&actp=search&viewlocale=en_US&searchid=1270237704682)
-* [Thawte CSR Instructions](https://search.thawte.com/support/ssl-digital-certificates/index?page=content&id=AR1108)
-* [VeriSign CSR Instructions](https://knowledge.verisign.com/support/ssl-certificates-support/index?page=content&id=AR235)
+* [Comodo CSR Instructions][comodo]
+* [Digicert CSR Instructions][digicert]
+* [RapidSSL CSR Instructions][rapid]
+* [Thawte CSR Instructions][thawte]
+* [VeriSign CSR Instructions][verisign]
 
 ## How to upload my SSL certificates to Nodejitsu?
 
-You can upload the certificates under the SSL tab in the application view on [WebOps](https://webops.nodejitsu.com) admin interface.
-Make sure you have a Business plan account and your `package.json` is configured with the custom domains.
+You can upload the certificates under the SSL tab in the application view on
+[WebOps](https://webops.nodejitsu.com) admin interface. Make sure you have a
+Business plan account and your `package.json` is configured with the custom domains.
 
-Individual plans can't use Custom SSL but they can use our Free SSL service with `*.jit.su` and `*.nodejitsu.com`. Just prepend the `https://` and it's done.
+Individual plans can't use Custom SSL but they can use our Free SSL service with
+`*.jit.su` and `*.nodejitsu.com`. Just prepend the `https://` and it's done.
 
 ## How can I target an application through a specific load balancer?
 
@@ -449,4 +459,11 @@ For a list of balancers, check our [list][list].
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
 [docs]: http://socket.io/#how-to-use
 [list]: https://www.nodejitsu.com/documentation/features/dns/#individual-plans
+
+[comodo]: https://www.instantssl.com/ssl-certificate-support/csr_generation/ssl-certificate-index.html
+[digicert]: https://www.digicert.com/csr-creation.htm?rid=011592
+[rapid]: https://knowledge.rapidssl.com/support/ssl-certificate-support/index?page=content&id=SO6506&actp=search&viewlocale=en_US&searchid=1270237704682
+[thawte]: https://search.thawte.com/support/ssl-digital-certificates/index?page=content&id=AR1108
+[verisign]: https://knowledge.verisign.com/support/ssl-certificates-support/index?page=content&id=AR235
+
 [meta:title]: <> (FAQ)
