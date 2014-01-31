@@ -402,7 +402,7 @@ This will create a folder called `package`, this will be your `npm` compatible p
 ```
 $ jitsu deploy
 ```
- If you are using MongoDB you'll need to define the ENV variable with the connection string and 
+ If you are using MongoDB you'll need to define the ENV variable with the connection string and
  restart the application.
 ```
 $ jitsu env set MONGO_URL "mongodb://user:password@host:port/databasename?autoReconnect=true"
@@ -428,11 +428,25 @@ Or you can follow the instructions of the following SSL providers:
 ## How to upload my SSL certificates to Nodejitsu?
 
 You can upload the certificates under the SSL tab in the application view on [WebOps](https://webops.nodejitsu.com) admin interface.
-Make sure you have a Business plan account and your `package.json` is configured with the custom domains. 
+Make sure you have a Business plan account and your `package.json` is configured with the custom domains.
 
 Individual plans can't use Custom SSL but they can use our Free SSL service with `*.jit.su` and `*.nodejitsu.com`. Just prepend the `https://` and it's done.
 
+## How can I target an application through a specific load balancer?
+
+For debugging purposes it's sometimes useful to hit your application through a
+specific balancer. This is easily done by providing a Host header to the
+request. The `curl` command below will hit a balancer with IP `165.225.131.253`
+and target the application `yourapp.jit.su`. Note, replace `yourapp` with the
+subdomain of your application.
+
+```
+$ curl --verbose --header 'Host: yourapp.jit.su' 165.225.131.253
+```
+
+For a list of balancers, check our [list][list].
 
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
 [docs]: http://socket.io/#how-to-use
+[list]: https://www.nodejitsu.com/documentation/features/dns/#individual-plans
 [meta:title]: <> (FAQ)
