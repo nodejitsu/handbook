@@ -110,11 +110,8 @@ function tags(content, n) {
 // is returned asynchronously.
 //
 function read(file, callback) {
-  if (!callback) {
-    return fileContent(fs.readFileSync(path.resolve(loc, normalize(file)), 'utf8'));
-  }
-
   file = path.resolve(loc, normalize(file));
+  if (!callback) return fileContent(fs.readFileSync(file, 'utf8'));
 
   fs.readFile(file, 'utf8', function read(error, content) {
     callback.apply(this, [error, fileContent(content)]);
