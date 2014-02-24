@@ -234,7 +234,8 @@ function walkSync(dir, result, sub) {
 // event is not required thus easing the flow.
 //
 function Handbook() {
-  var toc = walkSync(loc),
+  var toc = this.index = walkSync(loc),
+      cache = this.cache = {},
       idx = this.idx = lunr(function setupLunr() {
         this.field('title', { boost: 10 });
         this.field('body');
@@ -242,13 +243,19 @@ function Handbook() {
 
   Object.keys(toc).forEach(function loopSections(section) {
     Object.keys(toc[section]).forEach(function loopPages(page) {
-      var document = read((section !== 'index' ? section + '/' : '') + page);
+      var document = read((section !== 'index' ? section + '/' : '') + page)
+        , id = section + '/' + page;
 
       idx.add({
-        id: section + '/' + page,
+        id: id,
         title: document.title,
         body: document.content
       });
+
+      //
+      // Keep cached reference of all documents, for quick external access.
+      //
+      cache[id] = document;
     });
   });
 }
