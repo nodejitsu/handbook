@@ -268,7 +268,7 @@ function Handbook() {
 // synchronously by omitting the callback.
 //
 Handbook.prototype.get = function get(file, callback) {
-  read.apply(this, arguments);
+  return read.apply(this, arguments);
 };
 
 //
