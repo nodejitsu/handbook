@@ -1,7 +1,7 @@
 # Tokens
 
 Token management for your accounts is available through `jitsu tokens *` commands.
-Using Tokens you will be able to share your account without share the password of the account. This tokens are used to authenticate with our API, so, keep it in secret.
+Using Tokens you will be able to share your account without shararing the password of the account. This tokens are used to authenticate with our API, so, keep it secret.
 
 ## List all tokens
 
