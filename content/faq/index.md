@@ -1,5 +1,8 @@
 # For more information about pricing, see [the pricing FAQ](http://nodejitsu.com/paas/faq.html).
 
+ * [How do I reset my password?](#how-do-i-reset-my-password)
+ * [Is there a cheatsheet somewhere?](#is-there-a-cheatsheet-somewhere)
+
 ## How do I reset my password?
 
 One way is to use jitsu. Simply type:
@@ -465,6 +468,22 @@ the subdomain of your application.
 
 ```
 $ curl --verbose --header 'x-drone: 1' yourapp.jit.su
+```
+
+## How to share my account without share my password
+
+By now you can use [tokens](/documentation/jitsu/tokens/) to share your account without need to share your password.
+
+On your account
+```
+$ jitsu tokens create <yourTokenName>
+```
+
+On shared clients
+```
+$ jitsu config set apiTokenName <yourTokenName>
+$ jitsu config set apiToken xxx-xxx-xxx-xxx
+$ jitsu config set username myusername
 ```
 
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
