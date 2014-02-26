@@ -1,7 +1,7 @@
 # Tokens
 
 Token management for your accounts is available through `jitsu tokens *` commands.
-Using Tokens you will be able to share your account without share the password of the account. This tokens are used to autenticate with our API, so keep it in secret.
+Using Tokens you will be able to share your account without share the password of the account. This tokens are used to authenticate with our API, so, keep it in secret.
 
 ## List all tokens
 
@@ -49,7 +49,7 @@ Using this feature you can easily share the access of an account without share t
 
  * [Create a new token](#create-a-new-token)
  * Share the token with a third party
- * Configure `jitsu` to authenticate using a token
+ * The third party need to configure `jitsu` to authenticate using a token
 
 To configure `jitsu` use the next commands:
 

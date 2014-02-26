@@ -32,7 +32,7 @@
  * [How to upload my SSL certificates to Nodejitsu?](#how-to-upload-my-ssl-certificates-to-nodejitsu)
  * [How to target an application through a specific load balancer?](#how-to-target-an-application-through-a-specific-load-balancer)
  * [How to target a specific drone of an application?](#how-to-target-a-specific-drone-of-an-application)
- * [How to share my account without share my password](#how-to-share-my-account-without-share-my-password)
+ * [How to share my account without share my password?](#how-to-share-my-account-without-share-my-password)
 
 
 ## How do I reset my password?
@@ -502,7 +502,7 @@ the subdomain of your application.
 $ curl --verbose --header 'x-drone: 1' yourapp.jit.su
 ```
 
-## How to share my account without share my password
+## How to share my account without share my password?
 
 By now you can use [tokens](/documentation/jitsu/tokens/) to share your account access without need to share your password.
 
