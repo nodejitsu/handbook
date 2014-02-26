@@ -33,6 +33,7 @@
  * [How to target an application through a specific load balancer?](#how-to-target-an-application-through-a-specific-load-balancer)
  * [How to target a specific drone of an application?](#how-to-target-a-specific-drone-of-an-application)
  * [How to share my account without sharing my password?](#how-to-share-my-account-without-sharing-my-password)
+ * [How to run bower install before a deploy?](#how-to-run-bower-install-before-a-deploy)
 
 
 ## How do I reset my password?
@@ -516,6 +517,20 @@ On shared clients
 $ jitsu config set apiTokenName <yourTokenName>
 $ jitsu config set apiToken xxx-xxx-xxx-xxx
 $ jitsu config set username myusername
+```
+
+## How to run bower install before a deploy?
+
+You need to install your front-end dependencies before upload your snapshot, so, you need to run `bower install` just before make a deploy.
+
+We offer two additional script fields `predeploy` and `postdeploy` at package.json wich both run on your local machine. Just add the next to your package.json in the scripts section:
+
+```
+{
+  "scripts": {
+    "predeploy": "bower install"
+  }
+}
 ```
 
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
