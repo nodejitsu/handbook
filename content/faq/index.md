@@ -2,6 +2,26 @@
 
  * [How do I reset my password?](#how-do-i-reset-my-password)
  * [Is there a cheatsheet somewhere?](#is-there-a-cheatsheet-somewhere)
+ * [How are programs kept alive? Do I need to use Forever?](#how-are-programs-kept-alive-do-i-need-to-use-forever)
+ * [How can I make my app use a port other than port 80?](#how-can-i-make-my-app-use-a-port-other-than-port-80)
+ * [How do I make Koding work with jitsu?](#how-do-i-make-koding-work-with-jitsu)
+ * [Can I use jitsu with Cloud9 IDE?](#can-i-use-jitsu-with-cloud9-idehttp:c9.io)
+ * [How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!](#how-can-i-turn-off-the-require-analyzer-in-jitsu-i-want-to-manage-my-own-dependencies)
+ * [How Do I add my GitHub repository as a dependency?](#how-do-i-add-my-github-repository-as-a-dependency)
+ * [Why won't this C++ addon compile?](#why-wont-this-c-addon-compile)
+ * [How do I specify which files not to bundle? How do I know what files are getting bundled?](#how-do-i-specify-which-files-not-to-bundle-how-do-i-know-what-files-are-getting-bundled)
+ * [How do I fix 'Error: package.json error: can't find starting script'?](#how-do-i-fix-error:-package.json-error:-cant-find-starting-script)
+ * [How do I choose what port to use in Nodejitsu?](#how-do-i-choose-what-port-to-use-in-nodejitsu)
+ * [I'm getting an error: listen EACCESS when starting my application in Nodejitsu](#im-getting-an-error:-listen-eaccess-when-starting-my-application-in-nodejitsu)
+ * [How do I force my clients to use HTTPS with my application?](#how-do-i-force-my-clients-to-use-https-with-my-application)
+ * [How do I change the timezone on my drone?](#how-do-i-change-the-timezone-on-my-drone)
+ * [How do subdomains work and what are the valid subdomains?](#how-do-subdomains-work-and-what-are-the-valid-subdomains)
+ * [Where are personal plan drones hosted?](#where-are-personal-plan-drones-hosted)
+ * [Can I use cluster to improve the availability of my app?](#can-i-use-clusterhttps:github.comlearnboostcluster-to-improve-the-availability-of-my-app)
+ * [When we push our app to Nodejitsu, does it start a new instance, then cut the traffic over from the old one if successful? Or would the app be down if something went wrong?](#when-we-push-our-app-to-nodejitsu-does-it-start-a-new-instance-then-cut-the-traffic-over-from-the-old-one-if-successful-or-would-the-app-be-down-if-something-went-wrong)
+ * [Why is the subdirectory or its content not deployed to Nodejitsu?](#why-is-the-subdirectory-or-its-content-not-deployed-to-nodejitsu)
+ * [How can I change the name of my application?](#how-can-i-change-the-name-of-my-application)
+ * [How can I use Socket.IO alongside a http server?](#how-can-i-use-socket.io-alongside-a-http-server)
 
 ## How do I reset my password?
 
@@ -472,7 +492,7 @@ $ curl --verbose --header 'x-drone: 1' yourapp.jit.su
 
 ## How to share my account without share my password
 
-By now you can use [tokens](/documentation/jitsu/tokens/) to share your account without need to share your password.
+By now you can use [tokens](/documentation/jitsu/tokens/) to share your account access without need to share your password.
 
 On your account
 ```
