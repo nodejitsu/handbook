@@ -25,7 +25,7 @@
  * [Can I write to the file system? What are the limits?](#can-i-write-to-the-file-system-what-are-the-limits)
  * [I'm getting a HTTP 401 error when using Twitter API. How do I fix it?](#im-getting-a-http-401-error-when-using-twitter-api.-how-do-i-fix-it)
  * [What libraries/binaries can I use?](#what-librariesbinaries-can-i-use)
- * [What are the outogoing IPs?](#what-are-the-outogoing-ips)
+ * [What are the outgoing IPs?](#what-are-the-outogoing-ips)
  * [How can I tail the logs of my application?](#how-can-i-tail-the-logs-of-my-application)
  * [Can I deploy a Meteor application to Nodejitsu?](#can-i-deploy-a-meteor-application-to-nodejitsu)
  * [How to generate a SSL CSR (Certificate Signing Request) for my Custom Domain?](#how-to-generate-a-ssl-csr-certificate-signing-request-for-my-custom-domain)
@@ -389,7 +389,7 @@ Please email support@nodejitsu.com or hit us up in IRC.
 
 ---
 
-## What are the outogoing IPs?
+## What are the outgoing IPs?
 
 If you are connecting to a remote host from Nodejitsu, you'll see a connection
 from one of those IPs, depending on which data center your application is in:
@@ -505,14 +505,14 @@ $ curl --verbose --header 'x-drone: 1' yourapp.jit.su
 
 ## How to share my account without sharing my password?
 
-By now you can use [tokens](/documentation/jitsu/tokens/) to share your account access without needing to share your password.
+You can use [tokens](/documentation/jitsu/tokens/) to share your account access without needing to share your password.
 
-On your account
+Simply create the token using jitsu
 ```
 $ jitsu tokens create <yourTokenName>
 ```
 
-On shared clients
+And install it on shared clients
 ```
 $ jitsu config set apiTokenName <yourTokenName>
 $ jitsu config set apiToken xxx-xxx-xxx-xxx

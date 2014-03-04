@@ -1,7 +1,7 @@
 # Tokens
 
 Token management for your accounts is available through `jitsu tokens *` commands.
-Using Tokens you will be able to share your account without shararing the password of the account. This tokens are used to authenticate with our API, so, keep it secret.
+Using Tokens you will be able to share your account without sharing the password of the account. These tokens are used to authenticate with our API, so, keep it secret.
 
 ## List all tokens
 
@@ -39,9 +39,8 @@ chosen identifier/name.
 
 ## Remove a token
 
-Removing a token is done by issuing `jitsu tokens
-destroy [username] [token name]`. In the example above *token name* could be
-`tokenname1` or `tokenname2`.
+Removing a token is done by issuing `jitsu tokens destroy [username] [token name]`.
+In the example above *token name* could be `tokenname1` or `tokenname2`.
 
 ## Configure `jitsu` to authenticate using a token
 
