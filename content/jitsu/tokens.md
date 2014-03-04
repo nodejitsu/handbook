@@ -1,6 +1,14 @@
 # Tokens
 
-Token management for your accounts is available through `jitsu tokens *`.
+Token management for your accounts is available through `jitsu tokens *` commands.
+Using Tokens you will be able to share your account without sharing the password of the account. These tokens are used to authenticate with our API, so, keep it secret.
+
+## List all tokens
+
+```
+jitsu tokens list
+```
+
 Listing all available tokens, can be done with `jitsu tokens list [username]`,
 where *username* is optional. You will be prompted to enter the password of the
 account your trying to list the tokens for, per example:
@@ -18,10 +26,36 @@ data:    tokenname2   5116b717-988c-467c-8ae4-ae49896e8a3a
 info:    Nodejitsu ok
 ```
 
+
+## Create a new token
+
+```
+jitsu tokens create [token name]
+```
+
 Adding a token to an account can be done with
-`jitsu tokens create [username] [token name]`, where *token name* is a unique
-chosen identifier/name. Removing a token is done by issuing `jitsu tokens
-destroy [username] [token name]`. In the example above *token name* could be
-`tokenname1` or `tokenname2`.
+`jitsu tokens create [token name]`, where *token name* is a unique
+chosen identifier/name.
+
+## Remove a token
+
+Removing a token is done by issuing `jitsu tokens destroy [username] [token name]`.
+In the example above *token name* could be `tokenname1` or `tokenname2`.
+
+## Configure `jitsu` to authenticate using a token
+
+Using this feature you can easily share the access of an account without share the password.
+
+ * [Create a new token](#create-a-new-token)
+ * Share the token with a third party
+ * The third party need to configure `jitsu` to authenticate using a token
+
+To configure `jitsu` use the next commands:
+
+```
+$ jitsu config set apiTokenName sharedTokenName
+$ jitsu config set apiToken xxx-xxx-xxx-xxx
+$ jitsu config set username myusername
+```
 
 [meta:title]: <> (Tokens)

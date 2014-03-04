@@ -1,5 +1,41 @@
 # For more information about pricing, see [the pricing FAQ](http://nodejitsu.com/paas/faq.html).
 
+ * [How do I reset my password?](#how-do-i-reset-my-password)
+ * [Is there a cheatsheet somewhere?](#is-there-a-cheatsheet-somewhere)
+ * [How are programs kept alive? Do I need to use Forever?](#how-are-programs-kept-alive-do-i-need-to-use-forever)
+ * [How can I make my app use a port other than port 80?](#how-can-i-make-my-app-use-a-port-other-than-port-80)
+ * [How do I make Koding work with jitsu?](#how-do-i-make-koding-work-with-jitsu)
+ * [Can I use jitsu with Cloud9 IDE?](#can-i-use-jitsu-with-cloud9-idehttp:c9.io)
+ * [How can I turn off the require-analyzer in jitsu? I want to manage my own dependencies!](#how-can-i-turn-off-the-require-analyzer-in-jitsu-i-want-to-manage-my-own-dependencies)
+ * [How Do I add my GitHub repository as a dependency?](#how-do-i-add-my-github-repository-as-a-dependency)
+ * [Why won't this C++ addon compile?](#why-wont-this-c-addon-compile)
+ * [How do I specify which files not to bundle? How do I know what files are getting bundled?](#how-do-i-specify-which-files-not-to-bundle-how-do-i-know-what-files-are-getting-bundled)
+ * [How do I fix 'Error: package.json error: can't find starting script'?](#how-do-i-fix-error:-package.json-error:-cant-find-starting-script)
+ * [How do I choose what port to use in Nodejitsu?](#how-do-i-choose-what-port-to-use-in-nodejitsu)
+ * [I'm getting an error: listen EACCESS when starting my application in Nodejitsu](#im-getting-an-error:-listen-eaccess-when-starting-my-application-in-nodejitsu)
+ * [How do I force my clients to use HTTPS with my application?](#how-do-i-force-my-clients-to-use-https-with-my-application)
+ * [How do I change the timezone on my drone?](#how-do-i-change-the-timezone-on-my-drone)
+ * [How do subdomains work and what are the valid subdomains?](#how-do-subdomains-work-and-what-are-the-valid-subdomains)
+ * [Where are personal plan drones hosted?](#where-are-personal-plan-drones-hosted)
+ * [Can I use cluster to improve the availability of my app?](#can-i-use-clusterhttps:github.comlearnboostcluster-to-improve-the-availability-of-my-app)
+ * [When we push our app to Nodejitsu, does it start a new instance, then cut the traffic over from the old one if successful? Or would the app be down if something went wrong?](#when-we-push-our-app-to-nodejitsu-does-it-start-a-new-instance-then-cut-the-traffic-over-from-the-old-one-if-successful-or-would-the-app-be-down-if-something-went-wrong)
+ * [Why is the subdirectory or its content not deployed to Nodejitsu?](#why-is-the-subdirectory-or-its-content-not-deployed-to-nodejitsu)
+ * [How can I change the name of my application?](#how-can-i-change-the-name-of-my-application)
+ * [How can I use Socket.IO alongside a http server?](#how-can-i-use-socket.io-alongside-a-http-server)
+ * [Can I write to the file system? What are the limits?](#can-i-write-to-the-file-system-what-are-the-limits)
+ * [I'm getting a HTTP 401 error when using Twitter API. How do I fix it?](#im-getting-a-http-401-error-when-using-twitter-api.-how-do-i-fix-it)
+ * [What libraries/binaries can I use?](#what-librariesbinaries-can-i-use)
+ * [What are the outgoing IPs?](#what-are-the-outogoing-ips)
+ * [How can I tail the logs of my application?](#how-can-i-tail-the-logs-of-my-application)
+ * [Can I deploy a Meteor application to Nodejitsu?](#can-i-deploy-a-meteor-application-to-nodejitsu)
+ * [How to generate a SSL CSR (Certificate Signing Request) for my Custom Domain?](#how-to-generate-a-ssl-csr-certificate-signing-request-for-my-custom-domain)
+ * [How to upload my SSL certificates to Nodejitsu?](#how-to-upload-my-ssl-certificates-to-nodejitsu)
+ * [How to target an application through a specific load balancer?](#how-to-target-an-application-through-a-specific-load-balancer)
+ * [How to target a specific drone of an application?](#how-to-target-a-specific-drone-of-an-application)
+ * [How to share my account without sharing my password?](#how-to-share-my-account-without-sharing-my-password)
+ * [How to run bower install before a deploy?](#how-to-run-bower-install-before-a-deploy)
+
+
 ## How do I reset my password?
 
 One way is to use jitsu. Simply type:
@@ -353,7 +389,7 @@ Please email support@nodejitsu.com or hit us up in IRC.
 
 ---
 
-## What are the outogoing IPs?
+## What are the outgoing IPs?
 
 If you are connecting to a remote host from Nodejitsu, you'll see a connection
 from one of those IPs, depending on which data center your application is in:
@@ -465,6 +501,36 @@ the subdomain of your application.
 
 ```
 $ curl --verbose --header 'x-drone: 1' yourapp.jit.su
+```
+
+## How to share my account without sharing my password?
+
+You can use [tokens](/documentation/jitsu/tokens/) to share your account access without needing to share your password.
+
+Simply create the token using jitsu
+```
+$ jitsu tokens create <yourTokenName>
+```
+
+And install it on shared clients
+```
+$ jitsu config set apiTokenName <yourTokenName>
+$ jitsu config set apiToken xxx-xxx-xxx-xxx
+$ jitsu config set username myusername
+```
+
+## How to run bower install before a deploy?
+
+You need to install your front-end dependencies before upload your snapshot, so, you need to run `bower install` just before make a deploy.
+
+We offer two additional script fields `predeploy` and `postdeploy` at package.json wich both run on your local machine. Just add the next to your package.json in the scripts section:
+
+```
+{
+  "scripts": {
+    "predeploy": "bower install"
+  }
+}
 ```
 
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
