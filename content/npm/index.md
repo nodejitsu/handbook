@@ -37,7 +37,7 @@ npm config set always-auth true
 npm config set ca ""
 ```
 
-#### 2. Start making requests against your private npm
+### 2. Start making requests against your private npm
 
 Requests can be made against your private npm in two ways:
 
@@ -58,7 +58,7 @@ Requests can be made against your private npm in two ways:
   npm publish --reg https://registry.npmjs.org
 ```
 
-#### 3. Login to the web interface
+### 3. Login to the web interface
 
 ```
 http://your-subdomain.npm.nodejitsu.com
@@ -66,7 +66,7 @@ http://your-subdomain.npm.nodejitsu.com
 
 More information available at the [Web Interface Documentation](/npm/web)
 
-#### PROTIP: Publish modules using `publishConfig`
+### PROTIP: Publish modules using `publishConfig`
 
 The `publishConfig` in your package.json does the following (from the [npm documentation](https://github.com/isaacs/npm/blob/master/doc/files/package.json.md#publishconfig)):
 
