@@ -1,10 +1,23 @@
-# Enterprise Private npm
+# Private npm
+
+* [Getting Started](#getting-started)
+* [Web Interface][web-interface]
+* [User management][user-management]
+* [Package management][package-management]
+* [Troubleshooting][troubleshooting]
+* [FAQ][faq]
 
 In this getting started guide you will get setup with your Enterprise Private npm registry from Nodejitsu as well as learn about some of the best practices for working with `package.json` files.
 
 <hr>
 
-## 1. Configure the npm CLI
+## Getting Started
+
+<div style="text-align:center;margin:20px 0;">
+  <iframe src="//player.vimeo.com/video/86596362" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+### 1. Configure the npm CLI
 
 Just like the public registry, the `npm` CLI program is what you'll use to install, publish and otherwise interact with npm modules. Nodejitsu Enterprise private npm has two changes in the configuration to your npm CLI client:
 
@@ -24,7 +37,7 @@ npm config set always-auth true
 npm config set ca ""
 ```
 
-### 2. Start making requests against your private npm
+#### 2. Start making requests against your private npm
 
 Requests can be made against your private npm in two ways:
 
@@ -45,7 +58,7 @@ Requests can be made against your private npm in two ways:
   npm publish --reg https://registry.npmjs.org
 ```
 
-### 3. Login to the web interface
+#### 3. Login to the web interface
 
 ```
 http://your-subdomain.npm.nodejitsu.com
@@ -53,7 +66,7 @@ http://your-subdomain.npm.nodejitsu.com
 
 More information available at the [Web Interface Documentation](/npm/web)
 
-### PROTIP: Publish modules using `publishConfig`
+#### PROTIP: Publish modules using `publishConfig`
 
 The `publishConfig` in your package.json does the following (from the [npm documentation](https://github.com/isaacs/npm/blob/master/doc/files/package.json.md#publishconfig)):
 
@@ -74,5 +87,8 @@ For example:
 
 The benefits of using `publishConfig` is that it avoids accidental publishes to the public registry due to user error. Take for example a developer on your team who has not properly configured their machine by running `npm config set registry` or using the `--reg` flag. _That command would send your code public._ By using the `publishConfig` property you avoid that because it is part of your application.
 
+
+[web-interface]: /npm/web
+[faq]: /npm/faq
 
 [meta:title]: <> (Hosted private npm)
