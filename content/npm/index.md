@@ -10,7 +10,7 @@ Just like the public registry, the `npm` CLI program is what you'll use to insta
 
 ```
 npm config set always-auth true
-npm config set strict-ssl false
+npm config set ca ""
 ```
 
 Why do you need to do these things?
@@ -19,11 +19,10 @@ Why do you need to do these things?
 ```
 npm config set always-auth true
 ```
-* _Don't be strict about SSL:_ We do not use the same Certificate Authority (CA) as is used by https://registry.npmjs.org. This should be resolved in the next few weeks (before March 2013). In the meantime however, we are using a wildcard certificate (e.g. `*.registry.nodejitsu.com`) which causes spurriour SSL warnings unless you set:
+* _Trust industry standard CAs:_ We use DigiCert for our SSL certificate to `*.registry.nodejitsu.com` which is a different CA than the one used by `https://registry.npmjs.org`. As such you need to tell your `npm` CLI client to trust all industry standard Certificate Authorities (CAs):
 ```
-npm config set strict-ssl false
+npm config set ca ""
 ```
-This certificate is issued by [Comodo](http://www.comodo.com/) and serves https://www.nodejitsu.com
 
 ### 2. Start making requests against your private npm
 
