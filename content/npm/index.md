@@ -2,9 +2,9 @@
 
 * [Getting Started](#getting-started)
 * [Web Interface][web-interface]
-* [User management][user-management]
-* [Package management][package-management]
-* [Troubleshooting][troubleshooting]
+	* [User management][user-management]
+	* [Package management][package-management]
+* [Command Line Interface][cli]
 * [FAQ][faq]
 
 <hr>
@@ -66,7 +66,10 @@ Requests can be made against your private npm in two ways:
   $ npm publish --reg https://registry.npmjs.org
 ```
 
-### 3. Login to the web interface
+More information available at the [Command Line Interface Documentation][cli]
+
+
+### 3. Login to the Web Interface
 
 ```
 http://your-subdomain.npm.nodejitsu.com
@@ -97,9 +100,9 @@ The benefits of using `publishConfig` is that it avoids accidental publishes to 
 
 
 [web-interface]: /npm/web
-[user-management]: /npm/users
-[package-management]: /npm/packages
-[troubleshooting]: /npm/troubleshooting
+[user-management]: /npm/web#user-management
+[package-management]: /npm/web#package-management
+[cli]: /npm/cli
 [faq]: /npm/faq
 
 [meta:title]: <> (Hosted Private npm)
