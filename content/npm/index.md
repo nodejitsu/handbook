@@ -45,7 +45,7 @@ $ npm config set strict-ssl true
 $ npm config set ca ""
 ```
 
-### 2. Start making requests against your private npm
+### 2. Login & start making requests against your private npm
 
 Requests can be made against your private npm in two ways:
 
@@ -55,6 +55,7 @@ Requests can be made against your private npm in two ways:
 ```
 * _Use the `--reg` flag when necessary:_ The `--reg` flag (short for `--registry`) will allow you to make any request against your private registry:
 ```
+  $ npm login
   $ npm info your-private-module --reg http://your-subdomain.registry.nodejitsu.com
 ```
 

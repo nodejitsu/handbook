@@ -33,7 +33,10 @@ The `publishConfig` in your package.json does the following (from the [npm docum
 > matter for the purposes of publishing.
 
 ### What happens if I need to change my password on the public npm registry?
-Nothing! As long as your `.npmrc` is kept up to date the use of your private npm
-will be as seamless as the public registry!
+You will need to resync your new password with your private npm registry. Youc an do this by:
+```
+$ npm config set registry https://your-subdomain.registry.nodejitsu.com
+$ npm login
+```
 
 [meta:title]: <> (FAQ)
