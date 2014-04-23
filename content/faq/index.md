@@ -34,7 +34,9 @@
  * [How to target a specific drone of an application?](#how-to-target-a-specific-drone-of-an-application-)
  * [How to share my account without sharing my password?](#how-to-share-my-account-without-sharing-my-password-)
  * [How to run bower install before a deploy?](#how-to-run-bower-install-before-a-deploy-)
-
+ * [What is a drone?](#what-is-a-drone-)
+ * [Can you give me more details about specs of drones?](#can-you-give-me-more-details-about-specs-of-drones-)
+ * [Do you have a Acceptable Use Policy?](#do-you-have-a-acceptable-use-policy-)
 
 ## How do I reset my password?
 
@@ -532,6 +534,19 @@ We offer two additional script fields `predeploy` and `postdeploy` at package.js
   }
 }
 ```
+
+## What is a drone?
+
+A drone is an individual unit of computing power. When you deploy an application to Nodejitsu you get one drone (a single process). The way we scale an application is by assigning you new drones (in a new virtual machine) and have our load balancers distribute across the drones serving your application. You will have at the very least the same number of drones as you have applications, but it is not uncommon for a single application to be running more than one drone.
+
+## Can you give me more details about specs of drones?
+
+All individual plans have drones configured with 256MB of RAM, around 2GB of disk space and one virtual CPU (as defined per joyent). Business plans have flexibility on this allowing to you increase your memory RAM to 512MB or 1GB and even host your drones in a different datacenter.
+
+## Do you have a Acceptable Use Policy?
+
+Yes, we do. Take a look to our [Acceptable Use Policy](https://legal.nodejitsu.com/acceptable-use-policy)
+And you agreed to follow this policy when you created your account and accepted our [Terms of Service](https://www.nodejitsu.com/forward/#/terms)
 
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
 [docs]: http://socket.io/#how-to-use
