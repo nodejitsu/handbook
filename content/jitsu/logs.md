@@ -56,6 +56,29 @@ jitsu logs tail
 jitsu logs tail [username]/[appname]
 ```
 
+## More details
+
+If your running an application on multiple drones and only 1 drone is showing
+errors then use `--debug` to get more details for each log line. The log metrics
+will be exposed as JSON before the actual log lines. Similarly this method can
+be used to find any zombie/rogue processes. Example output:
+
+```js
+debug:        {
+debug:          metric: 1,
+debug:          time: 1400766349,
+debug:          host: '10.112.49.160',
+debug:          description: '10.112.36.49 - - content \n',
+debug:          service: 'logs/stdout',
+debug:          meta: {
+debug:            app: {
+debug:              user: 'test',
+debug:              name: 'persistent-ghost'
+debug:            },
+debug:          key: 'logs/test/persistent-ghost'
+debug:        }
+```
+
 ## Additional useful options
 
 If you would like to pipe log output to another script/service you can use the
