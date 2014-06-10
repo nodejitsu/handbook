@@ -27,7 +27,7 @@ $ npm login
 
 This will sync your Public npm user with our Private npm product.
 
-![](../../resources/npm/npm_setup.png)
+![NPM setup](https://versions.nodejitsu.com/id:handbook/resources/npm/npm_setup.png)
 
 ## Package Management
 
@@ -41,7 +41,7 @@ If you want to install a package from your private or public registry you'll wan
 $ npm install <package-name>
 ```
 
-![](../../resources/npm/npm_install.gif)
+![Install Package](https://versions.nodejitsu.com/id:handbook/resources/npm/npm_install.gif)
 
 
 Also if you want to save the package dependency in your package.json file just append the `--save` option to the command.
@@ -62,7 +62,7 @@ Publish a package is so easy with npm, just run the following command to publish
 $ npm publish
 ```
 
-![](../../resources/npm/npm_publish.gif)
+![NPM publish](https://versions.nodejitsu.com/id:handbook/resources/npm/npm_publish.gif)
 
 But if you want to publish the package to the public registry you can use the `--reg` option to define the npm registry to use.
 
@@ -92,7 +92,7 @@ If you want to know the maintaners of a package run:
 $ npm owner ls <package-name>
 ```
 
-![](../../resources/npm/npm_owner_ls.gif)
+![NPM owner](https://versions.nodejitsu.com/id:handbook/resources/npm/npm_owner_ls.gif)
 
 ### Add Maintainer
 
@@ -102,7 +102,7 @@ If you want to add a maintainer you'll need to run:
 $ npm owner add <username> <package-name>
 ```
 
-![](../../resources/npm/npm_owner_add.gif)
+![Add Maintainer](https://versions.nodejitsu.com/id:handbook/resources/npm/npm_owner_add.gif)
 
 
 ### Remove Maintainer
