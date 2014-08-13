@@ -25,7 +25,7 @@
  * [Can I write to the file system? What are the limits?](#can-i-write-to-the-file-system-what-are-the-limits-)
  * [I'm getting a HTTP 401 error when using Twitter API. How do I fix it?](#i-39-m-getting-a-http-401-error-when-using-twitter-api-how-do-i-fix-it-)
  * [What libraries/binaries can I use?](#what-librariesbinaries-can-i-use-)
- * [What are the outgoing IPs?](#what-are-the-outogoing-ips-)
+ * [What are the outgoing IPs?](#what-are-the-outgoing-ips-)
  * [How can I tail the logs of my application?](#how-can-i-tail-the-logs-of-my-application-)
  * [Can I deploy a Meteor application to Nodejitsu?](#can-i-deploy-a-meteor-application-to-nodejitsu-)
  * [How to generate a SSL CSR (Certificate Signing Request) for my Custom Domain?](#how-to-generate-a-ssl-csr-certificate-signing-request-for-my-custom-domain-)
