@@ -387,7 +387,7 @@ We install following libraries and binaries on our servers:
 And all of their dependencies.
 
 If you need a specific library and it's missing, we'll do our best to install it.
-Please email support@nodejitsu.com or hit us up in IRC.
+Please email <support@nodejitsu.com> or hit us up in IRC.
 
 ---
 
