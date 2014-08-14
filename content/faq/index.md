@@ -396,7 +396,17 @@ Please email support@nodejitsu.com or hit us up in IRC.
 If you are connecting to a remote host from Nodejitsu, you'll see a connection
 from one of those IPs, depending on which data center your application is in:
 
-  * Joyent, `us-east-1`: 165.225.134.101, 165.225.134.102, 165.225.134.103, 165.225.134.104
+**Joyent US-East-1**
+* 72.2.120.2
+* 72.2.120.3
+* 72.2.120.4
+* 72.2.120.5
+
+**Joyent US-SW-1**
+* 64.30.137.99
+* 64.30.137.100
+* 64.30.137.101
+* 64.30.137.102
 
 ---
 
