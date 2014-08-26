@@ -15,6 +15,7 @@ Most of the workflow of npm is being done in the command line, we will show you 
 First we need to setup our npm client to use your Private npm registry, with the following commands your local npm client will be ready to work with Private npm.
 
 ```
+$ npm config set always-auth true
 $ npm config set strict-ssl true
 $ npm config set ca ""
 $ npm config set registry https://<your-subdomain>.registry.nodejitsu.com
