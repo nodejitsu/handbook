@@ -535,7 +535,7 @@ $ jitsu config set username myusername
 
 You need to install your front-end dependencies before upload your snapshot, so, you need to run `bower install` just before make a deploy.
 
-We offer two additional script fields `predeploy` and `postdeploy` at package.json wich both run on your local machine. Just add the next to your package.json in the scripts section:
+We offer two additional script fields `predeploy` and `postdeploy` at package.json which both run on your local machine. Just add the next to your package.json in the scripts section:
 
 ```
 {
