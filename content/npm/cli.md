@@ -114,7 +114,7 @@ And if you want to remove a maintainer, run:
 $ npm owner rm <username> <package-name>
 ```
 
-**Protip**: After adding or removing a maintainer don't forget to Sync it on the [Web Interface](web#sync-maintainers) using `Sync Maintainers` button.
+**Protip**: Instead of manually adding each user to packages, for any private package you publish you can use the [Web Interface](web#sync-maintainers) to `Sync Maintainers`. This will allow all the users associated with your registry to have publish rights on all your private packages!
 
 
 [meta:title]: <> (Command Line Interface)
