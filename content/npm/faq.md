@@ -66,6 +66,39 @@ Since all new publishes go by default to your private npm registry when you need
 npm publish --reg https://registry.npmjs.org
 ```
 
+### How do I make a private npm module public?
+
+If you've built a private module that you now want to make public, first: congrats! Open source for the win. In order to turn a private module on Nodejitsu private npm into a public module on the public npm registry you must:
+
+1. **Check to see if the name is available:** If the module name is not available in the global public npm namespace, you will have to change the name of the new public module. To check this:
+```
+$ npm view some-package-name
+npm http request GET https://demo.registry.nodejitsu.com/some-package-name
+npm http 400 https://demo.registry.nodejitsu.com/some-package-name
+npm ERR! Darwin 12.5.0
+npm ERR! argv "node" "/Users/charlie/.local/bin/npm" "view" "some-package-name" "--loglevel=http"
+npm ERR! node v0.10.32
+npm ERR! npm  v2.1.4
+npm ERR! code E400
+
+npm ERR! 404 Not Found: some-package-name
+npm ERR!
+npm ERR! If you need help, you may report this error at:
+npm ERR!     <http://github.com/npm/npm/issues>
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /Users/charlie/Git/nodejitsu/handbook/npm-debug.log
+```
+Here the `npm ERR!` output **is good.** It means that `some-package-name` does not exist in the public npm registry.
+2. **Publish it to the public npm registry explictily:** Since all new publishes go by default to your private npm _new_ public modules must explictly be published to the public npm registry using the `--reg` flag:
+```
+npm publish --reg https://registry.npmjs.org
+```
+3. **Unpublish it from your private npm registry:** Now that you have the public module setup, it is time to remove your original private copy:
+```
+npm unpublish some-package-name --force --reg=https://<your-subdomain>.registry.nodejitsu.com
+```
+
 ### Can I publish scoped modules to my private npm?
 The short answer is: no, but soon! The long answer is that registering scopes to use with scoped modules is still very nacent and we are approaching this new feature cautioniously to avoid breaking backwards compatibility with any existing customers or clients.
 
