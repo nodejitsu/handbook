@@ -48,7 +48,8 @@ Using this feature you can easily share the access of an account without share t
 
  * [Create a new token](#create-a-new-token)
  * Share the token with a third party
- * The third party need to configure `jitsu` to authenticate using a token
+ * If the third party has a Nodejitsu account, they must first logout using `jitsu logout`
+ * The third party need to configure `jitsu` to authenticate using a token. 
 
 To configure `jitsu` use the next commands:
 
@@ -57,5 +58,9 @@ $ jitsu config set apiTokenName sharedTokenName
 $ jitsu config set apiToken xxx-xxx-xxx-xxx
 $ jitsu config set username myusername
 ```
+
+These commands virtually sign the third party into your account without them knowing the password. Note, `myusername` above should be your username, not the third party's username. Once these commands have been run by the third party, they can interface with your account and do things like `jitsu deploy`. 
+
+If the third party has a Nodejitsu account and logs back into their own account with, `jitsu login`, they will be logged out of your account. Thus every time they want to interface with your account they must be logged out of their own account and run the config commands above again.
 
 [meta:title]: <> (Tokens)
