@@ -37,7 +37,7 @@
  * [What is a drone?](#what-is-a-drone-)
  * [Can you give me more details about specs of drones?](#can-you-give-me-more-details-about-specs-of-drones-)
  * [Do you have a Acceptable Use Policy?](#do-you-have-a-acceptable-use-policy-)
- * [Does jitsu work with nvm?](#does-jitsu-work-wit-nvm-)
+ * [Does jitsu work with nvm?](#does-jitsu-work-with-nvm-)
 
 ## How do I reset my password?
 
