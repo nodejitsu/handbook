@@ -37,6 +37,7 @@
  * [What is a drone?](#what-is-a-drone-)
  * [Can you give me more details about specs of drones?](#can-you-give-me-more-details-about-specs-of-drones-)
  * [Do you have a Acceptable Use Policy?](#do-you-have-a-acceptable-use-policy-)
+ * [Does jitsu work with nvm?](#does-jitsu-work-wit-nvm-)
 
 ## How do I reset my password?
 
@@ -557,6 +558,12 @@ All individual plans have drones configured with 256MB of RAM, around 2GB of dis
 
 Yes, we do. Take a look to our [Acceptable Use Policy](https://legal.nodejitsu.com/acceptable-use-policy)
 And you agreed to follow this policy when you created your account and accepted our [Terms of Service](https://www.nodejitsu.com/forward/#/terms)
+
+## Does jitsu work with nvm?
+
+Yes, it works! However, if you previously used a globally installed version of
+jitsu, make sure to remove that version. We recommend to let nvm govern all
+installed jitsu versions.
 
 [logs]: https://www.nodejitsu.com/documentation/jitsu/logs/#tailing-logs
 [docs]: http://socket.io/#how-to-use
