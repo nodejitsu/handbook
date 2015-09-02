@@ -2,7 +2,7 @@
   "author": "Nodejitsu <support@nodejitsu.com> (http://nodejitsu.com)",
   "name": "nodejitsu-handbook",
   "description": "A gentle introduction to the art of nodejitsu",
-  "version": "0.7.7",
+  "version": "0.8.0",
   "subdomain": "handbook",
   "homepage": "http://www.nodejitsu.com/docs",
   "repository": {
