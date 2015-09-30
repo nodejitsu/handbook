@@ -80,7 +80,7 @@ details about data for all keys, see [Description, title and tags][description].
 [description]: #description-title-and-tags 
 
 ### Get the catalog
-Call `handbook.catalog()` to aquire a complete catalog from content
+Call `handbook.catalog()` to acquire a complete catalog from content
 (sychronously), which should return an object with paths, href's, titles and
 descriptions. If you want to generate the catalog asynchronously then supply a
 callback to the function.
